@@ -16,10 +16,10 @@ defined( 'ABSPATH' ) || exit;
 function dgf_defaults() {
 	return array(
 		// Contact & WhatsApp.
-		'whatsapp_number'  => '',
+		'whatsapp_number'  => '971508599803',
 		'whatsapp_message' => 'Hello Dubai Gym Flooring, I would like a quote.',
-		'phone_display'    => '',
-		'phone_link'       => '',
+		'phone_display'    => '+971 50 859 9803',
+		'phone_link'       => '+971508599803',
 		'email'            => '',
 		'address'          => 'Dubai, United Arab Emirates',
 		'hours'            => 'Mon – Sat: 9:00 AM – 7:00 PM',

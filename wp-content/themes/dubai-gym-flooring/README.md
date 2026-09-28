@@ -17,7 +17,7 @@ No page-builder plugin is needed: all page content uses core Gutenberg blocks.
    - switches permalinks to `/%postname%/` if they were "Plain",
    - moves WordPress's untouched "Sample Page" / "Hello world!" to the bin.
    Existing pages with the same slug are **never overwritten**.
-3. **Appearance → DGF Setup → WhatsApp number** — enter the business WhatsApp number (e.g. `9715XXXXXXXX` or `05XXXXXXXX`). Until it is set, quote buttons point to the Contact page and an admin warning is shown.
+3. **Appearance → DGF Setup → WhatsApp number** — enter the business WhatsApp number (e.g. `9715XXXXXXXX` or `05XXXXXXXX`). It defaults to +971 50 859 9803; change it here or in the Customizer at any time.
 4. **Appearance → Customize → Dubai Gym Flooring** — phone, email, address, hours, map, socials, footer text, mother company link, home-page highlight numbers, lead email.
 5. **Appearance → Customize → Site Identity** — upload the logo and site icon (favicon). Until then a built-in wordmark is shown.
 
