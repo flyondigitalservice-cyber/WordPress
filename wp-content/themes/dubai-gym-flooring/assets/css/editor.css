@@ -1,0 +1,17 @@
+/* Block-editor styles so pages look close to the front end while editing. */
+body, .editor-styles-wrapper { font-family: "Instrument Sans", system-ui, sans-serif; font-size: 17px; line-height: 1.65; color: #111311; background: #fbfaf7; }
+.editor-styles-wrapper h1, .editor-styles-wrapper h2, .editor-styles-wrapper h3, .editor-styles-wrapper h4 { font-family: "Big Shoulders Display", "Arial Narrow", sans-serif; font-weight: 800; text-transform: uppercase; line-height: 1; }
+.editor-styles-wrapper h2 { font-size: 2.6rem; }
+.editor-styles-wrapper h3 { font-size: 1.5rem; }
+.editor-styles-wrapper .dgf-eyebrow { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: #6b6f68; font-weight: 600; }
+.editor-styles-wrapper .dgf-eyebrow::before { content: ""; display: inline-block; width: 22px; height: 3px; margin-right: 10px; vertical-align: middle; background: #c8f031; }
+.editor-styles-wrapper .dgf-num { font-family: "Big Shoulders Display", sans-serif; font-weight: 900; font-size: 2rem; color: #8aa51b; }
+.editor-styles-wrapper .wp-block-group.dgf-section { border: 1px dashed #d8d5cb; border-radius: 12px; padding: 24px; margin-bottom: 18px; background: #fff; }
+.editor-styles-wrapper .dgf-features, .editor-styles-wrapper .dgf-banner { background: #1b1e1a !important; color: #fff; }
+.editor-styles-wrapper .dgf-features h2, .editor-styles-wrapper .dgf-features h3, .editor-styles-wrapper .dgf-banner h2 { color: #fff; }
+.editor-styles-wrapper .dgf-checks { list-style: none; padding-left: 0; }
+.editor-styles-wrapper .dgf-checks li::before { content: "✓"; display: inline-block; width: 22px; height: 22px; margin-right: 10px; border-radius: 50%; background: #c8f031; color: #111311; text-align: center; font-weight: 700; line-height: 22px; font-size: 13px; }
+.editor-styles-wrapper .wp-block-button__link { background: #c8f031; color: #111311; border-radius: 999px; font-weight: 600; }
+.editor-styles-wrapper .is-style-outline .wp-block-button__link { background: transparent; color: currentColor; border: 2px solid currentColor; }
+.editor-styles-wrapper .wp-block-details summary { font-weight: 600; font-size: 1.1rem; padding: 10px 0; }
+.editor-styles-wrapper .wp-block-shortcode { background: #111311; color: #c8f031; border-radius: 10px; }
