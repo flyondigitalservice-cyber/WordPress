@@ -10,7 +10,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'DGF_VERSION', '1.0.0' );
+define( 'DGF_VERSION', '1.1.0' );
 define( 'DGF_DIR', get_template_directory() );
 define( 'DGF_URI', get_template_directory_uri() );
 
