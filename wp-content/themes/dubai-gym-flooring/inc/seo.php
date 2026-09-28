@@ -249,8 +249,8 @@ function dgf_schema() {
 	if ( has_custom_logo() ) {
 		$business['logo']  = wp_get_attachment_image_url( (int) get_theme_mod( 'custom_logo' ), 'full' );
 		$business['image'] = $business['logo'];
-	} else {
-		$business['logo'] = DGF_URI . '/assets/img/logo-dark.svg';
+	} elseif ( has_site_icon() ) {
+		$business['logo'] = get_site_icon_url( 512 );
 	}
 	if ( dgf_opt( 'phone_link' ) ) {
 		$business['telephone'] = dgf_opt( 'phone_link' );

@@ -169,8 +169,8 @@ function dgf_menu_fallback() {
 		'areas-we-serve'        => __( 'Areas', 'dgf' ),
 		'catalogues'            => __( 'Catalogues', 'dgf' ),
 		'projects'              => __( 'Projects', 'dgf' ),
-		'about-us'              => __( 'About', 'dgf' ),
-		'contact-us'            => __( 'Contact', 'dgf' ),
+		'about'                 => __( 'About', 'dgf' ),
+		'contact'               => __( 'Contact', 'dgf' ),
 	);
 	echo '<ul class="dgf-menu">';
 	foreach ( $items as $slug => $label ) {
@@ -247,6 +247,7 @@ add_action( 'wp_head', 'dgf_favicon_fallback', 5 );
  */
 function dgf_favicon_fallback() {
 	if ( ! has_site_icon() ) {
-		printf( '<link rel="icon" href="%s" type="image/svg+xml">' . "\n", esc_url( DGF_URI . '/assets/img/favicon.svg' ) );
+		$svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect x="1" y="1" width="46" height="46" rx="10" fill="#c8f031"/><path d="M11 13h12a11 11 0 0 1 0 22H11z" fill="none" stroke="#111311" stroke-width="4.5" stroke-linejoin="round"/><path d="M29 24h8M33 18v12" stroke="#111311" stroke-width="4" stroke-linecap="round"/></svg>';
+		printf( '<link rel="icon" href="%s" type="image/svg+xml">' . "\n", esc_attr( 'data:image/svg+xml,' . rawurlencode( $svg ) ) );
 	}
 }

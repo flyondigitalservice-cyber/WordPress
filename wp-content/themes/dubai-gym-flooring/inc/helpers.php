@@ -98,7 +98,7 @@ function dgf_wa_number() {
 function dgf_wa_url( $message = '' ) {
 	$number = dgf_wa_number();
 	if ( '' === $number ) {
-		return dgf_page_url( 'contact-us' ) . '#quote';
+		return dgf_page_url( 'contact' ) . '#quote';
 	}
 	if ( '' === $message ) {
 		$message = dgf_opt( 'whatsapp_message' );
@@ -146,6 +146,15 @@ function dgf_page_url( $path ) {
  * @return WP_Post|null
  */
 function dgf_get_page( $path ) {
+	// Pages created or adopted by the installer are tracked by ID (an adopted page may keep its own slug).
+	$ids = get_option( 'dgf_page_ids', array() );
+	$key = basename( trim( $path, '/' ) );
+	if ( is_array( $ids ) && isset( $ids[ $key ] ) ) {
+		$tracked = get_post( (int) $ids[ $key ] );
+		if ( $tracked && 'page' === $tracked->post_type && 'trash' !== $tracked->post_status ) {
+			return $tracked;
+		}
+	}
 	$page = get_page_by_path( $path );
 	if ( $page ) {
 		return $page;

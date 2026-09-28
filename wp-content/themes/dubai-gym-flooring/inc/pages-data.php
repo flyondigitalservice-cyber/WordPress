@@ -33,7 +33,7 @@ function dgf_pages_data() {
 		'keyword'   => 'gym flooring dubai',
 		'aliases'   => array( 'home', 'hero', 'banner', 'cover', 'main' ),
 	);
-	$pages['about-us'] = array(
+	$pages['about'] = array(
 		'title'     => 'About Us',
 		'type'      => 'about',
 		'excerpt'   => 'A specialist gym flooring team from Casa Vera Home — focused on one thing: floors that protect equipment, athletes and buildings.',
@@ -92,7 +92,7 @@ function dgf_pages_data() {
 		'keyword'   => 'gym flooring projects dubai',
 		'aliases'   => array( 'projects', 'project', 'portfolio', 'gallery', 'installation photos', 'work' ),
 	);
-	$pages['faqs'] = array(
+	$pages['faq'] = array(
 		'title'     => 'FAQs',
 		'type'      => 'faqs',
 		'excerpt'   => 'Straight answers on thickness, prices, installation time, cleaning and which floor suits your training.',
@@ -101,7 +101,7 @@ function dgf_pages_data() {
 		'keyword'   => 'gym flooring faq',
 		'aliases'   => array( 'faq', 'faqs', 'questions' ),
 	);
-	$pages['contact-us'] = array(
+	$pages['contact'] = array(
 		'title'     => 'Contact Us',
 		'menu'      => 'Contact',
 		'type'      => 'contact',

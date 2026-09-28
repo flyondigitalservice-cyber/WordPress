@@ -11,14 +11,36 @@
 
 defined( 'ABSPATH' ) || exit;
 
-add_action( 'after_switch_theme', 'dgf_on_activate' );
+add_action( 'after_switch_theme', 'dgf_on_activate', 10, 2 );
 /**
- * First activation: install pages and menus once.
+ * First activation: carry over the previous theme's logo/menus-free settings,
+ * then install pages and menus once.
+ *
+ * @param string   $old_name  Previous theme name.
+ * @param WP_Theme $old_theme Previous theme.
  */
-function dgf_on_activate() {
+function dgf_on_activate( $old_name = '', $old_theme = null ) {
+	// Theme mods are stored per theme: bring the logo over from the previous theme.
+	if ( ! get_theme_mod( 'custom_logo' ) && $old_theme instanceof WP_Theme ) {
+		$old_mods = get_option( 'theme_mods_' . $old_theme->get_stylesheet() );
+		if ( is_array( $old_mods ) && ! empty( $old_mods['custom_logo'] ) && wp_attachment_is_image( (int) $old_mods['custom_logo'] ) ) {
+			set_theme_mod( 'custom_logo', (int) $old_mods['custom_logo'] );
+		}
+	}
 	if ( ! get_option( 'dgf_installed' ) ) {
 		dgf_install();
 	}
+}
+
+/**
+ * Core pages that replace an existing page with the same slug when that page
+ * was not made by this theme (e.g. a previous template's demo "About" page).
+ * The old content stays available under the page's Revisions.
+ *
+ * @return string[]
+ */
+function dgf_adoptable_slugs() {
+	return array( 'home', 'about', 'services', 'projects', 'faq', 'contact', 'privacy-policy' );
 }
 
 /**
@@ -56,15 +78,24 @@ function dgf_install_pages( $rebuild = array() ) {
 		if ( ! $existing ) {
 			$existing = dgf_get_page( $slug );
 		}
+		// The current static front page becomes our Home, so the site's front page keeps its ID.
+		if ( 'home' === $slug && 'page' === get_option( 'show_on_front' ) && get_option( 'page_on_front' ) ) {
+			$front = get_post( (int) get_option( 'page_on_front' ) );
+			if ( $front && 'page' === $front->post_type && 'trash' !== $front->post_status ) {
+				$existing = $front;
+			}
+		}
+		$is_ours = $existing && '' !== (string) get_post_meta( $existing->ID, '_dgf_type', true );
 
-		// WordPress ships an unpublished "Privacy Policy" draft: adopt it instead of skipping ours.
-		if ( $existing && 'publish' !== $existing->post_status && '' === (string) get_post_meta( $existing->ID, '_dgf_type', true ) ) {
+		// Adopt: unpublished leftovers (e.g. WordPress's "Privacy Policy" draft) and core pages from a previous theme.
+		if ( $existing && ! $is_ours && ( 'publish' !== $existing->post_status || in_array( $slug, dgf_adoptable_slugs(), true ) ) ) {
 			wp_update_post(
 				wp_slash(
 					array(
 						'ID'           => $existing->ID,
 						'post_status'  => 'publish',
 						'post_title'   => $page['title'],
+						'page_template' => 'default',
 						'post_parent'  => $parent_id,
 						'menu_order'   => isset( $page['order'] ) ? (int) $page['order'] : 0,
 						'post_excerpt' => $page['excerpt'],
@@ -271,8 +302,8 @@ function dgf_install_menus() {
 			}
 			dgf_menu_add_page( $menu_id, 'catalogues' );
 			dgf_menu_add_page( $menu_id, 'projects' );
-			dgf_menu_add_page( $menu_id, 'about-us', 0, 'About' );
-			dgf_menu_add_page( $menu_id, 'contact-us' );
+			dgf_menu_add_page( $menu_id, 'about', 0, 'About' );
+			dgf_menu_add_page( $menu_id, 'contact' );
 		}
 	);
 
@@ -300,13 +331,13 @@ function dgf_install_menus() {
 		'Footer — Company',
 		'footer_company',
 		static function ( $menu_id ) use ( $children ) {
-			foreach ( array( 'about-us', 'services' ) as $slug ) {
+			foreach ( array( 'about', 'services' ) as $slug ) {
 				dgf_menu_add_page( $menu_id, $slug );
 			}
 			foreach ( $children( 'services' ) as $slug ) {
 				dgf_menu_add_page( $menu_id, $slug );
 			}
-			foreach ( array( 'catalogues', 'projects', 'faqs', 'get-a-free-quote', 'contact-us' ) as $slug ) {
+			foreach ( array( 'catalogues', 'projects', 'faq', 'get-a-free-quote', 'contact' ) as $slug ) {
 				dgf_menu_add_page( $menu_id, $slug );
 			}
 			wp_update_nav_menu_item(

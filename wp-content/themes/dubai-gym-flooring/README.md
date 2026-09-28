@@ -72,14 +72,14 @@ Unique title + meta description per page, Open Graph/Twitter tags, JSON-LD (`Hom
 | # | Page | URL | Image file name |
 |---|---|---|---|
 | 1 | Home | `/home/` | `home.jpg` |
-| 2 | About Us | `/about-us/` | `about-us.jpg` |
+| 2 | About Us | `/about/` | `about.jpg` |
 | 3 | Gym Flooring Products | `/gym-flooring-products/` | `gym-flooring-products.jpg` |
 | 4 | Services | `/services/` | `services.jpg` |
 | 5 | Areas We Serve | `/areas-we-serve/` | `areas-we-serve.jpg` |
 | 6 | Catalogues | `/catalogues/` | `catalogues.jpg` |
 | 7 | Projects | `/projects/` | `projects.jpg` |
-| 8 | FAQs | `/faqs/` | `faqs.jpg` |
-| 9 | Contact Us | `/contact-us/` | `contact-us.jpg` |
+| 8 | FAQs | `/faq/` | `faq.jpg` |
+| 9 | Contact Us | `/contact/` | `contact.jpg` |
 | 10 | Get a Free Quote | `/get-a-free-quote/` | `get-a-free-quote.jpg` |
 | 11 | Privacy Policy | `/privacy-policy/` | `privacy-policy.jpg` |
 | 12 | Terms & Conditions | `/terms-and-conditions/` | `terms-and-conditions.jpg` |

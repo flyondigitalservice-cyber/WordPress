@@ -476,7 +476,7 @@ function dgf_build_home() {
 	$left  = dgf_b_heading_pair( __( 'Why us', 'dgf' ), __( 'One specialist team for every gym floor', 'dgf' ) );
 	$left .= dgf_b_p( 'We only do gym and sports flooring — so we know which floor belongs under a squat rack, a treadmill line, a sled lane or a Pilates reformer. We visit, measure, bring samples and give you a clear recommendation for each zone.' );
 	$left .= dgf_b_p( 'Then our own crew installs it, with clean cuts, finished edges and the paperwork your building management asks for.' );
-	$left .= dgf_b_buttons( array( array( __( 'Get a quote on WhatsApp', 'dgf' ), '#whatsapp' ), array( __( 'About us', 'dgf' ), dgf_page_url( 'about-us' ), 'outline' ) ) );
+	$left .= dgf_b_buttons( array( array( __( 'Get a quote on WhatsApp', 'dgf' ), '#whatsapp' ), array( __( 'About us', 'dgf' ), dgf_page_url( 'about' ), 'outline' ) ) );
 	$right = dgf_b_list(
 		array(
 			'Free site survey and samples',
