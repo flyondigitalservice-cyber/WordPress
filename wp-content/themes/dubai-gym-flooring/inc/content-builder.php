@@ -398,6 +398,8 @@ function dgf_build_location( $p ) {
 		'dgf-section dgf-local'
 	);
 
+	$html .= dgf_b_sc( '[dgf_gallery source="all" limit="8" title="Recent installations"]' );
+
 	$faqs   = $p['faqs'];
 	$faqs[] = array(
 		sprintf( 'How much does gym flooring cost in %s?', $short ),
@@ -578,6 +580,7 @@ function dgf_build_about() {
 		)
 	);
 	$html .= dgf_section_features( __( 'Our process', 'dgf' ), __( 'Four simple steps', 'dgf' ), dgf_default_steps(), 'dgf-steps' );
+	$html .= dgf_b_sc( '[dgf_gallery source="all" limit="8" title="Recent installations"]' );
 	$html .= dgf_b_sc( '[dgf_parent_company]' );
 	$html .= dgf_b_sc( '[dgf_cta]' );
 	return $html;
