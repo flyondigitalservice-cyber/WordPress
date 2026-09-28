@@ -20,7 +20,7 @@ function dgf_defaults() {
 		'whatsapp_message' => 'Hello Dubai Gym Flooring, I would like a quote.',
 		'phone_display'    => '+971 50 859 9803',
 		'phone_link'       => '+971508599803',
-		'email'            => 'flyondigitalservice@gmail.com',
+		'email'            => 'casaverahome07@gmail.com',
 		'address'          => 'Dubai, United Arab Emirates',
 		'hours'            => 'Mon – Sat: 9:00 AM – 7:00 PM',
 		'map_embed_url'    => '',
@@ -52,7 +52,7 @@ function dgf_defaults() {
 		'stat4_value'      => '1:1',
 		'stat4_label'      => 'WhatsApp support',
 		// Leads.
-		'lead_email'       => 'flyondigitalservice@gmail.com',
+		'lead_email'       => 'casaverahome07@gmail.com',
 	);
 }
 
