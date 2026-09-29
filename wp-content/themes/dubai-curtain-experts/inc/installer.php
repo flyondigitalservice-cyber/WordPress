@@ -70,7 +70,7 @@ function dce_rest_install( $request ) {
 			'post_name'    => $pg['slug'],
 			'post_parent'  => $parent,
 			'post_excerpt' => $pg['excerpt'],
-			'post_content' => $pg['content'],
+			'post_content' => dce_install_images( $pg['content'] ),
 			'menu_order'   => (int) $order,
 			'comment_status' => 'closed',
 		);
@@ -87,8 +87,12 @@ function dce_rest_install( $request ) {
 		$id                = (int) $result;
 		$ids[ $pg['key'] ] = $id;
 		update_post_meta( $id, '_wp_page_template', 'page-templates/landing.php' );
-		if ( ! empty( $pg['featured_media'] ) ) {
-			set_post_thumbnail( $id, (int) $pg['featured_media'] );
+		$thumb = $pg['featured_media'];
+		if ( is_string( $thumb ) && 0 === strpos( $thumb, 'drive:' ) ) {
+			$thumb = dce_install_attachment( substr( $thumb, 6 ) );
+		}
+		if ( $thumb ) {
+			set_post_thumbnail( $id, (int) $thumb );
 		}
 		$out['pages'][ $pg['key'] ] = array(
 			'id'   => $id,
@@ -193,6 +197,54 @@ function dce_install_links( $html, $ids ) {
 		'/\{\{page:([a-z0-9-]+)\}\}/',
 		function ( $m ) use ( $ids ) {
 			return isset( $ids[ $m[1] ] ) ? get_permalink( $ids[ $m[1] ] ) : home_url( '/' );
+		},
+		$html
+	);
+}
+
+/**
+ * Attachment ID for a Google Drive file imported by /dce/v1/import.
+ *
+ * @param string $drive Drive file ID.
+ * @return int 0 when not imported.
+ */
+function dce_install_attachment( $drive ) {
+	static $cache = array();
+	if ( ! isset( $cache[ $drive ] ) ) {
+		$found           = get_posts(
+			array(
+				'post_type'      => 'attachment',
+				'post_status'    => 'inherit',
+				'meta_key'       => '_dce_drive_id', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+				'meta_value'     => $drive, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+				'fields'         => 'ids',
+				'posts_per_page' => 1,
+				'orderby'        => 'ID',
+				'order'          => 'ASC',
+			)
+		);
+		$cache[ $drive ] = $found ? (int) $found[0] : 0;
+	}
+	return $cache[ $drive ];
+}
+
+/**
+ * Swap {{id:DRIVE}} / {{url:DRIVE}} placeholders for the imported
+ * attachment's ID and "large" image URL.
+ *
+ * @param string $html Block markup.
+ * @return string
+ */
+function dce_install_images( $html ) {
+	return preg_replace_callback(
+		'/\{\{(id|url):([A-Za-z0-9_-]+)\}\}/',
+		function ( $m ) {
+			$id = dce_install_attachment( $m[2] );
+			if ( 'id' === $m[1] ) {
+				return (string) $id;
+			}
+			$src = $id ? wp_get_attachment_image_src( $id, 'large' ) : false;
+			return $src ? $src[0] : '';
 		},
 		$html
 	);

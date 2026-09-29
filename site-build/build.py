@@ -9,6 +9,7 @@ validated before anything is uploaded.
 """
 import json
 import os
+import re
 import sys
 from html import escape
 
@@ -23,18 +24,34 @@ from areas import AREAS
 OUT = os.path.join(os.path.dirname(__file__), "out")
 
 # ------------------------------------------------------------------ images
+TOKEN_BASE = 7000000
+TOKEN_URL = "https://dce-token.invalid/"
+MIN_SIDE = 360  # skip photos too small to look sharp in the layout
+
+
 def load_image_map(path):
-    if path:
+    """Every Drive image gets a stable placeholder ID + URL. The installer on the
+    server swaps them for the real attachment ID / URL (matched by Drive ID).
+    Known dimensions are used to pick sharp hero images and drop tiny ones."""
+    dims = {}
+    if path and os.path.exists(path):
         with open(path) as f:
-            raw = json.load(f)
-        for did, v in raw.items():
-            if isinstance(v, dict) and v.get("id"):
-                B.IMG_MAP[did] = {"id": v["id"], "url": v["url"], "w": v.get("w", 0), "h": v.get("h", 0)}
-    else:
-        for n, did in enumerate(IMAGES, 1):
-            B.IMG_MAP[did] = {"id": 90000 + n, "url": f"https://dubaicurtainexperts.ae/wp-content/uploads/2026/09/{IMAGES[did][0]}", "w": 1200, "h": 900}
+            dims = {k: v for k, v in json.load(f).items() if isinstance(v, dict) and v.get("w")}
+    for n, did in enumerate(IMAGES, 1):
+        d = dims.get(did)
+        if d and min(d["w"], d["h"]) < MIN_SIDE:
+            continue
+        B.IMG_MAP[did] = {"id": TOKEN_BASE + n, "url": TOKEN_URL + did,
+                          "w": d["w"] if d else 0, "h": d["h"] if d else 0, "drive": did}
     for key, (aid, url, _alt) in EXISTING.items():
         B.IMG_MAP[key] = {"id": aid, "url": url, "w": 1600, "h": 1200}
+
+
+def tokenize(text):
+    """Replace placeholder IDs / URLs with {{id:X}} / {{url:X}} for the installer."""
+    text = re.sub(re.escape(TOKEN_URL) + r"([A-Za-z0-9_-]+)", r"{{url:\1}}", text)
+    ids = {m["id"]: m["drive"] for m in B.IMG_MAP.values() if "drive" in m}
+    return re.sub(r"(?<![0-9])(7\d{6})(?![0-9])", lambda mt: "{{id:" + ids[int(mt.group(1))] + "}}" if int(mt.group(1)) in ids else mt.group(1), text)
 
 
 def ok(key):
@@ -560,6 +577,11 @@ def write_payload():
     for w, blocks_ in widgets.items():
         with open(os.path.join(OUT, "html", f"widget-{w}.html"), "w") as f:
             f.write("\n\n".join(blocks_).replace("{{page:", "/x/{{"))
+    by_id = {m["id"]: m.get("drive") for m in B.IMG_MAP.values()}
+    for p in pages:
+        p["content"] = tokenize(p["content"])
+        if by_id.get(p["featured_media"]):
+            p["featured_media"] = "drive:" + by_id[p["featured_media"]]
     payload = {"pages": [{k: p[k] for k in ("key", "title", "slug", "parent", "path", "excerpt", "featured_media", "existing_id", "content")} for p in pages],
                "menus": menus, "widgets": widgets}
     raw = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode()
@@ -569,5 +591,5 @@ def write_payload():
     print("payload raw", len(raw), "b64", len(b64))
 
 
-if __name__ == "__main__" and len(sys.argv) > 2 and sys.argv[2] == "--payload":
+if __name__ == "__main__" and "--payload" in sys.argv:
     write_payload()
