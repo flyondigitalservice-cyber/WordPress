@@ -512,3 +512,62 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# ------------------------------------------------------------------ menus + footer
+def site_structure():
+    from data import PARENT_URL
+    kids = lambda lst: [{"key": pr["key"], "title": pr["label"]} for pr in lst]
+    primary = [
+        {"key": "curtains", "title": "Curtains", "children": kids(CURTAINS)},
+        {"key": "blinds", "title": "Blinds", "children": kids(BLINDS)},
+        {"key": "services", "title": "Services"},
+        {"key": "catalogue", "title": "Catalogues"},
+        {"key": "projects", "title": "Projects"},
+        {"key": "areas", "title": "Areas", "children": [{"key": a["key"], "title": a["name"]} for a in AREAS]},
+        {"key": "about", "title": "About"},
+        {"key": "contact", "title": "Contact"},
+    ]
+    footer = [{"key": k, "title": t} for k, t in [("about", "About us"), ("services", "Services"), ("catalogue", "Catalogues"),
+                                                   ("projects", "Projects"), ("areas", "Areas we serve"), ("contact", "Contact"), ("privacy", "Privacy policy")]]
+    footer.append({"url": PARENT_URL, "title": "Casa Vera Home", "new_tab": True})
+
+    def plist(pairs):
+        return B.ul([f'<a href="{{{{page:{k}}}}}">{t}</a>' for k, t in pairs])
+    widgets = {
+        "footer-1": [
+            B.p(f"Made-to-measure curtains and blinds for homes and businesses across Dubai and the UAE. Part of <a href=\"{PARENT_URL}\">{PARENT}</a> ({PARENT_LEGAL})."),
+            B.p(f"{HOURS}"),
+        ],
+        "footer-2": [B.h(3, "Curtains"), plist([(pr["key"], pr["label"]) for pr in CURTAINS])],
+        "footer-3": [B.h(3, "Blinds"), plist([(pr["key"], pr["label"]) for pr in BLINDS]),
+                     B.h(3, "Company"), plist([(k, t) for k, t in [("about", "About us"), ("catalogue", "Catalogues"), ("projects", "Projects"), ("areas", "Areas we serve"), ("privacy", "Privacy policy")]])],
+        "footer-4": [B.h(3, "Contact"), B.ul([
+            f'<a href="{MAP_URL}">{ADDRESS}</a>',
+            f'<a href="tel:{TEL}">{PHONE}</a>',
+            f'<a href="{wa_link(wa_text())}">WhatsApp {PHONE}</a>',
+            f'<a href="mailto:{EMAIL}">{EMAIL}</a>',
+        ]), B.p(f'<a href="{{{{page:contact}}}}">Book a free home visit →</a>')],
+    }
+    return [{"name": "Main Navigation", "location": "primary", "items": primary},
+            {"name": "Footer Links", "location": "footer", "items": footer}], widgets
+
+
+def write_payload():
+    import gzip, base64
+    pages = json.load(open(os.path.join(OUT, "pages.json")))
+    menus, widgets = site_structure()
+    for w, blocks_ in widgets.items():
+        with open(os.path.join(OUT, "html", f"widget-{w}.html"), "w") as f:
+            f.write("\n\n".join(blocks_).replace("{{page:", "/x/{{"))
+    payload = {"pages": [{k: p[k] for k in ("key", "title", "slug", "parent", "path", "excerpt", "featured_media", "existing_id", "content")} for p in pages],
+               "menus": menus, "widgets": widgets}
+    raw = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode()
+    b64 = base64.b64encode(gzip.compress(raw, 9)).decode()
+    with open(os.path.join(OUT, "install.json"), "w") as f:
+        json.dump({"gz": b64}, f)
+    print("payload raw", len(raw), "b64", len(b64))
+
+
+if __name__ == "__main__" and len(sys.argv) > 2 and sys.argv[2] == "--payload":
+    write_payload()

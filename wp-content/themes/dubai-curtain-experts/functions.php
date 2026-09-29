@@ -19,6 +19,7 @@ require_once get_template_directory() . '/inc/defaults.php';
 require_once get_template_directory() . '/inc/post-types.php';
 require_once get_template_directory() . '/inc/customizer.php';
 require_once get_template_directory() . '/inc/site.php';
+require_once get_template_directory() . '/inc/installer.php';
 
 /**
  * Theme setup.
