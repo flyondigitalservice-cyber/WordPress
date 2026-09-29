@@ -530,6 +530,32 @@ if __name__ == "__main__":
     main()
 
 
+# ------------------------------------------------------------------ blog
+def build_post(post):
+    out = [lead(post["intro"]),
+           group([p("<strong>Key takeaways</strong>"), ul(post["takeaways"])], "dce-takeaways")]
+    for heading, items in post["sections"]:
+        out.append(h(2, heading))
+        for it in items:
+            if isinstance(it, str):
+                out.append(p(it))
+            elif it[0] in ("ul", "ol"):
+                out.append(ul(it[1]) if it[0] == "ul" else B.ol(it[1]))
+            elif it[0] == "img":
+                if ok(it[1]):
+                    out.append(image(it[1], it[2]))
+            elif it[0] == "h3":
+                out.append(h(3, it[1]))
+    out.append(h(2, "Frequently asked questions"))
+    out.append(group("".join(details(q, a) for q, a in post["faq"]), "dce-faq"))
+    out.append(group([
+        h(3, "Talk to a curtain specialist"),
+        p(f"Free home visit and measurement across the UAE. Send your window photos on WhatsApp or call {PHONE}."),
+        buttons(wa_button(post["topic"], "WhatsApp us"), call_button()),
+    ], "dce-post-cta"))
+    return "\n\n".join(out)
+
+
 # ------------------------------------------------------------------ menus + footer
 def site_structure():
     from data import PARENT_URL
@@ -541,11 +567,12 @@ def site_structure():
         {"key": "catalogue", "title": "Catalogues"},
         {"key": "projects", "title": "Projects"},
         {"key": "areas", "title": "Areas", "children": [{"key": a["key"], "title": a["name"]} for a in AREAS]},
+        {"key": "blog", "title": "Blog"},
         {"key": "about", "title": "About"},
         {"key": "contact", "title": "Contact"},
     ]
     footer = [{"key": k, "title": t} for k, t in [("about", "About us"), ("services", "Services"), ("catalogue", "Catalogues"),
-                                                   ("projects", "Projects"), ("areas", "Areas we serve"), ("contact", "Contact"), ("privacy", "Privacy policy")]]
+                                                   ("projects", "Projects"), ("areas", "Areas we serve"), ("blog", "Blog"), ("contact", "Contact"), ("privacy", "Privacy policy")]]
     footer.append({"url": PARENT_URL, "title": "Casa Vera Home", "new_tab": True})
 
     def plist(pairs):
@@ -557,7 +584,7 @@ def site_structure():
         ],
         "footer-2": [B.h(3, "Curtains"), plist([(pr["key"], pr["label"]) for pr in CURTAINS])],
         "footer-3": [B.h(3, "Blinds"), plist([(pr["key"], pr["label"]) for pr in BLINDS]),
-                     B.h(3, "Company"), plist([(k, t) for k, t in [("about", "About us"), ("catalogue", "Catalogues"), ("projects", "Projects"), ("areas", "Areas we serve"), ("privacy", "Privacy policy")]])],
+                     B.h(3, "Company"), plist([(k, t) for k, t in [("about", "About us"), ("catalogue", "Catalogues"), ("projects", "Projects"), ("areas", "Areas we serve"), ("blog", "Blog"), ("privacy", "Privacy policy")]])],
         "footer-4": [B.h(3, "Contact"), B.ul([
             f'<a href="{MAP_URL}">{ADDRESS}</a>',
             f'<a href="tel:{TEL}">{PHONE}</a>',
@@ -581,8 +608,23 @@ def write_payload():
         p["content"] = tokenize(p["content"])
         if by_id.get(p["featured_media"]):
             p["featured_media"] = "drive:" + by_id[p["featured_media"]]
+    from blog import POSTS
+    posts = []
+    os.makedirs(os.path.join(OUT, "html"), exist_ok=True)
+    for post in POSTS:
+        html = build_post(post)
+        with open(os.path.join(OUT, "html", f"post-{post['key']}.html"), "w") as f:
+            f.write(html)
+        feat = post["featured"]
+        fm = B.IMG_MAP[feat] if ok(feat) else None
+        posts.append({"key": post["key"], "title": post["title"], "slug": post["slug"], "excerpt": post["excerpt"],
+                      "category": post["cat"], "content": tokenize(html),
+                      "featured_media": ("drive:" + fm["drive"]) if fm and "drive" in fm else (fm["id"] if fm else 0)})
+    pages.append({"key": "blog", "title": "Curtain & Blind Guides", "slug": "blog", "parent": None, "path": "/blog/",
+                  "excerpt": "Guides and ideas for curtains and blinds in Dubai and the UAE — measuring, blackout, sheers, motorized curtains, cleaning and more.",
+                  "featured_media": 0, "existing_id": None, "content": ""})
     payload = {"pages": [{k: p[k] for k in ("key", "title", "slug", "parent", "path", "excerpt", "featured_media", "existing_id", "content")} for p in pages],
-               "menus": menus, "widgets": widgets}
+               "menus": menus, "widgets": widgets, "posts": posts, "posts_page": "blog"}
     raw = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode()
     b64 = base64.b64encode(gzip.compress(raw, 9)).decode()
     with open(os.path.join(OUT, "install.json"), "w") as f:

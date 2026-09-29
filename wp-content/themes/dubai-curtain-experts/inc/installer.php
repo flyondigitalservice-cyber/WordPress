@@ -97,7 +97,9 @@ function dce_rest_install( $request ) {
 		}
 		$id                = (int) $result;
 		$ids[ $pg['key'] ] = $id;
-		update_post_meta( $id, '_wp_page_template', 'page-templates/landing.php' );
+		if ( empty( $data['posts_page'] ) || $pg['key'] !== $data['posts_page'] ) {
+			update_post_meta( $id, '_wp_page_template', 'page-templates/landing.php' );
+		}
 		$thumb = $pg['featured_media'];
 		if ( is_string( $thumb ) && 0 === strpos( $thumb, 'drive:' ) ) {
 			$thumb = dce_install_attachment( substr( $thumb, 6 ) );
@@ -109,6 +111,54 @@ function dce_rest_install( $request ) {
 			'id'   => $id,
 			'link' => get_permalink( $id ),
 		);
+	}
+
+	/* ---------------------------------------------------------- posts */
+	if ( ! empty( $data['posts'] ) ) {
+		require_once ABSPATH . 'wp-admin/includes/taxonomy.php';
+		foreach ( (array) $data['posts'] as $ps ) {
+			$cat = get_cat_ID( $ps['category'] );
+			if ( ! $cat ) {
+				$cat = (int) wp_create_category( $ps['category'] );
+			}
+			$found   = get_page_by_path( $ps['slug'], OBJECT, 'post' );
+			$postarr = array(
+				'post_type'      => 'post',
+				'post_status'    => 'publish',
+				'post_title'     => $ps['title'],
+				'post_name'      => $ps['slug'],
+				'post_excerpt'   => $ps['excerpt'],
+				'post_content'   => dce_install_images( $ps['content'] ),
+				'post_category'  => array( $cat ),
+				'comment_status' => 'closed',
+			);
+			if ( $found ) {
+				$postarr['ID'] = (int) $found->ID;
+				$result        = wp_update_post( wp_slash( $postarr ), true );
+			} else {
+				$result = wp_insert_post( wp_slash( $postarr ), true );
+			}
+			if ( is_wp_error( $result ) ) {
+				$out['posts'][ $ps['key'] ] = array( 'error' => $result->get_error_message() );
+				continue;
+			}
+			$thumb = $ps['featured_media'];
+			if ( is_string( $thumb ) && 0 === strpos( $thumb, 'drive:' ) ) {
+				$thumb = dce_install_attachment( substr( $thumb, 6 ) );
+			}
+			if ( $thumb ) {
+				set_post_thumbnail( (int) $result, (int) $thumb );
+			}
+			$out['posts'][ $ps['key'] ] = (int) $result;
+		}
+		// Group posts under /blog/ for a clear SEO structure (pages are unaffected).
+		if ( '/blog/%postname%/' !== get_option( 'permalink_structure' ) ) {
+			global $wp_rewrite;
+			$wp_rewrite->set_permalink_structure( '/blog/%postname%/' );
+		}
+	}
+	if ( ! empty( $data['posts_page'] ) && isset( $ids[ $data['posts_page'] ] ) ) {
+		update_option( 'page_for_posts', $ids[ $data['posts_page'] ] );
 	}
 
 	/* ----------------------------------------------------- front page */
@@ -162,6 +212,7 @@ function dce_rest_install( $request ) {
 	}
 
 	flush_rewrite_rules( false );
+	$out['permalinks'] = get_option( 'permalink_structure' );
 	return $out;
 }
 

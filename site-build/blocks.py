@@ -64,6 +64,11 @@ def ul(items):
     return f'<!-- wp:list -->\n<ul class="wp-block-list">{lis}</ul>\n<!-- /wp:list -->'
 
 
+def ol(items):
+    lis = "\n".join(f"<!-- wp:list-item -->\n<li>{i}</li>\n<!-- /wp:list-item -->" for i in items)
+    return f'<!-- wp:list {{"ordered":true}} -->\n<ol class="wp-block-list">{lis}</ol>\n<!-- /wp:list -->'
+
+
 def link(href, text):
     return f'<a href="{escape(href)}">{text}</a>'
 

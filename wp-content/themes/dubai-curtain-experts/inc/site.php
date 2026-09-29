@@ -344,6 +344,24 @@ function dce_schema() {
 		);
 	}
 
+	if ( is_singular( 'post' ) ) {
+		$post    = get_queried_object();
+		$article = array(
+			'@type'            => 'BlogPosting',
+			'headline'         => wp_strip_all_tags( get_the_title( $post ) ),
+			'description'      => dce_meta_description(),
+			'datePublished'    => get_the_date( 'c', $post ),
+			'dateModified'     => get_the_modified_date( 'c', $post ),
+			'mainEntityOfPage' => get_permalink( $post ),
+			'author'           => array( '@id' => home_url( '/#business' ) ),
+			'publisher'        => array( '@id' => home_url( '/#business' ) ),
+		);
+		if ( has_post_thumbnail( $post ) ) {
+			$article['image'] = get_the_post_thumbnail_url( $post, 'large' );
+		}
+		$graph[] = $article;
+	}
+
 	if ( is_singular() ) {
 		$post = get_queried_object();
 		if ( $post && has_block( 'details', $post ) ) {
@@ -420,6 +438,12 @@ function dce_breadcrumb_trail() {
 	);
 	if ( is_singular() ) {
 		$post = get_queried_object();
+		if ( 'post' === $post->post_type && get_option( 'page_for_posts' ) ) {
+			$trail[] = array(
+				'title' => wp_strip_all_tags( get_the_title( (int) get_option( 'page_for_posts' ) ) ),
+				'url'   => get_permalink( (int) get_option( 'page_for_posts' ) ),
+			);
+		}
 		foreach ( array_reverse( get_post_ancestors( $post ) ) as $ancestor ) {
 			$trail[] = array(
 				'title' => wp_strip_all_tags( get_the_title( $ancestor ) ),
