@@ -108,7 +108,7 @@ def hero(kick, title_html, lead_html, img_key, topic=None, extra_btn=None):
 
 
 def trust():
-    return group(ul(["Free home visit &amp; measurement in Dubai", "Made to measure", "Professional installation",
+    return group(ul(["Free home visit &amp; measurement across the UAE", "Made to measure", "Professional installation",
                      f'Part of <a href="{PARENT_URL}">{PARENT}</a>']), "dce-trust")
 
 
@@ -151,8 +151,8 @@ def product_card(k):
     return card(k, pr["label"], pr["lead"], imgs[0] if imgs else None)
 
 
-def product_grid(keys):
-    return group("".join(product_card(k) for k in keys), "dce-grid")
+def product_grid(keys, cols=3):
+    return group("".join(product_card(k) for k in keys), "dce-grid dce-grid-4" if cols == 4 else "dce-grid")
 
 
 def faq_block(items):
@@ -188,7 +188,7 @@ def build_product(pr, hub_key):
     ]), "dce-sec"))
     out.append(process(dark=True))
     out.append(section([kicker("Questions"), h(2, f"{pr['label']} <em>FAQ</em>"), faq_block(pr["faq"])], "dce-sec"))
-    out.append(section([kicker("You may also like"), h(2, "Related <em>products</em>"), product_grid(pr["related"])], "dce-sec dce-sec-alt"))
+    out.append(section([kicker("You may also like"), h(2, "Related <em>products</em>"), product_grid(pr["related"], 4)], "dce-sec dce-sec-alt"))
     out.append(cta_form(pr["label"]))
     return "\n\n".join(out)
 
@@ -199,8 +199,7 @@ def build_area(ar, idx):
     hero_img = best([PRODUCT_BY_KEY[ar["picks"][0]]["imgs"][0]] if PRODUCT_BY_KEY[ar["picks"][0]]["imgs"] else [], 1)
     hero_img = hero_img[0] if hero_img else (pick[0] if pick else None)
     name = ar["name"]
-    visit_line = ("Free home visit and measurement anywhere in Dubai." if ar["dubai"]
-                  else f"Share your window sizes, photos and location on WhatsApp and we will arrange the visit and installation in {name}.")
+    visit_line = f"Free home visit and measurement in {name} — send your location on WhatsApp and we will book a time that suits you."
     out = [
         hero(f"{'Dubai' if ar['dubai'] else 'UAE'} · Service area", f"Curtains &amp; blinds in <em>{name}</em>",
              ar["intro"], hero_img, f"curtains and blinds in {name}"),
@@ -285,7 +284,7 @@ def build_home():
                  lead("Open our curtain, outdoor and custom-print catalogues before your visit."),
                  buttons(button("Open catalogues", url("catalogue")), wa_button("fabric catalogues", "Ask about a fabric"))], "dce-sec dce-sec-alt dce-center"),
         section([kicker("Questions"), h(2, "Frequently <em>asked</em>"), faq_block([
-            ("Is the home visit free?", "Yes — we visit your home in Dubai to measure and show samples. Contact us on WhatsApp to book a time."),
+            ("Is the home visit free?", "Yes — we visit homes and businesses across the UAE free of charge to measure and show samples. Contact us on WhatsApp to book a time."),
             ("Do you install the curtains and blinds?", "Yes. Our team installs the tracks, rods and blinds along with your made-to-measure curtains."),
             ("Can I see fabrics before the visit?", f'Yes — open the {link(url("catalogue"), "online catalogues")} or visit our showroom at {ADDRESS}.'),
             ("What are your opening hours?", HOURS + "."),
@@ -326,7 +325,7 @@ def build_about():
 
 def build_services():
     svc = [
-        ("Free home visit &amp; measuring", "We come to your home in Dubai, measure every window and bring samples.", "contact"),
+        ("Free home visit &amp; measuring", "We come to your home anywhere in the UAE, measure every window and bring samples — free of charge.", "contact"),
         ("Made-to-measure curtains", "Wave, pinch pleat, eyelet, American style, Roman, blackout, sheer and more.", "curtains"),
         ("Made-to-measure blinds", "Roller, zebra, Roman, vertical, wooden, aluminium, bamboo and printed blinds.", "blinds"),
         ("Motorized systems", "Motorized curtain tracks and blinds with remote, switch or smart control.", "motorized"),
@@ -424,7 +423,7 @@ def build_areas_hub():
                                    "dce-card dce-cat-card") for a in lst), "dce-grid")
     out = [
         hero("Service areas", "Curtains &amp; blinds <em>across the UAE</em>",
-             "From our showroom in Deira we serve communities across Dubai, and take orders from Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah and Al Ain.",
+             "From our showroom in Deira we serve homes and businesses across the UAE — Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah and Al Ain — with a free home visit and measurement.",
              PROJECTS[2] if ok(PROJECTS[2]) else None, "service in my area"),
         trust(),
         section([kicker("Dubai"), h(2, "Dubai <em>communities</em>"), area_cards(dubai)], "dce-sec"),
@@ -484,7 +483,7 @@ def define_pages():
          PROJECTS[2], build_areas_hub, menu="Areas")
     for i, ar in enumerate(AREAS):
         page(ar["key"], f"Curtains & Blinds in {ar['name']}", ar["slug"], "areas",
-             f"Made-to-measure curtains and blinds in {ar['name']}. {'Free home visit, ' if ar['dubai'] else ''}professional installation and fabric samples. WhatsApp +971 50 859 9803.",
+             f"Made-to-measure curtains and blinds in {ar['name']}. Free home visit, professional installation and fabric samples. WhatsApp +971 50 859 9803.",
              PROJECTS[(i * 3) % len(PROJECTS)], (lambda ar=ar, i=i: build_area(ar, i)), menu=ar["name"])
     page("contact", "Contact Us", "contact-us", None,
          "Contact Dubai Curtain Experts: WhatsApp or call +971 50 859 9803, email info@dubaicurtainexperts.ae, or visit Empire Plaza, Naif Road, Deira.",
