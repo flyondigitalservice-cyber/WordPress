@@ -251,3 +251,27 @@ function dgf_favicon_fallback() {
 		printf( '<link rel="icon" href="%s" type="image/svg+xml">' . "\n", esc_attr( 'data:image/svg+xml,' . rawurlencode( $svg ) ) );
 	}
 }
+
+add_filter( 'post_thumbnail_id', 'dgf_inherit_parent_thumbnail', 10, 2 );
+/**
+ * Front end: a page without its own featured image borrows its parent page's
+ * image (e.g. a curtain page uses the Curtains category photo). Setting a
+ * featured image on the page itself always wins.
+ *
+ * @param int|false        $thumbnail_id Thumbnail ID.
+ * @param int|WP_Post|null $post         Post.
+ * @return int|false
+ */
+function dgf_inherit_parent_thumbnail( $thumbnail_id, $post ) {
+	if ( $thumbnail_id || is_admin() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
+		return $thumbnail_id;
+	}
+	$post = get_post( $post );
+	if ( $post && 'page' === $post->post_type && $post->post_parent ) {
+		$parent_thumb = (int) get_post_meta( $post->post_parent, '_thumbnail_id', true );
+		if ( $parent_thumb ) {
+			return $parent_thumb;
+		}
+	}
+	return $thumbnail_id;
+}

@@ -67,7 +67,13 @@ Unique title + meta description per page, Open Graph/Twitter tags, JSON-LD (`Hom
 
 **Before launch, please check:** real phone/WhatsApp/email/address, the home-page highlight numbers (Customize → Home page highlights), and the starter Privacy Policy / Terms text with your legal adviser. Product specifications are typical industry ranges — align them with your actual catalogues.
 
-## 6. The 45 pages
+## 6. Casa Vera Home interior services (v1.2.0)
+
+Six category pages — **Curtains, Blinds, Carpets, Wallpaper, Upholstery, Flooring** — each with its sub-pages (40 in total), plus an **Interiors** overview page, a home-page section and an **Interiors** dropdown in the header menu. Existing pages with the same address are moved under their category and rebuilt in this theme's layout (old content stays in each page's Revisions; old URLs redirect automatically). Uploading the new theme version runs this automatically on your next wp-admin visit.
+
+A sub-page without its own featured image shows its category's image — set a featured image on any page to override.
+
+## 7. The 45 core pages
 
 | # | Page | URL | Image file name |
 |---|---|---|---|

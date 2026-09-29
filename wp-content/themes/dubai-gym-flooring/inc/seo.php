@@ -283,7 +283,7 @@ function dgf_schema() {
 			'about'       => array( '@id' => $org_id ),
 		);
 
-		if ( in_array( $type, array( 'product', 'service', 'location' ), true ) ) {
+		if ( in_array( $type, array( 'product', 'service', 'location', 'interior' ), true ) ) {
 			$service = array(
 				'@type'       => 'Service',
 				'name'        => $title,

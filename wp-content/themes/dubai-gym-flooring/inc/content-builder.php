@@ -207,6 +207,8 @@ function dgf_build_content( $slug, $page ) {
 			return dgf_build_home();
 		case 'product':
 			return dgf_build_product( $page );
+		case 'interior':
+			return dgf_build_interior( $page );
 		case 'service':
 			return dgf_build_service( $page );
 		case 'location':
@@ -336,6 +338,39 @@ function dgf_build_product( $p ) {
 }
 
 /**
+ * Interior service page (curtains, blinds, carpets, wallpaper, upholstery, flooring).
+ *
+ * @param array $p Data.
+ * @return string
+ */
+function dgf_build_interior( $p ) {
+	$title = $p['title'];
+	$html  = dgf_section_intro( sprintf( '%s · %s', $p['category'], dgf_opt( 'parent_name' ) ), sprintf( '%s in Dubai &amp; the UAE', $title ), $p['intro'], sprintf( 'Get a price for %s', $title ) );
+	$html .= dgf_section_features( __( 'Benefits', 'dgf' ), sprintf( 'Why choose %s', strtolower( $title ) ), $p['benefits'] );
+
+	$specs = dgf_b_heading_pair( __( 'Options', 'dgf' ), __( 'Options &amp; finishes', 'dgf' ) ) . dgf_b_list( $p['specs'], 'dgf-checks' );
+	$uses  = dgf_b_heading_pair( __( 'Where it’s used', 'dgf' ), __( 'Perfect for', 'dgf' ) ) . dgf_b_list( $p['uses'], 'dgf-checks' );
+	$html .= dgf_b_group( dgf_b_columns( array( $specs, $uses ) ), 'dgf-section dgf-split' );
+
+	$html .= dgf_b_group(
+		dgf_b_sc( '[dgf_catalogues scope="page" title="' . dgf_sc_attr( $title . ' — downloads' ) . '"]' ) .
+		dgf_b_sc( '[dgf_gallery title="' . dgf_sc_attr( $title . ' — project photos' ) . '"]' ),
+		'dgf-section dgf-media'
+	);
+	$html .= dgf_section_features( __( 'How it works', 'dgf' ), __( 'Measured, made and installed', 'dgf' ), dgf_default_steps(), 'dgf-steps' );
+	$html .= dgf_b_group(
+		dgf_b_heading_pair( __( 'Service area', 'dgf' ), __( 'Across Dubai and every emirate', 'dgf' ) ) .
+		dgf_b_p( sprintf( 'We measure and install %s throughout Dubai and across Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, Umm Al Quwain and Al Ain. Send your location on WhatsApp to book a visit.', strtolower( $title ) ) ),
+		'dgf-section dgf-areas'
+	);
+	$html .= dgf_section_faqs( sprintf( '%s — common questions', $title ), $p['faqs'] );
+	$html .= dgf_b_group( dgf_b_heading_pair( __( 'Keep exploring', 'dgf' ), sprintf( 'More %s services', strtolower( $p['category'] ) ) ) . dgf_b_sc( '[dgf_related limit="3"]' ), 'dgf-section dgf-related' );
+	$html .= dgf_b_sc( '[dgf_parent_company]' );
+	$html .= dgf_b_sc( '[dgf_cta title="' . dgf_sc_attr( sprintf( 'Get a quote for %s', strtolower( $title ) ) ) . '"]' );
+	return $html;
+}
+
+/**
  * Service page.
  *
  * @param array $p Data.
@@ -442,6 +477,29 @@ function dgf_build_hub( $slug, $p ) {
 			dgf_b_buttons( array( array( __( 'Ask which floor suits me', 'dgf' ), '#whatsapp' ), array( __( 'Download catalogues', 'dgf' ), dgf_page_url( 'catalogues' ), 'outline' ) ) ),
 			'dgf-section dgf-guide'
 		);
+	} elseif ( 'interiors' === $p['hub_of'] ) {
+		$html .= dgf_b_group(
+			dgf_b_heading_pair( dgf_opt( 'parent_name' ), __( 'Interiors, flooring &amp; upholstery', 'dgf' ) ) .
+			dgf_b_p( 'Alongside our specialist gym floors, the Casa Vera Home team measures, makes and installs curtains, blinds, carpets, wallpaper, upholstery and flooring for homes, offices and hotels across the UAE.' ) .
+			dgf_b_sc( '[dgf_children slugs="' . implode( ',', dgf_interior_category_slugs() ) . '"]' ),
+			'dgf-section dgf-products'
+		);
+		$html .= dgf_section_features( __( 'How it works', 'dgf' ), __( 'Measured, made and installed', 'dgf' ), dgf_default_steps(), 'dgf-steps' );
+		$html .= dgf_b_sc( '[dgf_parent_company]' );
+	} elseif ( 'interior-category' === $p['hub_of'] ) {
+		$html .= dgf_b_group(
+			dgf_b_heading_pair( dgf_opt( 'parent_name' ), sprintf( '%s in Dubai &amp; the UAE', $p['title'] ) ) .
+			dgf_b_p( $p['intro'] ) .
+			dgf_b_sc( '[dgf_children parent="' . $slug . '"]' ),
+			'dgf-section dgf-products'
+		);
+		$html .= dgf_section_features( __( 'How it works', 'dgf' ), __( 'Measured, made and installed', 'dgf' ), dgf_default_steps(), 'dgf-steps' );
+		$html .= dgf_b_group(
+			dgf_b_heading_pair( __( 'More services', 'dgf' ), __( 'Explore other Casa Vera Home services', 'dgf' ) ) .
+			dgf_b_sc( '[dgf_children slugs="' . implode( ',', array_diff( dgf_interior_category_slugs(), array( $slug ) ) ) . '"]' ),
+			'dgf-section dgf-related'
+		);
+		$html .= dgf_b_sc( '[dgf_parent_company]' );
 	} elseif ( 'services' === $p['hub_of'] ) {
 		$html .= dgf_b_group(
 			dgf_b_heading_pair( __( 'End to end', 'dgf' ), __( 'From first message to finished floor', 'dgf' ) ) .
@@ -497,6 +555,14 @@ function dgf_build_home() {
 		dgf_b_sc( '[dgf_children parent="gym-flooring-products" limit="8"]' ) .
 		dgf_b_buttons( array( array( __( 'View all products', 'dgf' ), dgf_page_url( 'gym-flooring-products' ), 'outline' ) ) ),
 		'dgf-section dgf-products'
+	);
+
+	$html .= dgf_b_group(
+		dgf_b_heading_pair( dgf_opt( 'parent_name' ) . ' services', __( 'Interiors, flooring &amp; upholstery', 'dgf' ) ) .
+		dgf_b_p( 'The same team also measures, makes and installs curtains, blinds, carpets, wallpaper, upholstery and flooring for homes, offices and hotels.' ) .
+		dgf_b_sc( '[dgf_children slugs="' . implode( ',', dgf_interior_category_slugs() ) . '"]' ) .
+		dgf_b_buttons( array( array( __( 'All interior services', 'dgf' ), dgf_page_url( 'interiors' ), 'outline' ) ) ),
+		'dgf-section dgf-interiors'
 	);
 
 	$html .= dgf_section_features( __( 'How it works', 'dgf' ), __( 'From WhatsApp to finished floor', 'dgf' ), dgf_default_steps(), 'dgf-steps' );

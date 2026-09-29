@@ -1015,7 +1015,7 @@ function dgf_pages_data() {
 		);
 	}
 
-	return $pages;
+	return array_merge( $pages, dgf_interiors_data() );
 }
 
 /**

@@ -160,10 +160,29 @@ function dgf_sc_children( $atts ) {
 			'style'   => 'cards',
 			'limit'   => 0,
 			'emirate' => '',
+			'slugs'   => '',
 		),
 		$atts,
 		'dgf_children'
 	);
+	// slugs="a,b,c" lists those specific pages in that order (e.g. category cards on the home page).
+	if ( $atts['slugs'] ) {
+		$list = array();
+		foreach ( array_filter( array_map( 'trim', explode( ',', $atts['slugs'] ) ) ) as $slug ) {
+			$found = dgf_get_page( $slug );
+			if ( $found && 'publish' === $found->post_status ) {
+				$list[] = $found;
+			}
+		}
+		if ( ! $list ) {
+			return '';
+		}
+		$out = '<div class="dgf-cards">';
+		foreach ( $list as $item ) {
+			$out .= dgf_page_card( $item );
+		}
+		return $out . '</div>';
+	}
 	$parent = $atts['parent'] ? dgf_get_page( $atts['parent'] ) : get_post( get_queried_object_id() );
 	if ( ! $parent ) {
 		return '';

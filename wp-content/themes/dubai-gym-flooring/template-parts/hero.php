@@ -20,12 +20,19 @@ $dgf_labels  = array(
 	'location' => __( 'Areas we serve', 'dgf' ),
 );
 $dgf_eyebrow = isset( $dgf_labels[ $dgf_type ] ) ? $dgf_labels[ $dgf_type ] : dgf_opt( 'brand_name' );
+if ( 'interior' === $dgf_type && wp_get_post_parent_id( $dgf_id ) ) {
+	$dgf_eyebrow = sprintf( '%s · %s', wp_strip_all_tags( get_the_title( wp_get_post_parent_id( $dgf_id ) ) ), dgf_opt( 'parent_name' ) );
+}
 if ( 'location' === $dgf_type && get_post_meta( $dgf_id, '_dgf_emirate', true ) ) {
 	$dgf_eyebrow = sprintf( '%s · %s', __( 'Gym flooring', 'dgf' ), get_post_meta( $dgf_id, '_dgf_emirate', true ) );
 }
 $dgf_second = in_array( $dgf_type, array( 'product', 'location', 'service', 'home' ), true )
 	? array( __( 'Download catalogue', 'dgf' ), dgf_page_url( 'catalogues' ) )
 	: array( __( 'Explore products', 'dgf' ), dgf_page_url( 'gym-flooring-products' ) );
+if ( 'interior' === $dgf_type && wp_get_post_parent_id( $dgf_id ) ) {
+	/* translators: %s: category name, e.g. Curtains */
+	$dgf_second = array( sprintf( __( 'All %s', 'dgf' ), wp_strip_all_tags( get_the_title( wp_get_post_parent_id( $dgf_id ) ) ) ), get_permalink( wp_get_post_parent_id( $dgf_id ) ) );
+}
 
 $dgf_thumb_id = (int) get_post_thumbnail_id( $dgf_id );
 $dgf_meta     = $dgf_thumb_id ? wp_get_attachment_metadata( $dgf_thumb_id ) : array();

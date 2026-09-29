@@ -224,7 +224,7 @@ function dgf_lead_form( $args = array() ) {
 	);
 	// Preselect the product on product/service pages; elsewhere let the visitor choose.
 	$qid      = get_queried_object_id();
-	$current  = ( $qid && in_array( get_post_meta( $qid, '_dgf_type', true ), array( 'product', 'service' ), true ) ) ? wp_strip_all_tags( get_the_title( $qid ) ) : __( 'Not sure — please advise', 'dgf' );
+	$current  = ( $qid && in_array( get_post_meta( $qid, '_dgf_type', true ), array( 'product', 'service', 'interior' ), true ) ) ? wp_strip_all_tags( get_the_title( $qid ) ) : __( 'Not sure — please advise', 'dgf' );
 	$selected = $args['product'] ? $args['product'] : $current;
 	$place    = get_queried_object_id() ? get_post_meta( get_queried_object_id(), '_dgf_emirate', true ) : '';
 	$status   = isset( $_GET['dgf_lead'] ) ? sanitize_key( $_GET['dgf_lead'] ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended

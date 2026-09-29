@@ -32,6 +32,18 @@ function dgf_on_activate( $old_name = '', $old_theme = null ) {
 	}
 }
 
+add_action( 'admin_init', 'dgf_maybe_upgrade' );
+/**
+ * After a theme update (new version uploaded), add any new pages and menu items
+ * automatically on the next wp-admin visit. Existing content is kept.
+ */
+function dgf_maybe_upgrade() {
+	$installed = get_option( 'dgf_installed' );
+	if ( $installed && version_compare( (string) $installed, DGF_VERSION, '<' ) && current_user_can( 'edit_theme_options' ) ) {
+		dgf_install();
+	}
+}
+
 /**
  * Core pages that replace an existing page with the same slug when that page
  * was not made by this theme (e.g. a previous template's demo "About" page).
@@ -52,6 +64,7 @@ function dgf_install() {
 	$result = dgf_install_pages();
 	dgf_install_settings();
 	dgf_install_menus();
+	dgf_install_interiors_menu();
 	update_option( 'dgf_installed', DGF_VERSION );
 	return $result;
 }
@@ -88,7 +101,7 @@ function dgf_install_pages( $rebuild = array() ) {
 		$is_ours = $existing && '' !== (string) get_post_meta( $existing->ID, '_dgf_type', true );
 
 		// Adopt: unpublished leftovers (e.g. WordPress's "Privacy Policy" draft) and core pages from a previous theme.
-		if ( $existing && ! $is_ours && ( 'publish' !== $existing->post_status || in_array( $slug, dgf_adoptable_slugs(), true ) ) ) {
+		if ( $existing && ! $is_ours && ( 'publish' !== $existing->post_status || in_array( $slug, dgf_adoptable_slugs(), true ) || ! empty( $page['adopt'] ) ) ) {
 			wp_update_post(
 				wp_slash(
 					array(
@@ -497,4 +510,38 @@ function dgf_setup_screen() {
 		</table>
 	</div>
 	<?php
+}
+
+/**
+ * Add the "Interiors" dropdown (6 categories) to the header menu if it is not there yet.
+ */
+function dgf_install_interiors_menu() {
+	$locations = get_theme_mod( 'nav_menu_locations', array() );
+	if ( empty( $locations['primary'] ) ) {
+		return;
+	}
+	$menu_id = (int) $locations['primary'];
+	$hub     = dgf_get_page( 'interiors' );
+	if ( ! $hub ) {
+		return;
+	}
+	foreach ( (array) wp_get_nav_menu_items( $menu_id ) as $item ) {
+		if ( 'page' === $item->object && (int) $item->object_id === (int) $hub->ID ) {
+			return; // Already added.
+		}
+	}
+	$parent = (int) wp_update_nav_menu_item(
+		$menu_id,
+		0,
+		array(
+			'menu-item-title'     => 'Interiors',
+			'menu-item-object'    => 'page',
+			'menu-item-object-id' => $hub->ID,
+			'menu-item-type'      => 'post_type',
+			'menu-item-status'    => 'publish',
+		)
+	);
+	foreach ( dgf_interior_category_slugs() as $slug ) {
+		dgf_menu_add_page( $menu_id, $slug, $parent );
+	}
 }
