@@ -40,7 +40,18 @@ add_action( 'rest_api_init', 'dce_register_install_route' );
  * @return array|WP_Error
  */
 function dce_rest_install( $request ) {
-	$raw  = base64_decode( (string) $request->get_param( 'gz' ), true );
+	$gz  = (string) $request->get_param( 'gz' );
+	$src = (string) $request->get_param( 'url' );
+	// Optionally fetch the payload from this site's public GitHub build branch.
+	if ( '' === $gz && 0 === strpos( $src, 'https://raw.githubusercontent.com/flyondigitalservice-cyber/WordPress/' ) ) {
+		$res = wp_remote_get( $src, array( 'timeout' => 30 ) );
+		if ( is_wp_error( $res ) || 200 !== wp_remote_retrieve_response_code( $res ) ) {
+			return new WP_Error( 'dce_fetch_failed', 'Payload download failed.', array( 'status' => 502 ) );
+		}
+		$body = json_decode( wp_remote_retrieve_body( $res ), true );
+		$gz   = isset( $body['gz'] ) ? (string) $body['gz'] : '';
+	}
+	$raw  = base64_decode( $gz, true );
 	$json = $raw ? gzdecode( $raw ) : false;
 	$data = $json ? json_decode( $json, true ) : null;
 	if ( ! is_array( $data ) ) {
