@@ -5,7 +5,7 @@ so pages open in the block editor without "invalid block" warnings. The
 output is verified with @wordpress/blocks (see validate.cjs).
 """
 import json
-from html import escape
+from html import escape, unescape
 from urllib.parse import quote
 
 from data import WA, TEL, BRAND
@@ -40,7 +40,8 @@ def p(html, class_name=None):
 
 
 def kicker(text):
-    return p(escape(text), "dce-kicker")
+    # Accepts plain text or text with entities; normalise so "&" renders once.
+    return p(escape(unescape(text), quote=False), "dce-kicker")
 
 
 def lead(html):
