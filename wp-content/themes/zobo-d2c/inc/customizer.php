@@ -10,7 +10,7 @@
  *
  * @return array
  */
-function zobo_defaults() {
+function zobod2c_defaults() {
 	return array(
 		'hero_eyebrow'  => __( 'Idea → Brand → Shelf → Sales', 'zobo-d2c' ),
 		'hero_title'    => __( 'You bring the idea. We build the brand that sells it.', 'zobo-d2c' ),
@@ -35,8 +35,8 @@ function zobo_defaults() {
  * @param string $key Setting key.
  * @return string
  */
-function zobo_opt( $key ) {
-	$defaults = zobo_defaults();
+function zobod2c_opt( $key ) {
+	$defaults = zobod2c_defaults();
 	$default  = isset( $defaults[ $key ] ) ? $defaults[ $key ] : '';
 	return (string) get_theme_mod( 'zobo_' . $key, $default );
 }
@@ -46,7 +46,7 @@ function zobo_opt( $key ) {
  *
  * @param WP_Customize_Manager $wp_customize Customizer manager.
  */
-function zobo_customize_register( $wp_customize ) {
+function zobod2c_customize_register( $wp_customize ) {
 	$wp_customize->add_panel(
 		'zobo-d2c',
 		array(
@@ -92,7 +92,7 @@ function zobo_customize_register( $wp_customize ) {
 		),
 	);
 
-	$defaults = zobo_defaults();
+	$defaults = zobod2c_defaults();
 
 	foreach ( $sections as $section_id => $section ) {
 		$wp_customize->add_section(
@@ -134,4 +134,4 @@ function zobo_customize_register( $wp_customize ) {
 		}
 	}
 }
-add_action( 'customize_register', 'zobo_customize_register' );
+add_action( 'customize_register', 'zobod2c_customize_register' );

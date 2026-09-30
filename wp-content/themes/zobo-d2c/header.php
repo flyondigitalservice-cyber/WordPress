@@ -5,7 +5,7 @@
  * @package Zobo
  */
 
-$zobo_cta = zobo_opt( 'calendar_url' ) ? zobo_opt( 'calendar_url' ) : ( is_front_page() ? '#contact' : home_url( '/#contact' ) );
+$zobo_cta = zobod2c_opt( 'calendar_url' ) ? zobod2c_opt( 'calendar_url' ) : ( is_front_page() ? '#contact' : home_url( '/#contact' ) );
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -26,28 +26,31 @@ $zobo_cta = zobo_opt( 'calendar_url' ) ? zobo_opt( 'calendar_url' ) : ( is_front
 				<?php the_custom_logo(); ?>
 			<?php else : ?>
 				<a class="wordmark" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<?php bloginfo( 'name' ); ?><span class="wordmark-dot">.</span>
+					<?php echo esc_html( zobod2c_brand_name() ); ?><span class="wordmark-dot">.</span>
 				</a>
 			<?php endif; ?>
 		</div>
 
 		<nav class="primary-nav" id="primary-nav" aria-label="<?php esc_attr_e( 'Primary', 'zobo-d2c' ); ?>" data-nav>
 			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'primary',
-					'container'      => false,
-					'fallback_cb'    => 'zobo_fallback_menu',
-					'depth'          => 1,
-				)
-			);
+			if ( has_nav_menu( 'primary' ) ) {
+				wp_nav_menu(
+					array(
+						'theme_location' => 'primary',
+						'container'      => false,
+						'depth'          => 1,
+					)
+				);
+			} else {
+				zobod2c_fallback_menu();
+			}
 			?>
 			<a class="btn btn-primary nav-cta-mobile" href="<?php echo esc_url( $zobo_cta ); ?>"><?php esc_html_e( 'Book a free call', 'zobo-d2c' ); ?></a>
 		</nav>
 
 		<div class="header-actions">
 			<a class="btn btn-primary btn-sm header-cta" href="<?php echo esc_url( $zobo_cta ); ?>">
-				<?php esc_html_e( 'Book a free call', 'zobo-d2c' ); ?> <?php echo zobo_icon( 'arrow' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+				<?php esc_html_e( 'Book a free call', 'zobo-d2c' ); ?> <?php echo zobod2c_icon( 'arrow' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 			</a>
 			<button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" data-nav-toggle>
 				<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'zobo-d2c' ); ?></span>

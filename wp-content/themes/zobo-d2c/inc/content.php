@@ -12,7 +12,7 @@
  *
  * @return array
  */
-function zobo_journey() {
+function zobod2c_journey() {
 	return array(
 		array(
 			'phase'  => __( 'Shape it', 'zobo-d2c' ),
@@ -111,7 +111,7 @@ function zobo_journey() {
  *
  * @return array
  */
-function zobo_services() {
+function zobod2c_services() {
 	return array(
 		array(
 			'size'  => 'wide',
@@ -156,7 +156,7 @@ function zobo_services() {
  *
  * @return array
  */
-function zobo_plans() {
+function zobod2c_plans() {
 	return array(
 		array(
 			'name'     => __( 'Spark', 'zobo-d2c' ),
@@ -203,7 +203,7 @@ function zobo_plans() {
  *
  * @return array
  */
-function zobo_industries() {
+function zobod2c_industries() {
 	return array(
 		array(
 			'title' => __( 'Food & Beverage', 'zobo-d2c' ),
@@ -243,7 +243,7 @@ function zobo_industries() {
  *
  * @return array
  */
-function zobo_clients() {
+function zobod2c_clients() {
 	return array(
 		array(
 			'name' => 'One Love',
@@ -271,7 +271,7 @@ function zobo_clients() {
  *
  * @return array
  */
-function zobo_audiences() {
+function zobod2c_audiences() {
 	return array(
 		array(
 			'title' => __( 'First-time founders', 'zobo-d2c' ),
@@ -293,7 +293,7 @@ function zobo_audiences() {
  *
  * @return array
  */
-function zobo_faqs() {
+function zobod2c_faqs() {
 	return array(
 		array(
 			'q' => __( 'I only have an idea. Is that too early?', 'zobo-d2c' ),

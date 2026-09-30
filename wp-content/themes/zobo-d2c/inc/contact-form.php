@@ -10,7 +10,7 @@
  *
  * @return array
  */
-function zobo_form_stages() {
+function zobod2c_form_stages() {
 	return array(
 		'idea'    => __( 'Just an idea', 'zobo-d2c' ),
 		'brand'   => __( 'Have a brand, not selling yet', 'zobo-d2c' ),
@@ -23,8 +23,8 @@ function zobo_form_stages() {
  *
  * @return array
  */
-function zobo_form_categories() {
-	$cats = wp_list_pluck( zobo_industries(), 'title' );
+function zobod2c_form_categories() {
+	$cats = wp_list_pluck( zobod2c_industries(), 'title' );
 	$cats[] = __( 'Other', 'zobo-d2c' );
 	return $cats;
 }
@@ -32,7 +32,7 @@ function zobo_form_categories() {
 /**
  * Handle the enquiry form and email it to the Customizer address.
  */
-function zobo_handle_enquiry() {
+function zobod2c_handle_enquiry() {
 	$redirect = wp_get_referer() ? wp_get_referer() : home_url( '/' );
 	$redirect = remove_query_arg( 'enquiry', $redirect );
 
@@ -59,12 +59,12 @@ function zobo_handle_enquiry() {
 		exit;
 	}
 
-	$stages = zobo_form_stages();
+	$stages = zobod2c_form_stages();
 	$stage  = isset( $stages[ $stage ] ) ? $stages[ $stage ] : '';
-	if ( ! in_array( $category, zobo_form_categories(), true ) ) {
+	if ( ! in_array( $category, zobod2c_form_categories(), true ) ) {
 		$category = '';
 	}
-	$to     = zobo_opt( 'email' );
+	$to     = zobod2c_opt( 'email' );
 	if ( ! is_email( $to ) ) {
 		$to = get_option( 'admin_email' );
 	}
@@ -90,5 +90,5 @@ function zobo_handle_enquiry() {
 	wp_safe_redirect( add_query_arg( 'enquiry', $sent ? 'sent' : 'error', $redirect ) . '#contact' );
 	exit;
 }
-add_action( 'admin_post_nopriv_zobo_enquiry', 'zobo_handle_enquiry' );
-add_action( 'admin_post_zobo_enquiry', 'zobo_handle_enquiry' );
+add_action( 'admin_post_nopriv_zobo_enquiry', 'zobod2c_handle_enquiry' );
+add_action( 'admin_post_zobo_enquiry', 'zobod2c_handle_enquiry' );

@@ -7,11 +7,11 @@
 
 get_header();
 
-$zobo_cta     = zobo_opt( 'calendar_url' ) ? zobo_opt( 'calendar_url' ) : '#contact';
-$zobo_wa      = zobo_whatsapp_url();
-$zobo_journey = zobo_journey();
+$zobo_cta     = zobod2c_opt( 'calendar_url' ) ? zobod2c_opt( 'calendar_url' ) : '#contact';
+$zobo_wa      = zobod2c_whatsapp_url();
+$zobod2c_journey = zobod2c_journey();
 $zobo_step    = 0;
-$zobo_stages  = array_sum( array_map( 'count', wp_list_pluck( $zobo_journey, 'stages' ) ) );
+$zobo_stages  = array_sum( array_map( 'count', wp_list_pluck( $zobod2c_journey, 'stages' ) ) );
 $zobo_marquee = array(
 	__( 'Idea', 'zobo-d2c' ),
 	__( 'Logo', 'zobo-d2c' ),
@@ -33,16 +33,16 @@ $zobo_status  = isset( $_GET['enquiry'] ) ? sanitize_key( wp_unslash( $_GET['enq
 <section class="hero">
 	<div class="container hero-grid">
 		<div class="hero-copy">
-			<p class="eyebrow reveal"><span class="pulse" aria-hidden="true"></span><?php echo esc_html( zobo_opt( 'hero_eyebrow' ) ); ?></p>
-			<h1 class="hero-title reveal"><?php echo esc_html( zobo_opt( 'hero_title' ) ); ?></h1>
-			<p class="hero-text reveal"><?php echo esc_html( zobo_opt( 'hero_text' ) ); ?></p>
+			<p class="eyebrow reveal"><span class="pulse" aria-hidden="true"></span><?php echo esc_html( zobod2c_opt( 'hero_eyebrow' ) ); ?></p>
+			<h1 class="hero-title reveal"><?php echo esc_html( zobod2c_opt( 'hero_title' ) ); ?></h1>
+			<p class="hero-text reveal"><?php echo esc_html( zobod2c_opt( 'hero_text' ) ); ?></p>
 			<div class="hero-actions reveal">
 				<a class="btn btn-primary btn-lg" href="<?php echo esc_url( $zobo_cta ); ?>">
-					<?php esc_html_e( 'Start my brand', 'zobo-d2c' ); ?> <?php echo zobo_icon( 'arrow' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+					<?php esc_html_e( 'Start my brand', 'zobo-d2c' ); ?> <?php echo zobod2c_icon( 'arrow' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 				</a>
 				<?php if ( $zobo_wa ) : ?>
 					<a class="btn btn-ghost btn-lg" href="<?php echo esc_url( $zobo_wa ); ?>" target="_blank" rel="noopener">
-						<?php echo zobo_icon( 'whatsapp' ); // phpcs:ignore WordPress.Security.EscapeOutput ?> <?php esc_html_e( 'WhatsApp us', 'zobo-d2c' ); ?>
+						<?php echo zobod2c_icon( 'whatsapp' ); // phpcs:ignore WordPress.Security.EscapeOutput ?> <?php esc_html_e( 'WhatsApp us', 'zobo-d2c' ); ?>
 					</a>
 				<?php else : ?>
 					<a class="btn btn-ghost btn-lg" href="#journey"><?php esc_html_e( 'See the journey', 'zobo-d2c' ); ?></a>
@@ -82,7 +82,7 @@ $zobo_status  = isset( $_GET['enquiry'] ) ? sanitize_key( wp_unslash( $_GET['enq
 				<svg viewBox="0 0 120 40" class="spark"><path d="M0 34 L15 30 L30 32 L45 22 L60 24 L75 14 L90 16 L105 6 L120 4" /></svg>
 			</div>
 			<div class="float-card float-tag">
-				<?php echo zobo_icon( 'star' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+				<?php echo zobod2c_icon( 'star' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 				<span><?php esc_html_e( 'Creator campaign live', 'zobo-d2c' ); ?></span>
 			</div>
 		</div>
@@ -141,7 +141,7 @@ $zobo_status  = isset( $_GET['enquiry'] ) ? sanitize_key( wp_unslash( $_GET['enq
 		</div>
 
 		<div class="phases">
-			<?php foreach ( $zobo_journey as $zobo_phase_index => $zobo_phase ) : ?>
+			<?php foreach ( $zobod2c_journey as $zobo_phase_index => $zobo_phase ) : ?>
 				<div class="phase reveal">
 					<div class="phase-head">
 						<span class="phase-num"><?php echo esc_html( sprintf( '0%d', $zobo_phase_index + 1 ) ); ?></span>
@@ -152,7 +152,7 @@ $zobo_status  = isset( $_GET['enquiry'] ) ? sanitize_key( wp_unslash( $_GET['enq
 						<?php foreach ( $zobo_phase['stages'] as $zobo_stage ) : ?>
 							<?php $zobo_step++; ?>
 							<li class="stage">
-								<span class="stage-icon"><?php echo zobo_icon( $zobo_stage['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput ?></span>
+								<span class="stage-icon"><?php echo zobod2c_icon( $zobo_stage['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput ?></span>
 								<div>
 									<h4 class="stage-title"><span class="stage-no"><?php echo esc_html( str_pad( (string) $zobo_step, 2, '0', STR_PAD_LEFT ) ); ?></span><?php echo esc_html( $zobo_stage['title'] ); ?></h4>
 									<p><?php echo esc_html( $zobo_stage['text'] ); ?></p>
@@ -173,7 +173,7 @@ $zobo_status  = isset( $_GET['enquiry'] ) ? sanitize_key( wp_unslash( $_GET['enq
 			<h2 class="section-title"><?php esc_html_e( 'Everything a D2C brand needs, under one roof.', 'zobo-d2c' ); ?></h2>
 		</div>
 		<div class="bento">
-			<?php foreach ( zobo_services() as $zobo_service ) : ?>
+			<?php foreach ( zobod2c_services() as $zobo_service ) : ?>
 				<article class="bento-card reveal <?php echo esc_attr( trim( 'tone-' . $zobo_service['tone'] . ' ' . ( $zobo_service['size'] ? 'is-' . $zobo_service['size'] : '' ) ) ); ?>">
 					<span class="chip"><?php echo esc_html( $zobo_service['tag'] ); ?></span>
 					<h3><?php echo esc_html( $zobo_service['title'] ); ?></h3>
@@ -196,7 +196,7 @@ $zobo_status  = isset( $_GET['enquiry'] ) ? sanitize_key( wp_unslash( $_GET['enq
 			<p class="section-lead"><?php esc_html_e( 'Every category has its own licences, lab tests and buyer psychology. We know the rules before you pay to learn them.', 'zobo-d2c' ); ?></p>
 		</div>
 		<div class="industry-grid">
-			<?php foreach ( zobo_industries() as $zobo_ind ) : ?>
+			<?php foreach ( zobod2c_industries() as $zobo_ind ) : ?>
 				<div class="industry-card reveal">
 					<h3><?php echo esc_html( $zobo_ind['title'] ); ?></h3>
 					<p><?php echo esc_html( $zobo_ind['text'] ); ?></p>
@@ -218,7 +218,7 @@ $zobo_status  = isset( $_GET['enquiry'] ) ? sanitize_key( wp_unslash( $_GET['enq
 			<h2 class="section-title"><?php esc_html_e( 'For founders who want to build something that changes things.', 'zobo-d2c' ); ?></h2>
 		</div>
 		<div class="audience-grid">
-			<?php foreach ( zobo_audiences() as $zobo_i => $zobo_aud ) : ?>
+			<?php foreach ( zobod2c_audiences() as $zobo_i => $zobo_aud ) : ?>
 				<div class="audience-card reveal">
 					<span class="audience-num"><?php echo esc_html( sprintf( '0%d', $zobo_i + 1 ) ); ?></span>
 					<h3><?php echo esc_html( $zobo_aud['title'] ); ?></h3>
@@ -237,7 +237,7 @@ $zobo_status  = isset( $_GET['enquiry'] ) ? sanitize_key( wp_unslash( $_GET['enq
 			<p class="section-lead"><?php esc_html_e( 'Every plan is scoped to your category. Tell us where you are and we will send a fixed proposal.', 'zobo-d2c' ); ?></p>
 		</div>
 		<div class="plan-grid">
-			<?php foreach ( zobo_plans() as $zobo_plan ) : ?>
+			<?php foreach ( zobod2c_plans() as $zobo_plan ) : ?>
 				<div class="plan reveal<?php echo $zobo_plan['featured'] ? ' is-featured' : ''; ?>">
 					<?php if ( $zobo_plan['featured'] ) : ?>
 						<span class="plan-badge"><?php esc_html_e( 'Most founders start here', 'zobo-d2c' ); ?></span>
@@ -263,8 +263,8 @@ $zobo_status  = isset( $_GET['enquiry'] ) ? sanitize_key( wp_unslash( $_GET['enq
 				<p class="kicker"><?php esc_html_e( 'Work', 'zobo-d2c' ); ?></p>
 				<h2 class="section-title"><?php esc_html_e( 'Brands we’ve worked with.', 'zobo-d2c' ); ?></h2>
 			</div>
-			<?php if ( zobo_opt( 'behance' ) ) : ?>
-				<a class="btn btn-outline" href="<?php echo esc_url( zobo_opt( 'behance' ) ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Full portfolio on Behance', 'zobo-d2c' ); ?> <?php echo zobo_icon( 'arrow' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></a>
+			<?php if ( zobod2c_opt( 'behance' ) ) : ?>
+				<a class="btn btn-outline" href="<?php echo esc_url( zobod2c_opt( 'behance' ) ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Full portfolio on Behance', 'zobo-d2c' ); ?> <?php echo zobod2c_icon( 'arrow' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></a>
 			<?php endif; ?>
 		</div>
 
@@ -302,12 +302,12 @@ $zobo_status  = isset( $_GET['enquiry'] ) ? sanitize_key( wp_unslash( $_GET['enq
 			<?php wp_reset_postdata(); ?>
 		<?php else : ?>
 			<div class="client-grid">
-				<?php foreach ( zobo_clients() as $zobo_client ) : ?>
+				<?php foreach ( zobod2c_clients() as $zobo_client ) : ?>
 					<a class="client-card reveal" href="<?php echo esc_url( $zobo_client['url'] ); ?>" target="_blank" rel="noopener">
 						<span class="chip"><?php echo esc_html( $zobo_client['cat'] ); ?></span>
 						<h3><?php echo esc_html( $zobo_client['name'] ); ?></h3>
 						<p><?php echo esc_html( $zobo_client['text'] ); ?></p>
-						<span class="client-link"><?php esc_html_e( 'Visit brand', 'zobo-d2c' ); ?> <?php echo zobo_icon( 'arrow' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></span>
+						<span class="client-link"><?php esc_html_e( 'Visit brand', 'zobo-d2c' ); ?> <?php echo zobod2c_icon( 'arrow' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></span>
 					</a>
 				<?php endforeach; ?>
 			</div>
@@ -322,9 +322,9 @@ $zobo_status  = isset( $_GET['enquiry'] ) ? sanitize_key( wp_unslash( $_GET['enq
 			<h2 class="section-title"><?php esc_html_e( 'Questions founders ask us.', 'zobo-d2c' ); ?></h2>
 		</div>
 		<div class="faq-list">
-			<?php foreach ( zobo_faqs() as $zobo_faq ) : ?>
+			<?php foreach ( zobod2c_faqs() as $zobo_faq ) : ?>
 				<details class="faq-item reveal">
-					<summary><?php echo esc_html( $zobo_faq['q'] ); ?><span class="faq-plus"><?php echo zobo_icon( 'plus' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></span></summary>
+					<summary><?php echo esc_html( $zobo_faq['q'] ); ?><span class="faq-plus"><?php echo zobod2c_icon( 'plus' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></span></summary>
 					<p><?php echo esc_html( $zobo_faq['a'] ); ?></p>
 				</details>
 			<?php endforeach; ?>
@@ -339,20 +339,20 @@ $zobo_status  = isset( $_GET['enquiry'] ) ? sanitize_key( wp_unslash( $_GET['enq
 			<h2 class="contact-title"><?php esc_html_e( 'Got an idea? Let’s put it on shelves.', 'zobo-d2c' ); ?></h2>
 			<p><?php esc_html_e( 'Tell us what you want to build. We reply within one working day with next steps, a rough timeline and the licences your category needs.', 'zobo-d2c' ); ?></p>
 			<ul class="contact-list">
-				<?php if ( zobo_opt( 'email' ) ) : ?>
-					<li><?php echo zobo_icon( 'mail' ); // phpcs:ignore WordPress.Security.EscapeOutput ?><a href="mailto:<?php echo esc_attr( antispambot( zobo_opt( 'email' ) ) ); ?>"><?php echo esc_html( antispambot( zobo_opt( 'email' ) ) ); ?></a></li>
+				<?php if ( zobod2c_opt( 'email' ) ) : ?>
+					<li><?php echo zobod2c_icon( 'mail' ); // phpcs:ignore WordPress.Security.EscapeOutput ?><a href="mailto:<?php echo esc_attr( antispambot( zobod2c_opt( 'email' ) ) ); ?>"><?php echo esc_html( antispambot( zobod2c_opt( 'email' ) ) ); ?></a></li>
 				<?php endif; ?>
-				<?php if ( zobo_opt( 'phone' ) ) : ?>
-					<li><?php echo zobo_icon( 'phone' ); // phpcs:ignore WordPress.Security.EscapeOutput ?><a href="tel:<?php echo esc_attr( preg_replace( '/[^\d+]/', '', zobo_opt( 'phone' ) ) ); ?>"><?php echo esc_html( zobo_opt( 'phone' ) ); ?></a></li>
+				<?php if ( zobod2c_opt( 'phone' ) ) : ?>
+					<li><?php echo zobod2c_icon( 'phone' ); // phpcs:ignore WordPress.Security.EscapeOutput ?><a href="tel:<?php echo esc_attr( preg_replace( '/[^\d+]/', '', zobod2c_opt( 'phone' ) ) ); ?>"><?php echo esc_html( zobod2c_opt( 'phone' ) ); ?></a></li>
 				<?php endif; ?>
 				<?php if ( $zobo_wa ) : ?>
-					<li><?php echo zobo_icon( 'whatsapp' ); // phpcs:ignore WordPress.Security.EscapeOutput ?><a href="<?php echo esc_url( $zobo_wa ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Chat on WhatsApp', 'zobo-d2c' ); ?></a></li>
+					<li><?php echo zobod2c_icon( 'whatsapp' ); // phpcs:ignore WordPress.Security.EscapeOutput ?><a href="<?php echo esc_url( $zobo_wa ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Chat on WhatsApp', 'zobo-d2c' ); ?></a></li>
 				<?php endif; ?>
-				<?php if ( zobo_opt( 'address' ) ) : ?>
-					<li><?php echo zobo_icon( 'pin' ); // phpcs:ignore WordPress.Security.EscapeOutput ?><span><?php echo esc_html( zobo_opt( 'address' ) ); ?></span></li>
+				<?php if ( zobod2c_opt( 'address' ) ) : ?>
+					<li><?php echo zobod2c_icon( 'pin' ); // phpcs:ignore WordPress.Security.EscapeOutput ?><span><?php echo esc_html( zobod2c_opt( 'address' ) ); ?></span></li>
 				<?php endif; ?>
-				<?php if ( zobo_opt( 'hours' ) ) : ?>
-					<li><?php echo zobo_icon( 'clock' ); // phpcs:ignore WordPress.Security.EscapeOutput ?><span><?php echo esc_html( zobo_opt( 'hours' ) ); ?></span></li>
+				<?php if ( zobod2c_opt( 'hours' ) ) : ?>
+					<li><?php echo zobod2c_icon( 'clock' ); // phpcs:ignore WordPress.Security.EscapeOutput ?><span><?php echo esc_html( zobod2c_opt( 'hours' ) ); ?></span></li>
 				<?php endif; ?>
 			</ul>
 		</div>
@@ -392,7 +392,7 @@ $zobo_status  = isset( $_GET['enquiry'] ) ? sanitize_key( wp_unslash( $_GET['enq
 					<label for="zobo-category"><?php esc_html_e( 'Category', 'zobo-d2c' ); ?></label>
 					<select id="zobo-category" name="category">
 						<option value=""><?php esc_html_e( 'Select…', 'zobo-d2c' ); ?></option>
-						<?php foreach ( zobo_form_categories() as $zobo_cat ) : ?>
+						<?php foreach ( zobod2c_form_categories() as $zobo_cat ) : ?>
 							<option value="<?php echo esc_attr( $zobo_cat ); ?>"><?php echo esc_html( $zobo_cat ); ?></option>
 						<?php endforeach; ?>
 					</select>
@@ -401,7 +401,7 @@ $zobo_status  = isset( $_GET['enquiry'] ) ? sanitize_key( wp_unslash( $_GET['enq
 			<fieldset class="field">
 				<legend><?php esc_html_e( 'Where are you today?', 'zobo-d2c' ); ?></legend>
 				<div class="radio-pills">
-					<?php foreach ( zobo_form_stages() as $zobo_key => $zobo_label ) : ?>
+					<?php foreach ( zobod2c_form_stages() as $zobo_key => $zobo_label ) : ?>
 						<label><input type="radio" name="stage" value="<?php echo esc_attr( $zobo_key ); ?>" <?php checked( 'idea', $zobo_key ); ?>><span><?php echo esc_html( $zobo_label ); ?></span></label>
 					<?php endforeach; ?>
 				</div>
@@ -410,7 +410,7 @@ $zobo_status  = isset( $_GET['enquiry'] ) ? sanitize_key( wp_unslash( $_GET['enq
 				<label for="zobo-message"><?php esc_html_e( 'Tell us about your idea', 'zobo-d2c' ); ?></label>
 				<textarea id="zobo-message" name="message" rows="4" placeholder="<?php esc_attr_e( 'Product, category, target customer, launch date…', 'zobo-d2c' ); ?>"></textarea>
 			</div>
-			<button class="btn btn-lime btn-lg btn-block" type="submit"><?php esc_html_e( 'Send my idea', 'zobo-d2c' ); ?> <?php echo zobo_icon( 'arrow' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></button>
+			<button class="btn btn-lime btn-lg btn-block" type="submit"><?php esc_html_e( 'Send my idea', 'zobo-d2c' ); ?> <?php echo zobod2c_icon( 'arrow' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></button>
 		</form>
 	</div>
 </section>

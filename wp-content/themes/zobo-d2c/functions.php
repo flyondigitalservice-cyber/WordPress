@@ -5,8 +5,8 @@
  * @package Zobo
  */
 
-if ( ! defined( 'ZOBO_VERSION' ) ) {
-	define( 'ZOBO_VERSION', '1.0.0' );
+if ( ! defined( 'ZOBOD2C_VERSION' ) ) {
+	define( 'ZOBOD2C_VERSION', '1.0.0' );
 }
 
 require get_template_directory() . '/inc/customizer.php';
@@ -16,7 +16,7 @@ require get_template_directory() . '/inc/contact-form.php';
 /**
  * Theme setup.
  */
-function zobo_setup() {
+function zobod2c_setup() {
 	load_theme_textdomain( 'zobo-d2c', get_template_directory() . '/languages' );
 
 	add_theme_support( 'title-tag' );
@@ -44,12 +44,12 @@ function zobo_setup() {
 
 	add_image_size( 'zobo-work', 900, 700, true );
 }
-add_action( 'after_setup_theme', 'zobo_setup' );
+add_action( 'after_setup_theme', 'zobod2c_setup' );
 
 /**
  * Case study post type, so real projects can be added from the dashboard.
  */
-function zobo_register_work() {
+function zobod2c_register_work() {
 	register_post_type(
 		'zobo_work',
 		array(
@@ -68,26 +68,26 @@ function zobo_register_work() {
 		)
 	);
 }
-add_action( 'init', 'zobo_register_work' );
+add_action( 'init', 'zobod2c_register_work' );
 
 /**
  * Styles and scripts.
  */
-function zobo_assets() {
+function zobod2c_assets() {
 	wp_enqueue_style(
 		'zobo-fonts',
 		'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap',
 		array(),
 		null
 	);
-	wp_enqueue_style( 'zobo-main', get_template_directory_uri() . '/assets/css/main.css', array( 'zobo-fonts' ), ZOBO_VERSION );
-	wp_enqueue_script( 'zobo-main', get_template_directory_uri() . '/assets/js/main.js', array(), ZOBO_VERSION, true );
+	wp_enqueue_style( 'zobo-main', get_template_directory_uri() . '/assets/css/main.css', array( 'zobo-fonts' ), ZOBOD2C_VERSION );
+	wp_enqueue_script( 'zobo-main', get_template_directory_uri() . '/assets/js/main.js', array(), ZOBOD2C_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'zobo_assets' );
+add_action( 'wp_enqueue_scripts', 'zobod2c_assets' );
 
 /**
  * Preconnect to Google Fonts.
@@ -96,7 +96,7 @@ add_action( 'wp_enqueue_scripts', 'zobo_assets' );
  * @param string $relation_type The relation type the URLs are printed for.
  * @return array
  */
-function zobo_resource_hints( $urls, $relation_type ) {
+function zobod2c_resource_hints( $urls, $relation_type ) {
 	if ( 'preconnect' === $relation_type ) {
 		$urls[] = 'https://fonts.googleapis.com';
 		$urls[] = array(
@@ -106,12 +106,12 @@ function zobo_resource_hints( $urls, $relation_type ) {
 	}
 	return $urls;
 }
-add_filter( 'wp_resource_hints', 'zobo_resource_hints', 10, 2 );
+add_filter( 'wp_resource_hints', 'zobod2c_resource_hints', 10, 2 );
 
 /**
  * Fallback primary menu pointing at front-page sections.
  */
-function zobo_fallback_menu() {
+function zobod2c_fallback_menu() {
 	$items = array(
 		'#journey'  => __( 'Journey', 'zobo-d2c' ),
 		'#services' => __( 'Services', 'zobo-d2c' ),
@@ -129,13 +129,25 @@ function zobo_fallback_menu() {
 }
 
 /**
+ * Site name for the wordmark, without a trailing domain suffix
+ * (a site titled "zobo.co.in" shows as "zobo").
+ *
+ * @return string
+ */
+function zobod2c_brand_name() {
+	$name = get_bloginfo( 'name' );
+	$bare = preg_replace( '/\.(co\.in|in|com|co)$/i', '', $name );
+	return '' !== $bare ? $bare : $name;
+}
+
+/**
  * WhatsApp click-to-chat URL built from the Customizer number.
  *
  * @param string $message Prefilled message.
  * @return string
  */
-function zobo_whatsapp_url( $message = '' ) {
-	$number = preg_replace( '/\D+/', '', zobo_opt( 'whatsapp' ) );
+function zobod2c_whatsapp_url( $message = '' ) {
+	$number = preg_replace( '/\D+/', '', zobod2c_opt( 'whatsapp' ) );
 	if ( '' === $number ) {
 		return '';
 	}
@@ -151,7 +163,7 @@ function zobo_whatsapp_url( $message = '' ) {
  * @param string $name Icon name.
  * @return string
  */
-function zobo_icon( $name ) {
+function zobod2c_icon( $name ) {
 	$icons = array(
 		'arrow'     => '<path d="M5 12h14M13 6l6 6-6 6"/>',
 		'whatsapp'  => '<path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.3-1.9-1-1 .8a4 4 0 0 1-2.3-2.3l.8-1-1-1.9L9 9.5z"/>',
@@ -182,17 +194,17 @@ function zobo_icon( $name ) {
 /**
  * Flag JS support before paint so scroll reveals don't flash.
  */
-function zobo_js_class() {
+function zobod2c_js_class() {
 	echo "<script>document.documentElement.classList.add('js');</script>\n";
 }
-add_action( 'wp_head', 'zobo_js_class', 0 );
+add_action( 'wp_head', 'zobod2c_js_class', 0 );
 
 /**
  * Send visitors from the previous theme's template-only pages, which have no
  * content of their own, to the matching front-page section. A page that gets
  * real content in the editor is shown normally.
  */
-function zobo_legacy_page_redirect() {
+function zobod2c_legacy_page_redirect() {
 	if ( ! is_page() ) {
 		return;
 	}
@@ -211,4 +223,4 @@ function zobo_legacy_page_redirect() {
 	wp_safe_redirect( home_url( '/' ) . $map[ $page->post_name ], 302 );
 	exit;
 }
-add_action( 'template_redirect', 'zobo_legacy_page_redirect' );
+add_action( 'template_redirect', 'zobod2c_legacy_page_redirect' );
