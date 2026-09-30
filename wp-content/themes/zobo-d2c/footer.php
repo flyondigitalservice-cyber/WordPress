@@ -12,6 +12,16 @@ $zobo_socials = array(
 	'youtube'   => 'YouTube',
 );
 $zobo_wa      = zobod2c_whatsapp_url();
+$zobo_footer_menu = ! has_nav_menu( 'footer' ) ? '' : wp_nav_menu(
+	array(
+		'theme_location' => 'footer',
+		'container'      => false,
+		'menu_class'     => 'footer-list',
+		'depth'          => 1,
+		'fallback_cb'    => false,
+		'echo'           => false,
+	)
+);
 ?>
 </main>
 
@@ -56,19 +66,10 @@ $zobo_wa      = zobod2c_whatsapp_url();
 				</ul>
 			</div>
 
-			<?php if ( has_nav_menu( 'footer' ) ) : ?>
+			<?php if ( $zobo_footer_menu ) : ?>
 				<div>
 					<h2 class="footer-title"><?php esc_html_e( 'Company', 'zobo-d2c' ); ?></h2>
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'footer',
-							'container'      => false,
-							'menu_class'     => 'footer-list',
-							'depth'          => 1,
-						)
-					);
-					?>
+					<?php echo $zobo_footer_menu; // phpcs:ignore WordPress.Security.EscapeOutput ?>
 				</div>
 			<?php endif; ?>
 		</div>

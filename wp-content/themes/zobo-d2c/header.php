@@ -33,14 +33,17 @@ $zobo_cta = zobod2c_opt( 'calendar_url' ) ? zobod2c_opt( 'calendar_url' ) : ( is
 
 		<nav class="primary-nav" id="primary-nav" aria-label="<?php esc_attr_e( 'Primary', 'zobo-d2c' ); ?>" data-nav>
 			<?php
-			if ( has_nav_menu( 'primary' ) ) {
-				wp_nav_menu(
-					array(
-						'theme_location' => 'primary',
-						'container'      => false,
-						'depth'          => 1,
-					)
-				);
+			$zobo_menu = ! has_nav_menu( 'primary' ) ? '' : wp_nav_menu(
+				array(
+					'theme_location' => 'primary',
+					'container'      => false,
+					'depth'          => 1,
+					'fallback_cb'    => false,
+					'echo'           => false,
+				)
+			);
+			if ( $zobo_menu ) {
+				echo $zobo_menu; // phpcs:ignore WordPress.Security.EscapeOutput
 			} else {
 				zobod2c_fallback_menu();
 			}
