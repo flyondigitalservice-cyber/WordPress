@@ -266,7 +266,7 @@ ol {
 }
 
 .primary-nav .menu a:hover,
-.primary-nav .current-menu-item > a {
+.primary-nav .current-menu-item.menu-item-object-page > a {
 	background: var(--paper-2);
 }
 
