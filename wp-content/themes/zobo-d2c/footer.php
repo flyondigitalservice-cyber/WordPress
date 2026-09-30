@@ -25,7 +25,7 @@ $zobo_wa      = zobo_whatsapp_url();
 			</div>
 
 			<div>
-				<h2 class="footer-title"><?php esc_html_e( 'Talk to us', 'zobo' ); ?></h2>
+				<h2 class="footer-title"><?php esc_html_e( 'Talk to us', 'zobo-d2c' ); ?></h2>
 				<ul class="footer-list">
 					<?php if ( zobo_opt( 'email' ) ) : ?>
 						<li><a href="mailto:<?php echo esc_attr( antispambot( zobo_opt( 'email' ) ) ); ?>"><?php echo esc_html( antispambot( zobo_opt( 'email' ) ) ); ?></a></li>
@@ -34,16 +34,19 @@ $zobo_wa      = zobo_whatsapp_url();
 						<li><a href="tel:<?php echo esc_attr( preg_replace( '/[^\d+]/', '', zobo_opt( 'phone' ) ) ); ?>"><?php echo esc_html( zobo_opt( 'phone' ) ); ?></a></li>
 					<?php endif; ?>
 					<?php if ( $zobo_wa ) : ?>
-						<li><a href="<?php echo esc_url( $zobo_wa ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'WhatsApp', 'zobo' ); ?></a></li>
+						<li><a href="<?php echo esc_url( $zobo_wa ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'WhatsApp', 'zobo-d2c' ); ?></a></li>
 					<?php endif; ?>
 					<?php if ( zobo_opt( 'address' ) ) : ?>
 						<li><?php echo nl2br( esc_html( zobo_opt( 'address' ) ) ); ?></li>
+					<?php endif; ?>
+					<?php if ( zobo_opt( 'hours' ) ) : ?>
+						<li><?php echo esc_html( zobo_opt( 'hours' ) ); ?></li>
 					<?php endif; ?>
 				</ul>
 			</div>
 
 			<div>
-				<h2 class="footer-title"><?php esc_html_e( 'Follow', 'zobo' ); ?></h2>
+				<h2 class="footer-title"><?php esc_html_e( 'Follow', 'zobo-d2c' ); ?></h2>
 				<ul class="footer-list">
 					<?php foreach ( $zobo_socials as $zobo_key => $zobo_label ) : ?>
 						<?php if ( zobo_opt( $zobo_key ) ) : ?>
@@ -55,7 +58,7 @@ $zobo_wa      = zobo_whatsapp_url();
 
 			<?php if ( has_nav_menu( 'footer' ) ) : ?>
 				<div>
-					<h2 class="footer-title"><?php esc_html_e( 'Company', 'zobo' ); ?></h2>
+					<h2 class="footer-title"><?php esc_html_e( 'Company', 'zobo-d2c' ); ?></h2>
 					<?php
 					wp_nav_menu(
 						array(
@@ -71,14 +74,14 @@ $zobo_wa      = zobo_whatsapp_url();
 		</div>
 
 		<div class="footer-bottom">
-			<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?>. <?php esc_html_e( 'All rights reserved.', 'zobo' ); ?></span>
-			<span><?php esc_html_e( 'Made in India, for founders everywhere.', 'zobo' ); ?></span>
+			<span>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?>. <?php esc_html_e( 'All rights reserved.', 'zobo-d2c' ); ?></span>
+			<span><?php esc_html_e( 'Made in India, for founders everywhere.', 'zobo-d2c' ); ?></span>
 		</div>
 	</div>
 </footer>
 
 <?php if ( $zobo_wa ) : ?>
-	<a class="wa-float" href="<?php echo esc_url( $zobo_wa ); ?>" target="_blank" rel="noopener" aria-label="<?php esc_attr_e( 'Chat on WhatsApp', 'zobo' ); ?>">
+	<a class="wa-float" href="<?php echo esc_url( $zobo_wa ); ?>" target="_blank" rel="noopener" aria-label="<?php esc_attr_e( 'Chat on WhatsApp', 'zobo-d2c' ); ?>">
 		<?php echo zobo_icon( 'whatsapp' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 	</a>
 <?php endif; ?>

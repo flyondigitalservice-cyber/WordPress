@@ -17,7 +17,7 @@ $zobo_cta = zobo_opt( 'calendar_url' ) ? zobo_opt( 'calendar_url' ) : ( is_front
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<a class="skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'zobo' ); ?></a>
+<a class="skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'zobo-d2c' ); ?></a>
 
 <header class="site-header" data-header>
 	<div class="container header-inner">
@@ -31,7 +31,7 @@ $zobo_cta = zobo_opt( 'calendar_url' ) ? zobo_opt( 'calendar_url' ) : ( is_front
 			<?php endif; ?>
 		</div>
 
-		<nav class="primary-nav" id="primary-nav" aria-label="<?php esc_attr_e( 'Primary', 'zobo' ); ?>" data-nav>
+		<nav class="primary-nav" id="primary-nav" aria-label="<?php esc_attr_e( 'Primary', 'zobo-d2c' ); ?>" data-nav>
 			<?php
 			wp_nav_menu(
 				array(
@@ -42,15 +42,15 @@ $zobo_cta = zobo_opt( 'calendar_url' ) ? zobo_opt( 'calendar_url' ) : ( is_front
 				)
 			);
 			?>
-			<a class="btn btn-primary nav-cta-mobile" href="<?php echo esc_url( $zobo_cta ); ?>"><?php esc_html_e( 'Book a free call', 'zobo' ); ?></a>
+			<a class="btn btn-primary nav-cta-mobile" href="<?php echo esc_url( $zobo_cta ); ?>"><?php esc_html_e( 'Book a free call', 'zobo-d2c' ); ?></a>
 		</nav>
 
 		<div class="header-actions">
 			<a class="btn btn-primary btn-sm header-cta" href="<?php echo esc_url( $zobo_cta ); ?>">
-				<?php esc_html_e( 'Book a free call', 'zobo' ); ?> <?php echo zobo_icon( 'arrow' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+				<?php esc_html_e( 'Book a free call', 'zobo-d2c' ); ?> <?php echo zobo_icon( 'arrow' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 			</a>
 			<button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" data-nav-toggle>
-				<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'zobo' ); ?></span>
+				<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'zobo-d2c' ); ?></span>
 				<span class="nav-toggle-bar"></span>
 				<span class="nav-toggle-bar"></span>
 			</button>

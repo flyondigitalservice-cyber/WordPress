@@ -17,7 +17,7 @@ require get_template_directory() . '/inc/contact-form.php';
  * Theme setup.
  */
 function zobo_setup() {
-	load_theme_textdomain( 'zobo', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'zobo-d2c', get_template_directory() . '/languages' );
 
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
@@ -37,8 +37,8 @@ function zobo_setup() {
 
 	register_nav_menus(
 		array(
-			'primary' => __( 'Primary menu', 'zobo' ),
-			'footer'  => __( 'Footer menu', 'zobo' ),
+			'primary' => __( 'Primary menu', 'zobo-d2c' ),
+			'footer'  => __( 'Footer menu', 'zobo-d2c' ),
 		)
 	);
 
@@ -54,14 +54,14 @@ function zobo_register_work() {
 		'zobo_work',
 		array(
 			'labels'       => array(
-				'name'          => __( 'Case Studies', 'zobo' ),
-				'singular_name' => __( 'Case Study', 'zobo' ),
-				'add_new_item'  => __( 'Add New Case Study', 'zobo' ),
-				'edit_item'     => __( 'Edit Case Study', 'zobo' ),
+				'name'          => __( 'Case Studies', 'zobo-d2c' ),
+				'singular_name' => __( 'Case Study', 'zobo-d2c' ),
+				'add_new_item'  => __( 'Add New Case Study', 'zobo-d2c' ),
+				'edit_item'     => __( 'Edit Case Study', 'zobo-d2c' ),
 			),
 			'public'       => true,
 			'has_archive'  => true,
-			'rewrite'      => array( 'slug' => 'work' ),
+			'rewrite'      => array( 'slug' => 'case-studies' ),
 			'menu_icon'    => 'dashicons-portfolio',
 			'show_in_rest' => true,
 			'supports'     => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
@@ -113,11 +113,12 @@ add_filter( 'wp_resource_hints', 'zobo_resource_hints', 10, 2 );
  */
 function zobo_fallback_menu() {
 	$items = array(
-		'#journey'  => __( 'Journey', 'zobo' ),
-		'#services' => __( 'Services', 'zobo' ),
-		'#plans'    => __( 'Plans', 'zobo' ),
-		'#work'     => __( 'Work', 'zobo' ),
-		'#faq'      => __( 'FAQ', 'zobo' ),
+		'#journey'  => __( 'Journey', 'zobo-d2c' ),
+		'#services' => __( 'Services', 'zobo-d2c' ),
+		'#industries' => __( 'Industries', 'zobo-d2c' ),
+		'#plans'    => __( 'Plans', 'zobo-d2c' ),
+		'#work'     => __( 'Work', 'zobo-d2c' ),
+		'#faq'      => __( 'FAQ', 'zobo-d2c' ),
 	);
 	$base = is_front_page() ? '' : home_url( '/' );
 	echo '<ul class="menu">';
@@ -139,7 +140,7 @@ function zobo_whatsapp_url( $message = '' ) {
 		return '';
 	}
 	if ( '' === $message ) {
-		$message = __( 'Hi Zobo, I have a brand idea and want to launch it.', 'zobo' );
+		$message = __( 'Hi Zobo, I have a brand idea and want to launch it.', 'zobo-d2c' );
 	}
 	return 'https://wa.me/' . $number . '?text=' . rawurlencode( $message );
 }
@@ -165,6 +166,8 @@ function zobo_icon( $name ) {
 		'chart'     => '<path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-7"/>',
 		'star'      => '<path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8L12 2z"/>',
 		'tv'        => '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M17 2l-5 5-5-5"/>',
+		'flask'     => '<path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7 15h10"/>',
+		'clock'     => '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
 		'plus'      => '<path d="M12 5v14M5 12h14"/>',
 		'mail'      => '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
 		'phone'     => '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
@@ -183,3 +186,29 @@ function zobo_js_class() {
 	echo "<script>document.documentElement.classList.add('js');</script>\n";
 }
 add_action( 'wp_head', 'zobo_js_class', 0 );
+
+/**
+ * Send visitors from the previous theme's template-only pages, which have no
+ * content of their own, to the matching front-page section. A page that gets
+ * real content in the editor is shown normally.
+ */
+function zobo_legacy_page_redirect() {
+	if ( ! is_page() ) {
+		return;
+	}
+	$map = array(
+		'services'   => '#services',
+		'industries' => '#industries',
+		'process'    => '#journey',
+		'pricing'    => '#plans',
+		'work'       => '#work',
+		'contact'    => '#contact',
+	);
+	$page = get_queried_object();
+	if ( ! $page instanceof WP_Post || ! isset( $map[ $page->post_name ] ) || '' !== trim( $page->post_content ) ) {
+		return;
+	}
+	wp_safe_redirect( home_url( '/' ) . $map[ $page->post_name ], 302 );
+	exit;
+}
+add_action( 'template_redirect', 'zobo_legacy_page_redirect' );

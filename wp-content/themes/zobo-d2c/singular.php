@@ -14,9 +14,9 @@ while ( have_posts() ) :
 		<header class="page-hero">
 			<div class="container">
 				<?php if ( 'zobo_work' === get_post_type() ) : ?>
-					<p class="kicker"><?php esc_html_e( 'Case study', 'zobo' ); ?></p>
+					<p class="kicker"><?php esc_html_e( 'Case study', 'zobo-d2c' ); ?></p>
 				<?php elseif ( 'post' === get_post_type() ) : ?>
-					<p class="kicker"><?php esc_html_e( 'Journal', 'zobo' ); ?></p>
+					<p class="kicker"><?php esc_html_e( 'Journal', 'zobo-d2c' ); ?></p>
 				<?php endif; ?>
 				<h1 class="page-title"><?php the_title(); ?></h1>
 				<?php if ( 'post' === get_post_type() ) : ?>

@@ -12,10 +12,21 @@
  */
 function zobo_form_stages() {
 	return array(
-		'idea'    => __( 'Just an idea', 'zobo' ),
-		'brand'   => __( 'Have a brand, not selling yet', 'zobo' ),
-		'selling' => __( 'Selling, want to grow', 'zobo' ),
+		'idea'    => __( 'Just an idea', 'zobo-d2c' ),
+		'brand'   => __( 'Have a brand, not selling yet', 'zobo-d2c' ),
+		'selling' => __( 'Selling, want to grow', 'zobo-d2c' ),
 	);
+}
+
+/**
+ * Product categories a founder can pick on the form.
+ *
+ * @return array
+ */
+function zobo_form_categories() {
+	$cats = wp_list_pluck( zobo_industries(), 'title' );
+	$cats[] = __( 'Other', 'zobo-d2c' );
+	return $cats;
 }
 
 /**
@@ -40,6 +51,7 @@ function zobo_handle_enquiry() {
 	$email   = isset( $_POST['email'] ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
 	$phone   = isset( $_POST['phone'] ) ? sanitize_text_field( wp_unslash( $_POST['phone'] ) ) : '';
 	$stage   = isset( $_POST['stage'] ) ? sanitize_key( wp_unslash( $_POST['stage'] ) ) : '';
+	$category = isset( $_POST['category'] ) ? sanitize_text_field( wp_unslash( $_POST['category'] ) ) : '';
 	$message = isset( $_POST['message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['message'] ) ) : '';
 
 	if ( '' === $name || ! is_email( $email ) ) {
@@ -49,16 +61,20 @@ function zobo_handle_enquiry() {
 
 	$stages = zobo_form_stages();
 	$stage  = isset( $stages[ $stage ] ) ? $stages[ $stage ] : '';
+	if ( ! in_array( $category, zobo_form_categories(), true ) ) {
+		$category = '';
+	}
 	$to     = zobo_opt( 'email' );
 	if ( ! is_email( $to ) ) {
 		$to = get_option( 'admin_email' );
 	}
 
 	$body = sprintf(
-		"Name: %s\nEmail: %s\nPhone: %s\nStage: %s\n\n%s",
+		"Name: %s\nEmail: %s\nPhone: %s\nCategory: %s\nStage: %s\n\n%s",
 		$name,
 		$email,
 		$phone,
+		$category,
 		$stage,
 		$message
 	);
@@ -66,7 +82,7 @@ function zobo_handle_enquiry() {
 	$sent = wp_mail(
 		$to,
 		/* translators: %s: sender name */
-		sprintf( __( 'New launch enquiry from %s', 'zobo' ), $name ),
+		sprintf( __( 'New launch enquiry from %s', 'zobo-d2c' ), $name ),
 		$body,
 		array( 'Reply-To: ' . $name . ' <' . $email . '>' )
 	);

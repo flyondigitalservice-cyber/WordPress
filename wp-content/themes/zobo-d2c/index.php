@@ -13,11 +13,11 @@ get_header();
 		<p class="kicker">
 			<?php
 			if ( is_search() ) {
-				esc_html_e( 'Search', 'zobo' );
+				esc_html_e( 'Search', 'zobo-d2c' );
 			} elseif ( is_post_type_archive( 'zobo_work' ) ) {
-				esc_html_e( 'Work', 'zobo' );
+				esc_html_e( 'Work', 'zobo-d2c' );
 			} else {
-				esc_html_e( 'Journal', 'zobo' );
+				esc_html_e( 'Journal', 'zobo-d2c' );
 			}
 			?>
 		</p>
@@ -25,13 +25,13 @@ get_header();
 			<?php
 			if ( is_search() ) {
 				/* translators: %s: search query */
-				printf( esc_html__( 'Results for “%s”', 'zobo' ), esc_html( get_search_query() ) );
+				printf( esc_html__( 'Results for “%s”', 'zobo-d2c' ), esc_html( get_search_query() ) );
 			} elseif ( is_archive() ) {
 				echo esc_html( wp_strip_all_tags( get_the_archive_title() ) );
 			} elseif ( is_home() && get_option( 'page_for_posts' ) ) {
 				echo esc_html( get_the_title( (int) get_option( 'page_for_posts' ) ) );
 			} else {
-				esc_html_e( 'Notes for founders', 'zobo' );
+				esc_html_e( 'Notes for founders', 'zobo-d2c' );
 			}
 			?>
 		</h1>
@@ -60,7 +60,7 @@ get_header();
 		<div class="pagination"><?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?></div>
 	<?php else : ?>
 		<div class="not-found">
-			<p><?php esc_html_e( 'Nothing here yet. Try a search, or head back home.', 'zobo' ); ?></p>
+			<p><?php esc_html_e( 'Nothing here yet. Try a search, or head back home.', 'zobo-d2c' ); ?></p>
 			<?php get_search_form(); ?>
 		</div>
 	<?php endif; ?>

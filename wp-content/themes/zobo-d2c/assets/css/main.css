@@ -11,7 +11,7 @@
 	--line: rgba(17, 17, 17, 0.12);
 	--accent: #ff5a1f;
 	--accent-ink: #ffffff;
-	--lime: #d4ff3a;
+	--lime: #c6ff3d;
 	--white: #ffffff;
 
 	--font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
@@ -199,7 +199,7 @@ ol {
 }
 
 .btn-lime:hover {
-	box-shadow: 0 10px 30px rgba(212, 255, 58, 0.35);
+	box-shadow: 0 10px 30px rgba(198, 255, 61, 0.35);
 }
 
 /* Header ----------------------------------------------------------------- */
@@ -1304,66 +1304,132 @@ ol {
 	font-size: 15px;
 }
 
-.work-empty {
-	display: grid;
-	grid-template-columns: 1fr 1.2fr;
-	gap: clamp(24px, 4vw, 56px);
-	align-items: center;
-	padding: clamp(24px, 4vw, 48px);
-	border-radius: var(--radius);
-	background: var(--white);
-}
-
-.work-empty h3 {
-	font-size: clamp(28px, 3vw, 40px);
-	margin-bottom: 14px;
-}
-
-.work-empty p {
-	color: var(--muted);
-}
-
-.work-empty-tiles {
-	max-width: 360px;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 12px;
-}
-
-.work-empty-tiles span {
-	aspect-ratio: 1;
-	border-radius: 18px;
-	background: var(--paper-2);
-}
-
-.work-empty-tiles span:nth-child(1) {
-	background: var(--accent);
-}
-
-.work-empty-tiles span:nth-child(2) {
-	background: var(--ink);
-	border-radius: 50%;
-}
-
-.work-empty-tiles span:nth-child(3) {
-	background: var(--lime);
-	border-radius: 50% 50% 18px 18px;
-}
-
 @media (max-width: 860px) {
-	.work-grid,
-	.work-empty {
+	.work-grid {
 		grid-template-columns: 1fr;
-	}
-
-	.work-empty-tiles {
-		max-width: 280px;
 	}
 }
 
 @media (min-width: 600px) and (max-width: 860px) {
 	.work-grid {
 		grid-template-columns: 1fr 1fr;
+	}
+}
+
+/* Industries */
+
+.industries {
+	background: var(--paper);
+}
+
+.industry-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+}
+
+.industry-card {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	padding: 30px;
+	border-radius: var(--radius);
+	background: var(--white);
+	transition: transform 0.3s var(--ease), background 0.3s, color 0.3s;
+}
+
+.industry-card:hover {
+	transform: translateY(-4px);
+	background: var(--lime);
+}
+
+.industry-card h3 {
+	font-size: 26px;
+}
+
+.industry-card p {
+	color: var(--muted);
+	font-size: 15px;
+	flex: 1;
+}
+
+.industry-card:hover p {
+	color: var(--ink-2);
+}
+
+.industry-card .pills li {
+	background: var(--paper);
+}
+
+@media (max-width: 960px) {
+	.industry-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 600px) {
+	.industry-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Client brands */
+
+.client-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+.client-card {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	min-height: 320px;
+	padding: 32px;
+	border: 2px solid var(--ink);
+	border-radius: var(--radius);
+	background: var(--white);
+	text-decoration: none;
+	transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s;
+}
+
+.client-card:hover {
+	transform: translate(-3px, -3px);
+	box-shadow: 9px 9px 0 var(--accent);
+}
+
+.client-card h3 {
+	font-size: clamp(36px, 4vw, 52px);
+}
+
+.client-card p {
+	color: var(--muted);
+	flex: 1;
+}
+
+.client-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: 600;
+}
+
+.client-card:hover .client-link .icon {
+	transform: translateX(4px);
+}
+
+.client-link .icon {
+	transition: transform 0.2s var(--ease);
+}
+
+@media (max-width: 860px) {
+	.client-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.client-card {
+		min-height: 0;
 	}
 }
 
@@ -1516,6 +1582,7 @@ ol {
 }
 
 .field input,
+.field select,
 .field textarea {
 	width: 100%;
 	padding: 14px 16px;
@@ -1529,6 +1596,7 @@ ol {
 }
 
 .field input:focus,
+.field select:focus,
 .field textarea:focus {
 	outline: none;
 	border-color: var(--lime);
@@ -1537,6 +1605,19 @@ ol {
 
 .field textarea {
 	resize: vertical;
+}
+
+.field select {
+	appearance: none;
+	padding-right: 40px;
+	background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+	background-position: calc(100% - 20px) 50%, calc(100% - 15px) 50%;
+	background-size: 5px 5px;
+	background-repeat: no-repeat;
+}
+
+.field select option {
+	color: var(--ink);
 }
 
 .radio-pills {
