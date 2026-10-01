@@ -2,7 +2,7 @@
 /**
  * Lightweight SEO: editable meta title/description per page, Open Graph, and JSON-LD schema
  * (LocalBusiness with parent organisation, Service, FAQPage, BreadcrumbList).
- * Automatically steps aside when Yoast, Rank Math, AIOSEO or SEOPress is active.
+ * Automatically steps aside when Yoast, Rank Math, AIOSEO, SEOPress or SureRank is active.
  *
  * @package dce-vibe
  */
