@@ -62,7 +62,7 @@ function dbh_catalogue_sections() {
 		array(
 			'Wallpaper',
 			'Wallpaper <em>catalogues</em>',
-			'Textured, natural, kids’ and mural wallpaper collections. Open a collection to browse the PDF pattern books.',
+			'Textured, natural, kids and mural wallpaper collections. Open a collection to browse the PDF pattern books.',
 			array(
 				array( 'Korean wall coverings', 'Artis, Living, Motive, Natural, Decent, Metropolis, Beyond', '1TEWSNIpPAZY2zBNjsdUFBSwvyyRxxocB' ),
 				array( 'Special wall coverings', 'Acoustic, Belgian, Beton, Grasscloth and designer papers', '1n4yFIfCdOJwPFDTezL23CXOooZ5OjX9D' ),
