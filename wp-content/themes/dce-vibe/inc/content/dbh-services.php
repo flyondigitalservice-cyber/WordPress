@@ -635,7 +635,7 @@ function dbh_services() {
 		/* ------------------------------------------------ UPHOLSTERY ------------------------------------------------ */
 
 		'sofa-upholstery' => dbh_s( 'upholstery', 'Sofa Upholstery', array(
-			'media'      => array( 'sofa-upholstery', 'leather-sofa-upholstery', 'reupholstery', 'sofa-repair' ),
+			'media'      => array( 'cv-sofa-upholstery', 'sofa-upholstery', 'leather-sofa-upholstery', 'reupholstery', 'sofa-repair' ),
 			'seo_title'  => 'Sofa Upholstery Dubai | Reupholstery, Repair & New Fabric',
 			'seo_desc'   => 'Sofa upholstery in Dubai: reupholster, repair and refresh sofas and majlis seating with new fabric, leather or foam. Collection and delivery. Free visit.',
 			'card'       => 'Reupholster, repair and refresh sofas and majlis seating.',
@@ -662,7 +662,7 @@ function dbh_services() {
 		) ),
 
 		'chair-upholstery' => dbh_s( 'upholstery', 'Chair Upholstery', array(
-			'media'      => array( 'chair' ),
+			'media'      => array( 'cv-chair-upholstery', 'chair' ),
 			'seo_title'  => 'Chair Upholstery Dubai | Dining, Office & Accent Chairs',
 			'seo_desc'   => 'Chair upholstery in Dubai: reupholster dining chairs, accent chairs, headboards and office chairs in fabric or leather. Collection and delivery. Free quotation.',
 			'card'       => 'Dining, accent and office chairs reupholstered in fabric or leather.',
@@ -689,7 +689,7 @@ function dbh_services() {
 		) ),
 
 		'restaurant-seating-upholstery' => dbh_s( 'upholstery', 'Restaurant Seating Upholstery', array(
-			'media'      => array( 'restaurant' ),
+			'media'      => array( 'cv-restaurant-seating', 'restaurant' ),
 			'seo_title'  => 'Restaurant Seating Upholstery Dubai | Booths, Banquettes & Chairs',
 			'seo_desc'   => 'Restaurant, café and hotel seating upholstery in Dubai: booths, banquettes, bar stools and chairs in commercial-grade fabric or leatherette. Minimal downtime.',
 			'card'       => 'Booths, banquettes and chairs in commercial-grade materials.',
@@ -744,7 +744,7 @@ function dbh_services() {
 		) ),
 
 		'outdoor-furniture-upholstery' => dbh_s( 'upholstery', 'Outdoor Furniture Upholstery', array(
-			'media'      => array( 'outdoor-furniture' ),
+			'media'      => array( 'cv-outdoor-furniture', 'outdoor-furniture' ),
 			'seo_title'  => 'Outdoor Furniture Upholstery Dubai | Weatherproof Cushions',
 			'seo_desc'   => 'Outdoor furniture upholstery in Dubai: weather and UV-resistant cushions for terraces, pool areas, majlis and yachts. Sunbrella-style outdoor fabrics. Free visit.',
 			'card'       => 'UV and weather-resistant cushions for terraces, pools and majlis.',
@@ -771,7 +771,7 @@ function dbh_services() {
 		) ),
 
 		'cushion-pillow-upholstery' => dbh_s( 'upholstery', 'Cushion &amp; Pillow Upholstery', array(
-			'media'      => array( 'cushion', 'pillow', 'sofa-upholstery-fabric' ),
+			'media'      => array( 'cv-cushion-pillow', 'cushion', 'pillow', 'sofa-upholstery-fabric' ),
 			'seo_title'  => 'Custom Cushions & Pillows Dubai | Cushion Covers & Fillings',
 			'seo_desc'   => 'Custom cushions and pillows in Dubai: scatter cushions, floor cushions, window-seat and bench pads with new covers and fillings. Match your curtains.',
 			'card'       => 'Custom cushions, covers and fillings — matched to your curtains.',
