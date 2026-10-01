@@ -10,7 +10,7 @@
 defined( 'ABSPATH' ) || exit;
 
 function dce_seo_plugin_active() {
-	return defined( 'WPSEO_VERSION' ) || class_exists( 'RankMath' ) || defined( 'AIOSEO_VERSION' ) || defined( 'SEOPRESS_VERSION' ) || defined( 'THE_SEO_FRAMEWORK_VERSION' );
+	return defined( 'WPSEO_VERSION' ) || class_exists( 'RankMath' ) || defined( 'AIOSEO_VERSION' ) || defined( 'SEOPRESS_VERSION' ) || defined( 'THE_SEO_FRAMEWORK_VERSION' ) || defined( 'SURERANK_VERSION' ) || defined( 'SURERANK_FILE' );
 }
 
 /* ---------- Meta box ---------- */

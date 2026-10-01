@@ -11,6 +11,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
+if ( ! defined( 'DCE_REMOTE_IMG' ) ) {
+	define( 'DCE_REMOTE_IMG', 'https://raw.githubusercontent.com/flyondigitalservice-cyber/WordPress/claude/cool-bell-fgw7bv/wp-content/themes/dce-vibe/assets/img/' );
+}
+
 add_action( 'admin_menu', 'dce_importer_menu' );
 function dce_importer_menu() {
 	add_theme_page( __( 'DCE Site Setup', 'dce-vibe' ), __( 'DCE Site Setup', 'dce-vibe' ), 'manage_options', 'dce-setup', 'dce_importer_page' );
@@ -212,7 +216,7 @@ function dce_run_import( $opts = array() ) {
  *
  * @return array map, imported, reused, matched, missing.
  */
-function dce_import_media() {
+function dce_import_media( $max_new = 0 ) {
 	require_once ABSPATH . 'wp-admin/includes/image.php';
 	require_once ABSPATH . 'wp-admin/includes/file.php';
 	require_once ABSPATH . 'wp-admin/includes/media.php';
@@ -224,6 +228,7 @@ function dce_import_media() {
 		'imported' => 0,
 		'reused'   => 0,
 		'matched'  => 0,
+		'pending'  => 0,
 		'missing'  => array(),
 	);
 
@@ -243,6 +248,9 @@ function dce_import_media() {
 			if ( $existing ) {
 				$aid = $existing[0];
 				++$stats['reused'];
+			} elseif ( $max_new && $stats['imported'] >= $max_new ) {
+				++$stats['pending'];
+				continue;
 			} else {
 				$aid = dce_sideload_local( DCE_DIR . '/assets/img/' . $f['file'], $f['alt'] );
 				if ( ! $aid ) {
@@ -368,10 +376,17 @@ function dce_find_media_by_prefix( $prefix ) {
  * @return int Attachment ID or 0.
  */
 function dce_sideload_local( $path, $alt ) {
-	if ( ! file_exists( $path ) ) {
-		return 0;
+	if ( file_exists( $path ) ) {
+		$bytes = file_get_contents( $path ); // phpcs:ignore
+	} else {
+		// Photos not shipped with the theme files are fetched from the theme's public repository.
+		$res = wp_remote_get( trailingslashit( DCE_REMOTE_IMG ) . rawurlencode( basename( $path ) ), array( 'timeout' => 60 ) );
+		if ( is_wp_error( $res ) || 200 !== wp_remote_retrieve_response_code( $res ) ) {
+			return 0;
+		}
+		$bytes = wp_remote_retrieve_body( $res );
 	}
-	$upload = wp_upload_bits( basename( $path ), null, file_get_contents( $path ) ); // phpcs:ignore
+	$upload = wp_upload_bits( basename( $path ), null, $bytes );
 	if ( ! empty( $upload['error'] ) ) {
 		return 0;
 	}
@@ -522,5 +537,58 @@ function dce_clear_default_widgets() {
 		$sidebars['wp_inactive_widgets'] = array_merge( isset( $sidebars['wp_inactive_widgets'] ) ? $sidebars['wp_inactive_widgets'] : array(), $sidebars['footer-extra'] );
 		$sidebars['footer-extra']        = array();
 		wp_set_sidebars_widgets( $sidebars );
+	}
+}
+
+/*
+ * REST endpoints for remote setup (administrators only):
+ *   POST /wp-json/dce/v1/media   {"profile":"dbh","batch":15}  imports photos in batches; repeat until pending = 0
+ *   POST /wp-json/dce/v1/import  {"profile":"dbh"}             builds pages, menus and the homepage
+ */
+add_action( 'rest_api_init', 'dce_register_import_routes' );
+function dce_register_import_routes() {
+	$perm = fn() => current_user_can( 'manage_options' );
+	register_rest_route(
+		'dce/v1',
+		'/media',
+		array(
+			'methods'             => 'POST',
+			'permission_callback' => $perm,
+			'callback'            => function ( WP_REST_Request $r ) {
+				dce_rest_profile( $r );
+				@set_time_limit( 0 ); // phpcs:ignore
+				$m = dce_import_media( max( 1, (int) ( $r['batch'] ? $r['batch'] : 15 ) ) );
+				unset( $m['map'] );
+				return $m;
+			},
+		)
+	);
+	register_rest_route(
+		'dce/v1',
+		'/import',
+		array(
+			'methods'             => 'POST',
+			'permission_callback' => $perm,
+			'callback'            => function ( WP_REST_Request $r ) {
+				dce_rest_profile( $r );
+				$res = dce_run_import(
+					array(
+						'overwrite' => false !== $r['overwrite'],
+						'menus'     => false !== $r['menus'],
+						'reading'   => false !== $r['reading'],
+					)
+				);
+				return array(
+					'report' => wp_strip_all_tags( $res['report'] ),
+					'pages'  => count( $res['ids'] ),
+				);
+			},
+		)
+	);
+}
+
+function dce_rest_profile( $r ) {
+	if ( in_array( $r['profile'], array( 'dce', 'dbh' ), true ) ) {
+		update_option( 'dce_profile', $r['profile'] );
 	}
 }

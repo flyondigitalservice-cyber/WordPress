@@ -21,7 +21,8 @@ require DCE_DIR . '/inc/builder.php';
 require DCE_DIR . '/inc/patterns.php';
 
 // Page content and the importer are only needed in the admin and WP-CLI.
-if ( is_admin() || ( defined( 'WP_CLI' ) && WP_CLI ) || defined( 'DCE_LOAD_IMPORTER' ) ) {
+$dce_is_import_rest = isset( $_SERVER['REQUEST_URI'] ) && false !== strpos( $_SERVER['REQUEST_URI'], 'dce/v1' ); // phpcs:ignore
+if ( is_admin() || ( defined( 'WP_CLI' ) && WP_CLI ) || defined( 'DCE_LOAD_IMPORTER' ) || $dce_is_import_rest ) {
 	require DCE_DIR . '/inc/content/catalogues.php';
 	require DCE_DIR . '/inc/content/products.php';
 	require DCE_DIR . '/inc/content/areas.php';
