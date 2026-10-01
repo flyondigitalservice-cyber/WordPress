@@ -1,0 +1,564 @@
+{
+ "wave-curtains": [
+  {
+   "file": "wave-curtains-1.jpg",
+   "alt": "Sheer wave curtains running along a full-height window wall in Dubai",
+   "w": 960,
+   "h": 1280
+  },
+  {
+   "file": "wave-curtains-2.jpg",
+   "alt": "Custom wave curtains in a Dubai living room",
+   "w": 1100,
+   "h": 900
+  },
+  {
+   "file": "wave-curtains-3.jpg",
+   "alt": "White sheer wave curtains on a ceiling track",
+   "w": 1280,
+   "h": 929
+  },
+  {
+   "file": "wave-curtains-4.jpg",
+   "alt": "Mustard wave curtains framing a garden door",
+   "w": 1024,
+   "h": 1024
+  },
+  {
+   "file": "wave-curtains-5.jpg",
+   "alt": "Duck-egg blue wave curtains in a bedroom",
+   "w": 1024,
+   "h": 1280
+  },
+  {
+   "file": "wave-curtains-6.jpg",
+   "alt": "Blue wave curtains with even folds",
+   "w": 1280,
+   "h": 1280
+  }
+ ],
+ "pinch-pleat-curtains": [
+  {
+   "file": "pinch-pleat-curtains-1.jpg",
+   "alt": "Beige pinch pleat curtains with tiebacks",
+   "w": 1080,
+   "h": 1080
+  },
+  {
+   "file": "pinch-pleat-curtains-2.jpg",
+   "alt": "Grey pinch pleat curtains in a modern room",
+   "w": 1280,
+   "h": 1280
+  },
+  {
+   "file": "pinch-pleat-curtains-3.jpg",
+   "alt": "Light brown pinch pleat blackout curtains",
+   "w": 1280,
+   "h": 1280
+  },
+  {
+   "file": "pinch-pleat-curtains-4.jpg",
+   "alt": "Moss green pinch pleat curtains",
+   "w": 1024,
+   "h": 1280
+  },
+  {
+   "file": "pinch-pleat-curtains-5.jpg",
+   "alt": "Close-up of printed pinch pleat curtain heading on a rod",
+   "w": 1280,
+   "h": 1280
+  }
+ ],
+ "eyelet-curtains": [
+  {
+   "file": "eyelet-curtains-1.jpg",
+   "alt": "Luxury eyelet curtains in a Dubai living room",
+   "w": 1280,
+   "h": 853
+  },
+  {
+   "file": "eyelet-curtains-2.jpg",
+   "alt": "Silver grey eyelet curtains with tieback",
+   "w": 1280,
+   "h": 1280
+  },
+  {
+   "file": "eyelet-curtains-3.jpg",
+   "alt": "Dusty rose eyelet curtains in a lounge",
+   "w": 1024,
+   "h": 1024
+  },
+  {
+   "file": "eyelet-curtains-4.jpg",
+   "alt": "Yellow patterned eyelet curtains",
+   "w": 1024,
+   "h": 1024
+  },
+  {
+   "file": "eyelet-curtains-5.jpg",
+   "alt": "Grey eyelet curtains on a metal rod",
+   "w": 750,
+   "h": 1000
+  },
+  {
+   "file": "eyelet-curtains-6.jpg",
+   "alt": "Light grey cotton eyelet curtains",
+   "w": 600,
+   "h": 600
+  }
+ ],
+ "american-style-curtains": [
+  {
+   "file": "american-style-curtains-1.jpg",
+   "alt": "American style curtains in a luxury bedroom",
+   "w": 1254,
+   "h": 1254
+  },
+  {
+   "file": "american-style-curtains-2.jpg",
+   "alt": "American style curtains project with sheer layer",
+   "w": 1280,
+   "h": 853
+  },
+  {
+   "file": "american-style-curtains-3.jpg",
+   "alt": "Gold American style curtains with tiebacks",
+   "w": 554,
+   "h": 554
+  },
+  {
+   "file": "american-style-curtains-4.jpg",
+   "alt": "American style curtains with swag valance",
+   "w": 800,
+   "h": 600
+  },
+  {
+   "file": "american-style-curtains-5.jpg",
+   "alt": "Red American style curtains with decorative valance",
+   "w": 480,
+   "h": 480
+  }
+ ],
+ "roman-curtains": [
+  {
+   "file": "roman-curtains-1.jpg",
+   "alt": "Patterned fabric Roman curtains in a living room",
+   "w": 1280,
+   "h": 1280
+  },
+  {
+   "file": "roman-curtains-2.jpg",
+   "alt": "Fabric Roman shades over a dining area",
+   "w": 1280,
+   "h": 1084
+  },
+  {
+   "file": "roman-curtains-3.jpg",
+   "alt": "Rust coloured Roman curtain in a cottage window",
+   "w": 854,
+   "h": 1280
+  },
+  {
+   "file": "roman-curtains-4.jpg",
+   "alt": "Roman curtains project in a sunroom",
+   "w": 1280,
+   "h": 853
+  },
+  {
+   "file": "roman-curtains-5.jpg",
+   "alt": "Classic Roman curtains in a traditional living room",
+   "w": 1280,
+   "h": 853
+  },
+  {
+   "file": "roman-curtains-6.jpg",
+   "alt": "Flat fabric Roman shade in a bedroom",
+   "w": 950,
+   "h": 630
+  },
+  {
+   "file": "roman-curtains-7.jpg",
+   "alt": "Linen Roman curtain in a bay window",
+   "w": 960,
+   "h": 1280
+  }
+ ],
+ "blackout-curtains": [
+  {
+   "file": "blackout-curtains-1.jpg",
+   "alt": "Dark brown blackout curtains overlooking the Dubai skyline",
+   "w": 1280,
+   "h": 1280
+  },
+  {
+   "file": "blackout-curtains-2.jpg",
+   "alt": "Blackout curtains installed in a Dubai home",
+   "w": 720,
+   "h": 1280
+  },
+  {
+   "file": "blackout-curtains-3.jpg",
+   "alt": "Grey blackout curtains installed by Dubai Curtain Experts",
+   "w": 1280,
+   "h": 720
+  },
+  {
+   "file": "blackout-curtains-4.jpg",
+   "alt": "Green blackout curtains on a balcony door",
+   "w": 1280,
+   "h": 720
+  }
+ ],
+ "sheer-curtains": [
+  {
+   "file": "sheer-curtains-1.jpg",
+   "alt": "White sheer curtains on a ceiling track",
+   "w": 960,
+   "h": 1280
+  },
+  {
+   "file": "sheer-curtains-2.jpg",
+   "alt": "Sheer curtains softening daylight in a living room",
+   "w": 827,
+   "h": 1280
+  },
+  {
+   "file": "sheer-curtains-3.jpg",
+   "alt": "Blush sheer curtains in a Dubai apartment",
+   "w": 876,
+   "h": 1280
+  },
+  {
+   "file": "sheer-curtains-4.jpg",
+   "alt": "Sheer curtains installed in a Dubai villa",
+   "w": 823,
+   "h": 1280
+  },
+  {
+   "file": "sheer-curtains-5.jpg",
+   "alt": "Sheer curtains across a large living room",
+   "w": 960,
+   "h": 1280
+  }
+ ],
+ "motorized-curtains": [
+  {
+   "file": "motorized-curtains-1.jpg",
+   "alt": "Motorized sheer curtains in a Dubai majlis",
+   "w": 1280,
+   "h": 960
+  },
+  {
+   "file": "motorized-curtains-2.jpg",
+   "alt": "Motorized curtain track installation in a Dubai villa",
+   "w": 960,
+   "h": 1280
+  },
+  {
+   "file": "motorized-curtains-3.jpg",
+   "alt": "Layered sheer and blackout curtains on motorized tracks",
+   "w": 1280,
+   "h": 960
+  },
+  {
+   "file": "motorized-curtains-4.jpg",
+   "alt": "Floor-to-ceiling curtains installed on a concealed track",
+   "w": 1280,
+   "h": 720
+  }
+ ],
+ "beaded-curtains": [
+  {
+   "file": "beaded-curtains-1.jpg",
+   "alt": "Glass bead curtain divider in a luxury villa",
+   "w": 650,
+   "h": 799
+  },
+  {
+   "file": "beaded-curtains-2.jpg",
+   "alt": "Crystal beaded curtain room divider",
+   "w": 878,
+   "h": 940
+  },
+  {
+   "file": "beaded-curtains-3.jpg",
+   "alt": "Sand coloured beaded curtains",
+   "w": 1024,
+   "h": 1024
+  },
+  {
+   "file": "beaded-curtains-4.jpg",
+   "alt": "Beaded string curtain in a doorway",
+   "w": 450,
+   "h": 450
+  }
+ ],
+ "cinema-curtains": [
+  {
+   "file": "cinema-curtains-1.jpg",
+   "alt": "Gold theatre style swag curtains",
+   "w": 738,
+   "h": 369
+  },
+  {
+   "file": "cinema-curtains-2.jpg",
+   "alt": "Austrian festoon curtain in sheer fabric",
+   "w": 800,
+   "h": 800
+  },
+  {
+   "file": "cinema-curtains-3.jpg",
+   "alt": "Festoon style stage curtain",
+   "w": 800,
+   "h": 800
+  }
+ ],
+ "kids-curtains": [
+  {
+   "file": "kids-curtains-1.jpg",
+   "alt": "Pink floral curtains in a nursery",
+   "w": 554,
+   "h": 554
+  }
+ ],
+ "zebra-blinds": [
+  {
+   "file": "zebra-blinds-1.jpg",
+   "alt": "Zebra blinds in a dining room",
+   "w": 678,
+   "h": 452
+  }
+ ],
+ "roman-blinds": [
+  {
+   "file": "roman-blinds-1.jpg",
+   "alt": "Sheer Roman blinds in a luxury living room",
+   "w": 678,
+   "h": 452
+  },
+  {
+   "file": "roman-blinds-2.jpg",
+   "alt": "Woven Roman blinds in a sunroom",
+   "w": 678,
+   "h": 452
+  },
+  {
+   "file": "roman-blinds-3.jpg",
+   "alt": "Colourful printed Roman blind in a window seat",
+   "w": 450,
+   "h": 680
+  },
+  {
+   "file": "roman-blinds-4.jpg",
+   "alt": "Striped Roman blinds in a bathroom",
+   "w": 638,
+   "h": 480
+  },
+  {
+   "file": "roman-blinds-5.jpg",
+   "alt": "Roman blind layered with curtains",
+   "w": 428,
+   "h": 717
+  },
+  {
+   "file": "roman-blinds-6.jpg",
+   "alt": "White Roman blind with black border",
+   "w": 800,
+   "h": 781
+  },
+  {
+   "file": "roman-blinds-7.jpg",
+   "alt": "Roman blind with green stripe in a kitchen",
+   "w": 800,
+   "h": 987
+  }
+ ],
+ "vertical-blinds": [
+  {
+   "file": "vertical-blinds-1.jpg",
+   "alt": "Vertical blinds across a large window",
+   "w": 544,
+   "h": 367
+  }
+ ],
+ "wooden-blinds": [
+  {
+   "file": "wooden-blinds-1.jpg",
+   "alt": "Wooden venetian blinds in a bedroom",
+   "w": 1280,
+   "h": 1280
+  },
+  {
+   "file": "wooden-blinds-2.jpg",
+   "alt": "Wooden venetian blinds in a Dubai living room",
+   "w": 600,
+   "h": 598
+  },
+  {
+   "file": "wooden-blinds-3.jpg",
+   "alt": "Natural 50mm wooden venetian blind",
+   "w": 959,
+   "h": 1280
+  },
+  {
+   "file": "wooden-blinds-4.jpg",
+   "alt": "Wooden blinds across patio doors",
+   "w": 554,
+   "h": 554
+  },
+  {
+   "file": "wooden-blinds-5.jpg",
+   "alt": "Cherrywood timber venetian blinds",
+   "w": 387,
+   "h": 387
+  },
+  {
+   "file": "wooden-blinds-6.jpg",
+   "alt": "Close-up of wooden venetian slats and ladder tape",
+   "w": 1080,
+   "h": 1080
+  }
+ ],
+ "aluminium-venetian-blinds": [
+  {
+   "file": "aluminium-venetian-blinds-1.jpg",
+   "alt": "Aluminium venetian blinds in a living room",
+   "w": 1280,
+   "h": 1280
+  },
+  {
+   "file": "aluminium-venetian-blinds-2.jpg",
+   "alt": "Champagne aluminium venetian blinds",
+   "w": 1280,
+   "h": 1280
+  },
+  {
+   "file": "aluminium-venetian-blinds-3.jpg",
+   "alt": "25mm perforated aluminium venetian blind",
+   "w": 959,
+   "h": 1280
+  },
+  {
+   "file": "aluminium-venetian-blinds-4.jpg",
+   "alt": "Black aluminium venetian blinds in an office",
+   "w": 1000,
+   "h": 770
+  }
+ ],
+ "bamboo-blinds": [
+  {
+   "file": "bamboo-blinds-1.jpg",
+   "alt": "Bamboo blinds in a sunroom",
+   "w": 638,
+   "h": 480
+  },
+  {
+   "file": "bamboo-blinds-2.jpg",
+   "alt": "Outdoor bamboo blinds on a terrace",
+   "w": 618,
+   "h": 495
+  },
+  {
+   "file": "bamboo-blinds-3.jpg",
+   "alt": "Bamboo roller blinds on a patio",
+   "w": 738,
+   "h": 393
+  }
+ ],
+ "printed-blinds": [
+  {
+   "file": "printed-blinds-1.jpg",
+   "alt": "Custom printed fabric panel with bird design",
+   "w": 960,
+   "h": 1280
+  },
+  {
+   "file": "printed-blinds-2.jpg",
+   "alt": "Floral printed roller blind in a kitchen",
+   "w": 678,
+   "h": 452
+  },
+  {
+   "file": "printed-blinds-3.jpg",
+   "alt": "Yellow flower printed roller blind",
+   "w": 554,
+   "h": 554
+  },
+  {
+   "file": "printed-blinds-4.jpg",
+   "alt": "Fabric swatches for custom printing",
+   "w": 960,
+   "h": 1280
+  }
+ ],
+ "logo-sunscreen-blinds": [
+  {
+   "file": "logo-sunscreen-blinds-1.jpg",
+   "alt": "Logo printed sunscreen blind in a shop window",
+   "w": 800,
+   "h": 1064
+  },
+  {
+   "file": "logo-sunscreen-blinds-2.jpg",
+   "alt": "Branded sunscreen roller blinds in a restaurant",
+   "w": 519,
+   "h": 385
+  },
+  {
+   "file": "logo-sunscreen-blinds-3.jpg",
+   "alt": "Logo printed roller blinds in a retail store",
+   "w": 638,
+   "h": 480
+  }
+ ],
+ "curtain-project-dubai": [
+  {
+   "file": "curtain-project-dubai-1.jpg",
+   "alt": "Sheer curtain installation in a Dubai villa",
+   "w": 720,
+   "h": 1280
+  },
+  {
+   "file": "curtain-project-dubai-2.jpg",
+   "alt": "Layered curtains in a Dubai living room",
+   "w": 960,
+   "h": 1280
+  },
+  {
+   "file": "curtain-project-dubai-3.jpg",
+   "alt": "Patterned sheer curtains installed in Dubai",
+   "w": 720,
+   "h": 1280
+  },
+  {
+   "file": "curtain-project-dubai-4.jpg",
+   "alt": "Curtain installation in a Dubai home",
+   "w": 1152,
+   "h": 864
+  },
+  {
+   "file": "curtain-project-dubai-5.jpg",
+   "alt": "Sheer curtains, Dubai installation",
+   "w": 720,
+   "h": 1280
+  },
+  {
+   "file": "curtain-project-dubai-6.jpg",
+   "alt": "Sheer and blackout curtain layers in Dubai",
+   "w": 1152,
+   "h": 864
+  },
+  {
+   "file": "curtain-project-dubai-7.jpg",
+   "alt": "Evening view of installed curtains in Dubai",
+   "w": 960,
+   "h": 1280
+  },
+  {
+   "file": "curtain-project-dubai-8.jpg",
+   "alt": "Patterned sheer curtains in a Dubai bedroom",
+   "w": 720,
+   "h": 1280
+  }
+ ]
+}
