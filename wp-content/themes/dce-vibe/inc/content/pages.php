@@ -360,9 +360,9 @@ function dce_build_catalogue() {
 	$c   = dce_catalogues();
 	$out = dce_sec_hero(
 		array(
-			'kicker'  => 'Fabric catalogues',
-			'title'   => 'Browse our <em>fabric catalogues</em>',
-			'lead'    => 'Explore our curtain fabric collections online. Tap any catalogue to open the PDF, note the names you like and send them to us on WhatsApp — we bring the real samples to your home.',
+			'kicker'  => 'dbh' === dce_profile() ? 'Catalogues' : 'Fabric catalogues',
+			'title'   => 'dbh' === dce_profile() ? 'Browse our <em>catalogues</em>' : 'Browse our <em>fabric catalogues</em>',
+			'lead'    => 'dbh' === dce_profile() ? 'Wallpaper, flooring, carpet and curtain fabric collections online. Tap any catalogue to open the PDFs, note the names you like and send them to us on WhatsApp — we bring the real samples to your site visit.' : 'Explore our curtain fabric collections online. Tap any catalogue to open the PDF, note the names you like and send them to us on WhatsApp — we bring the real samples to your home.',
 			'img'     => dce_img( 'printed-blinds', 4 ),
 			'chips'   => array( 'Open PDFs online', 'Real samples at your home visit', 'Hundreds of fabrics' ),
 			'buttons' => array(
@@ -372,6 +372,19 @@ function dce_build_catalogue() {
 		)
 	);
 	$out .= dce_sec_trust();
+
+	if ( function_exists( 'dbh_catalogue_sections' ) && 'dbh' === dce_profile() ) {
+		foreach ( dbh_catalogue_sections() as $i => $sec ) {
+			$inner = '';
+			foreach ( $sec[3] as $f ) {
+				$inner .= dce_b_group(
+					dce_b_h( $f[0], 3 ) . dce_b_p( $f[1] . ' · PDF collection' ) . dce_b_buttons( array( array( 'Open catalogues', dce_drive_folder( $f[2] ), '', true ) ) ),
+					array( 'class' => 'dce-cat-card dce-cat-folder' )
+				);
+			}
+			$out .= dce_b_section( dce_sec_head( $sec[0], $sec[1], $sec[2] ) . dce_b_wide( $inner, 'dce-catalogue' ), $i % 2 ? 'dce-sec dce-sec-alt' : 'dce-sec' );
+		}
+	}
 
 	$inner = '';
 	foreach ( $c['curtain'] as $cat ) {

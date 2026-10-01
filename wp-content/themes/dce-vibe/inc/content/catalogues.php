@@ -52,3 +52,48 @@ function dce_catalogues() {
 		),
 	);
 }
+
+/**
+ * Dubai Blinds Hub: wallpaper, flooring and carpet catalogue collections (Google Drive folders of PDFs).
+ * Each entry: [name, description, Drive folder ID].
+ */
+function dbh_catalogue_sections() {
+	return array(
+		array(
+			'Wallpaper',
+			'Wallpaper <em>catalogues</em>',
+			'Textured, natural, kids’ and mural wallpaper collections. Open a collection to browse the PDF pattern books.',
+			array(
+				array( 'Korean wall coverings', 'Artis, Living, Motive, Natural, Decent, Metropolis, Beyond', '1TEWSNIpPAZY2zBNjsdUFBSwvyyRxxocB' ),
+				array( 'Special wall coverings', 'Acoustic, Belgian, Beton, Grasscloth and designer papers', '1n4yFIfCdOJwPFDTezL23CXOooZ5OjX9D' ),
+				array( 'Sisal &amp; jute wallpaper', 'Natural-fibre wallcoverings', '13HGzOf9igy7QwE3WAwtBqY8A9Zi7ytE1' ),
+				array( 'Custom wallpaper', 'Horizons, Serenade and more', '10fQZA5x5HsX7Bax9FrYN3kYw-vPr-Hlq' ),
+				array( 'Kids wallpaper', 'DreamWorld and Tiny pattern books', '1bfa0kYz1FClTO2-lizY1OQ0rzg59gowd' ),
+				array( 'Wall murals', 'Chinoiserie and Daisy Bennett mural collections', '105EY-RWe68ReYSKi4uyz4pCbJ2FcDy8e' ),
+			),
+		),
+		array(
+			'Flooring',
+			'Flooring <em>catalogues</em>',
+			'Laminate, SPC, LVT, vinyl and gym flooring ranges.',
+			array(
+				array( 'Laminate flooring', 'AC2, Dynamic, Exquisit, Glamour and Robusto ranges', '1tnHCuNQ3swkj0l7ErazMwfIjM5woW-yz' ),
+				array( 'SPC flooring', 'Plank, herringbone and concrete-look SPC', '1_5UltCRPGsfNgC_LDPmXWh_hWGxBHZlz' ),
+				array( 'LVT flooring', 'Luxury vinyl tile collections', '10QIvF-uLVqOzXcSSnOGV67EqrVHois6t' ),
+				array( 'Vinyl flooring', 'Ruby Acoustic, Ruby Compact and more', '1AQz8EdkP_tpqpjpya_KDAw4PVOlyBP1M' ),
+				array( 'Hospital vinyl', 'Hygienic vinyl for clinics and hospitals', '15sNhXVXtUL9keQzAXOMPhk-jXMK7ExXr' ),
+				array( 'Gym flooring', 'Rubber, EPDM and vinyl gym floors', '1Zm4axcc7TXNL9RP_RihYTu-DMz9pGQqm' ),
+			),
+		),
+		array(
+			'Carpets',
+			'Carpet <em>catalogues</em>',
+			'Wall to wall carpet, carpet tiles and mosque carpet collections.',
+			array(
+				array( 'Wall to wall carpets', 'Antibes, Atticus, Berlin, Bulgari, Cadiz, Coco and more', '1Ycw_jPbWfIaKMldhfTakB5N-7nZBL5hD' ),
+				array( 'Carpet tiles', 'Commercial carpet tile ranges', '1YNI81J4er5Odvn_zx1toVXqCwD1jjVLM' ),
+				array( 'Mosque carpets', 'Prayer hall and mosque carpets', '18MEmJjzR9zs2rnK91bTaKxZdr1BObty2' ),
+			),
+		),
+	);
+}
