@@ -252,11 +252,22 @@ function dce_sec_hero( $h ) {
 		. dce_b_p( $h['lead'], 'dce-lead' )
 		. dce_b_buttons( $buttons )
 		. ( ! empty( $h['chips'] ) ? dce_b_list( $h['chips'], 'dce-chips' ) : '' );
-	$image   = ! empty( $h['img'] ) ? dce_b_image( $h['img'] ) : '';
-	return dce_b_section( dce_b_columns( array( $text, $image ) ), 'dce-hero' . ( ! empty( $h['wide'] ) ? ' dce-hero-wide' : '' ) );
+	if ( empty( $h['img'] ) ) {
+		return dce_b_section( dce_b_group( $text, array( 'class' => 'dce-hero-text' ) ), 'dce-hero dce-hero-solo' );
+	}
+	return dce_b_section( dce_b_columns( array( $text, dce_b_image( $h['img'] ) ) ), 'dce-hero' . ( ! empty( $h['wide'] ) ? ' dce-hero-wide' : '' ) );
 }
 
 function dce_sec_trust( $items = null ) {
+	if ( null === $items && 'dbh' === dce_profile() ) {
+		$items = array(
+			'Free site visit &amp; measurement',
+			'Blinds, curtains, flooring, upholstery &amp; wallpaper',
+			'Installed by our own team',
+			'Dubai &amp; all UAE emirates',
+			'Part of <a href="#parent">Casa Vera Home</a>',
+		);
+	}
 	if ( null === $items ) {
 		$items = array(
 			'Free home visit &amp; measurement',
@@ -290,7 +301,10 @@ function dce_sec_split( $s ) {
 	if ( ! empty( $s['buttons'] ) ) {
 		$text .= dce_b_buttons( $s['buttons'] );
 	}
-	$img  = ! empty( $s['img'] ) ? dce_b_image( $s['img'] ) : '';
+	if ( empty( $s['img'] ) ) {
+		return dce_b_section( $text, dce_cls( 'dce-sec dce-split dce-split-solo', isset( $s['class'] ) ? $s['class'] : '' ) );
+	}
+	$img  = dce_b_image( $s['img'] );
 	$cols = ! empty( $s['reverse'] ) ? array( $text, $img ) : array( $img, $text );
 	return dce_b_section( dce_b_columns( $cols ), dce_cls( 'dce-sec dce-split', isset( $s['class'] ) ? $s['class'] : '' ) );
 }
@@ -315,9 +329,20 @@ function dce_sec_steps( $title = 'From first message <em>to finished window</em>
 		array( 'Choose &amp; confirm', 'Pick fabrics, headings, linings and controls. You receive a clear, itemised quotation before anything is made.' ),
 		array( 'Made &amp; installed', 'Everything is made to measure and installed by our own team — tracks, rods, brackets and motors included.' ),
 	);
+	if ( 'dbh' === dce_profile() ) {
+		$steps = array(
+			array( 'Message or call', 'Send photos of your space on <a href="#whatsapp">WhatsApp</a> or call us. We reply within working hours.' ),
+			array( 'Free site visit', 'We visit, measure the windows, floors, walls or furniture and bring samples to compare on site.' ),
+			array( 'Choose &amp; confirm', 'Pick materials, colours and finishes. You receive a clear, itemised quotation before work starts.' ),
+			array( 'Supply &amp; install', 'Our own team prepares, fits and installs everything, then leaves the space clean.' ),
+		);
+	}
 	$inner = '';
 	foreach ( $steps as $s ) {
 		$inner .= dce_b_group( dce_b_h( $s[0], 3 ) . dce_b_p( $s[1] ), array( 'class' => 'dce-step' ) );
+	}
+	if ( 'dbh' === dce_profile() ) {
+		$title = str_replace( 'to finished window', 'to finished space', $title );
 	}
 	return dce_b_section( dce_sec_head( 'How it works', $title ) . dce_b_wide( $inner, 'dce-steps' ), $class );
 }
@@ -410,7 +435,7 @@ function dce_sec_cta( $title, $lead, $buttons = null ) {
 function dce_sec_parent() {
 	$text = dce_b_p( 'Our parent company', 'dce-kicker' )
 		. dce_b_h( 'Part of <em>Casa Vera Home</em>' )
-		. dce_b_p( 'Dubai Curtain Experts is the dedicated curtains and blinds studio of <strong>Casa Vera Home</strong> (Mukhtar Curtain LLC). For furniture, décor and complete interior fit-outs, explore our parent company — one team for your whole home.' );
+		. dce_b_p( ( 'dbh' === dce_profile() ? 'Dubai Blinds Hub is part of' : 'Dubai Curtain Experts is the dedicated curtains and blinds studio of' ) . ' <strong>Casa Vera Home</strong> (Mukhtar Curtain LLC). For furniture, décor and complete interior fit-outs, explore our parent company — one team for your whole home.' );
 	$btn  = dce_b_buttons( array( array( 'Visit Casa Vera Home', '#parent', 'is-style-outline' ) ) );
 	return dce_b_section( dce_b_group( dce_b_columns( array( $text, $btn ) ), array( 'align' => 'wide', 'class' => 'dce-parent' ) ), 'dce-sec' );
 }

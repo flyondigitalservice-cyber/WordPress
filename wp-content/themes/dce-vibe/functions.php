@@ -26,5 +26,7 @@ if ( is_admin() || ( defined( 'WP_CLI' ) && WP_CLI ) || defined( 'DCE_LOAD_IMPOR
 	require DCE_DIR . '/inc/content/products.php';
 	require DCE_DIR . '/inc/content/areas.php';
 	require DCE_DIR . '/inc/content/pages.php';
+	require DCE_DIR . '/inc/content/dbh-services.php';
+	require DCE_DIR . '/inc/content/dbh-pages.php';
 	require DCE_DIR . '/inc/importer.php';
 }

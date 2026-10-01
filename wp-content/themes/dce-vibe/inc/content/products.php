@@ -12,6 +12,9 @@
 defined( 'ABSPATH' ) || exit;
 
 function dce_products() {
+	if ( 'dbh' === dce_profile() ) {
+		return dbh_services();
+	}
 	return array(
 
 		/* ------------------------------- CURTAINS ------------------------------- */

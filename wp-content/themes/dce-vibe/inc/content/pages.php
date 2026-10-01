@@ -16,7 +16,7 @@ function dce_path( $slug ) {
 	if ( null === $map ) {
 		$map = array();
 		foreach ( dce_products() as $s => $p ) {
-			$map[ $s ] = '/' . $p['parent'] . '/' . $s . '/';
+			$map[ $s ] = $p['parent'] ? '/' . $p['parent'] . '/' . $s . '/' : '/' . $s . '/';
 		}
 		foreach ( dce_areas() as $s => $a ) {
 			$map[ $s ] = '/areas-we-serve/' . $s . '/';
@@ -28,13 +28,23 @@ function dce_path( $slug ) {
 	return home_url( isset( $map[ $slug ] ) ? $map[ $slug ] : '/' . $slug . '/' );
 }
 
-function dce_product_card( $slug ) {
+function dce_product_images( $slug ) {
+	$own = dce_imgs( 'p:' . $slug );
+	if ( $own ) {
+		return $own;
+	}
 	$p = dce_products()[ $slug ];
+	return dce_imgs( $p['img'] );
+}
+
+function dce_product_card( $slug ) {
+	$p    = dce_products()[ $slug ];
+	$imgs = dce_product_images( $slug );
 	return array(
 		'title' => $p['name'],
 		'text'  => $p['card'],
 		'url'   => dce_path( $slug ),
-		'img'   => dce_img( $p['img'], 1 ),
+		'img'   => $imgs ? $imgs[0] : null,
 	);
 }
 
@@ -62,6 +72,9 @@ function dce_shared_faqs() {
 }
 
 function dce_chips() {
+	if ( 'dbh' === dce_profile() ) {
+		return array( 'Free site visit', 'Supplied &amp; installed', 'Installed by our team' );
+	}
 	return array( 'Free home visit', 'Made to measure', 'Installed by our team' );
 }
 
@@ -71,7 +84,7 @@ function dce_chips() {
 
 function dce_build_product( $slug ) {
 	$p    = dce_products()[ $slug ];
-	$imgs = dce_imgs( $p['img'] );
+	$imgs = dce_product_images( $slug );
 	$hero = $imgs ? $imgs[0] : null;
 	$name = $p['name'];
 	$lc   = strtolower( wp_strip_all_tags( html_entity_decode( $name ) ) );
@@ -93,16 +106,18 @@ function dce_build_product( $slug ) {
 			'paras'   => $p['paras'],
 			'checks'  => $p['checks'],
 			'img'     => count( $imgs ) > 1 ? $imgs[1] : $hero,
-			'buttons' => array(
-				array( 'Browse fabric catalogues', home_url( '/catalogue/' ), 'is-style-outline' ),
-				array( 'Ask on WhatsApp', '#whatsapp', 'dce-wa' ),
-			),
+			'buttons' => ( isset( $p['catalogue'] ) && ! $p['catalogue'] )
+				? array( array( 'Ask on WhatsApp', '#whatsapp', 'dce-wa' ) )
+				: array(
+					array( 'Browse fabric catalogues', home_url( '/catalogue/' ), 'is-style-outline' ),
+					array( 'Ask on WhatsApp', '#whatsapp', 'dce-wa' ),
+				),
 		)
 	);
 	if ( count( $imgs ) >= 3 ) {
 		$out .= dce_sec_gallery( 'Gallery', 'Our <em>' . $lc . '</em> work', 'A selection of ' . $lc . ' we have made and installed. Every piece is measured for its window.', array_slice( $imgs, 0, 6 ), 'dce-sec' );
 	}
-	$out .= dce_sec_tiles( 'Options', $p['opt_title'], 'Everything is made to measure, so you choose exactly what suits your room — we bring samples to your home.', $p['tiles'] );
+	$out .= dce_sec_tiles( 'Options', $p['opt_title'], 'dbh' === dce_profile() ? 'Choose the materials and finishes that suit your space — we bring samples to your site visit.' : 'Everything is made to measure, so you choose exactly what suits your room — we bring samples to your home.', $p['tiles'] );
 	$out .= dce_sec_steps();
 	$out .= dce_sec_faq( array_merge( $p['faqs'], array_slice( dce_shared_faqs(), 0, 1 ) ), $name . ' <em>FAQ</em>' );
 
@@ -111,7 +126,11 @@ function dce_build_product( $slug ) {
 		$cards[] = dce_product_card( $r );
 	}
 	$out .= dce_sec_cards( 'You may also like', 'Related <em>styles</em>', '', $cards, 'dce-sec dce-sec-alt' );
-	$out .= dce_sec_links( 'Areas we serve', $name . ' across <em>Dubai &amp; the UAE</em>', 'Free home visits and installation in every emirate. Choose your area for local details.', dce_area_links(), 'dce-sec' );
+	if ( dce_areas() ) {
+		$out .= dce_sec_links( 'Areas we serve', $name . ' across <em>Dubai &amp; the UAE</em>', 'Free home visits and installation in every emirate. Choose your area for local details.', dce_area_links(), 'dce-sec' );
+	} else {
+		$out .= dce_sec_places( $name );
+	}
 	$out .= dce_sec_quote( wp_strip_all_tags( html_entity_decode( $name ) ) );
 	return $out;
 }
@@ -372,7 +391,7 @@ function dce_build_catalogue() {
 	}
 	foreach ( $c['brochures'] as $b ) {
 		$inner .= dce_b_group(
-			dce_b_h( $b[0], 3 ) . dce_b_p( $b[1] . ' · PDF ' . $b[3] ) . dce_b_buttons( array( array( 'View brochure', dce_drive_file( $b[2] ), '', true ), array( 'Learn more', dce_path( $b[4] ), 'is-style-outline' ) ) ),
+			dce_b_h( $b[0], 3 ) . dce_b_p( $b[1] . ' · PDF ' . $b[3] ) . dce_b_buttons( array_filter( array( array( 'View brochure', dce_drive_file( $b[2] ), '', true ), isset( dce_products()[ $b[4] ] ) ? array( 'Learn more', dce_path( $b[4] ), 'is-style-outline' ) : null ) ) ),
 			array( 'class' => 'dce-cat-card' )
 		);
 	}
@@ -524,7 +543,7 @@ function dce_build_blog() {
 
 function dce_build_privacy() {
 	$inner = dce_b_h( 'Privacy policy', 1 )
-		. dce_b_p( 'This policy explains how Dubai Curtain Experts (Casa Vera Home, Mukhtar Curtain LLC) handles information you share through this website.', 'dce-lead' )
+		. dce_b_p( 'This policy explains how ' . esc_html( dce_opt( 'brand' ) ) . ' (Casa Vera Home, Mukhtar Curtain LLC) handles information you share through this website.', 'dce-lead' )
 		. dce_b_h( 'What we collect' )
 		. dce_b_p( 'When you use the request form we collect the details you enter: name, phone number, area, the product you are interested in and your message. When you contact us on WhatsApp, phone or email, we receive the information you choose to send.' )
 		. dce_b_h( 'How we use it' )
@@ -543,6 +562,9 @@ function dce_build_privacy() {
  * --------------------------------------------------------------------- */
 
 function dce_page_defs() {
+	if ( 'dbh' === dce_profile() ) {
+		return dbh_page_defs();
+	}
 	$defs = array(
 		'home'           => array(
 			'title' => 'Curtains &amp; Blinds in Dubai',
@@ -633,4 +655,10 @@ function dce_page_defs() {
 		'seo'   => array( 'Privacy Policy | Dubai Curtain Experts', 'How Dubai Curtain Experts handles the information you share through our website, forms and WhatsApp.' ),
 	);
 	return $defs;
+}
+
+/** Service-area chips for sites without area pages. */
+function dce_sec_places( $name ) {
+	$places = array( 'Dubai Marina &amp; JBR', 'Downtown &amp; Business Bay', 'Palm Jumeirah', 'Jumeirah', 'Dubai Hills', 'Arabian Ranches', 'JVC &amp; JLT', 'Al Barsha', 'Deira &amp; Bur Dubai', 'Mirdif', 'Abu Dhabi', 'Sharjah', 'Ajman', 'Umm Al Quwain', 'Ras Al Khaimah', 'Fujairah', 'Al Ain' );
+	return dce_b_section( dce_sec_head( 'Areas we serve', $name . ' across <em>Dubai &amp; the UAE</em>', 'Free site visit and installation in every emirate.' ) . dce_b_wide( dce_b_list( $places, 'dce-chips' ) ), 'dce-sec' );
 }

@@ -39,6 +39,9 @@ function dce_importer_page() {
 		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 			<input type="hidden" name="action" value="dce_run_import">
 			<?php wp_nonce_field( 'dce_run_import' ); ?>
+			<p><strong><?php esc_html_e( 'Website', 'dce-vibe' ); ?>:</strong>
+				<label><input type="radio" name="profile" value="dce" <?php checked( dce_profile(), 'dce' ); ?>> Dubai Curtain Experts</label> &nbsp;
+				<label><input type="radio" name="profile" value="dbh" <?php checked( dce_profile(), 'dbh' ); ?>> Dubai Blinds Hub</label></p>
 			<p><label><input type="checkbox" name="overwrite" value="1" checked> <?php esc_html_e( 'Replace the content of existing pages with the new design', 'dce-vibe' ); ?></label></p>
 			<p><label><input type="checkbox" name="menus" value="1" checked> <?php esc_html_e( 'Create / refresh header and footer menus', 'dce-vibe' ); ?></label></p>
 			<p><label><input type="checkbox" name="reading" value="1" checked> <?php esc_html_e( 'Set the Home page as front page and Blog as posts page', 'dce-vibe' ); ?></label></p>
@@ -63,6 +66,9 @@ function dce_handle_import() {
 		wp_die( esc_html__( 'Not allowed.', 'dce-vibe' ) );
 	}
 	check_admin_referer( 'dce_run_import' );
+	if ( isset( $_POST['profile'] ) && in_array( $_POST['profile'], array( 'dce', 'dbh' ), true ) ) {
+		update_option( 'dce_profile', sanitize_key( $_POST['profile'] ) );
+	}
 	$result = dce_run_import(
 		array(
 			'overwrite' => ! empty( $_POST['overwrite'] ),
@@ -100,6 +106,7 @@ function dce_run_import( $opts = array() ) {
 	$GLOBALS['dce_media'] = $media['map'];
 
 	$ids     = array();
+	$errors  = array();
 	$created = 0;
 	$updated = 0;
 	$skipped = 0;
@@ -133,6 +140,8 @@ function dce_run_import( $opts = array() ) {
 				continue;
 			}
 			$postarr['ID'] = $existing->ID;
+			// Old theme/plugin templates (e.g. Service Pages Builder) would make the update fail.
+			update_post_meta( $existing->ID, '_wp_page_template', 'default' );
 			$id            = wp_update_post( wp_slash( $postarr ), true );
 			++$updated;
 		} else {
@@ -140,6 +149,7 @@ function dce_run_import( $opts = array() ) {
 			++$created;
 		}
 		if ( is_wp_error( $id ) ) {
+			$errors[] = $slug . ': ' . $id->get_error_message();
 			continue;
 		}
 		$ids[ $slug ] = $id;
@@ -150,7 +160,7 @@ function dce_run_import( $opts = array() ) {
 		}
 		update_post_meta( $id, '_dce_service_name', isset( $def['svc'] ) ? $def['svc'] : '' );
 		if ( ! empty( $def['thumb'] ) ) {
-			$img = dce_img( $def['thumb'][0], $def['thumb'][1] );
+			$img = is_array( $def['thumb'] ) ? dce_img( $def['thumb'][0], $def['thumb'][1] ) : dce_img( $def['thumb'], 1 );
 			if ( $img && ! empty( $img['id'] ) ) {
 				set_post_thumbnail( $id, $img['id'] );
 			}
@@ -158,7 +168,11 @@ function dce_run_import( $opts = array() ) {
 	}
 
 	if ( $opts['menus'] ) {
-		dce_build_menus( $ids );
+		if ( 'dbh' === dce_profile() ) {
+			dbh_build_menus( $ids );
+		} else {
+			dce_build_menus( $ids );
+		}
 	}
 	if ( $opts['reading'] && isset( $ids['home'] ) ) {
 		update_option( 'show_on_front', 'page' );
@@ -181,6 +195,9 @@ function dce_run_import( $opts = array() ) {
 		$media['reused'],
 		$media['matched']
 	);
+	if ( $errors ) {
+		$report .= ' Errors: ' . esc_html( implode( '; ', $errors ) ) . '.';
+	}
 	if ( $media['missing'] ) {
 		$report .= ' Image groups with no photo yet (add one in the page editor): ' . esc_html( implode( ', ', $media['missing'] ) ) . '.';
 	}
@@ -250,6 +267,9 @@ function dce_import_media() {
 		'logo-sunscreen-blinds'   => array( 'logo-printed-sunscreen-blinds-dubai', 'Logo printed sunscreen blinds' ),
 		'cinema-curtains'         => array( 'cinema-curtains-dubai', 'Cinema curtains in Dubai' ),
 	);
+	if ( 'dbh' === dce_profile() ) {
+		$extra = array();
+	}
 	foreach ( $extra as $key => $info ) {
 		$have = isset( $map[ $key ] ) ? count( $map[ $key ] ) : 0;
 		if ( $have >= 4 ) {
@@ -269,9 +289,40 @@ function dce_import_media() {
 		}
 	}
 
-	foreach ( dce_products() as $p ) {
-		if ( empty( $map[ $p['img'] ] ) ) {
-			$stats['missing'][] = wp_strip_all_tags( html_entity_decode( $p['name'] ) );
+	// Per-page image lists (Dubai Blinds Hub): bundled photos first, then matching Media Library photos.
+	foreach ( dce_products() as $slug => $p ) {
+		if ( empty( $p['imgs'] ) && empty( $p['media'] ) ) {
+			continue;
+		}
+		$list = array();
+		foreach ( (array) ( isset( $p['imgs'] ) ? $p['imgs'] : array() ) as $spec ) {
+			if ( ! empty( $map[ $spec[0] ] ) ) {
+				$all    = array_values( $map[ $spec[0] ] );
+				$list[] = $all[ ( $spec[1] - 1 ) % count( $all ) ];
+			}
+		}
+		foreach ( (array) ( isset( $p['media'] ) ? $p['media'] : array() ) as $prefix ) {
+			foreach ( dce_find_media_by_prefix( $prefix ) as $aid ) {
+				if ( count( $list ) >= 6 ) {
+					break 2;
+				}
+				$alt = get_post_meta( $aid, '_wp_attachment_image_alt', true );
+				if ( ! $alt ) {
+					$alt = wp_strip_all_tags( html_entity_decode( $p['name'] ) ) . ' in Dubai';
+					update_post_meta( $aid, '_wp_attachment_image_alt', $alt );
+				}
+				$list[] = dce_media_item( $aid, $alt );
+				++$stats['matched'];
+			}
+		}
+		if ( $list ) {
+			$map[ 'p:' . $slug ] = $list;
+		}
+	}
+
+	foreach ( dce_products() as $slug => $p ) {
+		if ( empty( $map[ 'p:' . $slug ] ) && ( ! $p['img'] || empty( $map[ $p['img'] ] ) ) ) {
+			$stats['missing'][] = html_entity_decode( wp_strip_all_tags( $p['name'] ), ENT_QUOTES, 'UTF-8' );
 		}
 	}
 	$stats['map'] = $map;
@@ -300,7 +351,8 @@ function dce_find_media_by_prefix( $prefix ) {
 		$wpdb->prepare(
 			"SELECT p.ID FROM {$wpdb->posts} p
 			INNER JOIN {$wpdb->postmeta} m ON m.post_id = p.ID AND m.meta_key = '_wp_attached_file'
-			WHERE p.post_type = 'attachment' AND p.post_mime_type LIKE 'image/%%' AND CONCAT('/', m.meta_value) LIKE %s
+			LEFT JOIN {$wpdb->postmeta} own ON own.post_id = p.ID AND own.meta_key = '_dce_src'
+			WHERE p.post_type = 'attachment' AND p.post_mime_type LIKE 'image/%%' AND own.meta_id IS NULL AND CONCAT('/', m.meta_value) LIKE %s
 			ORDER BY m.meta_value ASC LIMIT 8",
 			$like
 		)

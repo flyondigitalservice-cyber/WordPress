@@ -8,6 +8,9 @@
 defined( 'ABSPATH' ) || exit;
 
 function dce_areas() {
+	if ( 'dbh' === dce_profile() ) {
+		return array();
+	}
 	return array(
 		'curtains-blinds-dubai-marina'                => array(
 			'name'      => 'Dubai Marina &amp; JBR',

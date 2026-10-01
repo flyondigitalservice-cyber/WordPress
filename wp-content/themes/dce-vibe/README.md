@@ -56,3 +56,16 @@ Make sure the Drive files and folders are shared as **Anyone with the link → V
 Photos live in `assets/img/` (`manifest.json` lists the alt text) and are imported into the Media Library on setup.
 Some categories only had small thumbnails on Drive: Blackout Roller, Sunscreen Roller and Hospital, plus extra photos for Kids, Zebra, Vertical and Logo blinds.
 For these, the importer reuses the matching photos already in the site's Media Library (for example `blackout-roller-blinds-dubai-1.jpg`).
+
+## Second site: Dubai Blinds Hub (dubaiblindshub.ae)
+
+The same theme runs **Dubai Blinds Hub** with its own content. In **Appearance → DCE Site Setup**, choose *Dubai Blinds Hub*; it is detected automatically on the dubaiblindshub.ae domain.
+
+- **52 pages:** Home, About, 6 hubs (Blinds Dubai, Curtains, Flooring, Upholstery, Wallpaper, Carpets), the Blinds in Dubai guide, 40 service pages at their existing URLs (e.g. `/roller-blinds/`, `/sofa-upholstery/`), Catalogues, Contact and Privacy.
+- **Unique copy:** none of the text is shared with Dubai Curtain Experts, so the two domains don't compete as duplicates.
+- **Untouched:** the SureCart pages (Shop, Checkout, Dashboard).
+- **Photos:**
+  - Blinds and curtains use the bundled photos.
+  - Upholstery and other pages pick up matching photos already in the site's Media Library, matched by file name (e.g. `sofa-upholstery*.webp`).
+  - Pages with no photo yet show a clean text-only hero. Add an image in the editor, or upload photos named after the service (e.g. `wooden-flooring-1.jpg`) and run the setup again.
+- **Old templates:** existing pages built with *Service Pages Builder* are switched to the theme's default template during import. If a page still shows the old layout after import, deactivate that plugin.

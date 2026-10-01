@@ -8,10 +8,22 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
+ * Which site this theme is running: 'dce' (Dubai Curtain Experts) or 'dbh' (Dubai Blinds Hub).
+ * Chosen in Appearance → DCE Site Setup; detected from the domain until then.
+ */
+function dce_profile() {
+	$p = get_option( 'dce_profile' );
+	if ( in_array( $p, array( 'dce', 'dbh' ), true ) ) {
+		return $p;
+	}
+	return false !== strpos( (string) wp_parse_url( home_url(), PHP_URL_HOST ), 'blindshub' ) ? 'dbh' : 'dce';
+}
+
+/**
  * Default business details. Every value can be changed in Appearance → Customize → DCE Business Details.
  */
 function dce_defaults() {
-	return array(
+	$d = array(
 		'brand'           => 'Dubai Curtain Experts',
 		'brand_sub'       => 'Part of Casa Vera Home',
 		'legal_name'      => 'Mukhtar Curtain LLC',
@@ -44,6 +56,25 @@ function dce_defaults() {
 		'geo_lng'         => '55.3075',
 		'price_range'     => 'AED',
 	);
+	if ( 'dbh' === dce_profile() ) {
+		$d = array_merge(
+			$d,
+			array(
+				'brand'        => 'Dubai Blinds Hub',
+				'wa_message'   => 'Hello Dubai Blinds Hub, I would like a free site visit and quotation.',
+				'email'        => 'info@dubaiblindshub.ae',
+				'lead_email'   => 'info@dubaiblindshub.ae',
+				'topbar_text'  => 'Blinds, curtains, flooring, upholstery, wallpaper & carpets — free site visit across the UAE',
+				'header_cta_text' => 'Book a free site visit',
+				'footer_about' => 'Blinds, curtains, flooring, upholstery, wallpaper and carpets for homes, offices and hospitality across Dubai and the UAE. Measured, supplied and installed by our own team.',
+				'footer_copy'  => '© {year} Dubai Blinds Hub — Casa Vera Home (Mukhtar Curtain LLC). All rights reserved.',
+				'parent_text'  => 'Dubai Blinds Hub is part of Casa Vera Home. For furniture, décor and complete interiors, visit our parent company.',
+				'instagram'    => 'https://instagram.com/casaverahome',
+				'tiktok'       => 'https://www.tiktok.com/@casaverahome',
+			)
+		);
+	}
+	return $d;
 }
 
 /**
@@ -104,6 +135,20 @@ function dce_quote_url() {
 
 /** Products and areas offered in the lead form. */
 function dce_lead_services() {
+	if ( 'dbh' === dce_profile() ) {
+		return apply_filters(
+			'dce_lead_services',
+			array(
+				'Roller blinds', 'Blackout blinds', 'Venetian blinds', 'Vertical blinds', 'Roman blinds', 'Motorized blinds', 'Office blinds',
+				'Blackout curtains', 'Sheer curtains', 'Motorized curtains', 'Office curtains', 'Villa curtain installation', 'Curtain rods & tracks', 'Curtain alteration & stitching',
+				'Wooden flooring', 'Vinyl flooring', 'Laminate flooring', 'Gym flooring', 'Epoxy flooring', 'Sports flooring', 'Rubber flooring',
+				'Sofa upholstery', 'Chair upholstery', 'Restaurant seating upholstery', 'Car seat upholstery', 'Outdoor furniture upholstery', 'Cushions & pillows',
+				'3D wallpaper', 'Textured wallpaper', 'Kids room wallpaper', 'Office wallpaper', 'Custom wall murals', 'Wallpaper removal', 'Commercial wallpaper installation',
+				'Wall to wall carpet', 'Carpet tiles', 'Exhibition carpet', 'Office carpet installation', 'Carpet cleaning & maintenance', 'Custom carpet runners',
+				'Whole home / office project',
+			)
+		);
+	}
 	return apply_filters(
 		'dce_lead_services',
 		array(
