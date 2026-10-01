@@ -76,7 +76,7 @@ $dce_locations    = get_nav_menu_locations();
 				<li><?php echo dce_icon( 'whatsapp', 15 ); // phpcs:ignore ?><a href="<?php echo esc_url( dce_wa_url( dce_page_wa_message() ) ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'WhatsApp us', 'dce-vibe' ); ?></a></li>
 				<li><?php echo dce_icon( 'mail', 15 ); // phpcs:ignore ?><a href="mailto:<?php echo esc_attr( antispambot( dce_opt( 'email' ) ) ); ?>"><?php echo esc_html( antispambot( dce_opt( 'email' ) ) ); ?></a></li>
 			</ul>
-			<a class="dce-btn dce-btn-wa dce-btn-sm dce-footer-cta" href="<?php echo esc_url( dce_wa_url( dce_page_wa_message() ) ); ?>" target="_blank" rel="noopener"><?php echo dce_icon( 'whatsapp', 16 ); // phpcs:ignore ?> <?php esc_html_e( 'Book a free home visit', 'dce-vibe' ); ?></a>
+			<a class="dce-btn dce-btn-wa dce-btn-sm dce-footer-cta" href="<?php echo esc_url( dce_wa_url( dce_page_wa_message() ) ); ?>" target="_blank" rel="noopener"><?php echo dce_icon( 'whatsapp', 16 ); // phpcs:ignore ?> <?php echo esc_html( dce_opt( 'header_cta_text' ) ? dce_opt( 'header_cta_text' ) : __( 'Book a free visit', 'dce-vibe' ) ); ?></a>
 		</div>
 	</div>
 
