@@ -1,0 +1,16 @@
+/*
+Theme Name: FlavorKit
+Theme URI: https://example.com/flavorkit
+Author: Flyon Digital Service
+Description: A bold, playful, conversion-focused WooCommerce theme for D2C food, beverage, snack, spice and wellness brands. Switch between colour presets, fonts and front-page sections from the Customizer to re-skin it for every client in minutes.
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.8
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: flavorkit
+Tags: e-commerce, food-and-drink, custom-colors, custom-logo, custom-menu, featured-images, full-width-template, theme-options, translation-ready
+*/
+
+/* All styles live in assets/css. This file only carries the theme header. */

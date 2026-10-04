@@ -1,0 +1,19 @@
+/* Block editor styles: mirror the front-end typography. */
+body {
+	font-family: var(--fk-font-body, system-ui, sans-serif);
+	color: var(--fk-dark, #1d1238);
+	background: var(--fk-cream, #fff5e9);
+	line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6,
+.editor-post-title__input {
+	font-family: var(--fk-font-heading, system-ui, sans-serif);
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	line-height: 1.05;
+}
+
+a {
+	color: var(--fk-primary, #ff4f8b);
+}
