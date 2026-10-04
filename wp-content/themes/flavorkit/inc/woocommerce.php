@@ -230,3 +230,70 @@ function flavorkit_get_home_products( $source, $limit ) {
  */
 add_action( 'woocommerce_update_options_shipping', fn() => delete_transient( 'flavorkit_free_ship_min' ) );
 add_action( 'woocommerce_shipping_zone_method_status_toggled', fn() => delete_transient( 'flavorkit_free_ship_min' ) );
+
+/**
+ * Brand-coloured pack illustration for a product without a photo.
+ *
+ * The shape follows the product category (Beverages → can, Spices → jar …)
+ * so imported demo products look right before real photography exists.
+ *
+ * @param WC_Product $product Product.
+ * @return string SVG markup.
+ */
+function flavorkit_product_pack( $product ) {
+	$id    = $product->get_parent_id() ? $product->get_parent_id() : $product->get_id();
+	$name  = $product->get_parent_id() ? get_the_title( $id ) : $product->get_name();
+	$shape = '';
+	$map   = array(
+		'kombucha|juice|bottle|sauce' => 'bottle',
+		'beverage|drink|soda|juice'   => 'can',
+		'breakfast|cereal|granola|muesli|box|gift' => 'box',
+		'spice|masala|pickle|jar'     => 'jar',
+		'snack|chip|makhana|combo'    => 'pouch',
+	);
+	$haystack = strtolower( $name . ' ' . implode( ' ', wp_get_post_terms( $id, 'product_cat', array( 'fields' => 'slugs' ) ) ) );
+	foreach ( $map as $pattern => $candidate ) {
+		if ( preg_match( '/' . $pattern . '/', $haystack ) ) {
+			$shape = $candidate;
+			break;
+		}
+	}
+	if ( ! $shape ) {
+		$shapes = array( 'can', 'pouch', 'jar', 'bottle', 'box' );
+		$shape  = $shapes[ $id % 5 ];
+	}
+	$words = preg_split( '/\s+/', strtoupper( wp_strip_all_tags( $name ) ) );
+	return flavorkit_pack_svg( $shape, $id, $words[0], implode( ' ', array_slice( $words, 1, 2 ) ) );
+}
+
+/**
+ * Single product: replace the grey placeholder with the pack illustration.
+ */
+add_filter(
+	'woocommerce_single_product_image_thumbnail_html',
+	function ( $html, $attachment_id ) {
+		global $product;
+		if ( ! $attachment_id && $product instanceof WC_Product ) {
+			return '<div class="woocommerce-product-gallery__image--placeholder fk-single-pack fk-tone-' . esc_attr( $product->get_id() % 4 ) . '">' . flavorkit_product_pack( $product ) . '</div>';
+		}
+		return $html;
+	},
+	10,
+	2
+);
+
+/**
+ * Cart & mini-cart thumbnails for products without a photo.
+ */
+add_filter(
+	'woocommerce_cart_item_thumbnail',
+	function ( $html, $cart_item ) {
+		$product = isset( $cart_item['data'] ) ? $cart_item['data'] : null;
+		if ( $product instanceof WC_Product && ! $product->get_image_id() && ! ( $product->get_parent_id() && get_post_thumbnail_id( $product->get_parent_id() ) ) ) {
+			return '<span class="fk-cart-pack fk-tone-' . esc_attr( $product->get_id() % 4 ) . '">' . flavorkit_product_pack( $product ) . '</span>';
+		}
+		return $html;
+	},
+	10,
+	2
+);

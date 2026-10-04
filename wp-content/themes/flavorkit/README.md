@@ -44,6 +44,23 @@ Several fields hold one item per line, with the parts separated by `|`:
 Available icons: `leaf heart truck shield sparkle flame drop gift check star`.
 Available pack shapes: `can pouch jar bottle box`.
 
+## Demo products (WooCommerce import)
+
+`demo/flavorkit-demo-products.csv` contains 13 ready-made products: sodas,
+kombucha, makhana, pasta cups, spices, granola and combos. Each has prices,
+sale prices, descriptions, categories and tags. One is a variable product
+with *Pack of 5 / Pack of 10* options.
+
+1. Go to **Products → Import** and choose the CSV.
+2. Click **Continue**, keep the automatic column mapping, then click
+   **Run the importer**.
+
+The CSV has no images on purpose. Any product without a photo shows a
+brand-coloured pack illustration on the shop, product, cart and mini-cart
+pages. The shape follows the category (Beverages → can, Spices → jar,
+Breakfast → box, Snacks → pouch). When you upload real product photos, they
+replace the illustrations automatically.
+
 ## Features
 
 * Colour presets plus custom colours, all driven by CSS variables. Text

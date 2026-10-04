@@ -933,3 +933,32 @@ p.no-comments {
 		flex-basis: 100%;
 	}
 }
+
+/* ---------- Pack illustrations for products without photos ---------- */
+.fk-single-pack {
+	display: grid;
+	place-items: center;
+	aspect-ratio: 1;
+}
+
+.fk-single-pack svg {
+	width: 58%;
+}
+
+.fk-cart-pack {
+	display: inline-grid;
+	place-items: center;
+	width: 72px;
+	height: 72px;
+	border-radius: 12px;
+	border: 1px solid var(--fk-line);
+	vertical-align: middle;
+}
+
+.fk-cart-pack svg {
+	width: 70%;
+}
+
+.fk-drawer .woocommerce-mini-cart-item .fk-cart-pack {
+	grid-row: span 2;
+}

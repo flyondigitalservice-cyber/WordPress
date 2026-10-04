@@ -29,9 +29,7 @@ $fk_tone    = absint( $product->get_id() ) % 4;
 		if ( $product->get_image_id() ) {
 			woocommerce_template_loop_product_thumbnail();
 		} else {
-			$fk_shapes = array( 'can', 'pouch', 'jar', 'bottle', 'box' );
-			$fk_words  = explode( ' ', strtoupper( $product->get_name() ) );
-			echo flavorkit_pack_svg( $fk_shapes[ $product->get_id() % 5 ], $product->get_id(), $fk_words[0], isset( $fk_words[1] ) ? implode( ' ', array_slice( $fk_words, 1, 2 ) ) : '' ); // phpcs:ignore WordPress.Security.EscapeOutput
+			echo flavorkit_product_pack( $product ); // phpcs:ignore WordPress.Security.EscapeOutput
 		}
 		echo $fk_hover; // phpcs:ignore WordPress.Security.EscapeOutput
 		?>
