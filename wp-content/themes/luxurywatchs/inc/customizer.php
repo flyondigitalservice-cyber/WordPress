@@ -24,9 +24,9 @@ function lw_customize_register( $wp_customize ) {
 	);
 
 	$text_settings = array(
-		'lw_whatsapp'     => array( __( 'WhatsApp number (with country code, digits only)', 'luxurywatchs' ), '919999999999' ),
-		'lw_phone'        => array( __( 'Display phone', 'luxurywatchs' ), '+91 99999 99999' ),
-		'lw_email'        => array( __( 'Support email', 'luxurywatchs' ), 'care@luxurywatchs.co.in' ),
+		'lw_whatsapp'     => array( __( 'WhatsApp number (with country code, digits only)', 'luxurywatchs' ), '917887722192' ),
+		'lw_phone'        => array( __( 'Display phone', 'luxurywatchs' ), '+91 78877 22192' ),
+		'lw_email'        => array( __( 'Support email', 'luxurywatchs' ), 'sales@luxurywatchs.co.in' ),
 		'lw_announcement' => array( __( 'Announcement bar text', 'luxurywatchs' ), 'Free Shipping Across India  •  Cash on Delivery Available  •  7-Day Easy Returns' ),
 		'lw_offer_code'   => array( __( 'Offer coupon code', 'luxurywatchs' ), 'LUXE10' ),
 		'lw_instagram'    => array( __( 'Instagram URL', 'luxurywatchs' ), 'https://instagram.com/' ),

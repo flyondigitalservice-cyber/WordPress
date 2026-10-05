@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return string
  */
 function lw_whatsapp_number() {
-	return preg_replace( '/\D/', '', get_theme_mod( 'lw_whatsapp', '919999999999' ) );
+	return preg_replace( '/\D/', '', get_theme_mod( 'lw_whatsapp', '917887722192' ) );
 }
 
 /**

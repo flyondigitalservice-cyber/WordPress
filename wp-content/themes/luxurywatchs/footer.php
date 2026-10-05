@@ -66,8 +66,8 @@ $lw_has_wc = class_exists( 'WooCommerce' );
 		<div>
 			<h3><?php esc_html_e( 'Talk to us', 'luxurywatchs' ); ?></h3>
 			<ul class="lw-footer__contact">
-				<li><a href="<?php echo esc_url( lw_whatsapp_url() ); ?>" target="_blank" rel="noopener"><?php echo lw_whatsapp_icon(); // phpcs:ignore ?> <?php echo esc_html( get_theme_mod( 'lw_phone', '+91 99999 99999' ) ); ?></a></li>
-				<li><a href="mailto:<?php echo esc_attr( get_theme_mod( 'lw_email', 'care@luxurywatchs.co.in' ) ); ?>"><?php echo esc_html( get_theme_mod( 'lw_email', 'care@luxurywatchs.co.in' ) ); ?></a></li>
+				<li><a href="<?php echo esc_url( lw_whatsapp_url() ); ?>" target="_blank" rel="noopener"><?php echo lw_whatsapp_icon(); // phpcs:ignore ?> <?php echo esc_html( get_theme_mod( 'lw_phone', '+91 78877 22192' ) ); ?></a></li>
+				<li><a href="mailto:<?php echo esc_attr( get_theme_mod( 'lw_email', 'sales@luxurywatchs.co.in' ) ); ?>"><?php echo esc_html( get_theme_mod( 'lw_email', 'sales@luxurywatchs.co.in' ) ); ?></a></li>
 				<li><?php esc_html_e( 'Mon–Sat, 10am–8pm IST', 'luxurywatchs' ); ?></li>
 			</ul>
 			<div class="lw-pay">
