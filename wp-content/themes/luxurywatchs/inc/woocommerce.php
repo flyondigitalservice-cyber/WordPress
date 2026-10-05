@@ -60,8 +60,8 @@ add_action(
 		echo '<ul class="lw-pdp-trust">';
 		echo '<li>' . lw_icon( 'cash' ) . esc_html__( 'Cash on Delivery', 'luxurywatchs' ) . '</li>'; // phpcs:ignore
 		echo '<li>' . lw_icon( 'truck' ) . esc_html__( 'Free shipping, 3–6 days', 'luxurywatchs' ) . '</li>'; // phpcs:ignore
-		echo '<li>' . lw_icon( 'return' ) . esc_html__( '7-day easy returns', 'luxurywatchs' ) . '</li>'; // phpcs:ignore
-		echo '<li>' . lw_icon( 'shield' ) . esc_html__( '1-year movement warranty', 'luxurywatchs' ) . '</li>'; // phpcs:ignore
+		echo '<li>' . lw_icon( 'headset' ) . esc_html__( 'Live video before dispatch', 'luxurywatchs' ) . '</li>'; // phpcs:ignore
+		echo '<li>' . lw_icon( 'shield' ) . esc_html__( '6-month warranty on selected models', 'luxurywatchs' ) . '</li>'; // phpcs:ignore
 		echo '</ul>';
 	},
 	35
@@ -100,4 +100,17 @@ add_filter(
 		$fragments['span.lw-cart-count'] = '<span class="lw-cart-count">' . esc_html( WC()->cart->get_cart_contents_count() ) . '</span>';
 		return $fragments;
 	}
+);
+
+/**
+ * Products without a price show "Price on request" with a WhatsApp link.
+ */
+add_filter(
+	'woocommerce_empty_price_html',
+	static function ( $html, $product ) {
+		$msg = sprintf( 'Hi! Please share the price of %s (%s)', $product->get_name(), get_permalink( $product->get_id() ) );
+		return '<a class="lw-por" href="' . esc_url( lw_whatsapp_url( $msg ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Price on request', 'luxurywatchs' ) . '</a>';
+	},
+	10,
+	2
 );

@@ -137,6 +137,18 @@
 		});
 	}
 
+	// WhatsApp contact form: build the message from the fields.
+	$$('[data-waform]').forEach(function (form) {
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
+			var lines = ['Hi LuxuryWatchs!'];
+			$$('[data-field]', form).forEach(function (f) {
+				if (f.value.trim()) { lines.push(f.getAttribute('data-field') + ': ' + f.value.trim()); }
+			});
+			window.open(form.getAttribute('action') + '?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+		});
+	});
+
 	// Sticky add-to-cart once the main button scrolls out of view.
 	var sticky = $('[data-sticky-atc]');
 	var mainAtc = $('.single_add_to_cart_button');

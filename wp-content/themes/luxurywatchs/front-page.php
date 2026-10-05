@@ -74,8 +74,8 @@ $lw_slides = array(
 	<div class="lw-container lw-trust__grid">
 		<div><?php echo lw_icon( 'truck' ); // phpcs:ignore ?><p><strong><?php esc_html_e( 'Free Shipping', 'luxurywatchs' ); ?></strong><span><?php esc_html_e( 'All over India', 'luxurywatchs' ); ?></span></p></div>
 		<div><?php echo lw_icon( 'cash' ); // phpcs:ignore ?><p><strong><?php esc_html_e( 'Cash on Delivery', 'luxurywatchs' ); ?></strong><span><?php esc_html_e( 'UPI & cards too', 'luxurywatchs' ); ?></span></p></div>
-		<div><?php echo lw_icon( 'shield' ); // phpcs:ignore ?><p><strong><?php esc_html_e( '1-Year Warranty', 'luxurywatchs' ); ?></strong><span><?php esc_html_e( 'On every movement', 'luxurywatchs' ); ?></span></p></div>
-		<div><?php echo lw_icon( 'return' ); // phpcs:ignore ?><p><strong><?php esc_html_e( '7-Day Returns', 'luxurywatchs' ); ?></strong><span><?php esc_html_e( 'No questions asked', 'luxurywatchs' ); ?></span></p></div>
+		<div><?php echo lw_icon( 'shield' ); // phpcs:ignore ?><p><strong><?php esc_html_e( '6-Month Warranty', 'luxurywatchs' ); ?></strong><span><?php esc_html_e( 'On selected models', 'luxurywatchs' ); ?></span></p></div>
+		<div><?php echo lw_icon( 'headset' ); // phpcs:ignore ?><p><strong><?php esc_html_e( 'Live Video Check', 'luxurywatchs' ); ?></strong><span><?php esc_html_e( 'Before dispatch', 'luxurywatchs' ); ?></span></p></div>
 	</div>
 </section>
 
@@ -210,7 +210,7 @@ $lw_slides = array(
 		<ul class="lw-why__list">
 			<li><?php echo lw_icon( 'gear' ); // phpcs:ignore ?><h3><?php esc_html_e( 'Automatic movements', 'luxurywatchs' ); ?></h3><p><?php esc_html_e( 'Smooth-sweep 21-jewel automatics with 40-hour power reserve.', 'luxurywatchs' ); ?></p></li>
 			<li><?php echo lw_icon( 'shield' ); // phpcs:ignore ?><h3><?php esc_html_e( '316L steel & sapphire finish', 'luxurywatchs' ); ?></h3><p><?php esc_html_e( 'Scratch-resistant crystal, solid links and screw-down crowns.', 'luxurywatchs' ); ?></p></li>
-			<li><?php echo lw_icon( 'box' ); // phpcs:ignore ?><h3><?php esc_html_e( 'Premium gift box', 'luxurywatchs' ); ?></h3><p><?php esc_html_e( 'Wooden box, warranty card and cleaning cloth with every order.', 'luxurywatchs' ); ?></p></li>
+			<li><?php echo lw_icon( 'box' ); // phpcs:ignore ?><h3><?php esc_html_e( 'Premium gift box', 'luxurywatchs' ); ?></h3><p><?php esc_html_e( 'Premium box and cleaning cloth with every order.', 'luxurywatchs' ); ?></p></li>
 			<li><?php echo lw_icon( 'headset' ); // phpcs:ignore ?><h3><?php esc_html_e( 'Real humans on WhatsApp', 'luxurywatchs' ); ?></h3><p><?php esc_html_e( 'Sizing help, strap adjustment guides and after-sales support.', 'luxurywatchs' ); ?></p></li>
 		</ul>
 	</div>
@@ -254,8 +254,8 @@ $lw_slides = array(
 			$lw_faq = array(
 				array( __( 'Is Cash on Delivery available?', 'luxurywatchs' ), __( 'Yes. COD is available on all pin codes we serve across India. You can also pay via UPI, cards or net banking.', 'luxurywatchs' ) ),
 				array( __( 'How long does delivery take?', 'luxurywatchs' ), __( 'Orders ship within 24 hours. Metro cities receive them in 2–4 days, the rest of India in 4–7 days. Shipping is always free.', 'luxurywatchs' ) ),
-				array( __( 'What warranty do I get?', 'luxurywatchs' ), __( 'Every watch carries a 1-year warranty on the movement, plus lifetime WhatsApp support for adjustments and servicing advice.', 'luxurywatchs' ) ),
-				array( __( 'Can I return or exchange?', 'luxurywatchs' ), __( 'Yes, within 7 days of delivery in unused condition with original packaging. Reach us on WhatsApp to start a return.', 'luxurywatchs' ) ),
+				array( __( 'What warranty do I get?', 'luxurywatchs' ), __( 'Selected models carry a 6-month warranty on the movement — this is mentioned on the product page. Ask us on WhatsApp if you are unsure about a model.', 'luxurywatchs' ) ),
+				array( __( 'Do you offer refunds or returns?', 'luxurywatchs' ), __( 'No. All sales are final and we do not offer refunds or returns. Ask us for a live video on WhatsApp before you order so you know exactly what you are getting.', 'luxurywatchs' ) ),
 				array( __( 'Will the strap fit my wrist?', 'luxurywatchs' ), __( 'Bracelets come with removable links. Share your wrist size before dispatch and we will size it for free.', 'luxurywatchs' ) ),
 			);
 			foreach ( $lw_faq as $q ) :

@@ -55,7 +55,7 @@ $lw_has_wc = class_exists( 'WooCommerce' );
 				?>
 				<ul>
 					<li><a href="<?php echo esc_url( home_url( '/shipping-policy/' ) ); ?>"><?php esc_html_e( 'Shipping Policy', 'luxurywatchs' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/refund-policy/' ) ); ?>"><?php esc_html_e( 'Returns & Refunds', 'luxurywatchs' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/refund-policy/' ) ); ?>"><?php esc_html_e( 'Refund Policy', 'luxurywatchs' ); ?></a></li>
 					<li><a href="<?php echo esc_url( home_url( '/warranty/' ) ); ?>"><?php esc_html_e( 'Warranty', 'luxurywatchs' ); ?></a></li>
 					<li><a href="<?php echo esc_url( $lw_has_wc ? wc_get_page_permalink( 'myaccount' ) : wp_login_url() ); ?>"><?php esc_html_e( 'Track Order', 'luxurywatchs' ); ?></a></li>
 					<li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Contact Us', 'luxurywatchs' ); ?></a></li>

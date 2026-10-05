@@ -9,13 +9,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'LW_VERSION', '1.0.0' );
+define( 'LW_VERSION', '1.0.1' );
 define( 'LW_DIR', get_template_directory() );
 define( 'LW_URI', get_template_directory_uri() );
 
 require LW_DIR . '/inc/customizer.php';
 require LW_DIR . '/inc/helpers.php';
 require LW_DIR . '/inc/woocommerce.php';
+require LW_DIR . '/inc/contact-form.php';
 
 /**
  * Theme setup.

@@ -24,7 +24,7 @@ $lw_count    = ( $lw_has_wc && WC()->cart ) ? WC()->cart->get_cart_contents_coun
 <div class="lw-announce" role="note">
 	<div class="lw-announce__track">
 		<?php
-		$lw_ann = get_theme_mod( 'lw_announcement', 'Free Shipping Across India  •  Cash on Delivery Available  •  7-Day Easy Returns' );
+		$lw_ann = get_theme_mod( 'lw_announcement', 'Free Shipping Across India  •  Cash on Delivery Available  •  Live Video Before Dispatch' );
 		for ( $i = 0; $i < 2; $i++ ) :
 			?>
 			<span><?php echo esc_html( $lw_ann ); ?></span>
