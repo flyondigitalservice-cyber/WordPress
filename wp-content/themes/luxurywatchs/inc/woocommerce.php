@@ -103,14 +103,12 @@ add_filter(
 );
 
 /**
- * Products without a price show "Price on request" with a WhatsApp link.
+ * Products without a price show "Price on request" (plain text: loop cards are
+ * already links, and the product page has its own WhatsApp order button).
  */
 add_filter(
 	'woocommerce_empty_price_html',
-	static function ( $html, $product ) {
-		$msg = sprintf( 'Hi! Please share the price of %s (%s)', $product->get_name(), get_permalink( $product->get_id() ) );
-		return '<a class="lw-por" href="' . esc_url( lw_whatsapp_url( $msg ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Price on request', 'luxurywatchs' ) . '</a>';
-	},
-	10,
-	2
+	static function () {
+		return '<span class="lw-por">' . esc_html__( 'Price on request', 'luxurywatchs' ) . '</span>';
+	}
 );
