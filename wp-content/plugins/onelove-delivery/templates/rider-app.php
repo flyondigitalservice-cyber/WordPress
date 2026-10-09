@@ -61,7 +61,7 @@ $ver = OLE_DELIVERY_VERSION;
 
 	<section class="r-stats">
 		<div><b id="r-active-count">0</b><span>Active</span></div>
-		<div><b id="r-done-count">0</b><span>Delivered today</span></div>
+		<div class="r-stat--earn"><b id="r-earned">₹0</b><span id="r-trips">0 trips today</span></div>
 		<div><b id="r-cash">₹0</b><span>Cash in hand</span></div>
 	</section>
 

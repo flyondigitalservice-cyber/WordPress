@@ -94,8 +94,10 @@ class OLE_REST {
 				$done[] = $row;
 			}
 		}
+		$today = OLE_Deliveries::rider_stats( $uid, $today_start );
 		return self::no_cache( array(
 			'name'    => $user->display_name,
+			'today'   => $today,
 			'online'  => '1' === (string) get_user_meta( $uid, 'ole_online', true ),
 			'cash'    => OLE_Deliveries::rider_cash( $uid ),
 			'active'  => $active,

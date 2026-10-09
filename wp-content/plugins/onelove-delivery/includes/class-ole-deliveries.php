@@ -131,6 +131,7 @@ class OLE_Deliveries {
 			'token'      => wp_generate_password( 32, false, false ),
 			'dest_lat'   => $ok ? (float) $lat : null,
 			'dest_lng'   => $ok ? (float) $lng : null,
+			'distance_km'=> $ok ? OLE_Fees::road_km( (float) $lat, (float) $lng ) : null,
 			'is_cod'     => 'cod' === $order->get_payment_method() ? 1 : 0,
 			'cod_amount' => 'cod' === $order->get_payment_method() ? (float) $order->get_total() : 0,
 			'created_at' => $now,
@@ -333,6 +334,7 @@ class OLE_Deliveries {
 		if ( ! empty( $args['proof_id'] ) ) {
 			$data['proof_id'] = (int) $args['proof_id'];
 		}
+		$data['rider_pay'] = self::pay_for( $d );
 		$d = self::update( $d->id, $data );
 
 		$order = wc_get_order( $d->order_id );
@@ -394,6 +396,26 @@ class OLE_Deliveries {
 		) );
 		self::note( $d, 'Delivery moved back to the queue by admin.' );
 		return $d;
+	}
+
+	/** Rider payout for one delivered order: per-delivery + per-km (road estimate). */
+	public static function pay_for( $d ) {
+		$km = null !== $d->distance_km ? (float) $d->distance_km : (float) OLE_Settings::get( 'pay_fallback_km' );
+		return (float) round( (float) OLE_Settings::get( 'pay_per_delivery' ) + $km * (float) OLE_Settings::get( 'pay_per_km' ) );
+	}
+
+	/** Earnings, deliveries and km for a rider since a UTC datetime. */
+	public static function rider_stats( $rider_id, $since_utc ) {
+		global $wpdb;
+		$row = $wpdb->get_row( $wpdb->prepare(
+			'SELECT COUNT(*) AS n, COALESCE(SUM(rider_pay),0) AS pay, COALESCE(SUM(distance_km),0) AS km FROM ' . self::table() . " WHERE rider_id = %d AND status = 'delivered' AND delivered_at >= %s", // phpcs:ignore WordPress.DB.PreparedSQL
+			$rider_id, $since_utc
+		) );
+		return array(
+			'delivered' => (int) $row->n,
+			'earned'    => (float) $row->pay,
+			'km'        => round( (float) $row->km, 1 ),
+		);
 	}
 
 	public static function settle_cash( $rider_id ) {
@@ -471,6 +493,8 @@ class OLE_Deliveries {
 			'is_cod'      => (bool) $d->is_cod,
 			'cod_amount'  => (float) $d->cod_amount,
 			'cod_collected' => null === $d->cod_collected ? null : (float) $d->cod_collected,
+			'km'          => null === $d->distance_km ? null : (float) $d->distance_km,
+			'pay'         => null === $d->rider_pay ? self::pay_for( $d ) : (float) $d->rider_pay,
 			'otp_needed'  => OLE_Settings::yes( 'otp_required' ),
 			'nav_url'     => OLE_Geo::nav_url( $d->dest_lat, $d->dest_lng, $info['address'] ),
 			'store_nav'   => OLE_Geo::nav_url( $store[0], $store[1], OLE_Settings::get( 'store_address' ) ),

@@ -86,7 +86,14 @@
 
     $('r-name').textContent = data.name || 'rider';
     $('r-active-count').textContent = state.active.length;
-    $('r-done-count').textContent = state.done.filter(function (d) { return d.status === 'delivered'; }).length;
+    var today = data.today || { delivered: 0, earned: 0, km: 0 };
+    $('r-trips').textContent = today.delivered + (today.delivered === 1 ? ' trip today' : ' trips today');
+    var earned = $('r-earned');
+    if (state.lastEarned != null && today.earned > state.lastEarned) {
+      earned.classList.remove('bump'); void earned.offsetWidth; earned.classList.add('bump');
+    }
+    state.lastEarned = today.earned;
+    earned.textContent = money(today.earned);
     $('r-cash').textContent = money(data.cash);
 
     var duty = $('r-duty');
@@ -115,8 +122,12 @@
     );
 
     $('r-done').innerHTML = state.done.length ? state.done.map(function (d) {
-      return '<div class="r-done-item"><span>#' + esc(d.order) + ' · ' + esc(d.customer) + '</span><span class="r-pill r-pill--' + esc(d.status) + '">' +
-        esc(d.status === 'delivered' && d.is_cod ? money(d.cod_collected) : d.label) + '</span></div>';
+      var right = d.status === 'delivered'
+        ? '<span class="r-earn">+' + money(d.pay) + '</span>'
+        : '<span class="r-pill r-pill--' + esc(d.status) + '">' + esc(d.label) + '</span>';
+      return '<div class="r-done-item"><span>#' + esc(d.order) + ' · ' + esc(d.customer) +
+        (d.km != null ? ' · ' + Number(d.km).toFixed(1) + ' km' : '') +
+        (d.status === 'delivered' && d.is_cod ? ' · cash ' + money(d.cod_collected) : '') + '</span>' + right + '</div>';
     }).join('') : '<div class="r-done-item">Nothing yet today.</div>';
 
     if (fresh) {
@@ -131,6 +142,8 @@
     var pay = d.is_cod
       ? '<div class="r-cod r-cod--cash"><span>COLLECT CASH</span><b>' + money(d.cod_amount) + '</b></div>'
       : '<div class="r-cod r-cod--paid"><span>PREPAID</span><b>Do not collect</b></div>';
+    var trip = '<div class="r-trip">' + (d.km != null ? '<span>' + Number(d.km).toFixed(1) + ' km</span>' : '<span>No pin — check address</span>') +
+      '<span>You earn <b>' + money(d.pay) + '</b></span></div>';
 
     var contact = '<div class="r-row">' +
       '<a class="r-btn" href="tel:' + esc(d.phone) + '">' + ICON.call + 'Call</a>' +
@@ -151,6 +164,7 @@
         (d.items && d.items.length ? '<div class="r-items">' + d.items.map(esc).join(' · ') + '</div>' : '') +
         (d.note ? '<div class="r-note">' + esc(d.note) + '</div>' : '') +
         pay +
+        trip +
         '<a class="r-btn r-btn--nav r-btn--block" target="_blank" rel="noopener" href="' + esc(d.nav_url) + '">' + ICON.nav + 'Navigate with Google Maps</a>' +
         contact +
         primary +
@@ -296,7 +310,7 @@
       if (cash) form.append('cash', cash.value);
       if (proof && proof.files[0]) form.append('proof', proof.files[0]);
       return api('/rider/deliveries/' + d.id + '/deliver', { method: 'POST', form: form }).then(function () {
-        toast('Delivered! Great job 🎉');
+        toast('Delivered! +' + money(d.pay) + ' earned');
       });
     });
   }

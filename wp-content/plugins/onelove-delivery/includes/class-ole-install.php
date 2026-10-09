@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 
 class OLE_Install {
 
-	const DB_VERSION = '1';
+	const DB_VERSION = '2';
 
 	public static function activate() {
 		self::create_table();
@@ -57,6 +57,8 @@ class OLE_Install {
 			rejected_by varchar(255) NOT NULL DEFAULT '',
 			fail_reason varchar(255) NOT NULL DEFAULT '',
 			proof_id bigint(20) unsigned NOT NULL DEFAULT 0,
+			distance_km decimal(6,2) NULL,
+			rider_pay decimal(10,2) NULL,
 			created_at datetime NOT NULL,
 			assigned_at datetime NULL,
 			picked_at datetime NULL,
@@ -66,6 +68,7 @@ class OLE_Install {
 			UNIQUE KEY order_id (order_id),
 			KEY rider_status (rider_id,status),
 			KEY status (status),
+			KEY delivered_at (delivered_at),
 			KEY token (token)
 		) {$charset};" );
 	}

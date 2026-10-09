@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       One Love Delivery
  * Description:       Last-mile delivery for WooCommerce: auto-assigns orders to your own riders, rider mobile app with Google Maps navigation, live customer tracking, COD cash collection and WhatsApp updates.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 6.2
  * Requires PHP:      7.4
  * Author:            One Love Energy
@@ -14,7 +14,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'OLE_DELIVERY_VERSION', '1.0.0' );
+define( 'OLE_DELIVERY_VERSION', '1.1.0' );
 define( 'OLE_DELIVERY_FILE', __FILE__ );
 define( 'OLE_DELIVERY_DIR', plugin_dir_path( __FILE__ ) );
 define( 'OLE_DELIVERY_URL', plugin_dir_url( __FILE__ ) );
@@ -27,6 +27,8 @@ require_once OLE_DELIVERY_DIR . 'includes/class-ole-whatsapp.php';
 require_once OLE_DELIVERY_DIR . 'includes/class-ole-rest.php';
 require_once OLE_DELIVERY_DIR . 'includes/class-ole-frontend.php';
 require_once OLE_DELIVERY_DIR . 'includes/class-ole-checkout.php';
+require_once OLE_DELIVERY_DIR . 'includes/class-ole-fees.php';
+require_once OLE_DELIVERY_DIR . 'includes/class-ole-reports.php';
 require_once OLE_DELIVERY_DIR . 'includes/class-ole-admin.php';
 
 register_activation_hook( __FILE__, array( 'OLE_Install', 'activate' ) );
@@ -54,7 +56,9 @@ add_action( 'plugins_loaded', function () {
 	OLE_REST::init();
 	OLE_Frontend::init();
 	OLE_Checkout::init();
+	OLE_Fees::init();
 	if ( is_admin() ) {
 		OLE_Admin::init();
+		OLE_Reports::init();
 	}
 } );

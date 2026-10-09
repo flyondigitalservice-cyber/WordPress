@@ -29,6 +29,17 @@ class OLE_Settings {
 			'max_active'        => '3',
 			'stale_minutes'     => '10',
 			'otp_required'      => 'yes',
+			'ontime_minutes'    => '45',
+			'fee_enabled'       => 'yes',
+			'fee_free_above'    => '499',
+			'fee_base'          => '19',
+			'fee_base_km'       => '3',
+			'fee_per_km'        => '6',
+			'fee_max'           => '69',
+			'fee_fallback'      => '29',
+			'pay_per_delivery'  => '25',
+			'pay_per_km'        => '5',
+			'pay_fallback_km'   => '4',
 			'wa_enabled'        => 'no',
 			'wa_token'          => '',
 			'wa_phone_id'       => '',
@@ -67,7 +78,7 @@ class OLE_Settings {
 		$current = self::all();
 		$clean   = array();
 		foreach ( self::defaults() as $key => $default ) {
-			if ( in_array( $key, array( 'checkout_pin', 'auto_assign', 'otp_required', 'wa_enabled' ), true ) ) {
+			if ( in_array( $key, array( 'checkout_pin', 'auto_assign', 'otp_required', 'wa_enabled', 'fee_enabled' ), true ) ) {
 				$clean[ $key ] = ! empty( $input[ $key ] ) ? 'yes' : 'no';
 				continue;
 			}
@@ -77,8 +88,12 @@ class OLE_Settings {
 			}
 			$clean[ $key ] = sanitize_text_field( $value );
 		}
-		foreach ( array( 'store_lat', 'store_lng', 'service_radius_km' ) as $num ) {
+		$numbers = array( 'store_lat', 'store_lng', 'service_radius_km', 'ontime_minutes', 'fee_free_above', 'fee_base', 'fee_base_km', 'fee_per_km', 'fee_max', 'fee_fallback', 'pay_per_delivery', 'pay_per_km', 'pay_fallback_km' );
+		foreach ( $numbers as $num ) {
 			$clean[ $num ] = is_numeric( $clean[ $num ] ) ? $clean[ $num ] : $current[ $num ];
+			if ( ! in_array( $num, array( 'store_lat', 'store_lng' ), true ) ) {
+				$clean[ $num ] = (string) max( 0, (float) $clean[ $num ] );
+			}
 		}
 		$clean['max_active']    = (string) max( 1, absint( $clean['max_active'] ) );
 		$clean['stale_minutes'] = (string) max( 2, absint( $clean['stale_minutes'] ) );
@@ -148,6 +163,30 @@ class OLE_Settings {
 					<?php
 					$text( 'postcode_prefixes', 'Allowed PIN codes', 'Comma-separated prefixes. <code>400,401</code> covers Mumbai, Thane, Navi Mumbai and Mira-Bhayandar. Leave blank to allow all.' );
 					$text( 'service_radius_km', 'Max distance from store (km)', 'Only checked when the customer pins a location. 0 = no limit.' );
+					?>
+				</table>
+
+				<h2>Delivery fee (charged at checkout)</h2>
+				<p>Example with the defaults: 2 km → ₹19 · 5 km → ₹31 · 10 km → ₹61 · any distance → free when the basket is ₹499 or more.</p>
+				<table class="form-table" role="presentation">
+					<?php
+					$check( 'fee_enabled', 'Charge a delivery fee', 'Distance is the road estimate from your store to the customer\'s map pin.' );
+					$text( 'fee_free_above', 'Free delivery above (₹)', 'Basket value after discounts. 0 = never free.', 'number' );
+					$text( 'fee_base', 'Base fee (₹)', '', 'number' );
+					$text( 'fee_base_km', 'Base fee covers first (km)', '', 'number' );
+					$text( 'fee_per_km', 'Then per extra km (₹)', '', 'number' );
+					$text( 'fee_max', 'Maximum fee (₹)', '0 = no cap.', 'number' );
+					$text( 'fee_fallback', 'Fee when no pin (₹)', 'Used when the customer does not pin a location on the map.', 'number' );
+					?>
+				</table>
+
+				<h2>Rider pay</h2>
+				<table class="form-table" role="presentation">
+					<?php
+					$text( 'pay_per_delivery', 'Per delivered order (₹)', '', 'number' );
+					$text( 'pay_per_km', 'Per km (₹)', 'Road km from store to customer. Failed deliveries are not paid.', 'number' );
+					$text( 'pay_fallback_km', 'Assumed km when no pin', '', 'number' );
+					$text( 'ontime_minutes', 'On-time target (minutes, order → door)', 'Used in Deliveries → Reports.', 'number' );
 					?>
 				</table>
 

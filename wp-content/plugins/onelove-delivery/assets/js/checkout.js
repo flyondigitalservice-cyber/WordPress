@@ -22,6 +22,16 @@
     lngInput.value = lng.toFixed(7);
     box.classList.add('is-set');
     status.textContent = msg || 'Pinned! Drag to fine-tune.';
+    refreshTotals();
+  }
+
+  // Re-price delivery once the pin settles (the fee depends on distance).
+  var refreshTimer = null;
+  function refreshTotals() {
+    clearTimeout(refreshTimer);
+    refreshTimer = setTimeout(function () {
+      if (window.jQuery) window.jQuery(document.body).trigger('update_checkout');
+    }, 600);
   }
 
   window.oleLoadMaps(C.key).then(function (gm) {
