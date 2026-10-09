@@ -1,0 +1,282 @@
+/* ==========================================================================
+   One Love HQ — app-style skin for wp-admin and the login screen.
+   Scoped to body.ole-skin / body.login so it can be switched off in Settings.
+   ========================================================================== */
+
+body.ole-skin,
+body.login {
+  --ol-ink: #0b0b0b;
+  --ol-ink-2: #1a1a1a;
+  --ol-cream: #f6f1e4;
+  --ol-panel: #ffffff;
+  --ol-green: #128a3f;
+  --ol-gold: #f2b705;
+  --ol-red: #d92d20;
+  --ol-muted: #6b665c;
+  --ol-line: #ebe4d3;
+  --ol-radius: 16px;
+  --ol-shadow: 0 1px 2px rgba(11, 11, 11, 0.06), 0 4px 14px rgba(11, 11, 11, 0.05);
+  --ol-stripe: linear-gradient(90deg, var(--ol-green) 0 33.33%, var(--ol-gold) 33.33% 66.66%, var(--ol-red) 66.66%);
+}
+
+/* ---------- Base ---------- */
+body.ole-skin,
+body.ole-skin #wpwrap,
+body.ole-skin #wpcontent,
+body.ole-skin #wpbody-content { background: var(--ol-cream); }
+body.ole-skin,
+body.ole-skin .wrap,
+body.ole-skin #wpbody-content { font-family: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+body.ole-skin .wrap h1,
+body.ole-skin .wrap .wp-heading-inline { font-weight: 800; letter-spacing: -0.01em; }
+body.ole-skin a { color: #0a6e31; }
+body.ole-skin a:hover { color: var(--ol-red); }
+
+/* ---------- Top bar ---------- */
+body.ole-skin #wpadminbar { background: var(--ol-ink); }
+body.ole-skin #wpadminbar::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 3px; background: var(--ol-stripe);
+}
+body.ole-skin #wpadminbar .ab-item,
+body.ole-skin #wpadminbar a.ab-item,
+body.ole-skin #wpadminbar .ab-empty-item { color: #efe9da; }
+body.ole-skin #wpadminbar .ab-top-menu > li:hover > .ab-item,
+body.ole-skin #wpadminbar .ab-top-menu > li.hover > .ab-item { background: var(--ol-ink-2); color: var(--ol-gold); }
+body.ole-skin #wpadminbar .ab-sub-wrapper,
+body.ole-skin #wpadminbar .quicklinks .menupop ul.ab-sub-secondary { background: var(--ol-ink-2); }
+body.ole-skin #wpadminbar #wp-admin-bar-ole-hq > .ab-item { display: flex; align-items: center; gap: 8px; font-weight: 800; }
+body.ole-skin #wpadminbar .ole-ab-logo {
+  width: 20px; height: 20px; border-radius: 6px; display: inline-block;
+  background: var(--ol-red); position: relative; top: 0;
+  box-shadow: inset 0 -4px 0 var(--ol-gold);
+}
+body.ole-skin #wpadminbar .ole-ab-logo::after {
+  content: '⚡'; position: absolute; inset: 0; display: grid; place-items: center; font-size: 12px; line-height: 20px;
+}
+
+/* ---------- Side menu ---------- */
+body.ole-skin #adminmenuback,
+body.ole-skin #adminmenuwrap,
+body.ole-skin #adminmenu { background: var(--ol-ink); }
+body.ole-skin #adminmenuwrap { padding-top: 10px; }
+body.ole-skin #adminmenu a { color: #e4ddcc; }
+body.ole-skin #adminmenu div.wp-menu-image::before { color: #a8a194; }
+body.ole-skin #adminmenu li.menu-top > a { border-radius: 12px; margin: 2px 8px; }
+body.ole-skin #adminmenu li.menu-top:hover > a,
+body.ole-skin #adminmenu li.opensub > a.menu-top,
+body.ole-skin #adminmenu li > a.menu-top:focus { background: var(--ol-ink-2); color: var(--ol-gold); }
+body.ole-skin #adminmenu li.menu-top:hover div.wp-menu-image::before,
+body.ole-skin #adminmenu li.opensub div.wp-menu-image::before { color: var(--ol-gold); }
+body.ole-skin #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+body.ole-skin #adminmenu li.current a.menu-top,
+body.ole-skin #adminmenu .wp-menu-arrow,
+body.ole-skin #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head {
+  background: var(--ol-red); color: #fff;
+}
+body.ole-skin #adminmenu li.wp-has-current-submenu div.wp-menu-image::before,
+body.ole-skin #adminmenu li.current div.wp-menu-image::before { color: #fff; }
+body.ole-skin #adminmenu li.wp-has-current-submenu .wp-menu-arrow,
+body.ole-skin #adminmenu li.current .wp-menu-arrow,
+body.ole-skin ul#adminmenu a.wp-has-current-submenu::after,
+body.ole-skin ul#adminmenu > li.current > a.current::after { display: none; }
+body.ole-skin #adminmenu .wp-submenu,
+body.ole-skin #adminmenu .wp-has-current-submenu .wp-submenu,
+body.ole-skin #adminmenu .wp-has-current-submenu.opensub .wp-submenu,
+body.ole-skin .folded #adminmenu .wp-has-current-submenu .wp-submenu { background: #141414; }
+body.ole-skin #adminmenu .wp-has-current-submenu .wp-submenu { margin: 4px 8px 6px; border-radius: 12px; padding: 6px 0; }
+body.ole-skin #adminmenu .wp-submenu a { color: #c9c2b2; }
+body.ole-skin #adminmenu .wp-submenu a:hover,
+body.ole-skin #adminmenu .wp-submenu a:focus { color: var(--ol-gold); background: transparent; }
+body.ole-skin #adminmenu .wp-submenu li.current a,
+body.ole-skin #adminmenu .wp-submenu li.current a:hover { color: #fff; font-weight: 700; }
+body.ole-skin #adminmenu .awaiting-mod,
+body.ole-skin #adminmenu .update-plugins { background: var(--ol-gold); color: var(--ol-ink); font-weight: 800; }
+body.ole-skin #adminmenu li.wp-menu-separator { height: 1px; margin: 8px 16px; background: #2a2a2a; }
+body.ole-skin #collapse-button { color: #a8a194; }
+body.ole-skin #toplevel_page_ole-hq > a { background: linear-gradient(135deg, #2a1712, #1a1a1a); }
+body.ole-skin #toplevel_page_ole-hq div.wp-menu-image::before { color: var(--ol-red); }
+body.ole-skin #toplevel_page_ole-hq.current div.wp-menu-image::before,
+body.ole-skin #toplevel_page_ole-hq.wp-has-current-submenu div.wp-menu-image::before { color: #fff; }
+
+/* ---------- Cards, boxes, tables ---------- */
+body.ole-skin .postbox,
+body.ole-skin .card,
+body.ole-skin .stuffbox,
+body.ole-skin #dashboard-widgets .postbox,
+body.ole-skin .woocommerce-layout__activity-panel-content,
+body.ole-skin .wp-list-table,
+body.ole-skin .woocommerce table.form-table,
+body.ole-skin .ole-d-card,
+body.ole-skin .ole-kpi,
+body.ole-skin .ole-r-kpi {
+  border-radius: var(--ol-radius);
+  border-color: var(--ol-line);
+  box-shadow: var(--ol-shadow);
+}
+body.ole-skin .postbox .postbox-header { border-bottom-color: var(--ol-line); }
+body.ole-skin .wp-list-table { overflow: hidden; border: 1px solid var(--ol-line); background: #fff; }
+body.ole-skin .wp-list-table thead th,
+body.ole-skin .wp-list-table tfoot th,
+body.ole-skin .wp-list-table thead td,
+body.ole-skin .wp-list-table tfoot td {
+  background: #fbf8f1; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ol-muted);
+}
+body.ole-skin .wp-list-table tbody tr:hover { background: #fffaf0; }
+body.ole-skin .striped > tbody > :nth-child(odd) { background: #fdfbf6; }
+body.ole-skin .subsubsub a.current { color: var(--ol-red); font-weight: 800; }
+
+/* ---------- Buttons ---------- */
+body.ole-skin .button,
+body.ole-skin .button-secondary,
+body.ole-skin a.page-title-action,
+body.ole-skin .wrap .add-new-h2 {
+  border-radius: 999px;
+  border: 1.5px solid var(--ol-ink);
+  color: var(--ol-ink);
+  background: #fff;
+  font-weight: 600;
+  padding: 0 14px;
+  box-shadow: none;
+}
+body.ole-skin .button:hover,
+body.ole-skin .button-secondary:hover,
+body.ole-skin a.page-title-action:hover { background: var(--ol-ink); color: #fff; border-color: var(--ol-ink); }
+body.ole-skin .button-primary,
+body.ole-skin .button.button-primary,
+body.ole-skin .wp-core-ui .button-primary {
+  background: var(--ol-green);
+  border-color: var(--ol-green);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 2px 0 #0b5a2a;
+}
+body.ole-skin .button-primary:hover,
+body.ole-skin .button-primary:focus { background: #0f7a37; border-color: #0f7a37; color: #fff; }
+body.ole-skin .button:focus,
+body.ole-skin .button-primary:focus { box-shadow: 0 0 0 3px rgba(242, 183, 5, 0.45); outline: none; }
+body.ole-skin .button-link-delete,
+body.ole-skin .submitdelete { color: var(--ol-red); }
+
+/* ---------- Forms ---------- */
+body.ole-skin input[type="text"],
+body.ole-skin input[type="search"],
+body.ole-skin input[type="email"],
+body.ole-skin input[type="url"],
+body.ole-skin input[type="tel"],
+body.ole-skin input[type="number"],
+body.ole-skin input[type="password"],
+body.ole-skin input[type="date"],
+body.ole-skin select,
+body.ole-skin textarea {
+  border-radius: 10px;
+  border-color: #d6cfbd;
+}
+body.ole-skin input:focus,
+body.ole-skin select:focus,
+body.ole-skin textarea:focus { border-color: var(--ol-green); box-shadow: 0 0 0 2px rgba(18, 138, 63, 0.2); }
+body.ole-skin input[type="checkbox"]:checked::before { filter: hue-rotate(0); }
+body.ole-skin input[type="checkbox"],
+body.ole-skin input[type="radio"] { accent-color: var(--ol-green); }
+
+/* ---------- Notices ---------- */
+body.ole-skin .notice,
+body.ole-skin div.updated,
+body.ole-skin div.error {
+  border-radius: 12px;
+  border-left-width: 6px;
+  box-shadow: var(--ol-shadow);
+}
+body.ole-skin .notice-success,
+body.ole-skin div.updated { border-left-color: var(--ol-green); }
+body.ole-skin .notice-warning { border-left-color: var(--ol-gold); }
+body.ole-skin .notice-error,
+body.ole-skin div.error { border-left-color: var(--ol-red); }
+
+/* ---------- WooCommerce order status pills ---------- */
+body.ole-skin .order-status { border-radius: 999px; font-weight: 700; }
+body.ole-skin .order-status.status-processing { background: #dcfce7; color: #166534; }
+body.ole-skin .order-status.status-completed { background: #e0ecff; color: #1849a9; }
+body.ole-skin .order-status.status-on-hold { background: #fff3c4; color: #7a5a00; }
+body.ole-skin .order-status.status-cancelled,
+body.ole-skin .order-status.status-failed { background: #ffe4e1; color: var(--ol-red); }
+
+/* ---------- Footer ---------- */
+body.ole-skin #wpfooter { color: #9c9585; }
+
+/* ---------- Mobile app tab bar (phones only) ---------- */
+.ole-tabbar { display: none; }
+@media screen and (max-width: 782px) {
+  body.ole-skin #wpbody-content { padding-bottom: 96px; }
+  body.ole-skin .ole-tabbar {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 99990;
+    background: var(--ol-ink);
+    padding: 8px 6px calc(8px + env(safe-area-inset-bottom, 0px));
+    border-top: 3px solid transparent;
+    border-image: var(--ol-stripe) 1;
+  }
+  body.ole-skin .ole-tabbar a,
+  body.ole-skin .ole-tabbar button {
+    position: relative;
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+    background: none; border: 0; padding: 4px 0; cursor: pointer;
+    color: #a8a194; text-decoration: none; font: 700 11px/1.1 'Archivo', sans-serif;
+  }
+  body.ole-skin .ole-tabbar svg {
+    width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  }
+  body.ole-skin .ole-tabbar a.is-active { color: #fff; }
+  body.ole-skin .ole-tabbar a.is-active svg { stroke: var(--ol-gold); }
+  body.ole-skin .ole-tabbar a.is-active::before {
+    content: ''; position: absolute; top: -8px; width: 28px; height: 3px; border-radius: 3px; background: var(--ol-gold);
+  }
+  body.ole-skin .ole-tabbar__badge {
+    position: absolute; top: -2px; left: 54%;
+    min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px;
+    background: var(--ol-red); color: #fff; font-size: 10px; line-height: 18px; text-align: center;
+    border: 2px solid var(--ol-ink);
+  }
+}
+
+/* ==========================================================================
+   Login screen
+   ========================================================================== */
+body.login {
+  background:
+    radial-gradient(circle at 15% 10%, rgba(242, 183, 5, 0.18), transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(18, 138, 63, 0.16), transparent 45%),
+    var(--ol-cream);
+  font-family: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+body.login::before {
+  content: ''; position: fixed; top: 0; left: 0; right: 0; height: 6px; background: var(--ol-stripe);
+}
+body.login h1 a {
+  width: 96px; height: 96px; background-size: 96px 96px; border-radius: 24px; margin-bottom: 18px;
+  box-shadow: 0 10px 30px rgba(11, 11, 11, 0.25);
+}
+body.login form {
+  border: 2px solid var(--ol-ink);
+  border-radius: 22px;
+  box-shadow: 6px 6px 0 var(--ol-ink);
+  padding: 26px 24px 30px;
+}
+body.login label { font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+body.login input[type="text"],
+body.login input[type="password"],
+body.login input[type="email"] {
+  border: 2px solid var(--ol-ink); border-radius: 12px; padding: 8px 12px; font-size: 18px; box-shadow: none;
+}
+body.login input:focus { border-color: var(--ol-green); box-shadow: 0 0 0 3px rgba(18, 138, 63, 0.2); }
+body.login .button-primary {
+  width: 100%; float: none; margin-top: 16px; min-height: 46px;
+  background: var(--ol-green); border: 2px solid var(--ol-ink); border-radius: 999px;
+  font-size: 16px; font-weight: 800; text-transform: uppercase; box-shadow: 3px 3px 0 var(--ol-ink);
+}
+body.login .button-primary:hover { background: #0f7a37; }
+body.login #nav a,
+body.login #backtoblog a { color: var(--ol-ink); font-weight: 600; }
+body.login .message,
+body.login .notice { border-radius: 12px; border-left-color: var(--ol-green); }
+body.login #login_error { border-left-color: var(--ol-red); }

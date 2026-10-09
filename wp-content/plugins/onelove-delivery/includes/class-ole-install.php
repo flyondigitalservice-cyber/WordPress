@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 
 class OLE_Install {
 
-	const DB_VERSION = '2';
+	const DB_VERSION = '3';
 
 	public static function activate() {
 		self::create_table();
@@ -30,6 +30,7 @@ class OLE_Install {
 		if ( get_option( 'ole_delivery_db_version' ) !== self::DB_VERSION ) {
 			self::create_table();
 			self::add_role();
+			update_option( 'ole_delivery_flush_rewrites', 1 );
 			update_option( 'ole_delivery_db_version', self::DB_VERSION );
 		}
 	}

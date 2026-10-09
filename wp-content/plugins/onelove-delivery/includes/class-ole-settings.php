@@ -30,6 +30,8 @@ class OLE_Settings {
 			'stale_minutes'     => '10',
 			'otp_required'      => 'yes',
 			'ontime_minutes'    => '45',
+			'admin_skin'        => 'yes',
+			'hq_home'           => 'yes',
 			'promise_min'       => '30',
 			'promise_max'       => '45',
 			'fee_enabled'       => 'yes',
@@ -87,7 +89,7 @@ class OLE_Settings {
 		$current = self::all();
 		$clean   = array();
 		foreach ( self::defaults() as $key => $default ) {
-			if ( in_array( $key, array( 'checkout_pin', 'auto_assign', 'otp_required', 'wa_enabled', 'fee_enabled' ), true ) ) {
+			if ( in_array( $key, array( 'checkout_pin', 'auto_assign', 'otp_required', 'wa_enabled', 'fee_enabled', 'admin_skin', 'hq_home' ), true ) ) {
 				$clean[ $key ] = ! empty( $input[ $key ] ) ? 'yes' : 'no';
 				continue;
 			}
@@ -172,6 +174,14 @@ class OLE_Settings {
 					<?php
 					$text( 'postcode_prefixes', 'Allowed PIN codes', 'Comma-separated prefixes. <code>400,401</code> covers Mumbai, Thane, Navi Mumbai and Mira-Bhayandar. Leave blank to allow all.' );
 					$text( 'service_radius_km', 'Max distance from store (km)', 'Only checked when the customer pins a location. 0 = no limit.' );
+					?>
+				</table>
+
+				<h2>One Love HQ (app-style admin)</h2>
+				<table class="form-table" role="presentation">
+					<?php
+					$check( 'admin_skin', 'One Love colours & app look', 'Colourful app-style admin, branded login screen and a bottom tab bar on phones. Untick to return to the standard WordPress look.' );
+					$check( 'hq_home', 'Open HQ instead of the WordPress dashboard', 'The classic dashboard stays available under HQ → Classic dashboard.' );
 					?>
 				</table>
 

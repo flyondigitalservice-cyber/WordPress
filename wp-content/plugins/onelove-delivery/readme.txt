@@ -1,7 +1,7 @@
 === One Love Delivery ===
 Requires at least: 6.2
 Requires PHP: 7.4
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 
 Last-mile delivery for WooCommerce with your own riders: auto-assignment, rider mobile app
 with Google Maps navigation, live customer tracking, delivery OTP, COD cash tracking and
@@ -79,6 +79,14 @@ Names must match Deliveries → Settings. Variables are filled in this exact ord
 Then in Deliveries → Settings paste the permanent access token and the Phone number ID
 (WhatsApp Manager → API setup) and tick "Send WhatsApp messages".
 Failed sends are logged in WooCommerce → Status → Logs (source: onelove-delivery).
+
+== One Love HQ (new in 1.2) ==
+
+An app-style admin in One Love colours: HQ home screen with today's sales, orders to deliver,
+riders on duty, a 7-day sales chart, latest orders, bestsellers, stock watch and quick-action
+app icons. Branded login screen. On phones a bottom tab bar (Home · Orders · Dispatch ·
+Products · Menu); open HQ in Chrome → menu → "Add to Home screen" to use it like an app.
+Turn off in Deliveries → Settings → One Love HQ.
 
 == Delivery time ==
 

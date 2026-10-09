@@ -12,6 +12,7 @@ class OLE_Frontend {
 
 	public static function init() {
 		add_action( 'init', array( __CLASS__, 'add_rewrites' ) );
+		add_action( 'init', array( __CLASS__, 'maybe_flush' ), 99 );
 		add_filter( 'query_vars', array( __CLASS__, 'query_vars' ) );
 		add_action( 'template_redirect', array( __CLASS__, 'route' ), 1 );
 
@@ -31,6 +32,15 @@ class OLE_Frontend {
 		add_rewrite_rule( '^rider/manifest\.webmanifest$', 'index.php?ole_rider_app=manifest', 'top' );
 		add_rewrite_rule( '^rider/sw\.js$', 'index.php?ole_rider_app=sw', 'top' );
 		add_rewrite_rule( '^track/([A-Za-z0-9]{20,40})/?$', 'index.php?ole_track=$matches[1]', 'top' );
+		add_rewrite_rule( '^ole-hq\\.webmanifest$', 'index.php?ole_rider_app=hq_manifest', 'top' );
+	}
+
+	/** After a plugin update adds new pretty URLs, refresh rewrite rules once. */
+	public static function maybe_flush() {
+		if ( get_option( 'ole_delivery_flush_rewrites' ) ) {
+			delete_option( 'ole_delivery_flush_rewrites' );
+			flush_rewrite_rules( false );
+		}
 	}
 
 	public static function query_vars( $vars ) {
@@ -52,7 +62,9 @@ class OLE_Frontend {
 		$app   = get_query_var( 'ole_rider_app' );
 		$token = get_query_var( 'ole_track' );
 
-		if ( 'manifest' === $app ) {
+		if ( 'hq_manifest' === $app ) {
+			OLE_HQ::manifest();
+		} elseif ( 'manifest' === $app ) {
 			self::manifest();
 		} elseif ( 'sw' === $app ) {
 			self::service_worker();
