@@ -1,0 +1,140 @@
+/* One Love — customer live tracking */
+:root {
+  --ink: #0b0b0b;
+  --cream: #f6f1e4;
+  --panel: #fffdf7;
+  --green: #128a3f;
+  --gold: #f2b705;
+  --red: #d92d20;
+  --blue: #1a73e8;
+  --muted: #5c5a54;
+  --line: rgba(11, 11, 11, 0.12);
+  --border: 2px solid var(--ink);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body.ole-track {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.45;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+a { color: inherit; }
+[hidden] { display: none !important; }
+
+.t-top {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: calc(12px + env(safe-area-inset-top, 0px)) 16px 12px;
+  background: var(--ink); color: var(--cream);
+  border-bottom: 5px solid transparent;
+  border-image: linear-gradient(90deg, var(--green) 0 33.3%, var(--gold) 33.3% 66.6%, var(--red) 66.6%) 1;
+  position: relative; z-index: 3;
+}
+.t-brand { font-weight: 900; letter-spacing: -0.01em; text-decoration: none; font-size: 18px; }
+.t-live {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 800; letter-spacing: 0.1em;
+  padding: 4px 10px; border-radius: 999px; background: var(--red); color: #fff;
+}
+.t-live span { width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: t-blink 1.2s infinite; }
+.t-live.off { background: #3f3f46; }
+.t-live.off span { animation: none; opacity: 0.5; }
+@keyframes t-blink { 50% { opacity: 0.2; } }
+
+.t-map {
+  position: relative;
+  height: 46vh;
+  min-height: 260px;
+  background:
+    linear-gradient(rgba(11, 11, 11, 0.04) 1px, transparent 1px) 0 0 / 28px 28px,
+    linear-gradient(90deg, rgba(11, 11, 11, 0.04) 1px, transparent 1px) 0 0 / 28px 28px,
+    #ece5d3;
+}
+.t-map__placeholder { position: absolute; inset: 0; display: grid; place-items: center; color: var(--green); }
+.t-map__placeholder svg { width: 56px; height: 56px; animation: t-bob 1.6s ease-in-out infinite; }
+@keyframes t-bob { 50% { transform: translateY(-8px); } }
+
+.t-panel {
+  position: relative; z-index: 2;
+  flex: 1;
+  margin-top: -22px;
+  background: var(--panel);
+  border-top: var(--border);
+  border-radius: 24px 24px 0 0;
+  padding: 10px 20px calc(28px + env(safe-area-inset-bottom, 0px));
+  max-width: 640px;
+  width: 100%;
+  align-self: center;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.08);
+}
+.t-panel--solo { margin-top: 0; border-radius: 0; border-top: none; padding-top: 48px; text-align: center; }
+.t-panel--solo h1 { font-size: 26px; margin-bottom: 8px; }
+.t-grip { width: 44px; height: 5px; border-radius: 5px; background: var(--line); margin: 0 auto 14px; }
+.t-order { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.t-status { font-size: clamp(24px, 6vw, 30px); font-weight: 900; line-height: 1.15; margin: 4px 0 6px; text-transform: uppercase; letter-spacing: -0.01em; }
+.t-eta { font-size: 16px; font-weight: 700; color: var(--green); min-height: 1.4em; }
+body[data-status="failed"] .t-eta, body[data-status="cancelled"] .t-eta { color: var(--red); }
+.t-muted { color: var(--muted); }
+
+.t-otp {
+  margin-top: 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: var(--ink); color: var(--cream);
+  border-radius: 16px; padding: 14px 18px;
+}
+.t-otp span { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.85; }
+.t-otp b { font-size: 30px; letter-spacing: 0.3em; color: var(--gold); font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace; }
+
+.t-cod { margin-top: 12px; padding: 12px 14px; border-radius: 14px; background: #fff3d1; border: 2px solid var(--gold); font-size: 15px; }
+
+.t-steps { list-style: none; margin: 22px 0 6px; position: relative; }
+.t-steps li { display: flex; gap: 14px; align-items: flex-start; padding-bottom: 18px; position: relative; color: #a1a1aa; }
+.t-steps li:not(:last-child)::before {
+  content: ''; position: absolute; left: 9px; top: 22px; bottom: 0; width: 3px; border-radius: 3px; background: #e4e4e7;
+}
+.t-steps li.done:not(:last-child)::before { background: var(--green); }
+.t-dot { width: 21px; height: 21px; border-radius: 50%; border: 3px solid #d4d4d8; background: #fff; flex-shrink: 0; margin-top: 1px; }
+.t-steps li.done { color: var(--ink); }
+.t-steps li.done .t-dot { background: var(--green); border-color: var(--green); box-shadow: inset 0 0 0 3px #fff; }
+.t-steps li.now .t-dot { animation: t-ring 1.6s infinite; }
+@keyframes t-ring { 0% { box-shadow: inset 0 0 0 3px #fff, 0 0 0 0 rgba(18, 138, 63, 0.45); } 100% { box-shadow: inset 0 0 0 3px #fff, 0 0 0 12px rgba(18, 138, 63, 0); } }
+.t-steps b { display: block; font-size: 15px; }
+.t-steps small { font-size: 12px; color: var(--muted); }
+
+.t-rider {
+  display: flex; align-items: center; gap: 14px;
+  border: var(--border); border-radius: 18px; padding: 12px 14px; margin-top: 6px;
+  box-shadow: 3px 3px 0 var(--ink); background: #fff;
+}
+.t-rider__avatar {
+  width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
+  display: grid; place-items: center;
+  background: var(--blue); color: #fff; font-weight: 900; font-size: 20px; border: 2px solid var(--ink);
+}
+.t-rider b { display: block; font-size: 16px; }
+.t-rider small { color: var(--muted); font-size: 13px; }
+.t-call {
+  margin-left: auto; width: 48px; height: 48px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--green); color: #fff; border: 2px solid var(--ink);
+}
+.t-call svg { width: 22px; height: 22px; }
+
+.t-help { margin-top: 18px; font-size: 14px; color: var(--muted); text-align: center; }
+.t-help a { color: var(--ink); font-weight: 700; }
+.t-btn {
+  display: inline-block; margin-top: 20px; padding: 12px 22px; border-radius: 999px;
+  background: var(--green); color: #fff; font-weight: 800; text-decoration: none; border: var(--border);
+}
+
+@media (min-width: 900px) {
+  body.ole-track { display: grid; grid-template-columns: 1fr 440px; grid-template-rows: auto 1fr; }
+  .t-top { grid-column: 1 / -1; }
+  .t-map { height: auto; min-height: calc(100vh - 60px); }
+  .t-panel { margin-top: 0; border-radius: 0; border-top: none; border-left: var(--border); max-width: none; box-shadow: none; padding-top: 28px; }
+  .t-grip { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; }
+}

@@ -1,0 +1,21 @@
+/* Checkout location pin — matches the One Love theme, safe on any theme. */
+.ole-pin {
+  margin: 24px 0 8px;
+  border: 2px solid #0b0b0b;
+  border-radius: 18px;
+  background: #fffdf7;
+  overflow: hidden;
+  box-shadow: 3px 3px 0 #0b0b0b;
+}
+.ole-pin__head { padding: 14px 16px 10px; }
+.ole-pin__head strong { display: block; font-size: 15px; text-transform: uppercase; }
+.ole-pin__head span { font-size: 13px; color: #5c5a54; }
+.ole-pin__search { padding: 0 16px 10px; }
+.ole-pin__search gmp-place-autocomplete,
+.ole-pin__search gmp-placeautocomplete { width: 100%; }
+.ole-pin__map { height: 260px; border-top: 2px solid #0b0b0b; border-bottom: 2px solid #0b0b0b; }
+.ole-pin__bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 12px 16px; }
+.woocommerce .ole-pin__locate.button,
+.ole-pin__locate { font-size: 12px; padding: 9px 16px; }
+.ole-pin__status { font-size: 13px; color: #5c5a54; }
+.ole-pin.is-set .ole-pin__status { color: #128a3f; font-weight: 700; }
