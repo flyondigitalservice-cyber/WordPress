@@ -14,7 +14,7 @@
 
   var HEADLINE = {
     pending: 'Order confirmed — finding a rider',
-    assigned: 'Rider is picking up your order',
+    assigned: 'Your rider is getting ready',
     out_for_delivery: 'On the way to you',
     delivered: 'Delivered. Enjoy!',
     failed: 'Delivery delayed — we will call you',
@@ -84,10 +84,18 @@
     $('t-status').textContent = HEADLINE[data.status] || data.label;
     document.body.setAttribute('data-status', data.status);
 
+    // Calm, fixed delivery window (no live countdown) — riders are never rushed.
+    var p = data.promise || {};
+    var windowText = p.from && p.to ? time(p.from) + '–' + time(p.to) : '';
+    var late = p.to && Date.now() / 1000 > p.to;
     var eta = '';
-    if (data.status === 'out_for_delivery') eta = data.eta ? 'Arriving in about ' + data.eta + ' min' : 'Your rider is on the way';
-    else if (data.status === 'assigned') eta = 'Your rider is at the store';
-    else if (data.status === 'delivered') eta = 'Delivered at ' + time(data.times.delivered);
+    if (data.status === 'pending' || data.status === 'assigned') {
+      eta = windowText ? 'Expected between ' + windowText : 'Delivered within ' + (p.text || '30–45 min');
+    } else if (data.status === 'out_for_delivery') {
+      eta = late || !windowText ? 'On the way — arriving shortly' : 'On the way · expected by ' + time(p.to);
+    } else if (data.status === 'delivered') {
+      eta = 'Delivered at ' + time(data.times.delivered);
+    }
     $('t-eta').textContent = eta;
 
     $('t-otp').hidden = !data.otp;

@@ -109,7 +109,7 @@ class OLE_Fees {
 	 * Cart has something a rider must carry. (Not $cart->needs_shipping(): that is false
 	 * whenever the store has no WooCommerce shipping methods, which is how this store runs.)
 	 */
-	protected static function has_physical_items( $cart ) {
+	public static function has_physical_items( $cart ) {
 		foreach ( $cart->get_cart() as $item ) {
 			if ( isset( $item['data'] ) && $item['data'] instanceof WC_Product && ! $item['data']->is_virtual() ) {
 				return true;

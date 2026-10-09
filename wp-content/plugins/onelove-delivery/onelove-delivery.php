@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       One Love Delivery
  * Description:       Last-mile delivery for WooCommerce: auto-assigns orders to your own riders, rider mobile app with Google Maps navigation, live customer tracking, COD cash collection and WhatsApp updates.
- * Version:           1.1.0
+ * Version:           1.1.1
  * Requires at least: 6.2
  * Requires PHP:      7.4
  * Author:            One Love Energy
@@ -14,7 +14,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'OLE_DELIVERY_VERSION', '1.1.0' );
+define( 'OLE_DELIVERY_VERSION', '1.1.1' );
 define( 'OLE_DELIVERY_FILE', __FILE__ );
 define( 'OLE_DELIVERY_DIR', plugin_dir_path( __FILE__ ) );
 define( 'OLE_DELIVERY_URL', plugin_dir_url( __FILE__ ) );

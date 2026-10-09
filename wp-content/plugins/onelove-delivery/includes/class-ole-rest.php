@@ -224,6 +224,11 @@ class OLE_REST {
 			'is_cod'  => (bool) $d->is_cod,
 			'amount'  => (float) $d->cod_amount,
 			'eta'     => $eta,
+			'promise' => array(
+				'text' => OLE_Settings::promise_text(),
+				'from' => strtotime( $d->created_at . ' UTC' ) + (int) OLE_Settings::get( 'promise_min' ) * MINUTE_IN_SECONDS,
+				'to'   => strtotime( $d->created_at . ' UTC' ) + max( (int) OLE_Settings::get( 'promise_min' ), (int) OLE_Settings::get( 'promise_max' ) ) * MINUTE_IN_SECONDS,
+			),
 			'rider'   => $rider,
 			'dest'    => OLE_Geo::valid_point( $d->dest_lat, $d->dest_lng ) ? array( 'lat' => (float) $d->dest_lat, 'lng' => (float) $d->dest_lng ) : null,
 			'store'   => array( 'lat' => $store[0], 'lng' => $store[1], 'name' => OLE_Settings::get( 'store_name' ), 'phone' => OLE_Settings::get( 'store_phone' ) ),

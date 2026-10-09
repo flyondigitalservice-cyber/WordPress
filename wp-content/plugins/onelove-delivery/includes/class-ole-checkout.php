@@ -15,6 +15,18 @@ class OLE_Checkout {
 		add_action( 'woocommerce_checkout_create_order', array( __CLASS__, 'save' ), 10, 2 );
 		add_action( 'woocommerce_after_checkout_billing_form', array( __CLASS__, 'pin_box' ) );
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'assets' ) );
+		add_action( 'woocommerce_review_order_before_order_total', array( __CLASS__, 'promise_row' ), 5 );
+	}
+
+	/** "Delivery time: 30–45 min" line in the checkout order summary. */
+	public static function promise_row() {
+		if ( ! WC()->cart || ! OLE_Fees::has_physical_items( WC()->cart ) ) {
+			return;
+		}
+		printf(
+			'<tr class="ole-promise"><th>Delivery time</th><td><strong>%s</strong><br><small>Our riders deliver safely — no rush.</small></td></tr>',
+			esc_html( OLE_Settings::promise_text() )
+		);
 	}
 
 	protected static function pin_enabled() {

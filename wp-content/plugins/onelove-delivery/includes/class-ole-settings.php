@@ -30,6 +30,8 @@ class OLE_Settings {
 			'stale_minutes'     => '10',
 			'otp_required'      => 'yes',
 			'ontime_minutes'    => '45',
+			'promise_min'       => '30',
+			'promise_max'       => '45',
 			'fee_enabled'       => 'yes',
 			'fee_free_above'    => '499',
 			'fee_base'          => '19',
@@ -70,6 +72,13 @@ class OLE_Settings {
 		return array( (float) self::get( 'store_lat' ), (float) self::get( 'store_lng' ) );
 	}
 
+	/** Customer-facing delivery window, e.g. "30–45 min". */
+	public static function promise_text() {
+		$min = (int) self::get( 'promise_min' );
+		$max = max( $min, (int) self::get( 'promise_max' ) );
+		return $min === $max ? $max . ' min' : $min . '–' . $max . ' min';
+	}
+
 	public static function postcode_prefixes() {
 		return array_filter( array_map( 'trim', explode( ',', (string) self::get( 'postcode_prefixes' ) ) ) );
 	}
@@ -88,7 +97,7 @@ class OLE_Settings {
 			}
 			$clean[ $key ] = sanitize_text_field( $value );
 		}
-		$numbers = array( 'store_lat', 'store_lng', 'service_radius_km', 'ontime_minutes', 'fee_free_above', 'fee_base', 'fee_base_km', 'fee_per_km', 'fee_max', 'fee_fallback', 'pay_per_delivery', 'pay_per_km', 'pay_fallback_km' );
+		$numbers = array( 'store_lat', 'store_lng', 'service_radius_km', 'ontime_minutes', 'promise_min', 'promise_max', 'fee_free_above', 'fee_base', 'fee_base_km', 'fee_per_km', 'fee_max', 'fee_fallback', 'pay_per_delivery', 'pay_per_km', 'pay_fallback_km' );
 		foreach ( $numbers as $num ) {
 			$clean[ $num ] = is_numeric( $clean[ $num ] ) ? $clean[ $num ] : $current[ $num ];
 			if ( ! in_array( $num, array( 'store_lat', 'store_lng' ), true ) ) {
@@ -163,6 +172,15 @@ class OLE_Settings {
 					<?php
 					$text( 'postcode_prefixes', 'Allowed PIN codes', 'Comma-separated prefixes. <code>400,401</code> covers Mumbai, Thane, Navi Mumbai and Mira-Bhayandar. Leave blank to allow all.' );
 					$text( 'service_radius_km', 'Max distance from store (km)', 'Only checked when the customer pins a location. 0 = no limit.' );
+					?>
+				</table>
+
+				<h2>Delivery time promise</h2>
+				<p>Shown to customers at checkout, in order emails and on the tracking page. No live countdown — riders are never rushed.</p>
+				<table class="form-table" role="presentation">
+					<?php
+					$text( 'promise_min', 'Delivered within — from (min)', '', 'number' );
+					$text( 'promise_max', 'Delivered within — to (min)', 'Default 30–45 minutes from the order.', 'number' );
 					?>
 				</table>
 

@@ -171,13 +171,15 @@ class OLE_Frontend {
 		if ( ! $d || in_array( $d->status, array( 'delivered', 'cancelled' ), true ) ) {
 			return;
 		}
-		$url = OLE_Deliveries::track_url( $d );
+		$url     = OLE_Deliveries::track_url( $d );
+		$promise = 'Expected within ' . OLE_Settings::promise_text() . ' of your order.';
 		if ( $plain_text ) {
-			echo "\nTrack your delivery live: " . esc_url_raw( $url ) . "\n";
+			echo "\n" . esc_html( $promise ) . "\nTrack your delivery live: " . esc_url_raw( $url ) . "\n";
 			return;
 		}
 		printf(
-			'<p style="margin:16px 0 24px;"><a href="%s" style="display:inline-block;background:#128a3f;color:#ffffff;font-weight:bold;padding:12px 22px;border-radius:999px;text-decoration:none;">Track your delivery live &rarr;</a></p>',
+			'<p style="margin:16px 0 8px;font-weight:bold;">%s</p><p style="margin:0 0 24px;"><a href="%s" style="display:inline-block;background:#128a3f;color:#ffffff;font-weight:bold;padding:12px 22px;border-radius:999px;text-decoration:none;">Track your delivery live &rarr;</a></p>',
+			esc_html( $promise ),
 			esc_url( $url )
 		);
 	}
@@ -197,7 +199,8 @@ class OLE_Frontend {
 		}
 		$printed[ $d->id ] = true;
 		printf(
-			'<p class="ole-track-cta"><a class="button ole-btn ole-btn--green" href="%s">%s</a></p>',
+			'<p class="ole-track-cta">%s<a class="button ole-btn ole-btn--green" href="%s">%s</a></p>',
+			'delivered' === $d->status ? '' : '<strong>Expected within ' . esc_html( OLE_Settings::promise_text() ) . '.</strong><br>',
 			esc_url( OLE_Deliveries::track_url( $d ) ),
 			'delivered' === $d->status ? 'View delivery details' : 'Track your delivery live &rarr;'
 		);

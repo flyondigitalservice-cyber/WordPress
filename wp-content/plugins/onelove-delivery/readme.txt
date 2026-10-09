@@ -1,7 +1,7 @@
 === One Love Delivery ===
 Requires at least: 6.2
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 
 Last-mile delivery for WooCommerce with your own riders: auto-assignment, rider mobile app
 with Google Maps navigation, live customer tracking, delivery OTP, COD cash tracking and
@@ -79,6 +79,11 @@ Names must match Deliveries → Settings. Variables are filled in this exact ord
 Then in Deliveries → Settings paste the permanent access token and the Phone number ID
 (WhatsApp Manager → API setup) and tick "Send WhatsApp messages".
 Failed sends are logged in WooCommerce → Status → Logs (source: onelove-delivery).
+
+== Delivery time ==
+
+Customers see a flat promise (default 30–45 min) at checkout, in emails and on the tracking
+page ("Expected between 7:10–7:25 pm"). There is no live countdown, so riders are not rushed.
 
 == Default fees & pay (change in Deliveries → Settings) ==
 
