@@ -10,7 +10,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'DASTAAN_VERSION', '1.1.0' );
+define( 'DASTAAN_VERSION', '1.2.0' );
 define( 'DASTAAN_DIR', trailingslashit( get_template_directory() ) );
 define( 'DASTAAN_URI', trailingslashit( get_template_directory_uri() ) );
 
@@ -37,6 +37,7 @@ $dastaan_includes = array(
 	'inc/security.php',         // Hardening headers and WordPress clean-ups.
 	'inc/performance.php',      // Asset trimming, resource hints, lazy-loading.
 	'inc/admin.php',            // Admin notices, welcome page, product meta boxes.
+	'inc/demo-content.php',     // One-click demo products (Dastaan → Demo Products / wp dastaan demo).
 );
 
 foreach ( $dastaan_includes as $dastaan_file ) {

@@ -50,6 +50,11 @@ Customize → Dastaan Theme Options → 19. Tracking, Privacy & AI.
 
 == Changelog ==
 
+= 1.2.0 =
+* New: one-click demo products (Dastaan → Demo Products, or `wp dastaan demo import|remove`) with categories, galleries, a product video, sale prices, a variable product and reviews. Removal deletes only what was imported.
+* New: bundled demo product video (assets/video), used only by the demo importer.
+* Fixed: sale prices on product cards were underlined.
+
 = 1.1.0 =
 * Fixed: fatal error on the classic checkout page (WC_Cart::get_item_product_name() is not available in all WooCommerce versions).
 * Fixed: product page summary column no longer slides over the details accordion and related products when scrolling.

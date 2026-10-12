@@ -171,8 +171,12 @@ The footer form posts via AJAX to the theme (honeypot + nonce protected) and sto
 
 ---
 
-## 13. Demo content used for QA
+## 13. Demo products (one click)
 
-`demo/products.php` (run with WP-CLI: `wp eval-file demo/products.php`) creates the seven craft categories and nine sample products matching the live Dastaan catalogue — handy for staging. `demo/router.php` is only for PHP's built-in server.
+**wp-admin → Dastaan → Demo Products → Import demo products** (or `wp dastaan demo import` with WP-CLI).
+
+It creates the seven craft categories (with images) and 11 demo pieces: product galleries with a product video, sale prices, "one of one" stock, a colour-variable set, reviews and bestseller counts. Only the images and the short video bundled in `assets/` are used, and no existing products, pages or settings are changed.
+
+**Remove demo products** (or `wp dastaan demo remove`) deletes exactly what the importer created: the products, their media and any categories it added that are now empty.
 
 © Dastaan by Artisans · Seawoods, Navi Mumbai
