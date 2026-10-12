@@ -1,0 +1,9 @@
+/* Dastaan — block editor styles */
+:root { --d-primary: #6E1E2B; --d-accent: #B8933E; --d-bg: #FAF7F2; --d-ink: #1F1A17; --d-line: #E6DCCD; }
+.editor-styles-wrapper { font-family: "Jost", system-ui, sans-serif; color: var(--d-ink); background: var(--d-bg); font-size: 17px; line-height: 1.7; }
+.editor-styles-wrapper h1, .editor-styles-wrapper h2, .editor-styles-wrapper h3, .editor-styles-wrapper h4, .editor-styles-wrapper .editor-post-title__input { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; letter-spacing: -.005em; color: var(--d-ink); }
+.editor-styles-wrapper a { color: var(--d-primary); }
+.editor-styles-wrapper .wp-block-button__link { background: var(--d-primary); border-radius: 4px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; }
+.editor-styles-wrapper .wp-block-quote { border-left: 2px solid var(--d-accent); font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: 1.25em; }
+.editor-styles-wrapper .wp-block-table td, .editor-styles-wrapper .wp-block-table th { border: 1px solid var(--d-line); }
+.editor-styles-wrapper .eyebrow { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--d-accent); }

@@ -1,0 +1,2621 @@
+# Copyright (C) 2026 Dastaan by Artisans
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Dastaan by Artisans 1.0.0\n"
+"Report-Msgid-Bugs-To: https://dastaanbyartisans.in\n"
+"Last-Translator: Dastaan by Artisans\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-12T22:04:12+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: dastaan\n"
+
+#. Theme Name of the theme
+#. Author of the theme
+#: style.css
+#: inc/helpers.php:212
+msgid "Dastaan by Artisans"
+msgstr ""
+
+#. Theme URI of the theme
+#. Author URI of the theme
+#: style.css
+msgid "https://dastaanbyartisans.in/"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "A premium, mobile-first WooCommerce theme crafted for Dastaan by Artisans — an artisan-sourced studio in Seawoods, Navi Mumbai dealing in luxury unstitched dress material for women. Fully editable from the Customizer: hero slider, category circles, offer banners, craft showcase, reels, Instagram block, testimonials, FAQ, footer, tracking (Meta Pixel, GA4, Microsoft Clarity), SEO + LLM optimisation (llms.txt, rich JSON-LD), product video gallery, premium checkout."
+msgstr ""
+
+#: 404.php:12
+msgid "Error 404"
+msgstr ""
+
+#: 404.php:13
+msgid "This thread leads nowhere"
+msgstr ""
+
+#: 404.php:14
+msgid "The page you are looking for has moved or never existed. Try a search, or explore the collection."
+msgstr ""
+
+#: 404.php:17
+msgid "Explore the collection"
+msgstr ""
+
+#: 404.php:18
+msgid "Back home"
+msgstr ""
+
+#: 404.php:23
+#: inc/helpers.php:131
+msgid "New in the studio"
+msgstr ""
+
+#: 404.php:23
+msgid "Meanwhile"
+msgstr ""
+
+#: archive.php:20
+#: index.php:20
+msgid "Journal"
+msgstr ""
+
+#: archive.php:36
+#: index.php:36
+#: woocommerce/single-product/product-image.php:82
+msgid "Previous"
+msgstr ""
+
+#: archive.php:37
+#: index.php:37
+#: woocommerce/single-product/product-image.php:84
+msgid "Next"
+msgstr ""
+
+#. translators: %s: count
+#: comments.php:19
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:27
+msgid "Comments are closed."
+msgstr ""
+
+#: header.php:22
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:28
+msgid "Back to bag"
+msgstr ""
+
+#: header.php:30
+msgid "Secure checkout"
+msgstr ""
+
+#: header.php:39
+msgid "Open menu"
+msgstr ""
+
+#: header.php:45
+msgid "Primary"
+msgstr ""
+
+#: header.php:65
+#: searchform.php:15
+#: template-parts/footer/mobile-nav.php:17
+#: template-parts/header/search-overlay.php:14
+#: template-parts/header/search-overlay.php:21
+msgid "Search"
+msgstr ""
+
+#: header.php:68
+#: template-parts/header/mobile-menu.php:33
+msgid "My account"
+msgstr ""
+
+#: header.php:70
+#: template-parts/footer/mobile-nav.php:21
+#: template-parts/header/mobile-menu.php:35
+msgid "Wishlist"
+msgstr ""
+
+#: header.php:72
+msgid "Open bag"
+msgstr ""
+
+#: inc/admin.php:15
+msgid "Dastaan Theme"
+msgstr ""
+
+#: inc/admin.php:16
+#: inc/setup.php:143
+msgid "Dastaan"
+msgstr ""
+
+#: inc/admin.php:23
+msgid "Setup & Help"
+msgstr ""
+
+#: inc/admin.php:34
+msgid "WooCommerce is active"
+msgstr ""
+
+#: inc/admin.php:35
+msgid "Logo uploaded (Customizer → Site Identity)"
+msgstr ""
+
+#: inc/admin.php:36
+msgid "Primary menu assigned"
+msgstr ""
+
+#: inc/admin.php:37
+msgid "Footer menus assigned"
+msgstr ""
+
+#: inc/admin.php:38
+msgid "Static front page set (Settings → Reading). The theme home layout is used automatically."
+msgstr ""
+
+#: inc/admin.php:39
+msgid "Pretty permalinks enabled (needed for /llms.txt)"
+msgstr ""
+
+#: inc/admin.php:40
+msgid "Meta Pixel ID added"
+msgstr ""
+
+#: inc/admin.php:41
+msgid "Microsoft Clarity ID added"
+msgstr ""
+
+#: inc/admin.php:43
+msgid "Checkout page uses the Dastaan premium checkout ([woocommerce_checkout] shortcode)"
+msgstr ""
+
+#: inc/admin.php:44
+msgid "WooCommerce \"Product gallery videos\" feature enabled (WooCommerce → Settings → Advanced → Features) — optional, the theme video field works without it"
+msgstr ""
+
+#: inc/admin.php:45
+msgid "Currency set to INR"
+msgstr ""
+
+#: inc/admin.php:81
+msgid "Cart and Checkout pages now use the Dastaan premium templates."
+msgstr ""
+
+#: inc/admin.php:86
+msgid "Dastaan by Artisans — Theme Setup"
+msgstr ""
+
+#: inc/admin.php:87
+msgid "Everything on the storefront is editable from the Customizer. Use this checklist once, then manage daily content from Products, Menus and the Customizer."
+msgstr ""
+
+#: inc/admin.php:91
+msgid "Setup checklist"
+msgstr ""
+
+#: inc/admin.php:97
+msgid "Fix"
+msgstr ""
+
+#: inc/admin.php:104
+msgid "Switch Cart & Checkout to Dastaan premium templates"
+msgstr ""
+
+#: inc/admin.php:105
+msgid "Replaces the block-based cart/checkout with the shortcode versions the theme styles (two-column checkout, sticky summary, trust badges, WhatsApp help)."
+msgstr ""
+
+#: inc/admin.php:111
+msgid "Quick links"
+msgstr ""
+
+#: inc/admin.php:113
+msgid "Open Theme Options"
+msgstr ""
+
+#: inc/admin.php:114
+msgid "Menus"
+msgstr ""
+
+#: inc/admin.php:115
+#: inc/newsletter.php:21
+#: inc/newsletter.php:23
+msgid "Subscribers"
+msgstr ""
+
+#: inc/admin.php:117
+msgid "Category images"
+msgstr ""
+
+#: inc/admin.php:120
+msgid "Home page sections (in order)"
+msgstr ""
+
+#: inc/admin.php:122
+msgid "Announcement bar → Header (logo, search, account, wishlist, bag)"
+msgstr ""
+
+#: inc/admin.php:123
+msgid "Category circles (from product categories — add thumbnails under Products → Categories)"
+msgstr ""
+
+#: inc/admin.php:124
+msgid "Hero slider (up to 4 slides)"
+msgstr ""
+
+#: inc/admin.php:125
+msgid "USP bar → New in → Offer banners → Bestsellers"
+msgstr ""
+
+#: inc/admin.php:126
+msgid "Craft showcase → Reels → Testimonials → Behind the scenes"
+msgstr ""
+
+#: inc/admin.php:127
+msgid "Instagram → Studio strip → SEO text + FAQ → Newsletter → Footer"
+msgstr ""
+
+#: inc/admin.php:129
+msgid "Product videos"
+msgstr ""
+
+#: inc/admin.php:130
+msgid "Edit any product → \"Product Video\" box in the sidebar → upload an MP4 or paste a YouTube/Vimeo/Instagram link and optionally a poster image. It appears inside the gallery with a play button, in the lightbox and as VideoObject schema for Google."
+msgstr ""
+
+#: inc/admin.php:131
+msgid "Shortcodes"
+msgstr ""
+
+#: inc/admin.php:150
+#: inc/admin.php:158
+msgid "Dastaan theme:"
+msgstr ""
+
+#: inc/admin.php:151
+msgid "WooCommerce is required for the shop, product pages and checkout."
+msgstr ""
+
+#: inc/admin.php:153
+msgid "Install WooCommerce"
+msgstr ""
+
+#: inc/admin.php:159
+msgid "Your checkout is still the default block layout. Switch to the premium Dastaan checkout in one click."
+msgstr ""
+
+#: inc/admin.php:161
+msgid "Open setup"
+msgstr ""
+
+#: inc/admin.php:179
+msgid "Edit storefront"
+msgstr ""
+
+#: inc/blocks.php:88
+#: template-parts/footer/floating.php:12
+#: template-parts/header/mobile-menu.php:39
+msgid "Chat on WhatsApp"
+msgstr ""
+
+#: inc/blocks.php:106
+msgid "Reels block"
+msgstr ""
+
+#: inc/blocks.php:107
+msgid "Instagram block"
+msgstr ""
+
+#: inc/blocks.php:108
+msgid "USP trust bar"
+msgstr ""
+
+#: inc/blocks.php:109
+msgid "Offer banners"
+msgstr ""
+
+#: inc/blocks.php:110
+msgid "Testimonials"
+msgstr ""
+
+#: inc/blocks.php:111
+msgid "SEO text + FAQ"
+msgstr ""
+
+#: inc/blocks.php:112
+msgid "Product carousel"
+msgstr ""
+
+#: inc/blocks.php:113
+msgid "WhatsApp button"
+msgstr ""
+
+#: inc/checkout.php:40
+msgid "First name"
+msgstr ""
+
+#: inc/checkout.php:41
+msgid "Last name"
+msgstr ""
+
+#: inc/checkout.php:42
+msgid "10-digit mobile (for delivery updates on WhatsApp)"
+msgstr ""
+
+#: inc/checkout.php:43
+msgid "Email for order confirmation"
+msgstr ""
+
+#: inc/checkout.php:44
+msgid "Flat / house no., building, street"
+msgstr ""
+
+#: inc/checkout.php:45
+msgid "Landmark, area (optional)"
+msgstr ""
+
+#: inc/checkout.php:46
+msgid "City"
+msgstr ""
+
+#: inc/checkout.php:47
+msgid "PIN code"
+msgstr ""
+
+#: inc/checkout.php:76
+msgid "Delivery instructions or gift note"
+msgstr ""
+
+#: inc/checkout.php:77
+msgid "e.g. Call before delivery, gift wrap with a note for Maa…"
+msgstr ""
+
+#: inc/checkout.php:137
+msgid "Please enter a valid 10-digit Indian mobile number."
+msgstr ""
+
+#: inc/checkout.php:153
+msgid "256-bit SSL encrypted checkout"
+msgstr ""
+
+#: inc/checkout.php:154
+msgid "UPI, cards, net banking & EMI"
+msgstr ""
+
+#: inc/checkout.php:155
+#: inc/helpers.php:275
+msgid "48-hour exchange after delivery"
+msgstr ""
+
+#: inc/checkout.php:158
+msgid "Hi Dastaan, I need help with my checkout."
+msgstr ""
+
+#: inc/checkout.php:160
+msgid "Stuck? "
+msgstr ""
+
+#: inc/checkout.php:160
+msgid "Chat with us on WhatsApp"
+msgstr ""
+
+#. translators: %s: privacy policy link
+#: inc/checkout.php:174
+#, php-format
+msgid "Your details are used only to process this order and send delivery updates. See our %s."
+msgstr ""
+
+#: inc/checkout.php:187
+msgid "Returning customer?"
+msgstr ""
+
+#. translators: %s: order number
+#: inc/checkout.php:199
+#, php-format
+msgid "Hi Dastaan, this is regarding my order #%s"
+msgstr ""
+
+#: inc/checkout.php:202
+msgid "What happens next"
+msgstr ""
+
+#: inc/checkout.php:204
+msgid "Quality check"
+msgstr ""
+
+#: inc/checkout.php:204
+msgid "Your piece is inspected under daylight, measured and folded in muslin."
+msgstr ""
+
+#: inc/checkout.php:205
+msgid "Dispatch in 2–4 days"
+msgstr ""
+
+#: inc/checkout.php:205
+msgid "Insured, tracked shipping. Tracking details arrive by email and WhatsApp."
+msgstr ""
+
+#: inc/checkout.php:206
+msgid "Unbox & stitch"
+msgstr ""
+
+#: inc/checkout.php:206
+msgid "Need a stitching guide or tailor recommendation? Just message us."
+msgstr ""
+
+#: inc/checkout.php:209
+msgid "Message us about this order"
+msgstr ""
+
+#: inc/checkout.php:222
+msgid "Secure checkout · UPI · Cards · EMI"
+msgstr ""
+
+#: inc/customizer.php:17
+msgid "1. Brand, Contact & Social"
+msgstr ""
+
+#: inc/customizer.php:17
+msgid "WhatsApp, phone, studio address and social profiles used across header, footer and product pages."
+msgstr ""
+
+#: inc/customizer.php:18
+msgid "2. Announcement Bar"
+msgstr ""
+
+#: inc/customizer.php:18
+msgid "Thin bar above the header. Supports an optional countdown."
+msgstr ""
+
+#: inc/customizer.php:19
+msgid "3. Header"
+msgstr ""
+
+#: inc/customizer.php:19
+msgid "Sticky behaviour, search, wishlist icon. Upload your logo under Site Identity."
+msgstr ""
+
+#: inc/customizer.php:20
+msgid "4. Hero Slider"
+msgstr ""
+
+#: inc/customizer.php:20
+msgid "Up to 4 full-width slides. Leave an image empty to hide a slide. Recommended 1920×1000px."
+msgstr ""
+
+#: inc/customizer.php:21
+msgid "5. Category Circles"
+msgstr ""
+
+#: inc/customizer.php:21
+msgid "Story-style circles pulled from your WooCommerce product categories (set thumbnails under Products → Categories)."
+msgstr ""
+
+#: inc/customizer.php:22
+msgid "6. USP / Trust Bar"
+msgstr ""
+
+#: inc/customizer.php:22
+msgid "Four promises shown under the hero."
+msgstr ""
+
+#: inc/customizer.php:23
+msgid "7. Product Sections"
+msgstr ""
+
+#: inc/customizer.php:23
+msgid "Two product carousels: New in / Bestsellers."
+msgstr ""
+
+#: inc/customizer.php:24
+msgid "8. Offer Banners"
+msgstr ""
+
+#: inc/customizer.php:24
+msgid "Three tall promotional tiles. Recommended 800×1000px."
+msgstr ""
+
+#: inc/customizer.php:25
+msgid "9. Craft Showcase"
+msgstr ""
+
+#: inc/customizer.php:25
+msgid "Large editorial tiles of your crafts (uses product categories)."
+msgstr ""
+
+#: inc/customizer.php:26
+msgid "10. Reels / Video Block"
+msgstr ""
+
+#: inc/customizer.php:26
+msgid "Upload MP4 reels or paste Instagram/YouTube links. Each reel can link to a product."
+msgstr ""
+
+#: inc/customizer.php:27
+msgid "11. Instagram Block"
+msgstr ""
+
+#: inc/customizer.php:27
+msgid "Manual grid (no API needed) or paste a feed plugin shortcode."
+msgstr ""
+
+#: inc/customizer.php:28
+msgid "12. Testimonials"
+msgstr ""
+
+#: inc/customizer.php:28
+msgid "Customer reviews with optional photo."
+msgstr ""
+
+#: inc/customizer.php:29
+msgid "13. Behind the Scenes"
+msgstr ""
+
+#: inc/customizer.php:29
+msgid "Artisan story block with three images."
+msgstr ""
+
+#: inc/customizer.php:30
+msgid "14. Studio Visit Strip"
+msgstr ""
+
+#: inc/customizer.php:30
+msgid "Invite customers to the Seawoods studio."
+msgstr ""
+
+#: inc/customizer.php:31
+msgid "15. SEO Content & FAQ"
+msgstr ""
+
+#: inc/customizer.php:31
+msgid "Editorial text + FAQ at the bottom of the home page (output as FAQ schema for Google & AI assistants)."
+msgstr ""
+
+#: inc/customizer.php:32
+msgid "16. Footer & Newsletter"
+msgstr ""
+
+#: inc/customizer.php:32
+msgid "About text, newsletter, payment icons, copyright. Footer menus are under Appearance → Menus."
+msgstr ""
+
+#: inc/customizer.php:33
+msgid "17. Shop / Catalogue"
+msgstr ""
+
+#: inc/customizer.php:33
+msgid "Grid density, badges, quick add."
+msgstr ""
+
+#: inc/customizer.php:34
+msgid "18. Product Page"
+msgstr ""
+
+#: inc/customizer.php:34
+msgid "Video position, WhatsApp enquiry, delivery promise, care & shipping copy."
+msgstr ""
+
+#: inc/customizer.php:35
+msgid "19. Tracking, Privacy & AI"
+msgstr ""
+
+#: inc/customizer.php:35
+msgid "Meta Pixel, GA4, Microsoft Clarity, verification tags, cookie consent, AI crawler policy."
+msgstr ""
+
+#: inc/customizer.php:36
+msgid "20. Colours & Typography"
+msgstr ""
+
+#: inc/customizer.php:36
+msgid "Brand colours, fonts, container width, button radius."
+msgstr ""
+
+#: inc/customizer.php:48
+msgid "Truck (shipping)"
+msgstr ""
+
+#: inc/customizer.php:49
+msgid "Hand (handcrafted)"
+msgstr ""
+
+#: inc/customizer.php:50
+msgid "Exchange arrows"
+msgstr ""
+
+#: inc/customizer.php:51
+msgid "Shield (secure)"
+msgstr ""
+
+#: inc/customizer.php:52
+msgid "Headset (support)"
+msgstr ""
+
+#: inc/customizer.php:53
+msgid "Needle"
+msgstr ""
+
+#: inc/customizer.php:54
+msgid "Scissors"
+msgstr ""
+
+#: inc/customizer.php:55
+msgid "Leaf (natural fabric)"
+msgstr ""
+
+#: inc/customizer.php:56
+msgid "Gift"
+msgstr ""
+
+#: inc/customizer.php:57
+msgid "Sparkle"
+msgstr ""
+
+#: inc/customizer.php:58
+msgid "Lock"
+msgstr ""
+
+#: inc/customizer.php:59
+msgid "Clock"
+msgstr ""
+
+#: inc/customizer.php:60
+msgid "Rupee"
+msgstr ""
+
+#: inc/customizer.php:64
+msgid "Brand line (shown under logo in footer)"
+msgstr ""
+
+#: inc/customizer.php:65
+msgid "WhatsApp number (digits with country code, e.g. 917208200521)"
+msgstr ""
+
+#: inc/customizer.php:66
+msgid "Default WhatsApp message"
+msgstr ""
+
+#: inc/customizer.php:67
+msgid "Display phone"
+msgstr ""
+
+#: inc/customizer.php:68
+msgid "Contact email"
+msgstr ""
+
+#: inc/customizer.php:69
+msgid "Studio address"
+msgstr ""
+
+#: inc/customizer.php:70
+msgid "Studio hours"
+msgstr ""
+
+#: inc/customizer.php:71
+msgid "Instagram URL"
+msgstr ""
+
+#: inc/customizer.php:72
+msgid "Facebook URL"
+msgstr ""
+
+#: inc/customizer.php:73
+msgid "YouTube URL"
+msgstr ""
+
+#: inc/customizer.php:74
+msgid "Pinterest URL"
+msgstr ""
+
+#: inc/customizer.php:75
+msgid "Show floating WhatsApp button"
+msgstr ""
+
+#: inc/customizer.php:78
+msgid "Enable announcement bar"
+msgstr ""
+
+#: inc/customizer.php:79
+msgid "Message"
+msgstr ""
+
+#: inc/customizer.php:80
+msgid "Link URL (optional)"
+msgstr ""
+
+#: inc/customizer.php:81
+msgid "Link text"
+msgstr ""
+
+#: inc/customizer.php:82
+msgid "Countdown end (YYYY-MM-DD HH:MM, site timezone). Empty = no countdown."
+msgstr ""
+
+#: inc/customizer.php:83
+msgid "Right-side note (desktop only)"
+msgstr ""
+
+#: inc/customizer.php:86
+msgid "Sticky header on scroll"
+msgstr ""
+
+#: inc/customizer.php:87
+msgid "Show search"
+msgstr ""
+
+#: inc/customizer.php:88
+msgid "Show wishlist icon"
+msgstr ""
+
+#: inc/customizer.php:89
+msgid "Wishlist page URL (from your wishlist plugin)"
+msgstr ""
+
+#: inc/customizer.php:90
+msgid "Top-right helper text (links to WhatsApp)"
+msgstr ""
+
+#: inc/customizer.php:93
+msgid "Autoplay slides"
+msgstr ""
+
+#: inc/customizer.php:94
+msgid "Seconds per slide"
+msgstr ""
+
+#. translators: %d: slide number
+#: inc/customizer.php:97
+#, php-format
+msgid "Slide %d"
+msgstr ""
+
+#: inc/customizer.php:98
+msgid "Image (1920×1000)"
+msgstr ""
+
+#: inc/customizer.php:99
+msgid "Mobile image (optional, 900×1200 portrait)"
+msgstr ""
+
+#: inc/customizer.php:100
+msgid "Image focal point (what stays visible when cropped on phones)"
+msgstr ""
+
+#: inc/customizer.php:100
+msgid "Centre"
+msgstr ""
+
+#: inc/customizer.php:100
+msgid "Left"
+msgstr ""
+
+#: inc/customizer.php:100
+msgid "Right"
+msgstr ""
+
+#: inc/customizer.php:101
+msgid "Coupon pill (e.g. FESTIVE10 — shown as \"Use code\")"
+msgstr ""
+
+#: inc/customizer.php:102
+msgid "Eyebrow (small line)"
+msgstr ""
+
+#: inc/customizer.php:103
+msgid "Heading"
+msgstr ""
+
+#: inc/customizer.php:104
+msgid "Supporting text"
+msgstr ""
+
+#: inc/customizer.php:105
+msgid "Primary button text"
+msgstr ""
+
+#: inc/customizer.php:106
+msgid "Primary button URL"
+msgstr ""
+
+#: inc/customizer.php:107
+msgid "Secondary button text"
+msgstr ""
+
+#: inc/customizer.php:108
+msgid "Secondary button URL"
+msgstr ""
+
+#: inc/customizer.php:109
+msgid "Text colour"
+msgstr ""
+
+#: inc/customizer.php:109
+msgid "Dark text (light image)"
+msgstr ""
+
+#: inc/customizer.php:109
+msgid "White text (dark image)"
+msgstr ""
+
+#: inc/customizer.php:113
+msgid "Enable category circles"
+msgstr ""
+
+#: inc/customizer.php:114
+msgid "Small heading"
+msgstr ""
+
+#: inc/customizer.php:115
+msgid "Maximum circles"
+msgstr ""
+
+#: inc/customizer.php:116
+msgid "Exclude category slugs (comma separated)"
+msgstr ""
+
+#: inc/customizer.php:119
+msgid "Enable USP bar"
+msgstr ""
+
+#. translators: %d: item number
+#: inc/customizer.php:122
+#, php-format
+msgid "Item %d"
+msgstr ""
+
+#: inc/customizer.php:123
+msgid "Icon"
+msgstr ""
+
+#: inc/customizer.php:124
+#: inc/customizer.php:138
+#: inc/customizer.php:146
+#: inc/customizer.php:158
+#: inc/customizer.php:167
+#: inc/customizer.php:174
+#: inc/customizer.php:188
+#: inc/customizer.php:200
+#: inc/customizer.php:214
+#: inc/customizer.php:225
+#: inc/customizer.php:248
+msgid "Title"
+msgstr ""
+
+#: inc/customizer.php:125
+msgid "Sub text"
+msgstr ""
+
+#: inc/customizer.php:130
+msgid "Newest products"
+msgstr ""
+
+#: inc/customizer.php:131
+msgid "Featured products (starred)"
+msgstr ""
+
+#: inc/customizer.php:132
+msgid "Best selling"
+msgstr ""
+
+#: inc/customizer.php:133
+msgid "On sale"
+msgstr ""
+
+#: inc/customizer.php:134
+msgid "Specific category (slug below)"
+msgstr ""
+
+#: inc/customizer.php:136
+msgid "Enable first carousel"
+msgstr ""
+
+#: inc/customizer.php:137
+#: inc/customizer.php:145
+#: inc/customizer.php:157
+#: inc/customizer.php:166
+#: inc/customizer.php:173
+#: inc/customizer.php:199
+#: inc/customizer.php:213
+msgid "Eyebrow"
+msgstr ""
+
+#: inc/customizer.php:139
+#: inc/customizer.php:147
+#: inc/newsletter.php:140
+msgid "Source"
+msgstr ""
+
+#: inc/customizer.php:140
+#: inc/customizer.php:148
+msgid "Category slug (if source = category)"
+msgstr ""
+
+#: inc/customizer.php:141
+#: inc/customizer.php:149
+msgid "Number of products"
+msgstr ""
+
+#: inc/customizer.php:142
+msgid "\"View all\" text"
+msgstr ""
+
+#: inc/customizer.php:143
+msgid "Second carousel"
+msgstr ""
+
+#: inc/customizer.php:144
+msgid "Enable second carousel"
+msgstr ""
+
+#: inc/customizer.php:152
+msgid "Enable offer banners"
+msgstr ""
+
+#. translators: %d: banner number
+#: inc/customizer.php:155
+#, php-format
+msgid "Banner %d"
+msgstr ""
+
+#: inc/customizer.php:156
+#: inc/customizer.php:229
+msgid "Image"
+msgstr ""
+
+#: inc/customizer.php:159
+#: inc/customizer.php:215
+#: inc/customizer.php:226
+#: inc/customizer.php:249
+msgid "Text"
+msgstr ""
+
+#: inc/customizer.php:160
+#: inc/customizer.php:219
+#: inc/customizer.php:227
+msgid "Button text"
+msgstr ""
+
+#: inc/customizer.php:161
+msgid "URL"
+msgstr ""
+
+#: inc/customizer.php:165
+msgid "Enable craft showcase"
+msgstr ""
+
+#: inc/customizer.php:168
+#: inc/customizer.php:175
+msgid "Intro text"
+msgstr ""
+
+#: inc/customizer.php:169
+msgid "Number of tiles"
+msgstr ""
+
+#: inc/customizer.php:172
+msgid "Enable reels block"
+msgstr ""
+
+#. translators: %d: reel number
+#: inc/customizer.php:178
+#, php-format
+msgid "Reel %d"
+msgstr ""
+
+#: inc/customizer.php:179
+msgid "Upload MP4 (vertical 9:16 recommended)"
+msgstr ""
+
+#: inc/customizer.php:180
+msgid "OR Instagram reel / YouTube Shorts URL"
+msgstr ""
+
+#: inc/customizer.php:181
+msgid "Poster image (shown before play)"
+msgstr ""
+
+#: inc/customizer.php:182
+msgid "Caption"
+msgstr ""
+
+#: inc/customizer.php:183
+msgid "\"Shop this\" link"
+msgstr ""
+
+#: inc/customizer.php:187
+msgid "Enable Instagram block"
+msgstr ""
+
+#: inc/customizer.php:189
+msgid "Handle (without @)"
+msgstr ""
+
+#: inc/customizer.php:190
+msgid "Feed plugin shortcode (optional, e.g. [instagram-feed]). Overrides the manual grid."
+msgstr ""
+
+#. translators: %d: tile number
+#: inc/customizer.php:193
+#, php-format
+msgid "Tile %d image"
+msgstr ""
+
+#: inc/customizer.php:194
+msgid "Tile link (post URL or product)"
+msgstr ""
+
+#: inc/customizer.php:198
+msgid "Enable testimonials"
+msgstr ""
+
+#. translators: %d: review number
+#: inc/customizer.php:203
+#, php-format
+msgid "Review %d"
+msgstr ""
+
+#: inc/customizer.php:204
+msgid "Customer name"
+msgstr ""
+
+#: inc/customizer.php:205
+msgid "Review"
+msgstr ""
+
+#: inc/customizer.php:206
+msgid "Purchased item"
+msgstr ""
+
+#: inc/customizer.php:207
+msgid "Stars (1–5)"
+msgstr ""
+
+#: inc/customizer.php:208
+msgid "Photo (optional)"
+msgstr ""
+
+#: inc/customizer.php:212
+msgid "Enable behind the scenes"
+msgstr ""
+
+#: inc/customizer.php:216
+msgid "Image 1 (tall)"
+msgstr ""
+
+#: inc/customizer.php:217
+msgid "Image 2"
+msgstr ""
+
+#: inc/customizer.php:218
+msgid "Image 3"
+msgstr ""
+
+#: inc/customizer.php:220
+msgid "Button URL"
+msgstr ""
+
+#: inc/customizer.php:221
+msgid "Craft ticker words (comma separated)"
+msgstr ""
+
+#: inc/customizer.php:224
+msgid "Enable studio strip"
+msgstr ""
+
+#: inc/customizer.php:228
+msgid "Button URL (empty = WhatsApp)"
+msgstr ""
+
+#: inc/customizer.php:232
+msgid "Enable SEO content + FAQ"
+msgstr ""
+
+#: inc/customizer.php:233
+msgid "Heading (H2)"
+msgstr ""
+
+#: inc/customizer.php:234
+msgid "Editorial text (paragraphs separated by blank lines)"
+msgstr ""
+
+#. translators: %d: FAQ number
+#: inc/customizer.php:237
+#, php-format
+msgid "FAQ %d — question"
+msgstr ""
+
+#: inc/customizer.php:238
+msgid "Answer"
+msgstr ""
+
+#: inc/customizer.php:242
+msgid "About text"
+msgstr ""
+
+#: inc/customizer.php:243
+msgid "Shop column title"
+msgstr ""
+
+#: inc/customizer.php:244
+msgid "Help column title"
+msgstr ""
+
+#: inc/customizer.php:245
+msgid "Studio column title"
+msgstr ""
+
+#: inc/customizer.php:246
+#: template-parts/footer/newsletter.php:20
+msgid "Newsletter"
+msgstr ""
+
+#: inc/customizer.php:247
+msgid "Show newsletter strip"
+msgstr ""
+
+#: inc/customizer.php:250
+msgid "External form action URL (Mailchimp/Klaviyo). Empty = store subscribers in WordPress (Dastaan → Subscribers)."
+msgstr ""
+
+#: inc/customizer.php:251
+msgid "Success message"
+msgstr ""
+
+#: inc/customizer.php:252
+msgid "Bottom bar"
+msgstr ""
+
+#: inc/customizer.php:253
+msgid "Show payment icons (UPI, cards, net banking, EMI)"
+msgstr ""
+
+#: inc/customizer.php:254
+msgid "Copyright ({year} = current year)"
+msgstr ""
+
+#: inc/customizer.php:255
+msgid "Legal line (GSTIN, registered name)"
+msgstr ""
+
+#: inc/customizer.php:258
+msgid "Desktop columns"
+msgstr ""
+
+#: inc/customizer.php:259
+msgid "Products per page"
+msgstr ""
+
+#: inc/customizer.php:260
+msgid "Show filter drawer button"
+msgstr ""
+
+#: inc/customizer.php:261
+msgid "Swap to second gallery image on hover"
+msgstr ""
+
+#: inc/customizer.php:262
+msgid "Quick add-to-bag on cards"
+msgstr ""
+
+#: inc/customizer.php:263
+msgid "\"New\" badge for products younger than (days, 0 = off)"
+msgstr ""
+
+#: inc/customizer.php:264
+msgid "Show % off badge"
+msgstr ""
+
+#: inc/customizer.php:267
+msgid "Product video position in gallery"
+msgstr ""
+
+#: inc/customizer.php:267
+msgid "First slide"
+msgstr ""
+
+#: inc/customizer.php:267
+msgid "Second slide (after cover image)"
+msgstr ""
+
+#: inc/customizer.php:267
+msgid "Last slide"
+msgstr ""
+
+#: inc/customizer.php:268
+msgid "Autoplay muted video when its slide is active"
+msgstr ""
+
+#: inc/customizer.php:269
+msgid "Show WhatsApp enquiry button"
+msgstr ""
+
+#: inc/customizer.php:270
+msgid "WhatsApp button text"
+msgstr ""
+
+#: inc/customizer.php:271
+msgid "Show \"Buy now\" (direct to checkout)"
+msgstr ""
+
+#: inc/customizer.php:272
+msgid "Delivery promise line"
+msgstr ""
+
+#: inc/customizer.php:273
+msgid "Trust point 1"
+msgstr ""
+
+#: inc/customizer.php:274
+msgid "Trust point 2"
+msgstr ""
+
+#: inc/customizer.php:275
+msgid "Trust point 3"
+msgstr ""
+
+#: inc/customizer.php:276
+msgid "\"Fabric & care\" accordion text"
+msgstr ""
+
+#: inc/customizer.php:277
+msgid "\"Shipping & exchange\" accordion text"
+msgstr ""
+
+#: inc/customizer.php:278
+msgid "Measurement / stitching guide page"
+msgstr ""
+
+#: inc/customizer.php:279
+msgid "Sticky add-to-bag bar on mobile"
+msgstr ""
+
+#: inc/customizer.php:280
+msgid "Related products"
+msgstr ""
+
+#: inc/customizer.php:283
+msgid "Meta (Facebook) Pixel ID"
+msgstr ""
+
+#: inc/customizer.php:283
+msgid "Fires PageView, ViewContent, AddToCart, InitiateCheckout, Purchase with value & currency."
+msgstr ""
+
+#: inc/customizer.php:284
+msgid "Meta domain verification code"
+msgstr ""
+
+#: inc/customizer.php:285
+msgid "Google Analytics 4 Measurement ID (G-XXXX)"
+msgstr ""
+
+#: inc/customizer.php:286
+msgid "Microsoft Clarity project ID"
+msgstr ""
+
+#: inc/customizer.php:287
+msgid "Google Search Console verification code"
+msgstr ""
+
+#: inc/customizer.php:288
+#: template-parts/footer/floating.php:17
+msgid "Cookie consent"
+msgstr ""
+
+#: inc/customizer.php:289
+msgid "Ask for consent before loading trackers (recommended)"
+msgstr ""
+
+#: inc/customizer.php:290
+msgid "Consent text"
+msgstr ""
+
+#: inc/customizer.php:291
+msgid "Accept label"
+msgstr ""
+
+#: inc/customizer.php:292
+msgid "Decline label"
+msgstr ""
+
+#: inc/customizer.php:293
+msgid "AI / LLM optimisation"
+msgstr ""
+
+#: inc/customizer.php:294
+msgid "AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended)"
+msgstr ""
+
+#: inc/customizer.php:294
+msgid "Allow (be discoverable in AI answers)"
+msgstr ""
+
+#: inc/customizer.php:294
+msgid "Block"
+msgstr ""
+
+#: inc/customizer.php:295
+msgid "Publish /llms.txt and /llms-full.txt (brand + catalogue summary for AI assistants)"
+msgstr ""
+
+#: inc/customizer.php:296
+msgid "Extra notes for llms.txt (policies, USPs)"
+msgstr ""
+
+#: inc/customizer.php:297
+msgid "Hardening"
+msgstr ""
+
+#: inc/customizer.php:298
+msgid "Disable XML-RPC (recommended unless you use the WordPress app/Jetpack)"
+msgstr ""
+
+#: inc/customizer.php:299
+msgid "Remove jQuery Migrate on the front end (faster)"
+msgstr ""
+
+#: inc/customizer.php:302
+msgid "Primary (wine)"
+msgstr ""
+
+#: inc/customizer.php:303
+msgid "Accent (gold)"
+msgstr ""
+
+#: inc/customizer.php:304
+msgid "Background (ivory)"
+msgstr ""
+
+#: inc/customizer.php:305
+msgid "Text (ink)"
+msgstr ""
+
+#: inc/customizer.php:306
+msgid "Load Google Fonts (Cormorant Garamond + Jost). Off = system fonts, zero third-party requests."
+msgstr ""
+
+#: inc/customizer.php:307
+msgid "Container width (px)"
+msgstr ""
+
+#: inc/customizer.php:308
+msgid "Button corner radius (px)"
+msgstr ""
+
+#: inc/customizer.php:339
+msgid "Dastaan Theme Options"
+msgstr ""
+
+#: inc/customizer.php:340
+msgid "Everything on the storefront is editable here. Changes preview live on the right."
+msgstr ""
+
+#: inc/enqueue.php:62
+msgid "Added to your bag"
+msgstr ""
+
+#: inc/enqueue.php:63
+msgid "View bag"
+msgstr ""
+
+#: inc/enqueue.php:64
+#: template-parts/header/mini-cart.php:20
+#: template-parts/header/mobile-menu.php:44
+#: woocommerce/archive-product.php:103
+#: woocommerce/single-product/product-image.php:81
+msgid "Close"
+msgstr ""
+
+#: inc/enqueue.php:65
+#: template-parts/header/announcement.php:40
+msgid "days"
+msgstr ""
+
+#: inc/enqueue.php:66
+#: template-parts/header/announcement.php:41
+msgid "hrs"
+msgstr ""
+
+#: inc/enqueue.php:67
+#: template-parts/header/announcement.php:42
+msgid "min"
+msgstr ""
+
+#: inc/enqueue.php:68
+#: template-parts/header/announcement.php:43
+msgid "sec"
+msgstr ""
+
+#: inc/enqueue.php:69
+msgid "Link copied"
+msgstr ""
+
+#: inc/enqueue.php:70
+#, php-format
+msgid "Code copied: %s"
+msgstr ""
+
+#: inc/helpers.php:26
+msgid "Grace & elegance in every unstitched outfit"
+msgstr ""
+
+#: inc/helpers.php:28
+msgid "Hello Dastaan, I would like some help choosing a piece."
+msgstr ""
+
+#: inc/helpers.php:31
+msgid "Seawoods, Navi Mumbai, Maharashtra 400706, India"
+msgstr ""
+
+#: inc/helpers.php:32
+msgid "Mon – Sat, 11:00 AM – 8:00 PM (by appointment)"
+msgstr ""
+
+#: inc/helpers.php:41
+msgid "The Festive Edit is here — complimentary shipping across India on every order"
+msgstr ""
+
+#: inc/helpers.php:43
+msgid "Shop now"
+msgstr ""
+
+#: inc/helpers.php:45
+msgid "Handcrafted by real artisans · Seawoods, Navi Mumbai"
+msgstr ""
+
+#: inc/helpers.php:52
+msgid "Need help? Chat with a stylist"
+msgstr ""
+
+#: inc/helpers.php:58
+msgid "The Chikankari Edit"
+msgstr ""
+
+#: inc/helpers.php:59
+msgid "Woven stories, stitched by hand"
+msgstr ""
+
+#: inc/helpers.php:60
+msgid "Pure organza & mul chanderi unstitched sets with fine Lucknowi chikankari, pearl cut-dana and shadow work — sourced directly from the artisans who make them."
+msgstr ""
+
+#: inc/helpers.php:61
+msgid "Shop the Edit"
+msgstr ""
+
+#: inc/helpers.php:63
+msgid "Our Story"
+msgstr ""
+
+#: inc/helpers.php:70
+msgid "Zardozi & Dabka"
+msgstr ""
+
+#: inc/helpers.php:71
+msgid "Festive gold, worked by karigars"
+msgstr ""
+
+#: inc/helpers.php:72
+msgid "Statement borders, sequins and sitara-moti highlights on pure organza silk. Limited pieces — most are one of one."
+msgstr ""
+
+#: inc/helpers.php:73
+msgid "Explore Zardozi"
+msgstr ""
+
+#: inc/helpers.php:82
+msgid "New Arrivals"
+msgstr ""
+
+#: inc/helpers.php:83
+msgid "The Pastel Organza Collection"
+msgstr ""
+
+#: inc/helpers.php:84
+msgid "Powder blue, onion pink, lavender and mango — airy organza and chanderi with gota patti and mukaish, ready to be tailored your way."
+msgstr ""
+
+#: inc/helpers.php:85
+msgid "Shop New Arrivals"
+msgstr ""
+
+#: inc/helpers.php:108
+msgid "Shop by craft"
+msgstr ""
+
+#: inc/helpers.php:116
+msgid "Free shipping in India"
+msgstr ""
+
+#: inc/helpers.php:117
+msgid "Insured, tracked dispatch"
+msgstr ""
+
+#: inc/helpers.php:119
+msgid "Real artisans, real craft"
+msgstr ""
+
+#: inc/helpers.php:120
+msgid "Sourced directly from karigars"
+msgstr ""
+
+#: inc/helpers.php:122
+msgid "Easy 48-hour exchange"
+msgstr ""
+
+#: inc/helpers.php:123
+msgid "After delivery, no questions asked"
+msgstr ""
+
+#: inc/helpers.php:125
+msgid "Secure payments"
+msgstr ""
+
+#: inc/helpers.php:126
+msgid "UPI · Cards · Net banking · EMI"
+msgstr ""
+
+#: inc/helpers.php:130
+msgid "Curated for you"
+msgstr ""
+
+#: inc/helpers.php:135
+msgid "View all pieces"
+msgstr ""
+
+#: inc/helpers.php:137
+msgid "Most loved"
+msgstr ""
+
+#: inc/helpers.php:138
+msgid "Bestsellers"
+msgstr ""
+
+#: inc/helpers.php:146
+msgid "Limited time"
+msgstr ""
+
+#: inc/helpers.php:147
+msgid "The Festive Edit"
+msgstr ""
+
+#: inc/helpers.php:148
+msgid "Up to 15% off with code FESTIVE15"
+msgstr ""
+
+#: inc/helpers.php:149
+msgid "Shop festive"
+msgstr ""
+
+#: inc/helpers.php:152
+msgid "Just landed"
+msgstr ""
+
+#: inc/helpers.php:153
+msgid "Pure Organza Silk"
+msgstr ""
+
+#: inc/helpers.php:154
+msgid "Sheer, luminous, embroidered by hand"
+msgstr ""
+
+#: inc/helpers.php:155
+msgid "Discover"
+msgstr ""
+
+#: inc/helpers.php:158
+msgid "Trousseau"
+msgstr ""
+
+#: inc/helpers.php:159
+msgid "Bridal & Occasion"
+msgstr ""
+
+#: inc/helpers.php:160
+msgid "Zardozi heirlooms for the big days"
+msgstr ""
+
+#: inc/helpers.php:161
+msgid "Shop bridal"
+msgstr ""
+
+#: inc/helpers.php:166
+msgid "Heritage techniques"
+msgstr ""
+
+#: inc/helpers.php:167
+msgid "Every piece carries a craft"
+msgstr ""
+
+#: inc/helpers.php:168
+msgid "Zardozi, Chikankari, Jaali, Pitta, Mukaish and Gota Patti — practised for generations, brought to you without middlemen."
+msgstr ""
+
+#: inc/helpers.php:173
+msgid "Watch & shop"
+msgstr ""
+
+#: inc/helpers.php:174
+msgid "Dastaan in motion"
+msgstr ""
+
+#: inc/helpers.php:175
+msgid "Fabric fall, embroidery sheen and drape — see the pieces move before you choose."
+msgstr ""
+
+#: inc/helpers.php:180
+msgid "From our Instagram"
+msgstr ""
+
+#: inc/helpers.php:187
+msgid "Rave reviews"
+msgstr ""
+
+#: inc/helpers.php:188
+msgid "Loved by women who know their craft"
+msgstr ""
+
+#: inc/helpers.php:190
+msgid "The gold zari work on this emerald green piece is even more stunning in person. The embroidery along the hem is so dense and high-quality, and the diagonal sequins catch the light beautifully. I received so many compliments!"
+msgstr ""
+
+#: inc/helpers.php:191
+msgid "The Emerald"
+msgstr ""
+
+#: inc/helpers.php:195
+msgid "Beautiful fabric and exquisite pitta work. The linen feels very high-quality and the organza dupatta is just gorgeous. It is even better in person. So glad I added this to my ethnic collection!"
+msgstr ""
+
+#: inc/helpers.php:196
+msgid "Noor – Sky Blue Pure Organza Pitta Work"
+msgstr ""
+
+#: inc/helpers.php:200
+msgid "I had the kurta stitched by my tailor and the chikankari placement was perfect — neck panel, sleeves, everything aligned. The team even shared a stitching guide on WhatsApp."
+msgstr ""
+
+#: inc/helpers.php:201
+msgid "Pearl White Mul Chanderi Chikankari"
+msgstr ""
+
+#: inc/helpers.php:213
+msgid "Behind the scenes"
+msgstr ""
+
+#: inc/helpers.php:214
+msgid "A glimpse into the hands, stitches and traditions that bring every Dastaan creation to life. We work directly with artisan families in Lucknow, Bareilly and Jaipur — so every rupee you spend reaches the people who hold the needle."
+msgstr ""
+
+#: inc/helpers.php:218
+msgid "Meet the artisans"
+msgstr ""
+
+#: inc/helpers.php:224
+msgid "Visit the studio in Seawoods"
+msgstr ""
+
+#: inc/helpers.php:225
+msgid "Touch the fabrics, see the embroidery under daylight and get stitching advice from our stylists. Private appointments available for trousseau shopping."
+msgstr ""
+
+#: inc/helpers.php:226
+msgid "Book an appointment"
+msgstr ""
+
+#: inc/helpers.php:232
+msgid "Premium unstitched dress material for women — handcrafted, artisan-sourced"
+msgstr ""
+
+#: inc/helpers.php:233
+msgid ""
+"Dastaan by Artisans is a Navi Mumbai based studio sourcing luxury unstitched dress material directly from master artisans across India. Every set — kurta fabric, dupatta and bottom — is crafted in pure organza silk, mul chanderi, viscose georgette, linen or tussar silk, and finished with genuine hand embroidery: Lucknowi chikankari, zardozi and dabka, gota patti, mukaish, pitta and jaali work.\n"
+"\n"
+"Because our pieces are unstitched, you choose the silhouette: anarkali, straight kurta set, sharara or co-ord. Prices range from ₹5,000 to ₹25,000, reflecting the hours of handwork in each piece. Most designs are limited to one or two sets, so what you wear stays uniquely yours."
+msgstr ""
+
+#: inc/helpers.php:234
+msgid "What does an unstitched dress material set include?"
+msgstr ""
+
+#: inc/helpers.php:235
+msgid "Most Dastaan sets are three pieces: kurta fabric (approx. 3.25 m), dupatta (approx. 2.75 m) and bottom fabric (approx. 2.5 m). Exact lengths and contents are listed on each product page."
+msgstr ""
+
+#: inc/helpers.php:236
+msgid "Do you offer stitching or tailoring?"
+msgstr ""
+
+#: inc/helpers.php:237
+msgid "We sell unstitched fabric so you can tailor it to your silhouette. On request, our studio in Seawoods can recommend trusted tailors and share a stitching guide on WhatsApp."
+msgstr ""
+
+#: inc/helpers.php:238
+msgid "How should I care for hand-embroidered fabric?"
+msgstr ""
+
+#: inc/helpers.php:239
+msgid "Dry clean only for zardozi, dabka, mukaish and sequin work. Fine chikankari on mul or chanderi may be gently hand-washed in cold water. Always store folded in muslin, away from direct sunlight."
+msgstr ""
+
+#: inc/helpers.php:240
+msgid "What is your exchange policy?"
+msgstr ""
+
+#: inc/helpers.php:241
+msgid "Exchanges are accepted within 48 hours of delivery for unused, uncut fabric with tags intact. Because every piece is handcrafted, slight variations in embroidery are natural and not considered defects."
+msgstr ""
+
+#: inc/helpers.php:244
+msgid "An artisan-source studio in Seawoods, Navi Mumbai. We bring handcrafted unstitched dress material from master karigars to women who value real craft."
+msgstr ""
+
+#: inc/helpers.php:245
+#: inc/template-tags.php:175
+#: template-parts/footer/mobile-nav.php:15
+msgid "Shop"
+msgstr ""
+
+#: inc/helpers.php:246
+msgid "Help"
+msgstr ""
+
+#: inc/helpers.php:247
+msgid "Studio"
+msgstr ""
+
+#: inc/helpers.php:249
+msgid "Join the Dastaan circle"
+msgstr ""
+
+#: inc/helpers.php:250
+msgid "New arrivals, artisan stories and private previews — once a fortnight, never spam."
+msgstr ""
+
+#: inc/helpers.php:252
+msgid "Shukriya! You are on the list."
+msgstr ""
+
+#: inc/helpers.php:254
+msgid "© {year} Dastaan by Artisans. All rights reserved. Handcrafted in India."
+msgstr ""
+
+#: inc/helpers.php:270
+msgid "Ask a stylist about this piece"
+msgstr ""
+
+#: inc/helpers.php:272
+msgid "Dispatched within 2–4 working days · Free insured shipping across India · Delivered in 3–7 days"
+msgstr ""
+
+#: inc/helpers.php:273
+msgid "100% genuine hand embroidery"
+msgstr ""
+
+#: inc/helpers.php:274
+msgid "Secure UPI, card & EMI payments"
+msgstr ""
+
+#: inc/helpers.php:276
+msgid ""
+"Crafted with premium fabrics and delicate handcrafted, traditional artisanal detailing. Each piece carries the individuality of the artisan's hand, so minor variations in embroidery, texture, weave and colour are natural — making every creation unique.\n"
+"\n"
+"→ Dry clean only to preserve delicate embroidery and embellishments.\n"
+"→ Gentle hand wash recommended for fine chikankari on cotton or mul.\n"
+"→ Store folded in muslin, away from direct sunlight and moisture."
+msgstr ""
+
+#: inc/helpers.php:277
+msgid ""
+"Free insured shipping across India. Orders are dispatched within 2–4 working days and typically delivered within 3–7 days. International shipping is available on request via WhatsApp.\n"
+"\n"
+"Exchanges are accepted within 48 hours of delivery for uncut, unused fabric with tags intact."
+msgstr ""
+
+#: inc/helpers.php:289
+msgid "We use cookies to improve your experience and measure our campaigns. By continuing you agree to our Privacy Policy."
+msgstr ""
+
+#: inc/helpers.php:290
+msgid "Accept"
+msgstr ""
+
+#: inc/helpers.php:291
+msgid "Decline"
+msgstr ""
+
+#: inc/newsletter.php:22
+msgid "Subscriber"
+msgstr ""
+
+#: inc/newsletter.php:58
+msgid "Security check failed. Please refresh and try again."
+msgstr ""
+
+#: inc/newsletter.php:68
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: inc/newsletter.php:76
+msgid "Too many attempts. Please try again later."
+msgstr ""
+
+#: inc/newsletter.php:94
+msgid "You are already on the list — shukriya!"
+msgstr ""
+
+#: inc/newsletter.php:112
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: inc/newsletter.php:139
+msgid "Email"
+msgstr ""
+
+#: inc/newsletter.php:141
+msgid "Subscribed"
+msgstr ""
+
+#: inc/newsletter.php:164
+msgid "Not allowed."
+msgstr ""
+
+#: inc/newsletter.php:198
+msgid "Newsletter subscribers captured by the theme footer form."
+msgstr ""
+
+#: inc/newsletter.php:198
+msgid "Export CSV"
+msgstr ""
+
+#: inc/product-video.php:208
+msgid "Product Video"
+msgstr ""
+
+#: inc/product-video.php:226
+msgid "Upload MP4 / WebM"
+msgstr ""
+
+#: inc/product-video.php:228
+msgid "No video selected"
+msgstr ""
+
+#: inc/product-video.php:230
+msgid "Select video"
+msgstr ""
+
+#: inc/product-video.php:231
+#: inc/product-video.php:240
+msgid "Remove"
+msgstr ""
+
+#: inc/product-video.php:233
+msgid "OR paste a link"
+msgstr ""
+
+#: inc/product-video.php:233
+msgid "YouTube, Vimeo, Instagram reel or direct .mp4 URL"
+msgstr ""
+
+#: inc/product-video.php:235
+msgid "Poster image (optional)"
+msgstr ""
+
+#: inc/product-video.php:239
+msgid "Select poster"
+msgstr ""
+
+#: inc/product-video.php:242
+msgid "The video is placed in the gallery (position set in Customizer → Product Page), opens in the lightbox and is published as VideoObject schema."
+msgstr ""
+
+#: inc/security.php:61
+msgid "The details you entered are not correct."
+msgstr ""
+
+#: inc/security.php:197
+msgid "Session expired, please reload."
+msgstr ""
+
+#. translators: %s: site name
+#: inc/seo.php:44
+#, php-format
+msgid "Shop premium handcrafted unstitched dress material for women at %s — pure organza, mul chanderi, chikankari, zardozi and gota patti sets, ₹5,000 to ₹25,000."
+msgstr ""
+
+#: inc/setup.php:42
+msgid "Primary Menu (header)"
+msgstr ""
+
+#: inc/setup.php:43
+msgid "Mobile Menu (falls back to Primary)"
+msgstr ""
+
+#: inc/setup.php:44
+msgid "Footer — Shop column"
+msgstr ""
+
+#: inc/setup.php:45
+msgid "Footer — Help column"
+msgstr ""
+
+#: inc/setup.php:46
+msgid "Footer — Studio column"
+msgstr ""
+
+#: inc/setup.php:47
+msgid "Footer — Legal links"
+msgstr ""
+
+#: inc/setup.php:86
+msgid "Shop Filters (off-canvas)"
+msgstr ""
+
+#: inc/setup.php:86
+msgid "Filters shown in the shop drawer. Add WooCommerce filter widgets here."
+msgstr ""
+
+#: inc/setup.php:87
+msgid "Footer — Extra column"
+msgstr ""
+
+#: inc/setup.php:87
+msgid "Optional 5th footer column (e.g. a map or badges)."
+msgstr ""
+
+#: inc/setup.php:88
+msgid "Product page — after summary"
+msgstr ""
+
+#: inc/setup.php:88
+msgid "Shown under the add-to-cart area on product pages."
+msgstr ""
+
+#: inc/template-tags.php:98
+msgid "Accepted payment methods"
+msgstr ""
+
+#. translators: %s: rating
+#: inc/template-tags.php:113
+#, php-format
+msgid "Rated %s out of 5"
+msgstr ""
+
+#: inc/template-tags.php:148
+msgid "Home"
+msgstr ""
+
+#. translators: %s: search query
+#: inc/template-tags.php:190
+#, php-format
+msgid "Search: %s"
+msgstr ""
+
+#: inc/template-tags.php:192
+msgid "Page not found"
+msgstr ""
+
+#: inc/template-tags.php:199
+msgid "Breadcrumb"
+msgstr ""
+
+#. translators: %s: author
+#: inc/template-tags.php:480
+#, php-format
+msgid "by %s"
+msgstr ""
+
+#: inc/walker-nav.php:119
+#: inc/woocommerce.php:91
+msgid "New"
+msgstr ""
+
+#. translators: %d: percentage
+#: inc/walker-nav.php:121
+#: inc/woocommerce.php:87
+msgid "Sale"
+msgstr ""
+
+#. translators: %s: menu item
+#: inc/walker-nav.php:137
+#, php-format
+msgid "Open %s submenu"
+msgstr ""
+
+#: inc/walker-nav.php:167
+msgid "Shop All"
+msgstr ""
+
+#: inc/woocommerce.php:78
+msgid "Sold out"
+msgstr ""
+
+#. translators: %d: percentage
+#: inc/woocommerce.php:87
+#, php-format
+msgid "%d%% off"
+msgstr ""
+
+#: inc/woocommerce.php:94
+msgid "One of one"
+msgstr ""
+
+#. translators: 1: product name, 2: url
+#: inc/woocommerce.php:180
+#, php-format
+msgid "Hi Dastaan, I have a question about \"%1$s\" — %2$s"
+msgstr ""
+
+#: inc/woocommerce.php:205
+msgid "Measurement & stitching guide"
+msgstr ""
+
+#: inc/woocommerce.php:207
+msgid "Share"
+msgstr ""
+
+#: inc/woocommerce.php:226
+msgid "Buy now"
+msgstr ""
+
+#: inc/woocommerce.php:253
+msgid "Design code"
+msgstr ""
+
+#: inc/woocommerce.php:255
+msgid "Crafts"
+msgstr ""
+
+#: inc/woocommerce.php:279
+msgid "You may also love"
+msgstr ""
+
+#: inc/woocommerce.php:280
+msgid "Complete the look"
+msgstr ""
+
+#: inc/woocommerce.php:293
+msgid "Only 1 piece — handcrafted, one of one"
+msgstr ""
+
+#. translators: %d: quantity
+#: inc/woocommerce.php:296
+#, php-format
+msgid "Only %d piece left"
+msgid_plural "Only %d pieces left"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/woocommerce.php:340
+msgid "You have unlocked free shipping."
+msgstr ""
+
+#. translators: %s: amount
+#: inc/woocommerce.php:342
+#, php-format
+msgid "Add %s more for free shipping"
+msgstr ""
+
+#: inc/woocommerce.php:369
+msgid "Invalid product."
+msgstr ""
+
+#: inc/woocommerce.php:375
+#: inc/woocommerce.php:381
+msgid "Could not add to bag."
+msgstr ""
+
+#: inc/woocommerce.php:406
+#: inc/woocommerce.php:411
+#: woocommerce/content-single-product.php:43
+msgid "Add to bag"
+msgstr ""
+
+#: inc/woocommerce.php:414
+#: woocommerce/content-product.php:48
+#: woocommerce/content-single-product.php:43
+msgid "Choose options"
+msgstr ""
+
+#: inc/woocommerce.php:421
+msgid "Place order securely"
+msgstr ""
+
+#: inc/woocommerce.php:432
+msgid "Your bag is empty"
+msgstr ""
+
+#: inc/woocommerce.php:432
+msgid "Discover handcrafted unstitched sets, each one a story."
+msgstr ""
+
+#: inc/woocommerce.php:432
+msgid "Start exploring"
+msgstr ""
+
+#: page.php:22
+msgid "Order confirmed"
+msgstr ""
+
+#: page.php:24
+msgid "Complete your payment"
+msgstr ""
+
+#: page.php:37
+#: single.php:33
+msgid "Pages:"
+msgstr ""
+
+#: search.php:14
+msgid "Search results"
+msgstr ""
+
+#: search.php:33
+msgid "Pieces"
+msgstr ""
+
+#: search.php:46
+msgid "Pages & journal"
+msgstr ""
+
+#: searchform.php:12
+#: template-parts/header/search-overlay.php:17
+msgid "Search for"
+msgstr ""
+
+#: searchform.php:13
+msgid "Search…"
+msgstr ""
+
+#: single.php:38
+msgid "Post navigation"
+msgstr ""
+
+#: template-parts/content/content-none.php:12
+msgid "Nothing found"
+msgstr ""
+
+#: template-parts/content/content-none.php:13
+msgid "Try a different word — fabric (organza, chanderi), craft (chikankari, zardozi) or colour."
+msgstr ""
+
+#: template-parts/footer/bottom.php:48
+msgid "Handcrafted in India · Studio in Seawoods, Navi Mumbai"
+msgstr ""
+
+#: template-parts/footer/columns.php:30
+#: template-parts/home/circles.php:26
+msgid "All pieces"
+msgstr ""
+
+#: template-parts/footer/columns.php:47
+msgid "Shipping & delivery"
+msgstr ""
+
+#: template-parts/footer/columns.php:48
+msgid "Exchange policy"
+msgstr ""
+
+#: template-parts/footer/columns.php:49
+msgid "Stitching guide"
+msgstr ""
+
+#: template-parts/footer/columns.php:50
+msgid "FAQs"
+msgstr ""
+
+#: template-parts/footer/columns.php:51
+msgid "Contact us"
+msgstr ""
+
+#: template-parts/footer/columns.php:54
+msgid "Track your order"
+msgstr ""
+
+#: template-parts/footer/columns.php:76
+msgid "WhatsApp the studio"
+msgstr ""
+
+#: template-parts/footer/floating.php:12
+msgid "Need help?"
+msgstr ""
+
+#: template-parts/footer/floating.php:14
+msgid "Back to top"
+msgstr ""
+
+#: template-parts/footer/floating.php:20
+msgid "Learn more"
+msgstr ""
+
+#: template-parts/footer/mobile-nav.php:14
+msgid "Quick navigation"
+msgstr ""
+
+#: template-parts/footer/mobile-nav.php:19
+msgid "Account"
+msgstr ""
+
+#: template-parts/footer/mobile-nav.php:23
+#: woocommerce/checkout/form-checkout.php:22
+msgid "Bag"
+msgstr ""
+
+#: template-parts/footer/newsletter.php:26
+#: template-parts/footer/newsletter.php:36
+msgid "Email address"
+msgstr ""
+
+#: template-parts/footer/newsletter.php:27
+#: template-parts/footer/newsletter.php:37
+msgid "Your email address"
+msgstr ""
+
+#: template-parts/footer/newsletter.php:28
+#: template-parts/footer/newsletter.php:38
+msgid "Subscribe"
+msgstr ""
+
+#: template-parts/footer/newsletter.php:44
+msgid "Please check the email address and try again."
+msgstr ""
+
+#: template-parts/header/announcement.php:30
+msgid "Announcement"
+msgstr ""
+
+#: template-parts/header/mini-cart.php:10
+msgid "Shopping bag"
+msgstr ""
+
+#: template-parts/header/mini-cart.php:13
+msgid "Your bag"
+msgstr ""
+
+#: template-parts/header/mini-cart.php:14
+msgid "Close bag"
+msgstr ""
+
+#: template-parts/header/mobile-menu.php:11
+msgid "Menu"
+msgstr ""
+
+#: template-parts/header/mobile-menu.php:15
+msgid "Close menu"
+msgstr ""
+
+#: template-parts/header/mobile-menu.php:17
+msgid "Mobile"
+msgstr ""
+
+#: template-parts/header/search-overlay.php:19
+msgid "Search chikankari, organza, zardozi…"
+msgstr ""
+
+#: template-parts/header/search-overlay.php:24
+msgid "Popular"
+msgstr ""
+
+#: template-parts/header/search-overlay.php:31
+msgid "Close search"
+msgstr ""
+
+#: template-parts/home/banners.php:32
+msgid "Offers"
+msgstr ""
+
+#: template-parts/home/bts.php:32
+msgid "Artisan at work"
+msgstr ""
+
+#. translators: %d: count
+#: template-parts/home/crafts.php:29
+#, php-format
+msgid "%d piece"
+msgid_plural "%d pieces"
+msgstr[0] ""
+msgstr[1] ""
+
+#: template-parts/home/hero.php:36
+msgid "Featured collections"
+msgstr ""
+
+#. translators: 1: index 2: total
+#: template-parts/home/hero.php:39
+#, php-format
+msgid "%1$d of %2$d"
+msgstr ""
+
+#. translators: %s: coupon code
+#: template-parts/home/hero.php:65
+#, php-format
+msgid "Copy coupon code %s"
+msgstr ""
+
+#: template-parts/home/hero.php:67
+msgid "Use code"
+msgstr ""
+
+#: template-parts/home/hero.php:87
+msgid "Previous slide"
+msgstr ""
+
+#. translators: %d: slide number
+#: template-parts/home/hero.php:90
+#, php-format
+msgid "Go to slide %d"
+msgstr ""
+
+#: template-parts/home/hero.php:93
+msgid "Next slide"
+msgstr ""
+
+#: template-parts/home/instagram.php:37
+msgid "Instagram post"
+msgstr ""
+
+#: template-parts/home/instagram.php:45
+msgid "Follow on Instagram"
+msgstr ""
+
+#: template-parts/home/products.php:45
+#: template-parts/home/reels.php:58
+msgid "Scroll left"
+msgstr ""
+
+#: template-parts/home/products.php:55
+#: template-parts/home/reels.php:89
+msgid "Scroll right"
+msgstr ""
+
+#. translators: %s: caption
+#: template-parts/home/reels.php:67
+#, php-format
+msgid "Play reel: %s"
+msgstr ""
+
+#: template-parts/home/reels.php:93
+msgid "Video"
+msgstr ""
+
+#: template-parts/home/reels.php:94
+msgid "Close video"
+msgstr ""
+
+#: template-parts/home/reels.php:96
+msgid "Shop this piece"
+msgstr ""
+
+#: template-parts/home/seo-content.php:37
+msgid "Frequently asked questions"
+msgstr ""
+
+#: template-parts/home/studio.php:14
+msgid "Hi Dastaan, I would like to book a studio appointment."
+msgstr ""
+
+#. translators: %s: product
+#: template-parts/home/testimonials.php:39
+#, php-format
+msgid "Purchased: %s"
+msgstr ""
+
+#. translators: %s: product
+#: template-parts/home/testimonials.php:40
+msgid "Verified buyer"
+msgstr ""
+
+#: template-parts/home/usp.php:25
+msgid "Why shop with us"
+msgstr ""
+
+#: template-parts/product/accordion.php:19
+msgid "The story & details"
+msgstr ""
+
+#: template-parts/product/accordion.php:24
+msgid "Set contents & measurements"
+msgstr ""
+
+#: template-parts/product/accordion.php:27
+msgid "Fabric & care"
+msgstr ""
+
+#: template-parts/product/accordion.php:30
+msgid "Shipping & exchange"
+msgstr ""
+
+#. translators: %d: review count
+#: template-parts/product/accordion.php:37
+#, php-format
+msgid "Reviews (%d)"
+msgstr ""
+
+#: template-parts/product/accordion.php:44
+msgid "Product information"
+msgstr ""
+
+#: woocommerce/archive-product.php:55
+#: woocommerce/archive-product.php:95
+msgid "Filters"
+msgstr ""
+
+#: woocommerce/archive-product.php:61
+msgid "Grid density"
+msgstr ""
+
+#: woocommerce/archive-product.php:62
+msgid "Comfortable grid"
+msgstr ""
+
+#: woocommerce/archive-product.php:63
+msgid "Dense grid"
+msgstr ""
+
+#: woocommerce/archive-product.php:98
+msgid "Filter & refine"
+msgstr ""
+
+#: woocommerce/archive-product.php:99
+msgid "Close filters"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:21
+msgid "Checkout progress"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:23
+msgid "Details"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:24
+msgid "Payment"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:48
+msgid "Order summary"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:49
+msgid "Have a gift or coupon code?"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:51
+msgid "Coupon code"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:52
+msgid "Enter code"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:53
+msgid "Apply"
+msgstr ""
+
+#: woocommerce/content-product.php:37
+msgid "Video available"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:19
+msgid "Decrease quantity"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:44
+msgid "Increase quantity"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:26
+msgid "Product media"
+msgstr ""
+
+#. translators: %d: index
+#: woocommerce/single-product/product-image.php:28
+#, php-format
+msgid "Show media %d"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:44
+#: woocommerce/single-product/product-image.php:47
+msgid "Play video"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:45
+msgid "Unmute"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:45
+msgid "Sound"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:55
+msgid "Open image in lightbox"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:72
+msgid "Previous media"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:73
+msgid "Next media"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:76
+msgid "View fullscreen"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:80
+msgid "Media viewer"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Wine"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Gold"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Ivory"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Cream"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Ink"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "White"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Cormorant Garamond"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Jost"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra large"
+msgstr ""

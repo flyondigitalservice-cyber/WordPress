@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"layout": { "contentSize": "860px", "wideSize": "1360px" },
+		"color": {
+			"defaultPalette": false,
+			"palette": [
+				{ "slug": "primary", "color": "#6E1E2B", "name": "Wine" },
+				{ "slug": "accent", "color": "#B8933E", "name": "Gold" },
+				{ "slug": "ivory", "color": "#FAF7F2", "name": "Ivory" },
+				{ "slug": "cream", "color": "#F3EDE3", "name": "Cream" },
+				{ "slug": "ink", "color": "#1F1A17", "name": "Ink" },
+				{ "slug": "white", "color": "#FFFFFF", "name": "White" }
+			]
+		},
+		"typography": {
+			"fontFamilies": [
+				{ "slug": "display", "name": "Cormorant Garamond", "fontFamily": "\"Cormorant Garamond\", Georgia, serif" },
+				{ "slug": "body", "name": "Jost", "fontFamily": "\"Jost\", system-ui, sans-serif" }
+			],
+			"fontSizes": [
+				{ "slug": "small", "size": "14px", "name": "Small" },
+				{ "slug": "medium", "size": "17px", "name": "Medium" },
+				{ "slug": "large", "size": "24px", "name": "Large" },
+				{ "slug": "x-large", "size": "36px", "name": "Extra large" }
+			]
+		},
+		"spacing": { "units": [ "px", "em", "rem", "%", "vw" ] }
+	},
+	"styles": {
+		"color": { "background": "var(--d-bg, #FAF7F2)", "text": "var(--d-ink, #1F1A17)" },
+		"typography": { "fontFamily": "var(--wp--preset--font-family--body)", "fontSize": "17px", "lineHeight": "1.7" },
+		"elements": {
+			"heading": { "typography": { "fontFamily": "var(--wp--preset--font-family--display)", "fontWeight": "500" } },
+			"link": { "color": { "text": "var(--wp--preset--color--primary)" } },
+			"button": { "color": { "background": "var(--wp--preset--color--primary)", "text": "#fff" }, "border": { "radius": "4px" } }
+		}
+	}
+}

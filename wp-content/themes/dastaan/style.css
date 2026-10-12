@@ -1,0 +1,23 @@
+/*
+Theme Name:        Dastaan by Artisans
+Theme URI:         https://dastaanbyartisans.in/
+Author:            Dastaan by Artisans
+Author URI:        https://dastaanbyartisans.in/
+Description:       A premium, mobile-first WooCommerce theme crafted for Dastaan by Artisans — an artisan-sourced studio in Seawoods, Navi Mumbai dealing in luxury unstitched dress material for women. Fully editable from the Customizer: hero slider, category circles, offer banners, craft showcase, reels, Instagram block, testimonials, FAQ, footer, tracking (Meta Pixel, GA4, Microsoft Clarity), SEO + LLM optimisation (llms.txt, rich JSON-LD), product video gallery, premium checkout.
+Version:           1.0.0
+Requires at least: 6.4
+Tested up to:      7.1
+Requires PHP:      8.0
+License:           GNU General Public License v2 or later
+License URI:       http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:       dastaan
+Domain Path:       /languages
+Tags:              e-commerce, one-column, two-columns, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+WC requires at least: 8.0
+WC tested up to:   11.2
+*/
+
+/*
+ * All theme styles live in /assets/css/ and are enqueued from inc/enqueue.php.
+ * This file intentionally contains only the theme header so WordPress can register the theme.
+ */
