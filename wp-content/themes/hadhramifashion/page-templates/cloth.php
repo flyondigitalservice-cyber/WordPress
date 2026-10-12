@@ -17,17 +17,17 @@ get_header();
 </header>
 
 <?php
-$hf_occasions = get_terms( array( 'taxonomy' => 'hf_occasion', 'hide_empty' => true ) );
+$hf_occasions = hf_occasions();
 if ( ! is_wp_error( $hf_occasions ) ) :
 	foreach ( $hf_occasions as $hf_i => $hf_o ) :
 		$hf_q = new WP_Query(
 			array(
-				'post_type'      => 'hf_product',
+				'post_type'      => 'product',
 				'posts_per_page' => -1,
 				'orderby'        => 'menu_order',
 				'order'          => 'ASC',
 				'meta_query'     => array( array( 'key' => '_hf_drive_swatch', 'compare' => '!=', 'value' => '' ) ),
-				'tax_query'      => array( array( 'taxonomy' => 'hf_occasion', 'field' => 'term_id', 'terms' => $hf_o->term_id ) ),
+				'tax_query'      => array( array( 'taxonomy' => 'product_tag', 'field' => 'term_id', 'terms' => $hf_o->term_id ) ),
 			)
 		);
 		if ( ! $hf_q->have_posts() ) {
@@ -48,7 +48,7 @@ if ( ! is_wp_error( $hf_occasions ) ) :
 						<a class="cloth reveal" href="<?php the_permalink(); ?>">
 							<div class="cloth__swatch"><?php hf_drive_img( get_post_meta( get_the_ID(), '_hf_drive_swatch', true ), get_post_meta( get_the_ID(), '_hf_fabric', true ), 300 ); ?></div>
 							<h4><?php echo esc_html( get_post_meta( get_the_ID(), '_hf_fabric', true ) ); ?></h4>
-							<small><?php the_title(); ?> · <?php echo esc_html( hf_price( get_post_meta( get_the_ID(), '_hf_price', true ) ) ); ?></small>
+							<small><?php the_title(); ?> · <?php echo esc_html( hf_price( get_post_meta( get_the_ID(), '_price', true ) ) ); ?></small>
 						</a>
 					<?php endwhile; ?>
 				</div>

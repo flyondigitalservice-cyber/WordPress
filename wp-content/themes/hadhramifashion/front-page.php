@@ -7,8 +7,8 @@
 
 get_header();
 
-$hf_suits_link  = get_term_link( 'suits', 'hf_collection' );
-$hf_shirts_link = get_term_link( 'shirts', 'hf_collection' );
+$hf_suits_link  = get_term_link( 'suits', 'product_cat' );
+$hf_shirts_link = get_term_link( 'shirts', 'product_cat' );
 $hf_suits_link  = is_wp_error( $hf_suits_link ) ? '#' : $hf_suits_link;
 $hf_shirts_link = is_wp_error( $hf_shirts_link ) ? '#' : $hf_shirts_link;
 $hf_cloth_link  = hf_page_url( 'page-templates/cloth.php' );
@@ -120,11 +120,11 @@ $hf_cloth_link  = hf_page_url( 'page-templates/cloth.php' );
 			<?php
 			$hf_q = new WP_Query(
 				array(
-					'post_type'      => 'hf_product',
+					'post_type'      => 'product',
 					'posts_per_page' => 8,
 					'orderby'        => 'menu_order',
 					'order'          => 'ASC',
-					'tax_query'      => array( array( 'taxonomy' => 'hf_collection', 'field' => 'slug', 'terms' => 'suits' ) ),
+					'tax_query'      => array( array( 'taxonomy' => 'product_cat', 'field' => 'slug', 'terms' => 'suits' ) ),
 				)
 			);
 			while ( $hf_q->have_posts() ) {
@@ -169,12 +169,12 @@ $hf_cloth_link  = hf_page_url( 'page-templates/cloth.php' );
 			<?php
 			$hf_q = new WP_Query(
 				array(
-					'post_type'      => 'hf_product',
+					'post_type'      => 'product',
 					'posts_per_page' => 8,
 					'orderby'        => 'menu_order',
 					'order'          => 'ASC',
-					'meta_query'     => array( array( 'key' => '_hf_express', 'value' => '1' ) ),
-					'tax_query'      => array( array( 'taxonomy' => 'hf_collection', 'field' => 'slug', 'terms' => 'shirts' ) ),
+					'meta_query'     => array( array( 'key' => '_hfd_express', 'value' => 'yes' ) ),
+					'tax_query'      => array( array( 'taxonomy' => 'product_cat', 'field' => 'slug', 'terms' => 'shirts' ) ),
 				)
 			);
 			while ( $hf_q->have_posts() ) {
@@ -200,7 +200,7 @@ $hf_cloth_link  = hf_page_url( 'page-templates/cloth.php' );
 			<?php
 			$hf_q = new WP_Query(
 				array(
-					'post_type'      => 'hf_product',
+					'post_type'      => 'product',
 					'posts_per_page' => 12,
 					'orderby'        => 'menu_order',
 					'order'          => 'ASC',
@@ -235,7 +235,7 @@ $hf_cloth_link  = hf_page_url( 'page-templates/cloth.php' );
 		<h2><?php esc_html_e( 'Wedding in a week? We have dressed grooms with less.', 'hadhramifashion' ); ?></h2>
 		<p class="lede"><?php esc_html_e( 'Dinner suits, three-pieces and matching shirts for the whole party — measured together, delivered together.', 'hadhramifashion' ); ?></p>
 		<div class="cta-band__actions">
-			<a class="btn btn--light" href="<?php echo esc_url( get_term_link( 'wedding', 'hf_occasion' ) instanceof WP_Error ? $hf_suits_link : get_term_link( 'wedding', 'hf_occasion' ) ); ?>"><?php esc_html_e( 'The wedding edit', 'hadhramifashion' ); ?></a>
+			<a class="btn btn--light" href="<?php echo esc_url( get_term_link( 'wedding', 'product_tag' ) instanceof WP_Error ? $hf_suits_link : get_term_link( 'wedding', 'product_tag' ) ); ?>"><?php esc_html_e( 'The wedding edit', 'hadhramifashion' ); ?></a>
 			<?php $hf_wa = preg_replace( '/\D/', '', (string) hf_opt( 'whatsapp' ) ); ?>
 			<a class="btn btn--outline-light" href="<?php echo esc_url( $hf_wa ? 'https://wa.me/' . $hf_wa : 'tel:' . preg_replace( '/[^\d+]/', '', hf_opt( 'phone' ) ) ); ?>"><?php esc_html_e( 'Book a home fitting', 'hadhramifashion' ); ?></a>
 		</div>

@@ -30,86 +30,33 @@
 	}
 
 	/* ------------------------------------------------------------------- Bag */
-	var KEY = 'hf_bag_v1';
-	var Bag = {
-		read: function () {
-			try { return JSON.parse( localStorage.getItem( KEY ) ) || []; } catch ( e ) { return []; }
-		},
-		write: function ( lines ) {
-			try { localStorage.setItem( KEY, JSON.stringify( lines ) ); } catch ( e ) {}
-			Bag.render();
-			document.dispatchEvent( new CustomEvent( 'hf:bag' ) );
-		},
-		add: function ( line ) {
-			var lines = Bag.read();
-			var sig = Bag.sig( line );
-			var found = lines.filter( function ( l ) { return Bag.sig( l ) === sig; } )[ 0 ];
-			if ( found ) {
-				found.qty = Math.min( 10, found.qty + 1 );
-			} else {
-				line.qty = 1;
-				lines.push( line );
-			}
-			Bag.write( lines );
-		},
-		sig: function ( l ) {
-			return [ l.id, l.fit, l.size, JSON.stringify( l.measurements || {} ) ].join( '|' );
-		},
-		count: function () {
-			return Bag.read().reduce( function ( n, l ) { return n + l.qty; }, 0 );
-		},
-		subtotal: function () {
-			return Bag.read().reduce( function ( n, l ) { return n + l.price * l.qty; }, 0 );
-		},
-		lineMeta: function ( l ) {
-			if ( l.fit === 'measure' ) {
-				var hasM = l.measurements && Object.keys( l.measurements ).length;
-				return 'Made to measure · ' + ( hasM ? 'measurements provided' : 'tailor visit' );
-			}
-			return 'Ready to wear' + ( l.size ? ' · ' + l.size : '' ) + ( l.express ? ' · 2-hour eligible' : '' );
-		},
-		render: function () {
-			var lines = Bag.read();
-			$$( '[data-bag-count]' ).forEach( function ( el ) {
-				var c = Bag.count();
-				el.textContent = c;
-				el.setAttribute( 'data-count', c );
+	// The bag is the WooCommerce cart. The drawer (div.hf-mini-bag) and the count
+	// (span.bag-count) are WooCommerce cart fragments, refreshed after every change.
+	function applyFragments( res ) {
+		if ( ! res || ! res.fragments ) { return; }
+		Object.keys( res.fragments ).forEach( function ( sel ) {
+			$$( sel ).forEach( function ( el ) {
+				var tmp = document.createElement( 'div' );
+				tmp.innerHTML = res.fragments[ sel ];
+				if ( tmp.firstElementChild ) { el.replaceWith( tmp.firstElementChild ); }
 			} );
-			var box = $( '[data-bag-lines]' );
-			if ( box ) {
-				box.innerHTML = lines.length ? lines.map( function ( l, i ) {
-					return '<div class="line">' +
-						'<img src="' + esc( l.image ) + '" alt="" referrerpolicy="no-referrer">' +
-						'<div><a class="line__title" href="' + esc( l.url ) + '">' + esc( l.title ) + '</a>' +
-						'<div class="line__meta">' + esc( Bag.lineMeta( l ) ) + '</div>' +
-						'<div class="line__qty"><button type="button" data-qty="-1" data-i="' + i + '" aria-label="Less">−</button><span>' + l.qty + '</span><button type="button" data-qty="1" data-i="' + i + '" aria-label="More">+</button></div>' +
-						'<button type="button" class="line__remove" data-remove="' + i + '">Remove</button></div>' +
-						'<div class="line__price">' + money( l.price * l.qty ) + '</div>' +
-					'</div>';
-				} ).join( '' ) : '<p class="empty-bag">' + esc( cfg.i18n && cfg.i18n.empty ) + '</p>';
-			}
-			var sub = $( '[data-bag-subtotal]' );
-			if ( sub ) { sub.textContent = money( Bag.subtotal() ); }
-		}
-	};
-	window.HFBag = Bag;
+		} );
+		if ( window.jQuery ) { window.jQuery( document.body ).trigger( 'added_to_cart', [ res.fragments, res.cart_hash ] ); }
+	}
+
+	function wcAjax( url, data ) {
+		return fetch( url, { method: 'POST', credentials: 'same-origin', body: data } ).then( function ( r ) { return r.json(); } );
+	}
+
 	window.HFUtil = { esc: esc, money: money, toast: toast, $: $, $$: $$ };
 
 	document.addEventListener( 'click', function ( e ) {
-		var t = e.target.closest( '[data-qty],[data-remove]' );
-		if ( ! t ) { return; }
-		var lines = Bag.read();
-		if ( t.hasAttribute( 'data-remove' ) ) {
-			lines.splice( Number( t.getAttribute( 'data-remove' ) ), 1 );
-		} else {
-			var l = lines[ Number( t.getAttribute( 'data-i' ) ) ];
-			if ( l ) {
-				l.qty += Number( t.getAttribute( 'data-qty' ) );
-				if ( l.qty < 1 ) { lines.splice( lines.indexOf( l ), 1 ); }
-				if ( l.qty > 10 ) { l.qty = 10; }
-			}
-		}
-		Bag.write( lines );
+		var rm = e.target.closest( '[data-remove-key]' );
+		if ( ! rm || ! cfg.ajaxRemove ) { return; }
+		var fd = new FormData();
+		fd.append( 'cart_item_key', rm.getAttribute( 'data-remove-key' ) );
+		rm.disabled = true;
+		wcAjax( cfg.ajaxRemove, fd ).then( applyFragments ).catch( function () { rm.disabled = false; } );
 	} );
 
 	/* --------------------------------------------------------- Drawer & nav */
@@ -126,7 +73,6 @@
 	}
 	function openBag() {
 		closeAll();
-		Bag.render();
 		drawer.classList.add( 'is-open' );
 		drawer.setAttribute( 'aria-hidden', 'false' );
 		scrim.classList.add( 'is-on' );
@@ -163,15 +109,15 @@
 	}
 
 	/* ------------------------------------------------------- Product options */
-	var product = $( '[data-product]' );
+	var product = $( '.product[data-kind]' );
 	if ( product ) {
-		var data = JSON.parse( product.getAttribute( 'data-product' ) );
+		var kind = product.getAttribute( 'data-kind' );
 		var form = $( '[data-add-form]', product );
 		var promise = $( '[data-promise-text]', product );
 
 		function currentFit() {
-			if ( data.kind === 'suits' ) { return 'measure'; }
-			var r = $( 'input[name="fit"]:checked', form );
+			if ( kind === 'suits' ) { return 'measure'; }
+			var r = $( 'input[name="hf_fit"]:checked', form );
 			return r ? r.value : 'ready';
 		}
 		function syncFit() {
@@ -179,44 +125,37 @@
 			$$( '[data-show-fit]', form ).forEach( function ( el ) {
 				el.hidden = el.getAttribute( 'data-show-fit' ) !== fit;
 			} );
-			if ( promise && data.kind !== 'suits' ) {
+			if ( promise && kind !== 'suits' ) {
 				promise.textContent = promise.getAttribute( fit === 'measure' ? 'data-measure' : 'data-ready' );
 			}
 		}
 		form.addEventListener( 'change', syncFit );
 		syncFit();
 
+		// Add to bag without leaving the page; falls back to a normal POST.
 		form.addEventListener( 'submit', function ( e ) {
+			if ( ! cfg.ajaxAdd || ! window.fetch ) { return; }
 			e.preventDefault();
-			var fit = currentFit();
-			var measurements = {};
-			if ( fit === 'measure' ) {
-				$$( 'input[name^="m_"]', form ).forEach( function ( inp ) {
-					if ( inp.value.trim() ) { measurements[ inp.name.slice( 2 ) ] = inp.value.trim(); }
-				} );
+			var btn = $( 'button[type=submit]', form );
+			var fd = new FormData( form );
+			fd.delete( 'add-to-cart' );
+			if ( currentFit() !== 'measure' ) {
+				$$( 'input[name^="m_"]', form ).forEach( function ( inp ) { fd.delete( inp.name ); } );
 			}
-			var size = '';
-			if ( fit === 'ready' ) {
-				var s = $( 'input[name="size"]:checked', form );
-				var c = $( 'input[name="cut"]:checked', form );
-				size = ( s ? s.value + '″' : '' ) + ( c ? ' ' + c.value : '' );
-			}
-			Bag.add( {
-				id: data.id,
-				title: data.title,
-				price: data.price,
-				kind: data.kind,
-				express: data.express && fit === 'ready',
-				image: data.image,
-				url: data.url,
-				fit: fit,
-				size: size,
-				measurements: measurements
+			btn.disabled = true;
+			wcAjax( cfg.ajaxAdd, fd ).then( function ( res ) {
+				btn.disabled = false;
+				if ( res && res.error ) {
+					form.submit();
+					return;
+				}
+				applyFragments( res );
+				toast( cfg.i18n && cfg.i18n.added );
+				openBag();
+			} ).catch( function () {
+				btn.disabled = false;
+				form.submit();
 			} );
-			toast( cfg.i18n && cfg.i18n.added );
-			openBag();
 		} );
 	}
-
-	Bag.render();
 }() );

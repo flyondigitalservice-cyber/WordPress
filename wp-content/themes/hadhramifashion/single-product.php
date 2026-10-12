@@ -13,34 +13,17 @@ while ( have_posts() ) :
 	$hf_kind    = hf_product_kind( $hf_id );
 	$hf_is_suit = 'suits' === $hf_kind;
 	$hf_swatch  = get_post_meta( $hf_id, '_hf_drive_swatch', true );
-	$hf_express = '1' === get_post_meta( $hf_id, '_hf_express', true );
+	$hf_express = hf_is_express( $hf_id );
 	$hf_fabric  = get_post_meta( $hf_id, '_hf_fabric', true );
 	$hf_colour  = get_post_meta( $hf_id, '_hf_colour', true );
-	$hf_coll    = get_term_by( 'slug', $hf_kind, 'hf_collection' );
+	$hf_coll    = get_term_by( 'slug', $hf_kind, 'product_cat' );
+	$hf_product = wc_get_product( $hf_id );
 
-	$hf_suit_measures  = array(
-		'chest'    => __( 'Chest', 'hadhramifashion' ),
-		'waist'    => __( 'Waist', 'hadhramifashion' ),
-		'hips'     => __( 'Seat', 'hadhramifashion' ),
-		'shoulder' => __( 'Shoulder', 'hadhramifashion' ),
-		'sleeve'   => __( 'Sleeve', 'hadhramifashion' ),
-		'jacket'   => __( 'Jacket length', 'hadhramifashion' ),
-		'inseam'   => __( 'Trouser inseam', 'hadhramifashion' ),
-		'height'   => __( 'Height', 'hadhramifashion' ),
-		'weight'   => __( 'Weight (kg)', 'hadhramifashion' ),
-	);
-	$hf_shirt_measures = array(
-		'neck'     => __( 'Neck', 'hadhramifashion' ),
-		'chest'    => __( 'Chest', 'hadhramifashion' ),
-		'waist'    => __( 'Waist', 'hadhramifashion' ),
-		'shoulder' => __( 'Shoulder', 'hadhramifashion' ),
-		'sleeve'   => __( 'Sleeve', 'hadhramifashion' ),
-		'length'   => __( 'Shirt length', 'hadhramifashion' ),
-	);
-	$hf_measures = $hf_is_suit ? $hf_suit_measures : $hf_shirt_measures;
+	$hf_measures = hf_measure_fields( $hf_kind );
 	?>
 	<div class="wrap">
-		<div class="product" data-product='<?php echo esc_attr( wp_json_encode( hf_product_payload( $hf_id ) ) ); ?>'>
+		<?php wc_print_notices(); ?>
+		<div class="product" data-kind="<?php echo esc_attr( $hf_kind ); ?>">
 			<div class="product__gallery">
 				<?php hf_product_image( $hf_id, 1200, '', false ); ?>
 				<?php if ( $hf_swatch ) : ?>
@@ -60,7 +43,7 @@ while ( have_posts() ) :
 				<h1><?php the_title(); ?></h1>
 				<p class="product__sub"><?php echo esc_html( get_post_meta( $hf_id, '_hf_subtitle', true ) ); ?></p>
 				<div class="product__price">
-					<?php echo esc_html( hf_price( get_post_meta( $hf_id, '_hf_price', true ) ) ); ?>
+					<?php echo wp_kses_post( $hf_product->get_price_html() ); ?>
 					<small><?php echo $hf_is_suit ? esc_html__( 'Made to your measure', 'hadhramifashion' ) : esc_html__( 'Ready to wear or made to measure', 'hadhramifashion' ); ?></small>
 				</div>
 
@@ -68,20 +51,23 @@ while ( have_posts() ) :
 					<p class="lede"><?php echo esc_html( get_the_excerpt() ); ?></p>
 				<?php endif; ?>
 
-				<form data-add-form>
+				<form data-add-form class="cart" method="post" action="<?php the_permalink(); ?>">
+					<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $hf_id ); ?>">
+					<input type="hidden" name="product_id" value="<?php echo esc_attr( $hf_id ); ?>">
+					<input type="hidden" name="quantity" value="1">
 					<?php if ( ! $hf_is_suit ) : ?>
 						<div class="opt">
 							<div class="opt__title"><span><?php esc_html_e( 'Fit', 'hadhramifashion' ); ?></span></div>
 							<div class="choices">
 								<div class="choice">
-									<input type="radio" name="fit" id="fit-ready" value="ready" checked>
+									<input type="radio" name="hf_fit" id="fit-ready" value="ready" checked>
 									<label for="fit-ready">
 										<strong><?php echo hf_icon( 'clock' ); // phpcs:ignore WordPress.Security.EscapeOutput ?><?php esc_html_e( 'Ready to wear', 'hadhramifashion' ); ?></strong>
 										<span><?php echo $hf_express ? esc_html__( 'In stock — at your door within 2 hours.', 'hadhramifashion' ) : esc_html__( 'Delivered within 24 hours.', 'hadhramifashion' ); ?></span>
 									</label>
 								</div>
 								<div class="choice">
-									<input type="radio" name="fit" id="fit-measure" value="measure">
+									<input type="radio" name="hf_fit" id="fit-measure" value="measure">
 									<label for="fit-measure">
 										<strong><?php echo hf_icon( 'needle' ); // phpcs:ignore WordPress.Security.EscapeOutput ?><?php esc_html_e( 'Made to measure', 'hadhramifashion' ); ?></strong>
 										<span><?php esc_html_e( 'Cut to your pattern — delivered within 24 hours.', 'hadhramifashion' ); ?></span>
@@ -95,7 +81,7 @@ while ( have_posts() ) :
 							<div class="sizes">
 								<?php foreach ( array( '14.5', '15', '15.5', '16', '16.5', '17', '17.5', '18' ) as $hf_i => $hf_size ) : ?>
 									<div class="choice">
-										<input type="radio" name="size" id="size-<?php echo esc_attr( $hf_i ); ?>" value="<?php echo esc_attr( $hf_size ); ?>" <?php checked( 3, $hf_i ); ?>>
+										<input type="radio" name="hf_size" id="size-<?php echo esc_attr( $hf_i ); ?>" value="<?php echo esc_attr( $hf_size ); ?>" <?php checked( 3, $hf_i ); ?>>
 										<label for="size-<?php echo esc_attr( $hf_i ); ?>"><?php echo esc_html( $hf_size ); ?>″</label>
 									</div>
 								<?php endforeach; ?>
@@ -103,7 +89,7 @@ while ( have_posts() ) :
 							<div class="sizes" style="margin-top:.7rem">
 								<?php foreach ( array( 'Slim', 'Tailored', 'Classic' ) as $hf_i => $hf_cut ) : ?>
 									<div class="choice">
-										<input type="radio" name="cut" id="cut-<?php echo esc_attr( $hf_i ); ?>" value="<?php echo esc_attr( $hf_cut ); ?>" <?php checked( 1, $hf_i ); ?>>
+										<input type="radio" name="hf_cut" id="cut-<?php echo esc_attr( $hf_i ); ?>" value="<?php echo esc_attr( $hf_cut ); ?>" <?php checked( 1, $hf_i ); ?>>
 										<label for="cut-<?php echo esc_attr( $hf_i ); ?>"><?php echo esc_html( $hf_cut ); ?></label>
 									</div>
 								<?php endforeach; ?>
@@ -141,7 +127,7 @@ while ( have_posts() ) :
 						</div>
 					</div>
 
-					<button class="btn btn--block" type="submit"><?php echo hf_icon( 'bag' ); // phpcs:ignore WordPress.Security.EscapeOutput ?> <?php esc_html_e( 'Add to bag', 'hadhramifashion' ); ?></button>
+					<button class="btn btn--block" type="submit" <?php disabled( ! $hf_product->is_purchasable() || ! $hf_product->is_in_stock() ); ?>><?php echo hf_icon( 'bag' ); // phpcs:ignore WordPress.Security.EscapeOutput ?> <?php esc_html_e( 'Add to bag', 'hadhramifashion' ); ?></button>
 				</form>
 
 				<div class="product__desc">
@@ -170,11 +156,11 @@ while ( have_posts() ) :
 				<?php
 				$hf_related = new WP_Query(
 					array(
-						'post_type'      => 'hf_product',
+						'post_type'      => 'product',
 						'posts_per_page' => 4,
 						'orderby'        => 'rand',
 						'post__not_in'   => array( $hf_id ),
-						'tax_query'      => array( array( 'taxonomy' => 'hf_collection', 'field' => 'slug', 'terms' => $hf_is_suit ? 'shirts' : 'suits' ) ),
+						'tax_query'      => array( array( 'taxonomy' => 'product_cat', 'field' => 'slug', 'terms' => $hf_is_suit ? 'shirts' : 'suits' ) ),
 					)
 				);
 				while ( $hf_related->have_posts() ) {

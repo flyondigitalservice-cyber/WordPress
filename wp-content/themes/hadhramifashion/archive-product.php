@@ -10,7 +10,7 @@ get_header();
 $hf_term     = is_tax() ? get_queried_object() : null;
 $hf_is_suits = $hf_term && 'suits' === $hf_term->slug;
 $hf_is_shirt = $hf_term && 'shirts' === $hf_term->slug;
-$hf_base     = $hf_term ? get_term_link( $hf_term ) : get_post_type_archive_link( 'hf_product' );
+$hf_base     = $hf_term ? get_term_link( $hf_term ) : wc_get_page_permalink( 'shop' );
 $hf_colour   = isset( $_GET['colour'] ) ? sanitize_text_field( wp_unslash( $_GET['colour'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
 $hf_express  = isset( $_GET['express'] ); // phpcs:ignore WordPress.Security.NonceVerification
 
@@ -54,7 +54,7 @@ if ( $hf_is_suits ) {
 			<?php endforeach; ?>
 		<?php else : ?>
 			<?php
-			$hf_occasions = get_terms( array( 'taxonomy' => 'hf_occasion', 'hide_empty' => true ) );
+			$hf_occasions = hf_occasions();
 			if ( ! is_wp_error( $hf_occasions ) ) :
 				foreach ( $hf_occasions as $hf_o ) :
 					?>

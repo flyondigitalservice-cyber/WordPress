@@ -32,8 +32,8 @@ get_header();
 					printf(
 						/* translators: 1: radius, 2: cutoff hour */
 						esc_html__( 'Whites, blues and evening shirts in every collar size, to any address within %1$s km. Order by %2$s:00 for same-day delivery; later orders arrive first thing next morning.', 'hadhramifashion' ),
-						esc_html( hf_opt( 'express_radius_km' ) ),
-						esc_html( hf_opt( 'express_cutoff_hour' ) )
+						esc_html( hf_delivery_opt( 'express_radius_km' ) ),
+						esc_html( hf_delivery_opt( 'express_cutoff_hour' ) )
 					);
 					?>
 				</p>
@@ -46,7 +46,7 @@ get_header();
 					printf(
 						/* translators: %s: radius */
 						esc_html__( 'Send your measurements or let our tailor visit you. Your pattern is drafted, cut and finished overnight, and delivered within %s km.', 'hadhramifashion' ),
-						esc_html( hf_opt( 'tailored_radius_km' ) )
+						esc_html( hf_delivery_opt( 'service_radius_km' ) )
 					);
 					?>
 				</p>

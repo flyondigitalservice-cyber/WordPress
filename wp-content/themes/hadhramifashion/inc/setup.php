@@ -38,29 +38,20 @@ add_action(
 		);
 		wp_enqueue_style( 'hf-style', get_stylesheet_uri(), array( 'hf-fonts' ), HF_VERSION );
 
-		wp_enqueue_script( 'hf-main', HF_URI . '/assets/js/main.js', array(), HF_VERSION, true );
+		$deps = array();
+		if ( function_exists( 'WC' ) ) {
+			// Keeps the bag drawer and count in sync after AJAX add-to-cart.
+			wp_enqueue_script( 'wc-cart-fragments' );
+			$deps[] = 'wc-cart-fragments';
+		}
+		wp_enqueue_script( 'hf-main', HF_URI . '/assets/js/main.js', $deps, HF_VERSION, true );
 		wp_localize_script( 'hf-main', 'HF', hf_front_config() );
 
-		if ( hf_page_needs_maps() ) {
+		if ( is_front_page() || is_page_template( 'page-templates/express.php' ) ) {
 			wp_enqueue_script( 'hf-maps', HF_URI . '/assets/js/maps.js', array( 'hf-main' ), HF_VERSION, true );
 		}
 	}
 );
-
-/**
- * Whether the current view shows a Google Map.
- *
- * @return bool
- */
-function hf_page_needs_maps() {
-	if ( is_front_page() ) {
-		return true;
-	}
-	if ( is_page_template( array( 'page-templates/checkout.php', 'page-templates/track.php', 'page-templates/rider.php', 'page-templates/express.php' ) ) ) {
-		return true;
-	}
-	return false;
-}
 
 /**
  * Configuration passed to the front-end scripts.
@@ -69,24 +60,21 @@ function hf_page_needs_maps() {
  */
 function hf_front_config() {
 	return array(
-		'rest'        => esc_url_raw( rest_url( 'hf/v1/' ) ),
-		'mapsKey'     => hf_opt( 'maps_api_key' ),
-		'currency'    => hf_opt( 'currency_symbol' ),
-		'store'       => array(
-			'name'    => hf_opt( 'store_name' ),
-			'address' => hf_opt( 'store_address' ),
-			'lat'     => (float) hf_opt( 'store_lat' ),
-			'lng'     => (float) hf_opt( 'store_lng' ),
+		'ajaxAdd'    => class_exists( 'WC_AJAX' ) ? WC_AJAX::get_endpoint( 'add_to_cart' ) : '',
+		'ajaxRemove' => class_exists( 'WC_AJAX' ) ? WC_AJAX::get_endpoint( 'remove_from_cart' ) : '',
+		'quoteUrl'   => class_exists( 'HFD_REST' ) ? esc_url_raw( rest_url( HFD_REST::NS . '/quote' ) ) : '',
+		'mapsKey'    => hf_delivery_opt( 'maps_key' ),
+		'currency'   => function_exists( 'get_woocommerce_currency_symbol' ) ? html_entity_decode( get_woocommerce_currency_symbol(), ENT_QUOTES, 'UTF-8' ) : '₹',
+		'store'      => array(
+			'name'    => hf_delivery_opt( 'store_name' ),
+			'address' => hf_delivery_opt( 'store_address' ),
+			'lat'     => (float) hf_delivery_opt( 'store_lat' ),
+			'lng'     => (float) hf_delivery_opt( 'store_lng' ),
 		),
-		'expressKm'   => (float) hf_opt( 'express_radius_km' ),
-		'tailoredKm'  => (float) hf_opt( 'tailored_radius_km' ),
-		'checkoutUrl' => hf_page_url( 'page-templates/checkout.php' ),
-		'trackUrl'    => hf_page_url( 'page-templates/track.php' ),
-		'shopUrl'     => get_post_type_archive_link( 'hf_product' ),
-		'i18n'        => array(
-			'added'      => __( 'Added to your bag', 'hadhramifashion' ),
-			'empty'      => __( 'Your bag is empty.', 'hadhramifashion' ),
-			'outOfRange' => __( 'This address is outside our delivery area — we will call you to arrange a fitting.', 'hadhramifashion' ),
+		'expressKm'  => (float) hf_delivery_opt( 'express_radius_km' ),
+		'areaKm'     => (float) hf_delivery_opt( 'service_radius_km' ),
+		'i18n'       => array(
+			'added' => __( 'Added to your bag', 'hadhramifashion' ),
 		),
 	);
 }
@@ -165,8 +153,8 @@ function hf_copy( $key ) {
  */
 function hf_fallback_menu() {
 	$items = array(
-		array( __( 'Suits', 'hadhramifashion' ), get_term_link( 'suits', 'hf_collection' ) ),
-		array( __( 'Shirts', 'hadhramifashion' ), get_term_link( 'shirts', 'hf_collection' ) ),
+		array( __( 'Suits', 'hadhramifashion' ), get_term_link( 'suits', 'product_cat' ) ),
+		array( __( 'Shirts', 'hadhramifashion' ), get_term_link( 'shirts', 'product_cat' ) ),
 		array( __( 'Cloth Library', 'hadhramifashion' ), hf_page_url( 'page-templates/cloth.php' ) ),
 		array( __( 'Heritage', 'hadhramifashion' ), hf_page_url( 'page-templates/heritage.php' ) ),
 		array( __( '2-Hour Delivery', 'hadhramifashion' ), hf_page_url( 'page-templates/express.php' ) ),

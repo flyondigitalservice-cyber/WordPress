@@ -67,14 +67,14 @@ $established = hf_opt( 'established' );
 		</a>
 
 		<div class="header-tools">
-			<a href="<?php echo esc_url( hf_page_url( 'page-templates/track.php' ) ); ?>">
+			<a href="<?php echo esc_url( hf_track_url() ); ?>">
 				<?php echo hf_icon( 'pin' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 				<span class="label"><?php esc_html_e( 'Track', 'hadhramifashion' ); ?></span>
 			</a>
 			<button type="button" data-bag-open aria-controls="bag-drawer">
 				<?php echo hf_icon( 'bag' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 				<span class="label"><?php esc_html_e( 'Bag', 'hadhramifashion' ); ?></span>
-				<span class="bag-count" data-bag-count data-count="0">0</span>
+				<?php hf_bag_count(); ?>
 			</button>
 		</div>
 	</div>

@@ -1,0 +1,285 @@
+/* ==========================================================================
+   Hadhrami HQ — app-style skin for wp-admin and the login screen.
+   Scoped to body.hfd-skin / body.login so it can be switched off in Settings.
+   ========================================================================== */
+
+body.hfd-skin,
+body.login {
+  --ol-ink: #14161a;
+  --ol-ink-2: #1a1a1a;
+  --ol-cream: #f3ede1;
+  --ol-panel: #ffffff;
+  --ol-green: #a6834b;
+  --ol-gold: #c8a86f;
+  --ol-red: #8e2a2f;
+  --ol-muted: #6b665c;
+  --ol-line: #ebe4d3;
+  --ol-radius: 16px;
+  --ol-shadow: 0 1px 2px rgba(20, 22, 26, 0.06), 0 4px 14px rgba(20, 22, 26, 0.05);
+  --ol-stripe: linear-gradient(90deg, #a6834b, #c8a86f);
+}
+
+/* ---------- Base ---------- */
+body.hfd-skin,
+body.hfd-skin #wpwrap,
+body.hfd-skin #wpcontent,
+body.hfd-skin #wpbody-content { background: var(--ol-cream); }
+body.hfd-skin,
+body.hfd-skin .wrap,
+body.hfd-skin #wpbody-content { font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+body.hfd-skin .wrap h1,
+body.hfd-skin .wrap .wp-heading-inline { font-weight: 800; letter-spacing: -0.01em; }
+body.hfd-skin a { color: #8a6a39; }
+body.hfd-skin a:hover { color: var(--ol-red); }
+
+/* ---------- Top bar ---------- */
+body.hfd-skin #wpadminbar { background: var(--ol-ink); }
+body.hfd-skin #wpadminbar::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 3px; background: var(--ol-stripe);
+}
+body.hfd-skin #wpadminbar .ab-item,
+body.hfd-skin #wpadminbar a.ab-item,
+body.hfd-skin #wpadminbar .ab-empty-item { color: #efe9da; }
+body.hfd-skin #wpadminbar .ab-top-menu > li:hover > .ab-item,
+body.hfd-skin #wpadminbar .ab-top-menu > li.hover > .ab-item { background: var(--ol-ink-2); color: var(--ol-gold); }
+body.hfd-skin #wpadminbar .ab-sub-wrapper,
+body.hfd-skin #wpadminbar .quicklinks .menupop ul.ab-sub-secondary { background: var(--ol-ink-2); }
+body.hfd-skin #wpadminbar #wp-admin-bar-hfd-hq > .ab-item { display: flex; align-items: center; gap: 8px; font-weight: 800; }
+body.hfd-skin #wpadminbar .hfd-ab-logo {
+  width: 20px; height: 20px; border-radius: 6px; display: inline-block;
+  background: var(--ol-ink); position: relative; top: 0;
+  box-shadow: inset 0 0 0 1px var(--ol-gold);
+}
+body.hfd-skin #wpadminbar .hfd-ab-logo::after {
+  content: 'H'; position: absolute; inset: 0; display: grid; place-items: center; font: 500 13px/20px 'Cormorant Garamond', Georgia, serif; color: var(--ol-gold);
+}
+
+/* ---------- Side menu ---------- */
+body.hfd-skin #adminmenuback,
+body.hfd-skin #adminmenuwrap,
+body.hfd-skin #adminmenu { background: var(--ol-ink); }
+body.hfd-skin #adminmenuwrap { padding-top: 10px; }
+body.hfd-skin #adminmenu a { color: #e4ddcc; }
+body.hfd-skin #adminmenu div.wp-menu-image::before { color: #a8a194; }
+body.hfd-skin #adminmenu li.menu-top > a { border-radius: 12px; margin: 2px 8px; }
+body.hfd-skin #adminmenu li.menu-top:hover > a,
+body.hfd-skin #adminmenu li.opensub > a.menu-top,
+body.hfd-skin #adminmenu li > a.menu-top:focus { background: var(--ol-ink-2); color: var(--ol-gold); }
+body.hfd-skin #adminmenu li.menu-top:hover div.wp-menu-image::before,
+body.hfd-skin #adminmenu li.opensub div.wp-menu-image::before { color: var(--ol-gold); }
+body.hfd-skin #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+body.hfd-skin #adminmenu li.current a.menu-top,
+body.hfd-skin #adminmenu .wp-menu-arrow,
+body.hfd-skin #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head {
+  background: var(--ol-red); color: #fff;
+}
+body.hfd-skin #adminmenu li.wp-has-current-submenu div.wp-menu-image::before,
+body.hfd-skin #adminmenu li.current div.wp-menu-image::before { color: #fff; }
+body.hfd-skin #adminmenu li.wp-has-current-submenu .wp-menu-arrow,
+body.hfd-skin #adminmenu li.current .wp-menu-arrow,
+body.hfd-skin ul#adminmenu a.wp-has-current-submenu::after,
+body.hfd-skin ul#adminmenu > li.current > a.current::after { display: none; }
+body.hfd-skin #adminmenu .wp-submenu,
+body.hfd-skin #adminmenu .wp-has-current-submenu .wp-submenu,
+body.hfd-skin #adminmenu .wp-has-current-submenu.opensub .wp-submenu,
+body.hfd-skin .folded #adminmenu .wp-has-current-submenu .wp-submenu { background: #141414; }
+body.hfd-skin #adminmenu .wp-has-current-submenu .wp-submenu { margin: 4px 8px 6px; border-radius: 12px; padding: 6px 0; }
+body.hfd-skin #adminmenu .wp-submenu a { color: #c9c2b2; }
+body.hfd-skin #adminmenu .wp-submenu a:hover,
+body.hfd-skin #adminmenu .wp-submenu a:focus { color: var(--ol-gold); background: transparent; }
+body.hfd-skin #adminmenu .wp-submenu li.current a,
+body.hfd-skin #adminmenu .wp-submenu li.current a:hover { color: #fff; font-weight: 700; }
+body.hfd-skin #adminmenu .awaiting-mod,
+body.hfd-skin #adminmenu .update-plugins { background: var(--ol-gold); color: var(--ol-ink); font-weight: 800; }
+body.hfd-skin #adminmenu li.wp-menu-separator { height: 1px; margin: 8px 16px; background: #2a2a2a; }
+body.hfd-skin #collapse-button { color: #a8a194; }
+body.hfd-skin #toplevel_page_hfd-hq > a { background: linear-gradient(135deg, #2b2118, #1a1a1a); }
+body.hfd-skin #toplevel_page_hfd-hq div.wp-menu-image::before { color: var(--ol-red); }
+body.hfd-skin #toplevel_page_hfd-hq.current div.wp-menu-image::before,
+body.hfd-skin #toplevel_page_hfd-hq.wp-has-current-submenu div.wp-menu-image::before { color: #fff; }
+
+/* ---------- Cards, boxes, tables ---------- */
+body.hfd-skin .postbox,
+body.hfd-skin .card,
+body.hfd-skin .stuffbox,
+body.hfd-skin #dashboard-widgets .postbox,
+body.hfd-skin .woocommerce-layout__activity-panel-content,
+body.hfd-skin .wp-list-table,
+body.hfd-skin .woocommerce table.form-table,
+body.hfd-skin .hfd-d-card,
+body.hfd-skin .hfd-kpi,
+body.hfd-skin .hfd-r-kpi {
+  border-radius: var(--ol-radius);
+  border-color: var(--ol-line);
+  box-shadow: var(--ol-shadow);
+}
+body.hfd-skin .postbox .postbox-header { border-bottom-color: var(--ol-line); }
+body.hfd-skin .wp-list-table { overflow: hidden; border: 1px solid var(--ol-line); background: #fff; }
+body.hfd-skin .wp-list-table thead th,
+body.hfd-skin .wp-list-table tfoot th,
+body.hfd-skin .wp-list-table thead td,
+body.hfd-skin .wp-list-table tfoot td {
+  background: #fbf8f1; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ol-muted);
+}
+body.hfd-skin .wp-list-table tbody tr:hover { background: #fffaf0; }
+body.hfd-skin .striped > tbody > :nth-child(odd) { background: #fdfbf6; }
+body.hfd-skin .subsubsub a.current { color: var(--ol-red); font-weight: 800; }
+
+/* ---------- Buttons ---------- */
+body.hfd-skin .button,
+body.hfd-skin .button-secondary,
+body.hfd-skin a.page-title-action,
+body.hfd-skin .wrap .add-new-h2 {
+  border-radius: 999px;
+  border: 1.5px solid var(--ol-ink);
+  color: var(--ol-ink);
+  background: #fff;
+  font-weight: 600;
+  padding: 0 14px;
+  box-shadow: none;
+}
+body.hfd-skin .button:hover,
+body.hfd-skin .button-secondary:hover,
+body.hfd-skin a.page-title-action:hover { background: var(--ol-ink); color: #fff; border-color: var(--ol-ink); }
+body.hfd-skin .button-primary,
+body.hfd-skin .button.button-primary,
+body.hfd-skin .wp-core-ui .button-primary {
+  background: var(--ol-green);
+  border-color: var(--ol-green);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 2px 0 #6f5530;
+}
+body.hfd-skin .button-primary:hover,
+body.hfd-skin .button-primary:focus { background: #8a6a39; border-color: #8a6a39; color: #fff; }
+body.hfd-skin .button:focus,
+body.hfd-skin .button-primary:focus { box-shadow: 0 0 0 3px rgba(242, 183, 5, 0.45); outline: none; }
+body.hfd-skin .button-link-delete,
+body.hfd-skin .submitdelete { color: var(--ol-red); }
+
+/* ---------- Forms ---------- */
+body.hfd-skin input[type="text"],
+body.hfd-skin input[type="search"],
+body.hfd-skin input[type="email"],
+body.hfd-skin input[type="url"],
+body.hfd-skin input[type="tel"],
+body.hfd-skin input[type="number"],
+body.hfd-skin input[type="password"],
+body.hfd-skin input[type="date"],
+body.hfd-skin select,
+body.hfd-skin textarea {
+  border-radius: 10px;
+  border-color: #d6cfbd;
+}
+body.hfd-skin input:focus,
+body.hfd-skin select:focus,
+body.hfd-skin textarea:focus { border-color: var(--ol-green); box-shadow: 0 0 0 2px rgba(18, 138, 63, 0.2); }
+body.hfd-skin input[type="checkbox"]:checked::before { filter: hue-rotate(0); }
+body.hfd-skin input[type="checkbox"],
+body.hfd-skin input[type="radio"] { accent-color: var(--ol-green); }
+
+/* ---------- Notices ---------- */
+body.hfd-skin .notice,
+body.hfd-skin div.updated,
+body.hfd-skin div.error {
+  border-radius: 12px;
+  border-left-width: 6px;
+  box-shadow: var(--ol-shadow);
+}
+body.hfd-skin .notice-success,
+body.hfd-skin div.updated { border-left-color: var(--ol-green); }
+body.hfd-skin .notice-warning { border-left-color: var(--ol-gold); }
+body.hfd-skin .notice-error,
+body.hfd-skin div.error { border-left-color: var(--ol-red); }
+
+/* ---------- WooCommerce order status pills ---------- */
+body.hfd-skin .order-status { border-radius: 999px; font-weight: 700; }
+body.hfd-skin .order-status.status-processing { background: #f1e8d6; color: #6f5530; }
+body.hfd-skin .order-status.status-completed { background: #efe3e1; color: #4a161b; }
+body.hfd-skin .order-status.status-on-hold { background: #f6eedc; color: #7a5a2e; }
+body.hfd-skin .order-status.status-cancelled,
+body.hfd-skin .order-status.status-failed { background: #f6e9e6; color: var(--ol-red); }
+
+/* ---------- Footer ---------- */
+body.hfd-skin #wpfooter { color: #9c9585; }
+
+/* ---------- Mobile app tab bar (phones only) ---------- */
+.hfd-tabbar { display: none; }
+@media screen and (max-width: 782px) {
+  body.hfd-skin #wpbody-content { padding-bottom: 96px; }
+  body.hfd-skin .hfd-tabbar {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 99990;
+    background: var(--ol-ink);
+    padding: 8px 6px calc(8px + env(safe-area-inset-bottom, 0px));
+    border-top: 3px solid transparent;
+    border-image: var(--ol-stripe) 1;
+  }
+  body.hfd-skin .hfd-tabbar a,
+  body.hfd-skin .hfd-tabbar button {
+    position: relative;
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+    background: none; border: 0; padding: 4px 0; cursor: pointer;
+    color: #a8a194; text-decoration: none; font: 700 11px/1.1 'Jost', sans-serif;
+  }
+  body.hfd-skin .hfd-tabbar svg {
+    width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  }
+  body.hfd-skin .hfd-tabbar a.is-active { color: #fff; }
+  body.hfd-skin .hfd-tabbar a.is-active svg { stroke: var(--ol-gold); }
+  body.hfd-skin .hfd-tabbar a.is-active::before {
+    content: ''; position: absolute; top: -8px; width: 28px; height: 3px; border-radius: 3px; background: var(--ol-gold);
+  }
+  body.hfd-skin .hfd-tabbar__badge {
+    position: absolute; top: -2px; left: 54%;
+    min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px;
+    background: var(--ol-red); color: #fff; font-size: 10px; line-height: 18px; text-align: center;
+    border: 2px solid var(--ol-ink);
+  }
+}
+
+/* ==========================================================================
+   Login screen
+   ========================================================================== */
+body.login {
+  background:
+    radial-gradient(circle at 15% 10%, rgba(242, 183, 5, 0.18), transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(18, 138, 63, 0.16), transparent 45%),
+    var(--ol-cream);
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+body.login::before {
+  content: ''; position: fixed; top: 0; left: 0; right: 0; height: 6px; background: var(--ol-stripe);
+}
+body.login h1 a {
+  width: 96px; height: 96px; background-size: 96px 96px; border-radius: 24px; margin-bottom: 18px;
+  box-shadow: 0 10px 30px rgba(20, 22, 26, 0.25);
+}
+body.login form {
+  border: 2px solid var(--ol-ink);
+  border-radius: 22px;
+  box-shadow: 6px 6px 0 var(--ol-ink);
+  padding: 26px 24px 30px;
+}
+body.login label { font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+body.login input[type="text"],
+body.login input[type="password"],
+body.login input[type="email"] {
+  border: 2px solid var(--ol-ink); border-radius: 12px; padding: 8px 12px; font-size: 18px; box-shadow: none;
+}
+body.login input:focus { border-color: var(--ol-green); box-shadow: 0 0 0 3px rgba(18, 138, 63, 0.2); }
+body.login .button-primary {
+  width: 100%; float: none; margin-top: 16px; min-height: 46px;
+  background: var(--ol-green); border: 2px solid var(--ol-ink); border-radius: 999px;
+  font-size: 16px; font-weight: 800; text-transform: uppercase; box-shadow: 3px 3px 0 var(--ol-ink);
+}
+body.login .button-primary:hover { background: #8a6a39; }
+body.login #nav a,
+body.login #backtoblog a { color: var(--ol-ink); font-weight: 600; }
+body.login .message,
+body.login .notice { border-radius: 12px; border-left-color: var(--ol-green); }
+body.login #login_error { border-left-color: var(--ol-red); }
+
+/* Hadhrami: serif page titles. */
+body.hfd-skin .wrap > h1, body.hfd-skin .hq-hero h1, body.hfd-skin .hq-hero__title { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; letter-spacing: 0; }

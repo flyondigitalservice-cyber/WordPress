@@ -1,0 +1,21 @@
+/* Checkout location pin — matches the Hadhrami theme, safe on any theme. */
+.hfd-pin {
+  margin: 24px 0 8px;
+  border: 2px solid #14161a;
+  border-radius: 18px;
+  background: #fbf8f2;
+  overflow: hidden;
+  box-shadow: 3px 3px 0 #14161a;
+}
+.hfd-pin__head { padding: 14px 16px 10px; }
+.hfd-pin__head strong { display: block; font-size: 15px; text-transform: uppercase; }
+.hfd-pin__head span { font-size: 13px; color: #5c5a54; }
+.hfd-pin__search { padding: 0 16px 10px; }
+.hfd-pin__search gmp-place-autocomplete,
+.hfd-pin__search gmp-placeautocomplete { width: 100%; }
+.hfd-pin__map { height: 260px; border-top: 2px solid #14161a; border-bottom: 2px solid #14161a; }
+.hfd-pin__bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 12px 16px; }
+.woocommerce .hfd-pin__locate.button,
+.hfd-pin__locate { font-size: 12px; padding: 9px 16px; }
+.hfd-pin__status { font-size: 13px; color: #5c5a54; }
+.hfd-pin.is-set .hfd-pin__status { color: #a6834b; font-weight: 700; }

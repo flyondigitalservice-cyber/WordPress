@@ -1,0 +1,159 @@
+/* Customer live tracking page. */
+(function () {
+  'use strict';
+
+  var C = window.HFD_TRACK || {};
+  var map = null, markers = {}, fitted = false, last = null;
+
+  function $(id) { return document.getElementById(id); }
+  function money(n) { return '₹' + Number(n || 0).toLocaleString('en-IN', { maximumFractionDigits: 2 }); }
+  function time(ts) {
+    return ts ? new Date(ts * 1000).toLocaleTimeString('en-IN', { hour: 'numeric', minute: '2-digit' }) : '';
+  }
+  function tel(p) { return 'tel:' + String(p || '').replace(/[^\d+]/g, ''); }
+
+  var HEADLINE = {
+    tailoring: 'Being tailored in our atelier',
+    pending: 'Ready — assigning your rider',
+    assigned: 'Your rider is getting ready',
+    out_for_delivery: 'On the way to you',
+    delivered: 'Delivered. Wear it well.',
+    failed: 'Delivery delayed — we will call you',
+    cancelled: 'This order was cancelled'
+  };
+  // Steps reached per status; tailored orders have the extra "In the atelier" step.
+  function reachedFor(status, tailored) {
+    var base = { tailoring: 1, pending: 1, assigned: 2, out_for_delivery: 3, delivered: 4, failed: 2, cancelled: 0 }[status] || 0;
+    if (!tailored) return base;
+    return status === 'tailoring' ? 1 : status === 'cancelled' ? 0 : base + 1;
+  }
+
+  function initMap(data) {
+    if (map || !C.mapsKey) return;
+    window.hfdLoadMaps(C.mapsKey).then(function (gm) {
+      var center = data.dest || data.store;
+      map = new gm.Map($('t-map'), {
+        center: { lat: center.lat, lng: center.lng },
+        zoom: 14,
+        disableDefaultUI: true,
+        zoomControl: true,
+        gestureHandling: 'greedy',
+        clickableIcons: false,
+        styles: [
+          { featureType: 'poi', stylers: [{ visibility: 'off' }] },
+          { featureType: 'transit', stylers: [{ visibility: 'off' }] }
+        ]
+      });
+      $('t-map-ph').hidden = true;
+      draw(last || data);
+    }).catch(function () { /* Map is optional — status still works. */ });
+  }
+
+  function place(key, pos, color, label, title) {
+    if (!map || !pos || pos.lat == null) {
+      if (markers[key]) { markers[key].setMap(null); delete markers[key]; }
+      return;
+    }
+    var latLng = { lat: pos.lat, lng: pos.lng };
+    if (!markers[key]) {
+      markers[key] = new google.maps.Marker({ map: map, position: latLng, icon: window.hfdMarkerIcon(color, label), title: title, zIndex: key === 'rider' ? 10 : 1 });
+    } else {
+      markers[key].setPosition(latLng);
+    }
+  }
+
+  function draw(data) {
+    if (!map) return;
+    var active = data.status === 'assigned' || data.status === 'out_for_delivery';
+    place('store', data.store, '#c8a86f', 'S', data.store.name);
+    place('home', data.dest, '#a6834b', 'H', 'Delivery location');
+    place('rider', active && data.rider ? data.rider : null, '#5d1e24', 'R', 'Rider');
+
+    if (!fitted || active) {
+      var b = new google.maps.LatLngBounds();
+      var n = 0;
+      Object.keys(markers).forEach(function (k) {
+        if (k === 'store' && data.status === 'out_for_delivery' && markers.rider && markers.home) return;
+        b.extend(markers[k].getPosition()); n++;
+      });
+      if (n > 1) map.fitBounds(b, { top: 60, bottom: 40, left: 40, right: 40 });
+      else if (n === 1) map.setCenter(b.getCenter());
+      fitted = true;
+    }
+  }
+
+  function render(data) {
+    last = data;
+    $('t-order').textContent = '#' + data.order;
+    $('t-status').textContent = HEADLINE[data.status] || data.label;
+    document.body.setAttribute('data-status', data.status);
+
+    // The promise the customer chose: "Within 2 hours — arriving today by 4:30 pm".
+    var p = data.promise || {};
+    var late = p.due && Date.now() / 1000 > p.due;
+    var eta = '';
+    if (data.status === 'tailoring' || data.status === 'pending' || data.status === 'assigned') {
+      eta = p.due_text ? (p.text ? p.text + ' — arriving ' : 'Arriving ') + p.due_text : '';
+    } else if (data.status === 'out_for_delivery') {
+      eta = data.eta ? 'About ' + data.eta + ' min away' : (late || !p.due ? 'On the way — arriving shortly' : 'On the way · arriving ' + p.due_text);
+    } else if (data.status === 'delivered') {
+      eta = 'Delivered at ' + time(data.times.delivered);
+    }
+    $('t-eta').textContent = eta;
+
+    $('t-otp').hidden = !data.otp;
+    $('t-otp-code').textContent = data.otp || '';
+
+    var cod = $('t-cod');
+    if (data.is_cod && data.status !== 'delivered' && data.status !== 'cancelled') {
+      cod.hidden = false;
+      cod.innerHTML = 'Cash on delivery: please keep <b>' + money(data.amount) + '</b> ready';
+    } else {
+      cod.hidden = true;
+    }
+
+    var tailored = data.tier === 'tailored';
+    var reached = reachedFor(data.status, tailored);
+    var steps = Array.prototype.filter.call($('t-steps').children, function (li) {
+      if (li.hasAttribute('data-tailored')) li.hidden = !tailored;
+      return !li.hidden;
+    });
+    steps.forEach(function (li, i) {
+      li.classList.toggle('done', i < reached);
+      li.classList.toggle('now', i === reached - 1 && data.status !== 'delivered');
+      var t = data.times[li.getAttribute('data-step')];
+      li.querySelector('small').textContent = t ? time(t) : '';
+    });
+
+    var r = data.rider;
+    $('t-rider').hidden = !r;
+    if (r) {
+      $('t-rider-name').textContent = r.name;
+      $('t-rider-initial').textContent = (r.name || 'R').trim().charAt(0).toUpperCase();
+      var call = $('t-rider-call');
+      call.hidden = !r.phone;
+      call.href = tel(r.phone);
+    }
+    $('t-store-call').href = tel(data.store.phone);
+
+    var liveOn = data.status === 'assigned' || data.status === 'out_for_delivery' || data.status === 'pending' || data.status === 'tailoring';
+    $('t-live').classList.toggle('off', !liveOn);
+
+    initMap(data);
+    draw(data);
+    return liveOn;
+  }
+
+  function poll() {
+    fetch(C.api, { credentials: 'omit', cache: 'no-store' })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (!data || !data.status) return;
+        var live = render(data);
+        setTimeout(poll, live ? (document.hidden ? 60000 : 15000) : 120000);
+      })
+      .catch(function () { setTimeout(poll, 30000); });
+  }
+
+  poll();
+})();

@@ -15,8 +15,8 @@
 			printf(
 				/* translators: 1: express km, 2: tailored km */
 				esc_html__( 'Our riders leave the atelier with pressed shirts for any address within %1$s km, and deliver suits cut to your measure anywhere within %2$s km the next day.', 'hadhramifashion' ),
-				esc_html( hf_opt( 'express_radius_km' ) ),
-				esc_html( hf_opt( 'tailored_radius_km' ) )
+				esc_html( hf_delivery_opt( 'express_radius_km' ) ),
+				esc_html( hf_delivery_opt( 'service_radius_km' ) )
 			);
 			?>
 		</p>
@@ -40,8 +40,8 @@
 		<div class="map-placeholder" data-map-placeholder>
 			<span>
 				<?php echo hf_icon( 'pin' ); // phpcs:ignore WordPress.Security.EscapeOutput ?><br>
-				<?php echo esc_html( hf_opt( 'store_name' ) ); ?><br>
-				<small><?php echo esc_html( hf_opt( 'store_address' ) ); ?></small>
+				<?php echo esc_html( hf_delivery_opt( 'store_name' ) ); ?><br>
+				<small><?php echo esc_html( hf_delivery_opt( 'store_address' ) ); ?></small>
 			</span>
 		</div>
 	</div>

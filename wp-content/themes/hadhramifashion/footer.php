@@ -6,8 +6,8 @@
  */
 
 $whatsapp = preg_replace( '/\D/', '', (string) hf_opt( 'whatsapp' ) );
-$suits    = get_term_link( 'suits', 'hf_collection' );
-$shirts   = get_term_link( 'shirts', 'hf_collection' );
+$suits    = get_term_link( 'suits', 'product_cat' );
+$shirts   = get_term_link( 'shirts', 'product_cat' );
 ?>
 </main>
 
@@ -45,13 +45,13 @@ $shirts   = get_term_link( 'shirts', 'hf_collection' );
 				<ul>
 					<li><a href="<?php echo esc_url( hf_page_url( 'page-templates/express.php' ) ); ?>"><?php esc_html_e( '2-hour shirts', 'hadhramifashion' ); ?></a></li>
 					<li><a href="<?php echo esc_url( hf_page_url( 'page-templates/express.php' ) ); ?>"><?php esc_html_e( '24-hour tailoring', 'hadhramifashion' ); ?></a></li>
-					<li><a href="<?php echo esc_url( hf_page_url( 'page-templates/track.php' ) ); ?>"><?php esc_html_e( 'Track an order', 'hadhramifashion' ); ?></a></li>
+					<li><a href="<?php echo esc_url( hf_track_url() ); ?>"><?php esc_html_e( 'Track an order', 'hadhramifashion' ); ?></a></li>
 				</ul>
 			</div>
 			<div>
 				<h4><?php esc_html_e( 'The Atelier', 'hadhramifashion' ); ?></h4>
 				<ul>
-					<li><?php echo esc_html( hf_opt( 'store_address' ) ); ?></li>
+					<li><?php echo esc_html( hf_delivery_opt( 'store_address' ) ); ?></li>
 					<li><a href="tel:<?php echo esc_attr( preg_replace( '/[^\d+]/', '', hf_opt( 'phone' ) ) ); ?>"><?php echo esc_html( hf_opt( 'phone' ) ); ?></a></li>
 					<li><a href="mailto:<?php echo esc_attr( hf_opt( 'email' ) ); ?>"><?php echo esc_html( hf_opt( 'email' ) ); ?></a></li>
 					<li>
@@ -59,7 +59,7 @@ $shirts   = get_term_link( 'shirts', 'hf_collection' );
 						printf(
 							/* translators: 1: opening hour, 2: closing hour */
 							esc_html__( 'Daily %1$s:00 – %2$s:00', 'hadhramifashion' ),
-							esc_html( hf_opt( 'open_hour' ) ),
+							esc_html( hf_delivery_opt( 'open_hour' ) ),
 							esc_html( hf_opt( 'close_hour' ) )
 						);
 						?>
@@ -91,11 +91,7 @@ $shirts   = get_term_link( 'shirts', 'hf_collection' );
 		<h3><?php esc_html_e( 'Your Bag', 'hadhramifashion' ); ?></h3>
 		<button type="button" data-bag-close aria-label="<?php esc_attr_e( 'Close bag', 'hadhramifashion' ); ?>"><?php echo hf_icon( 'close' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></button>
 	</div>
-	<div class="drawer__body" data-bag-lines></div>
-	<div class="drawer__foot">
-		<div class="row"><span><?php esc_html_e( 'Subtotal', 'hadhramifashion' ); ?></span><strong data-bag-subtotal></strong></div>
-		<a class="btn btn--block" href="<?php echo esc_url( hf_page_url( 'page-templates/checkout.php' ) ); ?>"><?php esc_html_e( 'Choose delivery', 'hadhramifashion' ); ?> <?php echo hf_icon( 'arrow' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></a>
-	</div>
+	<?php hf_mini_bag(); ?>
 </aside>
 
 <?php if ( $whatsapp ) : ?>

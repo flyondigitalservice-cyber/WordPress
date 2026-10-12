@@ -28,6 +28,34 @@ function hf_opt( $key, $default = null ) {
 }
 
 /**
+ * Delivery setting from the Hadhrami Delivery plugin (with theme fallbacks when the
+ * plugin is inactive).
+ *
+ * @param string $key Plugin setting key.
+ * @return string
+ */
+function hf_delivery_opt( $key ) {
+	if ( class_exists( 'HFD_Settings' ) ) {
+		return HFD_Settings::get( $key );
+	}
+	$fallback = array(
+		'maps_key'            => '',
+		'store_name'          => 'Hadhrami Fashion Atelier',
+		'store_address'       => 'Old City, Hyderabad, Telangana',
+		'store_phone'         => '',
+		'store_lat'           => '17.3616',
+		'store_lng'           => '78.4747',
+		'service_radius_km'   => '30',
+		'express_radius_km'   => '12',
+		'express_minutes'     => '120',
+		'tailored_hours'      => '24',
+		'open_hour'           => '9',
+		'express_cutoff_hour' => '19',
+	);
+	return isset( $fallback[ $key ] ) ? $fallback[ $key ] : '';
+}
+
+/**
  * Bundled catalogue data (brand imagery, suits, shirts).
  *
  * @return array
@@ -144,14 +172,16 @@ function hf_drive_img( $file_id, $alt = '', $width = 900, $class = '', $lazy = t
 }
 
 /**
- * Format a price with the configured currency.
+ * Plain-text price in the store currency (safe to pass through esc_html).
  *
  * @param float $amount Amount.
  * @return string
  */
 function hf_price( $amount ) {
-	$symbol = hf_opt( 'currency_symbol' );
-	return $symbol . number_format_i18n( (float) $amount, 0 );
+	if ( function_exists( 'wc_price' ) ) {
+		return html_entity_decode( wp_strip_all_tags( wc_price( $amount, array( 'decimals' => 0 ) ) ), ENT_QUOTES, 'UTF-8' );
+	}
+	return '₹' . number_format_i18n( (float) $amount, 0 );
 }
 
 /**

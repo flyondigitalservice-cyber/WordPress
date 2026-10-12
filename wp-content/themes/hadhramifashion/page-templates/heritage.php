@@ -74,10 +74,10 @@ $hf_founder = hf_opt( 'founder' );
 <section class="section cta-band">
 	<div class="wrap reveal">
 		<span class="eyebrow eyebrow--plain"><?php esc_html_e( 'Visit the atelier', 'hadhramifashion' ); ?></span>
-		<h2><?php echo esc_html( hf_opt( 'store_address' ) ); ?></h2>
+		<h2><?php echo esc_html( hf_delivery_opt( 'store_address' ) ); ?></h2>
 		<p class="lede"><?php esc_html_e( 'Tea is always on. Bring the jacket you love most — we will tell you why it fits.', 'hadhramifashion' ); ?></p>
 		<div class="cta-band__actions">
-			<a class="btn btn--light" target="_blank" rel="noopener" href="<?php echo esc_url( 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode( hf_opt( 'store_lat' ) . ',' . hf_opt( 'store_lng' ) ) ); ?>"><?php esc_html_e( 'Get directions', 'hadhramifashion' ); ?></a>
+			<a class="btn btn--light" target="_blank" rel="noopener" href="<?php echo esc_url( 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode( hf_delivery_opt( 'store_lat' ) . ',' . hf_delivery_opt( 'store_lng' ) ) ); ?>"><?php esc_html_e( 'Get directions', 'hadhramifashion' ); ?></a>
 		</div>
 	</div>
 </section>
