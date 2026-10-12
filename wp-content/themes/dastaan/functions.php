@@ -10,17 +10,9 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'DASTAAN_VERSION', '1.2.0' );
+define( 'DASTAAN_VERSION', '1.2.1' );
 define( 'DASTAAN_DIR', trailingslashit( get_template_directory() ) );
 define( 'DASTAAN_URI', trailingslashit( get_template_directory_uri() ) );
-
-/*
- * Hardening: block the built-in theme/plugin file editor.
- * Defined here (before admin loads) so it applies even if wp-config.php was not touched.
- */
-if ( ! defined( 'DISALLOW_FILE_EDIT' ) ) {
-	define( 'DISALLOW_FILE_EDIT', true );
-}
 
 $dastaan_includes = array(
 	'inc/helpers.php',          // Option access, icons, sanitizers, small template tags.

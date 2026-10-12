@@ -250,6 +250,7 @@ function dastaan_demo_attachment( $rel, &$record ) {
 	}
 	$label = ucwords( str_replace( array( '-', '.jpg', '.mp4' ), array( ' ', '', '' ), basename( $source ) ) );
 	update_post_meta( $id, '_dastaan_demo_src', $rel );
+	wp_update_post( array( 'ID' => $id, 'post_title' => sprintf( /* translators: %s: craft name */ __( 'Dastaan demo — %s', 'dastaan' ), ucwords( str_replace( array( 'dastaan-', '-', '.jpg', '.mp4' ), array( '', ' ', '', '' ), basename( $source ) ) ) ) ) );
 	update_post_meta( $id, '_wp_attachment_image_alt', sprintf( /* translators: %s: craft name */ __( '%s — hand embroidery close-up', 'dastaan' ), $label ) );
 	$record['attachments'][] = (int) $id;
 	$cache[ $rel ]           = (int) $id;

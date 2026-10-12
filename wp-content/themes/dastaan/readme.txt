@@ -50,6 +50,12 @@ Customize → Dastaan Theme Options → 19. Tracking, Privacy & AI.
 
 == Changelog ==
 
+= 1.2.1 =
+* Accessibility (from a live Lighthouse audit): AA-contrast gold and grey for text, real headings in the product details and FAQ accordions, larger tap targets on breadcrumbs and the review link.
+* Footer Help column only links pages that exist (no 404s), plus "Track your order" and WhatsApp.
+* The theme no longer defines DISALLOW_FILE_EDIT (site configuration belongs in wp-config.php; it also blocked safe draft-editing tools).
+* Demo media get readable titles.
+
 = 1.2.0 =
 * New: one-click demo products (Dastaan → Demo Products, or `wp dastaan demo import|remove`) with categories, galleries, a product video, sale prices, a variable product and reviews. Removal deletes only what was imported.
 * New: bundled demo product video (assets/video), used only by the demo importer.

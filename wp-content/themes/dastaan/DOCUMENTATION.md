@@ -149,7 +149,7 @@ The footer form posts via AJAX to the theme (honeypot + nonce protected) and sto
 
 ## 10. Security notes
 
-* `DISALLOW_FILE_EDIT` enforced; WP version, RSD/WLW links, REST user enumeration (for non-logged-in), XML-RPC (toggle) and login error details removed.
+* Recommended: add `define( 'DISALLOW_FILE_EDIT', true );` to wp-config.php (site configuration belongs there, not in a theme). WP version, RSD/WLW links, REST user enumeration (for non-logged-in), XML-RPC (toggle) and login error details removed.
 * All front-end AJAX (`dastaan_add_to_cart`, `dastaan_subscribe`) is nonce-protected and sanitised; all output is escaped; admin screens check `manage_options`/`edit_theme_options`.
 * No external calls apart from the fonts (Google Fonts with preconnect — switch *Load Google Fonts* off in section 20 for zero third-party requests, or enqueue self-hosted @font-face files from a child theme), the trackers you configure, and the video embeds you paste.
 * The theme never stores customer data beyond WooCommerce's own orders and the optional newsletter list.

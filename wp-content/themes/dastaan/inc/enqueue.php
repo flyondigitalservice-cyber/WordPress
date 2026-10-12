@@ -111,6 +111,7 @@ function dastaan_css_variables() {
 		. '--d-primary-soft:' . dastaan_hex_to_rgba( $primary, 0.08 ) . ';'
 		. '--d-accent:' . $accent . ';'
 		. '--d-accent-light:' . dastaan_shade( $accent, 28 ) . ';'
+		. '--d-accent-text:' . dastaan_shade( $accent, -30 ) . ';'
 		. '--d-accent-soft:' . dastaan_hex_to_rgba( $accent, 0.14 ) . ';'
 		. '--d-bg:' . $bg . ';'
 		. '--d-bg-2:' . dastaan_shade( $bg, -4 ) . ';'

@@ -43,18 +43,25 @@ $dastaan_wa      = dastaan_whatsapp_url();
 			wp_nav_menu( array( 'theme_location' => 'footer_help', 'container' => false, 'menu_class' => 'footer-menu', 'depth' => 1 ) );
 		} else {
 			echo '<ul class="footer-menu">';
+			// Fallback links are shown only when a published page with that slug exists (no 404s).
 			$dastaan_help = array(
-				__( 'Shipping & delivery', 'dastaan' )   => '/shipping-policy/',
-				__( 'Exchange policy', 'dastaan' )       => '/refund_returns/',
-				__( 'Stitching guide', 'dastaan' )       => '/stitching-guide/',
-				__( 'FAQs', 'dastaan' )                  => '/faqs/',
-				__( 'Contact us', 'dastaan' )            => '/contact/',
+				'shipping-policy' => __( 'Shipping & delivery', 'dastaan' ),
+				'refund_returns'  => __( 'Exchange policy', 'dastaan' ),
+				'stitching-guide' => __( 'Stitching guide', 'dastaan' ),
+				'faqs'            => __( 'FAQs', 'dastaan' ),
+				'contact'         => __( 'Contact us', 'dastaan' ),
 			);
-			if ( dastaan_has_wc() ) {
-				$dastaan_help[ __( 'Track your order', 'dastaan' ) ] = wc_get_page_permalink( 'myaccount' );
+			foreach ( $dastaan_help as $dastaan_slug => $dastaan_label ) {
+				$dastaan_page = get_page_by_path( $dastaan_slug );
+				if ( $dastaan_page && 'publish' === $dastaan_page->post_status ) {
+					printf( '<li><a href="%s">%s</a></li>', esc_url( get_permalink( $dastaan_page ) ), esc_html( $dastaan_label ) );
+				}
 			}
-			foreach ( $dastaan_help as $dastaan_label => $dastaan_url ) {
-				printf( '<li><a href="%s">%s</a></li>', dastaan_url( $dastaan_url ), esc_html( $dastaan_label ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			if ( dastaan_has_wc() ) {
+				printf( '<li><a href="%s">%s</a></li>', esc_url( wc_get_page_permalink( 'myaccount' ) ), esc_html__( 'Track your order', 'dastaan' ) );
+			}
+			if ( dastaan_whatsapp_url() ) {
+				printf( '<li><a href="%s" target="_blank" rel="noopener">%s</a></li>', esc_url( dastaan_whatsapp_url() ), esc_html__( 'Chat on WhatsApp', 'dastaan' ) );
 			}
 			echo '</ul>';
 		}

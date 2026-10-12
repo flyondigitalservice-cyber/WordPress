@@ -46,7 +46,7 @@ if ( ! $dastaan_items ) {
 		<?php $dastaan_first = true; ?>
 		<?php foreach ( $dastaan_items as $dastaan_key => $dastaan_item ) : ?>
 			<details class="accordion__item" id="tab-<?php echo esc_attr( $dastaan_key ); ?>" <?php echo $dastaan_first ? 'open' : ''; ?>>
-				<summary class="accordion__summary"><span><?php echo esc_html( $dastaan_item[0] ); ?></span><?php dastaan_the_icon( 'plus', array( 'size' => 18, 'class' => 'accordion__icon' ) ); ?></summary>
+				<summary class="accordion__summary"><h2 class="accordion__title"><?php echo esc_html( $dastaan_item[0] ); ?></h2><?php dastaan_the_icon( 'plus', array( 'size' => 18, 'class' => 'accordion__icon' ) ); ?></summary>
 				<div class="accordion__body entry-content"><?php echo $dastaan_item[1]; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- content filtered/escaped above. ?></div>
 			</details>
 			<?php $dastaan_first = false; ?>
