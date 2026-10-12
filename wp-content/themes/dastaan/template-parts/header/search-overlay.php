@@ -16,9 +16,9 @@ $dastaan_terms = dastaan_has_wc() ? dastaan_get_showcase_categories( 6 ) : array
 		<form role="search" method="get" class="search-form search-form--overlay" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<label class="screen-reader-text" for="overlay-search"><?php esc_html_e( 'Search for', 'dastaan' ); ?></label>
 			<?php dastaan_the_icon( 'search', array( 'size' => 22 ) ); ?>
-			<input id="overlay-search" type="search" name="s" placeholder="<?php esc_attr_e( 'Search chikankari, organza, zardozi…', 'dastaan' ); ?>" autocomplete="off" value="<?php echo esc_attr( get_search_query() ); ?>">
+			<input id="overlay-search" class="search-field" type="search" name="s" placeholder="<?php esc_attr_e( 'Search chikankari, organza, zardozi…', 'dastaan' ); ?>" autocomplete="off" value="<?php echo esc_attr( get_search_query() ); ?>">
 			<?php if ( dastaan_has_wc() ) : ?><input type="hidden" name="post_type" value="product"><?php endif; ?>
-			<button type="submit" class="btn btn--primary"><?php esc_html_e( 'Search', 'dastaan' ); ?></button>
+			<button type="submit" class="btn btn--primary search-submit"><?php esc_html_e( 'Search', 'dastaan' ); ?></button>
 		</form>
 		<?php if ( $dastaan_terms ) : ?>
 			<p class="search-overlay__label"><?php esc_html_e( 'Popular', 'dastaan' ); ?></p>

@@ -335,13 +335,13 @@ function dastaan_mini_cart_progress() {
 	}
 	$subtotal = (float) WC()->cart->get_subtotal();
 	$pct      = min( 100, round( ( $subtotal / $threshold ) * 100 ) );
-	echo '<div class="ship-progress"><p>';
+	echo '<div class="mini-cart-shipping"><p>';
 	if ( $subtotal >= $threshold ) {
 		esc_html_e( 'You have unlocked free shipping.', 'dastaan' );
 	} else {
 		echo wp_kses_post( sprintf( /* translators: %s: amount */ __( 'Add %s more for free shipping', 'dastaan' ), wc_price( $threshold - $subtotal ) ) );
 	}
-	echo '</p><span class="ship-progress__bar"><span style="width:' . esc_attr( $pct ) . '%"></span></span></div>';
+	echo '</p><span class="bar"><span style="width:' . esc_attr( $pct ) . '%"></span></span></div>';
 }
 add_action( 'woocommerce_before_mini_cart', 'dastaan_mini_cart_progress' );
 

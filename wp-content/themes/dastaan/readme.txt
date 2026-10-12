@@ -50,6 +50,17 @@ Customize → Dastaan Theme Options → 19. Tracking, Privacy & AI.
 
 == Changelog ==
 
+= 1.1.0 =
+* Fixed: fatal error on the classic checkout page (WC_Cart::get_item_product_name() is not available in all WooCommerce versions).
+* Fixed: product page summary column no longer slides over the details accordion and related products when scrolling.
+* Fixed: product gallery thumbnails sit below the main image on mobile; Buy now is disabled until a variation is chosen.
+* Fixed: header navigation overlapping the logo and help pill; desktop menu now starts at 1200px and wraps safely.
+* Fixed: icons were never matched by the stylesheet (missing "icon" class), which misaligned icons across the header, footer, studio, trust and USP blocks.
+* Fixed: footer contact rows, bottom bar alignment, extra widget column, and mobile column layout.
+* Fixed: search overlay form, mini-cart drawer padding/quantity, WooCommerce notices, payment methods and list indentation inside cart/checkout/account.
+* Fixed: testimonials, banners, craft tiles, ticker and category circles alignment; light hero slides are readable on mobile.
+* Improved: responsive layout verified at 360, 390, 768, 1024, 1280 and 1440px with no horizontal scrolling.
+
 = 1.0.0 =
 * Initial release.
 

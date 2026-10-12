@@ -112,7 +112,7 @@ function dastaan_stars( $rating, $size = 14 ) {
 	$rating = max( 0, min( 5, (float) $rating ) );
 	echo '<span class="stars" role="img" aria-label="' . esc_attr( sprintf( /* translators: %s: rating */ __( 'Rated %s out of 5', 'dastaan' ), $rating ) ) . '">';
 	for ( $i = 1; $i <= 5; $i++ ) {
-		$class = $i <= round( $rating ) ? 'star is-on' : 'star';
+		$class = $i <= round( $rating ) ? 'star is-on' : 'star is-empty';
 		echo dastaan_icon( 'star', array( 'size' => $size, 'class' => $class ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 	echo '</span>';

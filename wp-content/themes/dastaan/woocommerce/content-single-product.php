@@ -19,12 +19,14 @@ if ( post_password_required() ) {
 }
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'product-layout', $product ); ?>>
-	<div class="product-layout__gallery">
-		<?php do_action( 'woocommerce_before_single_product_summary' ); ?>
-	</div>
-	<div class="product-layout__summary">
-		<div class="summary entry-summary">
-			<?php do_action( 'woocommerce_single_product_summary' ); ?>
+	<div class="product-layout__main">
+		<div class="product-layout__gallery">
+			<?php do_action( 'woocommerce_before_single_product_summary' ); ?>
+		</div>
+		<div class="product-layout__summary">
+			<div class="summary entry-summary">
+				<?php do_action( 'woocommerce_single_product_summary' ); ?>
+			</div>
 		</div>
 	</div>
 	<div class="product-layout__after">

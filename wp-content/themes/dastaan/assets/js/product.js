@@ -241,6 +241,7 @@
 				var pastForm = entries[0].boundingClientRect.top < 0;
 				sticky.classList.toggle('is-visible', !visible && pastForm);
 				sticky.setAttribute('aria-hidden', (!visible && pastForm) ? 'false' : 'true');
+				doc.body.classList.toggle('has-sticky-atc', !visible && pastForm);
 			}, { threshold: 0 });
 			sio.observe(atcBtn);
 		}
@@ -251,6 +252,16 @@
 			}
 			if (atcBtn) { atcBtn.click(); }
 		});
+	}
+
+	// Buy now mirrors the add-to-bag state for variable products (no variation chosen → disabled).
+	if (window.jQuery && form && form.classList.contains('variations_form')) {
+		var buyNow = $('.btn--buynow', form);
+		if (buyNow) {
+			buyNow.disabled = true;
+			window.jQuery(form).on('show_variation', function (e, variation, purchasable) { buyNow.disabled = !purchasable; })
+				.on('hide_variation reset_data', function () { buyNow.disabled = true; });
+		}
 	}
 
 	// Sync sticky price with variation.

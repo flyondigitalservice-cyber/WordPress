@@ -169,7 +169,7 @@ function dastaan_menu_fallback() {
 			array(
 				'taxonomy'   => 'product_cat',
 				'hide_empty' => true,
-				'number'     => 7,
+				'number'     => 6,
 				'exclude'    => array( get_option( 'default_product_cat' ) ),
 				'orderby'    => 'count',
 				'order'      => 'DESC',
@@ -181,14 +181,16 @@ function dastaan_menu_fallback() {
 			}
 		}
 	}
-	wp_list_pages(
-		array(
-			'title_li' => '',
-			'depth'    => 1,
-			'number'   => 3,
-			'exclude'  => dastaan_has_wc() ? implode( ',', array_filter( array( wc_get_page_id( 'cart' ), wc_get_page_id( 'checkout' ), wc_get_page_id( 'myaccount' ), wc_get_page_id( 'shop' ), get_option( 'wp_page_for_privacy_policy' ) ) ) ) : '',
-			'walker'   => null,
-		)
-	);
+	if ( ! dastaan_has_wc() ) {
+		// Without WooCommerce, fall back to the top-level pages (kept short so the header stays on one line).
+		wp_list_pages(
+			array(
+				'title_li' => '',
+				'depth'    => 1,
+				'number'   => 6,
+				'exclude'  => (string) get_option( 'wp_page_for_privacy_policy' ),
+			)
+		);
+	}
 	echo '</ul>';
 }

@@ -432,7 +432,7 @@ function dastaan_icon( $name, $args = array() ) {
 	}
 
 	$size  = absint( $args['size'] );
-	$class = 'd-icon d-icon--' . sanitize_html_class( $name ) . ( $args['class'] ? ' ' . esc_attr( $args['class'] ) : '' );
+	$class = 'icon d-icon d-icon--' . sanitize_html_class( $name ) . ( $args['class'] ? ' ' . esc_attr( $args['class'] ) : '' );
 	$aria  = $args['label'] ? ' role="img" aria-label="' . esc_attr( $args['label'] ) . '"' : ' aria-hidden="true" focusable="false"';
 
 	return sprintf(

@@ -12,7 +12,7 @@ $dastaan_phone   = dastaan_option( 'phone_number' );
 $dastaan_email   = dastaan_option( 'contact_email' );
 $dastaan_wa      = dastaan_whatsapp_url();
 ?>
-<div class="container footer-grid">
+<div class="container footer-grid<?php echo is_active_sidebar( 'footer-extra' ) ? ' has-extra' : ''; ?>">
 	<div class="footer-col footer-col--brand">
 		<div class="footer-logo"><?php get_template_part( 'template-parts/header/logo' ); ?></div>
 		<p class="footer-tagline"><?php echo esc_html( dastaan_option( 'brand_tagline' ) ); ?></p>

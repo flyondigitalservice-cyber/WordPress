@@ -124,7 +124,7 @@
 		var update = function () {
 			var y = window.pageYOffset;
 			header.classList.toggle('is-stuck', y > 10);
-			if (window.innerWidth < 1024) {
+			if (window.innerWidth < 1200) {
 				header.classList.toggle('is-hidden', y > 160 && y > lastY + 4 && !body.classList.contains('has-drawer-open'));
 			} else {
 				header.classList.remove('is-hidden');

@@ -19,7 +19,8 @@ defined( 'ABSPATH' ) || exit;
 		$visible  = apply_filters( 'woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key );
 
 		if ( $_product instanceof WC_Product && $_product->exists() && $cart_item['quantity'] > 0 && $visible ) {
-			$cart_item_name = WC()->cart->get_item_product_name( $cart_item, $_product );
+			// WC_Cart::get_item_product_name() only exists in recent WooCommerce releases; fall back to the product name.
+			$cart_item_name = method_exists( WC()->cart, 'get_item_product_name' ) ? WC()->cart->get_item_product_name( $cart_item, $_product ) : $_product->get_name();
 			$product_name   = apply_filters( 'woocommerce_cart_item_name', $cart_item_name, $cart_item, $cart_item_key );
 			?>
 			<li class="checkout-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
