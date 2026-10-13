@@ -135,8 +135,9 @@ blockquote { margin: 1.5em 0; padding-left: 1.25em; border-left: 2px solid var(-
 .btn--ghost:hover { border-color: var(--d-ink); color: var(--d-ink); }
 .btn--gold { background: var(--d-accent); color: #fff; border-color: var(--d-accent); }
 .btn--gold:hover { background: #a07f33; color: #fff; }
-.btn--whatsapp { background: #25D366; color: #fff; border-color: #25D366; }
-.btn--whatsapp:hover { background: #1ebe5b; color: #fff; }
+/* WhatsApp green darkened to #1B7F45 so white button text meets WCAG AA (5:1). */
+.btn--whatsapp { background: #1B7F45; color: #fff; border-color: #1B7F45; }
+.btn--whatsapp:hover { background: #156B39; border-color: #156B39; color: #fff; }
 .btn--text { min-height: 0; padding: 0 0 4px; border: 0; border-bottom: 1px solid currentColor; border-radius: 0; letter-spacing: .18em; font-size: 12px; color: var(--d-ink); }
 .btn--text:hover { color: var(--d-primary); gap: 14px; }
 .btn--small { min-height: 40px; padding: 0 18px; font-size: 12px; }
@@ -200,7 +201,7 @@ input[type="checkbox"], input[type="radio"] { width: 18px; height: 18px; accent-
 .header-actions { display: flex; align-items: center; justify-self: end; gap: 0; }
 .header-promo { display: none; align-items: center; gap: 8px; margin-right: 12px; padding: 8px 14px; border: 1px solid var(--d-line-2); border-radius: 999px; font-size: 12px; letter-spacing: .04em; font-weight: 500; line-height: 1.2; white-space: nowrap; color: var(--d-ink); }
 .header-promo .icon { color: #25D366; }
-.header-promo:hover { border-color: #25D366; color: #25D366; }
+.header-promo:hover { border-color: #1B7F45; color: #1B7F45; }
 .cart-btn .header-cart-count { position: absolute; top: 4px; right: 2px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: var(--d-primary); color: #fff; font-size: 10px; font-weight: 600; line-height: 18px; text-align: center; opacity: 0; transform: scale(.6); transition: transform .3s var(--d-ease), opacity .2s; }
 .cart-btn .header-cart-count.has-items { opacity: 1; transform: scale(1); }
 
@@ -367,8 +368,8 @@ input[type="checkbox"], input[type="radio"] { width: 18px; height: 18px; accent-
 .consent p { margin: 0 0 12px; }
 .consent__actions { display: flex; gap: 8px; flex-wrap: wrap; }
 @media (min-width: 900px) { .consent { left: auto; right: 24px; bottom: 24px; } }
-.wa-float { position: fixed; right: 16px; bottom: calc(82px + env(safe-area-inset-bottom)); z-index: 900; display: inline-flex; align-items: center; gap: 10px; height: 54px; padding: 0 16px 0 14px; border-radius: 999px; background: #25D366; color: #fff; box-shadow: 0 10px 30px rgba(37, 211, 102, .4); font-weight: 500; font-size: 14px; transition: transform .3s var(--d-ease), box-shadow .3s; }
-.wa-float:hover { color: #fff; transform: translateY(-2px); box-shadow: 0 16px 36px rgba(37, 211, 102, .5); }
+.wa-float { position: fixed; right: 16px; bottom: calc(82px + env(safe-area-inset-bottom)); z-index: 900; display: inline-flex; align-items: center; gap: 10px; height: 54px; padding: 0 16px 0 14px; border-radius: 999px; background: #1B7F45; color: #fff; box-shadow: 0 10px 30px rgba(27, 127, 69, .35); font-weight: 500; font-size: 14px; transition: transform .3s var(--d-ease), box-shadow .3s; }
+.wa-float:hover { background: #156B39; color: #fff; transform: translateY(-2px); box-shadow: 0 16px 36px rgba(27, 127, 69, .45); }
 .wa-float .icon { width: 26px; height: 26px; }
 .wa-float__label { display: none; }
 @media (min-width: 900px) { .wa-float { bottom: 28px; right: 28px; } .wa-float__label { display: inline; } }
@@ -534,6 +535,7 @@ ul.products.carousel__track { margin: 0; list-style: none; }
 .reels .section-title, .reels .section-text { color: #fff; }
 .reels .section-text { color: rgba(255, 255, 255, .72); }
 .reels .btn--text { color: #fff; }
+.reels .eyebrow, .section--dark .eyebrow { color: var(--d-accent-light); }
 .reels__track { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 8px; }
 .reels__track::-webkit-scrollbar { display: none; }
 .reel { flex: 0 0 62%; scroll-snap-align: start; }

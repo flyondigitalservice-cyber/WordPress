@@ -21,9 +21,9 @@
 .woocommerce-store-notice a { color: var(--d-accent-light); }
 
 .price, .amount { font-variant-numeric: lining-nums tabular-nums; }
-.price del { color: var(--d-ink-3); font-weight: 400; margin-right: 8px; opacity: .8; }
+.price del { color: var(--d-ink-3); font-weight: 400; margin-right: 8px; }
 .price ins, .product-card__price ins, .sticky-atc__price ins, .checkout-item__total ins { text-decoration: none; color: var(--d-primary); }
-.product-card__price del, .sticky-atc__price del { color: var(--d-ink-3); font-weight: 400; margin-right: 6px; opacity: .8; }
+.product-card__price del, .sticky-atc__price del { color: var(--d-ink-3); font-weight: 400; margin-right: 6px; }
 .woocommerce-Price-currencySymbol { font-size: .85em; margin-right: 1px; }
 
 .stars { display: inline-flex; gap: 2px; color: var(--d-accent-text); }
@@ -209,7 +209,7 @@ ul.products::before, ul.products::after, .woocommerce ul.products::before, .wooc
 .summary { display: flex; flex-direction: column; }
 .summary-top { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
 .summary-top .product-badges { position: static; flex-direction: row; }
-.summary-cat { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--d-accent-text); font-weight: 500; }
+.summary-cat { display: inline-flex; align-items: center; min-height: 24px; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--d-accent-text); font-weight: 500; }
 .summary .product_title { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.1; margin-bottom: 12px; }
 .summary .woocommerce-product-rating { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-size: 13px; color: var(--d-ink-3); }
 .summary .woocommerce-review-link { color: var(--d-ink-3); border-bottom: 1px solid var(--d-line-2); display: inline-block; padding-block: 4px; }

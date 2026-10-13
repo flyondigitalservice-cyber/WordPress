@@ -50,6 +50,13 @@ Customize → Dastaan Theme Options → 19. Tracking, Privacy & AI.
 
 == Changelog ==
 
+= 1.2.2 =
+* Accessibility: zero axe-core violations on home, shop, product, cart and account pages.
+* WhatsApp buttons use a deeper green (#1B7F45) so white text meets WCAG AA.
+* Product details accordion: visually hidden "Product information" heading (headings inside <summary> are not exposed), accordion titles back to spans.
+* Gold eyebrow on dark sections uses the light gold; struck-through prices no longer faded; larger category tap target.
+* Hero slides use div (role="group" is not allowed on article); testimonials scroller is keyboard-focusable; floating WhatsApp button sits in a labelled landmark.
+
 = 1.2.1 =
 * Accessibility (from a live Lighthouse audit): AA-contrast gold and grey for text, real headings in the product details and FAQ accordions, larger tap targets on breadcrumbs and the review link.
 * Footer Help column only links pages that exist (no 404s), plus "Track your order" and WhatsApp.

@@ -38,7 +38,7 @@ if ( ! $dastaan_text && ! $dastaan_faqs ) {
 				<div class="accordion">
 					<?php foreach ( $dastaan_faqs as $dastaan_i => $dastaan_f ) : ?>
 						<details class="accordion__item" <?php echo 0 === $dastaan_i ? 'open' : ''; ?>>
-							<summary class="accordion__summary"><h3 class="accordion__title"><?php echo esc_html( $dastaan_f[0] ); ?></h3><?php dastaan_the_icon( 'plus', array( 'size' => 18, 'class' => 'accordion__icon' ) ); ?></summary>
+							<summary class="accordion__summary"><span class="accordion__title"><?php echo esc_html( $dastaan_f[0] ); ?></span><?php dastaan_the_icon( 'plus', array( 'size' => 18, 'class' => 'accordion__icon' ) ); ?></summary>
 							<div class="accordion__body"><p><?php echo esc_html( $dastaan_f[1] ); ?></p></div>
 						</details>
 					<?php endforeach; ?>

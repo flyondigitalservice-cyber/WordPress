@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 $dastaan_wa = dastaan_whatsapp_url();
 ?>
 <?php if ( dastaan_option( 'show_whatsapp_float' ) && $dastaan_wa && ! ( dastaan_has_wc() && is_checkout() ) ) : ?>
-	<a class="wa-float" href="<?php echo esc_url( $dastaan_wa ); ?>" target="_blank" rel="noopener" aria-label="<?php esc_attr_e( 'Chat on WhatsApp', 'dastaan' ); ?>"><?php dastaan_the_icon( 'whatsapp', array( 'size' => 26 ) ); ?><span class="wa-float__label"><?php esc_html_e( 'Need help?', 'dastaan' ); ?></span></a>
+	<aside class="floating-help" aria-label="<?php esc_attr_e( 'Quick help', 'dastaan' ); ?>"><a class="wa-float" href="<?php echo esc_url( $dastaan_wa ); ?>" target="_blank" rel="noopener" aria-label="<?php esc_attr_e( 'Chat on WhatsApp', 'dastaan' ); ?>"><?php dastaan_the_icon( 'whatsapp', array( 'size' => 26 ) ); ?><span class="wa-float__label"><?php esc_html_e( 'Need help?', 'dastaan' ); ?></span></a></aside>
 <?php endif; ?>
 <button class="back-to-top" type="button" aria-label="<?php esc_attr_e( 'Back to top', 'dastaan' ); ?>"><?php dastaan_the_icon( 'arrow-up', array( 'size' => 18 ) ); ?></button>
 <div class="toast" role="status" aria-live="polite" hidden></div>

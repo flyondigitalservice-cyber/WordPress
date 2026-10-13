@@ -36,7 +36,7 @@ $dastaan_multi = count( $dastaan_slides ) > 1;
 <section class="hero<?php echo $dastaan_multi ? ' hero--multi' : ''; ?>" aria-roledescription="carousel" aria-label="<?php esc_attr_e( 'Featured collections', 'dastaan' ); ?>" data-autoplay="<?php echo dastaan_option( 'hero_autoplay' ) ? '1' : '0'; ?>">
 	<div class="hero__track">
 		<?php foreach ( $dastaan_slides as $dastaan_i => $dastaan_s ) : ?>
-			<article class="hero__slide hero__slide--<?php echo esc_attr( $dastaan_s['theme'] ); ?> hero__slide--focus-<?php echo esc_attr( $dastaan_s['focus'] ); ?><?php echo 0 === $dastaan_i ? ' is-active' : ''; ?>" role="group" aria-roledescription="slide" aria-label="<?php echo esc_attr( sprintf( /* translators: 1: index 2: total */ __( '%1$d of %2$d', 'dastaan' ), $dastaan_i + 1, count( $dastaan_slides ) ) ); ?>" <?php echo 0 === $dastaan_i ? '' : 'aria-hidden="true"'; ?>>
+			<div class="hero__slide hero__slide--<?php echo esc_attr( $dastaan_s['theme'] ); ?> hero__slide--focus-<?php echo esc_attr( $dastaan_s['focus'] ); ?><?php echo 0 === $dastaan_i ? ' is-active' : ''; ?>" role="group" aria-roledescription="slide" aria-label="<?php echo esc_attr( sprintf( /* translators: 1: index 2: total */ __( '%1$d of %2$d', 'dastaan' ), $dastaan_i + 1, count( $dastaan_slides ) ) ); ?>" <?php echo 0 === $dastaan_i ? '' : 'aria-hidden="true"'; ?>>
 				<div class="hero__media">
 					<?php if ( $dastaan_s['mobile'] ) : ?><picture><source media="(max-width: 767px)" srcset="<?php echo esc_url( $dastaan_s['mobile'] ); ?>"><?php endif; ?>
 					<?php
@@ -79,7 +79,7 @@ $dastaan_multi = count( $dastaan_slides ) > 1;
 						<?php endif; ?>
 					</div>
 				</div>
-			</article>
+			</div>
 		<?php endforeach; ?>
 	</div>
 	<?php if ( $dastaan_multi ) : ?>

@@ -27,7 +27,7 @@ if ( ! $dastaan_items ) {
 	<div class="container">
 		<?php dastaan_section_heading( array( 'eyebrow' => dastaan_option( 'testimonials_eyebrow' ), 'title' => dastaan_option( 'testimonials_title' ) ) ); ?>
 		<div class="carousel" data-carousel>
-			<ul class="testimonials__track carousel__track">
+			<ul class="testimonials__track carousel__track" tabindex="0" aria-label="<?php esc_attr_e( 'Customer reviews', 'dastaan' ); ?>">
 				<?php foreach ( $dastaan_items as $dastaan_t ) : ?>
 					<li class="testimonial">
 						<blockquote class="testimonial__card">
