@@ -10,7 +10,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'DASTAAN_VERSION', '1.3.0' );
+define( 'DASTAAN_VERSION', '1.3.1' );
 define( 'DASTAAN_DIR', trailingslashit( get_template_directory() ) );
 define( 'DASTAAN_URI', trailingslashit( get_template_directory_uri() ) );
 

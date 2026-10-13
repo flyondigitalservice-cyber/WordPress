@@ -50,6 +50,9 @@ Customize → Dastaan Theme Options → 19. Tracking, Privacy & AI.
 
 == Changelog ==
 
+= 1.3.1 =
+* WCBoost wishlist heart is centred in its button on product cards and the product page.
+
 = 1.3.0 =
 * Real-store compatibility (from a read-only review of dastaanbyartisans.in):
 * Product videos from the "WC Featured Video Gallery" plugin now show in the Dastaan gallery and as the video badge on cards; the plugin's Ecomus-only assets are not loaded.
