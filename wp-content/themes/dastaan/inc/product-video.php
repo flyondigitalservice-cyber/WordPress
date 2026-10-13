@@ -50,6 +50,19 @@ function dastaan_get_product_videos( $product ) {
 		}
 	}
 
+	// 1b. "WC Featured Video Gallery" plugin (Media Library video + optional cover image).
+	$wcfv_id = (int) get_post_meta( $pid, '_wcfv_video_id', true );
+	if ( $wcfv_id && 0 === strpos( (string) get_post_mime_type( $wcfv_id ), 'video/' ) ) {
+		$wcfv_poster = (int) get_post_meta( $pid, '_wcfv_poster_id', true );
+		$videos[]    = array(
+			'src'    => wp_get_attachment_url( $wcfv_id ),
+			'embed'  => '',
+			'poster' => $wcfv_poster ? wp_get_attachment_image_url( $wcfv_poster, 'woocommerce_single' ) : '',
+			'title'  => $product->get_name(),
+			'source' => 'wcfv',
+		);
+	}
+
 	// 2. WooCommerce native gallery videos.
 	if ( class_exists( '\Automattic\WooCommerce\Internal\ProductGallery\ProductMediaGallery' ) ) {
 		try {
@@ -327,7 +340,7 @@ add_action( 'admin_enqueue_scripts', 'dastaan_video_admin_js' );
  */
 function dastaan_product_has_video( $product ) {
 	$pid = $product->get_id();
-	if ( get_post_meta( $pid, DASTAAN_VIDEO_META, true ) || get_post_meta( $pid, DASTAAN_VIDEO_URL_META, true ) ) {
+	if ( get_post_meta( $pid, DASTAAN_VIDEO_META, true ) || get_post_meta( $pid, DASTAAN_VIDEO_URL_META, true ) || get_post_meta( $pid, '_wcfv_video_id', true ) ) {
 		return true;
 	}
 	if ( get_post_meta( $pid, '_wc_video_gallery', true ) ) {
@@ -336,3 +349,13 @@ function dastaan_product_has_video( $product ) {
 
 	return false;
 }
+
+/**
+ * The theme gallery already shows "WC Featured Video Gallery" videos; drop that plugin's
+ * front-end assets (built for another theme) so nothing is loaded twice.
+ */
+function dastaan_dequeue_wcfv_assets() {
+	wp_dequeue_style( 'wcfv' );
+	wp_dequeue_script( 'wcfv' );
+}
+add_action( 'wp_enqueue_scripts', 'dastaan_dequeue_wcfv_assets', 100 );

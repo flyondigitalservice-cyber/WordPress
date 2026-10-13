@@ -66,8 +66,8 @@ $dastaan_checkout_focus = dastaan_has_wc() && is_checkout() && ! is_order_receiv
 				<?php endif; ?>
 				<?php if ( dastaan_has_wc() ) : ?>
 					<a class="icon-btn hide-mobile" href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" aria-label="<?php esc_attr_e( 'My account', 'dastaan' ); ?>"><?php dastaan_the_icon( 'user', array( 'size' => 22 ) ); ?></a>
-					<?php if ( dastaan_option( 'header_show_wishlist' ) && dastaan_option( 'wishlist_url' ) ) : ?>
-						<a class="icon-btn hide-mobile" href="<?php echo dastaan_url( dastaan_option( 'wishlist_url' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" aria-label="<?php esc_attr_e( 'Wishlist', 'dastaan' ); ?>"><?php dastaan_the_icon( 'heart', array( 'size' => 22 ) ); ?></a>
+					<?php if ( dastaan_option( 'header_show_wishlist' ) && dastaan_wishlist_url() ) : ?>
+						<a class="icon-btn hide-mobile" href="<?php echo dastaan_wishlist_url(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" aria-label="<?php esc_attr_e( 'Wishlist', 'dastaan' ); ?>"><?php dastaan_the_icon( 'heart', array( 'size' => 22 ) ); ?></a>
 					<?php endif; ?>
 					<button class="icon-btn cart-btn js-open-cart" type="button" aria-label="<?php esc_attr_e( 'Open bag', 'dastaan' ); ?>" aria-controls="mini-cart-drawer" aria-expanded="false">
 						<?php dastaan_the_icon( 'bag', array( 'size' => 22 ) ); ?>

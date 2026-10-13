@@ -31,8 +31,8 @@ $dastaan_location = has_nav_menu( 'mobile' ) ? 'mobile' : 'primary';
 		<div class="drawer__foot">
 			<?php if ( dastaan_has_wc() ) : ?>
 				<a class="drawer__link" href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>"><?php dastaan_the_icon( 'user', array( 'size' => 18 ) ); ?><?php esc_html_e( 'My account', 'dastaan' ); ?></a>
-				<?php if ( dastaan_option( 'wishlist_url' ) ) : ?>
-					<a class="drawer__link" href="<?php echo dastaan_url( dastaan_option( 'wishlist_url' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>"><?php dastaan_the_icon( 'heart', array( 'size' => 18 ) ); ?><?php esc_html_e( 'Wishlist', 'dastaan' ); ?></a>
+				<?php if ( dastaan_wishlist_url() ) : ?>
+					<a class="drawer__link" href="<?php echo dastaan_wishlist_url(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>"><?php dastaan_the_icon( 'heart', array( 'size' => 18 ) ); ?><?php esc_html_e( 'Wishlist', 'dastaan' ); ?></a>
 				<?php endif; ?>
 			<?php endif; ?>
 			<?php if ( dastaan_whatsapp_url() ) : ?>

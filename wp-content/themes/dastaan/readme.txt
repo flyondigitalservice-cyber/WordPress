@@ -50,6 +50,14 @@ Customize → Dastaan Theme Options → 19. Tracking, Privacy & AI.
 
 == Changelog ==
 
+= 1.3.0 =
+* Real-store compatibility (from a read-only review of dastaanbyartisans.in):
+* Product videos from the "WC Featured Video Gallery" plugin now show in the Dastaan gallery and as the video badge on cards; the plugin's Ecomus-only assets are not loaded.
+* WCBoost Wishlist: heart button on product cards and the product page (theme-positioned, no duplicates); header and mobile wishlist links use the plugin's page and are hidden when no wishlist page exists.
+* Elementor pages render full width (with a hidden h1 when the design has none); an Elementor-built front page is no longer appended below the home sections.
+* Footer Help and Legal links find existing pages by common slugs (shipping, returns, FAQ, contact, order tracking, terms, privacy) and only link published pages.
+* Docs: "Switching an existing store to Dastaan" checklist.
+
 = 1.2.3 =
 * Accessibility: accessible names now start with the visible text (floating WhatsApp button, hero coupon button). Verified live: Lighthouse Accessibility, Best Practices and SEO 100 on mobile and desktop.
 * Docs: purge the page cache after each theme update.

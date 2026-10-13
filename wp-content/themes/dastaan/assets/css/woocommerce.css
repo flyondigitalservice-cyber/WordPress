@@ -274,6 +274,18 @@ form.grouped_form { display: block; }
 .summary-actions .btn--whatsapp { flex: 1 1 220px; min-height: 50px; }
 .summary-actions .wishlist-btn-wrap { flex: 0 0 auto; }
 .wishlist-btn-wrap a, .wishlist-btn-wrap button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+/* WCBoost Wishlist (and similar plugin buttons) inside theme wrappers: a quiet heart icon, never a filled WC button. */
+.wishlist-btn-wrap a.wcboost-wishlist-button, .woocommerce .wishlist-btn-wrap a.wcboost-wishlist-button, .woocommerce-page .wishlist-btn-wrap a.wcboost-wishlist-button { display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 100%; min-height: 0; padding: 0; margin: 0; background: transparent; border: 0; border-radius: inherit; color: var(--d-ink); box-shadow: none; transform: none; }
+.wishlist-btn-wrap a.wcboost-wishlist-button:hover, .woocommerce .wishlist-btn-wrap a.wcboost-wishlist-button:hover { background: transparent; color: var(--d-primary); box-shadow: none; transform: none; }
+.wishlist-btn-wrap .wcboost-wishlist-button__icon { display: inline-flex; }
+.wishlist-btn-wrap .wcboost-wishlist-button svg { width: 18px; height: 18px; }
+.wishlist-btn-wrap .wcboost-wishlist-button.added, .wishlist-btn-wrap .wcboost-wishlist-button.added:hover { color: var(--d-primary); }
+.wishlist-btn-wrap .wcboost-wishlist-button.added svg { fill: currentColor; }
+.wishlist-btn-wrap .wcboost-wishlist-button__text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.summary-actions .wishlist-btn-wrap { width: 50px; height: 50px; border: 1px solid var(--d-line-2); border-radius: var(--d-radius); background: #fff; transition: border-color .2s; }
+.summary-actions .wishlist-btn-wrap:hover { border-color: var(--d-ink); }
+.summary-actions .wishlist-btn-wrap svg { width: 20px; height: 20px; }
+.summary-actions .btn--whatsapp { flex: 1 1 0; }
 .summary-trust { padding: 16px 18px; border: 1px solid var(--d-line); border-radius: var(--d-radius); background: #fff; margin-bottom: 18px; }
 .delivery-line { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; margin: 0 0 12px; padding-bottom: 12px; border-bottom: 1px dashed var(--d-line); font-weight: 500; }
 .delivery-line .icon { color: var(--d-primary); margin-top: 2px; }

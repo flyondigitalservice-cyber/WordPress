@@ -110,7 +110,9 @@ function dastaan_product_badges( $product ) {
  */
 function dastaan_wishlist_button( $product_id ) {
 	$html = '';
-	if ( shortcode_exists( 'ti_wishlists_addtowishlist' ) ) {
+	if ( shortcode_exists( 'wcboost_wishlist_button' ) ) {
+		$html = do_shortcode( '[wcboost_wishlist_button product_id="' . absint( $product_id ) . '"]' );
+	} elseif ( shortcode_exists( 'ti_wishlists_addtowishlist' ) ) {
 		$html = do_shortcode( '[ti_wishlists_addtowishlist product_id="' . absint( $product_id ) . '"]' );
 	} elseif ( shortcode_exists( 'yith_wcwl_add_to_wishlist' ) ) {
 		$html = do_shortcode( '[yith_wcwl_add_to_wishlist product_id="' . absint( $product_id ) . '"]' );

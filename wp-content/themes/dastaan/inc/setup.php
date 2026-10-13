@@ -63,6 +63,11 @@ function dastaan_setup() {
 		array(
 			'thumbnail_image_width' => 600,
 			'single_image_width'    => 1000,
+			// WCBoost Wishlist / Compare: the theme prints the buttons (cards + product summary), so the plugins don't add duplicates.
+			'wishlist'              => array(
+				'single_button_position' => 'theme',
+				'loop_button_position'   => 'theme',
+			),
 			'product_grid'          => array(
 				'default_rows'    => 3,
 				'min_rows'        => 1,

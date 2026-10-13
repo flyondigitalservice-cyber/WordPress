@@ -25,7 +25,9 @@ foreach ( $dastaan_sections as $dastaan_section ) {
 			get_template_part( 'template-parts/home/products', null, array( 'prefix' => 'bestseller' ) );
 			break;
 		case 'page-content':
-			if ( 'page' === get_option( 'show_on_front' ) && have_posts() ) {
+			// Elementor-built front pages (e.g. a previous theme's demo home) are skipped: the sections above replace them.
+			$dastaan_front_id = (int) get_option( 'page_on_front' );
+			if ( 'page' === get_option( 'show_on_front' ) && have_posts() && apply_filters( 'dastaan_home_show_page_content', ! dastaan_is_elementor_page( $dastaan_front_id ), $dastaan_front_id ) ) {
 				while ( have_posts() ) {
 					the_post();
 					$dastaan_content = trim( get_the_content() );

@@ -45,19 +45,22 @@ $dastaan_wa      = dastaan_whatsapp_url();
 			echo '<ul class="footer-menu">';
 			// Fallback links are shown only when a published page with that slug exists (no 404s).
 			$dastaan_help = array(
-				'shipping-policy' => __( 'Shipping & delivery', 'dastaan' ),
-				'refund_returns'  => __( 'Exchange policy', 'dastaan' ),
-				'stitching-guide' => __( 'Stitching guide', 'dastaan' ),
-				'faqs'            => __( 'FAQs', 'dastaan' ),
-				'contact'         => __( 'Contact us', 'dastaan' ),
+				array( __( 'Shipping & delivery', 'dastaan' ), array( 'shipping-policy', 'shipping', 'shipping-delivery' ) ),
+				array( __( 'Returns & exchange', 'dastaan' ), array( 'returns-exchanges', 'refund_returns', 'exchange-policy' ) ),
+				array( __( 'Stitching guide', 'dastaan' ), array( 'stitching-guide' ) ),
+				array( __( 'FAQs', 'dastaan' ), array( 'faqs', 'faq', 'faq-v2' ) ),
+				array( __( 'Contact us', 'dastaan' ), array( 'contact', 'contact-us', 'contact-v1' ) ),
+				array( __( 'Track your order', 'dastaan' ), array( 'order-tracking', 'track-order' ) ),
 			);
-			foreach ( $dastaan_help as $dastaan_slug => $dastaan_label ) {
-				$dastaan_page = get_page_by_path( $dastaan_slug );
-				if ( $dastaan_page && 'publish' === $dastaan_page->post_status ) {
-					printf( '<li><a href="%s">%s</a></li>', esc_url( get_permalink( $dastaan_page ) ), esc_html( $dastaan_label ) );
+			$dastaan_has_tracking = false;
+			foreach ( $dastaan_help as $dastaan_item ) {
+				$dastaan_page = dastaan_find_page( $dastaan_item[1] );
+				if ( $dastaan_page ) {
+					$dastaan_has_tracking = $dastaan_has_tracking || in_array( $dastaan_page->post_name, array( 'order-tracking', 'track-order' ), true );
+					printf( '<li><a href="%s">%s</a></li>', esc_url( get_permalink( $dastaan_page ) ), esc_html( $dastaan_item[0] ) );
 				}
 			}
-			if ( dastaan_has_wc() ) {
+			if ( dastaan_has_wc() && ! $dastaan_has_tracking ) {
 				printf( '<li><a href="%s">%s</a></li>', esc_url( wc_get_page_permalink( 'myaccount' ) ), esc_html__( 'Track your order', 'dastaan' ) );
 			}
 			if ( dastaan_whatsapp_url() ) {

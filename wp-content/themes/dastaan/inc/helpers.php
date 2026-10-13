@@ -351,6 +351,58 @@ function dastaan_url( $url ) {
 }
 
 /**
+ * First published page matching one of the given slugs (lets fallbacks follow the site's real pages).
+ *
+ * @param string[] $slugs Candidate slugs, most preferred first.
+ * @return WP_Post|null
+ */
+function dastaan_find_page( $slugs ) {
+	foreach ( (array) $slugs as $slug ) {
+		$page = get_page_by_path( $slug );
+		if ( $page && 'publish' === $page->post_status ) {
+			return $page;
+		}
+	}
+
+	return null;
+}
+
+/**
+ * Is a post built with Elementor (its content is Elementor's, not the block editor's)?
+ *
+ * @param int $post_id Post ID.
+ * @return bool
+ */
+function dastaan_is_elementor_page( $post_id ) {
+	return $post_id && did_action( 'elementor/loaded' ) && 'builder' === get_post_meta( $post_id, '_elementor_edit_mode', true );
+}
+
+/**
+ * Wishlist page URL: the active wishlist plugin's page first, then the Customizer value
+ * (a relative path is only used when that page exists, so the icon never links to a 404).
+ *
+ * @return string Escaped URL or ''.
+ */
+function dastaan_wishlist_url() {
+	$plugin_pages = array( 'wcboost_wishlist_page_id', 'yith_wcwl_wishlist_page_id', 'woosw_page_id' );
+	foreach ( $plugin_pages as $option ) {
+		$page_id = (int) get_option( $option );
+		if ( $page_id && 'publish' === get_post_status( $page_id ) ) {
+			return esc_url( get_permalink( $page_id ) );
+		}
+	}
+	$url = trim( (string) dastaan_option( 'wishlist_url' ) );
+	if ( '' === $url ) {
+		return '';
+	}
+	if ( 0 === strpos( $url, '/' ) && 0 !== strpos( $url, '//' ) && ! dastaan_find_page( array( trim( $url, '/' ) ) ) ) {
+		return '';
+	}
+
+	return dastaan_url( $url );
+}
+
+/**
  * Build a WhatsApp click-to-chat URL.
  *
  * @param string $message Optional message.

@@ -173,7 +173,26 @@ The footer form posts via AJAX to the theme (honeypot + nonce protected) and sto
 
 ---
 
-## 13. Demo products (one click)
+## 13. Switching an existing store to Dastaan (e.g. from Ecomus)
+
+Dastaan works with the plugins a typical Ecomus store uses:
+
+* **WC Featured Video Gallery** — product videos (`_wcfv_video_id`, optional cover image) appear in the Dastaan gallery automatically; the plugin's own Ecomus-specific scripts are not loaded.
+* **WCBoost Wishlist** — the heart button appears on product cards and next to "Ask a stylist"; the header/mobile wishlist links use the plugin's wishlist page.
+* **Elementor pages** (About, Contact, policies…) render full width with their own design. An Elementor-built *front page* is not shown below the Dastaan home sections (filter: `dastaan_home_show_page_content`).
+* **Footer links** find existing pages by slug (shipping, returns-exchanges / refund_returns, faq / faq-v2, contact / contact-v1, order-tracking, terms-conditions, privacy-policy). Assign menus under Appearance → Menus for full control.
+
+Checklist:
+1. Take a full backup (Hostinger: hPanel → Backups).
+2. Upload and activate Dastaan, then purge LiteSpeed Cache.
+3. Appearance → Customize → Dastaan Theme Options: logo, hero slides, banners, WhatsApp number, studio details.
+4. Appearance → Menus: assign Primary, Footer and Legal menus.
+5. Keep only one floating WhatsApp button (Dastaan's, or the Simple Chat Button plugin).
+6. Elementor pages that used Ecomus Addons widgets: open each page once and check it still looks right.
+7. Place a test order with Razorpay (test mode) before announcing the new look.
+8. Do not run "Import demo products" on the live store.
+
+## 14. Demo products (one click)
 
 **wp-admin → Dastaan → Demo Products → Import demo products** (or `wp dastaan demo import` with WP-CLI).
 

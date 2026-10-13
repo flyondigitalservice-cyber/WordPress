@@ -20,19 +20,17 @@ defined( 'ABSPATH' ) || exit;
 					'menu_class'     => 'legal-menu',
 					'depth'          => 1,
 					'fallback_cb'    => function () {
+						// Published legal pages only: the settings first, then common slugs.
 						$items = array();
-						$pp    = get_option( 'wp_page_for_privacy_policy' );
-						if ( $pp ) {
-							$items[] = '<li><a href="' . esc_url( get_permalink( $pp ) ) . '">' . esc_html( get_the_title( $pp ) ) . '</a></li>';
-						}
-						if ( dastaan_has_wc() ) {
-							$terms = wc_get_page_id( 'terms' );
-							if ( $terms > 0 ) {
-								$items[] = '<li><a href="' . esc_url( get_permalink( $terms ) ) . '">' . esc_html( get_the_title( $terms ) ) . '</a></li>';
-							}
-							$refund = wc_get_page_id( 'refund_returns' );
-							if ( $refund > 0 ) {
-								$items[] = '<li><a href="' . esc_url( get_permalink( $refund ) ) . '">' . esc_html( get_the_title( $refund ) ) . '</a></li>';
+						$pages = array(
+							array( (int) get_option( 'wp_page_for_privacy_policy' ), array( 'privacy-policy', 'privacy-policy-2', 'privacy' ) ),
+							array( dastaan_has_wc() ? wc_get_page_id( 'terms' ) : 0, array( 'terms-conditions', 'terms-and-conditions', 'terms' ) ),
+							array( dastaan_has_wc() ? wc_get_page_id( 'refund_returns' ) : 0, array( 'refund_returns', 'returns-exchanges', 'refund-policy' ) ),
+						);
+						foreach ( $pages as $candidate ) {
+							$page = ( $candidate[0] > 0 && 'publish' === get_post_status( $candidate[0] ) ) ? get_post( $candidate[0] ) : dastaan_find_page( $candidate[1] );
+							if ( $page ) {
+								$items[ $page->ID ] = '<li><a href="' . esc_url( get_permalink( $page ) ) . '">' . esc_html( get_the_title( $page ) ) . '</a></li>';
 							}
 						}
 						if ( $items ) {

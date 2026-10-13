@@ -10,6 +10,20 @@ get_header();
 
 while ( have_posts() ) :
 	the_post();
+	if ( dastaan_is_elementor_page( get_the_ID() ) ) {
+		// Elementor controls this page's layout and headings: give it the full width.
+		ob_start();
+		the_content();
+		$dastaan_builder_html = ob_get_clean();
+		echo '<article id="post-' . esc_attr( get_the_ID() ) . '" class="' . esc_attr( implode( ' ', get_post_class( 'page-article page-article--builder' ) ) ) . '">';
+		if ( false === stripos( $dastaan_builder_html, '<h1' ) ) {
+			// Every page needs one main heading (SEO + screen readers); the visible design stays Elementor's.
+			echo '<h1 class="screen-reader-text">' . esc_html( get_the_title() ) . '</h1>';
+		}
+		echo $dastaan_builder_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- the_content() output.
+		echo '</article>';
+		continue;
+	}
 	$dastaan_is_wc_page = dastaan_has_wc() && ( is_cart() || is_checkout() || is_account_page() );
 	?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class( 'page-article' ); ?>>
