@@ -62,7 +62,7 @@ $dastaan_multi = count( $dastaan_slides ) > 1;
 						<?php endif; ?>
 						<?php if ( $dastaan_s['text'] ) : ?><p class="hero__text"><?php echo esc_html( $dastaan_s['text'] ); ?></p><?php endif; ?>
 						<?php if ( $dastaan_s['coupon'] ) : ?>
-							<button class="hero__coupon js-copy-code" type="button" data-code="<?php echo esc_attr( $dastaan_s['coupon'] ); ?>" aria-label="<?php echo esc_attr( sprintf( /* translators: %s: coupon code */ __( 'Copy coupon code %s', 'dastaan' ), $dastaan_s['coupon'] ) ); ?>">
+							<button class="hero__coupon js-copy-code" type="button" data-code="<?php echo esc_attr( $dastaan_s['coupon'] ); ?>" aria-label="<?php echo esc_attr( sprintf( /* translators: %s: coupon code */ __( 'Use code %s — copy to clipboard', 'dastaan' ), $dastaan_s['coupon'] ) ); ?>">
 								<?php dastaan_the_icon( 'gift', array( 'size' => 14 ) ); ?>
 								<span><?php esc_html_e( 'Use code', 'dastaan' ); ?> <strong><?php echo esc_html( $dastaan_s['coupon'] ); ?></strong></span>
 							</button>

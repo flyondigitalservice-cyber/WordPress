@@ -50,6 +50,10 @@ Customize → Dastaan Theme Options → 19. Tracking, Privacy & AI.
 
 == Changelog ==
 
+= 1.2.3 =
+* Accessibility: accessible names now start with the visible text (floating WhatsApp button, hero coupon button). Verified live: Lighthouse Accessibility, Best Practices and SEO 100 on mobile and desktop.
+* Docs: purge the page cache after each theme update.
+
 = 1.2.2 =
 * Accessibility: zero axe-core violations on home, shop, product, cart and account pages.
 * WhatsApp buttons use a deeper green (#1B7F45) so white text meets WCAG AA.

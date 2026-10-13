@@ -165,6 +165,8 @@ The footer form posts via AJAX to the theme (honeypot + nonce protected) and sto
 
 ## 12. Known notes
 
+* **After every theme update, purge your page cache** (LiteSpeed Cache → Toolbox → Purge All, or your host's cache button). Otherwise visitors and Google may keep seeing the previous version's HTML.
+
 * Local/demo installs on **SQLite** (the "SQLite Database Integration" plugin) cannot run WooCommerce's stock-reservation query; set WooCommerce → Settings → Products → Inventory → *Hold stock (minutes)* to `0` on such installs. MySQL/MariaDB production servers are unaffected.
 * The admin "Dastaan" welcome page and the Customizer need `edit_theme_options` capability (Administrators).
 * Translations: `languages/dastaan.pot` is included; use Loco Translate for Hindi/Marathi.
