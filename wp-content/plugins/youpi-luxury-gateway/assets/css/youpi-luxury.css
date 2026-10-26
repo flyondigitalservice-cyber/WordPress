@@ -1,0 +1,103 @@
+/* YouPI Luxury — restrained black, ivory and champagne-gold styling. */
+:root {
+	--youpi-lux-ink: #111111;
+	--youpi-lux-ivory: #faf7f0;
+	--youpi-lux-gold: #b08d57;
+	--youpi-lux-line: rgba(176, 141, 87, 0.35);
+}
+
+.payment_method_youpi_luxury .payment_box,
+.youpi-lux-method {
+	background: var(--youpi-lux-ivory);
+	border-left: 2px solid var(--youpi-lux-gold);
+	color: var(--youpi-lux-ink);
+	font-size: 0.95em;
+	line-height: 1.6;
+	letter-spacing: 0.01em;
+	padding: 1em 1.25em;
+}
+
+.youpi-lux-method p {
+	margin: 0 0 0.75em;
+}
+
+.youpi-lux-apps {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4em;
+	list-style: none;
+	margin: 0.5em 0 0;
+	padding: 0;
+}
+
+.youpi-lux-apps li {
+	border: 1px solid var(--youpi-lux-line);
+	border-radius: 999px;
+	font-size: 0.8em;
+	letter-spacing: 0.06em;
+	padding: 0.2em 0.8em;
+	text-transform: uppercase;
+}
+
+.youpi-lux-panel {
+	background: var(--youpi-lux-ivory);
+	border: 1px solid var(--youpi-lux-line);
+	color: var(--youpi-lux-ink);
+	margin: 2em 0;
+	padding: 1.5em 1.75em;
+}
+
+.youpi-lux-panel__title {
+	border-bottom: 1px solid var(--youpi-lux-line);
+	font-size: 0.85em;
+	font-weight: 500;
+	letter-spacing: 0.2em;
+	margin: 0 0 1em;
+	padding-bottom: 0.6em;
+	text-transform: uppercase;
+}
+
+.youpi-lux-utr {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: 0.9em;
+}
+
+.youpi-lux-concierge {
+	color: #5a4a30;
+	font-style: italic;
+	margin-bottom: 0;
+}
+
+.youpi-lux-pending::before {
+	animation: youpi-lux-pulse 1.6s ease-in-out infinite;
+	background: var(--youpi-lux-gold);
+	border-radius: 50%;
+	content: "";
+	display: inline-block;
+	height: 0.55em;
+	margin-right: 0.6em;
+	vertical-align: middle;
+	width: 0.55em;
+}
+
+.youpi-lux-button.button {
+	background: var(--youpi-lux-ink);
+	border-radius: 0;
+	color: var(--youpi-lux-ivory);
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.youpi-lux-button.button:hover,
+.youpi-lux-button.button:focus {
+	background: var(--youpi-lux-gold);
+	color: var(--youpi-lux-ink);
+}
+
+@keyframes youpi-lux-pulse {
+	50% { opacity: 0.25; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.youpi-lux-pending::before { animation: none; }
+}
