@@ -43,7 +43,7 @@ class WC_Gateway_YouPI_Luxury extends WC_Payment_Gateway {
 		$this->has_fields         = false;
 		$this->method_title       = __( 'YouPI UPI — Luxury', 'youpi-luxury-gateway' );
 		$this->method_description = __( 'Accept direct-to-bank UPI payments through your self-hosted YouPI PG gateway, with reconciliation holds for high-value timepieces and a concierge-style checkout.', 'youpi-luxury-gateway' );
-		$this->supports           = array( 'products' );
+		$this->supports           = array( 'products', 'refunds' );
 
 		$this->init_form_fields();
 		$this->init_settings();
@@ -497,7 +497,7 @@ class WC_Gateway_YouPI_Luxury extends WC_Payment_Gateway {
 
 		self::log( sprintf( 'Order %d: %s status %s (payment %s)', $order->get_id(), $source, $status, $payment_id ) );
 
-		if ( $order->is_paid() ) {
+		if ( $order->is_paid() || $order->has_status( 'refunded' ) ) {
 			return 'ignored';
 		}
 
@@ -597,6 +597,38 @@ class WC_Gateway_YouPI_Luxury extends WC_Payment_Gateway {
 		);
 		$order->payment_complete( $utr );
 		return 'paid';
+	}
+
+	/**
+	 * Refunds are possible only once a UPI payment (UTR) is recorded on the order.
+	 *
+	 * @param WC_Order $order Order.
+	 * @return bool
+	 */
+	public function can_refund_order( $order ) {
+		return $order instanceof WC_Order
+			&& ( '' !== (string) $order->get_meta( self::META_UTR ) || '' !== (string) $order->get_transaction_id() );
+	}
+
+	/**
+	 * Record a refund. YouPI has no refund API, so the payout is sent from the
+	 * boutique's bank and tracked by Youpi_Luxury_Refunds until staff record it.
+	 *
+	 * @param int        $order_id Order id.
+	 * @param float|null $amount   Refund amount.
+	 * @param string     $reason   Refund reason.
+	 * @return true|WP_Error
+	 */
+	public function process_refund( $order_id, $amount = null, $reason = '' ) {
+		$order = wc_get_order( $order_id );
+		if ( ! $order ) {
+			return new WP_Error( 'youpi_refund_order', __( 'Order not found.', 'youpi-luxury-gateway' ) );
+		}
+		$result = Youpi_Luxury_Refunds::record_refund( $order, $amount, $reason );
+		if ( true === $result ) {
+			self::log( sprintf( 'Order %d: refund of %s recorded, payout pending.', $order->get_id(), $amount ) );
+		}
+		return $result;
 	}
 
 	/**

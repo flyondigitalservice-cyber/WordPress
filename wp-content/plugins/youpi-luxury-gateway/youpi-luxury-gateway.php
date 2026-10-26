@@ -3,7 +3,7 @@
  * Plugin Name:       YouPI Luxury Payment Gateway
  * Plugin URI:        https://github.com/youpi-pg/YouPI-PG
  * Description:       WooCommerce UPI payment gateway for luxury watch boutiques, powered by a self-hosted YouPI PG instance. Includes high-value reconciliation holds, discreet billing and concierge support.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 6.2
  * Requires PHP:      7.4
  * Requires Plugins:  woocommerce
@@ -19,7 +19,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'YOUPI_LUXURY_VERSION', '1.0.0' );
+define( 'YOUPI_LUXURY_VERSION', '1.1.0' );
 define( 'YOUPI_LUXURY_FILE', __FILE__ );
 define( 'YOUPI_LUXURY_DIR', plugin_dir_path( __FILE__ ) );
 define( 'YOUPI_LUXURY_URL', plugin_dir_url( __FILE__ ) );
@@ -51,6 +51,7 @@ function youpi_luxury_init() {
 	require_once YOUPI_LUXURY_DIR . 'includes/class-youpi-luxury-api-client.php';
 	require_once YOUPI_LUXURY_DIR . 'includes/class-wc-gateway-youpi-luxury.php';
 	require_once YOUPI_LUXURY_DIR . 'includes/class-youpi-luxury-webhook.php';
+	require_once YOUPI_LUXURY_DIR . 'includes/class-youpi-luxury-refunds.php';
 
 	add_filter(
 		'woocommerce_payment_gateways',
@@ -63,6 +64,7 @@ function youpi_luxury_init() {
 	add_filter( 'plugin_action_links_' . plugin_basename( YOUPI_LUXURY_FILE ), 'youpi_luxury_action_links' );
 
 	Youpi_Luxury_Webhook::init();
+	Youpi_Luxury_Refunds::init();
 
 	add_action( YOUPI_LUXURY_CRON_HOOK, array( 'WC_Gateway_YouPI_Luxury', 'reconcile_pending_orders' ) );
 }
