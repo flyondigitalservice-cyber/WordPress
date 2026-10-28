@@ -290,6 +290,38 @@ function cfm_section_faqs( $title, $faqs ) {
 }
 
 /**
+ * Comparison table section (core table block).
+ *
+ * @param array $t title, optional intro, head (cells), rows (arrays of cells).
+ * @return string
+ */
+function cfm_section_compare( $t ) {
+	$cell = static function ( $tag, $text ) {
+		return '<' . $tag . '>' . cfm_b_text( $text ) . '</' . $tag . '>';
+	};
+	$head = '';
+	foreach ( $t['head'] as $h ) {
+		$head .= $cell( 'th', $h );
+	}
+	$body = '';
+	foreach ( $t['rows'] as $row ) {
+		$tds = '';
+		foreach ( $row as $i => $c ) {
+			$tds .= $cell( 'td', 0 === $i ? '<strong>' . $c . '</strong>' : $c );
+		}
+		$body .= '<tr>' . $tds . '</tr>';
+	}
+	$table = '<!-- wp:table {"hasFixedLayout":false,"className":"cfm-table"} -->' . "\n" .
+		'<figure class="wp-block-table cfm-table"><table><thead><tr>' . $head . '</tr></thead><tbody>' . $body . '</tbody></table></figure>' . "\n" .
+		'<!-- /wp:table -->' . "\n\n";
+	$inner = cfm_b_heading_pair( __( 'Compare', 'cfm' ), $t['title'] );
+	if ( ! empty( $t['intro'] ) ) {
+		$inner .= cfm_b_p( $t['intro'] );
+	}
+	return cfm_b_group( $inner . $table, 'cfm-section cfm-compare' );
+}
+
+/**
  * Four standard process steps.
  *
  * @return array
@@ -313,10 +345,18 @@ function cfm_build_product( $p ) {
 	$title = $p['title'];
 	$html  = cfm_section_intro( __( 'Overview', 'cfm' ), sprintf( '%s in Dubai &amp; the UAE', $title ), $p['intro'], sprintf( 'Get a price for %s', $title ) );
 	$html .= cfm_section_features( __( 'Benefits', 'cfm' ), sprintf( 'Why choose %s', strtolower( $title ) ), $p['benefits'] );
+	if ( ! empty( $p['range'] ) ) {
+		$html .= cfm_section_features( __( 'The range', 'cfm' ), $p['range']['title'], $p['range']['items'], 'cfm-range' );
+	}
 
 	$specs = cfm_b_heading_pair( __( 'Specifications', 'cfm' ), __( 'Options &amp; specifications', 'cfm' ) ) . cfm_b_list( $p['specs'], 'cfm-checks' );
 	$uses  = cfm_b_heading_pair( __( 'Applications', 'cfm' ), __( 'Where it’s used', 'cfm' ) ) . cfm_b_list( $p['uses'], 'cfm-checks' );
 	$html .= cfm_b_group( cfm_b_columns( array( $specs, $uses ) ), 'cfm-section cfm-split' );
+	if ( ! empty( $p['compare'] ) ) {
+		foreach ( $p['compare'] as $table ) {
+			$html .= cfm_section_compare( $table );
+		}
+	}
 
 	$html .= cfm_b_group(
 		cfm_b_sc( '[cfm_catalogues scope="page" title="' . cfm_sc_attr( $title . ' — downloads' ) . '"]' ) .

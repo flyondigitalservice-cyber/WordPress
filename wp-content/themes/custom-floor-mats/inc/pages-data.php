@@ -926,6 +926,17 @@ function cfm_pages_data() {
 		);
 	}
 
+	// Real product details from the supplier catalogues.
+	foreach ( cfm_catalogue_data() as $slug => $extra ) {
+		if ( ! isset( $pages[ $slug ] ) ) {
+			continue;
+		}
+		if ( isset( $extra['faqs'] ) ) {
+			$extra['faqs'] = array_merge( $pages[ $slug ]['faqs'], $extra['faqs'] );
+		}
+		$pages[ $slug ] = array_merge( $pages[ $slug ], $extra );
+	}
+
 	return array_merge( $pages, cfm_interiors_data() );
 }
 

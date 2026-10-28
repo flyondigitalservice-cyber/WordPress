@@ -21,6 +21,7 @@ require_once CFM_DIR . '/inc/seo.php';
 require_once CFM_DIR . '/inc/leads.php';
 require_once CFM_DIR . '/inc/shortcodes.php';
 require_once CFM_DIR . '/inc/interiors-data.php';
+require_once CFM_DIR . '/inc/catalogue-data.php';
 require_once CFM_DIR . '/inc/pages-data.php';
 require_once CFM_DIR . '/inc/content-builder.php';
 require_once CFM_DIR . '/inc/installer.php';

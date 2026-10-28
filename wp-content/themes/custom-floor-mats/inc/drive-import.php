@@ -71,6 +71,104 @@ function cfm_drive_manifest() {
 		array( 'id' => '1UUh--a5LsRFz_saXO5nPOax2tNqsgVrU', 'slug' => 'projects', 'title' => 'Poured rubber project' ),
 		array( 'id' => '1eg_c42-WHzoG1ZzemdKds2vyGtO5cqQw', 'slug' => 'projects', 'title' => 'Poured rubber project' ),
 		array( 'id' => '1ozpXs9d9V9Hjc0FhlTSn2vALjESPo-PD', 'slug' => 'projects', 'title' => 'Poured rubber project' ),
+
+		// MATS folder — catalogues & data sheets (PDF).
+		array( 'id' => '1gWgnDWBNoNJMdqHAdtCsTLzxvz328k-t', 'slug' => 'custom-logo-mats', 'title' => 'Promotional & Logo Mats Guide 2026', 'excerpt' => 'Every printed logo mat in the range — Jet-Print Light Eco, Eco, Velour, Vision, Horizon, Outdoor, Patio, Event and Big-Size — with sizes and artwork tips.' ),
+		array( 'id' => '146NjWD1Ntuubj4p9I_9fY-dcfl170Lgn', 'slug' => 'custom-logo-mats', 'title' => 'Jet-Print Plus — Product Sheet', 'excerpt' => 'Deep-pile printed logo mat: sizes, widths, backing and guarantee.' ),
+		array( 'id' => '1-uX5yv1jCnlXzs1WVGsf5JwRYTpGSTMv', 'slug' => 'recessed-entrance-matting', 'title' => 'Fitted Entrance Systems — Specification', 'excerpt' => 'Aluminium grid and tile entrance systems for matwells: infills, heights, grid colours and guarantees.' ),
+		array( 'id' => '1xXt0nUXyxWA3uJByzBIT0im7Codth757', 'slug' => 'entrance-mats', 'title' => 'Iron-Horse — Technical Data Sheet', 'excerpt' => 'High-twist nylon entrance mat: widths, absorption, colours and guarantee.' ),
+		array( 'id' => '1JVpC7HSMaFr412Fb6BqlKyeA8RoA7CrZ', 'slug' => 'entrance-mats', 'title' => 'EcoAbsorb — Technical Data Sheet', 'excerpt' => 'Our most absorbent entrance mat, made with recycled yarn.' ),
+		array( 'id' => '1AyDGwfxS8TV54WU7jkAjR8DHSnIZoMJI', 'slug' => 'outdoor-scraper-mats', 'title' => 'Brush Mat — Technical Data Sheet', 'excerpt' => 'Needle-punch brush mat for outdoor scraping and entrance wells.' ),
+		array( 'id' => '1fzaTn3bcW_PTWhSnwXxev8EvtvCo0sfx', 'slug' => 'coir-doormats', 'title' => 'Coir Mat — Technical Data Sheet', 'excerpt' => 'Natural coir in 8 colours, logo inlay up to 180 × 400 cm.' ),
+		array( 'id' => '1J2xEe1DLxsum8W2cM-wnZlWW0PUZu1hN', 'slug' => 'anti-fatigue-mats', 'title' => 'Kleen-Comfort Office — Technical Data Sheet', 'excerpt' => 'Carpet-top anti-fatigue mat for counters and workstations.' ),
+		array( 'id' => '1AsD4OvBNzAgMwh8Fr2aVt_nAv45svaQZ', 'slug' => 'anti-fatigue-mats', 'title' => 'Kleen-Comfort Safety — Technical Data Sheet', 'excerpt' => 'Industrial rubber-top anti-fatigue mat for production lines.' ),
+		array( 'id' => '1GQV4v-u95kCwOUZo3FTiUO7V7LpK7Tp7', 'slug' => 'anti-slip-wet-area-mats', 'title' => 'Kleen-Wave — Technical Data Sheet', 'excerpt' => 'Anti-microbial wet-area mat for pools, showers and changing rooms.' ),
+		array( 'id' => '11esjTWokSL0Psew_Fi8qgJOW8arU_uAW', 'slug' => 'anti-slip-wet-area-mats', 'title' => 'Ablution Mats — Catalogue', 'excerpt' => 'PVC ablution and wet-area mats for mosques, washrooms and pools.' ),
+		array( 'id' => '1Z_pByBavDAeak4c-AdRQPw_HAmrGSOd4', 'slug' => 'lift-day-mats', 'title' => 'Kleen-Cooler Mat — Technical Data Sheet', 'excerpt' => 'Small absorbent mat for water dispensers and coffee points.' ),
+		array( 'id' => '1-NwO6OnHO7uLj1zmxzax3wPzavC6t-5r', 'slug' => 'car-floor-mats', 'title' => 'Parking Mat — Technical Data Sheet', 'excerpt' => 'Printed parking-bay mat for showrooms, garages and residences.' ),
+		array( 'id' => '1MuihIeZXCIbg6TiEr7Oz12KhvepeziFi', 'slug' => 'rubber-gym-mats', 'title' => 'Rubber Mats — Catalogue', 'excerpt' => 'Stud, coin, hollow, ramp and horse rubber mats.' ),
+
+		// Custom logo mats.
+		array( 'id' => '1zyQX6t0qIAw_-8gHyvgAPHxJrb4BHlrn', 'slug' => 'custom-logo-mats', 'title' => 'Jet-Print logo mat' ),
+		array( 'id' => '1nO9ffYtgRJjc-9kmzcMOoUCURhufBh-Q', 'slug' => 'custom-logo-mats', 'title' => 'Logo carpet finishes compared' ),
+		array( 'id' => '1etZMagNHOvi0NL3vvYkmsAONfxKockAy', 'slug' => 'custom-logo-mats', 'title' => 'Custom logo mat' ),
+		array( 'id' => '1ucusWBTzWkdiJ2h8WUuux6sAeG8fVVXF', 'slug' => 'custom-logo-mats', 'title' => 'Printed logo mat at an entrance' ),
+		array( 'id' => '1zFdtCogYglG4Ap27_Fl6rUfpcQw03Txk', 'slug' => 'custom-logo-mats', 'title' => 'Full-colour logo mat' ),
+		array( 'id' => '1njj4zdcbRrqYl6pYoEwcapxMnuuIDjzt', 'slug' => 'custom-logo-mats', 'title' => 'Jet-Print Eco logo mat' ),
+		array( 'id' => '16eBihPzih8gEFJP8jgLlE2A78RvUoFOi', 'slug' => 'custom-logo-mats', 'title' => 'Jet-Print Velour logo mat' ),
+		array( 'id' => '19bRKOUHoBKv6XgrnWvKL7tApzHS-7zsM', 'slug' => 'custom-logo-mats', 'title' => 'Jet-Print Vision logo mat' ),
+		array( 'id' => '1jEitTem9hjMKe6AZhcljnX9ilYDE1R0y', 'slug' => 'custom-logo-mats', 'title' => 'Jet-Print Plus deep-pile logo mat' ),
+		array( 'id' => '1QCqHcJy-93O0P_AFFXsq7vW1hPkBOIa8', 'slug' => 'custom-logo-mats', 'title' => 'Jet-Print Light Eco promotional mat' ),
+		array( 'id' => '1ch0U6vDfKI_RfyATrsJd30vZnDSfY91K', 'slug' => 'custom-logo-mats', 'title' => 'Jet-Print Outdoor logo mat' ),
+		array( 'id' => '1amzYlMjOM4q6XEYDXaMy2VsYEIEnAyCB', 'slug' => 'custom-logo-mats', 'title' => 'Jet-Print Horizon printed runner' ),
+		array( 'id' => '1qjgfq5Qg2S5NuxMsjlswii6K0YSNVSPd', 'slug' => 'custom-logo-mats', 'title' => 'Jet-Print Event floor graphic' ),
+		array( 'id' => '1Bhy-Fh-qwVZ7hl2Msgau2p-lYQwKiDEz', 'slug' => 'custom-logo-mats', 'title' => 'Jet-Print Patio promotional mat' ),
+		array( 'id' => '1algJE_kUvGz8iF4mWaFY2GkwszgNO1vh', 'slug' => 'custom-logo-mats', 'title' => 'PU paint logo mat' ),
+		array( 'id' => '1tRTdnjIZKCchwneWhmikA-qLx1ugtkTr', 'slug' => 'custom-logo-mats', 'title' => 'PU paint logo mat' ),
+		array( 'id' => '14EL3janQigywkbhgPBqrxjtq_ZrJzwk5', 'slug' => 'custom-logo-mats', 'title' => 'UV printed logo mat' ),
+
+		// Entrance mats.
+		array( 'id' => '12w9kqWlH4q6a3sUvBEHv7_f5zAeX-p55', 'slug' => 'entrance-mats', 'title' => 'Iron-Horse entrance mat, Black Mink' ),
+		array( 'id' => '1dUN-NQXlJ639HYXkD5Kug35Guqe8ySs7', 'slug' => 'entrance-mats', 'title' => 'Iron-Horse entrance mat, Black Steel' ),
+		array( 'id' => '15UcTVyO1ht5WA4RSKfrTQcV_koc11ldQ', 'slug' => 'entrance-mats', 'title' => 'Iron-Horse entrance mat, Black Scarlet' ),
+		array( 'id' => '16G9taHIF9q1h27Eb7zGlcA5uHTQD6Ras', 'slug' => 'entrance-mats', 'title' => 'Iron-Horse Light entrance mat' ),
+		array( 'id' => '1jkvmZyiZSWb1EkUi9zA4L3W0Av3IGj4l', 'slug' => 'entrance-mats', 'title' => 'EcoAbsorb entrance mat' ),
+		array( 'id' => '1Bs38XafccnSLdZlpQ6gOPNe_O89ol4_c', 'slug' => 'entrance-mats', 'title' => 'EcoAbsorb entrance mat in use' ),
+		array( 'id' => '1HDvZIF9nC17-guL1gQpMe4pjMiQvnmgR', 'slug' => 'entrance-mats', 'title' => 'Monotone entrance mat, Scarlet' ),
+		array( 'id' => '1s79Gmav0U2mxnZic8UK_xrY9hUMj7JRQ', 'slug' => 'entrance-mats', 'title' => 'CapeCod entrance mat' ),
+		array( 'id' => '17Ql6lgpltCntytXryNQHwV0sUymKrVnR', 'slug' => 'entrance-mats', 'title' => 'Turtle Mat washable doormat' ),
+		array( 'id' => '1yi8XE-nC8b--WK4c8wSVEWk8RMlfn7bF', 'slug' => 'entrance-mats', 'title' => 'Turtle Mat washable doormat' ),
+
+		// Outdoor scraper mats.
+		array( 'id' => '1tZjBuA8JwVbF1r-74kbq6KP63jw5037n', 'slug' => 'outdoor-scraper-mats', 'title' => 'Brush scraper mat' ),
+		array( 'id' => '1J9EXP20cDmFxyLcA7CLmH18M7DExAM21', 'slug' => 'outdoor-scraper-mats', 'title' => 'Brush scraper mat at an entrance' ),
+		array( 'id' => '19zf0MBrOl4pDOpzb1Xcflke6G-Q64RjE', 'slug' => 'outdoor-scraper-mats', 'title' => 'Outdoor logo scraper mat' ),
+		array( 'id' => '1M8tC6Mf6uN_aNUlC-mRjYr6frhqH2T5L', 'slug' => 'outdoor-scraper-mats', 'title' => 'Green-Horse outdoor mat' ),
+		array( 'id' => '1QqIB_QcVD1WjRp9qxnfJUR04Regw36G5', 'slug' => 'outdoor-scraper-mats', 'title' => 'Rubber scraper mat' ),
+		array( 'id' => '1dsKFggWRy8efq5BhXXo_eOPG2hzjoTMq', 'slug' => 'outdoor-scraper-mats', 'title' => 'Hollow rubber mat' ),
+
+		// Coir doormats.
+		array( 'id' => '1z7-E3frigd0ZWU5IKakmvTcCJPsRa2Bt', 'slug' => 'coir-doormats', 'title' => 'Coir entrance mat' ),
+		array( 'id' => '1pGxEU0HP0FU97in1KeG56IFqPd0xtufy', 'slug' => 'coir-doormats', 'title' => 'Natural coir mat' ),
+		array( 'id' => '1CRQv-P-ULYaNnDMKeVgQhI-OnIS9wtWh', 'slug' => 'coir-doormats', 'title' => 'Coir mat with logo' ),
+		array( 'id' => '13CwQky_mCoF0xkmIlWSt1mJTZna7DwR3', 'slug' => 'coir-doormats', 'title' => 'Coir mat in an entrance well' ),
+		array( 'id' => '1KjCXDcCZWPp65e3k1VTPkO8rEbrSx8Ds', 'slug' => 'coir-doormats', 'title' => 'Coir doormat' ),
+
+		// Recessed entrance matting.
+		array( 'id' => '1YfARgfGSeNZxZ95ccuC87Cp8PGcfdcfl', 'slug' => 'recessed-entrance-matting', 'title' => 'Recessed aluminium entrance system' ),
+		array( 'id' => '1FHbeRf-PdowTNS968srLrKYaDiMBaEkA', 'slug' => 'recessed-entrance-matting', 'title' => 'Recessed entrance system in a lobby' ),
+		array( 'id' => '13eaSWl3ANafyN0raAn6WQAkqS2LKDgf_', 'slug' => 'recessed-entrance-matting', 'title' => 'Entrance system infill detail' ),
+		array( 'id' => '1eXpl_y9KJ-qX2cp_AZIqGTDTlhcdnpjw', 'slug' => 'recessed-entrance-matting', 'title' => 'Brush mat in an entrance well' ),
+
+		// Anti-fatigue mats.
+		array( 'id' => '1RPO4_Tvi0kBJ5qcxzth4kcNGmIhcoBLR', 'slug' => 'anti-fatigue-mats', 'title' => 'Kleen-Comfort Safety anti-fatigue mat' ),
+		array( 'id' => '1qxMmSUGcKTjNto-kSfpTAcQPqj-ZxKTL', 'slug' => 'anti-fatigue-mats', 'title' => 'Anti-fatigue mat at a workstation' ),
+		array( 'id' => '1IV8e1wDvw_-tSNnfpENKVm4jLLD5ig6J', 'slug' => 'anti-fatigue-mats', 'title' => 'Kleen-Comfort Design anti-fatigue mat' ),
+		array( 'id' => '177ssLLmADkWNZtqJXYUHWGbZq_jQn1Fb', 'slug' => 'anti-fatigue-mats', 'title' => 'Kleen-Comfort Office anti-fatigue mat' ),
+		array( 'id' => '1gXxXsfkArbPlvre7mx8dCmfmuV9wQ7qG', 'slug' => 'anti-fatigue-mats', 'title' => 'Kleen-Comfort Soft anti-fatigue mat' ),
+		array( 'id' => '1FELRtpSM-X948ZgfKBQeSrtbAq6550B1', 'slug' => 'anti-fatigue-mats', 'title' => 'Standing mat' ),
+
+		// Anti-slip & wet-area mats.
+		array( 'id' => '1Ei3Utv3oWnDFBRIiNNVxgGBsRn_NgEhJ', 'slug' => 'anti-slip-wet-area-mats', 'title' => 'Kleen-Wave wet-area mat' ),
+		array( 'id' => '1cBvLiUIu_C8kAgCtI0UVVcv4fHAC591w', 'slug' => 'anti-slip-wet-area-mats', 'title' => 'Kleen-Wave poolside matting' ),
+		array( 'id' => '1TYBuGTG8vyLvAIDD0Z_yZz8Ezra73SOC', 'slug' => 'anti-slip-wet-area-mats', 'title' => 'Pool mats' ),
+		array( 'id' => '1d3ku3T-w7XqdtniZMgPtZ_ESeHQac9vF', 'slug' => 'anti-slip-wet-area-mats', 'title' => 'Ablution mats' ),
+		array( 'id' => '1E0CZIFjg5303svTsuoPZHibsk7OC8dSK', 'slug' => 'anti-slip-wet-area-mats', 'title' => 'PVC wet-area mat' ),
+		array( 'id' => '1rDHx68Xzug6jbfDKyUT2BKZIyojWQu6D', 'slug' => 'anti-slip-wet-area-mats', 'title' => 'PVC ablution mat' ),
+
+		// PVC coil, lift, car and rubber mats.
+		array( 'id' => '1cGRkJo5p4FYvM6nGJ2fHoMTVugHWLfqK', 'slug' => 'pvc-coil-mats', 'title' => 'PVC coil mat' ),
+		array( 'id' => '1YgTcgwQkmS1SkepBqzdHzuis5AsuRhl0', 'slug' => 'lift-day-mats', 'title' => 'Printed lift and corridor mat' ),
+		array( 'id' => '1hNjhkFA6Ahi_BKPK_xzFSlNnNAV1EjU1', 'slug' => 'lift-day-mats', 'title' => 'Kleen-Cooler mat' ),
+		array( 'id' => '1RsDcQ7xyHTstIPJlpIUdO0bTkciXeRTb', 'slug' => 'car-floor-mats', 'title' => 'Car boot protector mat' ),
+		array( 'id' => '1DNpmLrQBrz_TIEWd6mmU7LQTyDu2d2Al', 'slug' => 'car-floor-mats', 'title' => 'Car boot protector mat' ),
+		array( 'id' => '1zfAeg5dn3ii360MX8Kv057P9v9LejAMX', 'slug' => 'car-floor-mats', 'title' => 'Car protector set' ),
+		array( 'id' => '1-eQ5P53JYcvr37chDcV0IWewqR4b8vLo', 'slug' => 'car-floor-mats', 'title' => 'Printed parking mat' ),
+		array( 'id' => '1L81wBKsyBEjD6kxfnNk21iK4-__0ofnX', 'slug' => 'car-floor-mats', 'title' => 'Parking mat in a garage' ),
+		array( 'id' => '1V9iQXOYXQLGBzKuyJQ78x21KKIOFvY-R', 'slug' => 'rubber-gym-mats', 'title' => 'Stud rubber mat' ),
+		array( 'id' => '1Hu_ytOYnu-ASbNDASBiUIkLALzjh7QXd', 'slug' => 'rubber-gym-mats', 'title' => 'Stud rubber mat' ),
+		array( 'id' => '1NCo7t6_N05LxAlNAvHLV9ZrrCL4Mh2pG', 'slug' => 'rubber-gym-mats', 'title' => 'Hollow rubber mat' ),
+		array( 'id' => '1wqJb53mrkY4f2-QNSbycGQXnhA3-JcTn', 'slug' => 'rubber-gym-mats', 'title' => 'Rubber ramp mat' ),
 	);
 }
 
@@ -206,6 +304,26 @@ function cfm_drive_rest() {
 			'permission_callback' => $admin,
 			'callback'            => static function () {
 				return rest_ensure_response( cfm_install() );
+			},
+		)
+	);
+	register_rest_route(
+		'cfm/v1',
+		'/rebuild',
+		array(
+			'methods'             => 'POST',
+			'permission_callback' => $admin,
+			'args'                => array(
+				'slugs' => array(
+					'required' => true,
+					'type'     => 'array',
+					'items'    => array( 'type' => 'string' ),
+				),
+			),
+			'callback'            => static function ( WP_REST_Request $request ) {
+				$slugs = array_values( array_intersect( array_map( 'sanitize_title', (array) $request['slugs'] ), array_keys( cfm_pages_data() ) ) );
+				cfm_install_pages( $slugs );
+				return rest_ensure_response( array( 'rebuilt' => $slugs ) );
 			},
 		)
 	);
