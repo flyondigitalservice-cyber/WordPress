@@ -1,6 +1,6 @@
 <?php
 /**
- * Installer: creates the 45 pages, menus and reading settings, and adds the
+ * Installer: creates all site pages, menus and reading settings, and adds the
  * "Appearance → CFM Setup" screen.
  *
  * Safe to run repeatedly: existing pages are never overwritten unless you

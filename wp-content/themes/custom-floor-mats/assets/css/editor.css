@@ -6,8 +6,8 @@ body, .editor-styles-wrapper { font-family: "Instrument Sans", system-ui, sans-s
 .editor-styles-wrapper .cfm-eyebrow { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: #7a705f; font-weight: 600; }
 .editor-styles-wrapper .cfm-eyebrow::before { content: ""; display: inline-block; width: 22px; height: 3px; margin-right: 10px; vertical-align: middle; background: #f2a93b; }
 .editor-styles-wrapper .cfm-num { font-family: "Fraunces", Georgia, serif; font-style: italic; font-weight: 500; font-size: 2rem; color: #d98e1a; }
-.editor-styles-wrapper .wp-block-group.cfm-section { border: 1px dashed #d8d5cb; border-radius: 12px; padding: 24px; margin-bottom: 18px; background: #fff; }
-.editor-styles-wrapper .cfm-features, .editor-styles-wrapper .cfm-banner { background: #1b1e1a !important; color: #fff; }
+.editor-styles-wrapper .wp-block-group.cfm-section { border: 1px dashed #e6ddcd; border-radius: 12px; padding: 24px; margin-bottom: 18px; background: #fff; }
+.editor-styles-wrapper .cfm-features, .editor-styles-wrapper .cfm-banner { background: #211b14 !important; color: #fff; }
 .editor-styles-wrapper .cfm-features h2, .editor-styles-wrapper .cfm-features h3, .editor-styles-wrapper .cfm-banner h2 { color: #fff; }
 .editor-styles-wrapper .cfm-checks { list-style: none; padding-left: 0; }
 .editor-styles-wrapper .cfm-checks li::before { content: "✓"; display: inline-block; width: 22px; height: 22px; margin-right: 10px; border-radius: 50%; background: #f2a93b; color: #17130e; text-align: center; font-weight: 700; line-height: 22px; font-size: 13px; }

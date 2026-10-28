@@ -1,6 +1,6 @@
 <?php
 /**
- * Pages (all 45 site pages use this template). Content is edited in the block editor.
+ * Pages (every site page uses this template). Content is edited in the block editor.
  *
  * @package CFM
  */
