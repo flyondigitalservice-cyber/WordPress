@@ -20,7 +20,7 @@ function cfm_defaults() {
 		'whatsapp_message' => 'Hello Custom Floor Mats, I would like a quote for a custom mat.',
 		'phone_display'    => '+971 50 859 9803',
 		'phone_link'       => '+971508599803',
-		'email'            => 'casaverahome07@gmail.com',
+		'email'            => 'info@customfloormats.ae',
 		'address'          => 'Dubai, United Arab Emirates',
 		'hours'            => 'Mon – Sat: 9:00 AM – 7:00 PM',
 		'map_embed_url'    => '',

@@ -167,7 +167,7 @@ ul, ol { padding-left: 1.2em; }
 	background-size: 160px 160px, auto, auto;
 	padding: clamp(56px, 9vw, 120px) 0 clamp(56px, 8vw, 104px);
 }
-.cfm-hero--home { min-height: min(88vh, 860px); display: flex; align-items: center; }
+.cfm-hero--home { min-height: calc(100vh - 114px); min-height: calc(100svh - 114px); display: flex; align-items: center; }
 .cfm-hero--slim { padding: clamp(48px, 7vw, 88px) 0; }
 .cfm-hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: repeating-linear-gradient(90deg, var(--cfm-volt) 0 38px, transparent 38px 52px); opacity: .9; z-index: 2; }
 .cfm-hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; animation: cfm-zoom 14s ease-out both; }

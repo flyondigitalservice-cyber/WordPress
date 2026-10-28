@@ -37,8 +37,8 @@ if ( 'interior' === $cfm_type && wp_get_post_parent_id( $cfm_id ) ) {
 $cfm_thumb_id = (int) get_post_thumbnail_id( $cfm_id );
 $cfm_meta     = $cfm_thumb_id ? wp_get_attachment_metadata( $cfm_thumb_id ) : array();
 $cfm_width    = is_array( $cfm_meta ) && ! empty( $cfm_meta['width'] ) ? (int) $cfm_meta['width'] : 0;
-// Photos narrower than 1600px would look soft stretched full-width, so they are shown framed beside the text instead.
-$cfm_split    = $cfm_thumb_id && $cfm_width < 1600;
+// The home hero is always full-screen. Elsewhere, photos narrower than 1200px would look soft stretched full-width, so they are shown framed beside the text instead.
+$cfm_split    = $cfm_thumb_id && ! $cfm_is_home && $cfm_width < 1200;
 $cfm_classes  = 'cfm-hero';
 $cfm_classes .= $cfm_is_home ? ' cfm-hero--home' : '';
 $cfm_classes .= $cfm_thumb_id ? ( $cfm_split ? ' cfm-hero--split' : ' has-image' ) : '';
