@@ -56,11 +56,16 @@ and update it at the end of each session.
 - Theme: custom "Posh Touch" (page.php); older pages use Elementor; new SEO pages use plain blocks.
 - SEO plugin: Rank Math. Analytics: Site Kit (Search Console connected). Cache: NitroPack.
 - Rank Math meta: write with POST /rankmath/v1/updateMeta {objectType:"post",objectID,meta:{...}}.
+- Showroom: Shop 01, Warehouse 02, Madinat Al Salam Warehouses, Industrial Area 5 (behind ENOC 1127),
+  Sharjah (from theme footer, posh_contact()). Use Sharjah, not Dubai, for any location/LocalBusiness page.
+- Footer: hard-coded in theme footer.php. Since 2026-10-30 it shows a "Buying guides" column that renders
+  the menu in theme location `footer` = menu "Buying Guides" (ID 494). To link a new SEO page in the
+  footer: `menu item add-post 494 <page_id> --title="..."`. No theme edit needed.
 
 ## Next ideas (phase 3)
-- Phase 2 pages published 2026-10-30. Still to do: add them to a menu/footer hub and request indexing in Search Console.
-- "laptop shop near me" (pos 41): needs a Dubai showroom/location page with address + LocalBusiness
-  schema (address not found in site content; ask the owner).
+- Phase 2 pages published 2026-10-30 and linked from the footer "Buying guides" column. Still to do: request indexing in Search Console.
+- "laptop shop near me" (pos 41): build a Sharjah showroom/location page with the address above +
+  LocalBusiness schema; confirm opening hours with the owner.
 - "i7 12th gen 16gb 512gb" (pos 9 on tag page): enrich that tag page's description rather than a new URL.
 - Re-pull GSC ~4 weeks after publishing to measure.
 
