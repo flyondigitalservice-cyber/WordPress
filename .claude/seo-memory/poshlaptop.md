@@ -39,7 +39,6 @@ and update it at the end of each session.
 6. **Log** every created page below (URL, target keyword, date) so later sessions don't duplicate it.
 
 ## Phase log
-- Phase 1: done in an earlier session (details not recorded in this repo; add them here).
 - Phase 1 (seen on site): product-tag landing pages (e.g. /product-tag/used-laptop-uae/), country pages
   /sa/ and /qa/, and 4 draft persona pages: laptops-for-designers / -architects / -it-professionals,
   laptop-rental-dubai (IDs 10595-10598, still drafts).
