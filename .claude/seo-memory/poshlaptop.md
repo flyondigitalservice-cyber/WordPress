@@ -58,7 +58,7 @@ and update it at the end of each session.
 - Rank Math meta: write with POST /rankmath/v1/updateMeta {objectType:"post",objectID,meta:{...}}.
 
 ## Next ideas (phase 3)
-- Publish phase 2 drafts after review; add them to a menu/footer hub and request indexing.
+- Phase 2 pages published 2026-10-30. Still to do: add them to a menu/footer hub and request indexing in Search Console.
 - "laptop shop near me" (pos 41): needs a Dubai showroom/location page with address + LocalBusiness
   schema (address not found in site content; ask the owner).
 - "i7 12th gen 16gb 512gb" (pos 9 on tag page): enrich that tag page's description rather than a new URL.
@@ -67,9 +67,9 @@ and update it at the end of each session.
 ## Pages created
 | Date | URL | Primary keyword | Status |
 |------|-----|-----------------|--------|
-| 2026-10-30 | /chromebook-price-in-uae/ (10613) | chromebook price in uae | draft |
-| 2026-10-30 | /second-hand-laptop-dubai/ (10614) | second hand laptop dubai | draft |
-| 2026-10-30 | /refurbished-workstation-laptop-dubai/ (10615) | refurbished workstation laptop dubai | draft |
-| 2026-10-30 | /used-macbook-dubai/ (10616) | used macbook dubai | draft |
-| 2026-10-30 | /hp-elitebook-vs-probook/ (10617) | hp elitebook vs probook | draft |
-| 2026-10-30 | /2-in-1-detachable-laptop-uae/ (10618) | 2 in 1 detachable laptop uae | draft |
+| 2026-10-30 | /chromebook-price-in-uae/ (10613) | chromebook price in uae | published 2026-10-30 |
+| 2026-10-30 | /second-hand-laptop-dubai/ (10614) | second hand laptop dubai | published 2026-10-30 |
+| 2026-10-30 | /refurbished-workstation-laptop-dubai/ (10615) | refurbished workstation laptop dubai | published 2026-10-30 |
+| 2026-10-30 | /used-macbook-dubai/ (10616) | used macbook dubai | published 2026-10-30 |
+| 2026-10-30 | /hp-elitebook-vs-probook/ (10617) | hp elitebook vs probook | published 2026-10-30 |
+| 2026-10-30 | /2-in-1-detachable-laptop-uae/ (10618) | 2 in 1 detachable laptop uae | published 2026-10-30 |
