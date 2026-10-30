@@ -40,9 +40,37 @@ and update it at the end of each session.
 
 ## Phase log
 - Phase 1: done in an earlier session (details not recorded in this repo; add them here).
-- Phase 2: started 2026-10-30. Toolkit installed. Not done yet: Site Kit pull and page
-  creation, both blocked on WPVibe quota that day.
+- Phase 1 (seen on site): product-tag landing pages (e.g. /product-tag/used-laptop-uae/), country pages
+  /sa/ and /qa/, and 4 draft persona pages: laptops-for-designers / -architects / -it-professionals,
+  laptop-rental-dubai (IDs 10595-10598, still drafts).
+- Phase 2 (2026-10-30): Site Kit GSC pull (Aug 1 - Oct 29) showed only 12 query/page rows, all
+  tiny impressions. Rankings came from product-tag pages: "chromebook price in uae" (38.5),
+  "laptop i7 12th gen 16gb 512gb" (9), "used laptop computers for sale" (12), "elitebook 430 g8" (8),
+  "second hand laptop" (44.7), "laptop shop near me" (41, homepage).
+  Created 6 long-tail DRAFT pages (Gutenberg blocks, FAQ + FAQPage JSON-LD, price tables from live
+  stock, internal links to products/tags/each other). Rank Math title/description/focus keyword set via
+  POST /rankmath/v1/updateMeta (one call per page). Sources in seo/poshlaptop/phase2/.
+
+## Site facts (confirmed from site content)
+- Business: Posh Touch Computers, UAE showroom, prices in AED. WhatsApp +971 52 292 0920,
+  marketing@poshlaptop.com. 6-month warranty, 15-day returns, services: sales, rental, repair, AMC.
+- Theme: custom "Posh Touch" (page.php); older pages use Elementor; new SEO pages use plain blocks.
+- SEO plugin: Rank Math. Analytics: Site Kit (Search Console connected). Cache: NitroPack.
+- Rank Math meta: write with POST /rankmath/v1/updateMeta {objectType:"post",objectID,meta:{...}}.
+
+## Next ideas (phase 3)
+- Publish phase 2 drafts after review; add them to a menu/footer hub and request indexing.
+- "laptop shop near me" (pos 41): needs a Dubai showroom/location page with address + LocalBusiness
+  schema (address not found in site content; ask the owner).
+- "i7 12th gen 16gb 512gb" (pos 9 on tag page): enrich that tag page's description rather than a new URL.
+- Re-pull GSC ~4 weeks after publishing to measure.
 
 ## Pages created
 | Date | URL | Primary keyword | Status |
 |------|-----|-----------------|--------|
+| 2026-10-30 | /chromebook-price-in-uae/ (10613) | chromebook price in uae | draft |
+| 2026-10-30 | /second-hand-laptop-dubai/ (10614) | second hand laptop dubai | draft |
+| 2026-10-30 | /refurbished-workstation-laptop-dubai/ (10615) | refurbished workstation laptop dubai | draft |
+| 2026-10-30 | /used-macbook-dubai/ (10616) | used macbook dubai | draft |
+| 2026-10-30 | /hp-elitebook-vs-probook/ (10617) | hp elitebook vs probook | draft |
+| 2026-10-30 | /2-in-1-detachable-laptop-uae/ (10618) | 2 in 1 detachable laptop uae | draft |
