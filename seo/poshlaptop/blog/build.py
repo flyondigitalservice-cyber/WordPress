@@ -321,7 +321,7 @@ posts.append(dict(
     + cta("Request a bulk quote on WhatsApp")
     + p(f"You are welcome to visit our showroom at {SHOWROOM} to see sample units before you order, or read our guide to " + a(SITE+"/buy-laptop-in-sharjah/", "buying a laptop in Sharjah") + ".")
     + faq([
-        ("Can I buy refurbished laptops in bulk in the UAE?", "Yes. Posh Laptop supplies renewed business laptops in quantity for offices, schools and call centres, with setup, delivery across the UAE and warranty included."),
+        ("Can I buy refurbished laptops in bulk in the UAE?", "Yes. Posh Laptop supplies renewed business laptops in quantity for offices, schools and call centres, with delivery across the UAE and a warranty on every unit. Message us with your quantity and specs for a quote."),
         ("Are refurbished laptops good for businesses?", "Yes. Business lines like ThinkPad, Latitude and EliteBook were built for corporate use, and tested renewed units cost much less than new while offering similar reliability."),
         ("Do you offer maintenance contracts for company laptops?", "Yes. Our Annual Maintenance Contracts cover regular maintenance, software updates, health checks and priority repair support."),
         ("Can we rent laptops instead of buying?", "Yes. We offer short and long-term laptop rental for projects, events and temporary staff, and you can combine rental with purchases."),

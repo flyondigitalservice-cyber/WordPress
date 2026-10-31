@@ -55,11 +55,13 @@ and update it at the end of each session.
   blocked from cloud sessions (network allowlist); topics found via WebSearch.
   Category "Laptop Buying Guides" (ID 495, /category/laptop-buying-guides/). Post permalinks: /%postname%/.
   6 original posts built in seo/poshlaptop/blog/ (build.py -> <slug>.json request bodies incl. category).
-  Uploaded as DRAFT posts so far: buy-laptop-in-sharjah (10631), refurbished-laptop-warranty-uae (10632),
-  refurbished-laptop-grades-explained (10633).
-  STILL TO UPLOAD (POST /wp/v2/posts with the .json body): thinkpad-vs-elitebook-vs-latitude,
-  windows-11-compatible-refurbished-laptops, bulk-refurbished-laptops-for-business-uae.
-  Then: Rank Math meta for all 6 (seo_title/desc/kw in posts.json) via /rankmath/v1/updateMeta.
+  All 6 uploaded as DRAFT posts in category 495 with Rank Math meta set (2026-10-31):
+  10631 buy-laptop-in-sharjah, 10632 refurbished-laptop-warranty-uae, 10633 refurbished-laptop-grades-explained,
+  10634 thinkpad-vs-elitebook-vs-latitude, 10635 windows-11-compatible-refurbished-laptops,
+  10636 bulk-refurbished-laptops-for-business-uae. Awaiting owner review before publishing.
+  Claims to confirm with owner before publish: Windows 11 install before delivery, RAM/SSD upgrades,
+  bulk-order setup services. The theme has no blog index page yet (page_for_posts unknown); link posts via
+  footer menu 494 or a blog page after publishing.
   NOTE 2026-10-31: WPVibe's own plugin routes (/wpvibe/v1, used by run_wp_cli) returned 404 — plugin may be
   deactivated/blocked; core /wp/v2 and /rankmath/v1 still worked. Ask the user to re-check WPVibe plugin.
 
