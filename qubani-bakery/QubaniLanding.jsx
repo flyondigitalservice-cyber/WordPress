@@ -6,6 +6,8 @@ import {
   ChevronDown,
   Clock,
   Crown,
+  Droplets,
+  Flame,
   Gift,
   Heart,
   Hotel,
@@ -54,24 +56,29 @@ const IMAGES = {
   bowl: "./images/apricot-dessert-in-bowl.jpg",
   scoop: "./images/hand-scooping-apricot-dessert.jpg",
   tray: "./images/layered-apricot-dessert-in-bowl.jpg",
+  qubaniClassic: "./images/qubani-classic.jpg",
+  qubaniClassicTall: "./images/qubani-classic-portrait.jpg",
+  brownieCheese: "./images/brownie-cream-cheese.jpg",
+  brownie: "./images/brownie-walnut-fudge.jpg",
+  halwa: "./images/badam-halwa.jpg",
 };
 
 const waLink = (message) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
-const DEFAULT_WA_MESSAGE = `Hi ${BRAND}! I'd like to order the Royal Qubani Cake.`;
+const DEFAULT_WA_MESSAGE = `Hi ${BRAND}! I'd like to place an order.`;
 
 /* ------------------------------------------------------------------ */
 /*  Content                                                            */
 /* ------------------------------------------------------------------ */
 
-const NAV_LINKS = [
-  { label: "Our Story", href: "#story" },
-  { label: "The Layers", href: "#layers" },
-  { label: "Menu", href: "#menu" },
-  { label: "Bulk Orders", href: "#events" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "FAQ", href: "#faq" },
+// Each page is a hash route: #home, #qubani, #brownies, #halwa, #bulk-orders
+const ROUTES = [
+  { id: "home", label: "Home" },
+  { id: "qubani", label: "Qubani" },
+  { id: "brownies", label: "Brownies" },
+  { id: "halwa", label: "Halwa" },
+  { id: "bulk-orders", label: "Bulk Orders" },
 ];
 
 const LAYERS = [
@@ -113,37 +120,6 @@ const LAYERS = [
   },
 ];
 
-const PRODUCTS = [
-  {
-    id: "half",
-    name: "Half KG",
-    subtitle: "For an intimate evening",
-    price: 749,
-    serves: "Serves 4–5",
-    image: IMAGES.bowl,
-    features: ["Signature three-layer build", "Almond & pistachio crown", "Chilled insulated box"],
-  },
-  {
-    id: "one",
-    name: "1 KG",
-    subtitle: "The family favourite",
-    price: 1399,
-    serves: "Serves 8–10",
-    image: IMAGES.hero,
-    features: ["Extra-thick Qubani heart", "Hand-piped fresh cream", "Personal message tag", "Free delivery in city"],
-    popular: true,
-  },
-  {
-    id: "gift",
-    name: "Festive Gift Box",
-    subtitle: "Eid, Diwali & weddings",
-    price: 1899,
-    serves: "1 KG + extras",
-    image: IMAGES.tray,
-    features: ["Keepsake gold-foil box", "Jar of Qubani compote", "Handwritten greeting card", "Silk ribbon finish"],
-  },
-];
-
 const REVIEWS = [
   {
     name: "Ayesha Siddiqui",
@@ -153,12 +129,12 @@ const REVIEWS = [
   {
     name: "Rohan Deshpande",
     place: "Navi Mumbai",
-    text: "Sent the festive gift box to my in-laws for Diwali. The packaging alone got compliments, and the cake disappeared in ten minutes flat.",
+    text: "Ordered the Apricot Delight gift box and a kilo of badam halwa for Diwali. The packaging got compliments, and both disappeared in ten minutes flat.",
   },
   {
     name: "Fatima Khan",
     place: "Hyderabad",
-    text: "As a Hyderabadi I was sceptical. I'm not anymore. The apricots are proper slow-stewed, not that jelly shortcut. Easily the best fusion dessert I've had.",
+    text: "As a Hyderabadi I was sceptical. I'm not anymore. The classic Qubani is proper slow-stewed, not that jelly shortcut. And the walnut brownies are dangerously good.",
   },
 ];
 
@@ -172,8 +148,8 @@ const FAQS = [
     a: "Half KG and 1 KG cakes can usually be delivered the same day if you order before 12 noon. For gift boxes and bulk orders (5+ cakes), please give us 24–48 hours.",
   },
   {
-    q: "Is the cake eggless?",
-    a: "Our classic sponge contains eggs. An eggless version is available on request at no extra cost — just mention it in your WhatsApp message.",
+    q: "Are your desserts eggless?",
+    a: "Qubani ka Meetha and both halwas are naturally eggless. The Apricot Delight sponge and brownies contain eggs, but eggless versions are available on request at no extra cost. Just mention it in your WhatsApp message.",
   },
   {
     q: "How should I store it, and how long does it last?",
@@ -190,6 +166,11 @@ const FAQS = [
 ];
 
 const INGREDIENTS = [
+  "Apricot Delight",
+  "Qubani ka Meetha",
+  "Walnut fudge brownies",
+  "Badam halwa",
+  "Kaju halwa",
   "Sun-dried apricots",
   "Fresh dairy cream",
   "Toasted almonds",
@@ -299,11 +280,185 @@ function WhatsAppButton({ message = DEFAULT_WA_MESSAGE, children, variant = "pri
 
 const formatINR = (n) => `₹${n.toLocaleString("en-IN")}`;
 
+const CATEGORIES = [
+  {
+    id: "qubani",
+    name: "Qubani",
+    eyebrow: "Category 01 · The royal apricot",
+    title: (
+      <>
+        Qubani, <em className="text-[#F28500]">two ways.</em>
+      </>
+    ),
+    intro:
+      "Our house speciality. Sun-dried apricots slow-stewed the old Deccan way, served as the timeless classic, or as Apricot Delight, our premium layered cake with fresh cream.",
+    cardText: "Classic Qubani ka Meetha and our premium Apricot Delight layer cake.",
+    image: IMAGES.qubaniClassic,
+    from: 249,
+    products: [
+      {
+        id: "qubani-classic",
+        name: "Qubani ka Meetha",
+        badge: "The classic",
+        description:
+          "The heirloom recipe: whole apricots slow-stewed into a glossy, jammy compote, finished with a dollop of fresh cream, almond flakes and pistachio.",
+        image: IMAGES.qubaniClassic,
+        options: [
+          { label: "250 g", price: 249, note: "Serves 2" },
+          { label: "500 g", price: 449, note: "Serves 4" },
+          { label: "1 KG", price: 849, note: "Serves 8" },
+        ],
+        features: ["Slow-stewed 6 hours", "No artificial colour", "Cream, almond & pistachio topping"],
+      },
+      {
+        id: "apricot-delight",
+        name: "Apricot Delight",
+        badge: "Premium · Bestseller",
+        premium: true,
+        description:
+          "Qubani ka Meetha reimagined as a celebration cake: moist butter sponge, a thick layer of Qubani compote and a cloud of fresh whipped cream with toasted almonds.",
+        image: IMAGES.hero,
+        options: [
+          { label: "Half KG", price: 749, note: "Serves 4–5" },
+          { label: "1 KG", price: 1399, note: "Serves 8–10" },
+          { label: "Gift Box", price: 1899, note: "1 KG + compote jar" },
+        ],
+        features: ["Three layers: cream, Qubani, sponge", "Hand-piped fresh cream", "Gift box with greeting card"],
+      },
+    ],
+    highlights: [
+      [Leaf, "Sun-dried apricots", "Soaked overnight, never canned"],
+      [Clock, "Slow-stewed 6 hours", "Hand-stirred in small batches"],
+      [ShieldCheck, "No artificial colour", "Amber comes from the fruit"],
+    ],
+  },
+  {
+    id: "brownies",
+    name: "Chocolate Brownies",
+    eyebrow: "Category 02 · Rich & fudgy",
+    title: (
+      <>
+        Fudgy, <em className="text-[#F28500]">deeply chocolate.</em>
+      </>
+    ),
+    intro:
+      "Dense, crackle-topped brownies baked with real dark chocolate and cultured butter. Gooey in the centre, chewy at the edges, and made to share (or not).",
+    cardText: "Walnut fudge and cream cheese swirl brownies, baked daily.",
+    image: IMAGES.brownie,
+    from: 349,
+    products: [
+      {
+        id: "brownie-walnut",
+        name: "Walnut Fudge Brownie",
+        badge: "Bestseller",
+        premium: true,
+        description:
+          "Our signature fudgy brownie, drizzled with warm chocolate ganache and topped with toasted walnuts and a pinch of sea salt.",
+        image: IMAGES.brownie,
+        options: [
+          { label: "Box of 4", price: 349, note: "4 large squares" },
+          { label: "Box of 9", price: 749, note: "9 large squares" },
+          { label: "Box of 16", price: 1249, note: "Party box" },
+        ],
+        features: ["Dark chocolate ganache drizzle", "Toasted walnuts & sea salt", "Gooey centre, chewy edges"],
+      },
+      {
+        id: "brownie-cheesecake",
+        name: "Cream Cheese Swirl Brownie",
+        badge: "New",
+        description:
+          "A fudgy chocolate base marbled with a silky vanilla cream-cheese swirl. Rich, tangy and beautifully balanced.",
+        image: IMAGES.brownieCheese,
+        options: [
+          { label: "Box of 4", price: 399, note: "4 large squares" },
+          { label: "Box of 9", price: 849, note: "9 large squares" },
+        ],
+        features: ["Vanilla cream-cheese marble", "Real dark chocolate", "Packed in a kraft gift box"],
+      },
+    ],
+    highlights: [
+      [Award, "Real dark chocolate", "No compound, no shortcuts"],
+      [Clock, "Baked fresh daily", "Cut and boxed to order"],
+      [Gift, "Ready to gift", "Kraft boxes with ribbon"],
+    ],
+  },
+  {
+    id: "halwa",
+    name: "Halwa",
+    eyebrow: "Category 03 · Pure ghee classics",
+    title: (
+      <>
+        Slow-roasted <em className="text-[#F28500]">in pure ghee.</em>
+      </>
+    ),
+    intro:
+      "Rich, festive halwas the way Deccan homes make them: nuts ground fresh, roasted low and slow in pure ghee, scented with saffron and cardamom, and finished with silver vark.",
+    cardText: "Badam halwa and kaju halwa, roasted in pure ghee.",
+    image: IMAGES.halwa,
+    from: 399,
+    products: [
+      {
+        id: "badam-halwa",
+        name: "Badam Halwa",
+        badge: "Royal favourite",
+        premium: true,
+        description:
+          "Freshly ground almonds roasted in pure desi ghee until golden and fragrant, with Kashmiri saffron, green cardamom and silver vark.",
+        image: IMAGES.halwa,
+        options: [
+          { label: "250 g", price: 449, note: "Serves 3–4" },
+          { label: "500 g", price: 849, note: "Serves 6–8" },
+          { label: "1 KG", price: 1599, note: "Serves 12–15" },
+        ],
+        features: ["Pure desi ghee", "Kashmiri saffron & cardamom", "Finished with silver vark"],
+      },
+      {
+        id: "kaju-halwa",
+        name: "Kaju Halwa",
+        badge: "Melt-in-mouth",
+        description:
+          "Silky cashew halwa, slow-cooked with milk and ghee into a smooth, creamy, melt-in-the-mouth sweet. Lighter and buttery, loved by all ages.",
+        image: IMAGES.halwa,
+        imagePos: "object-[30%_60%] scale-110",
+        options: [
+          { label: "250 g", price: 399, note: "Serves 3–4" },
+          { label: "500 g", price: 749, note: "Serves 6–8" },
+          { label: "1 KG", price: 1399, note: "Serves 12–15" },
+        ],
+        features: ["Premium whole cashews", "Slow-cooked with milk & ghee", "Festive gift tins available"],
+      },
+    ],
+    highlights: [
+      [Flame, "Slow-roasted", "Low flame, hand-stirred"],
+      [Droplets, "Pure desi ghee", "Never vanaspati or oil"],
+      [Gift, "Festive tins", "Diwali, Eid & weddings"],
+    ],
+  },
+];
+
+
 /* ------------------------------------------------------------------ */
 /*  Sections                                                           */
 /* ------------------------------------------------------------------ */
 
-function Navbar() {
+function useHashRoute() {
+  const read = () => {
+    const id = (typeof window !== "undefined" ? window.location.hash : "").replace("#", "");
+    return ROUTES.some((r) => r.id === id) ? id : "home";
+  };
+  const [route, setRoute] = useState(read);
+  useEffect(() => {
+    const onHash = () => {
+      setRoute(read());
+      window.scrollTo({ top: 0, behavior: "auto" });
+    };
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+  return route;
+}
+
+function Navbar({ route }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -314,16 +469,18 @@ function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => setOpen(false), [route]);
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled || open
+        scrolled || open || route !== "home"
           ? "bg-[#FDFBF7]/85 shadow-[0_1px_0_rgba(31,27,22,0.06)] backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-        <a href="#top" className="group flex items-center gap-2.5" aria-label={`${BRAND} home`}>
+        <a href="#home" className="group flex items-center gap-2.5" aria-label={`${BRAND} home`}>
           <span className="grid h-10 w-10 place-items-center rounded-full bg-[#1F1B16] text-[#E9B949] transition-transform duration-500 group-hover:rotate-12">
             <Crown className="h-5 w-5" />
           </span>
@@ -335,14 +492,19 @@ function Navbar() {
           </span>
         </a>
 
-        <ul className="hidden items-center gap-9 lg:flex">
-          {NAV_LINKS.map((l) => (
-            <li key={l.href}>
+        <ul className="hidden items-center gap-1 rounded-full border border-[#1F1B16]/5 bg-white/50 p-1 backdrop-blur lg:flex">
+          {ROUTES.map((r) => (
+            <li key={r.id}>
               <a
-                href={l.href}
-                className="relative text-sm font-medium text-[#3A322A] transition-colors hover:text-[#1F1B16] after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-[#F28500] after:transition-all after:duration-300 hover:after:w-full"
+                href={`#${r.id}`}
+                aria-current={route === r.id ? "page" : undefined}
+                className={`block rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
+                  route === r.id
+                    ? "bg-[#1F1B16] text-[#FDFBF7] shadow"
+                    : "text-[#3A322A] hover:bg-white hover:text-[#1F1B16]"
+                }`}
               >
-                {l.label}
+                {r.label}
               </a>
             </li>
           ))}
@@ -362,18 +524,20 @@ function Navbar() {
       </nav>
 
       <div
-        className={`overflow-hidden transition-[max-height] duration-500 lg:hidden ${open ? "max-h-[28rem]" : "max-h-0"}`}
+        className={`overflow-hidden transition-[max-height] duration-500 lg:hidden ${open ? "max-h-[30rem]" : "max-h-0"}`}
       >
         <ul className="space-y-1 px-5 pb-6">
-          {NAV_LINKS.map((l) => (
-            <li key={l.href}>
+          {ROUTES.map((r) => (
+            <li key={r.id}>
               <a
-                href={l.href}
+                href={`#${r.id}`}
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-between rounded-2xl px-4 py-3.5 text-base font-medium text-[#1F1B16] hover:bg-[#F6EEDD]"
+                className={`flex items-center justify-between rounded-2xl px-4 py-3.5 text-base font-medium ${
+                  route === r.id ? "bg-[#1F1B16] text-[#FDFBF7]" : "text-[#1F1B16] hover:bg-[#F6EEDD]"
+                }`}
               >
-                {l.label}
-                <ArrowRight className="h-4 w-4 text-[#C46A00]" />
+                {r.label}
+                <ArrowRight className={`h-4 w-4 ${route === r.id ? "text-[#F7A23B]" : "text-[#C46A00]"}`} />
               </a>
             </li>
           ))}
@@ -398,7 +562,7 @@ function Hero() {
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-[#F28500]/25 bg-white/70 px-4 py-2 text-xs font-medium text-[#8A4B00] backdrop-blur">
               <Sparkles className="h-3.5 w-3.5 text-[#F28500]" />
-              Heritage recipe · Baked fresh every morning
+              Qubani · Brownies · Halwa · Made fresh daily
             </span>
           </Reveal>
 
@@ -412,9 +576,9 @@ function Hero() {
 
           <Reveal delay={200}>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-[#5B5249]">
-              Half heirloom dessert, half celebration cake. Slow-stewed, glossy apricot compote from the royal
-              kitchens of the Deccan, layered between a butter-soft sponge and a cloud of fresh cream, crowned with
-              toasted almonds.
+              Home of <strong className="font-semibold text-[#1F1B16]">Apricot Delight</strong>: slow-stewed Qubani
+              layered with butter-soft sponge and fresh cream. Plus the classic Qubani ka Meetha, fudgy chocolate
+              brownies and pure-ghee badam &amp; kaju halwa.
             </p>
           </Reveal>
 
@@ -422,10 +586,10 @@ function Hero() {
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <WhatsAppButton>Order on WhatsApp</WhatsAppButton>
               <a
-                href="#layers"
+                href="#qubani"
                 className="group inline-flex items-center justify-center gap-2 rounded-full border border-[#1F1B16]/15 bg-white/60 px-6 py-3.5 text-sm font-semibold text-[#1F1B16] backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1F1B16]/40 hover:bg-white"
               >
-                Explore the layers
+                Explore Qubani
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </div>
@@ -458,7 +622,7 @@ function Hero() {
               <div className="relative overflow-hidden rounded-[2.5rem] shadow-[0_40px_80px_-30px_rgba(120,60,0,0.45)]">
                 <img
                   src={IMAGES.hero}
-                  alt="A slice of Royal Qubani layer cake with fresh cream, apricot compote and almonds on a marble plate"
+                  alt="A slice of Apricot Delight layer cake with fresh cream, apricot compote and almonds on a marble plate"
                   className="aspect-[4/5] w-full object-cover object-[55%_50%] transition-transform duration-[1.5s] ease-out hover:scale-105 sm:aspect-[5/6]"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1F1B16]/40 via-transparent to-transparent" />
@@ -476,7 +640,7 @@ function Hero() {
               </div>
 
               <div className="animate-float-slow absolute -right-2 top-10 rounded-2xl bg-[#1F1B16]/90 px-5 py-4 text-[#FDFBF7] shadow-xl backdrop-blur sm:-right-8">
-                <p className="text-[10px] uppercase tracking-[0.25em] text-[#E9B949]">From</p>
+                <p className="text-[10px] uppercase tracking-[0.25em] text-[#E9B949]">Apricot Delight</p>
                 <p className="font-display text-3xl leading-none">{formatINR(749)}</p>
                 <p className="mt-1 text-xs text-[#E9E1D3]/70">Half KG · Serves 4–5</p>
               </div>
@@ -590,7 +754,7 @@ function LayerBreakdown() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <SectionHeading
-            eyebrow="Anatomy of a slice"
+            eyebrow="Anatomy of Apricot Delight"
             title={
               <>
                 Three layers. <em className="text-[#F28500]">One royal bite.</em>
@@ -769,146 +933,6 @@ function Story() {
   );
 }
 
-function ProductCard({ product, delay }) {
-  const [qty, setQty] = useState(1);
-  const message = `Hi ${BRAND}! I'd like to order ${qty} × ${product.name} Royal Qubani Cake (${formatINR(
-    product.price * qty
-  )}). Please share delivery details.`;
-
-  return (
-    <Reveal delay={delay} className="h-full">
-      <article
-        className={`group relative flex h-full flex-col overflow-hidden rounded-[2rem] bg-white transition-all duration-500 hover:-translate-y-2 ${
-          product.popular
-            ? "shadow-[0_40px_80px_-35px_rgba(242,133,0,0.55)] ring-2 ring-[#F28500]"
-            : "shadow-[0_25px_60px_-35px_rgba(31,27,22,0.35)] ring-1 ring-[#1F1B16]/5 hover:shadow-[0_35px_70px_-35px_rgba(31,27,22,0.45)]"
-        }`}
-      >
-        <div className="relative overflow-hidden">
-          <img
-            src={product.image}
-            alt={`${product.name} Royal Qubani Cake`}
-            className="aspect-[4/3] w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1F1B16]/50 to-transparent" />
-          {product.popular && (
-            <span className="absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-[#F28500] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-white shadow-lg">
-              <Star className="h-3 w-3 fill-white" /> Bestseller
-            </span>
-          )}
-          {product.id === "gift" && (
-            <span className="absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-[#E9B949] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-[#1F1B16] shadow-lg">
-              <Gift className="h-3 w-3" /> Most gifted
-            </span>
-          )}
-          <span className="absolute bottom-4 left-5 text-xs font-medium text-white/90">{product.serves}</span>
-        </div>
-
-        <div className="flex flex-1 flex-col p-7">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <h3 className="font-display text-3xl text-[#1F1B16]">{product.name}</h3>
-              <p className="mt-1 text-sm text-[#8C8177]">{product.subtitle}</p>
-            </div>
-            <p className="font-display text-3xl text-[#C46A00]">{formatINR(product.price)}</p>
-          </div>
-
-          <ul className="mt-6 flex-1 space-y-3">
-            {product.features.map((f) => (
-              <li key={f} className="flex items-center gap-3 text-sm text-[#3A322A]">
-                <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#FFF1DE]">
-                  <Check className="h-3 w-3 text-[#F28500]" />
-                </span>
-                {f}
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-7 flex items-center justify-between rounded-2xl bg-[#FDFBF7] p-2 pl-4">
-            <span className="text-xs font-medium uppercase tracking-wider text-[#8C8177]">Quantity</span>
-            <div className="flex items-center gap-1">
-              <button
-                type="button"
-                onClick={() => setQty((q) => Math.max(1, q - 1))}
-                className="grid h-9 w-9 place-items-center rounded-xl bg-white text-[#1F1B16] ring-1 ring-[#1F1B16]/10 transition hover:ring-[#1F1B16]/30 disabled:opacity-40"
-                disabled={qty === 1}
-                aria-label="Decrease quantity"
-              >
-                <Minus className="h-4 w-4" />
-              </button>
-              <span className="w-8 text-center font-semibold text-[#1F1B16]" aria-live="polite">
-                {qty}
-              </span>
-              <button
-                type="button"
-                onClick={() => setQty((q) => Math.min(20, q + 1))}
-                className="grid h-9 w-9 place-items-center rounded-xl bg-white text-[#1F1B16] ring-1 ring-[#1F1B16]/10 transition hover:ring-[#1F1B16]/30"
-                aria-label="Increase quantity"
-              >
-                <Plus className="h-4 w-4" />
-              </button>
-            </div>
-          </div>
-
-          <WhatsAppButton
-            message={message}
-            variant={product.popular ? "primary" : "dark"}
-            className="mt-4 w-full !py-4"
-          >
-            Order Now via WhatsApp · {formatINR(product.price * qty)}
-          </WhatsAppButton>
-        </div>
-      </article>
-    </Reveal>
-  );
-}
-
-function MenuSection() {
-  return (
-    <section id="menu" className="relative scroll-mt-20 py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <Reveal>
-          <SectionHeading
-            eyebrow="The menu"
-            title={
-              <>
-                Choose your <em className="text-[#F28500]">celebration.</em>
-              </>
-            }
-            subtitle="One signature recipe in three sizes. Pick a size, set the quantity, and we'll confirm your order on WhatsApp in minutes."
-          />
-        </Reveal>
-
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {PRODUCTS.map((p, i) => (
-            <ProductCard key={p.id} product={p} delay={i * 120} />
-          ))}
-        </div>
-
-        <Reveal delay={200}>
-          <div className="mt-14 grid gap-4 rounded-[2rem] bg-[#FFF1DE]/60 p-6 sm:grid-cols-3 sm:p-8">
-            {[
-              [Truck, "Same-day delivery", "Aurangabad & Navi Mumbai"],
-              [ShieldCheck, "Hygienic & sealed", "Tamper-proof chilled boxes"],
-              [Leaf, "Eggless on request", "No extra charge"],
-            ].map(([Icon, title, text]) => (
-              <div key={title} className="flex items-center gap-4">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white text-[#F28500] shadow-sm">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <div>
-                  <p className="font-semibold text-[#1F1B16]">{title}</p>
-                  <p className="text-sm text-[#8C8177]">{text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
 function Reviews() {
   return (
     <section id="reviews" className="relative scroll-mt-20 bg-[#F6EEDD]/60 py-24 sm:py-32">
@@ -993,7 +1017,7 @@ const EVENT_TYPES = [
   },
 ];
 
-function EventsSection() {
+function EventsSection({ showCards = true }) {
   return (
     <section id="events" className="scroll-mt-20 px-5 py-24 sm:px-8 sm:py-28">
       <div className="mx-auto max-w-7xl">
@@ -1048,6 +1072,18 @@ function EventsSection() {
           </div>
         </Reveal>
 
+        {!showCards && (
+          <div className="mt-6 flex justify-center">
+            <a
+              href="#bulk-orders"
+              className="group inline-flex items-center gap-2 text-sm font-semibold text-[#C46A00] transition-colors hover:text-[#1F1B16]"
+            >
+              See party, marriage & hotel packages
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+          </div>
+        )}
+        {showCards && (
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {EVENT_TYPES.map(({ icon: Icon, title, text, perks, message, featured }, i) => (
             <Reveal key={title} delay={i * 120} className="h-full">
@@ -1090,6 +1126,7 @@ function EventsSection() {
             </Reveal>
           ))}
         </div>
+        )}
       </div>
     </section>
   );
@@ -1177,8 +1214,8 @@ function Footer() {
               <span className="font-display text-3xl text-[#FDFBF7]">{BRAND}</span>
             </div>
             <p className="mt-5 max-w-sm leading-relaxed text-[#E9E1D3]/65">
-              A Deccan fusion bakery reimagining the royal Qubani ka Meetha as a modern layer cake. Made by hand, in
-              small batches, with a lot of love.
+              A Deccan dessert house for royal Qubani, Apricot Delight, fudgy chocolate brownies and pure-ghee
+              halwa. Made by hand, in small batches, with a lot of love.
             </p>
             <div className="mt-6 flex gap-3">
               <a
@@ -1205,10 +1242,10 @@ function Footer() {
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E9B949]">Explore</h4>
             <ul className="mt-5 space-y-3">
-              {NAV_LINKS.map((l) => (
-                <li key={l.href}>
-                  <a href={l.href} className="text-[#E9E1D3]/70 transition-colors hover:text-[#F7A23B]">
-                    {l.label}
+              {ROUTES.map((r) => (
+                <li key={r.id}>
+                  <a href={`#${r.id}`} className="text-[#E9E1D3]/70 transition-colors hover:text-[#F7A23B]">
+                    {r.label}
                   </a>
                 </li>
               ))}
@@ -1277,6 +1314,492 @@ function FloatingWhatsApp() {
   );
 }
 
+function ProductCard({ product, categoryName, delay = 0 }) {
+  const [optIndex, setOptIndex] = useState(0);
+  const [qty, setQty] = useState(1);
+  const option = product.options[optIndex];
+  const total = option.price * qty;
+  const message = `Hi ${BRAND}! I'd like to order ${qty} × ${product.name} (${option.label}) = ${formatINR(
+    total
+  )}. Please share delivery details.`;
+
+  return (
+    <Reveal delay={delay} className="h-full">
+      <article
+        className={`group relative flex h-full flex-col overflow-hidden rounded-[2rem] bg-white transition-all duration-500 hover:-translate-y-2 ${
+          product.premium
+            ? "shadow-[0_40px_80px_-35px_rgba(242,133,0,0.55)] ring-2 ring-[#F28500]"
+            : "shadow-[0_25px_60px_-35px_rgba(31,27,22,0.35)] ring-1 ring-[#1F1B16]/5 hover:shadow-[0_35px_70px_-35px_rgba(31,27,22,0.45)]"
+        }`}
+      >
+        <div className="relative overflow-hidden">
+          <img
+            src={product.image}
+            alt={`${product.name}, ${categoryName}`}
+            className={`aspect-[16/11] w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-110 ${
+              product.imagePos || ""
+            }`}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1F1B16]/55 to-transparent" />
+          <span
+            className={`absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider shadow-lg ${
+              product.premium ? "bg-[#F28500] text-white" : "bg-[#FDFBF7] text-[#1F1B16]"
+            }`}
+          >
+            {product.premium ? <Star className="h-3 w-3 fill-white" /> : <Sparkles className="h-3 w-3 text-[#F28500]" />}
+            {product.badge}
+          </span>
+          <span className="absolute bottom-4 left-5 text-xs font-medium text-white/90">{option.note}</span>
+        </div>
+
+        <div className="flex flex-1 flex-col p-7">
+          <div className="flex items-start justify-between gap-4">
+            <h3 className="font-display text-3xl leading-tight text-[#1F1B16]">{product.name}</h3>
+            <p className="font-display shrink-0 text-3xl text-[#C46A00]">{formatINR(option.price)}</p>
+          </div>
+          <p className="mt-3 leading-relaxed text-[#5B5249]">{product.description}</p>
+
+          <ul className="mt-5 flex-1 space-y-2.5">
+            {product.features.map((f) => (
+              <li key={f} className="flex items-center gap-3 text-sm text-[#3A322A]">
+                <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#FFF1DE]">
+                  <Check className="h-3 w-3 text-[#F28500]" />
+                </span>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-6" role="radiogroup" aria-label={`${product.name} size`}>
+            <p className="text-xs font-medium uppercase tracking-wider text-[#8C8177]">Choose size</p>
+            <div className="mt-2.5 flex flex-wrap gap-2">
+              {product.options.map((o, i) => (
+                <button
+                  key={o.label}
+                  type="button"
+                  role="radio"
+                  aria-checked={i === optIndex}
+                  onClick={() => setOptIndex(i)}
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
+                    i === optIndex
+                      ? "bg-[#1F1B16] text-[#FDFBF7] shadow-md"
+                      : "bg-[#FDFBF7] text-[#3A322A] ring-1 ring-[#1F1B16]/10 hover:ring-[#1F1B16]/30"
+                  }`}
+                >
+                  {o.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-5 flex items-center justify-between rounded-2xl bg-[#FDFBF7] p-2 pl-4">
+            <span className="text-xs font-medium uppercase tracking-wider text-[#8C8177]">Quantity</span>
+            <div className="flex items-center gap-1">
+              <button
+                type="button"
+                onClick={() => setQty((q) => Math.max(1, q - 1))}
+                className="grid h-9 w-9 place-items-center rounded-xl bg-white text-[#1F1B16] ring-1 ring-[#1F1B16]/10 transition hover:ring-[#1F1B16]/30 disabled:opacity-40"
+                disabled={qty === 1}
+                aria-label="Decrease quantity"
+              >
+                <Minus className="h-4 w-4" />
+              </button>
+              <span className="w-8 text-center font-semibold text-[#1F1B16]" aria-live="polite">
+                {qty}
+              </span>
+              <button
+                type="button"
+                onClick={() => setQty((q) => Math.min(50, q + 1))}
+                className="grid h-9 w-9 place-items-center rounded-xl bg-white text-[#1F1B16] ring-1 ring-[#1F1B16]/10 transition hover:ring-[#1F1B16]/30"
+                aria-label="Increase quantity"
+              >
+                <Plus className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+
+          <WhatsAppButton
+            message={message}
+            variant={product.premium ? "primary" : "dark"}
+            className="mt-4 w-full !py-4"
+          >
+            Order Now via WhatsApp · {formatINR(total)}
+          </WhatsAppButton>
+        </div>
+      </article>
+    </Reveal>
+  );
+}
+
+function PageHero({ eyebrow, title, intro, image, from, children }) {
+  return (
+    <section className="relative overflow-hidden pt-28 sm:pt-32">
+      <div className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-[#F28500]/15 blur-3xl" />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-16 sm:px-8 lg:grid-cols-2 lg:pb-24">
+        <div>
+          <Reveal>
+            <a href="#home" className="inline-flex items-center gap-2 text-sm text-[#8C8177] transition-colors hover:text-[#1F1B16]">
+              <ArrowRight className="h-4 w-4 rotate-180" /> All desserts
+            </a>
+          </Reveal>
+          <Reveal delay={80}>
+            <div className="mt-6">
+              <Eyebrow>{eyebrow}</Eyebrow>
+            </div>
+            <h1 className="font-display mt-5 text-5xl leading-[1] text-[#1F1B16] sm:text-7xl">{title}</h1>
+          </Reveal>
+          <Reveal delay={160}>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#5B5249]">{intro}</p>
+          </Reveal>
+          <Reveal delay={240}>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">{children}</div>
+          </Reveal>
+        </div>
+        <Reveal delay={120}>
+          <div className="relative mx-auto max-w-xl">
+            <div className="absolute -inset-4 rounded-[3rem] border border-[#E9B949]/40" />
+            <div className="relative overflow-hidden rounded-[2.5rem] shadow-[0_40px_80px_-30px_rgba(120,60,0,0.45)]">
+              <img src={image} alt="" className="aspect-[5/4] w-full object-cover transition-transform duration-[1.5s] hover:scale-105" />
+            </div>
+            {from && (
+              <div className="animate-float-slow absolute -bottom-5 right-6 rounded-2xl bg-[#1F1B16]/90 px-5 py-4 text-[#FDFBF7] shadow-xl backdrop-blur">
+                <p className="text-[10px] uppercase tracking-[0.25em] text-[#E9B949]">Starting from</p>
+                <p className="font-display text-3xl leading-none">{formatINR(from)}</p>
+              </div>
+            )}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Highlights({ items }) {
+  return (
+    <div className="grid gap-4 rounded-[2rem] bg-[#FFF1DE]/60 p-6 sm:grid-cols-3 sm:p-8">
+      {items.map(([Icon, title, text]) => (
+        <div key={title} className="flex items-center gap-4">
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white text-[#F28500] shadow-sm">
+            <Icon className="h-5 w-5" />
+          </span>
+          <div>
+            <p className="font-semibold text-[#1F1B16]">{title}</p>
+            <p className="text-sm text-[#8C8177]">{text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function CategoryShowcase() {
+  return (
+    <section className="relative py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Our desserts"
+            title={
+              <>
+                Three kitchens of <em className="text-[#F28500]">indulgence.</em>
+              </>
+            }
+            subtitle="Pick a category to see every dessert, size and price, then order in one tap on WhatsApp."
+          />
+        </Reveal>
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
+          {CATEGORIES.map((c, i) => (
+            <Reveal key={c.id} delay={i * 120} className="h-full">
+              <a
+                href={`#${c.id}`}
+                className="group relative flex h-full min-h-[30rem] flex-col justify-end overflow-hidden rounded-[2rem] shadow-[0_30px_70px_-35px_rgba(31,27,22,0.55)]"
+              >
+                <img
+                  src={c.image}
+                  alt={c.name}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1F1B16] from-15% via-[#1F1B16]/80 via-50% to-[#1F1B16]/0" />
+                <div className="relative p-7 text-[#FDFBF7]">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#F7C27A]">0{i + 1}</p>
+                  <h3 className="font-display mt-2 text-4xl">{c.name}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[#E9E1D3]/80">{c.cardText}</p>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {c.products.map((p) => (
+                      <li key={p.id} className="rounded-full bg-white/10 px-3 py-1 text-xs backdrop-blur">
+                        {p.name}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-6 flex items-center justify-between border-t border-white/15 pt-5">
+                    <span className="text-sm text-[#E9E1D3]/80">
+                      From <strong className="font-display text-2xl font-medium text-white">{formatINR(c.from)}</strong>
+                    </span>
+                    <span className="grid h-11 w-11 place-items-center rounded-full bg-[#F28500] text-white transition-transform duration-300 group-hover:translate-x-1">
+                      <ArrowRight className="h-5 w-5" />
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SignatureSpotlight() {
+  return (
+    <section className="relative overflow-hidden pb-24 sm:pb-32">
+      <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
+        <Reveal>
+          <div className="relative mx-auto grid max-w-lg grid-cols-2 gap-4">
+            <img src={IMAGES.slice} alt="Apricot Delight slice with fresh cream and almonds" className="aspect-[3/4] w-full rounded-[2rem] object-cover shadow-xl" />
+            <img src={IMAGES.qubaniClassicTall} alt="Classic Qubani ka Meetha in a glass bowl" className="mt-12 aspect-[3/4] w-full rounded-[2rem] object-cover shadow-xl" />
+          </div>
+        </Reveal>
+        <div>
+          <Reveal>
+            <SectionHeading
+              center={false}
+              eyebrow="The signature"
+              title={
+                <>
+                  Classic Qubani, or the <em className="text-[#F28500]">Apricot Delight?</em>
+                </>
+              }
+              subtitle="Our Qubani comes two ways. The classic is the heirloom dessert, glossy stewed apricots with cream. Apricot Delight is its premium avatar: the same Qubani layered with butter sponge and fresh whipped cream into a celebration cake."
+            />
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="mt-8 grid grid-cols-2 gap-4">
+              {CATEGORIES[0].products.map((p) => (
+                <div key={p.id} className={`rounded-2xl p-5 ${p.premium ? "bg-[#1F1B16] text-[#FDFBF7]" : "bg-white ring-1 ring-[#1F1B16]/10"}`}>
+                  <p className={`text-[10px] font-semibold uppercase tracking-[0.25em] ${p.premium ? "text-[#E9B949]" : "text-[#C46A00]"}`}>{p.badge}</p>
+                  <p className="font-display mt-1 text-2xl">{p.name}</p>
+                  <p className={`mt-1 text-sm ${p.premium ? "text-[#E9E1D3]/70" : "text-[#8C8177]"}`}>From {formatINR(p.options[0].price)}</p>
+                </div>
+              ))}
+            </div>
+            <a
+              href="#qubani"
+              className="group mt-8 inline-flex items-center gap-2 rounded-full bg-[#1F1B16] px-6 py-3.5 text-sm font-semibold text-[#FDFBF7] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#3A322A]"
+            >
+              Explore Qubani
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function QubaniComparison() {
+  const rows = [
+    ["Qubani compote", true, true],
+    ["Fresh cream topping", true, true],
+    ["Almond & pistachio garnish", true, true],
+    ["Moist butter sponge layers", false, true],
+    ["Hand-piped whipped cream crown", false, true],
+    ["Sliceable celebration cake", false, true],
+  ];
+  return (
+    <section className="py-20 sm:py-24">
+      <div className="mx-auto max-w-4xl px-5 sm:px-8">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Compare"
+            title={
+              <>
+                Classic vs <em className="text-[#F28500]">Apricot Delight</em>
+              </>
+            }
+            subtitle="Same royal Qubani at heart. Choose the bowl-and-spoon classic, or the layered premium cake."
+          />
+        </Reveal>
+        <Reveal delay={100}>
+          <div className="mt-12 overflow-hidden rounded-[2rem] bg-white shadow-[0_30px_70px_-40px_rgba(31,27,22,0.45)] ring-1 ring-[#1F1B16]/5">
+            <div className="grid grid-cols-[1.6fr_1fr_1fr] items-end border-b border-[#1F1B16]/10 px-5 py-5 sm:px-8">
+              <span className="text-xs uppercase tracking-wider text-[#8C8177]">What you get</span>
+              <span className="font-display text-center text-xl text-[#1F1B16] sm:text-2xl">Classic</span>
+              <span className="font-display text-center text-xl text-[#C46A00] sm:text-2xl">Delight</span>
+            </div>
+            {rows.map(([label, a, b]) => (
+              <div key={label} className="grid grid-cols-[1.6fr_1fr_1fr] items-center border-b border-[#1F1B16]/5 px-5 py-4 text-sm last:border-0 sm:px-8">
+                <span className="text-[#3A322A]">{label}</span>
+                {[a, b].map((v, i) => (
+                  <span key={i} className="flex justify-center">
+                    {v ? (
+                      <span className={`grid h-7 w-7 place-items-center rounded-full ${i ? "bg-[#F28500] text-white" : "bg-[#FFF1DE] text-[#F28500]"}`}>
+                        <Check className="h-4 w-4" />
+                      </span>
+                    ) : (
+                      <Minus className="h-4 w-4 text-[#1F1B16]/20" />
+                    )}
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function CrossSell({ current }) {
+  const others = CATEGORIES.filter((c) => c.id !== current);
+  return (
+    <section className="pb-24 sm:pb-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <Reveal>
+          <h2 className="font-display text-3xl text-[#1F1B16] sm:text-4xl">You might also love</h2>
+        </Reveal>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          {others.map((c, i) => (
+            <Reveal key={c.id} delay={i * 100}>
+              <a
+                href={`#${c.id}`}
+                className="group flex items-center gap-5 rounded-[2rem] bg-white p-4 pr-6 shadow-[0_25px_60px_-40px_rgba(31,27,22,0.4)] ring-1 ring-[#1F1B16]/5 transition-all duration-500 hover:-translate-y-1"
+              >
+                <img src={c.image} alt={c.name} className="h-24 w-24 shrink-0 rounded-2xl object-cover sm:h-28 sm:w-28" />
+                <div className="flex-1">
+                  <p className="font-display text-2xl text-[#1F1B16] sm:text-3xl">{c.name}</p>
+                  <p className="mt-1 text-sm text-[#8C8177]">From {formatINR(c.from)}</p>
+                </div>
+                <ArrowRight className="h-5 w-5 text-[#C46A00] transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CategoryPage({ category }) {
+  return (
+    <>
+      <PageHero
+        eyebrow={category.eyebrow}
+        title={category.title}
+        intro={category.intro}
+        image={category.image}
+        from={category.from}
+      >
+        <WhatsAppButton message={`Hi ${BRAND}! I'd like to order from your ${category.name} menu.`}>
+          Order on WhatsApp
+        </WhatsAppButton>
+        <a
+          href="#bulk-orders"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-[#1F1B16]/15 bg-white/60 px-6 py-3.5 text-sm font-semibold text-[#1F1B16] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white"
+        >
+          <Users className="h-4 w-4" /> Bulk & event orders
+        </a>
+      </PageHero>
+
+      <section className="pb-12">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <Reveal>
+            <Highlights items={category.highlights} />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <Reveal>
+            <SectionHeading eyebrow="The menu" title={<>Choose, size up, <em className="text-[#F28500]">order.</em></>} />
+          </Reveal>
+          <div className="mx-auto mt-14 grid max-w-5xl gap-8 md:grid-cols-2">
+            {category.products.map((p, i) => (
+              <ProductCard key={p.id} product={p} categoryName={category.name} delay={i * 120} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {category.id === "qubani" && (
+        <>
+          <QubaniComparison />
+          <LayerBreakdown />
+        </>
+      )}
+
+      <CrossSell current={category.id} />
+    </>
+  );
+}
+
+function BulkOrdersPage() {
+  return (
+    <>
+      <div className="pt-20 sm:pt-24" />
+      <EventsSection />
+      <section className="pb-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Our kitchens"
+              title={
+                <>
+                  Visit or order from <em className="text-[#F28500]">two cities.</em>
+                </>
+              }
+            />
+          </Reveal>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {LOCATIONS.map((loc, i) => (
+              <Reveal key={loc.city} delay={i * 120}>
+                <div className="flex h-full flex-col rounded-[2rem] bg-white p-8 shadow-[0_25px_60px_-40px_rgba(31,27,22,0.4)] ring-1 ring-[#1F1B16]/5">
+                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#FFF1DE] text-[#F28500]">
+                    <MapPin className="h-5 w-5" />
+                  </span>
+                  <h3 className="font-display mt-5 text-3xl text-[#1F1B16]">{loc.city}</h3>
+                  <p className="mt-2 flex-1 text-[#5B5249]">{loc.address}</p>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <a
+                      href={loc.map}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full bg-[#1F1B16] px-5 py-3 text-sm font-semibold text-[#FDFBF7] transition hover:bg-[#3A322A]"
+                    >
+                      <MapPin className="h-4 w-4" /> Get directions
+                    </a>
+                    <a
+                      href={`tel:+${WHATSAPP_NUMBER}`}
+                      className="inline-flex items-center gap-2 rounded-full border border-[#1F1B16]/15 px-5 py-3 text-sm font-semibold text-[#1F1B16] transition hover:bg-[#FDFBF7]"
+                    >
+                      <Phone className="h-4 w-4" /> {PHONE_DISPLAY}
+                    </a>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+      <FAQ />
+    </>
+  );
+}
+
+function HomePage() {
+  return (
+    <>
+      <Hero />
+      <CategoryShowcase />
+      <SignatureSpotlight />
+      <Story />
+      <Reviews />
+      <EventsSection showCards={false} />
+      <FAQ />
+    </>
+  );
+}
+
 /* ------------------------------------------------------------------ */
 /*  Global styles (fonts + keyframes)                                  */
 /* ------------------------------------------------------------------ */
@@ -1306,18 +1829,17 @@ body { margin: 0; background: #FDFBF7; }
 /* ------------------------------------------------------------------ */
 
 export default function QubaniLanding() {
+  const route = useHashRoute();
+  const category = CATEGORIES.find((c) => c.id === route);
+
   return (
     <div className="qa-root min-h-screen overflow-x-hidden bg-[#FDFBF7] text-[#1F1B16] antialiased selection:bg-[#F28500] selection:text-white">
       <style>{GLOBAL_CSS}</style>
-      <Navbar />
-      <main>
-        <Hero />
-        <LayerBreakdown />
-        <Story />
-        <MenuSection />
-        <Reviews />
-        <EventsSection />
-        <FAQ />
+      <Navbar route={route} />
+      <main key={route}>
+        {route === "home" && <HomePage />}
+        {category && <CategoryPage category={category} />}
+        {route === "bulk-orders" && <BulkOrdersPage />}
       </main>
       <Footer />
       <FloatingWhatsApp />

@@ -1,6 +1,14 @@
-# Qubani Atelier: Royal Qubani landing page
+# Qubani Atelier: Deccan dessert house website
 
-A single-page, responsive landing page for a Deccan fusion bakery. Its signature product is a layer cake built on Qubani ka Meetha (stewed apricots), sponge and fresh cream.
+A responsive multi-page website for a Deccan dessert bakery, built as one React component with hash-based pages:
+
+- `#home`: hero, the three categories, a signature spotlight, story, reviews, bulk orders teaser, FAQ
+- `#qubani`: classic Qubani ka Meetha and premium Apricot Delight, a comparison table, and the interactive layer breakdown
+- `#brownies`: walnut fudge and cream cheese swirl brownies
+- `#halwa`: badam halwa and kaju halwa
+- `#bulk-orders`: party, marriage and hotel orders, both locations, FAQ
+
+Every product has a size picker and quantity picker that pre-fill a WhatsApp order message.
 
 - `QubaniLanding.jsx`: the whole page as one React component. It uses Tailwind CSS (arbitrary values only, so no Tailwind config is needed) and `lucide-react` icons.
 - `images/`: the product photos the page uses.
@@ -9,7 +17,7 @@ A single-page, responsive landing page for a Deccan fusion bakery. Its signature
 ## Customise
 Edit the constants at the top of `QubaniLanding.jsx`:
 - `BRAND`, `WHATSAPP_NUMBER` (digits only, with country code), `PHONE_DISPLAY`, `LOCATIONS`
-- `PRODUCTS` (prices, sizes), `REVIEWS`, `FAQS`, `EVENT_TYPES` (party, marriage and hotel orders)
+- `CATEGORIES` (products, sizes, prices, photos), `REVIEWS`, `FAQS`, `EVENT_TYPES` (party, marriage and hotel orders)
 
 ## Use in a React + Tailwind project
 ```bash
