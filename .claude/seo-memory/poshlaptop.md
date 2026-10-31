@@ -50,6 +50,19 @@ and update it at the end of each session.
   stock, internal links to products/tags/each other). Rank Math title/description/focus keyword set via
   POST /rankmath/v1/updateMeta (one call per page). Sources in seo/poshlaptop/phase2/.
 
+- Phase 3 (2026-10-31): blog launched. Competitor uaepc.com/en/blog (B2B wholesaler, Sharjah) used ONLY
+  for topic ideas: its content is copyrighted (their image-license page), never copy text. uaepc.com is
+  blocked from cloud sessions (network allowlist); topics found via WebSearch.
+  Category "Laptop Buying Guides" (ID 495, /category/laptop-buying-guides/). Post permalinks: /%postname%/.
+  6 original posts built in seo/poshlaptop/blog/ (build.py -> <slug>.json request bodies incl. category).
+  Uploaded as DRAFT posts so far: buy-laptop-in-sharjah (10631), refurbished-laptop-warranty-uae (10632),
+  refurbished-laptop-grades-explained (10633).
+  STILL TO UPLOAD (POST /wp/v2/posts with the .json body): thinkpad-vs-elitebook-vs-latitude,
+  windows-11-compatible-refurbished-laptops, bulk-refurbished-laptops-for-business-uae.
+  Then: Rank Math meta for all 6 (seo_title/desc/kw in posts.json) via /rankmath/v1/updateMeta.
+  NOTE 2026-10-31: WPVibe's own plugin routes (/wpvibe/v1, used by run_wp_cli) returned 404 — plugin may be
+  deactivated/blocked; core /wp/v2 and /rankmath/v1 still worked. Ask the user to re-check WPVibe plugin.
+
 ## Site facts (confirmed from site content)
 - Business: Posh Touch Computers, UAE showroom, prices in AED. WhatsApp +971 52 292 0920,
   marketing@poshlaptop.com. 6-month warranty, 15-day returns, services: sales, rental, repair, AMC.
