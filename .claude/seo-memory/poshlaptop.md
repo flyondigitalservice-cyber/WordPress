@@ -81,7 +81,13 @@ and update it at the end of each session.
   footer: `menu item add-post 494 <page_id> --title="..."`. No theme edit needed.
 
 ## Next ideas (phase 3)
-- Phase 2 pages published 2026-10-30 and linked from the footer "Buying guides" column. Still to do: request indexing in Search Console.
+- Indexing (2026-10-31): Google "Request indexing" can only be done by the owner in Search Console (no API for
+  normal pages; Indexing API is jobs/livestream only). Owner checklist: seo/poshlaptop/indexing-checklist.md.
+  Found post-sitemap.xml MISSING from sitemap_index although rank-math-options-sitemap has pt_post_sitemap=on
+  (stale Rank Math sitemap cache) -> purged cache. Re-verify post-sitemap.xml exists next session.
+  tax_product_tag_sitemap is OFF although product-tag pages are what rank in GSC -> recommend turning on.
+  Rank Math Organization schema has addressCountry "+97" (wrong; should be "AE") -> fix in Rank Math >
+  Titles & Meta > Local SEO.
 - "laptop shop near me" (pos 41): build a Sharjah showroom/location page with the address above +
   LocalBusiness schema; confirm opening hours with the owner.
 - "i7 12th gen 16gb 512gb" (pos 9 on tag page): enrich that tag page's description rather than a new URL.
