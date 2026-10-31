@@ -1,0 +1,838 @@
+# Copyright (C) 2026 Bazaar Electronics
+# This file is distributed under the same license as the Bazaar Electronics package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Bazaar Electronics\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Last-Translator: Flyon Digital Service\n"
+"Language-Team: Flyon Digital Service\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: inc/compat.php:77
+msgid "needs the Bazaar Core plugin for login, contact form, product features and Store Options."
+msgstr ""
+
+#: inc/compat.php:79
+msgid "Activate Bazaar Core"
+msgstr ""
+
+#: inc/compat.php:79
+msgid "Upload Bazaar Core"
+msgstr ""
+
+#: inc/setup.php:46
+msgid "Store sections"
+msgstr ""
+
+#: inc/setup.php:50
+msgid "Store pages"
+msgstr ""
+
+#: inc/theme-features.php:26, patterns/usp-strip.php:22
+msgid "Brand warranty"
+msgstr ""
+
+#: inc/theme-features.php:27
+msgid "Replacement for defects"
+msgstr ""
+
+#. translators: %s: invoice label from Store Options, e.g. "GST invoice"
+#: inc/theme-features.php:31
+msgid "Genuine, %s"
+msgstr ""
+
+#. translators: %s: invoice label from Store Options, e.g. "GST invoice"
+#: inc/theme-features.php:31, patterns/announcement.php:11, patterns/faq.php:12, patterns/hero.php:12, patterns/page-warranty.php:12, patterns/usp-strip.php:12, patterns/why-us.php:12
+msgid "GST invoice"
+msgstr ""
+
+#: inc/theme-features.php:33
+msgid "Expert support"
+msgstr ""
+
+#: inc/theme-features.php:45, patterns/footer-content.php:91
+msgid "About us"
+msgstr ""
+
+#: inc/theme-features.php:46, patterns/cta.php:24, patterns/footer-content.php:77, patterns/page-about.php:65
+msgid "Contact us"
+msgstr ""
+
+#: inc/theme-features.php:47, patterns/footer-content.php:62
+msgid "Warranty & service"
+msgstr ""
+
+#: inc/theme-features.php:48, patterns/footer-content.php:48
+msgid "Compare products"
+msgstr ""
+
+#: inc/theme-features.php:49, patterns/footer-content.php:65
+msgid "Shipping policy"
+msgstr ""
+
+#: inc/theme-features.php:50, patterns/footer-content.php:68
+msgid "Delivery information"
+msgstr ""
+
+#: inc/theme-features.php:51
+msgid "Return & replacement policy"
+msgstr ""
+
+#: inc/theme-features.php:52, patterns/footer-content.php:74
+msgid "Payment methods"
+msgstr ""
+
+#: inc/theme-features.php:53, patterns/footer-content.php:94
+msgid "Terms & conditions"
+msgstr ""
+
+#: inc/theme-features.php:54
+msgid "Sign in"
+msgstr ""
+
+#. translators: %s: invoice label from Store Options, e.g. "GST invoice"
+#: patterns/announcement.php:16
+msgid "100%% genuine products · Brand warranty · %s on every order"
+msgstr ""
+
+#: patterns/best-sellers.php:16
+msgid "Top rated by customers"
+msgstr ""
+
+#: patterns/brand-strip.php:16
+msgid "Shop by brand"
+msgstr ""
+
+#: patterns/brand-strip.php:23, patterns/brand-strip.php:30, patterns/brand-strip.php:37, patterns/brand-strip.php:44, patterns/brand-strip.php:51, patterns/brand-strip.php:58
+msgid "Brand name"
+msgstr ""
+
+#: patterns/category-grid.php:16
+msgid "Shop by category"
+msgstr ""
+
+#: patterns/category-grid.php:23, patterns/footer-content.php:36
+msgid "Smartphones"
+msgstr ""
+
+#: patterns/category-grid.php:30, patterns/footer-content.php:39
+msgid "Laptops"
+msgstr ""
+
+#: patterns/category-grid.php:37, patterns/footer-content.php:42
+msgid "Audio"
+msgstr ""
+
+#: patterns/category-grid.php:44, patterns/footer-content.php:45
+msgid "Wearables"
+msgstr ""
+
+#: patterns/category-grid.php:51
+msgid "Cameras"
+msgstr ""
+
+#: patterns/category-grid.php:58
+msgid "Accessories"
+msgstr ""
+
+#: patterns/compare-cta.php:16
+msgid "Not sure which one to pick?"
+msgstr ""
+
+#: patterns/compare-cta.php:19
+msgid "Select up to four products and compare specifications side by side."
+msgstr ""
+
+#: patterns/compare-cta.php:24
+msgid "Open comparison"
+msgstr ""
+
+#: patterns/cta.php:16
+msgid "Need help choosing?"
+msgstr ""
+
+#: patterns/cta.php:19
+msgid "Chat with us for recommendations, bulk orders and business pricing."
+msgstr ""
+
+#: patterns/faq.php:17
+msgid "Frequently asked questions"
+msgstr ""
+
+#: patterns/faq.php:22
+msgid "Are the products genuine?"
+msgstr ""
+
+#: patterns/faq.php:24
+msgid "Yes. We source from authorised channels and every product comes with the manufacturer's warranty."
+msgstr ""
+
+#. translators: %s: invoice label, e.g. "GST invoice"
+#: patterns/faq.php:28
+msgid "Will I get a %s?"
+msgstr ""
+
+#. translators: %s: invoice label, e.g. "GST invoice"
+#: patterns/faq.php:30
+msgid "Yes, a tax invoice is emailed with every order and is available in your account."
+msgstr ""
+
+#: patterns/faq.php:34
+msgid "How do I claim warranty?"
+msgstr ""
+
+#: patterns/faq.php:36
+msgid "Keep your invoice and contact us or the brand's service centre. Our Warranty & Service page explains the steps."
+msgstr ""
+
+#: patterns/faq.php:40
+msgid "What if the product is dead on arrival?"
+msgstr ""
+
+#: patterns/faq.php:42
+msgid "Contact us within 48 hours with an unboxing video and we will arrange a replacement. See the Return policy."
+msgstr ""
+
+#: patterns/flash-deals.php:16
+msgid "Flash deals"
+msgstr ""
+
+#: patterns/flash-deals.php:19
+msgid "Prices drop while stock lasts. Open a deal to see how long is left."
+msgstr ""
+
+#. translators: 1: year, 2: site name
+#: patterns/footer-bottom.php:16
+msgid "© %1$s %2$s."
+msgstr ""
+
+#. translators: 1: year, 2: site name
+#: patterns/footer-bottom.php:17
+msgid "Genuine products with brand warranty. We accept cards, UPI, net banking and cash on delivery."
+msgstr ""
+
+#: patterns/footer-content.php:28
+msgid "Shop"
+msgstr ""
+
+#: patterns/footer-content.php:33
+msgid "All products"
+msgstr ""
+
+#: patterns/footer-content.php:57
+msgid "Customer service"
+msgstr ""
+
+#: patterns/footer-content.php:71
+msgid "Return & replacement"
+msgstr ""
+
+#: patterns/footer-content.php:86
+msgid "Company"
+msgstr ""
+
+#: patterns/footer-content.php:97
+msgid "Privacy policy"
+msgstr ""
+
+#: patterns/footer-content.php:100
+msgid "Sign in with OTP"
+msgstr ""
+
+#: patterns/hero.php:21
+msgid "New arrivals every week"
+msgstr ""
+
+#: patterns/hero.php:24
+msgid "Genuine tech. Honest prices."
+msgstr ""
+
+#. translators: %s: invoice label, e.g. "GST invoice"
+#: patterns/hero.php:27
+msgid "Phones, laptops, audio and accessories from trusted brands, with warranty and a proper %s on every order."
+msgstr ""
+
+#: patterns/hero.php:32
+msgid "Shop all products"
+msgstr ""
+
+#: patterns/hero.php:35
+msgid "Compare models"
+msgstr ""
+
+#: patterns/hero.php:46
+msgid "Replace with your hero product photo"
+msgstr ""
+
+#: patterns/new-arrivals.php:16
+msgid "New arrivals"
+msgstr ""
+
+#: patterns/new-arrivals.php:33
+msgid "View all products"
+msgstr ""
+
+#: patterns/page-about.php:14
+msgid "We are a small team that believes everyday products should be well made, fairly priced and easy to buy."
+msgstr ""
+
+#: patterns/page-about.php:17
+msgid "Our story"
+msgstr ""
+
+#: patterns/page-about.php:20
+msgid "We started with a simple idea: stock the things people actually use at home, and make sure every order arrives as expected. Tell your own story here: who you are, where you are based and what makes your store different."
+msgstr ""
+
+#: patterns/page-about.php:23
+msgid "What we stand for"
+msgstr ""
+
+#: patterns/page-about.php:30
+msgid "Quality first"
+msgstr ""
+
+#: patterns/page-about.php:33
+msgid "We check products before we list them and drop anything that does not meet our standard."
+msgstr ""
+
+#: patterns/page-about.php:40
+msgid "Fair prices"
+msgstr ""
+
+#: patterns/page-about.php:43
+msgid "No inflated list prices. What you see is what you pay."
+msgstr ""
+
+#: patterns/page-about.php:50
+msgid "Service that cares"
+msgstr ""
+
+#: patterns/page-about.php:53
+msgid "Questions, problems or returns are handled by real people."
+msgstr ""
+
+#: patterns/page-about.php:62
+msgid "Browse the shop"
+msgstr ""
+
+#: patterns/page-compare.php:14
+msgid "Select up to four products using the Compare checkbox on any product, then review their specifications side by side."
+msgstr ""
+
+#: patterns/page-contact.php:14
+msgid "Questions about an order, a product or a bulk purchase? Send us a message and we will reply within one business day."
+msgstr ""
+
+#: patterns/page-contact.php:30
+msgid "Get in touch"
+msgstr ""
+
+#: patterns/page-contact.php:33
+msgid "Email"
+msgstr ""
+
+#: patterns/page-contact.php:36
+msgid "Phone"
+msgstr ""
+
+#: patterns/page-contact.php:39
+msgid "Address"
+msgstr ""
+
+#: patterns/page-contact.php:42
+msgid "Hours"
+msgstr ""
+
+#: patterns/page-delivery.php:14
+msgid "What to expect from the moment your order ships until it is in your hands."
+msgstr ""
+
+#: patterns/page-delivery.php:17
+msgid "Delivery times"
+msgstr ""
+
+#: patterns/page-delivery.php:20
+msgid "Location"
+msgstr ""
+
+#: patterns/page-delivery.php:20
+msgid "Estimated time"
+msgstr ""
+
+#: patterns/page-delivery.php:20
+msgid "Major cities"
+msgstr ""
+
+#: patterns/page-delivery.php:20
+msgid "2-4 business days"
+msgstr ""
+
+#: patterns/page-delivery.php:20
+msgid "Other towns"
+msgstr ""
+
+#: patterns/page-delivery.php:20
+msgid "4-7 business days"
+msgstr ""
+
+#: patterns/page-delivery.php:20
+msgid "Remote areas"
+msgstr ""
+
+#: patterns/page-delivery.php:20
+msgid "7-10 business days"
+msgstr ""
+
+#: patterns/page-delivery.php:23
+msgid "Before you receive your parcel"
+msgstr ""
+
+#: patterns/page-delivery.php:28
+msgid "You will get an SMS or email when your order ships."
+msgstr ""
+
+#: patterns/page-delivery.php:31
+msgid "The courier may call you to confirm your address."
+msgstr ""
+
+#: patterns/page-delivery.php:34
+msgid "Keep your phone on and someone available to receive the parcel."
+msgstr ""
+
+#: patterns/page-delivery.php:39
+msgid "If you are not home"
+msgstr ""
+
+#: patterns/page-delivery.php:42
+msgid "The courier will usually attempt delivery up to three times. After that the parcel returns to us and we will contact you to re-ship (extra shipping may apply)."
+msgstr ""
+
+#: patterns/page-delivery.php:45
+msgid "Damaged on arrival?"
+msgstr ""
+
+#: patterns/page-delivery.php:48
+msgid "Please record a short unboxing video, then contact us within 48 hours with photos. We will send a replacement or refund at no cost to you."
+msgstr ""
+
+#: patterns/page-delivery.php:51, patterns/page-payment.php:51
+msgid "Cash on delivery"
+msgstr ""
+
+#: patterns/page-delivery.php:54
+msgid "Keep the exact amount ready where possible. Delivery agents may not always carry change."
+msgstr ""
+
+#: patterns/page-login.php:17
+msgid "Prefer a password?"
+msgstr ""
+
+#: patterns/page-login.php:17
+msgid "Sign in with your password"
+msgstr ""
+
+#: patterns/page-payment.php:14
+msgid "Pay the way that suits you. Every online payment is encrypted and processed by a secure gateway."
+msgstr ""
+
+#: patterns/page-payment.php:21
+msgid "Cards"
+msgstr ""
+
+#: patterns/page-payment.php:24
+msgid "Credit and debit cards from major networks."
+msgstr ""
+
+#: patterns/page-payment.php:31
+msgid "UPI and wallets"
+msgstr ""
+
+#: patterns/page-payment.php:34
+msgid "Pay instantly with your UPI app or supported wallets."
+msgstr ""
+
+#: patterns/page-payment.php:41
+msgid "Net banking"
+msgstr ""
+
+#: patterns/page-payment.php:44
+msgid "Pay directly from your bank account."
+msgstr ""
+
+#: patterns/page-payment.php:54
+msgid "Pay the courier when your order arrives (eligible orders)."
+msgstr ""
+
+#: patterns/page-payment.php:61
+msgid "Payment security"
+msgstr ""
+
+#: patterns/page-payment.php:64
+msgid "We never see or store your card details. Payments are handled by our PCI-compliant payment partner."
+msgstr ""
+
+#: patterns/page-payment.php:67
+msgid "Payment failed?"
+msgstr ""
+
+#: patterns/page-payment.php:70
+msgid "If money was deducted but your order was not confirmed, it is normally refunded automatically within 5-7 business days. Contact us with your payment reference if it is not."
+msgstr ""
+
+#: patterns/page-payment.php:73
+msgid "Invoices"
+msgstr ""
+
+#: patterns/page-payment.php:76
+msgid "A tax invoice is emailed with every order and is available under My Account > Orders."
+msgstr ""
+
+#: patterns/page-returns.php:14
+msgid "Electronics need extra care. Here is exactly what we accept and how it works."
+msgstr ""
+
+#: patterns/page-returns.php:17
+msgid "Dead on arrival or defective"
+msgstr ""
+
+#: patterns/page-returns.php:20
+msgid "If your product is dead on arrival or has a manufacturing defect, tell us within 7 days of delivery. We will arrange a replacement or a refund once the fault is confirmed."
+msgstr ""
+
+#: patterns/page-returns.php:23
+msgid "Please record an unboxing video"
+msgstr ""
+
+#: patterns/page-returns.php:26
+msgid "Record a short, uninterrupted video while opening the sealed package. It helps us resolve damage or missing-item claims quickly."
+msgstr ""
+
+#: patterns/page-returns.php:29
+msgid "Wrong or missing item"
+msgstr ""
+
+#: patterns/page-returns.php:32
+msgid "Contact us within 48 hours of delivery with photos of the item and the packaging."
+msgstr ""
+
+#: patterns/page-returns.php:35
+msgid "Change of mind"
+msgstr ""
+
+#: patterns/page-returns.php:38
+msgid "Opened or used electronics cannot be returned for change of mind. Unopened, sealed products may be returned within 7 days in original condition."
+msgstr ""
+
+#: patterns/page-returns.php:41
+msgid "Not covered"
+msgstr ""
+
+#: patterns/page-returns.php:46, patterns/page-warranty.php:29
+msgid "Physical, liquid or impact damage"
+msgstr ""
+
+#: patterns/page-returns.php:49
+msgid "Products with missing accessories, serial numbers removed or signs of tampering"
+msgstr ""
+
+#: patterns/page-returns.php:52
+msgid "Software or licence keys once activated"
+msgstr ""
+
+#: patterns/page-returns.php:57
+msgid "Refunds"
+msgstr ""
+
+#: patterns/page-returns.php:60
+msgid "Approved refunds go to your original payment method within 5-7 business days of us receiving and inspecting the product. For cash on delivery orders we refund by bank transfer."
+msgstr ""
+
+#: patterns/page-shipping.php:14
+msgid "How and when we ship your order, and what it costs."
+msgstr ""
+
+#: patterns/page-shipping.php:17
+msgid "Processing time"
+msgstr ""
+
+#: patterns/page-shipping.php:20
+msgid "Orders are processed and handed to the courier within 1-2 business days of payment confirmation (or order confirmation for cash on delivery). Orders placed on weekends or public holidays are processed the next business day."
+msgstr ""
+
+#: patterns/page-shipping.php:23
+msgid "Shipping rates"
+msgstr ""
+
+#: patterns/page-shipping.php:26
+msgid "Order value"
+msgstr ""
+
+#: patterns/page-shipping.php:26
+msgid "Shipping charge"
+msgstr ""
+
+#: patterns/page-shipping.php:26
+msgid "Above the free-shipping minimum"
+msgstr ""
+
+#: patterns/page-shipping.php:26
+msgid "Free"
+msgstr ""
+
+#: patterns/page-shipping.php:26
+msgid "Below the minimum"
+msgstr ""
+
+#: patterns/page-shipping.php:26
+msgid "Flat rate shown at checkout"
+msgstr ""
+
+#: patterns/page-shipping.php:29
+msgid "Where we ship"
+msgstr ""
+
+#: patterns/page-shipping.php:32
+msgid "We ship to the pin codes and countries listed at checkout. If your address is not serviceable, the checkout will tell you before you pay."
+msgstr ""
+
+#: patterns/page-shipping.php:35
+msgid "Order tracking"
+msgstr ""
+
+#: patterns/page-shipping.php:38
+msgid "Once your order ships you will receive an email with a tracking link. You can also see the status under My Account > Orders."
+msgstr ""
+
+#: patterns/page-shipping.php:41
+msgid "Lost or delayed parcels"
+msgstr ""
+
+#: patterns/page-shipping.php:44
+msgid "If your tracking has not moved for 5 days, contact us and we will raise it with the courier and arrange a replacement or refund where needed."
+msgstr ""
+
+#: patterns/page-terms.php:14
+msgid "By using this website and placing an order you agree to the terms below."
+msgstr ""
+
+#: patterns/page-terms.php:17
+msgid "Orders and pricing"
+msgstr ""
+
+#: patterns/page-terms.php:20
+msgid "All orders are subject to availability and confirmation. Prices may change without notice, but the price at the time you order is the price you pay."
+msgstr ""
+
+#: patterns/page-terms.php:23
+msgid "Accounts"
+msgstr ""
+
+#: patterns/page-terms.php:26
+msgid "You are responsible for keeping your account and login codes private and for activity under your account."
+msgstr ""
+
+#: patterns/page-terms.php:29
+msgid "Shipping, returns and payments"
+msgstr ""
+
+#: patterns/page-terms.php:32
+msgid "These are covered by our Shipping Policy, Return & Refund Policy and Payment Methods pages, which form part of these terms."
+msgstr ""
+
+#: patterns/page-terms.php:35
+msgid "Liability"
+msgstr ""
+
+#: patterns/page-terms.php:38
+msgid "To the extent permitted by law, we are not liable for indirect or consequential losses arising from use of the site or products."
+msgstr ""
+
+#: patterns/page-terms.php:41
+msgid "Governing law"
+msgstr ""
+
+#: patterns/page-terms.php:44
+msgid "These terms are governed by the laws of the country in which the store is registered."
+msgstr ""
+
+#: patterns/page-terms.php:47
+msgid "Contact"
+msgstr ""
+
+#: patterns/page-terms.php:50
+msgid "Questions about these terms? Reach us through the Contact page."
+msgstr ""
+
+#: patterns/page-warranty.php:15
+msgid "Every product we sell is covered by the manufacturer's warranty. Here is how to use it."
+msgstr ""
+
+#: patterns/page-warranty.php:18
+msgid "What is covered"
+msgstr ""
+
+#: patterns/page-warranty.php:21
+msgid "Manufacturing defects and hardware faults under normal use, for the period stated by the brand (usually 6 to 24 months from the invoice date)."
+msgstr ""
+
+#: patterns/page-warranty.php:24
+msgid "What is not covered"
+msgstr ""
+
+#: patterns/page-warranty.php:32
+msgid "Damage from unauthorised repair or modification"
+msgstr ""
+
+#: patterns/page-warranty.php:35
+msgid "Wear and tear on batteries, cables and accessories unless the brand states otherwise"
+msgstr ""
+
+#: patterns/page-warranty.php:38
+msgid "Products without a valid invoice or with tampered serial numbers"
+msgstr ""
+
+#: patterns/page-warranty.php:43
+msgid "How to claim"
+msgstr ""
+
+#: patterns/page-warranty.php:48
+msgid "Keep your invoice and the product box if possible."
+msgstr ""
+
+#: patterns/page-warranty.php:51
+msgid "Contact us with your order number, the product and a short description of the fault."
+msgstr ""
+
+#: patterns/page-warranty.php:54
+msgid "We guide you to the nearest authorised service centre or arrange pickup where available."
+msgstr ""
+
+#: patterns/page-warranty.php:57
+msgid "Repairs and replacements follow the brand's service timelines."
+msgstr ""
+
+#: patterns/page-warranty.php:62
+msgid "Need the invoice?"
+msgstr ""
+
+#. translators: %s: invoice label, e.g. "GST invoice"
+#: patterns/page-warranty.php:65
+msgid "Your %s is emailed with every order and is available under My Account > Orders."
+msgstr ""
+
+#: patterns/promo-duo.php:20
+msgid "Free accessories on selected phones"
+msgstr ""
+
+#: patterns/promo-duo.php:23
+msgid "Add your offer details here: bundles, cashback or launch deals."
+msgstr ""
+
+#: patterns/promo-duo.php:28, patterns/promo-duo.php:45
+msgid "Shop now"
+msgstr ""
+
+#: patterns/promo-duo.php:37
+msgid "Upgrade and save"
+msgstr ""
+
+#: patterns/promo-duo.php:40
+msgid "Promote an exchange offer, student discount or bulk pricing for businesses."
+msgstr ""
+
+#: patterns/testimonials.php:17
+msgid "What customers say"
+msgstr ""
+
+#: patterns/text-categories.php:14
+msgid "Categories"
+msgstr ""
+
+#: patterns/text-no-products-found.php:14
+msgid "No products found."
+msgstr ""
+
+#: patterns/text-no-results-try-different.php:14
+msgid "No results. Try different keywords."
+msgstr ""
+
+#: patterns/text-nothing-found.php:14
+msgid "Nothing found."
+msgstr ""
+
+#: patterns/text-page-not-found.php:14
+msgid "Page not found"
+msgstr ""
+
+#: patterns/text-the-page-you-are.php:14
+msgid "The page you are looking for has moved or no longer exists. Try a search or head back to the shop."
+msgstr ""
+
+#: patterns/text-you-may-also-like.php:14
+msgid "You may also like"
+msgstr ""
+
+#: patterns/usp-strip.php:19
+msgid "100% genuine"
+msgstr ""
+
+#: patterns/usp-strip.php:19
+msgid "Sourced from authorised channels"
+msgstr ""
+
+#: patterns/usp-strip.php:22
+msgid "Valid on every product"
+msgstr ""
+
+#: patterns/usp-strip.php:25
+msgid "Included with every order"
+msgstr ""
+
+#: patterns/usp-strip.php:28
+msgid "Secure payments"
+msgstr ""
+
+#: patterns/usp-strip.php:28
+msgid "Cards, UPI, net banking"
+msgstr ""
+
+#: patterns/why-us.php:17
+msgid "Why buy from us"
+msgstr ""
+
+#: patterns/why-us.php:24
+msgid "Authorised & genuine"
+msgstr ""
+
+#: patterns/why-us.php:27
+msgid "Every product is sealed, original and covered by the brand warranty."
+msgstr ""
+
+#: patterns/why-us.php:34
+msgid "Warranty support"
+msgstr ""
+
+#: patterns/why-us.php:37
+msgid "We help you with warranty claims and service centre details."
+msgstr ""
+
+#: patterns/why-us.php:47
+msgid "A proper tax invoice with every order, ready for business use."
+msgstr ""
+
+#: patterns/why-us.php:54
+msgid "Expert help"
+msgstr ""
+
+#: patterns/why-us.php:57
+msgid "Ask us which model suits you before you buy."
+msgstr ""
+

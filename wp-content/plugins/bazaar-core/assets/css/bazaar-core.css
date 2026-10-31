@@ -1,0 +1,155 @@
+/*
+ * Bazaar Core components: swatches, size guide, WhatsApp, product-page extras, forms,
+ * OTP login, filters, compare and reviews. Colours, type and spacing come from the
+ * active theme's theme.json presets, so components match any Bazaar theme.
+ * Corner radius follows the theme's --bzr-radius.
+ * Logical properties are used throughout so RTL (Arabic/Urdu) works without a separate file.
+ */
+
+.bzr-dialog .screen-reader-text, .bzr-swatches .screen-reader-text, .bzr-filters .screen-reader-text {
+	border: 0; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden;
+	padding: 0; position: absolute; width: 1px; white-space: nowrap;
+}
+
+/* ---- Variation swatches ---- */
+.bzr-swatches__select {
+	border: 0; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden;
+	padding: 0; position: absolute; width: 1px;
+}
+.bzr-swatches { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.bzr-swatch {
+	background: var(--wp--preset--color--base); border: 1px solid var(--wp--preset--color--border);
+	border-radius: var(--bzr-radius); color: var(--wp--preset--color--contrast); cursor: pointer;
+	font: inherit; font-size: var(--wp--preset--font-size--small); min-block-size: 2.75rem; min-inline-size: 2.75rem;
+	padding: 0.4rem 0.9rem; transition: border-color var(--bzr-transition), background var(--bzr-transition);
+}
+.bzr-swatch:hover { border-color: var(--wp--preset--color--contrast); }
+.bzr-swatch[aria-checked="true"] { background: var(--wp--preset--color--contrast); border-color: var(--wp--preset--color--contrast); color: var(--wp--preset--color--base); }
+.bzr-swatch:focus-visible { outline: 2px solid var(--wp--preset--color--primary); outline-offset: 3px; }
+.bzr-swatch:disabled, .bzr-swatch[aria-disabled="true"] { cursor: not-allowed; opacity: 0.35; text-decoration: line-through; }
+.bzr-swatch--color { background: var(--bzr-swatch); border-radius: 50%; min-inline-size: 2.75rem; padding: 0; position: relative; }
+.bzr-swatch--color:hover { border-color: var(--wp--preset--color--contrast); }
+.bzr-swatch--color[aria-checked="true"] { background: var(--bzr-swatch); box-shadow: 0 0 0 2px var(--wp--preset--color--base), 0 0 0 4px var(--wp--preset--color--contrast); }
+.variations th.label, .variations td.label { padding-block-end: 0.35rem; text-align: start; }
+.variations tr { display: block; margin-block-end: 1rem; }
+.variations th, .variations td { display: block; padding: 0; }
+.reset_variations { font-size: var(--wp--preset--font-size--small); }
+
+/* ---- Size guide dialog ---- */
+.bzr-size-guide__open {
+	background: none; border: 0; color: var(--wp--preset--color--primary); cursor: pointer;
+	font: inherit; font-size: var(--wp--preset--font-size--small); margin-block-end: 0.75rem; padding: 0; text-decoration: underline;
+}
+.bzr-dialog { border: 0; border-radius: var(--bzr-radius); box-shadow: var(--wp--preset--shadow--soft); max-inline-size: min(36rem, 92vw); padding: 0; }
+.bzr-dialog::backdrop { background: rgba(0, 0, 0, 0.5); }
+.bzr-dialog__inner { padding: 1.5rem; }
+.bzr-dialog h2 { font-size: var(--wp--preset--font-size--large); margin-block-start: 0; }
+.bzr-dialog__close { margin-block-start: 1rem; }
+.bzr-size-table { border-collapse: collapse; inline-size: 100%; text-align: center; }
+.bzr-size-table th, .bzr-size-table td { border: 1px solid var(--wp--preset--color--border); padding: 0.5rem; }
+.bzr-size-table thead th { background: var(--wp--preset--color--surface); }
+
+/* ---- WhatsApp ---- */
+.bzr-wa-order {
+	align-items: center; background: #1a7f4b; border-radius: var(--bzr-radius); color: #fff;
+	display: inline-flex; font-size: var(--wp--preset--font-size--small); font-weight: 600; gap: 0.5rem;
+	justify-content: center; letter-spacing: 0.06em; margin-block-start: 0.75rem; min-block-size: 2.75rem;
+	padding: 0.7rem 1.4rem; text-decoration: none; text-transform: uppercase; inline-size: 100%;
+}
+.bzr-wa-order:hover { background: #14633a; color: #fff; }
+.bzr-wa-float {
+	align-items: center; background: #1a7f4b; border-radius: 50%; box-shadow: var(--wp--preset--shadow--soft); color: #fff;
+	display: flex; block-size: 3.5rem; inline-size: 3.5rem; inset-block-end: 1.25rem; inset-inline-end: 1.25rem;
+	justify-content: center; position: fixed; z-index: 60; transition: transform var(--bzr-transition);
+}
+.bzr-wa-float:hover { color: #fff; transform: scale(1.06); }
+.bzr-wa-float:focus-visible, .bzr-wa-order:focus-visible { outline: 3px solid var(--wp--preset--color--contrast); outline-offset: 3px; }
+
+/* ---- Product page extras ---- */
+.bzr-status { color: var(--wp--preset--color--primary); font-size: var(--wp--preset--font-size--small); font-weight: 600; margin-block: 0 0.75rem; }
+.bzr-delivery { align-items: center; display: flex; flex-wrap: wrap; font-size: var(--wp--preset--font-size--small); gap: 0.5rem; margin-block: 1rem 0; }
+.bzr-trust { border-block-start: 1px solid var(--wp--preset--color--border); display: grid; gap: 0.75rem; grid-template-columns: repeat(2, 1fr); list-style: none; margin: 1.25rem 0 0; padding: 1.25rem 0 0; }
+.bzr-trust li { align-items: center; display: flex; font-size: var(--wp--preset--font-size--small); gap: 0.6rem; }
+.bzr-icon { color: var(--wp--preset--color--primary); flex: none; }
+.bzr-sticky-atc {
+	align-items: center; background: var(--wp--preset--color--base); border-block-start: 1px solid var(--wp--preset--color--border);
+	box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.08); display: flex; gap: 1rem; inset-block-end: 0; inset-inline: 0;
+	justify-content: space-between; padding: 0.75rem 1rem; position: fixed; z-index: 55;
+}
+.bzr-sticky-atc[hidden] { display: none; }
+.bzr-sticky-atc__info { display: flex; flex-direction: column; min-inline-size: 0; }
+.bzr-sticky-atc__title { font-size: var(--wp--preset--font-size--small); font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (min-width: 769px) { .bzr-sticky-atc { display: none !important; } }
+
+/* ---- Forms (contact + OTP) ---- */
+.bzr-form, .bzr-otp { max-inline-size: 36rem; }
+.bzr-form label, .bzr-otp label { display: block; font-size: var(--wp--preset--font-size--small); font-weight: 600; margin-block-end: 0.35rem; }
+.bzr-form input[type="text"], .bzr-form input[type="email"], .bzr-form textarea, .bzr-otp input[type="email"], .bzr-otp input[type="text"] {
+	background: var(--wp--preset--color--base); border: 1px solid var(--wp--preset--color--border); border-radius: var(--bzr-radius);
+	box-sizing: border-box; color: inherit; font: inherit; inline-size: 100%; min-block-size: 2.75rem; padding: 0.6rem 0.8rem;
+}
+.bzr-form input:focus-visible, .bzr-form textarea:focus-visible, .bzr-otp input:focus-visible { outline: 2px solid var(--wp--preset--color--primary); outline-offset: 1px; }
+.bzr-otp__hp { block-size: 0; inline-size: 0; inset-inline-start: -9999px; overflow: hidden; position: absolute; }
+.bzr-otp__title { font-size: var(--wp--preset--font-size--x-large); margin-block-start: 0; }
+.bzr-otp input[name="code"] { font-size: 1.5rem; letter-spacing: 0.4em; text-align: center; }
+.bzr-otp button.wp-element-button { margin-block-start: 1rem; }
+.bzr-otp__back { background: none; border: 0; color: var(--wp--preset--color--primary); cursor: pointer; display: block; font: inherit; margin-block-start: 0.75rem; padding: 0; text-decoration: underline; }
+.bzr-otp__status { margin-block-start: 1rem; min-block-size: 1.5em; }
+.bzr-otp__status.is-error, .bzr-form__notice.is-error { color: #b32d2e; }
+.bzr-form__notice { border-radius: var(--bzr-radius); font-weight: 600; padding: 0.75rem 1rem; }
+.bzr-form__notice.is-success { background: #e6f4ea; color: #1e6b3a; }
+.bzr-form__notice.is-error { background: #fdecea; }
+
+/* ---- Countdown + EMI ---- */
+.bzr-countdown { align-items: center; background: #fff4ed; border: 1px solid #f5c9b0; border-radius: var(--bzr-radius); color: #9a3412; display: inline-flex; font-size: var(--wp--preset--font-size--small); gap: 0.5rem; margin-block: 0 0.75rem; padding: 0.4rem 0.8rem; }
+.bzr-countdown strong { font-variant-numeric: tabular-nums; }
+.bzr-countdown[hidden] { display: none; }
+.bzr-emi { color: var(--wp--preset--color--muted); font-size: var(--wp--preset--font-size--small); margin-block: 0 0.75rem; }
+
+/* ---- Filters ---- */
+.bzr-filters__title { font-size: var(--wp--preset--font-size--large); margin-block-start: 0; }
+.bzr-filters__group { border-block-end: 1px solid var(--wp--preset--color--border); padding-block: 0.85rem; }
+.bzr-filters__group summary { cursor: pointer; font-weight: 600; }
+.bzr-filters__group ul { list-style: none; margin: 0.6rem 0 0; max-block-size: 14rem; overflow-y: auto; padding: 0; }
+.bzr-filters__group li { margin-block-end: 0.25rem; }
+.bzr-filters__group label { align-items: center; cursor: pointer; display: flex; font-size: var(--wp--preset--font-size--small); gap: 0.5rem; min-block-size: 2rem; }
+.bzr-filters__price { align-items: center; display: flex; gap: 0.5rem; margin-block-start: 0.6rem; }
+.bzr-filters__price input { border: 1px solid var(--wp--preset--color--border); border-radius: var(--bzr-radius); box-sizing: border-box; font: inherit; inline-size: 100%; min-block-size: 2.5rem; padding: 0.4rem 0.6rem; }
+.bzr-filters__actions { align-items: center; display: flex; gap: 1rem; margin-block-start: 1rem; }
+
+/* ---- Compare ---- */
+.bzr-compare-check { align-items: center; color: var(--wp--preset--color--muted); cursor: pointer; display: flex; font-size: var(--wp--preset--font-size--small); gap: 0.4rem; margin-block-start: 0.5rem; min-block-size: 2rem; }
+.bzr-compare-btn { background: none; border: 1px solid var(--wp--preset--color--border); border-radius: var(--bzr-radius); cursor: pointer; font: inherit; font-size: var(--wp--preset--font-size--small); margin-block-start: 0.75rem; min-block-size: 2.75rem; padding: 0.5rem 1rem; }
+.bzr-compare-btn.is-active { background: var(--wp--preset--color--accent); border-color: var(--wp--preset--color--primary); color: var(--wp--preset--color--primary); }
+.bzr-tray { align-items: center; background: var(--wp--preset--color--contrast); border-radius: var(--bzr-radius); box-shadow: var(--wp--preset--shadow--soft); color: var(--wp--preset--color--base); display: flex; gap: 1rem; inset-block-end: 1.25rem; inset-inline-start: 1.25rem; padding: 0.6rem 1rem; position: fixed; z-index: 60; }
+.bzr-tray[hidden] { display: none; }
+.bzr-tray__clear { background: none; border: 0; color: inherit; cursor: pointer; font: inherit; text-decoration: underline; }
+.bzr-compare__scroll { overflow-x: auto; }
+.bzr-compare__table { border-collapse: collapse; inline-size: 100%; min-inline-size: 36rem; }
+.bzr-compare__table th, .bzr-compare__table td { border: 1px solid var(--wp--preset--color--border); padding: 0.75rem; text-align: start; vertical-align: top; }
+.bzr-compare__table th[scope="row"] { background: var(--wp--preset--color--surface); inline-size: 10rem; }
+.bzr-compare__product { display: flex; flex-direction: column; gap: 0.5rem; }
+.bzr-compare__product img { max-inline-size: 8rem; }
+.bzr-compare__remove { align-self: flex-start; background: none; border: 0; color: var(--wp--preset--color--muted); cursor: pointer; font: inherit; font-size: var(--wp--preset--font-size--small); padding: 0; text-decoration: underline; }
+@media (max-width: 768px) { .bzr-tray { inset-block-end: 4.5rem; } }
+
+/* ---- Customer reviews ([bzr_reviews]) ---- */
+.bzr-reviews { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+.bzr-review { background: var(--wp--preset--color--base); border: 1px solid var(--wp--preset--color--border); border-radius: var(--bzr-radius); margin: 0; padding: 1.5rem; }
+.bzr-review__stars { color: #b7791f; font-size: 1.1rem; letter-spacing: 0.1em; margin: 0 0 0.5rem; }
+.bzr-review__text { border: 0; margin: 0; padding: 0; }
+.bzr-review__text p { margin: 0; }
+.bzr-review__by { color: var(--wp--preset--color--muted); font-size: var(--wp--preset--font-size--small); margin-block-start: 1rem; }
+.bzr-review__by a { color: inherit; }
+.bzr-review__verified { color: #1e6b3a; font-weight: 600; }
+.bzr-reviews__empty { border: 1px dashed var(--wp--preset--color--border); border-radius: var(--bzr-radius); padding: 1rem; text-align: center; }
+/* Hide a reviews section that has nothing to show (no reviews yet, visitor view). */
+.bzr-reviews-section:not(:has(.bzr-review, .bzr-reviews__empty)) { display: none; }
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+	.bzr-wa-float { inset-block-end: 4.5rem; } /* clear sticky add-to-cart bars */
+}
+@media (max-width: 480px) {
+	.bzr-swatch { min-inline-size: 2.5rem; }
+}

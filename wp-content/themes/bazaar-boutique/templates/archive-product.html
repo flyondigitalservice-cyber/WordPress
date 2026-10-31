@@ -1,0 +1,36 @@
+<!-- wp:template-part {"slug":"header","area":"header","tagName":"header"} /-->
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained","wideSize":"1280px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|60"}}}} -->
+<main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)">
+	<!-- wp:woocommerce/breadcrumbs {"align":"wide"} /-->
+	<!-- wp:query-title {"type":"archive","align":"wide","showPrefix":false} /-->
+	<!-- wp:term-description {"align":"wide"} /-->
+	<!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
+	<div class="wp-block-group alignwide">
+		<!-- wp:woocommerce/product-results-count /-->
+		<!-- wp:woocommerce/catalog-sorting /-->
+	</div>
+	<!-- /wp:group -->
+	<!-- wp:pattern {"slug":"bazaar-boutique/shop-filters"} /-->
+	<!-- wp:woocommerce/product-collection {"queryId":0,"query":{"perPage":12,"pages":0,"offset":0,"postType":"product","order":"asc","orderBy":"title","search":"","exclude":[],"inherit":true,"taxQuery":[],"isProductCollectionBlock":true,"woocommerceOnSale":false,"woocommerceStockStatus":["instock","outofstock","onbackorder"],"woocommerceAttributes":[],"woocommerceHandPickedProducts":[],"filterable":false,"relatedBy":{"categories":true,"tags":true}},"tagName":"div","displayLayout":{"type":"flex","columns":4,"shrinkColumns":true},"dimensions":{"widthType":"fill"},"queryContextIncludes":["collection"],"align":"wide"} -->
+	<div class="wp-block-woocommerce-product-collection alignwide">
+		<!-- wp:woocommerce/product-template -->
+			<!-- wp:woocommerce/product-image {"imageSizing":"thumbnail","aspectRatio":"3/4","isDescendentOfQueryLoop":true} -->
+				<!-- wp:woocommerce/product-sale-badge {"isDescendentOfQueryLoop":true,"align":"right"} /-->
+			<!-- /wp:woocommerce/product-image -->
+			<!-- wp:post-title {"level":3,"isLink":true,"__woocommerceNamespace":"woocommerce/product-collection/product-title"} /-->
+			<!-- wp:woocommerce/product-price {"isDescendentOfQueryLoop":true} /-->
+			<!-- wp:woocommerce/product-button {"isDescendentOfQueryLoop":true} /-->
+		<!-- /wp:woocommerce/product-template -->
+		<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"}} -->
+			<!-- wp:query-pagination-previous /-->
+			<!-- wp:query-pagination-numbers /-->
+			<!-- wp:query-pagination-next /-->
+		<!-- /wp:query-pagination -->
+		<!-- wp:woocommerce/product-collection-no-results -->
+			<!-- wp:pattern {"slug":"bazaar-boutique/text-no-products-found"} /-->
+		<!-- /wp:woocommerce/product-collection-no-results -->
+	</div>
+	<!-- /wp:woocommerce/product-collection -->
+</main>
+<!-- /wp:group -->
+<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"footer"} /-->

@@ -1,0 +1,719 @@
+# Copyright (C) 2026 Bazaar Store
+# This file is distributed under the same license as the Bazaar Store package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Bazaar Store\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Last-Translator: Flyon Digital Service\n"
+"Language-Team: Flyon Digital Service\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: inc/compat.php:77
+msgid "needs the Bazaar Core plugin for login, contact form, product features and Store Options."
+msgstr ""
+
+#: inc/compat.php:79
+msgid "Activate Bazaar Core"
+msgstr ""
+
+#: inc/compat.php:79
+msgid "Upload Bazaar Core"
+msgstr ""
+
+#: inc/setup.php:46
+msgid "Store sections"
+msgstr ""
+
+#: inc/setup.php:50
+msgid "Store pages"
+msgstr ""
+
+#: inc/theme-features.php:29, patterns/footer-content.php:85
+msgid "About us"
+msgstr ""
+
+#: inc/theme-features.php:30, patterns/cta.php:24, patterns/footer-content.php:71, patterns/page-about.php:65
+msgid "Contact us"
+msgstr ""
+
+#: inc/theme-features.php:31, patterns/footer-content.php:59
+msgid "Shipping policy"
+msgstr ""
+
+#: inc/theme-features.php:32, patterns/footer-content.php:62
+msgid "Delivery information"
+msgstr ""
+
+#: inc/theme-features.php:33, patterns/footer-content.php:65
+msgid "Return & refund policy"
+msgstr ""
+
+#: inc/theme-features.php:34, patterns/footer-content.php:68
+msgid "Payment methods"
+msgstr ""
+
+#: inc/theme-features.php:35, patterns/footer-content.php:88
+msgid "Terms & conditions"
+msgstr ""
+
+#: inc/theme-features.php:36
+msgid "Sign in"
+msgstr ""
+
+#: patterns/best-sellers.php:16
+msgid "Best sellers"
+msgstr ""
+
+#: patterns/category-grid.php:16
+msgid "Shop by category"
+msgstr ""
+
+#: patterns/category-grid.php:23, patterns/footer-content.php:36
+msgid "Kitchen & dining"
+msgstr ""
+
+#: patterns/category-grid.php:30, patterns/footer-content.php:39
+msgid "Plastic ware"
+msgstr ""
+
+#: patterns/category-grid.php:37, patterns/footer-content.php:42
+msgid "Glassware"
+msgstr ""
+
+#: patterns/category-grid.php:44, patterns/footer-content.php:45
+msgid "Crockery"
+msgstr ""
+
+#: patterns/category-grid.php:51
+msgid "Home essentials"
+msgstr ""
+
+#: patterns/cta.php:16
+msgid "Need help choosing?"
+msgstr ""
+
+#: patterns/cta.php:19
+msgid "Message us for product advice, bulk orders or order help."
+msgstr ""
+
+#: patterns/deals.php:16
+msgid "Deals of the week"
+msgstr ""
+
+#: patterns/deals.php:19
+msgid "Limited-time prices on customer favourites."
+msgstr ""
+
+#: patterns/faq.php:16
+msgid "Frequently asked questions"
+msgstr ""
+
+#: patterns/faq.php:21
+msgid "How long does delivery take?"
+msgstr ""
+
+#: patterns/faq.php:23
+msgid "Most orders arrive within the delivery window shown on the product page. See our Delivery Information page for details."
+msgstr ""
+
+#: patterns/faq.php:27
+msgid "Can I pay cash on delivery?"
+msgstr ""
+
+#: patterns/faq.php:29
+msgid "Yes, cash on delivery is available on eligible orders. You can choose it at checkout."
+msgstr ""
+
+#: patterns/faq.php:33
+msgid "What if my item arrives damaged?"
+msgstr ""
+
+#: patterns/faq.php:35
+msgid "Contact us within 48 hours with a photo and we will replace or refund it."
+msgstr ""
+
+#: patterns/faq.php:39
+msgid "How do I return an item?"
+msgstr ""
+
+#: patterns/faq.php:41
+msgid "Start from your account or contact us. Our Return & Refund Policy explains each step."
+msgstr ""
+
+#. translators: 1: year, 2: site name
+#: patterns/footer-bottom.php:16
+msgid "© %1$s %2$s."
+msgstr ""
+
+#. translators: 1: year, 2: site name
+#: patterns/footer-bottom.php:17
+msgid "We accept cards, UPI, net banking and cash on delivery."
+msgstr ""
+
+#: patterns/footer-content.php:28
+msgid "Shop"
+msgstr ""
+
+#: patterns/footer-content.php:33
+msgid "All products"
+msgstr ""
+
+#: patterns/footer-content.php:54
+msgid "Customer service"
+msgstr ""
+
+#: patterns/footer-content.php:80
+msgid "Company"
+msgstr ""
+
+#: patterns/footer-content.php:91
+msgid "Privacy policy"
+msgstr ""
+
+#: patterns/footer-content.php:94
+msgid "Sign in with OTP"
+msgstr ""
+
+#: patterns/hero.php:20
+msgid "Everything for your home"
+msgstr ""
+
+#: patterns/hero.php:23
+msgid "Quality essentials for every room"
+msgstr ""
+
+#: patterns/hero.php:26
+msgid "Kitchenware, glassware, crockery and everyday home products at honest prices, delivered to your door."
+msgstr ""
+
+#: patterns/hero.php:31
+msgid "Shop now"
+msgstr ""
+
+#: patterns/hero.php:34, patterns/page-about.php:17
+msgid "Our story"
+msgstr ""
+
+#: patterns/hero.php:45
+msgid "Replace with your hero photo"
+msgstr ""
+
+#: patterns/new-arrivals.php:16
+msgid "New arrivals"
+msgstr ""
+
+#: patterns/new-arrivals.php:33
+msgid "View all products"
+msgstr ""
+
+#: patterns/page-about.php:14
+msgid "We are a small team that believes everyday products should be well made, fairly priced and easy to buy."
+msgstr ""
+
+#: patterns/page-about.php:20
+msgid "We started with a simple idea: stock the things people actually use at home, and make sure every order arrives as expected. Tell your own story here: who you are, where you are based and what makes your store different."
+msgstr ""
+
+#: patterns/page-about.php:23
+msgid "What we stand for"
+msgstr ""
+
+#: patterns/page-about.php:30
+msgid "Quality first"
+msgstr ""
+
+#: patterns/page-about.php:33
+msgid "We check products before we list them and drop anything that does not meet our standard."
+msgstr ""
+
+#: patterns/page-about.php:40
+msgid "Fair prices"
+msgstr ""
+
+#: patterns/page-about.php:43
+msgid "No inflated list prices. What you see is what you pay."
+msgstr ""
+
+#: patterns/page-about.php:50
+msgid "Service that cares"
+msgstr ""
+
+#: patterns/page-about.php:53
+msgid "Questions, problems or returns are handled by real people."
+msgstr ""
+
+#: patterns/page-about.php:62
+msgid "Browse the shop"
+msgstr ""
+
+#: patterns/page-contact.php:14
+msgid "Questions about an order, a product or a bulk purchase? Send us a message and we will reply within one business day."
+msgstr ""
+
+#: patterns/page-contact.php:30
+msgid "Get in touch"
+msgstr ""
+
+#: patterns/page-contact.php:33
+msgid "Email"
+msgstr ""
+
+#: patterns/page-contact.php:36
+msgid "Phone"
+msgstr ""
+
+#: patterns/page-contact.php:39
+msgid "Address"
+msgstr ""
+
+#: patterns/page-contact.php:42
+msgid "Hours"
+msgstr ""
+
+#: patterns/page-delivery.php:14
+msgid "What to expect from the moment your order ships until it is in your hands."
+msgstr ""
+
+#: patterns/page-delivery.php:17
+msgid "Delivery times"
+msgstr ""
+
+#: patterns/page-delivery.php:20
+msgid "Location"
+msgstr ""
+
+#: patterns/page-delivery.php:20
+msgid "Estimated time"
+msgstr ""
+
+#: patterns/page-delivery.php:20
+msgid "Major cities"
+msgstr ""
+
+#: patterns/page-delivery.php:20
+msgid "2-4 business days"
+msgstr ""
+
+#: patterns/page-delivery.php:20
+msgid "Other towns"
+msgstr ""
+
+#: patterns/page-delivery.php:20
+msgid "4-7 business days"
+msgstr ""
+
+#: patterns/page-delivery.php:20
+msgid "Remote areas"
+msgstr ""
+
+#: patterns/page-delivery.php:20
+msgid "7-10 business days"
+msgstr ""
+
+#: patterns/page-delivery.php:23
+msgid "Before you receive your parcel"
+msgstr ""
+
+#: patterns/page-delivery.php:28
+msgid "You will get an SMS or email when your order ships."
+msgstr ""
+
+#: patterns/page-delivery.php:31
+msgid "The courier may call you to confirm your address."
+msgstr ""
+
+#: patterns/page-delivery.php:34
+msgid "Keep your phone on and someone available to receive the parcel."
+msgstr ""
+
+#: patterns/page-delivery.php:39
+msgid "If you are not home"
+msgstr ""
+
+#: patterns/page-delivery.php:42
+msgid "The courier will usually attempt delivery up to three times. After that the parcel returns to us and we will contact you to re-ship (extra shipping may apply)."
+msgstr ""
+
+#: patterns/page-delivery.php:45
+msgid "Damaged on arrival?"
+msgstr ""
+
+#: patterns/page-delivery.php:48
+msgid "Please record a short unboxing video, then contact us within 48 hours with photos. We will send a replacement or refund at no cost to you."
+msgstr ""
+
+#: patterns/page-delivery.php:51, patterns/page-payment.php:51, patterns/usp-strip.php:21
+msgid "Cash on delivery"
+msgstr ""
+
+#: patterns/page-delivery.php:54
+msgid "Keep the exact amount ready where possible. Delivery agents may not always carry change."
+msgstr ""
+
+#: patterns/page-login.php:17
+msgid "Prefer a password?"
+msgstr ""
+
+#: patterns/page-login.php:17
+msgid "Sign in with your password"
+msgstr ""
+
+#: patterns/page-payment.php:14
+msgid "Pay the way that suits you. Every online payment is encrypted and processed by a secure gateway."
+msgstr ""
+
+#: patterns/page-payment.php:21
+msgid "Cards"
+msgstr ""
+
+#: patterns/page-payment.php:24
+msgid "Credit and debit cards from major networks."
+msgstr ""
+
+#: patterns/page-payment.php:31
+msgid "UPI and wallets"
+msgstr ""
+
+#: patterns/page-payment.php:34
+msgid "Pay instantly with your UPI app or supported wallets."
+msgstr ""
+
+#: patterns/page-payment.php:41
+msgid "Net banking"
+msgstr ""
+
+#: patterns/page-payment.php:44
+msgid "Pay directly from your bank account."
+msgstr ""
+
+#: patterns/page-payment.php:54
+msgid "Pay the courier when your order arrives (eligible orders)."
+msgstr ""
+
+#: patterns/page-payment.php:61
+msgid "Payment security"
+msgstr ""
+
+#: patterns/page-payment.php:64
+msgid "We never see or store your card details. Payments are handled by our PCI-compliant payment partner."
+msgstr ""
+
+#: patterns/page-payment.php:67
+msgid "Payment failed?"
+msgstr ""
+
+#: patterns/page-payment.php:70
+msgid "If money was deducted but your order was not confirmed, it is normally refunded automatically within 5-7 business days. Contact us with your payment reference if it is not."
+msgstr ""
+
+#: patterns/page-payment.php:73
+msgid "Invoices"
+msgstr ""
+
+#: patterns/page-payment.php:76
+msgid "A tax invoice is emailed with every order and is available under My Account > Orders."
+msgstr ""
+
+#: patterns/page-returns.php:14
+msgid "If something is not right, we will fix it. Here is how returns, exchanges and refunds work."
+msgstr ""
+
+#: patterns/page-returns.php:17
+msgid "Return window"
+msgstr ""
+
+#: patterns/page-returns.php:20
+msgid "You can request a return within 7 days of delivery for unused items in their original packaging."
+msgstr ""
+
+#: patterns/page-returns.php:23
+msgid "What can be returned"
+msgstr ""
+
+#: patterns/page-returns.php:28
+msgid "Items that arrived damaged, defective or different from what you ordered"
+msgstr ""
+
+#: patterns/page-returns.php:31
+msgid "Unused items in original, sealed packaging"
+msgstr ""
+
+#: patterns/page-returns.php:36
+msgid "What cannot be returned"
+msgstr ""
+
+#: patterns/page-returns.php:41
+msgid "Items used, washed or damaged after delivery"
+msgstr ""
+
+#: patterns/page-returns.php:44
+msgid "Made-to-order or customised products"
+msgstr ""
+
+#: patterns/page-returns.php:47
+msgid "Items marked as non-returnable on the product page"
+msgstr ""
+
+#: patterns/page-returns.php:52
+msgid "How to return"
+msgstr ""
+
+#: patterns/page-returns.php:57
+msgid "Contact us with your order number and photos of the item."
+msgstr ""
+
+#: patterns/page-returns.php:60
+msgid "We approve the request and arrange a pickup or give you a return address."
+msgstr ""
+
+#: patterns/page-returns.php:63
+msgid "Pack the item securely in its original packaging."
+msgstr ""
+
+#: patterns/page-returns.php:66
+msgid "We inspect it on arrival and confirm your refund or exchange."
+msgstr ""
+
+#: patterns/page-returns.php:71
+msgid "Refunds"
+msgstr ""
+
+#: patterns/page-returns.php:74
+msgid "Approved refunds go to your original payment method within 5-7 business days of us receiving the item. For cash on delivery orders we refund by bank transfer or store credit."
+msgstr ""
+
+#: patterns/page-shipping.php:14
+msgid "How and when we ship your order, and what it costs."
+msgstr ""
+
+#: patterns/page-shipping.php:17
+msgid "Processing time"
+msgstr ""
+
+#: patterns/page-shipping.php:20
+msgid "Orders are processed and handed to the courier within 1-2 business days of payment confirmation (or order confirmation for cash on delivery). Orders placed on weekends or public holidays are processed the next business day."
+msgstr ""
+
+#: patterns/page-shipping.php:23
+msgid "Shipping rates"
+msgstr ""
+
+#: patterns/page-shipping.php:26
+msgid "Order value"
+msgstr ""
+
+#: patterns/page-shipping.php:26
+msgid "Shipping charge"
+msgstr ""
+
+#: patterns/page-shipping.php:26
+msgid "Above the free-shipping minimum"
+msgstr ""
+
+#: patterns/page-shipping.php:26
+msgid "Free"
+msgstr ""
+
+#: patterns/page-shipping.php:26
+msgid "Below the minimum"
+msgstr ""
+
+#: patterns/page-shipping.php:26
+msgid "Flat rate shown at checkout"
+msgstr ""
+
+#: patterns/page-shipping.php:29
+msgid "Where we ship"
+msgstr ""
+
+#: patterns/page-shipping.php:32
+msgid "We ship to the pin codes and countries listed at checkout. If your address is not serviceable, the checkout will tell you before you pay."
+msgstr ""
+
+#: patterns/page-shipping.php:35
+msgid "Order tracking"
+msgstr ""
+
+#: patterns/page-shipping.php:38
+msgid "Once your order ships you will receive an email with a tracking link. You can also see the status under My Account > Orders."
+msgstr ""
+
+#: patterns/page-shipping.php:41
+msgid "Lost or delayed parcels"
+msgstr ""
+
+#: patterns/page-shipping.php:44
+msgid "If your tracking has not moved for 5 days, contact us and we will raise it with the courier and arrange a replacement or refund where needed."
+msgstr ""
+
+#: patterns/page-terms.php:14
+msgid "By using this website and placing an order you agree to the terms below."
+msgstr ""
+
+#: patterns/page-terms.php:17
+msgid "Orders and pricing"
+msgstr ""
+
+#: patterns/page-terms.php:20
+msgid "All orders are subject to availability and confirmation. Prices may change without notice, but the price at the time you order is the price you pay."
+msgstr ""
+
+#: patterns/page-terms.php:23
+msgid "Accounts"
+msgstr ""
+
+#: patterns/page-terms.php:26
+msgid "You are responsible for keeping your account and login codes private and for activity under your account."
+msgstr ""
+
+#: patterns/page-terms.php:29
+msgid "Shipping, returns and payments"
+msgstr ""
+
+#: patterns/page-terms.php:32
+msgid "These are covered by our Shipping Policy, Return & Refund Policy and Payment Methods pages, which form part of these terms."
+msgstr ""
+
+#: patterns/page-terms.php:35
+msgid "Liability"
+msgstr ""
+
+#: patterns/page-terms.php:38
+msgid "To the extent permitted by law, we are not liable for indirect or consequential losses arising from use of the site or products."
+msgstr ""
+
+#: patterns/page-terms.php:41
+msgid "Governing law"
+msgstr ""
+
+#: patterns/page-terms.php:44
+msgid "These terms are governed by the laws of the country in which the store is registered."
+msgstr ""
+
+#: patterns/page-terms.php:47
+msgid "Contact"
+msgstr ""
+
+#: patterns/page-terms.php:50
+msgid "Questions about these terms? Reach us through the Contact page."
+msgstr ""
+
+#: patterns/promo-banner.php:20
+msgid "Buy more, save more"
+msgstr ""
+
+#: patterns/promo-banner.php:23
+msgid "Add a promotion message here: bundle offers, seasonal sales or a coupon code."
+msgstr ""
+
+#: patterns/promo-banner.php:32
+msgid "Shop the offer"
+msgstr ""
+
+#: patterns/testimonials.php:17
+msgid "What customers say"
+msgstr ""
+
+#: patterns/text-categories.php:14
+msgid "Categories"
+msgstr ""
+
+#: patterns/text-free-delivery-above-the.php:14
+msgid "Free delivery above the minimum order · Cash on delivery available"
+msgstr ""
+
+#: patterns/text-no-products-found.php:14
+msgid "No products found."
+msgstr ""
+
+#: patterns/text-no-results-try-different.php:14
+msgid "No results. Try different keywords."
+msgstr ""
+
+#: patterns/text-nothing-found.php:14
+msgid "Nothing found."
+msgstr ""
+
+#: patterns/text-page-not-found.php:14
+msgid "Page not found"
+msgstr ""
+
+#: patterns/text-the-page-you-are.php:14
+msgid "The page you are looking for has moved or no longer exists. Try a search or head back to the shop."
+msgstr ""
+
+#: patterns/text-you-may-also-like.php:14
+msgid "You may also like"
+msgstr ""
+
+#: patterns/usp-strip.php:18
+msgid "Free delivery"
+msgstr ""
+
+#: patterns/usp-strip.php:18
+msgid "On orders above the minimum"
+msgstr ""
+
+#: patterns/usp-strip.php:21
+msgid "Pay when it arrives"
+msgstr ""
+
+#: patterns/usp-strip.php:24
+msgid "Easy returns"
+msgstr ""
+
+#: patterns/usp-strip.php:24
+msgid "Hassle-free return window"
+msgstr ""
+
+#: patterns/usp-strip.php:27
+msgid "Secure payments"
+msgstr ""
+
+#: patterns/usp-strip.php:27
+msgid "Cards, UPI and wallets"
+msgstr ""
+
+#: patterns/why-us.php:16
+msgid "Why shop with us"
+msgstr ""
+
+#: patterns/why-us.php:23
+msgid "Carefully selected"
+msgstr ""
+
+#: patterns/why-us.php:26
+msgid "Every product is checked for quality before it is listed."
+msgstr ""
+
+#: patterns/why-us.php:33
+msgid "Fast, tracked delivery"
+msgstr ""
+
+#: patterns/why-us.php:36
+msgid "Orders are packed within a day and tracked until they reach you."
+msgstr ""
+
+#: patterns/why-us.php:43
+msgid "Simple returns"
+msgstr ""
+
+#: patterns/why-us.php:46
+msgid "Changed your mind or got a damaged item? We will make it right."
+msgstr ""
+
+#: patterns/why-us.php:53
+msgid "Real human support"
+msgstr ""
+
+#: patterns/why-us.php:56
+msgid "Message us on WhatsApp or email and a person will reply."
+msgstr ""
+

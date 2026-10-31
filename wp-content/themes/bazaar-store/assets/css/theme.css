@@ -1,0 +1,15 @@
+/* Store-only styling. */
+:root { --bzr-radius: 8px; }
+.bzr-eyebrow { font-size: var(--wp--preset--font-size--small); font-weight: 700; letter-spacing: 0.14em; margin: 0; text-transform: uppercase; }
+.wc-block-product { background: var(--wp--preset--color--base); }
+.wc-block-product .wp-block-post-title { text-align: start; }
+.wc-block-components-product-image { background: var(--wp--preset--color--surface); }
+.wc-block-product .wc-block-components-product-button .wp-block-button__link { width: 100%; }
+.bzr-tile { border-radius: var(--bzr-radius); }
+.bzr-tile .wp-block-cover__inner-container h3 { font-size: var(--wp--preset--font-size--large); margin: 0; }
+.bzr-tile .wp-block-cover__inner-container a { color: var(--wp--preset--color--contrast); }
+.bzr-footer-links { list-style: none; padding: 0; }
+.bzr-footer-links li { margin-block-end: 0.4rem; }
+.bzr-footer a { color: inherit; opacity: 0.85; }
+.bzr-footer a:hover { opacity: 1; }
+.wp-block-cover.bzr-tile { overflow: hidden; }

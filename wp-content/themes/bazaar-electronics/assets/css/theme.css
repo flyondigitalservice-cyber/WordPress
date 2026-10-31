@@ -1,0 +1,22 @@
+/* Electronics-only styling. */
+:root { --bzr-radius: 6px; }
+.bzr-eyebrow { font-size: var(--wp--preset--font-size--small); font-weight: 700; letter-spacing: 0.16em; margin: 0; text-transform: uppercase; }
+.wc-block-product { background: var(--wp--preset--color--base); border: 1px solid var(--wp--preset--color--border); border-radius: var(--bzr-radius); padding: 0.75rem; }
+.wc-block-product .wp-block-post-title { text-align: start; }
+.wc-block-components-product-image { background: var(--wp--preset--color--surface); }
+.wc-block-components-product-image img { mix-blend-mode: multiply; object-fit: contain; }
+.wc-block-components-product-sale-badge { background: var(--wp--preset--color--secondary); }
+.wc-block-product .wc-block-components-product-button .wp-block-button__link { width: 100%; }
+.bzr-tile { border-radius: var(--bzr-radius); }
+.bzr-tile .wp-block-cover__inner-container h3 { font-size: var(--wp--preset--font-size--large); margin: 0; }
+.bzr-tile .wp-block-cover__inner-container a { color: var(--wp--preset--color--contrast); }
+.bzr-footer-links { list-style: none; padding: 0; }
+.bzr-footer-links li { margin-block-end: 0.4rem; }
+.bzr-footer a { color: inherit; opacity: 0.85; }
+.bzr-footer a:hover { opacity: 1; }
+.bzr-header .wp-block-search { flex: 1 1 24rem; max-inline-size: 36rem; }
+.bzr-header .wp-block-search__input { border: 1px solid var(--wp--preset--color--border); border-radius: var(--bzr-radius); min-block-size: 2.75rem; padding-inline: 0.9rem; }
+/* Product highlights (short description bullets) get check marks. */
+.wp-block-post-excerpt__excerpt ul, .woocommerce-product-details__short-description ul { list-style: none; padding: 0; }
+.wp-block-post-excerpt__excerpt li, .woocommerce-product-details__short-description li { padding-inline-start: 1.6rem; position: relative; }
+.wp-block-post-excerpt__excerpt li::before, .woocommerce-product-details__short-description li::before { color: var(--wp--preset--color--primary); content: "\2713"; font-weight: 700; inset-inline-start: 0; position: absolute; }

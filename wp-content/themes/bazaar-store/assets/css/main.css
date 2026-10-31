@@ -1,0 +1,72 @@
+/*
+ * Bazaar theme base styles. Component styles (swatches, forms, compare...) ship with the Bazaar Core plugin. Logical properties are used throughout so RTL (Arabic/Urdu) works without a separate stylesheet.
+ * theme.json handles colours, type and spacing; this file covers what theme.json cannot.
+ */
+
+:root {
+	--bzr-radius: var(--wp--custom--radius, 2px);
+	--bzr-transition: var(--wp--custom--transition, 180ms ease);
+}
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto; }
+	*, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+img { height: auto; max-width: 100%; }
+
+.screen-reader-text {
+	border: 0; clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden;
+	padding: 0; position: absolute; width: 1px; white-space: nowrap;
+}
+
+/* ---- Header ---- */
+.bzr-header { position: sticky; inset-block-start: 0; z-index: 50; background: var(--wp--preset--color--base); border-block-end: 1px solid var(--wp--preset--color--border); }
+.admin-bar .bzr-header { inset-block-start: var(--wp-admin--admin-bar--height, 32px); }
+.bzr-announcement { font-size: var(--wp--preset--font-size--small); text-align: center; }
+.bzr-announcement p { margin: 0; }
+
+/* ---- Product cards (Product Collection / Query Loop) ---- */
+.wc-block-product { transition: transform var(--bzr-transition); }
+.wc-block-product .wc-block-components-product-image img { transition: transform 400ms ease; }
+.wc-block-product:hover .wc-block-components-product-image img { transform: scale(1.03); }
+.wc-block-components-product-image { overflow: hidden; border-radius: var(--bzr-radius); }
+.wc-block-product .wp-block-post-title { font-size: var(--wp--preset--font-size--medium); font-weight: 500; margin-block: 0.5rem 0.25rem; }
+.wc-block-product .wp-block-post-title a { color: var(--wp--preset--color--contrast); text-decoration: none; }
+.wc-block-components-product-sale-badge {
+	background: var(--wp--preset--color--primary); color: var(--wp--preset--color--base);
+	border: 0; border-radius: var(--bzr-radius); font-size: 0.75rem; font-weight: 600;
+	letter-spacing: 0.05em; text-transform: uppercase;
+}
+.wc-block-components-product-price del { color: var(--wp--preset--color--muted); font-weight: 400; }
+.wc-block-components-product-price ins { text-decoration: none; }
+
+/* ---- Product page layout ---- */
+.bzr-pdp__sticky { position: sticky; inset-block-start: 6.5rem; align-self: flex-start; }
+
+/* ---- Utilities / sections ---- */
+.bzr-usp { text-align: center; }
+.bzr-usp p { margin: 0; }
+.bzr-tile { overflow: hidden; position: relative; }
+.bzr-tile a { text-decoration: none; }
+.bzr-tile .wp-block-cover__image-background { transition: transform 600ms ease; }
+.bzr-tile:hover .wp-block-cover__image-background { transform: scale(1.05); }
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+	.bzr-hide-tablet { display: none; }
+}
+@media (max-width: 768px) {
+	.bzr-hide-mobile { display: none; }
+}
+
+/* ---- Info pages ---- */
+.bzr-info-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+.bzr-card { background: var(--wp--preset--color--surface); border: 1px solid var(--wp--preset--color--border); border-radius: var(--bzr-radius); padding: 1.5rem; }
+.bzr-card h3 { margin-block-start: 0; }
+.bzr-faq details { border-block-end: 1px solid var(--wp--preset--color--border); padding-block: 1rem; }
+.bzr-faq summary { cursor: pointer; font-weight: 600; }
+.bzr-table { border-collapse: collapse; inline-size: 100%; }
+.bzr-table th, .bzr-table td { border: 1px solid var(--wp--preset--color--border); padding: 0.65rem 0.85rem; text-align: start; }
+.bzr-table thead th { background: var(--wp--preset--color--surface); }
