@@ -17,6 +17,7 @@ import {
   MapPin,
   Menu,
   MessageCircle,
+  Snowflake,
   Minus,
   Phone,
   Plus,
@@ -33,7 +34,7 @@ import {
 /*  Config — change these to your own details                          */
 /* ------------------------------------------------------------------ */
 
-const BRAND = "Qubani Atelier";
+const BRAND = "Apricot Dessert";
 const WHATSAPP_NUMBER = "918408820830"; // country code + number, digits only
 const PHONE_DISPLAY = "+91 84088 20830";
 
@@ -61,6 +62,9 @@ const IMAGES = {
   brownieCheese: "./images/brownie-cream-cheese.jpg",
   brownie: "./images/brownie-walnut-fudge.jpg",
   halwa: "./images/badam-halwa.jpg",
+  kaju: "./images/kaju-halwa-tin.jpg",
+  gajar: "./images/gajar-halwa.jpg",
+  gajarCups: "./images/gajar-halwa-cups.jpg",
 };
 
 const waLink = (message) =>
@@ -171,6 +175,7 @@ const INGREDIENTS = [
   "Walnut fudge brownies",
   "Badam halwa",
   "Kaju halwa",
+  "Gajar ka halwa",
   "Sun-dried apricots",
   "Fresh dairy cream",
   "Toasted almonds",
@@ -392,10 +397,10 @@ const CATEGORIES = [
       </>
     ),
     intro:
-      "Rich, festive halwas the way Deccan homes make them: nuts ground fresh, roasted low and slow in pure ghee, scented with saffron and cardamom, and finished with silver vark.",
-    cardText: "Badam halwa and kaju halwa, roasted in pure ghee.",
+      "Rich, festive halwas the way Deccan homes make them: badam and kaju roasted low and slow in pure ghee, plus our winter-special gajar ka halwa made with fresh red carrots.",
+    cardText: "Badam, kaju and winter-special gajar ka halwa, made in pure ghee.",
     image: IMAGES.halwa,
-    from: 399,
+    from: 199,
     products: [
       {
         id: "badam-halwa",
@@ -415,17 +420,31 @@ const CATEGORIES = [
       {
         id: "kaju-halwa",
         name: "Kaju Halwa",
-        badge: "Melt-in-mouth",
+        badge: "Gift-tin favourite",
         description:
-          "Silky cashew halwa, slow-cooked with milk and ghee into a smooth, creamy, melt-in-the-mouth sweet. Lighter and buttery, loved by all ages.",
-        image: IMAGES.halwa,
-        imagePos: "object-[30%_60%] scale-110",
+          "Rich cashew halwa slow-cooked in ghee until deep golden-brown, set and cut into squares, then topped with whole cashews and pistachio.",
+        image: IMAGES.kaju,
         options: [
           { label: "250 g", price: 399, note: "Serves 3–4" },
           { label: "500 g", price: 749, note: "Serves 6–8" },
           { label: "1 KG", price: 1399, note: "Serves 12–15" },
         ],
-        features: ["Premium whole cashews", "Slow-cooked with milk & ghee", "Festive gift tins available"],
+        features: ["Premium whole cashews", "Cut into squares, easy to serve", "Festive gift tins available"],
+      },
+      {
+        id: "gajar-halwa",
+        name: "Gajar ka Halwa",
+        badge: "Winter special",
+        seasonal: true,
+        description:
+          "The winter classic: fresh red carrots grated by hand and slow-cooked with milk, ghee and cardamom, loaded with cashews, almonds, pistachio and raisins.",
+        image: IMAGES.gajar,
+        options: [
+          { label: "250 g", price: 199, note: "Serves 2–3" },
+          { label: "500 g", price: 379, note: "Serves 5–6" },
+          { label: "1 KG", price: 699, note: "Serves 10–12" },
+        ],
+        features: ["Fresh winter red carrots", "Slow-cooked with milk & ghee", "Loaded with dry fruits"],
       },
     ],
     highlights: [
@@ -1343,10 +1362,20 @@ function ProductCard({ product, categoryName, delay = 0 }) {
           <div className="absolute inset-0 bg-gradient-to-t from-[#1F1B16]/55 to-transparent" />
           <span
             className={`absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider shadow-lg ${
-              product.premium ? "bg-[#F28500] text-white" : "bg-[#FDFBF7] text-[#1F1B16]"
+              product.premium
+                ? "bg-[#F28500] text-white"
+                : product.seasonal
+                ? "bg-[#1F1B16] text-[#FDFBF7]"
+                : "bg-[#FDFBF7] text-[#1F1B16]"
             }`}
           >
-            {product.premium ? <Star className="h-3 w-3 fill-white" /> : <Sparkles className="h-3 w-3 text-[#F28500]" />}
+            {product.premium ? (
+              <Star className="h-3 w-3 fill-white" />
+            ) : product.seasonal ? (
+              <Snowflake className="h-3 w-3 text-[#F7A23B]" />
+            ) : (
+              <Sparkles className="h-3 w-3 text-[#F28500]" />
+            )}
             {product.badge}
           </span>
           <span className="absolute bottom-4 left-5 text-xs font-medium text-white/90">{option.note}</span>
@@ -1649,6 +1678,55 @@ function QubaniComparison() {
   );
 }
 
+function WinterSpecial({ showLink = true }) {
+  return (
+    <section className="px-5 pb-24 sm:px-8">
+      <Reveal>
+        <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-[2.5rem] bg-[#1F1B16] text-[#FDFBF7] lg:grid-cols-2">
+          <div className="pointer-events-none absolute -left-24 -top-24 h-80 w-80 rounded-full bg-[#F28500]/25 blur-3xl" />
+          <div className="relative p-8 sm:p-14">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#F7C27A]">
+              <Snowflake className="h-3.5 w-3.5" /> Winter special
+            </span>
+            <h2 className="font-display mt-6 text-4xl leading-[1.05] sm:text-6xl">
+              Gajar ka Halwa is <em className="text-[#F7A23B]">back.</em>
+            </h2>
+            <p className="mt-5 max-w-md text-lg leading-relaxed text-[#E9E1D3]/80">
+              Made only in the winter months, with fresh red carrots slow-cooked in milk and ghee and loaded with dry
+              fruits. Small batches, so order early.
+            </p>
+            <p className="mt-6 text-sm text-[#E9E1D3]/70">
+              From <strong className="font-display text-3xl font-medium text-white">{formatINR(199)}</strong> · 250 g
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <WhatsAppButton message={`Hi ${BRAND}! I'd like to order Gajar ka Halwa (winter special).`}>
+                Order Gajar Halwa
+              </WhatsAppButton>
+              {showLink && (
+                <a
+                  href="#halwa"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
+                >
+                  See all halwas
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </a>
+              )}
+            </div>
+          </div>
+          <div className="relative min-h-[18rem]">
+            <img
+              src={IMAGES.gajarCups}
+              alt="Gajar ka halwa in takeaway boxes and bowls topped with cashews, almonds and pistachio"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.5s] hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1F1B16] via-transparent to-transparent lg:via-[#1F1B16]/10" />
+          </div>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
 function CrossSell({ current }) {
   const others = CATEGORIES.filter((c) => c.id !== current);
   return (
@@ -1713,13 +1791,19 @@ function CategoryPage({ category }) {
           <Reveal>
             <SectionHeading eyebrow="The menu" title={<>Choose, size up, <em className="text-[#F28500]">order.</em></>} />
           </Reveal>
-          <div className="mx-auto mt-14 grid max-w-5xl gap-8 md:grid-cols-2">
+          <div
+            className={`mx-auto mt-14 grid gap-8 md:grid-cols-2 ${
+              category.products.length > 2 ? "max-w-7xl lg:grid-cols-3" : "max-w-5xl"
+            }`}
+          >
             {category.products.map((p, i) => (
               <ProductCard key={p.id} product={p} categoryName={category.name} delay={i * 120} />
             ))}
           </div>
         </div>
       </section>
+
+      {category.id === "halwa" && <WinterSpecial showLink={false} />}
 
       {category.id === "qubani" && (
         <>
@@ -1791,6 +1875,7 @@ function HomePage() {
     <>
       <Hero />
       <CategoryShowcase />
+      <WinterSpecial />
       <SignatureSpotlight />
       <Story />
       <Reviews />
