@@ -8,8 +8,8 @@ A single-page, responsive landing page for a Deccan fusion bakery. Its signature
 
 ## Customise
 Edit the constants at the top of `QubaniLanding.jsx`:
-- `BRAND`, `WHATSAPP_NUMBER` (digits only, with country code), `PHONE_DISPLAY`
-- `PRODUCTS` (prices, sizes), `REVIEWS`, `FAQS`, and the address in `Footer`
+- `BRAND`, `WHATSAPP_NUMBER` (digits only, with country code), `PHONE_DISPLAY`, `LOCATIONS`
+- `PRODUCTS` (prices, sizes), `REVIEWS`, `FAQS`, `EVENT_TYPES` (party, marriage and hotel orders)
 
 ## Use in a React + Tailwind project
 ```bash

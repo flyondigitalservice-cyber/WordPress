@@ -8,6 +8,8 @@ import {
   Crown,
   Gift,
   Heart,
+  Hotel,
+  PartyPopper,
   Instagram,
   Leaf,
   MapPin,
@@ -21,6 +23,7 @@ import {
   Sparkles,
   Star,
   Truck,
+  Users,
   X,
 } from "lucide-react";
 
@@ -29,8 +32,21 @@ import {
 /* ------------------------------------------------------------------ */
 
 const BRAND = "Qubani Atelier";
-const WHATSAPP_NUMBER = "919999999999"; // country code + number, digits only
-const PHONE_DISPLAY = "+91 99999 99999";
+const WHATSAPP_NUMBER = "918408820830"; // country code + number, digits only
+const PHONE_DISPLAY = "+91 84088 20830";
+
+const LOCATIONS = [
+  {
+    city: "Aurangabad",
+    address: "Rauza Baugh, Aurangabad (Chhatrapati Sambhajinagar), Maharashtra",
+    map: "https://www.google.com/maps/search/?api=1&query=Rauza+Baugh+Aurangabad+Maharashtra",
+  },
+  {
+    city: "Navi Mumbai",
+    address: "Taloja Phase 1, Navi Mumbai, Maharashtra",
+    map: "https://www.google.com/maps/search/?api=1&query=Taloja+Phase+1+Navi+Mumbai",
+  },
+];
 
 const IMAGES = {
   hero: "./images/layer-cake-slicing-on-plate.jpg",
@@ -53,6 +69,7 @@ const NAV_LINKS = [
   { label: "Our Story", href: "#story" },
   { label: "The Layers", href: "#layers" },
   { label: "Menu", href: "#menu" },
+  { label: "Bulk Orders", href: "#events" },
   { label: "Reviews", href: "#reviews" },
   { label: "FAQ", href: "#faq" },
 ];
@@ -135,7 +152,7 @@ const REVIEWS = [
   },
   {
     name: "Rohan Deshpande",
-    place: "Pune",
+    place: "Navi Mumbai",
     text: "Sent the festive gift box to my in-laws for Diwali. The packaging alone got compliments, and the cake disappeared in ten minutes flat.",
   },
   {
@@ -163,8 +180,12 @@ const FAQS = [
     a: "Keep it refrigerated and enjoy within 48 hours. Take it out 10 minutes before serving so the cream softens and the Qubani becomes glossy again.",
   },
   {
-    q: "Do you deliver outside the city?",
-    a: "We deliver across the city in chilled boxes. For out-of-city orders, our Qubani compote jars travel beautifully — ask us about courier options.",
+    q: "Where do you deliver?",
+    a: "We bake and deliver from two kitchens: Rauza Baugh in Aurangabad and Taloja Phase 1 in Navi Mumbai. Cakes go out in chilled boxes across both cities. For other cities, ask us about our Qubani compote jars, which travel well by courier.",
+  },
+  {
+    q: "Do you take party, wedding and hotel orders?",
+    a: "Yes. We cater birthdays, house parties, nikah and wedding functions, and supply hotels, restaurants and caterers regularly. Bulk orders get special pricing and custom sizes, from dessert cups to full sheet cakes. Message us on WhatsApp with your date, guest count and venue.",
   },
 ];
 
@@ -867,7 +888,7 @@ function MenuSection() {
         <Reveal delay={200}>
           <div className="mt-14 grid gap-4 rounded-[2rem] bg-[#FFF1DE]/60 p-6 sm:grid-cols-3 sm:p-8">
             {[
-              [Truck, "Same-day delivery", "Order before 12 noon"],
+              [Truck, "Same-day delivery", "Aurangabad & Navi Mumbai"],
               [ShieldCheck, "Hygienic & sealed", "Tamper-proof chilled boxes"],
               [Leaf, "Eggless on request", "No extra charge"],
             ].map(([Icon, title, text]) => (
@@ -947,47 +968,129 @@ function Reviews() {
   );
 }
 
-function CtaBanner() {
+const EVENT_TYPES = [
+  {
+    icon: PartyPopper,
+    title: "Parties & celebrations",
+    text: "Birthdays, anniversaries, house parties and office get-togethers. Pre-cut slices, dessert cups or full cakes.",
+    perks: ["Dessert cups & jars", "Custom message toppers", "From 10 guests"],
+    message: "a party / celebration",
+  },
+  {
+    icon: Heart,
+    title: "Marriage & nikah",
+    text: "Mehendi, haldi, nikah, walima and reception dessert counters. Qubani served the royal way at your wedding.",
+    perks: ["Live dessert counters", "Wedding favour boxes", "Bulk pricing for 100+ guests"],
+    message: "a marriage / wedding function",
+    featured: true,
+  },
+  {
+    icon: Hotel,
+    title: "Hotels & restaurants",
+    text: "Regular supply for hotels, restaurants, cafés and caterers. Consistent quality and reliable daily or weekly deliveries.",
+    perks: ["Sheet cakes & portions", "Standing weekly orders", "Trade pricing"],
+    message: "hotel / restaurant supply",
+  },
+];
+
+function EventsSection() {
   return (
-    <section className="px-5 py-24 sm:px-8 sm:py-28">
-      <Reveal>
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-[#F28500]">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#F7A23B] via-[#F28500] to-[#C45A00]" />
-          <div className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-white/15 blur-2xl" />
-          <div className="relative grid items-center gap-10 p-8 sm:p-14 lg:grid-cols-5">
-            <div className="lg:col-span-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">Festive season is here</p>
-              <h2 className="font-display mt-4 text-4xl leading-[1.05] text-white sm:text-6xl">
-                Gift a little piece of royal heritage.
-              </h2>
-              <p className="mt-5 max-w-lg text-lg text-white/85">
-                Corporate hampers, wedding favours and bulk festive orders, all beautifully boxed and hand-delivered.
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <WhatsAppButton
-                  variant="dark"
-                  message={`Hi ${BRAND}! I'm interested in a festive / bulk gifting order.`}
-                >
-                  Plan a gifting order
-                </WhatsAppButton>
-                <a
-                  href={`tel:+${WHATSAPP_NUMBER}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
-                >
-                  <Phone className="h-4 w-4" /> {PHONE_DISPLAY}
-                </a>
+    <section id="events" className="scroll-mt-20 px-5 py-24 sm:px-8 sm:py-28">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <div className="relative overflow-hidden rounded-[2.5rem]">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#F7A23B] via-[#F28500] to-[#C45A00]" />
+            <div className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-white/15 blur-2xl" />
+            <div className="relative grid items-center gap-10 p-8 sm:p-14 lg:grid-cols-5">
+              <div className="lg:col-span-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
+                  Party · Marriage · Hotel orders
+                </p>
+                <h2 className="font-display mt-4 text-4xl leading-[1.05] text-white sm:text-6xl">
+                  Bring the royal Qubani to your big day.
+                </h2>
+                <p className="mt-5 max-w-lg text-lg text-white/85">
+                  From an intimate birthday to a grand walima, plus regular supply for hotels and caterers. Bulk
+                  pricing, custom sizes and on-time delivery across Aurangabad and Navi Mumbai.
+                </p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <WhatsAppButton
+                    variant="dark"
+                    message={`Hi ${BRAND}! I'd like a quote for a bulk order. Event type: ___, Date: ___, Guests: ___, Venue: ___`}
+                  >
+                    Get a bulk quote
+                  </WhatsAppButton>
+                  <a
+                    href={`tel:+${WHATSAPP_NUMBER}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
+                  >
+                    <Phone className="h-4 w-4" /> Call {PHONE_DISPLAY}
+                  </a>
+                </div>
+              </div>
+              <div className="relative hidden lg:col-span-2 lg:block">
+                <img
+                  src={IMAGES.tray}
+                  alt="A family-size tray of layered Qubani dessert topped with almonds"
+                  className="ml-auto aspect-[3/4] w-72 rotate-3 rounded-[2rem] object-cover shadow-2xl ring-8 ring-white/20 transition-transform duration-700 hover:rotate-0"
+                />
+                <div className="absolute bottom-8 left-0 flex items-center gap-3 rounded-2xl bg-white p-3 pr-5 shadow-xl">
+                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-[#FFF1DE] text-[#F28500]">
+                    <Users className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <p className="text-sm font-semibold text-[#1F1B16]">Small parties to big weddings</p>
+                    <p className="text-xs text-[#8C8177]">Special bulk pricing</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="relative hidden lg:col-span-2 lg:block">
-              <img
-                src={IMAGES.tray}
-                alt="A family-size tray of layered Qubani dessert topped with almonds"
-                className="ml-auto aspect-[3/4] w-72 rotate-3 rounded-[2rem] object-cover shadow-2xl ring-8 ring-white/20 transition-transform duration-700 hover:rotate-0"
-              />
-            </div>
           </div>
+        </Reveal>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {EVENT_TYPES.map(({ icon: Icon, title, text, perks, message, featured }, i) => (
+            <Reveal key={title} delay={i * 120} className="h-full">
+              <article
+                className={`group flex h-full flex-col rounded-[2rem] p-8 transition-all duration-500 hover:-translate-y-1.5 ${
+                  featured
+                    ? "bg-[#1F1B16] text-[#FDFBF7] shadow-[0_35px_70px_-35px_rgba(31,27,22,0.7)]"
+                    : "bg-white text-[#1F1B16] shadow-[0_25px_60px_-40px_rgba(31,27,22,0.4)] ring-1 ring-[#1F1B16]/5 hover:shadow-[0_35px_70px_-35px_rgba(31,27,22,0.45)]"
+                }`}
+              >
+                <span
+                  className={`grid h-14 w-14 place-items-center rounded-2xl transition-all duration-300 group-hover:rotate-[-6deg] ${
+                    featured ? "bg-[#F28500] text-white" : "bg-[#FFF1DE] text-[#F28500]"
+                  }`}
+                >
+                  <Icon className="h-6 w-6" />
+                </span>
+                <h3 className="font-display mt-6 text-3xl">{title}</h3>
+                <p className={`mt-3 leading-relaxed ${featured ? "text-[#E9E1D3]/75" : "text-[#5B5249]"}`}>{text}</p>
+                <ul className="mt-6 flex-1 space-y-2.5">
+                  {perks.map((perk) => (
+                    <li key={perk} className="flex items-center gap-2.5 text-sm">
+                      <Check className={`h-4 w-4 shrink-0 ${featured ? "text-[#F7A23B]" : "text-[#F28500]"}`} />
+                      {perk}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={waLink(`Hi ${BRAND}! I'd like a quote for ${message}. Date: ___, Guests: ___, Venue: ___`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`mt-8 inline-flex items-center gap-2 text-sm font-semibold transition-colors ${
+                    featured ? "text-[#F7A23B] hover:text-white" : "text-[#C46A00] hover:text-[#1F1B16]"
+                  }`}
+                >
+                  Enquire on WhatsApp
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </a>
+              </article>
+            </Reveal>
+          ))}
         </div>
-      </Reveal>
+      </div>
     </section>
   );
 }
@@ -1115,17 +1218,24 @@ function Footer() {
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E9B949]">Visit & order</h4>
             <ul className="mt-5 space-y-4 text-[#E9E1D3]/70">
-              <li className="flex gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#F28500]" />
-                Kranti Chowk, Aurangabad (Chhatrapati Sambhajinagar), Maharashtra
-              </li>
+              {LOCATIONS.map((loc) => (
+                <li key={loc.city} className="flex gap-3">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#F28500]" />
+                  <a href={loc.map} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-[#F7A23B]">
+                    <span className="block font-semibold text-[#FDFBF7]">{loc.city}</span>
+                    {loc.address}
+                  </a>
+                </li>
+              ))}
               <li className="flex gap-3">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[#F28500]" />
                 Daily · 10:00 am – 10:00 pm
               </li>
               <li className="flex gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#F28500]" />
-                {PHONE_DISPLAY}
+                <a href={`tel:+${WHATSAPP_NUMBER}`} className="transition-colors hover:text-[#F7A23B]">
+                  {PHONE_DISPLAY} (call & WhatsApp)
+                </a>
               </li>
             </ul>
           </div>
@@ -1206,7 +1316,7 @@ export default function QubaniLanding() {
         <Story />
         <MenuSection />
         <Reviews />
-        <CtaBanner />
+        <EventsSection />
         <FAQ />
       </main>
       <Footer />
