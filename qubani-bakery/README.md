@@ -8,7 +8,7 @@ A responsive multi-page website for a Deccan dessert bakery, built as one React 
 - `#halwa`: badam halwa, kaju halwa and winter-special gajar ka halwa
 - `#bulk-orders`: party, marriage and hotel orders, both locations, FAQ
 
-Every product has a size picker and quantity picker that pre-fill a WhatsApp order message.
+Every product has a size picker and quantity picker that pre-fill a WhatsApp order message. Each size has a retail `price` and, except brownies, a `b2b` trade price shown on the Bulk Orders page. The Halwa page has a photo gallery with a lightbox.
 
 - `QubaniLanding.jsx`: the whole page as one React component. It uses Tailwind CSS (arbitrary values only, so no Tailwind config is needed) and `lucide-react` icons.
 - `images/`: the product photos the page uses.

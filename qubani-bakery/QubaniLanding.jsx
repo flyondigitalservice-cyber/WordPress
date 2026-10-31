@@ -65,6 +65,8 @@ const IMAGES = {
   kaju: "./images/kaju-halwa-tin.jpg",
   gajar: "./images/gajar-halwa.jpg",
   gajarCups: "./images/gajar-halwa-cups.jpg",
+  kajuPlate: "./images/kaju-halwa.jpg",
+  gajarTray: "./images/gajar-halwa-tray.jpg",
 };
 
 const waLink = (message) =>
@@ -165,7 +167,7 @@ const FAQS = [
   },
   {
     q: "Do you take party, wedding and hotel orders?",
-    a: "Yes. We cater birthdays, house parties, nikah and wedding functions, and supply hotels, restaurants and caterers regularly. Bulk orders get special pricing and custom sizes, from dessert cups to full sheet cakes. Message us on WhatsApp with your date, guest count and venue.",
+    a: "Yes. We cater birthdays, house parties, nikah and wedding functions, and supply hotels, restaurants and caterers regularly. Businesses get dedicated B2B rates (see the price list on our Bulk Orders page), and events get custom sizes, from dessert cups to full sheet cakes. Message us on WhatsApp with your date, guest count and venue.",
   },
 ];
 
@@ -299,7 +301,6 @@ const CATEGORIES = [
       "Our house speciality. Sun-dried apricots slow-stewed the old Deccan way, served as the timeless classic, or as Apricot Delight, our premium layered cake with fresh cream.",
     cardText: "Classic Qubani ka Meetha and our premium Apricot Delight layer cake.",
     image: IMAGES.qubaniClassic,
-    from: 249,
     products: [
       {
         id: "qubani-classic",
@@ -309,9 +310,9 @@ const CATEGORIES = [
           "The heirloom recipe: whole apricots slow-stewed into a glossy, jammy compote, finished with a dollop of fresh cream, almond flakes and pistachio.",
         image: IMAGES.qubaniClassic,
         options: [
-          { label: "250 g", price: 249, note: "Serves 2" },
-          { label: "500 g", price: 449, note: "Serves 4" },
-          { label: "1 KG", price: 849, note: "Serves 8" },
+          { label: "250 g", price: 349, b2b: 290, note: "Serves 2" },
+          { label: "500 g", price: 629, b2b: 530, note: "Serves 4" },
+          { label: "1 KG", price: 1179, b2b: 1000, note: "Serves 8" },
         ],
         features: ["Slow-stewed 6 hours", "No artificial colour", "Cream, almond & pistachio topping"],
       },
@@ -324,9 +325,9 @@ const CATEGORIES = [
           "Qubani ka Meetha reimagined as a celebration cake: moist butter sponge, a thick layer of Qubani compote and a cloud of fresh whipped cream with toasted almonds.",
         image: IMAGES.hero,
         options: [
-          { label: "Half KG", price: 749, note: "Serves 4–5" },
-          { label: "1 KG", price: 1399, note: "Serves 8–10" },
-          { label: "Gift Box", price: 1899, note: "1 KG + compote jar" },
+          { label: "Half KG", price: 1039, b2b: 880, note: "Serves 4–5" },
+          { label: "1 KG", price: 1949, b2b: 1650, note: "Serves 8–10" },
+          { label: "Gift Box", price: 2649, b2b: 2240, note: "1 KG + compote jar" },
         ],
         features: ["Three layers: cream, Qubani, sponge", "Hand-piped fresh cream", "Gift box with greeting card"],
       },
@@ -350,7 +351,6 @@ const CATEGORIES = [
       "Dense, crackle-topped brownies baked with real dark chocolate and cultured butter. Gooey in the centre, chewy at the edges, and made to share (or not).",
     cardText: "Walnut fudge and cream cheese swirl brownies, baked daily.",
     image: IMAGES.brownie,
-    from: 349,
     products: [
       {
         id: "brownie-walnut",
@@ -400,7 +400,6 @@ const CATEGORIES = [
       "Rich, festive halwas the way Deccan homes make them: badam and kaju roasted low and slow in pure ghee, plus our winter-special gajar ka halwa made with fresh red carrots.",
     cardText: "Badam, kaju and winter-special gajar ka halwa, made in pure ghee.",
     image: IMAGES.halwa,
-    from: 199,
     products: [
       {
         id: "badam-halwa",
@@ -411,9 +410,9 @@ const CATEGORIES = [
           "Freshly ground almonds roasted in pure desi ghee until golden and fragrant, with Kashmiri saffron, green cardamom and silver vark.",
         image: IMAGES.halwa,
         options: [
-          { label: "250 g", price: 449, note: "Serves 3–4" },
-          { label: "500 g", price: 849, note: "Serves 6–8" },
-          { label: "1 KG", price: 1599, note: "Serves 12–15" },
+          { label: "250 g", price: 629, b2b: 530, note: "Serves 3–4" },
+          { label: "500 g", price: 1179, b2b: 1000, note: "Serves 6–8" },
+          { label: "1 KG", price: 2239, b2b: 1890, note: "Serves 12–15" },
         ],
         features: ["Pure desi ghee", "Kashmiri saffron & cardamom", "Finished with silver vark"],
       },
@@ -425,9 +424,9 @@ const CATEGORIES = [
           "Rich cashew halwa slow-cooked in ghee until deep golden-brown, set and cut into squares, then topped with whole cashews and pistachio.",
         image: IMAGES.kaju,
         options: [
-          { label: "250 g", price: 399, note: "Serves 3–4" },
-          { label: "500 g", price: 749, note: "Serves 6–8" },
-          { label: "1 KG", price: 1399, note: "Serves 12–15" },
+          { label: "250 g", price: 559, b2b: 470, note: "Serves 3–4" },
+          { label: "500 g", price: 1039, b2b: 880, note: "Serves 6–8" },
+          { label: "1 KG", price: 1949, b2b: 1650, note: "Serves 12–15" },
         ],
         features: ["Premium whole cashews", "Cut into squares, easy to serve", "Festive gift tins available"],
       },
@@ -440,9 +439,9 @@ const CATEGORIES = [
           "The winter classic: fresh red carrots grated by hand and slow-cooked with milk, ghee and cardamom, loaded with cashews, almonds, pistachio and raisins.",
         image: IMAGES.gajar,
         options: [
-          { label: "250 g", price: 199, note: "Serves 2–3" },
-          { label: "500 g", price: 379, note: "Serves 5–6" },
-          { label: "1 KG", price: 699, note: "Serves 10–12" },
+          { label: "250 g", price: 279, b2b: 230, note: "Serves 2–3" },
+          { label: "500 g", price: 539, b2b: 450, note: "Serves 5–6" },
+          { label: "1 KG", price: 969, b2b: 820, note: "Serves 10–12" },
         ],
         features: ["Fresh winter red carrots", "Slow-cooked with milk & ghee", "Loaded with dry fruits"],
       },
@@ -454,6 +453,9 @@ const CATEGORIES = [
     ],
   },
 ];
+
+const findProduct = (id) => CATEGORIES.flatMap((c) => c.products).find((p) => p.id === id);
+const fromPrice = (category) => Math.min(...category.products.flatMap((p) => p.options.map((o) => o.price)));
 
 
 /* ------------------------------------------------------------------ */
@@ -660,7 +662,7 @@ function Hero() {
 
               <div className="animate-float-slow absolute -right-2 top-10 rounded-2xl bg-[#1F1B16]/90 px-5 py-4 text-[#FDFBF7] shadow-xl backdrop-blur sm:-right-8">
                 <p className="text-[10px] uppercase tracking-[0.25em] text-[#E9B949]">Apricot Delight</p>
-                <p className="font-display text-3xl leading-none">{formatINR(749)}</p>
+                <p className="font-display text-3xl leading-none">{formatINR(findProduct("apricot-delight").options[0].price)}</p>
                 <p className="mt-1 text-xs text-[#E9E1D3]/70">Half KG · Serves 4–5</p>
               </div>
             </div>
@@ -1421,6 +1423,17 @@ function ProductCard({ product, categoryName, delay = 0 }) {
             </div>
           </div>
 
+          {option.b2b && (
+            <a
+              href="#bulk-orders"
+              className="mt-3 inline-flex items-center gap-1.5 text-xs text-[#8C8177] transition-colors hover:text-[#C46A00]"
+            >
+              <Hotel className="h-3.5 w-3.5" />
+              Hotels & caterers: B2B rate {formatINR(option.b2b)}
+              <ArrowRight className="h-3 w-3" />
+            </a>
+          )}
+
           <div className="mt-5 flex items-center justify-between rounded-2xl bg-[#FDFBF7] p-2 pl-4">
             <span className="text-xs font-medium uppercase tracking-wider text-[#8C8177]">Quantity</span>
             <div className="flex items-center gap-1">
@@ -1562,7 +1575,7 @@ function CategoryShowcase() {
                   </ul>
                   <div className="mt-6 flex items-center justify-between border-t border-white/15 pt-5">
                     <span className="text-sm text-[#E9E1D3]/80">
-                      From <strong className="font-display text-2xl font-medium text-white">{formatINR(c.from)}</strong>
+                      From <strong className="font-display text-2xl font-medium text-white">{formatINR(fromPrice(c))}</strong>
                     </span>
                     <span className="grid h-11 w-11 place-items-center rounded-full bg-[#F28500] text-white transition-transform duration-300 group-hover:translate-x-1">
                       <ArrowRight className="h-5 w-5" />
@@ -1696,7 +1709,7 @@ function WinterSpecial({ showLink = true }) {
               fruits. Small batches, so order early.
             </p>
             <p className="mt-6 text-sm text-[#E9E1D3]/70">
-              From <strong className="font-display text-3xl font-medium text-white">{formatINR(199)}</strong> · 250 g
+              From <strong className="font-display text-3xl font-medium text-white">{formatINR(findProduct("gajar-halwa").options[0].price)}</strong> · 250 g
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <WhatsAppButton message={`Hi ${BRAND}! I'd like to order Gajar ka Halwa (winter special).`}>
@@ -1727,6 +1740,169 @@ function WinterSpecial({ showLink = true }) {
   );
 }
 
+const HALWA_GALLERY = [
+  { src: IMAGES.halwa, alt: "Badam halwa in a brass bowl with almonds and silver vark", label: "Badam Halwa", span: "sm:row-span-2" },
+  { src: IMAGES.kaju, alt: "Kaju halwa in a blue gift tin with squares on a plate", label: "Kaju Halwa · Gift tin" },
+  { src: IMAGES.gajarTray, alt: "Gajar ka halwa in a box on a dark brass tray", label: "Gajar ka Halwa", span: "sm:col-span-2" },
+  { src: IMAGES.kajuPlate, alt: "Kaju halwa squares with cashews beside an open gift tin", label: "Kaju Halwa" },
+  { src: IMAGES.gajar, alt: "Gajar ka halwa topped with cashews and pistachio on a brass tray", label: "Gajar ka Halwa · Takeaway" },
+  { src: IMAGES.gajarCups, alt: "Gajar ka halwa in labelled boxes and bowls", label: "Party portions", span: "sm:col-span-2" },
+];
+
+function Gallery({ eyebrow, title, items }) {
+  const [open, setOpen] = useState(-1);
+  const close = () => setOpen(-1);
+  const step = (d) => setOpen((i) => (i + d + items.length) % items.length);
+
+  useEffect(() => {
+    if (open < 0) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowRight") step(1);
+      if (e.key === "ArrowLeft") step(-1);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  return (
+    <section className="pb-24 sm:pb-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <Reveal>
+          <SectionHeading eyebrow={eyebrow} title={title} subtitle="Tap any photo to see it larger." />
+        </Reveal>
+        <div className="mt-12 grid auto-rows-[14rem] grid-cols-2 gap-4 sm:auto-rows-[16rem] sm:grid-flow-dense sm:grid-cols-3">
+          {items.map((item, i) => (
+            <Reveal key={item.src + i} delay={i * 70} className={`h-full ${item.span || ""}`}>
+              <button
+                type="button"
+                onClick={() => setOpen(i)}
+                className="group relative block h-full w-full overflow-hidden rounded-[1.75rem] text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F28500]"
+                aria-label={`Open photo: ${item.label}`}
+              >
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1F1B16]/70 via-transparent to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
+                <span className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-2 text-sm font-medium text-white">
+                  {item.label}
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-white/20 opacity-0 backdrop-blur transition-all duration-300 group-hover:opacity-100">
+                    <Plus className="h-4 w-4" />
+                  </span>
+                </span>
+              </button>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+
+      {open >= 0 && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={items[open].label}
+          onClick={close}
+          className="animate-fade-up fixed inset-0 z-[60] flex items-center justify-center bg-[#1F1B16]/90 p-4 backdrop-blur-sm sm:p-10"
+        >
+          <figure className="relative max-h-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+            <img src={items[open].src} alt={items[open].alt} className="max-h-[80vh] w-auto rounded-3xl object-contain shadow-2xl" />
+            <figcaption className="mt-4 text-center text-sm text-[#E9E1D3]/80">
+              {items[open].label} · {open + 1} / {items.length}
+            </figcaption>
+          </figure>
+          <button onClick={close} aria-label="Close" className="absolute right-4 top-4 grid h-12 w-12 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20">
+            <X className="h-5 w-5" />
+          </button>
+          <button
+            onClick={(e) => { e.stopPropagation(); step(-1); }}
+            aria-label="Previous photo"
+            className="absolute left-3 top-1/2 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:left-6"
+          >
+            <ArrowRight className="h-5 w-5 rotate-180" />
+          </button>
+          <button
+            onClick={(e) => { e.stopPropagation(); step(1); }}
+            aria-label="Next photo"
+            className="absolute right-3 top-1/2 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:right-6"
+          >
+            <ArrowRight className="h-5 w-5" />
+          </button>
+        </div>
+      )}
+    </section>
+  );
+}
+
+function B2BPriceList() {
+  return (
+    <section className="pb-24">
+      <div className="mx-auto max-w-5xl px-5 sm:px-8">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Trade pricing"
+            title={
+              <>
+                B2B price list for <em className="text-[#F28500]">hotels & caterers.</em>
+              </>
+            }
+            subtitle="Special rates for hotels, restaurants, caterers and event planners. Retail prices are shown alongside for comparison."
+          />
+        </Reveal>
+        <div className="mt-12 space-y-6">
+          {CATEGORIES.map((c, ci) => (
+            <Reveal key={c.id} delay={ci * 80}>
+              <div className="overflow-hidden rounded-[2rem] bg-white shadow-[0_25px_60px_-40px_rgba(31,27,22,0.4)] ring-1 ring-[#1F1B16]/5">
+                <div className="flex items-center gap-4 border-b border-[#1F1B16]/10 bg-[#FDFBF7] px-5 py-4 sm:px-8">
+                  <img src={c.image} alt="" className="h-12 w-12 rounded-xl object-cover" />
+                  <h3 className="font-display text-2xl text-[#1F1B16] sm:text-3xl">{c.name}</h3>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full min-w-[30rem] table-fixed text-left text-sm">
+                    <thead>
+                      <tr className="text-xs uppercase tracking-wider text-[#8C8177]">
+                        <th className="w-[40%] px-5 py-3 font-medium sm:px-8">Item</th>
+                        <th className="w-[20%] px-3 py-3 font-medium">Size</th>
+                        <th className="px-3 py-3 text-right font-medium text-[#C46A00]">B2B</th>
+                        <th className="px-5 py-3 text-right font-medium sm:px-8">Retail</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {c.products.flatMap((p) =>
+                        p.options.map((o, oi) => (
+                          <tr key={p.id + o.label} className={`border-t border-[#1F1B16]/5 ${oi === 0 ? "border-[#1F1B16]/10" : ""}`}>
+                            <td className="px-5 py-3 font-medium text-[#1F1B16] sm:px-8">{oi === 0 ? p.name : ""}</td>
+                            <td className="px-3 py-3 text-[#5B5249]">{o.label}</td>
+                            <td className="px-3 py-3 text-right font-semibold text-[#C46A00]">
+                              {o.b2b ? formatINR(o.b2b) : <span className="font-normal text-[#8C8177]">On request</span>}
+                            </td>
+                            <td className="px-5 py-3 text-right text-[#5B5249] sm:px-8">{formatINR(o.price)}</td>
+                          </tr>
+                        ))
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal>
+          <div className="mt-8 flex flex-col items-center gap-4 text-center">
+            <p className="text-sm text-[#8C8177]">
+              B2B rates apply to registered businesses and regular bulk orders. Prices include packaging; delivery is quoted separately.
+            </p>
+            <WhatsAppButton message={`Hi ${BRAND}! I'm a business (hotel / restaurant / caterer) and would like your B2B rates and order terms.`}>
+              Request B2B account
+            </WhatsAppButton>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function CrossSell({ current }) {
   const others = CATEGORIES.filter((c) => c.id !== current);
   return (
@@ -1745,7 +1921,7 @@ function CrossSell({ current }) {
                 <img src={c.image} alt={c.name} className="h-24 w-24 shrink-0 rounded-2xl object-cover sm:h-28 sm:w-28" />
                 <div className="flex-1">
                   <p className="font-display text-2xl text-[#1F1B16] sm:text-3xl">{c.name}</p>
-                  <p className="mt-1 text-sm text-[#8C8177]">From {formatINR(c.from)}</p>
+                  <p className="mt-1 text-sm text-[#8C8177]">From {formatINR(fromPrice(c))}</p>
                 </div>
                 <ArrowRight className="h-5 w-5 text-[#C46A00] transition-transform duration-300 group-hover:translate-x-1" />
               </a>
@@ -1765,7 +1941,7 @@ function CategoryPage({ category }) {
         title={category.title}
         intro={category.intro}
         image={category.image}
-        from={category.from}
+        from={fromPrice(category)}
       >
         <WhatsAppButton message={`Hi ${BRAND}! I'd like to order from your ${category.name} menu.`}>
           Order on WhatsApp
@@ -1803,7 +1979,20 @@ function CategoryPage({ category }) {
         </div>
       </section>
 
-      {category.id === "halwa" && <WinterSpecial showLink={false} />}
+      {category.id === "halwa" && (
+        <>
+          <WinterSpecial showLink={false} />
+          <Gallery
+            eyebrow="Gallery"
+            title={
+              <>
+                A closer look at our <em className="text-[#F28500]">halwas.</em>
+              </>
+            }
+            items={HALWA_GALLERY}
+          />
+        </>
+      )}
 
       {category.id === "qubani" && (
         <>
@@ -1822,6 +2011,7 @@ function BulkOrdersPage() {
     <>
       <div className="pt-20 sm:pt-24" />
       <EventsSection />
+      <B2BPriceList />
       <section className="pb-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
