@@ -58,10 +58,13 @@ and update it at the end of each session.
   All 6 uploaded as DRAFT posts in category 495 with Rank Math meta set (2026-10-31):
   10631 buy-laptop-in-sharjah, 10632 refurbished-laptop-warranty-uae, 10633 refurbished-laptop-grades-explained,
   10634 thinkpad-vs-elitebook-vs-latitude, 10635 windows-11-compatible-refurbished-laptops,
-  10636 bulk-refurbished-laptops-for-business-uae. Awaiting owner review before publishing.
-  Claims to confirm with owner before publish: Windows 11 install before delivery, RAM/SSD upgrades,
-  bulk-order setup services. The theme has no blog index page yet (page_for_posts unknown); link posts via
-  footer menu 494 or a blog page after publishing.
+  10636 bulk-refurbished-laptops-for-business-uae. PUBLISHED 2026-10-31 (owner approved).
+  Footer menu 494 got one extra item "All buying guides →" (ID 10643) -> /category/laptop-buying-guides/
+  (category archive renders via theme index.php as post cards; verified).
+  Claims the owner approved by publishing: Windows 11 install before delivery, RAM/SSD upgrades,
+  photos of exact units, bulk quotes/rental. New blog posts go in category 495 and appear on the category
+  page automatically; no menu change needed per post.
+  Menus can be edited via core REST /wp/v2/menu-items (works even when WPVibe's own plugin routes don't).
   NOTE 2026-10-31: WPVibe's own plugin routes (/wpvibe/v1, used by run_wp_cli) returned 404 — plugin may be
   deactivated/blocked; core /wp/v2 and /rankmath/v1 still worked. Ask the user to re-check WPVibe plugin.
 
