@@ -84,7 +84,7 @@ and update it at the end of each session.
 - Indexing (2026-10-31): Google "Request indexing" can only be done by the owner in Search Console (no API for
   normal pages; Indexing API is jobs/livestream only). Owner checklist: seo/poshlaptop/indexing-checklist.md.
   Found post-sitemap.xml MISSING from sitemap_index although rank-math-options-sitemap has pt_post_sitemap=on
-  (stale Rank Math sitemap cache) -> purged cache. Re-verify post-sitemap.xml exists next session.
+  (stale Rank Math sitemap cache) -> purged cache; VERIFIED post-sitemap.xml + category-sitemap.xml now listed.
   tax_product_tag_sitemap is OFF although product-tag pages are what rank in GSC -> recommend turning on.
   Rank Math Organization schema has addressCountry "+97" (wrong; should be "AE") -> fix in Rank Math >
   Titles & Meta > Local SEO.
