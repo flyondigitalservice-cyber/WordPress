@@ -37,18 +37,50 @@ class IPSM_Document {
 	public $type;
 
 	/**
+	 * Preview mode (settings page): never assigns or saves anything.
+	 *
+	 * @var bool
+	 */
+	public $preview = false;
+
+	/**
+	 * Number/date shown in preview mode for orders without an invoice yet.
+	 *
+	 * @var string
+	 */
+	private $preview_number = '';
+
+	/**
+	 * Preview date.
+	 *
+	 * @var int
+	 */
+	private $preview_date = 0;
+
+	/**
 	 * Constructor.
 	 *
-	 * @param WC_Order $order Order.
-	 * @param string   $type  Document type.
+	 * @param WC_Order $order   Order.
+	 * @param string   $type    Document type.
+	 * @param bool     $preview Preview only: do not assign an invoice number.
 	 */
-	public function __construct( WC_Order $order, $type = self::TYPE_INVOICE ) {
-		$this->order = $order;
-		$this->type  = in_array( $type, self::types(), true ) ? $type : self::TYPE_INVOICE;
+	public function __construct( WC_Order $order, $type = self::TYPE_INVOICE, $preview = false ) {
+		$this->order   = $order;
+		$this->type    = in_array( $type, self::types(), true ) ? $type : self::TYPE_INVOICE;
+		$this->preview = (bool) $preview;
 
-		if ( self::TYPE_INVOICE === $this->type ) {
-			$this->ensure_number();
+		if ( self::TYPE_INVOICE !== $this->type ) {
+			return;
 		}
+		if ( $this->preview ) {
+			// Previews never use up an invoice number: show what the next one would be.
+			if ( ! $order->get_meta( self::META_NUMBER ) ) {
+				$this->preview_date   = time();
+				$this->preview_number = self::format_number( self::peek_number(), $this->preview_date );
+			}
+			return;
+		}
+		$this->ensure_number();
 	}
 
 	/**
@@ -108,40 +140,95 @@ class IPSM_Document {
 	}
 
 	/**
-	 * Atomically take the next sequential number.
+	 * Take the next sequential invoice number.
 	 *
-	 * Uses MySQL's LAST_INSERT_ID(expr) so two simultaneous requests can never
-	 * receive the same number.
+	 * Uses an optimistic compare-and-swap on the counter option
+	 * ("UPDATE … SET value = n+1 WHERE value = n"), which is plain portable SQL:
+	 * it works on MySQL, MariaDB and SQLite drop-ins alike, and two simultaneous
+	 * requests can never receive the same number. Database errors are never
+	 * printed to the page; if the counter cannot be updated the problem is logged
+	 * and WordPress' normal option API is used as a fallback.
 	 *
 	 * @return int
 	 */
 	public static function next_number() {
 		global $wpdb;
 
-		if ( false === get_option( IPSM_Settings::NUMBER_OPT ) ) {
-			add_option( IPSM_Settings::NUMBER_OPT, 1, '', false );
+		$option = IPSM_Settings::NUMBER_OPT;
+		if ( false === get_option( $option ) ) {
+			add_option( $option, 1, '', false );
 		}
 
 		if ( IPSM_Settings::enabled( 'reset_yearly' ) ) {
 			$year = (int) gmdate( 'Y' );
 			if ( (int) get_option( 'ipsm_number_year' ) !== $year ) {
 				update_option( 'ipsm_number_year', $year, false );
-				update_option( IPSM_Settings::NUMBER_OPT, 1, false );
+				update_option( $option, 1, false );
 			}
 		}
 
-		$wpdb->query(
-			$wpdb->prepare(
-				"UPDATE {$wpdb->options} SET option_value = LAST_INSERT_ID( CAST(option_value AS UNSIGNED) + 1 ) WHERE option_name = %s",
-				IPSM_Settings::NUMBER_OPT
-			)
-		);
-		$next = (int) $wpdb->get_var( 'SELECT LAST_INSERT_ID()' );
+		$suppress = $wpdb->suppress_errors( true );
+		$number   = 0;
 
-		wp_cache_delete( IPSM_Settings::NUMBER_OPT, 'options' );
+		for ( $attempt = 0; $attempt < 15; $attempt++ ) {
+			$current = $wpdb->get_var( $wpdb->prepare( "SELECT option_value FROM {$wpdb->options} WHERE option_name = %s", $option ) );
+			if ( null === $current || $wpdb->last_error ) {
+				break;
+			}
+			$current = max( 1, (int) $current );
+			$updated = $wpdb->query(
+				$wpdb->prepare(
+					"UPDATE {$wpdb->options} SET option_value = %s WHERE option_name = %s AND option_value = %s",
+					(string) ( $current + 1 ),
+					$option,
+					(string) $current
+				)
+			);
+			if ( 1 === (int) $updated ) {
+				$number = $current;
+				break;
+			}
+			if ( false === $updated ) {
+				break; // Database error: use the fallback below.
+			}
+			usleep( wp_rand( 5000, 30000 ) ); // Someone else took this number; try the next one.
+		}
+
+		if ( $wpdb->last_error ) {
+			self::log( 'Invoice counter query failed: ' . $wpdb->last_error );
+		}
+		$wpdb->suppress_errors( $suppress );
+
+		if ( ! $number ) {
+			$number = max( 1, (int) get_option( $option, 1 ) );
+			update_option( $option, $number + 1, false );
+		}
+
+		wp_cache_delete( $option, 'options' );
 		wp_cache_delete( 'alloptions', 'options' );
+		wp_cache_delete( 'notoptions', 'options' );
 
-		return max( 1, $next - 1 );
+		return $number;
+	}
+
+	/**
+	 * The number the next invoice will get (read only).
+	 *
+	 * @return int
+	 */
+	public static function peek_number() {
+		return max( 1, (int) get_option( IPSM_Settings::NUMBER_OPT, 1 ) );
+	}
+
+	/**
+	 * Write to the WooCommerce log (WooCommerce → Status → Logs, source "invoice-packing-slip-maker").
+	 *
+	 * @param string $message Message.
+	 */
+	public static function log( $message ) {
+		if ( function_exists( 'wc_get_logger' ) ) {
+			wc_get_logger()->error( $message, array( 'source' => 'invoice-packing-slip-maker' ) );
+		}
 	}
 
 	/**
@@ -170,7 +257,17 @@ class IPSM_Document {
 	 * @return string
 	 */
 	public function invoice_number() {
-		return (string) $this->order->get_meta( self::META_NUMBER );
+		$number = (string) $this->order->get_meta( self::META_NUMBER );
+		return '' !== $number ? $number : $this->preview_number;
+	}
+
+	/**
+	 * Whether the invoice has really been issued (has a stored number).
+	 *
+	 * @return bool
+	 */
+	public function is_issued() {
+		return (bool) $this->order->get_meta( self::META_NUMBER );
 	}
 
 	/**
@@ -180,6 +277,7 @@ class IPSM_Document {
 	 */
 	public function invoice_date() {
 		$ts = (int) $this->order->get_meta( self::META_DATE );
+		$ts = $ts ? $ts : $this->preview_date;
 		return $ts ? wp_date( wc_date_format(), $ts ) : '';
 	}
 

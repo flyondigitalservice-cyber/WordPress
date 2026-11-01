@@ -18,6 +18,7 @@ class IPSM_Export {
 	 * @param WC_Order[] $orders Orders.
 	 */
 	public static function send_csv( array $orders ) {
+		IPSM_Renderer::clean_buffers();
 		nocache_headers();
 		header( 'Content-Type: text/csv; charset=utf-8' );
 		header( 'Content-Disposition: attachment; filename="invoices-' . gmdate( 'Y-m-d-His' ) . '.csv"' );

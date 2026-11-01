@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Invoice & Packing Slip Maker for WooCommerce
  * Description:       Create invoices and packing slips for WooCommerce orders. Email invoices to customers as PDF attachments, print them, export them as PDF or CSV, and print packing slips and shipping labels to stick on parcels.
- * Version:           1.1.0
+ * Version:           1.2.0
  * Requires at least: 6.2
  * Requires PHP:      7.4
  * Requires Plugins:  woocommerce
@@ -18,7 +18,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'IPSM_VERSION', '1.1.0' );
+define( 'IPSM_VERSION', '1.2.0' );
 define( 'IPSM_FILE', __FILE__ );
 define( 'IPSM_DIR', plugin_dir_path( __FILE__ ) );
 define( 'IPSM_URL', plugin_dir_url( __FILE__ ) );

@@ -54,9 +54,14 @@ class IPSM_Mailer {
 			return $attachments;
 		}
 
-		$file = self::write_temp_pdf( new IPSM_Document( $object, IPSM_Document::TYPE_INVOICE ) );
-		if ( $file ) {
-			$attachments[] = $file;
+		try {
+			$file = self::write_temp_pdf( new IPSM_Document( $object, IPSM_Document::TYPE_INVOICE ) );
+			if ( $file ) {
+				$attachments[] = $file;
+			}
+		} catch ( \Throwable $e ) {
+			// The WooCommerce email must still go out, just without the PDF.
+			IPSM_Document::log( sprintf( 'Could not attach invoice to email "%s" for order %d: %s', $email_id, $object->get_id(), $e->getMessage() ) );
 		}
 		return $attachments;
 	}
@@ -117,16 +122,19 @@ class IPSM_Mailer {
 		if ( ! $dir ) {
 			return;
 		}
-		foreach ( (array) glob( $dir . '/*', GLOB_ONLYDIR ) as $sub ) {
-			if ( filemtime( $sub ) > time() - HOUR_IN_SECONDS ) {
+		$subs = glob( $dir . '/*', GLOB_ONLYDIR );
+		foreach ( $subs ? $subs : array() as $sub ) {
+			$mtime = @filemtime( $sub ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+			if ( $mtime && $mtime > time() - HOUR_IN_SECONDS ) {
 				continue;
 			}
-			foreach ( (array) glob( $sub . '/*' ) as $file ) {
+			$files = glob( $sub . '/*' );
+			foreach ( $files ? $files : array() as $file ) {
 				wp_delete_file( $file );
 			}
 			@rmdir( $sub ); // phpcs:ignore
 		}
-		if ( glob( $dir . '/*', GLOB_ONLYDIR ) ) {
+		if ( glob( $dir . '/*', GLOB_ONLYDIR ) && ! wp_next_scheduled( 'ipsm_cleanup_temp' ) ) {
 			wp_schedule_single_event( time() + HOUR_IN_SECONDS, 'ipsm_cleanup_temp' );
 		}
 	}
@@ -142,7 +150,12 @@ class IPSM_Mailer {
 		if ( empty( $emails['IPSM_Email_Invoice'] ) || ! $order->get_billing_email() ) {
 			return false;
 		}
-		$sent = $emails['IPSM_Email_Invoice']->trigger( $order->get_id(), $order );
+		try {
+			$sent = $emails['IPSM_Email_Invoice']->trigger( $order->get_id(), $order );
+		} catch ( \Throwable $e ) {
+			IPSM_Document::log( sprintf( 'Invoice email failed for order %d: %s', $order->get_id(), $e->getMessage() ) );
+			$sent = false;
+		}
 
 		$order->update_meta_data( IPSM_Document::META_SENT, time() );
 		$order->save();
@@ -168,10 +181,15 @@ class IPSM_Mailer {
 		if ( ! $status || 'wc-' . $to !== $status ) {
 			return;
 		}
-		$order = $order instanceof WC_Order ? $order : wc_get_order( $order_id );
-		if ( ! $order || $order->get_meta( IPSM_Document::META_SENT ) ) {
-			return;
+		try {
+			$order = $order instanceof WC_Order ? $order : wc_get_order( $order_id );
+			if ( ! $order || $order->get_meta( IPSM_Document::META_SENT ) ) {
+				return;
+			}
+			self::send_invoice( $order );
+		} catch ( \Throwable $e ) {
+			// Never interrupt checkout or an order update because of the invoice.
+			IPSM_Document::log( sprintf( 'Automatic invoice email failed for order %d: %s', $order_id, $e->getMessage() ) );
 		}
-		self::send_invoice( $order );
 	}
 }

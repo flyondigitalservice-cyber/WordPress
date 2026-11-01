@@ -4,7 +4,7 @@ Tags: woocommerce, invoice, pdf invoice, packing slip, shipping label
 Requires at least: 6.2
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,7 @@ Create, email, print and export invoices for WooCommerce orders, and print packi
 * A5 by default (compact layout with small fonts), or A4 / US Letter. Invoices, packing slips and shipping labels share the same size unless you choose a dedicated label size.
 * Bulk print / download for many orders at once.
 * Compatible with WooCommerce High-Performance Order Storage (HPOS).
+* Safe for your store: creates no database tables (uses one settings option and order meta), loads nothing on your storefront except the customer's invoice button, and never prints database errors on your site.
 * No external services and no extra libraries required: PDFs are produced by a built-in generator. If the Dompdf library is already present on your site it is used automatically for full Unicode font support.
 
 == Installation ==
@@ -64,6 +65,17 @@ The built-in PDF generator uses the standard PDF fonts, which cover Western Euro
 Settings are removed, but the invoice number and date saved on each order are kept, since issued invoices are accounting records.
 
 == Changelog ==
+
+= 1.2.0 =
+* Redesigned settings page: tabs, toggle switches, visual paper/label size pickers, colour swatches, live "next invoice number" example, getting-started checklist, unsaved-changes warning and a live preview of the invoice, packing slip and label (previews never use up an invoice number).
+* Redesigned order box: clear invoice status, one-click Print/PDF for each document, and "Email invoice" now sends without reloading the page (unsaved order edits are kept).
+* New "Invoice" column on the orders list showing the invoice number and whether it was emailed.
+* Bulk print / download now open in a new tab so you stay on the orders list.
+* Fix: invoice numbering no longer uses MySQL-only SQL, so it can't cause a database error on hosts using SQLite or other database drop-ins; database errors are never printed on the page and are logged instead.
+* Fix: on the very first settings save, switched-off options could be saved as switched on.
+* Fix: an error while creating an invoice can no longer interrupt checkout, order updates or WooCommerce emails; the email still goes out and the problem is logged (WooCommerce → Status → Logs).
+* Fix: PDF and CSV downloads can no longer be corrupted by stray output from other plugins or the theme.
+* Fix: possible PHP warnings while cleaning up temporary files.
 
 = 1.1.0 =
 * Code 128 barcode of the order number on shipping labels.

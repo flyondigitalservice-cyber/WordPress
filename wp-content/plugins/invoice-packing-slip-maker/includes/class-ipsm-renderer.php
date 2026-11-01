@@ -89,6 +89,7 @@ class IPSM_Renderer {
 		$ids    = isset( $_GET['order_ids'] ) ? array_filter( array_map( 'absint', explode( ',', sanitize_text_field( wp_unslash( $_GET['order_ids'] ) ) ) ) ) : array();
 		$key    = isset( $_GET['key'] ) ? sanitize_text_field( wp_unslash( $_GET['key'] ) ) : '';
 		$nonce  = isset( $_GET['_wpnonce'] ) ? sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ) : '';
+		$embed  = ! empty( $_GET['embed'] );
 		// phpcs:enable
 
 		if ( ! in_array( $type, IPSM_Document::types(), true ) || ! in_array( $output, array( 'html', 'pdf', 'csv' ), true ) || ! $ids ) {
@@ -127,20 +128,31 @@ class IPSM_Renderer {
 			exit;
 		}
 
-		$docs = array();
-		foreach ( $orders as $order ) {
-			$docs[] = new IPSM_Document( $order, $type );
+		// Preview (settings page) never assigns invoice numbers. Shop managers only.
+		$preview = ! empty( $_GET['preview'] ) && self::is_shop_manager() && $valid_nonce; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+		try {
+			$docs = array();
+			foreach ( $orders as $order ) {
+				$docs[] = new IPSM_Document( $order, $type, $preview );
+			}
+
+			if ( 'pdf' === $output ) {
+				$inline = ! empty( $_GET['inline'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				self::send_pdf( $docs, $inline );
+				exit;
+			}
+
+			$html = self::html( $docs, ! $embed );
+		} catch ( \Throwable $e ) {
+			IPSM_Document::log( 'Document generation failed: ' . $e->getMessage() );
+			wp_die( esc_html__( 'Sorry, this document could not be generated. Details were written to WooCommerce → Status → Logs.', 'invoice-packing-slip-maker' ), '', array( 'response' => 500 ) );
 		}
 
-		if ( 'pdf' === $output ) {
-			$inline = ! empty( $_GET['inline'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			self::send_pdf( $docs, $inline );
-			exit;
-		}
-
+		self::clean_buffers();
 		nocache_headers();
 		header( 'Content-Type: text/html; charset=utf-8' );
-		echo self::html( $docs, true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- templates escape their own output.
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- templates escape their own output.
 		exit;
 	}
 
@@ -156,11 +168,22 @@ class IPSM_Renderer {
 			? $docs[0]->filename()
 			: sanitize_file_name( $docs[0]->type . 's-' . gmdate( 'Y-m-d-His' ) ) . '.pdf';
 
+		self::clean_buffers();
 		nocache_headers();
 		header( 'Content-Type: application/pdf' );
 		header( 'Content-Disposition: ' . ( $inline ? 'inline' : 'attachment' ) . '; filename="' . $filename . '"' );
 		header( 'Content-Length: ' . strlen( $pdf ) );
 		echo $pdf; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- binary PDF.
+	}
+
+	/**
+	 * Discard anything other plugins or the theme have already printed, so
+	 * downloads are never corrupted by stray whitespace or notices.
+	 */
+	public static function clean_buffers() {
+		while ( ob_get_level() > 0 ) {
+			ob_end_clean();
+		}
 	}
 
 	/**

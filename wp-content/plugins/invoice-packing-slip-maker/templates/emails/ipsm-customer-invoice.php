@@ -21,8 +21,12 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
 <p>
 	<?php
-	/* translators: %s: customer first name */
-	printf( esc_html__( 'Hi %s,', 'invoice-packing-slip-maker' ), esc_html( $order->get_billing_first_name() ) );
+	if ( $order->get_billing_first_name() ) {
+		/* translators: %s: customer first name */
+		printf( esc_html__( 'Hi %s,', 'invoice-packing-slip-maker' ), esc_html( $order->get_billing_first_name() ) );
+	} else {
+		esc_html_e( 'Hi there,', 'invoice-packing-slip-maker' );
+	}
 	?>
 </p>
 <p>

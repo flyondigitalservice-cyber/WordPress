@@ -18,8 +18,10 @@ echo "=================================================\n";
 echo esc_html( wp_strip_all_tags( $email_heading ) ) . "\n";
 echo "=================================================\n\n";
 
-/* translators: %s: customer first name */
-echo sprintf( esc_html__( 'Hi %s,', 'invoice-packing-slip-maker' ), esc_html( $order->get_billing_first_name() ) ) . "\n\n";
+echo $order->get_billing_first_name()
+	/* translators: %s: customer first name */
+	? sprintf( esc_html__( 'Hi %s,', 'invoice-packing-slip-maker' ), esc_html( $order->get_billing_first_name() ) ) . "\n\n"
+	: esc_html__( 'Hi there,', 'invoice-packing-slip-maker' ) . "\n\n";
 /* translators: %s: order number */
 echo sprintf( esc_html__( 'Please find attached the invoice for your order #%s. A summary of the order is below.', 'invoice-packing-slip-maker' ), esc_html( $order->get_order_number() ) ) . "\n\n";
 
