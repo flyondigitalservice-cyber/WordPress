@@ -4,7 +4,7 @@ Tags: woocommerce, invoice, pdf invoice, packing slip, shipping label
 Requires at least: 6.2
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,12 +24,12 @@ Create, email, print and export invoices for WooCommerce orders, and print packi
 **Packing slips & shipping labels**
 
 * Packing slip with a large "Ship to" block, tick boxes for each item, quantities, SKUs, variation details, weights and the customer's note — put it inside the box.
-* Shipping label (4×6 in, 100×150 mm or A6) with sender, recipient, phone and order number — stick it on the parcel.
+* Shipping label with sender, recipient, phone, order number and a scannable Code 128 barcode of the order number — stick it on the parcel. Same size as the invoice by default, or 4×6 in / 100×150 mm / A6 for label printers.
 
 **Everything else**
 
 * Your logo, shop address, tax/VAT/GST number, accent colour, notes and footer.
-* A4 or US Letter.
+* A5 by default (compact layout with small fonts), or A4 / US Letter. Invoices, packing slips and shipping labels share the same size unless you choose a dedicated label size.
 * Bulk print / download for many orders at once.
 * Compatible with WooCommerce High-Performance Order Storage (HPOS).
 * No external services and no extra libraries required: PDFs are produced by a built-in generator. If the Dompdf library is already present on your site it is used automatically for full Unicode font support.
@@ -50,7 +50,7 @@ Create, email, print and export invoices for WooCommerce orders, and print packi
 
 Copy any file from the plugin's `templates/` folder into `yourtheme/invoice-packing-slip-maker/` to change the printed layout (invoice.php, packing-slip.php, shipping-label.php, document.php).
 
-Filters: `ipsm_invoice_number`, `ipsm_filename`, `ipsm_document_item`, `ipsm_document_totals`, `ipsm_attach_invoice`, `ipsm_attachable_emails`, `ipsm_customer_can_view_invoice`, `ipsm_csv_headers`, `ipsm_csv_row`, `ipsm_use_dompdf`, `ipsm_pdf_text_replacements`, `ipsm_template_path`.
+Filters: `ipsm_invoice_number`, `ipsm_barcode_value`, `ipsm_pdf_scale`, `ipsm_filename`, `ipsm_document_item`, `ipsm_document_totals`, `ipsm_attach_invoice`, `ipsm_attachable_emails`, `ipsm_customer_can_view_invoice`, `ipsm_csv_headers`, `ipsm_csv_row`, `ipsm_use_dompdf`, `ipsm_pdf_text_replacements`, `ipsm_template_path`.
 Actions: `ipsm_before_items`, `ipsm_after_totals`.
 
 == Frequently Asked Questions ==
@@ -64,6 +64,11 @@ The built-in PDF generator uses the standard PDF fonts, which cover Western Euro
 Settings are removed, but the invoice number and date saved on each order are kept, since issued invoices are accounting records.
 
 == Changelog ==
+
+= 1.1.0 =
+* Code 128 barcode of the order number on shipping labels.
+* A5 paper size (new default) with a compact, small-font layout; shipping labels match the invoice size by default.
+* Totals block no longer splits across pages.
 
 = 1.0.0 =
 * First release.

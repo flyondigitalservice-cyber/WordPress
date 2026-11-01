@@ -39,7 +39,7 @@ class IPSM_Settings {
 			'tax_id'             => '',
 			'logo_id'            => 0,
 			'accent_color'       => '#1f2937',
-			'paper_size'         => 'A4',
+			'paper_size'         => 'A5',
 			'number_prefix'      => 'INV-',
 			'number_suffix'      => '',
 			'number_padding'     => 5,
@@ -54,7 +54,7 @@ class IPSM_Settings {
 			'footer'             => __( 'Thank you for your business!', 'invoice-packing-slip-maker' ),
 			'customer_download'  => 'yes',
 			'slip_show_prices'   => 'no',
-			'label_size'         => '4x6',
+			'label_size'         => 'paper',
 		);
 	}
 
@@ -142,8 +142,8 @@ class IPSM_Settings {
 		$out['logo_id']        = isset( $input['logo_id'] ) ? absint( $input['logo_id'] ) : 0;
 		$color                 = isset( $input['accent_color'] ) ? sanitize_hex_color( wp_unslash( $input['accent_color'] ) ) : '';
 		$out['accent_color']   = $color ? $color : '#1f2937';
-		$out['paper_size']     = ( isset( $input['paper_size'] ) && 'Letter' === $input['paper_size'] ) ? 'Letter' : 'A4';
-		$out['label_size']     = ( isset( $input['label_size'] ) && in_array( $input['label_size'], array( '4x6', '100x150', 'A6' ), true ) ) ? $input['label_size'] : '4x6';
+		$out['paper_size']     = ( isset( $input['paper_size'] ) && in_array( $input['paper_size'], array( 'A5', 'A4', 'Letter' ), true ) ) ? $input['paper_size'] : 'A5';
+		$out['label_size']     = ( isset( $input['label_size'] ) && in_array( $input['label_size'], array( 'paper', '4x6', '100x150', 'A6' ), true ) ) ? $input['label_size'] : 'paper';
 		$out['number_padding'] = isset( $input['number_padding'] ) ? min( 10, absint( $input['number_padding'] ) ) : 5;
 		$out['invoice_date']   = ( isset( $input['invoice_date'] ) && 'created' === $input['invoice_date'] ) ? 'created' : 'order';
 
@@ -226,7 +226,16 @@ class IPSM_Settings {
 						<td><input type="text" id="ipsm-accent" class="ipsm-color" name="<?php echo esc_attr( $name ); ?>[accent_color]" value="<?php echo esc_attr( self::get( 'accent_color' ) ); ?>" /></td>
 					</tr>
 					<?php
-					self::select_row( 'paper_size', __( 'Paper size', 'invoice-packing-slip-maker' ), array( 'A4' => 'A4', 'Letter' => 'US Letter' ) );
+					self::select_row(
+						'paper_size',
+						__( 'Paper size', 'invoice-packing-slip-maker' ),
+						array(
+							'A5'     => __( 'A5 (148 × 210 mm) — compact, small fonts', 'invoice-packing-slip-maker' ),
+							'A4'     => 'A4',
+							'Letter' => 'US Letter',
+						),
+						__( 'Used for invoices and packing slips (and shipping labels set to "Same as invoice").', 'invoice-packing-slip-maker' )
+					);
 					?>
 				</table>
 
@@ -292,6 +301,7 @@ class IPSM_Settings {
 						'label_size',
 						__( 'Shipping label size', 'invoice-packing-slip-maker' ),
 						array(
+							'paper'   => __( 'Same as invoice paper size', 'invoice-packing-slip-maker' ),
 							'4x6'     => __( '4 × 6 in (thermal label)', 'invoice-packing-slip-maker' ),
 							'100x150' => __( '100 × 150 mm', 'invoice-packing-slip-maker' ),
 							'A6'      => 'A6',

@@ -35,6 +35,13 @@ defined( 'ABSPATH' ) || exit;
 			<div class="phone"><?php /* translators: %s: phone */ echo esc_html( sprintf( __( 'Phone: %s', 'invoice-packing-slip-maker' ), $doc->shipping_phone() ) ); ?></div>
 		<?php endif; ?>
 	</section>
+	<?php $ipsm_code = IPSM_Barcode::clean( apply_filters( 'ipsm_barcode_value', $order->get_order_number(), $doc ) ); ?>
+	<?php if ( '' !== $ipsm_code ) : ?>
+		<section class="barcode">
+			<?php echo IPSM_Barcode::svg( $ipsm_code, 56 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- generated SVG, only numbers and an escaped label. ?>
+			<div class="code"><?php echo esc_html( $ipsm_code ); ?></div>
+		</section>
+	<?php endif; ?>
 	<section class="bottom">
 		<div>
 			<div class="lbl"><?php esc_html_e( 'Order', 'invoice-packing-slip-maker' ); ?></div>

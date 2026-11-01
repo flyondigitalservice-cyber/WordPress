@@ -18,6 +18,8 @@ $accent   = IPSM_Settings::get( 'accent_color' );
 $is_label = IPSM_Document::TYPE_LABEL === $type;
 list( $page_w, $page_h ) = IPSM_PDF::page_size( $type );
 $page_css = round( $page_w / 72, 2 ) . 'in ' . round( $page_h / 72, 2 ) . 'in';
+// A5 (and other small pages) get a compact layout with smaller fonts.
+$is_compact = $page_w > 400 && $page_w < 500;
 $title    = 1 === count( $docs )
 	? $docs[0]->title() . ' ' . ( IPSM_Document::TYPE_INVOICE === $type ? $docs[0]->invoice_number() : '#' . $docs[0]->order->get_order_number() )
 	: IPSM_Document::type_label( $type );
@@ -81,6 +83,42 @@ $title    = 1 === count( $docs )
 	.ipsm-label .bottom { border-top: 3px solid #000; display: flex; justify-content: space-between; align-items: flex-end; }
 	.ipsm-label .order-no { font-size: 30px; font-weight: 800; line-height: 1; }
 	.ipsm-label .info { text-align: right; font-size: 11px; }
+	.ipsm-label .barcode { border-top: 3px solid #000; text-align: center; padding: 8px 12px 6px; }
+	.ipsm-label .barcode svg { display: block; margin: 0 auto; }
+	.ipsm-label .barcode .code { font-size: 11px; letter-spacing: .1em; margin-top: 3px; }
+	<?php if ( $is_compact ) : ?>
+	/* A5: compact layout with small fonts. */
+	body { font-size: 9px; line-height: 1.4; }
+	.ipsm-page:not(.ipsm-type-shipping-label) { padding: 0.4in; }
+	.ipsm-header { margin-bottom: 14px; }
+	.ipsm-header .ipsm-title { font-size: 19px; }
+	.ipsm-shopname { font-size: 15px; }
+	.ipsm-logo img { max-width: 160px; max-height: 56px; }
+	.ipsm-cols { margin-bottom: 14px; }
+	h3.ipsm-h { font-size: 7.5px; margin-bottom: 4px; }
+	.ipsm-ship-big { font-size: 11px; }
+	.ipsm-ship-big strong { font-size: 12.5px; }
+	table.ipsm-items { margin-bottom: 10px; }
+	table.ipsm-items thead th { font-size: 7.5px; padding: 5px 6px; }
+	table.ipsm-items td { padding: 5px 6px; }
+	.ipsm-item-meta { font-size: 8px; }
+	.ipsm-check { width: 10px; height: 10px; }
+	.ipsm-qty-big { font-size: 11px; }
+	table.ipsm-totals { min-width: 200px; }
+	table.ipsm-totals th, table.ipsm-totals td { padding: 3px 8px 3px 0; }
+	table.ipsm-totals tr.ipsm-grand th, table.ipsm-totals tr.ipsm-grand td { font-size: 11px; padding: 6px; }
+	table.ipsm-totals small { font-size: 8px; }
+	.ipsm-notes { margin-top: 16px; }
+	.ipsm-notes p { margin-bottom: 8px; }
+	.ipsm-footer { margin-top: 22px; font-size: 8.5px; padding-top: 8px; }
+	.ipsm-label section { padding: 9px 12px; }
+	.ipsm-label .from { font-size: 9.5px; }
+	.ipsm-label .to { font-size: 15px; }
+	.ipsm-label .to .name { font-size: 19px; }
+	.ipsm-label .to .phone { font-size: 12px; }
+	.ipsm-label .order-no { font-size: 26px; }
+	.ipsm-label .info { font-size: 10px; }
+	<?php endif; ?>
 	@media print {
 		body { background: #fff; }
 		.ipsm-toolbar { display: none !important; }
