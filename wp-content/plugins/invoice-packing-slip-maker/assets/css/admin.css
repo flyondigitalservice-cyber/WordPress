@@ -1,0 +1,19 @@
+/* Order screen meta box */
+#ipsm-documents .ipsm-status { margin: 0 0 12px; padding: 8px 10px; background: #f6f7f7; border-left: 3px solid #2271b1; }
+#ipsm-documents .ipsm-status span { color: #646970; font-size: 12px; }
+#ipsm-documents .ipsm-status .ipsm-sent { color: #00a32a; }
+#ipsm-documents .ipsm-row { display: flex; align-items: center; justify-content: space-between; gap: 6px; padding: 6px 0; border-bottom: 1px solid #f0f0f1; }
+#ipsm-documents .ipsm-row-label { font-weight: 600; }
+#ipsm-documents .ipsm-row-buttons { display: flex; gap: 4px; }
+#ipsm-documents .button .dashicons { font-size: 16px; width: 16px; height: 16px; vertical-align: text-bottom; }
+#ipsm-documents .ipsm-actions { margin: 12px 0 4px; }
+#ipsm-documents .ipsm-actions .button { width: 100%; text-align: center; }
+#ipsm-documents .ipsm-small { margin: 4px 0 0; text-align: center; font-size: 12px; }
+
+/* Orders list action buttons */
+.wc-action-button-ipsm-invoice::after { font-family: dashicons !important; content: "\f190" !important; }
+.wc-action-button-ipsm-slip::after { font-family: dashicons !important; content: "\f193" !important; }
+
+/* Settings */
+.ipsm-settings #ipsm-logo-preview img { max-width: 220px; max-height: 90px; display: block; margin-bottom: 8px; border: 1px solid #dcdcde; padding: 4px; background: #fff; }
+.ipsm-settings h2 { margin-top: 2em; padding-top: 1em; border-top: 1px solid #dcdcde; }

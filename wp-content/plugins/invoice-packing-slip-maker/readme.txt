@@ -1,0 +1,69 @@
+=== Invoice & Packing Slip Maker for WooCommerce ===
+Contributors: flyondigitalservice
+Tags: woocommerce, invoice, pdf invoice, packing slip, shipping label
+Requires at least: 6.2
+Tested up to: 6.7
+Requires PHP: 7.4
+Stable tag: 1.0.0
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+Create, email, print and export invoices for WooCommerce orders, and print packing slips and shipping labels for your parcels.
+
+== Description ==
+
+**Invoices**
+
+* Sequential invoice numbers with prefix/suffix, zero padding, `{Y}`/`{m}` placeholders and optional yearly reset. Numbers are taken atomically, so two orders can never get the same number.
+* Email the invoice to the customer as a PDF attachment — from the order screen, as a bulk action, or automatically when an order reaches a status you choose.
+* Optionally attach the invoice PDF to WooCommerce's own emails (Processing, Completed, Customer invoice…).
+* Print the invoice from the browser, or download it as a PDF.
+* Export invoices to CSV (for accounting / spreadsheets).
+* Customers can download their invoice from My Account and from the order confirmation page.
+
+**Packing slips & shipping labels**
+
+* Packing slip with a large "Ship to" block, tick boxes for each item, quantities, SKUs, variation details, weights and the customer's note — put it inside the box.
+* Shipping label (4×6 in, 100×150 mm or A6) with sender, recipient, phone and order number — stick it on the parcel.
+
+**Everything else**
+
+* Your logo, shop address, tax/VAT/GST number, accent colour, notes and footer.
+* A4 or US Letter.
+* Bulk print / download for many orders at once.
+* Compatible with WooCommerce High-Performance Order Storage (HPOS).
+* No external services and no extra libraries required: PDFs are produced by a built-in generator. If the Dompdf library is already present on your site it is used automatically for full Unicode font support.
+
+== Installation ==
+
+1. Upload the `invoice-packing-slip-maker` folder to `/wp-content/plugins/` and activate it (WooCommerce must be active).
+2. Go to **WooCommerce → Invoices & Slips** and enter your shop details and logo.
+3. Optional: in **WooCommerce → Settings → Emails → Invoice (PDF)** edit the subject, heading and text of the invoice email.
+
+== Usage ==
+
+* **Single order:** open an order — the *Invoice & Packing Slip* box on the right has Print and PDF buttons for the invoice, packing slip and shipping label, and an *Email invoice to customer* button.
+* **Many orders:** on the Orders list tick the orders, then choose from *Bulk actions*: Print invoices, Download invoices (PDF), Email invoices to customers, Export invoices (CSV), Print packing slips, Download packing slips (PDF), Print shipping labels, Download shipping labels (PDF).
+* **Quick buttons:** the Actions column on the Orders list has an *Invoice PDF* and a *Print packing slip* button.
+
+== Customising ==
+
+Copy any file from the plugin's `templates/` folder into `yourtheme/invoice-packing-slip-maker/` to change the printed layout (invoice.php, packing-slip.php, shipping-label.php, document.php).
+
+Filters: `ipsm_invoice_number`, `ipsm_filename`, `ipsm_document_item`, `ipsm_document_totals`, `ipsm_attach_invoice`, `ipsm_attachable_emails`, `ipsm_customer_can_view_invoice`, `ipsm_csv_headers`, `ipsm_csv_row`, `ipsm_use_dompdf`, `ipsm_pdf_text_replacements`, `ipsm_template_path`.
+Actions: `ipsm_before_items`, `ipsm_after_totals`.
+
+== Frequently Asked Questions ==
+
+= The ₹ (or another) currency symbol shows as "Rs." in the PDF =
+
+The built-in PDF generator uses the standard PDF fonts, which cover Western European characters only. Symbols outside that set are replaced with a readable code (₹ → "Rs.", ₽ → "RUB" …; change via the `ipsm_pdf_text_replacements` filter). The printed (browser) version always shows the real symbol. For full Unicode in PDFs install Dompdf (e.g. `composer require dompdf/dompdf`) and it will be used automatically.
+
+= What happens to invoice numbers if I uninstall? =
+
+Settings are removed, but the invoice number and date saved on each order are kept, since issued invoices are accounting records.
+
+== Changelog ==
+
+= 1.0.0 =
+* First release.
