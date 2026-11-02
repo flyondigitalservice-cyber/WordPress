@@ -22,3 +22,13 @@ All site facts (summary, prices, services, contact, key pages) live in includes/
 * Activate the plugin, then purge any page cache (LiteSpeed, WP Rocket, Cloudflare, etc.).
 * Page caches must vary on the Accept header, or skip caching when Accept contains text/markdown; otherwise cached HTML is served to agents.
 * /llms.txt and /.well-known/mcp/server-card.json are served by WordPress. If the web server answers .txt/.json or /.well-known/ itself (common with nginx), route those paths to index.php. A physical robots.txt file in the web root overrides the Content-Signal line; delete it or add the line by hand.
+
+== LiteSpeed Cache (bombaymarketing.in) ==
+
+Markdown responses send `X-LiteSpeed-Cache-Control: no-cache`, so they are never cached. A cached HTML copy can still be served to a Markdown request, though. To bypass the cache for those requests, add this above the LSCACHE block in .htaccess:
+
+    <IfModule LiteSpeed>
+    RewriteEngine On
+    RewriteCond %{HTTP_ACCEPT} text/markdown [NC]
+    RewriteRule .* - [E=Cache-Control:no-cache]
+    </IfModule>

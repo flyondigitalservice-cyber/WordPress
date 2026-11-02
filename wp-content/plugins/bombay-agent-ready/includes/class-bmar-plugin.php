@@ -236,6 +236,12 @@ class BMAR_Plugin {
 		status_header( is_404() ? 404 : 200 );
 		header( 'Content-Type: text/markdown; charset=utf-8' );
 		header( 'Vary: Accept' );
+		// Keep page caches from storing Markdown under the HTML URL.
+		if ( ! defined( 'DONOTCACHEPAGE' ) ) {
+			define( 'DONOTCACHEPAGE', true );
+		}
+		header( 'X-LiteSpeed-Cache-Control: no-cache' );
+		header( 'Cache-Control: no-cache, private' );
 		header( 'X-Markdown-Tokens: ' . (int) ceil( strlen( $md ) / 4 ) );
 		if ( ! empty( $_SERVER['REQUEST_METHOD'] ) && 'HEAD' === $_SERVER['REQUEST_METHOD'] ) {
 			exit;
