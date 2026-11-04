@@ -4,7 +4,17 @@
 	<div class="wrap">
 		<div class="footer-grid">
 			<div class="footer-brand">
-				<span class="brand__name"><?php echo esc_html( raikwar_info( 'brand' ) ); ?></span>
+				<?php
+				$footer_logo = (int) get_theme_mod( 'raikwar_footer_logo' );
+				if ( ! $footer_logo && get_theme_mod( 'custom_logo' ) ) {
+					$footer_logo = (int) attachment_url_to_postid( wp_get_upload_dir()['baseurl'] . '/2026/02/raikwar-logo-white.png' );
+				}
+				if ( $footer_logo ) {
+					echo wp_get_attachment_image( $footer_logo, 'full', false, array( 'class' => 'footer-logo', 'alt' => raikwar_info( 'brand' ) . ' logo', 'loading' => 'lazy' ) );
+				} else {
+					echo '<span class="brand__name">' . esc_html( raikwar_info( 'brand' ) ) . '</span>';
+				}
+				?>
 				<p><?php echo esc_html( raikwar_info( 'legal' ) ); ?>. Digital Signatures, licenses and government registrations, handled end-to-end for businesses across Mumbai and India.</p>
 				<a class="btn btn--primary" href="<?php echo esc_url( raikwar_wa() ); ?>" target="_blank" rel="noopener"><?php echo raikwar_icon( 'wa' ); ?>Chat on WhatsApp</a>
 			</div>

@@ -137,6 +137,13 @@ function raikwar_seal_customize( $wp_customize ) {
 		'years'    => 'Years of experience (e.g. 5+)',
 		'map_url'  => 'Google Maps link',
 	);
+	$wp_customize->add_setting( 'raikwar_footer_logo', array( 'default' => 0, 'sanitize_callback' => 'absint' ) );
+	$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'raikwar_footer_logo', array(
+		'label'     => 'Footer logo (light version for the dark footer)',
+		'section'   => 'raikwar_business',
+		'mime_type' => 'image',
+	) ) );
+
 	$defaults = raikwar_info_defaults();
 	foreach ( $labels as $key => $label ) {
 		$wp_customize->add_setting( 'raikwar_' . $key, array( 'default' => '', 'sanitize_callback' => 'sanitize_text_field' ) );

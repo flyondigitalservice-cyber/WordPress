@@ -22,16 +22,19 @@
 		<a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php echo esc_attr( raikwar_info( 'brand' ) ); ?> – home">
 			<?php
 			$logo_id = get_theme_mod( 'custom_logo' );
-			if ( $logo_id ) {
-				echo wp_get_attachment_image( $logo_id, 'medium', false, array( 'alt' => raikwar_info( 'brand' ) . ' logo', 'loading' => 'eager' ) );
-			} else {
-				echo '<span class="brand__seal" aria-hidden="true">R</span>';
-			}
-			?>
-			<span class="brand__text">
-				<span class="brand__name"><?php echo esc_html( raikwar_info( 'brand' ) ); ?></span>
-				<span class="brand__sub">Liaisoning &amp; Business Registration</span>
-			</span>
+			if ( $logo_id ) :
+				?>
+				<span class="brand__text brand__text--logo">
+					<?php echo wp_get_attachment_image( $logo_id, 'full', false, array( 'class' => 'brand__logo', 'alt' => raikwar_info( 'brand' ) . ' logo', 'loading' => 'eager', 'fetchpriority' => 'high' ) ); ?>
+					<span class="brand__sub">DSC · Liaisoning &amp; Business Registration</span>
+				</span>
+			<?php else : ?>
+				<span class="brand__seal" aria-hidden="true">R</span>
+				<span class="brand__text">
+					<span class="brand__name"><?php echo esc_html( raikwar_info( 'brand' ) ); ?></span>
+					<span class="brand__sub">Liaisoning &amp; Business Registration</span>
+				</span>
+			<?php endif; ?>
 		</a>
 
 		<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
