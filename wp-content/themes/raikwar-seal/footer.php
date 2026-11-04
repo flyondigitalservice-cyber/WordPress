@@ -37,7 +37,13 @@
 						<li><a href="<?php echo esc_attr( raikwar_tel( raikwar_info( 'phone2' ) ) ); ?>"><?php echo esc_html( raikwar_phone_label( raikwar_info( 'phone2' ) ) ); ?></a></li>
 					<?php endif; ?>
 					<li><a href="mailto:<?php echo esc_attr( antispambot( raikwar_info( 'email' ) ) ); ?>"><?php echo esc_html( antispambot( raikwar_info( 'email' ) ) ); ?></a></li>
+					<?php if ( raikwar_info( 'email2' ) ) : ?>
+						<li><a href="mailto:<?php echo esc_attr( antispambot( raikwar_info( 'email2' ) ) ); ?>"><?php echo esc_html( antispambot( raikwar_info( 'email2' ) ) ); ?></a></li>
+					<?php endif; ?>
 					<li><?php echo esc_html( raikwar_info( 'address' ) ); ?></li>
+					<?php if ( raikwar_info( 'address2' ) ) : ?>
+						<li><?php echo esc_html( raikwar_info( 'address2' ) ); ?></li>
+					<?php endif; ?>
 					<li><?php echo esc_html( raikwar_info( 'hours' ) ); ?></li>
 				</ul>
 			</div>

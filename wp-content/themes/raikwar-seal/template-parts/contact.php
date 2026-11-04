@@ -27,8 +27,12 @@ if ( ! $form && shortcode_exists( 'wpforms' ) ) {
 					<a href="<?php echo esc_attr( raikwar_tel( raikwar_info( 'phone1' ) ) ); ?>"><?php echo esc_html( raikwar_phone_label( raikwar_info( 'phone1' ) ) ); ?></a>
 					<?php if ( raikwar_info( 'phone2' ) ) : ?><br><a href="<?php echo esc_attr( raikwar_tel( raikwar_info( 'phone2' ) ) ); ?>"><?php echo esc_html( raikwar_phone_label( raikwar_info( 'phone2' ) ) ); ?></a><?php endif; ?>
 				</div></li>
-				<li><span class="ic"><?php echo raikwar_icon( 'mail' ); ?></span><div><small>Email</small><a href="mailto:<?php echo esc_attr( antispambot( raikwar_info( 'email' ) ) ); ?>"><?php echo esc_html( antispambot( raikwar_info( 'email' ) ) ); ?></a></div></li>
-				<li><span class="ic"><?php echo raikwar_icon( 'pin' ); ?></span><div><small>Office</small><a href="<?php echo esc_url( raikwar_info( 'map_url' ) ); ?>" target="_blank" rel="noopener"><?php echo esc_html( raikwar_info( 'address' ) ); ?></a></div></li>
+				<li><span class="ic"><?php echo raikwar_icon( 'mail' ); ?></span><div><small>Email</small><a href="mailto:<?php echo esc_attr( antispambot( raikwar_info( 'email' ) ) ); ?>"><?php echo esc_html( antispambot( raikwar_info( 'email' ) ) ); ?></a>
+					<?php if ( raikwar_info( 'email2' ) ) : ?><br><a href="mailto:<?php echo esc_attr( antispambot( raikwar_info( 'email2' ) ) ); ?>"><?php echo esc_html( antispambot( raikwar_info( 'email2' ) ) ); ?></a><?php endif; ?>
+				</div></li>
+				<li><span class="ic"><?php echo raikwar_icon( 'pin' ); ?></span><div><small>Offices</small><a href="<?php echo esc_url( raikwar_info( 'map_url' ) ); ?>" target="_blank" rel="noopener"><?php echo esc_html( raikwar_info( 'address' ) ); ?></a>
+					<?php if ( raikwar_info( 'address2' ) ) : ?><br><span style="font-weight:600;font-size:18px"><?php echo esc_html( raikwar_info( 'address2' ) ); ?></span><?php endif; ?>
+				</div></li>
 				<li><span class="ic"><?php echo raikwar_icon( 'clock' ); ?></span><div><small>Hours</small><span style="font-weight:600;font-size:18px"><?php echo esc_html( raikwar_info( 'hours' ) ); ?></span></div></li>
 			</ul>
 		</div>
