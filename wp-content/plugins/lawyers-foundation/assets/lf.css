@@ -1,0 +1,115 @@
+/* Lawyers Foundation Membership — component styles. Themes can override the tokens. */
+:root {
+	--lf-ink: #14213d;
+	--lf-text: #2b2f3a;
+	--lf-muted: #5f6675;
+	--lf-accent: #b08d3c;
+	--lf-accent-ink: #ffffff;
+	--lf-surface: #ffffff;
+	--lf-soft: #f5f2ea;
+	--lf-line: #e2ddd0;
+	--lf-radius: 10px;
+	--lf-ok: #1f7a4d;
+	--lf-err: #a12a2a;
+}
+.lf-card { background: var(--lf-surface); border: 1px solid var(--lf-line); border-radius: var(--lf-radius); padding: 24px; margin: 0 0 24px; }
+.lf-muted { color: var(--lf-muted); }
+.lf-small { font-size: .9em; margin: .25em 0; }
+.lf-eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .75rem; font-weight: 700; color: var(--lf-accent); margin: 0 0 .4em; }
+.lf-btn { display: inline-block; background: var(--lf-ink); color: #fff !important; border: 2px solid var(--lf-ink); border-radius: 999px; padding: .65em 1.4em; font-weight: 600; text-decoration: none !important; cursor: pointer; font-size: 1rem; line-height: 1.2; }
+.lf-btn:hover, .lf-btn:focus-visible { background: var(--lf-accent); border-color: var(--lf-accent); }
+.lf-btn--ghost { background: transparent; color: var(--lf-ink) !important; }
+.lf-btn--ghost:hover { color: #fff !important; }
+
+.lf-notice { border-radius: var(--lf-radius); padding: 14px 18px; margin: 0 0 20px; border-left: 4px solid; background: var(--lf-soft); }
+.lf-notice ul { margin: 0; padding-left: 1.2em; }
+.lf-notice--success { border-color: var(--lf-ok); }
+.lf-notice--error { border-color: var(--lf-err); }
+.lf-notice--info { border-color: var(--lf-ink); }
+
+/* Forms */
+.lf-form fieldset { border: 0; padding: 0; margin: 0 0 20px; }
+.lf-form legend { font-weight: 700; font-size: 1.15rem; color: var(--lf-ink); margin-bottom: 8px; }
+.lf-form label, .lf-label { display: block; font-weight: 600; margin-bottom: 4px; color: var(--lf-ink); }
+.lf-form input[type=text], .lf-form input[type=email], .lf-form input[type=password], .lf-form input[type=number], .lf-form input[type=tel], .lf-form input[type=date], .lf-form select, .lf-form textarea,
+.lf-filter input, .lf-filter select { width: 100%; box-sizing: border-box; padding: .6em .75em; border: 1px solid #c9c3b4; border-radius: 6px; font: inherit; background: #fff; color: var(--lf-text); }
+.lf-form input:focus, .lf-form select:focus, .lf-form textarea:focus, .lf-filter input:focus, .lf-filter select:focus { outline: 2px solid var(--lf-accent); outline-offset: 1px; }
+.lf-form input:disabled { background: var(--lf-soft); }
+.lf-form p { margin: 0 0 14px; }
+.lf-grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px; }
+.lf-checks { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 6px 16px; margin-bottom: 16px; }
+.lf-checks label, .lf-inline { font-weight: 400 !important; display: flex !important; gap: 8px; align-items: flex-start; }
+.lf-checks input, .lf-inline input { margin-top: .3em; }
+.lf-hp { position: absolute !important; left: -9999px; }
+.lf-dues { background: var(--lf-soft); padding: 12px 16px; border-radius: 6px; }
+
+/* Directory */
+.lf-filter { display: grid; grid-template-columns: 2fr 2fr 1.4fr auto; gap: 10px; margin-bottom: 12px; }
+.lf-members { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.lf-member { display: flex; gap: 16px; border: 1px solid var(--lf-line); border-radius: var(--lf-radius); padding: 18px; background: var(--lf-surface); }
+.lf-member h3 { margin: 0 0 2px; font-size: 1.1rem; color: var(--lf-ink); }
+.lf-member p { margin: 0 0 4px; }
+.lf-avatar { border-radius: 50%; flex: none; }
+.lf-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 !important; }
+.lf-tags span { background: var(--lf-soft); border-radius: 999px; padding: 2px 10px; font-size: .8rem; }
+.lf-hours { color: var(--lf-ok); font-weight: 600; }
+.lf-pager { display: flex; gap: 6px; margin-top: 20px; }
+.lf-pager a { padding: 6px 12px; border: 1px solid var(--lf-line); border-radius: 6px; text-decoration: none; }
+.lf-pager a[aria-current] { background: var(--lf-ink); color: #fff; }
+.lf-locked { text-align: center; }
+
+/* Events */
+.lf-events { display: grid; gap: 16px; }
+.lf-event-card { display: flex; gap: 20px; border: 1px solid var(--lf-line); border-radius: var(--lf-radius); padding: 18px; background: var(--lf-surface); }
+.lf-event-card h3 { margin: 0 0 4px; font-size: 1.2rem; }
+.lf-event-card h3 a { color: var(--lf-ink); text-decoration: none; }
+.lf-event-card p { margin: 0 0 6px; }
+.lf-date { flex: none; width: 76px; text-align: center; background: var(--lf-ink); color: #fff; border-radius: 8px; padding: 10px 0; display: flex; flex-direction: column; line-height: 1.1; align-self: flex-start; }
+.lf-date strong { font-size: 1.9rem; }
+.lf-date span { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; opacity: .85; }
+.lf-cycle { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 28px; }
+.lf-cycle-slot { border: 1px solid var(--lf-line); border-top: 4px solid var(--lf-accent); border-radius: var(--lf-radius); padding: 20px; background: var(--lf-surface); }
+.lf-cycle-slot h3 { margin: 0 0 8px; color: var(--lf-ink); }
+.lf-cycle-slot p { margin: 0 0 6px; }
+.lf-pill { display: inline-block; font-size: .78rem; font-weight: 600; padding: 2px 10px; border-radius: 999px; background: var(--lf-soft); color: var(--lf-muted); }
+.lf-pill--open, .lf-pill--publish { background: #e3f3ea; color: var(--lf-ok); }
+.lf-pill--full { background: #f8e4e4; color: var(--lf-err); }
+.lf-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 0 0 16px; }
+.lf-facts dt { font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: var(--lf-muted); }
+.lf-facts dd { margin: 0; font-weight: 600; color: var(--lf-ink); }
+.lf-going { color: var(--lf-ok); font-weight: 700; }
+.lf-rsvp form { display: inline; }
+
+/* Dashboard */
+.lf-dash-head { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+.lf-dash-head h2 { margin: 0; }
+.lf-dash-head p { margin: 4px 0 0; }
+.lf-dash-stats { display: flex; gap: 24px; margin-left: auto; }
+.lf-dash-stats div { display: flex; flex-direction: column; }
+.lf-dash-stats strong { font-size: 1.8rem; color: var(--lf-ink); line-height: 1; }
+.lf-dash-stats span { font-size: .8rem; color: var(--lf-muted); }
+.lf-dash-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.lf-list { list-style: none; padding: 0; margin: 0 0 16px; }
+.lf-list li { padding: 8px 0; border-bottom: 1px solid var(--lf-line); }
+.lf-login form p { margin-bottom: 12px; }
+.lf-login input[type=text], .lf-login input[type=password] { width: 100%; padding: .6em; border: 1px solid #c9c3b4; border-radius: 6px; box-sizing: border-box; }
+.lf-login input[type=submit] { background: var(--lf-ink); color: #fff; border: 0; border-radius: 999px; padding: .65em 1.6em; font-weight: 600; cursor: pointer; }
+
+/* Initiatives & impact */
+.lf-initiatives { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+.lf-initiative { border: 1px solid var(--lf-line); border-radius: var(--lf-radius); overflow: hidden; background: var(--lf-surface); }
+.lf-initiative img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.lf-initiative-body { padding: 18px 20px; border-top: 4px solid var(--lf-accent); }
+.lf-initiative h3 { margin: 0 0 8px; font-size: 1.15rem; }
+.lf-initiative h3 a { color: var(--lf-ink); text-decoration: none; }
+.lf-impact { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 0 0 28px; }
+.lf-impact div { text-align: center; padding: 20px 10px; border-radius: var(--lf-radius); background: var(--lf-soft); }
+.lf-impact strong { display: block; font-size: 2.2rem; color: var(--lf-ink); line-height: 1.1; }
+.lf-impact span { font-size: .85rem; color: var(--lf-muted); }
+
+@media (max-width: 720px) {
+	.lf-grid-2, .lf-dash-grid, .lf-filter { grid-template-columns: 1fr; }
+	.lf-impact { grid-template-columns: repeat(2, 1fr); }
+	.lf-dash-stats { margin-left: 0; }
+	.lf-card { padding: 18px; }
+}
