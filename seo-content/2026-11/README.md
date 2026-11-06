@@ -27,3 +27,9 @@ python3 -c "import json,data_areas as a,data_interiors as i,data_events_guides a
   emirate floor-mat pages → curtains/blinds/carpets in the same emirate; emirate interiors pages → floor mats
   and the other two services there; Dubai area pages → Dubai curtains, blinds, carpets, events and guides.
   Idempotent: pages that already contain the section are skipped.
+
+## Portfolio photos from Google Drive
+
+- `drive-photos-plan.py` — which Drive photo goes on which page (featured image + gallery).
+- `drive-photos.json` — the resulting upload spec (150 photos, 60 pages, SEO filenames + alt text).
+- `cfm-photos.php` — batched importer (6 photos per request, resumable, never duplicates).
