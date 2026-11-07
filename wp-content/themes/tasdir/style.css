@@ -1,0 +1,16 @@
+/*
+Theme Name: Tasdir Export
+Theme URI: https://tasdir.com/
+Author: Tasdir Import Export Private Limited
+Description: Fast, mobile-first theme for Tasdir Import Export Pvt. Ltd. — fresh fruit exporters from India. Built-in WhatsApp lead capture, enquiry inbox with CSV export, Google Analytics 4, Google Tag Manager, Meta (Facebook) Pixel, SEO meta, Open Graph and JSON-LD schema. No jQuery, no page builder, no external fonts.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: tasdir
+Tags: one-column, custom-logo, custom-menu, featured-images, translation-ready, e-commerce
+*/
+
+/* The real stylesheet lives in assets/css/main.css (enqueued by functions.php). */
