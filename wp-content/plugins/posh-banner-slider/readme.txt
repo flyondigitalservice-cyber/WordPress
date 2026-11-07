@@ -1,5 +1,5 @@
 === Posh Banner Slider ===
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 
 Auto-sliding hero banners for a premium laptop store.

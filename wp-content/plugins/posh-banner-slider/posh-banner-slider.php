@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Posh Banner Slider
  * Description: Auto-sliding promotional hero banners for a premium laptop store. Ships with bold 3D-text placeholder banners; swap in your own generated images from Appearance → Banner Slider. Use the shortcode [posh_banner_slider] or the PHP call posh_banner_slider().
- * Version:     1.0.0
+ * Version:     1.1.0
  * Author:      Flyon Digital
  * License:     GPL-2.0-or-later
  * Text Domain: posh-banner-slider
@@ -10,7 +10,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'POSH_BS_VERSION', '1.0.0' );
+define( 'POSH_BS_VERSION', '1.1.0' );
 define( 'POSH_BS_URL', plugin_dir_url( __FILE__ ) );
 define( 'POSH_BS_OPTION', 'posh_banner_slider' );
 
@@ -18,8 +18,41 @@ define( 'POSH_BS_OPTION', 'posh_banner_slider' );
  * Default placeholder slides. Each one renders as a CSS "text effect" banner
  * until an image is set for it.
  */
-function posh_bs_default_slides() {
+function posh_bs_image_slides() {
+	$base = POSH_BS_URL . 'assets/banners/';
 	return array(
+		array(
+			'theme'    => 'fire',
+			'badge'    => '',
+			'title'    => 'Special Offer – 11% extra off on purchase of 1100 AED',
+			'subtitle' => '',
+			'button'   => 'Shop now',
+			'link'     => '/shop/',
+			'image'    => $base . 'special-offer-11-extra.webp',
+		),
+		array(
+			'theme'    => 'fire',
+			'badge'    => '',
+			'title'    => 'Special Offer – 10% extra off on all MacBooks',
+			'subtitle' => '',
+			'button'   => 'Shop MacBooks',
+			'link'     => '/shop/',
+			'image'    => $base . 'special-offer-macbooks.webp',
+		),
+		array(
+			'theme'    => 'fire',
+			'badge'    => '',
+			'title'    => 'Amazing discount on Lenovo laptops – up to 45% off',
+			'subtitle' => '',
+			'button'   => 'Shop Lenovo',
+			'link'     => '/shop/',
+			'image'    => $base . 'lenovo-amazing-discount.webp',
+		),
+	);
+}
+
+function posh_bs_default_slides() {
+	return array_merge( posh_bs_image_slides(), array(
 		array(
 			'theme'    => 'fire',
 			'badge'    => 'Limited Time',
@@ -65,7 +98,7 @@ function posh_bs_default_slides() {
 			'link'     => '/shop/',
 			'image'    => '',
 		),
-	);
+	) );
 }
 
 function posh_bs_themes() {
@@ -91,6 +124,22 @@ function posh_bs_get_settings() {
 	}
 	return $settings;
 }
+
+/**
+ * v1.1: sites that saved settings on v1.0 get the new image banners added
+ * to the front of their slide list once.
+ */
+add_action( 'init', function () {
+	if ( version_compare( get_option( 'posh_bs_db_version', '1.0.0' ), '1.1.0', '>=' ) ) {
+		return;
+	}
+	$saved = get_option( POSH_BS_OPTION );
+	if ( is_array( $saved ) && ! empty( $saved['slides'] ) ) {
+		$saved['slides'] = array_merge( posh_bs_image_slides(), $saved['slides'] );
+		update_option( POSH_BS_OPTION, $saved );
+	}
+	update_option( 'posh_bs_db_version', '1.1.0' );
+} );
 
 /* -------------------------------------------------------------------------
  * Front end
