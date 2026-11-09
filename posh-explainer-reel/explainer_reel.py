@@ -335,13 +335,13 @@ def chrome(i, u):
     sc = SCENES[i]; items = []; cream = (246, 239, 228); ember = (236, 122, 60)
     def ent(t0): k = eo(seg(u, t0, t0 + 0.5)); return k, (1 - k) * 34
     if sc['step']:
-        k, dy = ent(0.1); items.append(('__pill__', (430, 236 + dy, 650, 296 + dy), 0, 0, 0, ember, k, '', 0))
+        k, dy = ent(0.1); pw = max(110, 13 * len(sc['step']) + 34); items.append(('__pill__', (540 - pw, 236 + dy, 540 + pw, 296 + dy), 0, 0, 0, ember, k, '', 0))
         items.append((sc['step'], 540, 266 + dy, 30, 800, (27, 31, 77), k, 'mm', 0))
         k, dy = ent(0.22); items.append((sc['title'], 540, 432 + dy, 92, 800, cream, k, 'mm', 6))
     k, dy = ent(0.5 if sc['step'] else 2.1)
     items.append((sc['cap'], 540, 1690 + dy, 44, 500, cream, k * 0.92, 'mm', 0))
     for j in range(len(SCENES)):
-        items.append(('__dot__', 540 + (j - 2) * 44, 1796, 9 if j == i else 6, 0, ember if j == i else cream, 1.0 if j == i else 0.35, '', 0))
+        items.append(('__dot__', 540 + (j - (len(SCENES) - 1) / 2) * 44, 1796, 9 if j == i else 6, 0, ember if j == i else cream, 1.0 if j == i else 0.35, '', 0))
     return items
 
 def scene_frame(i, u):
