@@ -1,0 +1,27 @@
+1
+00:00:00,550 --> 00:00:05,354
+Shopify store banana hai… par shuru kahan se karein?
+
+2
+00:00:06,654 --> 00:00:13,847
+Bombay Marketing banata hai mobile-first store — homepage, collection aur product pages, sab taiyaar.
+
+3
+00:00:14,697 --> 00:00:21,686
+Payments mein Razorpay, UPI, cards, wallets… aur haan, COD bhi.
+
+4
+00:00:22,536 --> 00:00:28,065
+Shipping mein courier integration, pincode check aur GST-ready invoice.
+
+5
+00:00:28,915 --> 00:00:35,215
+Products upload, SEO basics, GA4 aur Meta Pixel tracking — pehle din se.
+
+6
+00:00:36,065 --> 00:00:42,368
+Zyadatar stores 2 se 4 hafte mein live. Aur store, data — sab aapka.
+
+7
+00:00:44,518 --> 00:00:50,462
+Fixed quote chahiye? Free audit book kijiye — bombaymarketing.in

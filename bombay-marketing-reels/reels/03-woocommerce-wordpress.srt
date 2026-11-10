@@ -1,0 +1,27 @@
+1
+00:00:00,550 --> 00:00:03,113
+Har mahine platform fee kyun bharni?
+
+2
+00:00:04,413 --> 00:00:12,527
+Bombay Marketing banata hai WooCommerce store — koi monthly platform fee nahi, poora ownership aapka.
+
+3
+00:00:13,377 --> 00:00:20,779
+Design aapke brand jaisa, aur speed tez — caching, image optimisation, lean code.
+
+4
+00:00:21,629 --> 00:00:29,909
+Razorpay, UPI, cards, COD… saath mein shipping, tax aur GST setup.
+
+5
+00:00:30,759 --> 00:00:38,475
+Security, SSL, regular backups… aur SEO ke liye product schema aur sitemap.
+
+6
+00:00:39,325 --> 00:00:47,829
+Typically 3 se 5 hafte. Aur agar Shopify behtar fit hai, toh hum imaandaari se bata denge.
+
+7
+00:00:49,979 --> 00:00:55,538
+Apna product range bataiye, quote lijiye — bombaymarketing.in

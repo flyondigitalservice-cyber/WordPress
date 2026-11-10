@@ -13,7 +13,11 @@ cd "$HERE"; node tools/lines.mjs >/dev/null; node tools/meta.mjs
 cd "$LIB"
 for n in $SEL; do
   id=$(sed -n "${n}p" "$HERE/out/ids.txt"); O="$HERE/out/$id"; mkdir -p "$O" "$HERE/reels"
-  [ -f "$HERE/voice/$id/dur.json" ] || "$PY" "$HERE/tools/tts.py" "$LIB" "$HERE/voice/$id/lines.json" "$HERE/voice/$id"
+  for try in 1 2 3 4; do   # the online voice service drops a line now and then
+    [ -f "$HERE/voice/$id/dur.json" ] && break
+    "$PY" "$HERE/tools/tts.py" "$LIB" "$HERE/voice/$id/lines.json" "$HERE/voice/$id" || sleep 8
+  done
+  [ -f "$HERE/voice/$id/dur.json" ] || { echo "voice failed for $id"; exit 1; }
   node core/render/events.mjs "$HERE" --q "reel=$n" --size 1080x1920 --out "$O/events.json"
   "$PY" "$HERE/tools/srt.py" "$O/events.json" "$HERE/reels/$id.srt"
   "$PY" "$HERE/mix.py" "$id"
