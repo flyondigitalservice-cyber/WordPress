@@ -129,8 +129,8 @@ let DUR = 40, B = [], TP = 0, TC = 0, CL = 0, TST = 0, cells = [], sign, EV = []
 function build(durs) {
   let t = .4;
   const all = [R.hook, ...R.cells];
-  all.forEach((c, i) => { const L = i ? Math.max(durs[i] + .6, 3.6) : durs[0] + 1.05; B.push({ s: t, vo: t + (i ? .2 : .15), L, d: durs[i] }); t += L; });
-  TP = t + .3; TC = TP + .95; CL = Math.max(durs[6], 3.8); TST = TC + .15 + CL; DUR = Math.round((TST + 2.0) * 60) / 60;
+  all.forEach((c, i) => { const L = i ? Math.max(durs[i] + 1.1, 4.6) : durs[0] + 1.5; B.push({ s: t, vo: t + (i ? .2 : .15), L, d: durs[i] }); t += L; });
+  TP = t + .4; TC = TP + 1.1; CL = Math.max(durs[6] + .6, 4.6); TST = TC + .15 + CL; DUR = Math.round((TST + 2.0) * 60) / 60;
 
   all.forEach((c, i) => {
     const b = B[i], hook = i === 0, [col, row] = ORDER[i], cx = col * CW, cy = TOP + row * CH;
@@ -144,20 +144,20 @@ function build(durs) {
       cell.note = mkText(`Bombay Sketchbook · ${String(R.n).padStart(2, '0')}/12 · ${R.place}`, 92, 66, F.n(50), 50, 'rgba(46,34,25,.78)');
       const sz = Math.min(...c.title.map(s => fit(s, F.h, 112, 900)));
       cell.texts = c.title.map((s, k) => mkText(s, 92, 178 + k * 112, F.h(sz), sz));
-      const tA = b.s + .1, tB = b.s + b.L * .44; let tt = tA; const wsum = cell.texts.reduce((a, e) => a + e.w, 0);
+      const tA = b.s + .15, tB = b.s + b.L * .5; let tt = tA; const wsum = cell.texts.reduce((a, e) => a + e.w, 0);
       cell.texts.forEach(e => { e.t0 = tt; e.t1 = tt + (tB - tA) * e.w / wsum - .12; tt += (tB - tA) * e.w / wsum; });
       a0 = tB + .05; a1 = b.s + b.L - .08;
       cell.w0 = B[1].s - .1; cell.hl = null;
     } else {
       const hs = fit(c.h, F.h, 100, 890), ss2 = fit(c.s, F.s, 50, 890);
       const h = mkText(c.h, 92, 122, F.h(hs), hs, BLACK), s2 = mkText(c.s, 94, 196, F.s(ss2), ss2);
-      a0 = b.s + .45; a1 = b.s + b.L * .46;
-      h.t0 = a1 + Math.min(1.5, b.L * .2); h.t1 = h.t0 + Math.min(.7, b.L * .12); s2.t0 = h.t1 + .08; s2.t1 = Math.min(b.s + b.L - .12, s2.t0 + .8);   // the hold before labels
+      a0 = b.s + .5; a1 = b.s + b.L * .56;
+      h.t0 = a1 + Math.min(1.5, b.L * .14); h.t1 = h.t0 + Math.min(.9, b.L * .12); s2.t0 = h.t1 + .12; s2.t1 = Math.min(b.s + b.L - .15, s2.t0 + 1.0);   // the hold before labels
       cell.texts = [h, s2]; cell.w0 = a1 - .2;
       cell.hl = { x: h.x - 14, y: h.y - hs * .34, w: h.w + 30, h: hs * .46, t0: h.t1 - .05, t1: h.t1 + .4 };
     }
-    let acc = 0; els.forEach(e => { e.t0 = a0 + (a1 - a0) * acc / tot; acc += e.wt; e.t1 = a0 + (a1 - a0) * (acc - 55) / tot; });
-    cell.w1 = cell.w0 + 1.1;
+    let acc = 0; els.forEach(e => { e.t0 = a0 + (a1 - a0) * acc / tot; acc += e.wt; e.t1 = a0 + (a1 - a0) * (acc - 25) / tot; });
+    cell.w1 = cell.w0 + 1.6;
     // wash centre: the art's bounding box
     let x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9; washes.forEach(w => w.pts.forEach(p => { x0 = Math.min(x0, p[0]); x1 = Math.max(x1, p[0]); y0 = Math.min(y0, p[1]); y1 = Math.max(y1, p[1]); }));
     cell.wc = washes.length ? [(x0 + x1) / 2, (y0 + y1) / 2] : [540, 400];
@@ -205,10 +205,10 @@ function mkStamp() {
 // ---------- camera ----------
 const cellC = (i) => [ORDER[i][0] * CW + CW / 2, TOP + ORDER[i][1] * CH + CH / 2];
 function cam(t) {                                             // one axis per move: X or Y between cells (0.65 s), Z inside a cell
-  let x, y, z, i = 0; while (i < 5 && t >= B[i + 1].s - .2) i++;
+  let x, y, z, i = 0; while (i < 5 && t >= B[i + 1].s - .25) i++;
   [x, y] = cellC(i); z = ZC * (1 + .045 * seg(t, B[i].s + .45, B[i].s + B[i].L));
-  if (i > 0) { const u = seg(t, B[i].s - .2, B[i].s + .45); if (u < 1) { const p = cellC(i - 1), two = p[0] !== x && p[1] !== y; x = lerp(p[0], x, two ? ue(seg(u, .42, 1)) : ue(u)); y = lerp(p[1], y, two ? ue(seg(u, 0, .5)) : ue(u)); const e = ue(u); z = ZC * 1.045; if (u > .999) z = ZC; z = lerp(ZC * 1.045, ZC, e); } }
-  if (t >= TP) { const e = ue(seg(t, TP, TP + .7)), v = seg(t, TP + .7, DUR); x = lerp(x, PW / 2, e); y = lerp(y, 1440, e); z = lerp(z, lerp(.45, .47, v), e); }
+  if (i > 0) { const u = seg(t, B[i].s - .25, B[i].s + .45); if (u < 1) { const p = cellC(i - 1), two = p[0] !== x && p[1] !== y; x = lerp(p[0], x, two ? ue(seg(u, .42, 1)) : ue(u)); y = lerp(p[1], y, two ? ue(seg(u, 0, .5)) : ue(u)); const e = ue(u); z = ZC * 1.045; if (u > .999) z = ZC; z = lerp(ZC * 1.045, ZC, e); } }
+  if (t >= TP) { const e = ue(seg(t, TP, TP + .9)), v = seg(t, TP + .9, DUR); x = lerp(x, PW / 2, e); y = lerp(y, 1440, e); z = lerp(z, lerp(.45, .47, v), e); }
   return { x, y, z, rot: 0 };
 }
 const toScreen = (c, p) => { const dx = (p[0] - c.x) * c.z, dy = (p[1] - c.y) * c.z, cs = Math.cos(c.rot), sn = Math.sin(c.rot); return [AX + dx * cs - dy * sn, AY + dx * sn + dy * cs]; };
@@ -217,16 +217,17 @@ const toScreen = (c, p) => { const dx = (p[0] - c.x) * c.z, dy = (p[1] - c.y) * 
 function penRaw(t) {                                          // screen position + lift (0 on paper, 1 in the air)
   const c = cam(t); let k = -1; for (let i = 0; i < pens.length && pens[i].t0 <= t; i++) k = i;
   if (k < 0) { const a = toScreen(c, pens[0].pos(0)), u = eio(seg(t, 0, pens[0].t0)); return [lerp(1250, a[0], u), lerp(1500, a[1], u), 1 - u]; }
-  const p = pens[k]; if (t <= p.t1) { const a = toScreen(c, p.pos((t - p.t0) / (p.t1 - p.t0))); return [a[0], a[1], 0]; }
+  const p = pens[k]; if (t <= p.t1) { const a = toScreen(c, p.pos(sm((t - p.t0) / (p.t1 - p.t0)))); return [a[0], a[1], 0]; }
   const a = toScreen(c, p.pos(1)), nx = pens[k + 1];
   if (!nx) { const u = eio(seg(t, p.t1 + .1, p.t1 + .8)); return [lerp(a[0], 1300, u), lerp(a[1], 1450, u), u]; }
   const b = toScreen(c, nx.pos(0)), gap = nx.t0 - p.t1, mv = Math.min(gap, .5), u = eio(seg(t, nx.t0 - mv, nx.t0)), hov = gap > .5 ? Math.min(1, (t - p.t1) / .25) : Math.sin(PI * seg(t, p.t1, nx.t0));
   return [lerp(a[0] + 26 * hov * (gap > .5), b[0], u), lerp(a[1] - 30 * hov * (gap > .5), b[1], u), gap > .5 ? Math.max(hov * (1 - u), Math.sin(PI * u) * .8) : hov * .6];
 }
-function penAt(t) { const ws = [.4, .3, .2, .1]; let x = 0, y = 0, l = 0; ws.forEach((w, i) => { const r = penRaw(Math.max(0, t - i * .035)); x += r[0] * w; y += r[1] * w; l += r[2] * w; }); return [x, y, l]; }
+const sm = (u) => { u = clamp(u); return u * u * (3 - 2 * u); };   // strokes start and stop softly
+function penAt(t) { const ws = [.22, .2, .17, .14, .11, .08, .05, .03]; let x = 0, y = 0, l = 0; ws.forEach((w, i) => { const r = penRaw(Math.max(0, t - i * .04)); x += r[0] * w; y += r[1] * w; l += r[2] * w; }); return [x, y, l]; }
 function drawPen(t) {
   const [x, y, lift] = penAt(t); if (x > 1240 || y > 1900) return;
-  const ang = -1.02 + .06 * Math.sin(t * 2.1) + lift * .08, L = 340;
+  const ang = -1.02 + .04 * Math.sin(t * 1.1) + lift * .06, L = 340;
   ctx.save(); ctx.translate((x + 16 + lift * 26) * S, (y + 22 + lift * 34) * S); ctx.rotate(ang); ctx.scale(S, S);   // shadow
   ctx.globalAlpha = .2 - lift * .08; ctx.filter = `blur(${(7 + lift * 9) * S}px)`; ctx.fillStyle = '#20140a'; ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(46, -16); ctx.lineTo(L, -16); ctx.lineTo(L, 16); ctx.lineTo(46, 16); ctx.closePath(); ctx.fill(); ctx.restore();
   ctx.save(); ctx.translate(x * S, (y - lift * 16) * S); ctx.rotate(ang); ctx.scale(S, S);
@@ -254,7 +255,7 @@ function renderCell(c, t) {
   }
   if (hp > 0) drawHL(g, c.hl, hp, c.seed);
   g.strokeStyle = INK; g.lineCap = 'round'; g.lineJoin = 'round'; g.globalAlpha = .93;
-  for (const e of c.els) { if (e.t0 > t) break; const p = (t - e.t0) / (e.t1 - e.t0); e.kind === 's' ? drawStroke(g, e, p) : drawText(g, e, p); }
+  for (const e of c.els) { if (e.t0 > t) break; const p = sm((t - e.t0) / (e.t1 - e.t0)); e.kind === 's' ? drawStroke(g, e, p) : drawText(g, e, p); }
   g.globalAlpha = 1; for (const e of c.texts) drawText(g, e, (t - e.t0) / (e.t1 - e.t0));
 }
 function drawHL(g, h, p, seed) {                                // a yellow marker swipe under the heading
@@ -286,7 +287,7 @@ function drawCaption(t) {
   ctx.fillStyle = 'rgba(255,199,44,.9)'; ctx.save(); ctx.translate(x0 + 6, -hh / 2 + 2); ctx.rotate(-.5); ctx.fillRect(-46, -17, 96, 34); ctx.restore();
   ctx.save(); ctx.translate(x1 - 6, hh / 2 - 2); ctx.rotate(-.42); ctx.fillRect(-46, -17, 96, 34); ctx.restore();
   ctx.font = F.b(45); ctx.fillStyle = BLACK; ctx.textBaseline = 'alphabetic';
-  const tot = lines.reduce((a, l) => a + l.w, 0), wd = Math.min(b.d * .6, 2.2), sw = seg(t, b.vo - .12, b.vo);
+  const tot = lines.reduce((a, l) => a + l.w, 0), wd = Math.min(b.d * .7, 3.2), sw = seg(t, b.vo - .12, b.vo);
   if (sw >= 1) { let acc = 0; lines.forEach((l, k) => { const p = clamp(((t - b.vo) / wd * tot - acc) / l.w); acc += l.w; if (p <= 0) return; const y = -((lines.length - 1) * 60) / 2 + k * 60 + 16; ctx.save(); ctx.beginPath(); ctx.rect(540 - l.w / 2 - 8, y - 52, (l.w + 16) * p, 76); ctx.clip(); ctx.fillText(l.text, 540 - l.w / 2, y); ctx.restore(); }); }
   ctx.restore();
 }

@@ -15,33 +15,34 @@ for e in ev('vo'):
     x, sr = sf.read(f"{HERE}/voice/{rid}/l{e['i']}.wav", dtype='float32'); x = soxr.resample(x, sr, SR)
     x = hp(x, 85); x = sfx.compress(x / (np.abs(x).max() + 1e-9) * .8, thr=.2, ratio=3.2); add(voice, x.astype(np.float32), e['t'], .95)
 venv = np.abs(voice).max(1); k = int(.12 * SR); from scipy.ndimage import maximum_filter1d, uniform_filter1d
-venv = uniform_filter1d(maximum_filter1d(venv, k), int(.25 * SR)); duck = 1 - .62 * np.clip(venv / .25, 0, 1)
+venv = uniform_filter1d(maximum_filter1d(venv, k), int(.25 * SR)); duck = 1 - .68 * np.clip(venv / .25, 0, 1)
 
 # --- foley: pen on cold-press paper, brush, marker, moves, stamp ---
 def pen(d, bright=1.0):
-    d = max(d, .03); x = bp(noise(d), 1700 * bright, 7200); tt = t_(d); x *= (.55 + .45 * np.sin(2 * np.pi * (38 + 20 * rng.random()) * tt) ** 2); a = int(min(.012, d / 3) * SR)
+    d = max(d, .08); x = bp(noise(d), 500 * bright, 2400); a = max(1, int(min(.06, d / 3) * SR))   # a soft felt-tip brush of sound, no scratch
     env = np.ones(len(x)); env[:a] = np.linspace(0, 1, a); env[-a:] = np.linspace(1, 0, a); return (x * env).astype(np.float32)
-for e in ev('stroke'): add(fol, pen(e['d'], .8 + .5 * rng.random()), e['t'], .05 + .03 * rng.random(), (e.get('x', .5) - .5) * 1.2)
+for e in ev('stroke'): add(fol, pen(e['d'], .8 + .4 * rng.random()), e['t'], .014 + .006 * rng.random(), (e.get('x', .5) - .5) * .8)
 for e in ev('write'):
-    x = pen(e['d'], 1.15); x *= (.25 + .75 * (np.sin(2 * np.pi * 8.5 * np.arange(len(x)) / SR) > -.2)); add(fol, x.astype(np.float32), e['t'], .085)
+    x = pen(e['d'], 1.1); x *= (.6 + .4 * np.sin(2 * np.pi * 3.2 * np.arange(len(x)) / SR) ** 2); add(fol, x.astype(np.float32), e['t'], .018)
 for e in ev('wash'):
-    d = 1.0; x = lp(hp(noise(d), 500), 3800) * np.sin(np.pi * t_(d) / d) ** 1.5; add(fol, x.astype(np.float32), e['t'], .05); add(fol, sfx.pop(.5), e['t'] + .02, .05)
+    d = 1.0; x = lp(hp(noise(d), 500), 3800) * np.sin(np.pi * t_(d) / d) ** 1.5; add(fol, lp(x, 1800).astype(np.float32), e['t'], .03)
 for e in ev('hl'):
-    d = .38; x = bp(noise(d), 900, 2600) * np.sin(np.pi * t_(d) / d); add(fol, x.astype(np.float32), e['t'], .10)
-for e in ev('move'): add(fol, sfx.whoosh(.55), e['t'], .10)
-for e in ev('pull'): add(fol, sfx.whoosh(.8), e['t'], .16)
-for e in ev('stamp'): add(fol, sfx.thump(1, 85), e['t'], .7); add(fol, sfx.clack(.7), e['t'], .25); add(fol, sfx.ding(), e['t'] + .12, .16)
+    d = .38; x = bp(noise(d), 900, 2600) * np.sin(np.pi * t_(d) / d); add(fol, x.astype(np.float32), e['t'], .03)
+for e in ev('move'): add(fol, lp(sfx.whoosh(.7), 1500).astype(np.float32), e['t'], .05)
+for e in ev('pull'): add(fol, lp(sfx.whoosh(1.0), 1500).astype(np.float32), e['t'], .08)
+for e in ev('stamp'): add(fol, sfx.thump(1, 85), e['t'], .45); add(fol, sfx.ding(), e['t'] + .12, .10)
 
 # --- ambience: paper room tone, then a far Mumbai street (J-cut before the first colour) ---
 t = np.arange(N) / SR; tm = ev('music')[0]['t']; tp = ev('pull')[0]['t']; ts = ev('stamp')[0]['t']
-room = lp(noise(N / SR), 500)[:N] * .012
-street = bp(sfx.brown(N / SR)[:N], 90, 900) * (.6 + .4 * np.sin(2 * np.pi * .13 * t)) * .05 * np.clip((t - (tm - 1.6)) / 1.6, 0, 1)
+room = lp(noise(N / SR), 300)[:N] * .004
+street = bp(sfx.brown(N / SR)[:N], 90, 900) * (.6 + .4 * np.sin(2 * np.pi * .13 * t)) * .018 * np.clip((t - (tm - 1.6)) / 1.6, 0, 1)
 dip = 1 - .75 * np.clip(1 - np.abs(t - (tp + .2)) / .5, 0, 1)
 for c in (0, 1): amb[:, c] = (room + street) * dip
-hd = 1.3; ht = t_(hd); horn = sum(np.sign(np.sin(2 * np.pi * f * ht)) for f in (311, 370)) * np.minimum(1, ht * 6) * np.minimum(1, (hd - ht) * 3); add(amb, lp(horn, 900).astype(np.float32), max(.2, tm - 1.3), .012, -.5)
+hd = 1.3; ht = t_(hd); horn = sum(np.sign(np.sin(2 * np.pi * f * ht)) for f in (311, 370)) * np.minimum(1, ht * 6) * np.minimum(1, (hd - ht) * 3); pass
 
 # --- music: plucked ostinato, hand drums, a breathy flute answer, drone ---
-beat = 60 / BPM; ROOT = 50 + KEY                              # D3 + key
+BPM = BPM * .84; beat = 60 / BPM   # an easy walking tempo
+ROOT = 50 + KEY                              # D3 + key
 SCALES = [[0, 2, 4, 7, 9], [0, 2, 4, 5, 7, 9, 10], [0, 2, 3, 5, 7, 9, 10]][VAR]   # pentatonic · Khamaj-like · Kafi-like
 deg = lambda d: ROOT + 12 * (d // len(SCALES)) + SCALES[d % len(SCALES)]
 OST = [[0, 2, 4, 2, 3, 4, 2, 1], [0, 4, 2, 4, 3, 2, 1, 2], [0, 1, 2, 4, 2, 4, 3, 1]][VAR]
@@ -51,7 +52,7 @@ def note(pr, m, d, v, **kw):
     if key not in cache: cache[key] = PL.pluck(pr, m, d, v, **kw)
     return cache[key]
 def dayan(v, hi=True):
-    d = .28; tt = t_(d); f = PL._hz(ROOT + (24 if hi else 12)); return ((np.sin(2 * np.pi * f * tt) + .35 * np.sin(2 * np.pi * f * 2.02 * tt)) * np.exp(-tt / (.07 if hi else .05)) + bp(noise(d), 1500, 5000) * np.exp(-tt / .008) * .5).astype(np.float32) * v
+    d = .28; tt = t_(d); f = PL._hz(ROOT + (24 if hi else 12)); return ((np.sin(2 * np.pi * f * tt) + .35 * np.sin(2 * np.pi * f * 2.02 * tt)) * np.exp(-tt / (.07 if hi else .05)) + bp(noise(d), 1200, 3000) * np.exp(-tt / .006) * .12).astype(np.float32) * v
 def bayan(v):
     d = .5; tt = t_(d); f = 62 + 34 * np.exp(-tt / .09); ph = 2 * np.pi * np.cumsum(f) / SR; return ((np.sin(ph) + .3 * np.sin(2 * ph)) * np.exp(-tt / .16)).astype(np.float32) * v
 def flute(m, d, v):
@@ -66,9 +67,9 @@ for i in range(nb):
     if i % 8 == 0: add(mus, note('upright_bass_pizz', ROOT - 12 + (SCALES[2] if bar % 4 == 2 else 0), beat * 1.8, .7), tt0, .55)
     if drums and i >= 8:
         k, v = TAAL[i % 8]; sw = .012 * (i % 2)
-        if 'b' in k: add(mus, bayan(v), tt0 + sw, .34, .1)
-        if 'd' in k: add(mus, dayan(v), tt0 + sw, .16, .3)
-        if k == 't': add(mus, dayan(v, False), tt0 + sw, .10, .35)
+        if 'b' in k: add(mus, bayan(v), tt0 + sw, .22, .1)
+        if 'd' in k: add(mus, dayan(v), tt0 + sw, .07, .3)
+        if k == 't': add(mus, dayan(v, False), tt0 + sw, .04, .35)
 # flute answers in the gaps after each spoken line
 cues = sorted(e for e in EV if e['type'] == 'cue')  if False else [e for e in EV if e['type'] == 'cue']
 PHR = [[4, 5, 7], [7, 5, 4, 2], [2, 4, 5], [5, 4, 2, 0], [4, 7, 9]]
@@ -79,9 +80,9 @@ dr = sum(np.sin(2 * np.pi * PL._hz(ROOT + o) * t * (1 + .0007 * i)) * a for i, (
 dr *= np.clip((t - tm) / 1.5, 0, 1) * np.clip((DUR - t) / 1.2, 0, 1) * .02
 for c in (0, 1): mus[:, c] += dr.astype(np.float32)
 fin = PL.strum('nylon_guitar', [ROOT, ROOT + 7, ROOT + 12, ROOT + 16 if VAR != 2 else ROOT + 15, ROOT + 19], 2.2, .8, spread=.03); add(mus, fin, ts + .02, .6)
-mus *= (duck * np.clip((DUR - t) / 1.0, 0, 1))[:, None]
+mus[:, 0] = lp(mus[:, 0], 5500); mus[:, 1] = lp(mus[:, 1], 5500); mus *= (duck * np.clip((DUR - t) / 1.5, 0, 1))[:, None]
 
-mix = voice * 1.0 + fol * (.75 + .25 * duck[:, None]) + mus * .62 + amb
+mix = voice * 1.0 + fol * (.6 + .4 * duck[:, None]) + mus * .5 + amb
 mix = sfx.limit(mix[:, 0], .92), sfx.limit(mix[:, 1], .92); mix = np.stack(mix, 1)
 # low end in check
 os.makedirs(f'{HERE}/out/{rid}', exist_ok=True); sf.write(f'{HERE}/out/{rid}/mix.wav', mix[:int(DUR * SR)], SR, subtype='PCM_16')
