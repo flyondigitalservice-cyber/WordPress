@@ -1,0 +1,2237 @@
+{
+ "home": {
+  "title": "Ecommerce Growth Agency in Mumbai & Navi Mumbai | Bombay Marketing",
+  "pageH": 14270,
+  "body": {
+   "font": "\"Space Grotesk\"",
+   "size": "16px",
+   "weight": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgb(246, 241, 231)",
+   "radius": "0px",
+   "text": "ECOMMERCE GROWTH AGENCY · MUMBAI & NAVI MUMBAI\n\nWe build, launch & scale ecommer"
+  },
+  "h1": {
+   "font": "\"Bricolage Grotesque\", sans-serif",
+   "size": "43px",
+   "weight": "800",
+   "lh": "43.86px",
+   "ls": "-0.86px",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "We build, launch & scale ecommerce brands in Mumbai."
+  },
+  "h2": {
+   "font": "\"Bricolage Grotesque\", sans-serif",
+   "size": "34.4px",
+   "weight": "800",
+   "lh": "36.12px",
+   "ls": "-0.688px",
+   "color": "rgb(20, 20, 20)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "One team for your whole online business"
+  },
+  "p": {
+   "font": "\"DM Sans\", system-ui, sans-serif",
+   "size": "12.5px",
+   "weight": "700",
+   "lh": "20.625px",
+   "ls": "1.75px",
+   "color": "rgb(255, 199, 44)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "ECOMMERCE GROWTH AGENCY · MUMBAI & NAVI MUMBAI"
+  },
+  "btn": {
+   "font": "\"Space Grotesk\"",
+   "size": "16px",
+   "weight": "400",
+   "lh": "18.4px",
+   "ls": "normal",
+   "color": "rgb(252, 250, 250)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": ""
+  },
+  "heads": [
+   {
+    "tag": "H1",
+    "text": "We build, launch & scale ecommerce brands in Mumbai.",
+    "y": 179,
+    "h": 132
+   },
+   {
+    "tag": "H2",
+    "text": "One team for your whole online business",
+    "y": 1358,
+    "h": 72
+   },
+   {
+    "tag": "H3",
+    "text": "Build",
+    "y": 1622,
+    "h": 34
+   },
+   {
+    "tag": "H3",
+    "text": "Launch",
+    "y": 1914,
+    "h": 34
+   },
+   {
+    "tag": "H3",
+    "text": "Grow",
+    "y": 2223,
+    "h": 34
+   },
+   {
+    "tag": "H2",
+    "text": "Proof, not promises",
+    "y": 2655,
+    "h": 36
+   },
+   {
+    "tag": "H3",
+    "text": "Beyond ecommerce",
+    "y": 3900,
+    "h": 31
+   },
+   {
+    "tag": "H2",
+    "text": "Brands that look as good on the shelf as online",
+    "y": 5155,
+    "h": 108
+   },
+   {
+    "tag": "H2",
+    "text": "Not your typical agency",
+    "y": 6311,
+    "h": 36
+   },
+   {
+    "tag": "H3",
+    "text": "Typical agency",
+    "y": 6475,
+    "h": 29
+   },
+   {
+    "tag": "H3",
+    "text": "Bombay\nMarketing",
+    "y": 6874,
+    "h": 31
+   },
+   {
+    "tag": "H2",
+    "text": "Built for brands that want to sell more",
+    "y": 7485,
+    "h": 72
+   },
+   {
+    "tag": "H2",
+    "text": "How we work",
+    "y": 8664,
+    "h": 36
+   },
+   {
+    "tag": "H2",
+    "text": "Frequently asked questions",
+    "y": 9857,
+    "h": 72
+   },
+   {
+    "tag": "H2",
+    "text": "Ideas to grow your online business",
+    "y": 10755,
+    "h": 72
+   },
+   {
+    "tag": "H2",
+    "text": "Ready to be Mumbai’s next ecommerce success story?",
+    "y": 12324,
+    "h": 108
+   }
+  ],
+  "cards": [],
+  "secs": [
+   {
+    "cls": "bm-hero bm-hx",
+    "x": 0,
+    "y": 0,
+    "w": 430,
+    "h": 1189
+   },
+   {
+    "cls": "bm-sec",
+    "x": 0,
+    "y": 1245,
+    "w": 430,
+    "h": 1297
+   },
+   {
+    "cls": "bm-sec dark bm-proof",
+    "x": 0,
+    "y": 2542,
+    "w": 430,
+    "h": 2500
+   },
+   {
+    "cls": "bm-sec alt",
+    "x": 0,
+    "y": 5042,
+    "w": 430,
+    "h": 1156
+   },
+   {
+    "cls": "bm-sec",
+    "x": 0,
+    "y": 6198,
+    "w": 430,
+    "h": 1174
+   },
+   {
+    "cls": "bm-sec alt",
+    "x": 0,
+    "y": 7372,
+    "w": 430,
+    "h": 1228
+   },
+   {
+    "cls": "bm-sec",
+    "x": 0,
+    "y": 8600,
+    "w": 430,
+    "h": 1193
+   },
+   {
+    "cls": "bm-sec alt bm-faq",
+    "x": 0,
+    "y": 9793,
+    "w": 430,
+    "h": 849
+   },
+   {
+    "cls": "bm-sec",
+    "x": 0,
+    "y": 10642,
+    "w": 430,
+    "h": 1548
+   },
+   {
+    "cls": "bm-cta bm-cta-xl",
+    "x": 0,
+    "y": 12190,
+    "w": 430,
+    "h": 601
+   }
+  ],
+  "bgs": [
+   [
+    "rgb(31, 31, 31)",
+    16
+   ],
+   [
+    "rgb(255, 199, 44)",
+    11
+   ],
+   [
+    "rgb(255, 253, 248)",
+    10
+   ],
+   [
+    "rgb(255, 255, 255)",
+    9
+   ],
+   [
+    "rgb(20, 20, 20)",
+    8
+   ],
+   [
+    "rgb(252, 250, 250)",
+    6
+   ],
+   [
+    "rgb(246, 241, 231)",
+    6
+   ],
+   [
+    "rgb(239, 231, 214)",
+    3
+   ]
+  ],
+  "cols": [
+   [
+    "rgb(252, 250, 250)",
+    71
+   ],
+   [
+    "rgb(20, 20, 20)",
+    64
+   ],
+   [
+    "rgb(243, 238, 226)",
+    32
+   ],
+   [
+    "rgb(255, 255, 255)",
+    25
+   ],
+   [
+    "rgb(91, 86, 73)",
+    21
+   ],
+   [
+    "rgb(233, 228, 216)",
+    19
+   ],
+   [
+    "rgb(189, 183, 169)",
+    19
+   ],
+   [
+    "rgb(51, 89, 224)",
+    18
+   ]
+  ],
+  "logo": []
+ },
+ "myntra": {
+  "title": "Myntra Seller Onboarding for Fashion Brands | Bombay Marketing",
+  "pageH": 5245,
+  "body": {
+   "font": "\"Space Grotesk\"",
+   "size": "16px",
+   "weight": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgb(246, 241, 231)",
+   "radius": "0px",
+   "text": "MYNTRA\n\nMyntra Seller Onboarding for Fashion, Beauty & Lifestyle Brands\n\nMyntra "
+  },
+  "h1": {
+   "font": "\"Bricolage Grotesque\", sans-serif",
+   "size": "43px",
+   "weight": "800",
+   "lh": "43.86px",
+   "ls": "-0.86px",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "Myntra Seller Onboarding for Fashion, Beauty & Lifestyle Brands"
+  },
+  "h2": {
+   "font": "\"Bricolage Grotesque\", sans-serif",
+   "size": "34.4px",
+   "weight": "800",
+   "lh": "36.12px",
+   "ls": "-0.688px",
+   "color": "rgb(20, 20, 20)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "How we prepare you for Myntra"
+  },
+  "p": {
+   "font": "\"DM Sans\", system-ui, sans-serif",
+   "size": "12.5px",
+   "weight": "700",
+   "lh": "20.625px",
+   "ls": "1.75px",
+   "color": "rgb(255, 199, 44)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "MYNTRA"
+  },
+  "btn": {
+   "font": "\"Space Grotesk\"",
+   "size": "16px",
+   "weight": "400",
+   "lh": "18.4px",
+   "ls": "normal",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": ""
+  },
+  "heads": [
+   {
+    "tag": "H1",
+    "text": "Myntra Seller Onboarding for Fashion, Beauty & Lifestyle Brands",
+    "y": 167,
+    "h": 175
+   },
+   {
+    "tag": "H2",
+    "text": "How we prepare you for Myntra",
+    "y": 791,
+    "h": 72
+   },
+   {
+    "tag": "H2",
+    "text": "An honest note on approvals",
+    "y": 2212,
+    "h": 72
+   },
+   {
+    "tag": "H2",
+    "text": "Myntra FAQs",
+    "y": 3014,
+    "h": 36
+   },
+   {
+    "tag": "H2",
+    "text": "Get Myntra-ready",
+    "y": 3476,
+    "h": 36
+   }
+  ],
+  "cards": [
+   {
+    "title": "Eligibility review",
+    "x": 24,
+    "y": 968,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Brand & document prep",
+    "x": 24,
+    "y": 1157,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Catalog & imagery",
+    "x": 24,
+    "y": 1347,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Content & keywords",
+    "x": 24,
+    "y": 1536,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Pricing strategy",
+    "x": 24,
+    "y": 1726,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Growth after launch",
+    "x": 24,
+    "y": 1915,
+    "w": 382,
+    "h": 169
+   }
+  ],
+  "secs": [
+   {
+    "cls": "bm-hero",
+    "x": 0,
+    "y": 0,
+    "w": 430,
+    "h": 727
+   },
+   {
+    "cls": "bm-sec alt",
+    "x": 0,
+    "y": 727,
+    "w": 430,
+    "h": 1421
+   },
+   {
+    "cls": "bm-sec",
+    "x": 0,
+    "y": 2148,
+    "w": 430,
+    "h": 801
+   },
+   {
+    "cls": "bm-sec alt bm-faq",
+    "x": 0,
+    "y": 2950,
+    "w": 430,
+    "h": 454
+   },
+   {
+    "cls": "bm-cta",
+    "x": 0,
+    "y": 3404,
+    "w": 430,
+    "h": 361
+   }
+  ],
+  "bgs": [
+   [
+    "rgb(255, 253, 248)",
+    6
+   ],
+   [
+    "rgb(20, 20, 20)",
+    4
+   ],
+   [
+    "rgb(246, 241, 231)",
+    3
+   ],
+   [
+    "rgb(31, 168, 85)",
+    3
+   ],
+   [
+    "rgb(255, 199, 44)",
+    3
+   ],
+   [
+    "rgb(252, 250, 250)",
+    3
+   ],
+   [
+    "rgb(16, 16, 16)",
+    2
+   ],
+   [
+    "rgb(253, 252, 252)",
+    2
+   ]
+  ],
+  "cols": [
+   [
+    "rgb(252, 250, 250)",
+    43
+   ],
+   [
+    "rgb(255, 255, 255)",
+    32
+   ],
+   [
+    "rgb(243, 238, 226)",
+    32
+   ],
+   [
+    "rgb(233, 228, 216)",
+    19
+   ],
+   [
+    "rgb(189, 183, 169)",
+    19
+   ],
+   [
+    "rgb(91, 86, 73)",
+    18
+   ],
+   [
+    "rgb(20, 20, 20)",
+    10
+   ],
+   [
+    "rgb(51, 89, 224)",
+    5
+   ]
+  ],
+  "logo": []
+ },
+ "quick": {
+  "title": "Blinkit Seller Onboarding & Listing Support | Bombay Marketing",
+  "pageH": 5281,
+  "body": {
+   "font": "\"Space Grotesk\"",
+   "size": "16px",
+   "weight": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgb(246, 241, 231)",
+   "radius": "0px",
+   "text": "BLINKIT\n\nBlinkit Seller Onboarding & Listing Support for Brands\n\nQuick commerce "
+  },
+  "h1": {
+   "font": "\"Bricolage Grotesque\", sans-serif",
+   "size": "43px",
+   "weight": "800",
+   "lh": "43.86px",
+   "ls": "-0.86px",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "Blinkit Seller Onboarding & Listing Support for Brands"
+  },
+  "h2": {
+   "font": "\"Bricolage Grotesque\", sans-serif",
+   "size": "34.4px",
+   "weight": "800",
+   "lh": "36.12px",
+   "ls": "-0.688px",
+   "color": "rgb(20, 20, 20)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "What we handle for Blinkit"
+  },
+  "p": {
+   "font": "\"DM Sans\", system-ui, sans-serif",
+   "size": "12.5px",
+   "weight": "700",
+   "lh": "20.625px",
+   "ls": "1.75px",
+   "color": "rgb(255, 199, 44)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "BLINKIT"
+  },
+  "btn": {
+   "font": "\"Space Grotesk\"",
+   "size": "16px",
+   "weight": "400",
+   "lh": "18.4px",
+   "ls": "normal",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": ""
+  },
+  "heads": [
+   {
+    "tag": "H1",
+    "text": "Blinkit Seller Onboarding & Listing Support for Brands",
+    "y": 167,
+    "h": 175
+   },
+   {
+    "tag": "H2",
+    "text": "What we handle for Blinkit",
+    "y": 791,
+    "h": 72
+   },
+   {
+    "tag": "H2",
+    "text": "Is your product right for quick commerce?",
+    "y": 2212,
+    "h": 72
+   },
+   {
+    "tag": "H2",
+    "text": "Blinkit FAQs",
+    "y": 3014,
+    "h": 36
+   },
+   {
+    "tag": "H2",
+    "text": "Get your brand quick-commerce ready",
+    "y": 3476,
+    "h": 72
+   }
+  ],
+  "cards": [
+   {
+    "title": "Brand pitch & application",
+    "x": 24,
+    "y": 968,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Catalog & SKU setup",
+    "x": 24,
+    "y": 1157,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Pricing & margin planning",
+    "x": 24,
+    "y": 1347,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Supply & availability",
+    "x": 24,
+    "y": 1536,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "On-platform visibility",
+    "x": 24,
+    "y": 1726,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Performance review",
+    "x": 24,
+    "y": 1915,
+    "w": 382,
+    "h": 169
+   }
+  ],
+  "secs": [
+   {
+    "cls": "bm-hero",
+    "x": 0,
+    "y": 0,
+    "w": 430,
+    "h": 727
+   },
+   {
+    "cls": "bm-sec alt",
+    "x": 0,
+    "y": 727,
+    "w": 430,
+    "h": 1421
+   },
+   {
+    "cls": "bm-sec",
+    "x": 0,
+    "y": 2148,
+    "w": 430,
+    "h": 801
+   },
+   {
+    "cls": "bm-sec alt bm-faq",
+    "x": 0,
+    "y": 2950,
+    "w": 430,
+    "h": 454
+   },
+   {
+    "cls": "bm-cta",
+    "x": 0,
+    "y": 3404,
+    "w": 430,
+    "h": 397
+   }
+  ],
+  "bgs": [
+   [
+    "rgb(255, 253, 248)",
+    6
+   ],
+   [
+    "rgb(20, 20, 20)",
+    4
+   ],
+   [
+    "rgb(246, 241, 231)",
+    3
+   ],
+   [
+    "rgb(31, 168, 85)",
+    3
+   ],
+   [
+    "rgb(255, 199, 44)",
+    3
+   ],
+   [
+    "rgb(252, 250, 250)",
+    3
+   ],
+   [
+    "rgb(16, 16, 16)",
+    2
+   ],
+   [
+    "rgb(253, 252, 252)",
+    2
+   ]
+  ],
+  "cols": [
+   [
+    "rgb(252, 250, 250)",
+    43
+   ],
+   [
+    "rgb(255, 255, 255)",
+    32
+   ],
+   [
+    "rgb(243, 238, 226)",
+    32
+   ],
+   [
+    "rgb(233, 228, 216)",
+    19
+   ],
+   [
+    "rgb(189, 183, 169)",
+    19
+   ],
+   [
+    "rgb(91, 86, 73)",
+    18
+   ],
+   [
+    "rgb(20, 20, 20)",
+    10
+   ],
+   [
+    "rgb(51, 89, 224)",
+    4
+   ]
+  ],
+  "logo": []
+ },
+ "seo": {
+  "title": "Ecommerce SEO Services in Mumbai | Bombay Marketing",
+  "pageH": 5451,
+  "body": {
+   "font": "\"Space Grotesk\"",
+   "size": "16px",
+   "weight": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgb(246, 241, 231)",
+   "radius": "0px",
+   "text": "ECOMMERCE SEO\n\nEcommerce SEO Services for Shopify, WooCommerce & Marketplace Lis"
+  },
+  "h1": {
+   "font": "\"Bricolage Grotesque\", sans-serif",
+   "size": "43px",
+   "weight": "800",
+   "lh": "43.86px",
+   "ls": "-0.86px",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "Ecommerce SEO Services for Shopify, WooCommerce & Marketplace Listings"
+  },
+  "h2": {
+   "font": "\"Bricolage Grotesque\", sans-serif",
+   "size": "34.4px",
+   "weight": "800",
+   "lh": "36.12px",
+   "ls": "-0.688px",
+   "color": "rgb(20, 20, 20)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "What our ecommerce SEO includes"
+  },
+  "p": {
+   "font": "\"DM Sans\", system-ui, sans-serif",
+   "size": "12.5px",
+   "weight": "700",
+   "lh": "20.625px",
+   "ls": "1.75px",
+   "color": "rgb(255, 199, 44)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "ECOMMERCE SEO"
+  },
+  "btn": {
+   "font": "\"Space Grotesk\"",
+   "size": "16px",
+   "weight": "400",
+   "lh": "18.4px",
+   "ls": "normal",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": ""
+  },
+  "heads": [
+   {
+    "tag": "H1",
+    "text": "Ecommerce SEO Services for Shopify, WooCommerce & Marketplace Listings",
+    "y": 167,
+    "h": 263
+   },
+   {
+    "tag": "H2",
+    "text": "What our ecommerce SEO includes",
+    "y": 879,
+    "h": 72
+   },
+   {
+    "tag": "H2",
+    "text": "SEO that connects to sales",
+    "y": 2326,
+    "h": 72
+   },
+   {
+    "tag": "H2",
+    "text": "Ecommerce SEO FAQs",
+    "y": 3156,
+    "h": 36
+   },
+   {
+    "tag": "H2",
+    "text": "Grow your organic sales",
+    "y": 3646,
+    "h": 72
+   }
+  ],
+  "cards": [
+   {
+    "title": "Keyword research",
+    "x": 24,
+    "y": 1055,
+    "w": 382,
+    "h": 195
+   },
+   {
+    "title": "Technical SEO",
+    "x": 24,
+    "y": 1270,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Product & category pages",
+    "x": 24,
+    "y": 1460,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Content & blogs",
+    "x": 24,
+    "y": 1649,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Marketplace listing SEO",
+    "x": 24,
+    "y": 1839,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Local SEO",
+    "x": 24,
+    "y": 2028,
+    "w": 382,
+    "h": 169
+   }
+  ],
+  "secs": [
+   {
+    "cls": "bm-hero",
+    "x": 0,
+    "y": 0,
+    "w": 430,
+    "h": 815
+   },
+   {
+    "cls": "bm-sec alt",
+    "x": 0,
+    "y": 815,
+    "w": 430,
+    "h": 1447
+   },
+   {
+    "cls": "bm-sec",
+    "x": 0,
+    "y": 2262,
+    "w": 430,
+    "h": 830
+   },
+   {
+    "cls": "bm-sec alt bm-faq",
+    "x": 0,
+    "y": 3092,
+    "w": 430,
+    "h": 482
+   },
+   {
+    "cls": "bm-cta",
+    "x": 0,
+    "y": 3574,
+    "w": 430,
+    "h": 397
+   }
+  ],
+  "bgs": [
+   [
+    "rgb(255, 253, 248)",
+    6
+   ],
+   [
+    "rgb(252, 250, 250)",
+    5
+   ],
+   [
+    "rgb(20, 20, 20)",
+    4
+   ],
+   [
+    "rgb(246, 241, 231)",
+    3
+   ],
+   [
+    "rgb(31, 168, 85)",
+    3
+   ],
+   [
+    "rgb(255, 199, 44)",
+    3
+   ],
+   [
+    "rgb(16, 16, 16)",
+    2
+   ],
+   [
+    "rgb(239, 231, 214)",
+    2
+   ]
+  ],
+  "cols": [
+   [
+    "rgb(252, 250, 250)",
+    45
+   ],
+   [
+    "rgb(243, 238, 226)",
+    32
+   ],
+   [
+    "rgb(255, 255, 255)",
+    30
+   ],
+   [
+    "rgb(233, 228, 216)",
+    19
+   ],
+   [
+    "rgb(189, 183, 169)",
+    19
+   ],
+   [
+    "rgb(91, 86, 73)",
+    18
+   ],
+   [
+    "rgb(20, 20, 20)",
+    10
+   ],
+   [
+    "rgb(51, 89, 224)",
+    3
+   ]
+  ],
+  "logo": []
+ },
+ "social": {
+  "title": "Social Media Marketing for Ecommerce Brands in Mumbai",
+  "pageH": 5250,
+  "body": {
+   "font": "\"Space Grotesk\"",
+   "size": "16px",
+   "weight": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgb(246, 241, 231)",
+   "radius": "0px",
+   "text": "SOCIAL MEDIA MARKETING\n\nSocial Media Marketing for Ecommerce & D2C Brands\n\nTurn "
+  },
+  "h1": {
+   "font": "\"Bricolage Grotesque\", sans-serif",
+   "size": "43px",
+   "weight": "800",
+   "lh": "43.86px",
+   "ls": "-0.86px",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "Social Media Marketing for Ecommerce & D2C Brands"
+  },
+  "h2": {
+   "font": "\"Bricolage Grotesque\", sans-serif",
+   "size": "34.4px",
+   "weight": "800",
+   "lh": "36.12px",
+   "ls": "-0.688px",
+   "color": "rgb(20, 20, 20)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "Social media built for selling"
+  },
+  "p": {
+   "font": "\"DM Sans\", system-ui, sans-serif",
+   "size": "12.5px",
+   "weight": "700",
+   "lh": "20.625px",
+   "ls": "1.75px",
+   "color": "rgb(255, 199, 44)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "SOCIAL MEDIA MARKETING"
+  },
+  "btn": {
+   "font": "\"Space Grotesk\"",
+   "size": "16px",
+   "weight": "400",
+   "lh": "18.4px",
+   "ls": "normal",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": ""
+  },
+  "heads": [
+   {
+    "tag": "H1",
+    "text": "Social Media Marketing for Ecommerce & D2C Brands",
+    "y": 167,
+    "h": 175
+   },
+   {
+    "tag": "H2",
+    "text": "Social media built for selling",
+    "y": 791,
+    "h": 72
+   },
+   {
+    "tag": "H2",
+    "text": "Organic and paid, working together",
+    "y": 2212,
+    "h": 72
+   },
+   {
+    "tag": "H2",
+    "text": "Social media FAQs",
+    "y": 3011,
+    "h": 36
+   },
+   {
+    "tag": "H2",
+    "text": "Build a brand people follow and buy from",
+    "y": 3446,
+    "h": 72
+   }
+  ],
+  "cards": [
+   {
+    "title": "Content strategy",
+    "x": 24,
+    "y": 968,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Reels & creatives",
+    "x": 24,
+    "y": 1157,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Page management",
+    "x": 24,
+    "y": 1347,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Influencer outreach",
+    "x": 24,
+    "y": 1536,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Shop & catalog setup",
+    "x": 24,
+    "y": 1726,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Reporting",
+    "x": 24,
+    "y": 1915,
+    "w": 382,
+    "h": 169
+   }
+  ],
+  "secs": [
+   {
+    "cls": "bm-hero",
+    "x": 0,
+    "y": 0,
+    "w": 430,
+    "h": 727
+   },
+   {
+    "cls": "bm-sec alt",
+    "x": 0,
+    "y": 727,
+    "w": 430,
+    "h": 1421
+   },
+   {
+    "cls": "bm-sec",
+    "x": 0,
+    "y": 2148,
+    "w": 430,
+    "h": 799
+   },
+   {
+    "cls": "bm-sec alt bm-faq",
+    "x": 0,
+    "y": 2947,
+    "w": 430,
+    "h": 426
+   },
+   {
+    "cls": "bm-cta",
+    "x": 0,
+    "y": 3374,
+    "w": 430,
+    "h": 397
+   }
+  ],
+  "bgs": [
+   [
+    "rgb(255, 253, 248)",
+    6
+   ],
+   [
+    "rgb(20, 20, 20)",
+    4
+   ],
+   [
+    "rgb(246, 241, 231)",
+    3
+   ],
+   [
+    "rgb(31, 168, 85)",
+    3
+   ],
+   [
+    "rgb(255, 199, 44)",
+    3
+   ],
+   [
+    "rgb(252, 250, 250)",
+    3
+   ],
+   [
+    "rgb(16, 16, 16)",
+    2
+   ],
+   [
+    "rgb(253, 252, 252)",
+    2
+   ]
+  ],
+  "cols": [
+   [
+    "rgb(252, 250, 250)",
+    43
+   ],
+   [
+    "rgb(255, 255, 255)",
+    32
+   ],
+   [
+    "rgb(243, 238, 226)",
+    32
+   ],
+   [
+    "rgb(233, 228, 216)",
+    19
+   ],
+   [
+    "rgb(189, 183, 169)",
+    19
+   ],
+   [
+    "rgb(91, 86, 73)",
+    18
+   ],
+   [
+    "rgb(20, 20, 20)",
+    10
+   ],
+   [
+    "rgb(51, 89, 224)",
+    3
+   ]
+  ],
+  "logo": []
+ },
+ "ads": {
+  "title": "Performance Marketing Agency for Ecommerce in Mumbai",
+  "pageH": 5265,
+  "body": {
+   "font": "\"Space Grotesk\"",
+   "size": "16px",
+   "weight": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgb(246, 241, 231)",
+   "radius": "0px",
+   "text": "PERFORMANCE MARKETING\n\nPerformance Marketing & Ads for Ecommerce Brands\n\nSpend s"
+  },
+  "h1": {
+   "font": "\"Bricolage Grotesque\", sans-serif",
+   "size": "43px",
+   "weight": "800",
+   "lh": "43.86px",
+   "ls": "-0.86px",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "Performance Marketing & Ads for Ecommerce Brands"
+  },
+  "h2": {
+   "font": "\"Bricolage Grotesque\", sans-serif",
+   "size": "34.4px",
+   "weight": "800",
+   "lh": "36.12px",
+   "ls": "-0.688px",
+   "color": "rgb(20, 20, 20)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "Ads that are built to convert"
+  },
+  "p": {
+   "font": "\"DM Sans\", system-ui, sans-serif",
+   "size": "12.5px",
+   "weight": "700",
+   "lh": "20.625px",
+   "ls": "1.75px",
+   "color": "rgb(255, 199, 44)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "PERFORMANCE MARKETING"
+  },
+  "btn": {
+   "font": "\"Space Grotesk\"",
+   "size": "16px",
+   "weight": "400",
+   "lh": "18.4px",
+   "ls": "normal",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": ""
+  },
+  "heads": [
+   {
+    "tag": "H1",
+    "text": "Performance Marketing & Ads for Ecommerce Brands",
+    "y": 167,
+    "h": 175
+   },
+   {
+    "tag": "H2",
+    "text": "Ads that are built to convert",
+    "y": 791,
+    "h": 72
+   },
+   {
+    "tag": "H2",
+    "text": "Clear numbers, honest reporting",
+    "y": 2238,
+    "h": 72
+   },
+   {
+    "tag": "H2",
+    "text": "Performance marketing FAQs",
+    "y": 2991,
+    "h": 72
+   },
+   {
+    "tag": "H2",
+    "text": "Get more orders from every ad rupee",
+    "y": 3461,
+    "h": 72
+   }
+  ],
+  "cards": [
+   {
+    "title": "Meta ads",
+    "x": 24,
+    "y": 968,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Google Ads",
+    "x": 24,
+    "y": 1157,
+    "w": 382,
+    "h": 195
+   },
+   {
+    "title": "Marketplace ads",
+    "x": 24,
+    "y": 1372,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Retargeting",
+    "x": 24,
+    "y": 1562,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Conversion tracking",
+    "x": 24,
+    "y": 1751,
+    "w": 382,
+    "h": 169
+   },
+   {
+    "title": "Testing & optimisation",
+    "x": 24,
+    "y": 1941,
+    "w": 382,
+    "h": 169
+   }
+  ],
+  "secs": [
+   {
+    "cls": "bm-hero",
+    "x": 0,
+    "y": 0,
+    "w": 430,
+    "h": 727
+   },
+   {
+    "cls": "bm-sec alt",
+    "x": 0,
+    "y": 727,
+    "w": 430,
+    "h": 1447
+   },
+   {
+    "cls": "bm-sec",
+    "x": 0,
+    "y": 2174,
+    "w": 430,
+    "h": 752
+   },
+   {
+    "cls": "bm-sec alt bm-faq",
+    "x": 0,
+    "y": 2927,
+    "w": 430,
+    "h": 462
+   },
+   {
+    "cls": "bm-cta",
+    "x": 0,
+    "y": 3389,
+    "w": 430,
+    "h": 397
+   }
+  ],
+  "bgs": [
+   [
+    "rgb(255, 253, 248)",
+    6
+   ],
+   [
+    "rgb(20, 20, 20)",
+    4
+   ],
+   [
+    "rgb(246, 241, 231)",
+    3
+   ],
+   [
+    "rgb(31, 168, 85)",
+    3
+   ],
+   [
+    "rgb(255, 199, 44)",
+    3
+   ],
+   [
+    "rgb(252, 250, 250)",
+    3
+   ],
+   [
+    "rgb(16, 16, 16)",
+    2
+   ],
+   [
+    "rgb(254, 253, 253)",
+    2
+   ]
+  ],
+  "cols": [
+   [
+    "rgb(252, 250, 250)",
+    43
+   ],
+   [
+    "rgb(255, 255, 255)",
+    32
+   ],
+   [
+    "rgb(243, 238, 226)",
+    32
+   ],
+   [
+    "rgb(233, 228, 216)",
+    19
+   ],
+   [
+    "rgb(189, 183, 169)",
+    19
+   ],
+   [
+    "rgb(91, 86, 73)",
+    17
+   ],
+   [
+    "rgb(20, 20, 20)",
+    10
+   ],
+   [
+    "rgb(51, 89, 224)",
+    4
+   ]
+  ],
+  "logo": []
+ },
+ "packaging": {
+  "title": "Packaging Design & Branding Agency in Mumbai | Bombay Marketing",
+  "pageH": 12445,
+  "body": {
+   "font": "\"Space Grotesk\"",
+   "size": "16px",
+   "weight": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgb(246, 241, 231)",
+   "radius": "0px",
+   "text": "PACKAGING DESIGN & BRANDING · MUMBAI\n\nPackaging design & branding agency in Mumb"
+  },
+  "h1": {
+   "font": "\"Bricolage Grotesque\", sans-serif",
+   "size": "43px",
+   "weight": "800",
+   "lh": "43.86px",
+   "ls": "-0.86px",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "Packaging design & branding agency in Mumbai that makes products sell on sight"
+  },
+  "h2": {
+   "font": "\"Bricolage Grotesque\", sans-serif",
+   "size": "34.4px",
+   "weight": "800",
+   "lh": "36.12px",
+   "ls": "-0.688px",
+   "color": "rgb(20, 20, 20)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "Packaging and branding we have designed"
+  },
+  "p": {
+   "font": "\"DM Sans\", system-ui, sans-serif",
+   "size": "12.5px",
+   "weight": "700",
+   "lh": "20.625px",
+   "ls": "1.75px",
+   "color": "rgb(255, 199, 44)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "PACKAGING DESIGN & BRANDING · MUMBAI"
+  },
+  "btn": {
+   "font": "\"Space Grotesk\"",
+   "size": "16px",
+   "weight": "400",
+   "lh": "18.4px",
+   "ls": "normal",
+   "color": "rgb(252, 250, 250)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": ""
+  },
+  "heads": [
+   {
+    "tag": "H1",
+    "text": "Packaging design & branding agency in Mumbai that makes products sell on sight",
+    "y": 165,
+    "h": 219
+   },
+   {
+    "tag": "H2",
+    "text": "Packaging and branding we have designed",
+    "y": 1046,
+    "h": 108
+   },
+   {
+    "tag": "H2",
+    "text": "Everything your product needs to look ready for market",
+    "y": 2750,
+    "h": 108
+   },
+   {
+    "tag": "H3",
+    "text": "Product packaging",
+    "y": 2899,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Label design",
+    "y": 3079,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Brand identity",
+    "y": 3260,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Brand stationery",
+    "y": 3441,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "3D mockups & renders",
+    "y": 3596,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Marketplace-ready visuals",
+    "y": 3777,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Range & variant systems",
+    "y": 3957,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Print-ready artwork",
+    "y": 4112,
+    "h": 24
+   },
+   {
+    "tag": "H2",
+    "text": "Packaging is your first salesperson, in store and online",
+    "y": 4400,
+    "h": 108
+   },
+   {
+    "tag": "H3",
+    "text": "Packaging that holds you back",
+    "y": 4549,
+    "h": 58
+   },
+   {
+    "tag": "H3",
+    "text": "Bombay\nMarketing packaging",
+    "y": 5056,
+    "h": 58
+   },
+   {
+    "tag": "H2",
+    "text": "From brief to print in clear steps",
+    "y": 5720,
+    "h": 72
+   },
+   {
+    "tag": "H3",
+    "text": "Brief",
+    "y": 5900,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Research",
+    "y": 6129,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Concepts",
+    "y": 6385,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Refine",
+    "y": 6614,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Artwork",
+    "y": 6843,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Print & launch",
+    "y": 7073,
+    "h": 24
+   },
+   {
+    "tag": "H2",
+    "text": "Built for consumer brands that sell offline and online",
+    "y": 7366,
+    "h": 108
+   },
+   {
+    "tag": "H2",
+    "text": "Packaging is step one. Selling is the goal.",
+    "y": 8630,
+    "h": 72
+   },
+   {
+    "tag": "H3",
+    "text": "Ecommerce website",
+    "y": 8831,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Amazon & marketplaces",
+    "y": 8986,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Quick commerce",
+    "y": 9141,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Performance marketing",
+    "y": 9296,
+    "h": 24
+   },
+   {
+    "tag": "H2",
+    "text": "Packaging design: frequently asked questions",
+    "y": 9535,
+    "h": 108
+   },
+   {
+    "tag": "H2",
+    "text": "Ready for packaging that sells?",
+    "y": 10566,
+    "h": 72
+   }
+  ],
+  "cards": [
+   {
+    "title": "Product packaging",
+    "x": 24,
+    "y": 2875,
+    "w": 382,
+    "h": 161
+   },
+   {
+    "title": "Label design",
+    "x": 24,
+    "y": 3055,
+    "w": 382,
+    "h": 161
+   },
+   {
+    "title": "Brand identity",
+    "x": 24,
+    "y": 3236,
+    "w": 382,
+    "h": 161
+   },
+   {
+    "title": "Brand stationery",
+    "x": 24,
+    "y": 3417,
+    "w": 382,
+    "h": 135
+   },
+   {
+    "title": "3D mockups & renders",
+    "x": 24,
+    "y": 3572,
+    "w": 382,
+    "h": 161
+   },
+   {
+    "title": "Marketplace-ready visuals",
+    "x": 24,
+    "y": 3753,
+    "w": 382,
+    "h": 161
+   },
+   {
+    "title": "Range & variant systems",
+    "x": 24,
+    "y": 3933,
+    "w": 382,
+    "h": 135
+   },
+   {
+    "title": "Print-ready artwork",
+    "x": 24,
+    "y": 4088,
+    "w": 382,
+    "h": 135
+   },
+   {
+    "title": "Ecommerce website",
+    "x": 24,
+    "y": 8807,
+    "w": 382,
+    "h": 135
+   },
+   {
+    "title": "Amazon & marketplaces",
+    "x": 24,
+    "y": 8962,
+    "w": 382,
+    "h": 135
+   },
+   {
+    "title": "Quick commerce",
+    "x": 24,
+    "y": 9117,
+    "w": 382,
+    "h": 135
+   },
+   {
+    "title": "Performance marketing",
+    "x": 24,
+    "y": 9272,
+    "w": 382,
+    "h": 135
+   }
+  ],
+  "secs": [
+   {
+    "cls": "bm-hero bm-hx",
+    "x": 0,
+    "y": 0,
+    "w": 430,
+    "h": 933
+   },
+   {
+    "cls": "bm-sec alt",
+    "x": 0,
+    "y": 933,
+    "w": 430,
+    "h": 1704
+   },
+   {
+    "cls": "bm-sec ",
+    "x": 0,
+    "y": 2637,
+    "w": 430,
+    "h": 1650
+   },
+   {
+    "cls": "bm-sec dark",
+    "x": 0,
+    "y": 4287,
+    "w": 430,
+    "h": 1320
+   },
+   {
+    "cls": "bm-sec",
+    "x": 0,
+    "y": 5607,
+    "w": 430,
+    "h": 1646
+   },
+   {
+    "cls": "bm-sec alt",
+    "x": 0,
+    "y": 7254,
+    "w": 430,
+    "h": 1264
+   },
+   {
+    "cls": "bm-sec ",
+    "x": 0,
+    "y": 8518,
+    "w": 430,
+    "h": 954
+   },
+   {
+    "cls": "bm-sec alt bm-faq",
+    "x": 0,
+    "y": 9471,
+    "w": 430,
+    "h": 1023
+   },
+   {
+    "cls": "bm-cta bm-cta-xl",
+    "x": 0,
+    "y": 10494,
+    "w": 430,
+    "h": 472
+   }
+  ],
+  "bgs": [
+   [
+    "rgb(255, 253, 248)",
+    22
+   ],
+   [
+    "rgb(255, 255, 255)",
+    11
+   ],
+   [
+    "rgb(20, 20, 20)",
+    7
+   ],
+   [
+    "rgb(252, 250, 250)",
+    6
+   ],
+   [
+    "rgb(255, 199, 44)",
+    6
+   ],
+   [
+    "rgb(246, 241, 231)",
+    5
+   ],
+   [
+    "rgb(239, 231, 214)",
+    3
+   ],
+   [
+    "rgb(16, 16, 16)",
+    2
+   ]
+  ],
+  "cols": [
+   [
+    "rgb(252, 250, 250)",
+    71
+   ],
+   [
+    "rgb(20, 20, 20)",
+    61
+   ],
+   [
+    "rgb(243, 238, 226)",
+    32
+   ],
+   [
+    "rgb(91, 86, 73)",
+    31
+   ],
+   [
+    "rgb(233, 228, 216)",
+    19
+   ],
+   [
+    "rgb(189, 183, 169)",
+    19
+   ],
+   [
+    "rgb(255, 255, 255)",
+    8
+   ],
+   [
+    "rgb(138, 132, 117)",
+    6
+   ]
+  ],
+  "logo": []
+ },
+ "plugins": {
+  "title": "WordPress Plugin Bundle by Bombay Marketing | 5 Plugins ₹5,000",
+  "pageH": 6291,
+  "body": {
+   "font": "\"Space Grotesk\"",
+   "size": "16px",
+   "weight": "400",
+   "lh": "24px",
+   "ls": "normal",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgb(246, 241, 231)",
+   "radius": "0px",
+   "text": "WORDPRESS PLUGINS BY BOMBAY MARKETING\n\nWordPress plugins built for growing busin"
+  },
+  "h1": {
+   "font": "\"Bricolage Grotesque\", sans-serif",
+   "size": "43px",
+   "weight": "800",
+   "lh": "43.86px",
+   "ls": "-0.86px",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "WordPress plugins built for growing businesses"
+  },
+  "h2": {
+   "font": "\"Bricolage Grotesque\", sans-serif",
+   "size": "34.4px",
+   "weight": "800",
+   "lh": "36.12px",
+   "ls": "-0.688px",
+   "color": "rgb(20, 20, 20)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "Everything in the bundle"
+  },
+  "p": {
+   "font": "\"DM Sans\", system-ui, sans-serif",
+   "size": "12.5px",
+   "weight": "700",
+   "lh": "20.625px",
+   "ls": "1.75px",
+   "color": "rgb(255, 199, 44)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": "WORDPRESS PLUGINS BY BOMBAY MARKETING"
+  },
+  "btn": {
+   "font": "\"Space Grotesk\"",
+   "size": "16px",
+   "weight": "400",
+   "lh": "18.4px",
+   "ls": "normal",
+   "color": "rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "text": ""
+  },
+  "heads": [
+   {
+    "tag": "H1",
+    "text": "WordPress plugins built for growing businesses",
+    "y": 179,
+    "h": 132
+   },
+   {
+    "tag": "H2",
+    "text": "Everything in the bundle",
+    "y": 917,
+    "h": 72
+   },
+   {
+    "tag": "H3",
+    "text": "Geo Page Generator",
+    "y": 1129,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Currency Switcher",
+    "y": 1455,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Packing Slip & Invoice",
+    "y": 1755,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Ride Plugin",
+    "y": 2055,
+    "h": 24
+   },
+   {
+    "tag": "H3",
+    "text": "Custom Dashboard",
+    "y": 2355,
+    "h": 24
+   },
+   {
+    "tag": "H2",
+    "text": "One bundle. Five plugins.",
+    "y": 2688,
+    "h": 72
+   },
+   {
+    "tag": "H3",
+    "text": "All 5 plugins, one price",
+    "y": 2848,
+    "h": 31
+   },
+   {
+    "tag": "H3",
+    "text": "Free for Bombay Marketing clients",
+    "y": 3499,
+    "h": 62
+   },
+   {
+    "tag": "H2",
+    "text": "Need a plugin built for your business?",
+    "y": 3924,
+    "h": 72
+   },
+   {
+    "tag": "H2",
+    "text": "Questions about our plugins?",
+    "y": 4381,
+    "h": 72
+   }
+  ],
+  "cards": [
+   {
+    "title": "Geo Page Generator",
+    "x": 24,
+    "y": 1005,
+    "w": 382,
+    "h": 306
+   },
+   {
+    "title": "Currency Switcher",
+    "x": 24,
+    "y": 1331,
+    "w": 382,
+    "h": 280
+   },
+   {
+    "title": "Packing Slip & Invoice",
+    "x": 24,
+    "y": 1631,
+    "w": 382,
+    "h": 280
+   },
+   {
+    "title": "Ride Plugin",
+    "x": 24,
+    "y": 1931,
+    "w": 382,
+    "h": 280
+   },
+   {
+    "title": "Custom Dashboard",
+    "x": 24,
+    "y": 2231,
+    "w": 382,
+    "h": 280
+   }
+  ],
+  "secs": [
+   {
+    "cls": "bm-hero bm-hx",
+    "x": 0,
+    "y": 0,
+    "w": 430,
+    "h": 804
+   },
+   {
+    "cls": "bm-sec ",
+    "x": 0,
+    "y": 804,
+    "w": 430,
+    "h": 1771
+   },
+   {
+    "cls": "bm-sec alt",
+    "x": 0,
+    "y": 2575,
+    "w": 430,
+    "h": 1236
+   },
+   {
+    "cls": "bm-sec ",
+    "x": 0,
+    "y": 3811,
+    "w": 430,
+    "h": 498
+   },
+   {
+    "cls": "bm-cta bm-cta-xl",
+    "x": 0,
+    "y": 4309,
+    "w": 430,
+    "h": 503
+   }
+  ],
+  "bgs": [
+   [
+    "rgb(20, 20, 20)",
+    12
+   ],
+   [
+    "rgb(255, 199, 44)",
+    7
+   ],
+   [
+    "rgb(252, 250, 250)",
+    5
+   ],
+   [
+    "rgb(255, 253, 248)",
+    5
+   ],
+   [
+    "rgb(246, 241, 231)",
+    4
+   ],
+   [
+    "rgb(31, 168, 85)",
+    3
+   ],
+   [
+    "rgb(16, 16, 16)",
+    2
+   ],
+   [
+    "rgb(255, 254, 254)",
+    1
+   ]
+  ],
+  "cols": [
+   [
+    "rgb(252, 250, 250)",
+    45
+   ],
+   [
+    "rgb(255, 255, 255)",
+    34
+   ],
+   [
+    "rgb(243, 238, 226)",
+    32
+   ],
+   [
+    "rgb(20, 20, 20)",
+    24
+   ],
+   [
+    "rgb(233, 228, 216)",
+    19
+   ],
+   [
+    "rgb(189, 183, 169)",
+    19
+   ],
+   [
+    "rgb(91, 86, 73)",
+    11
+   ],
+   [
+    "rgb(255, 199, 44)",
+    9
+   ]
+  ],
+  "logo": []
+ }
+}

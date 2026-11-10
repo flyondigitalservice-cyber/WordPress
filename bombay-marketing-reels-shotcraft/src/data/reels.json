@@ -1,0 +1,1131 @@
+[
+ {
+  "id": "06-myntra-seller-onboarding",
+  "n": 6,
+  "name": "Myntra seller onboarding",
+  "eyebrow": "MYNTRA",
+  "voice": "m",
+  "page": {
+   "key": "myntra",
+   "pageH": 5245,
+   "cards": [
+    {
+     "title": "Eligibility review",
+     "x": 24,
+     "y": 968,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Brand & document prep",
+     "x": 24,
+     "y": 1157,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Catalog & imagery",
+     "x": 24,
+     "y": 1347,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Content & keywords",
+     "x": 24,
+     "y": 1536,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Pricing strategy",
+     "x": 24,
+     "y": 1726,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Growth after launch",
+     "x": 24,
+     "y": 1915,
+     "w": 382,
+     "h": 169
+    }
+   ],
+   "secs": [
+    {
+     "cls": "bm-hero",
+     "x": 0,
+     "y": 0,
+     "w": 430,
+     "h": 727
+    },
+    {
+     "cls": "bm-sec alt",
+     "x": 0,
+     "y": 727,
+     "w": 430,
+     "h": 1421
+    },
+    {
+     "cls": "bm-sec",
+     "x": 0,
+     "y": 2148,
+     "w": 430,
+     "h": 801
+    },
+    {
+     "cls": "bm-sec alt bm-faq",
+     "x": 0,
+     "y": 2950,
+     "w": 430,
+     "h": 454
+    },
+    {
+     "cls": "bm-cta",
+     "x": 0,
+     "y": 3404,
+     "w": 430,
+     "h": 361
+    }
+   ]
+  },
+  "hook": {
+   "lines": [
+    "Myntra sabko",
+    "entry *nahi deta.*"
+   ],
+   "sub": "Application strong honi chahiye.",
+   "cap": "Myntra sabko entry nahi deta. Application strong honi chahiye."
+  },
+  "cells": [
+   {
+    "kind": "page",
+    "card": 0,
+    "h": "Eligibility review",
+    "s": "Brand · category · positioning",
+    "cap": "Bombay Marketing pehle karega eligibility review — brand, category aur positioning."
+   },
+   {
+    "kind": "chips",
+    "h": "Documents, ready",
+    "s": "Organised for a clean application",
+    "items": [
+     "GST",
+     "Trademark",
+     "Brand details"
+    ],
+    "cap": "Phir documents — GST, trademark aur brand details, sab taiyaar."
+   },
+   {
+    "kind": "list",
+    "h": "Catalog & imagery",
+    "items": [
+     "Product data",
+     "Sizing",
+     "Photography guidance"
+    ],
+    "cap": "Catalog aur imagery — product data, sizing aur photography guidance."
+   },
+   {
+    "kind": "marker",
+    "h": [
+     "Margin-safe",
+     "pricing"
+    ],
+    "mark": 0,
+    "s": "Discount planning for a commission platform",
+    "cap": "Pricing aur discount planning… taaki commission ke baad bhi margin bache."
+   },
+   {
+    "kind": "note",
+    "h": "Honest feedback first",
+    "s": "Acceptance is Myntra’s call. We tell you clearly what to fix first.",
+    "cap": "Myntra ki approval ki guarantee koi nahi de sakta — par hum saaf batayenge, pehle kya theek karna hai."
+   }
+  ],
+  "cta": {
+   "cap": "Brand details share kijiye — readiness review hum karenge. bombaymarketing.in"
+  }
+ },
+ {
+  "id": "07-quick-commerce",
+  "n": 7,
+  "name": "Blinkit · Zepto · Instamart",
+  "eyebrow": "QUICK COMMERCE",
+  "voice": "f",
+  "page": {
+   "key": "quick",
+   "pageH": 5281,
+   "cards": [
+    {
+     "title": "Brand pitch & application",
+     "x": 24,
+     "y": 968,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Catalog & SKU setup",
+     "x": 24,
+     "y": 1157,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Pricing & margin planning",
+     "x": 24,
+     "y": 1347,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Supply & availability",
+     "x": 24,
+     "y": 1536,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "On-platform visibility",
+     "x": 24,
+     "y": 1726,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Performance review",
+     "x": 24,
+     "y": 1915,
+     "w": 382,
+     "h": 169
+    }
+   ],
+   "secs": [
+    {
+     "cls": "bm-hero",
+     "x": 0,
+     "y": 0,
+     "w": 430,
+     "h": 727
+    },
+    {
+     "cls": "bm-sec alt",
+     "x": 0,
+     "y": 727,
+     "w": 430,
+     "h": 1421
+    },
+    {
+     "cls": "bm-sec",
+     "x": 0,
+     "y": 2148,
+     "w": 430,
+     "h": 801
+    },
+    {
+     "cls": "bm-sec alt bm-faq",
+     "x": 0,
+     "y": 2950,
+     "w": 430,
+     "h": 454
+    },
+    {
+     "cls": "bm-cta",
+     "x": 0,
+     "y": 3404,
+     "w": 430,
+     "h": 397
+    }
+   ]
+  },
+  "hook": {
+   "lines": [
+    "10 minute mein",
+    "delivery…"
+   ],
+   "sub": "Aapka brand *us bag mein* hai?",
+   "cap": "10 minute mein delivery… aapka brand us bag mein hai?"
+  },
+  "cells": [
+   {
+    "kind": "page",
+    "card": 0,
+    "h": "Brand pitch & application",
+    "s": "Blinkit · Zepto · Instamart",
+    "cap": "Bombay Marketing taiyaar karta hai Blinkit, Zepto aur Instamart ke liye — brand pitch aur application."
+   },
+   {
+    "kind": "chips",
+    "h": "Catalog & SKU setup",
+    "s": "Product data done right",
+    "items": [
+     "Images",
+     "MRP",
+     "Units",
+     "Barcodes"
+    ],
+    "cap": "Catalog aur SKU setup — images, MRP, units aur barcodes."
+   },
+   {
+    "kind": "marker",
+    "h": [
+     "Pricing &",
+     "margin planning"
+    ],
+    "mark": 1,
+    "s": "For the brand and for the platform",
+    "cap": "Pricing aur margin planning — brand ke liye bhi, platform ke liye bhi."
+   },
+   {
+    "kind": "list",
+    "h": "Stock & replenishment",
+    "items": [
+     "Stock planning",
+     "Replenishment planning",
+     "Product stays available"
+    ],
+    "cap": "Stock aur replenishment planning… taaki product hamesha available rahe."
+   },
+   {
+    "kind": "note",
+    "h": "Fit check before you buy stock",
+    "s": "Approval is the platform’s decision, so we assess the fit first.",
+    "cap": "Approval platform ka faisla hai — isliye stock lagane se pehle, hum fit check karte hain."
+   }
+  ],
+  "cta": {
+   "cap": "Quick commerce potential jaanna hai? Free audit — bombaymarketing.in"
+  }
+ },
+ {
+  "id": "08-ecommerce-seo",
+  "n": 8,
+  "name": "Ecommerce SEO",
+  "eyebrow": "ECOMMERCE SEO",
+  "voice": "m",
+  "page": {
+   "key": "seo",
+   "pageH": 5451,
+   "cards": [
+    {
+     "title": "Keyword research",
+     "x": 24,
+     "y": 1055,
+     "w": 382,
+     "h": 195
+    },
+    {
+     "title": "Technical SEO",
+     "x": 24,
+     "y": 1270,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Product & category pages",
+     "x": 24,
+     "y": 1460,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Content & blogs",
+     "x": 24,
+     "y": 1649,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Marketplace listing SEO",
+     "x": 24,
+     "y": 1839,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Local SEO",
+     "x": 24,
+     "y": 2028,
+     "w": 382,
+     "h": 169
+    }
+   ],
+   "secs": [
+    {
+     "cls": "bm-hero",
+     "x": 0,
+     "y": 0,
+     "w": 430,
+     "h": 815
+    },
+    {
+     "cls": "bm-sec alt",
+     "x": 0,
+     "y": 815,
+     "w": 430,
+     "h": 1447
+    },
+    {
+     "cls": "bm-sec",
+     "x": 0,
+     "y": 2262,
+     "w": 430,
+     "h": 830
+    },
+    {
+     "cls": "bm-sec alt bm-faq",
+     "x": 0,
+     "y": 3092,
+     "w": 430,
+     "h": 482
+    },
+    {
+     "cls": "bm-cta",
+     "x": 0,
+     "y": 3574,
+     "w": 430,
+     "h": 397
+    }
+   ]
+  },
+  "hook": {
+   "lines": [
+    "Google pe aapka",
+    "product *doosre",
+    "*page pe?*"
+   ],
+   "sub": "Wahan toh koi jaata hi nahi.",
+   "cap": "Google pe aapka product doosre page pe? Wahan toh koi jaata hi nahi."
+  },
+  "cells": [
+   {
+    "kind": "page",
+    "card": 0,
+    "h": "Buyer-intent keywords",
+    "s": "What people search when they want to buy",
+    "cap": "Bombay Marketing shuru karta hai buyer-intent keywords se — jo log khareedne ke liye search karte hain."
+   },
+   {
+    "kind": "chips",
+    "h": "Technical SEO",
+    "s": "The foundations, fixed",
+    "items": [
+     "Site speed",
+     "Indexing",
+     "Mobile experience"
+    ],
+    "cap": "Technical SEO — site speed, indexing aur mobile experience."
+   },
+   {
+    "kind": "list",
+    "h": "Product & category pages",
+    "items": [
+     "Titles",
+     "Descriptions",
+     "Internal links",
+     "Schema"
+    ],
+    "cap": "Product aur category pages — titles, descriptions, internal links aur schema."
+   },
+   {
+    "kind": "marker",
+    "h": [
+     "Guides · Blogs",
+     "Local SEO"
+    ],
+    "mark": 1,
+    "s": "Google Business Profile for Mumbai",
+    "cap": "Buying guides, blogs… aur Mumbai ke liye local SEO, Google Business Profile ke saath."
+   },
+   {
+    "kind": "stat",
+    "h": "No instant-ranking promises",
+    "stats": [
+     {
+      "big": "2–3",
+      "unit": "months",
+      "label": "early improvements"
+     },
+     {
+      "big": "6–12",
+      "unit": "months",
+      "label": "stronger growth"
+     }
+    ],
+    "cap": "Sach baat — instant ranking ka vaada nahi. Shuruaati sudhaar 2–3 mahine mein, asli growth 6 se 12 mein."
+   }
+  ],
+  "cta": {
+   "cap": "Free SEO audit lijiye — quick wins ke saath. bombaymarketing.in"
+  }
+ },
+ {
+  "id": "09-social-media-marketing",
+  "n": 9,
+  "name": "Social media for ecommerce",
+  "eyebrow": "SOCIAL MEDIA",
+  "voice": "f",
+  "page": {
+   "key": "social",
+   "pageH": 5250,
+   "cards": [
+    {
+     "title": "Content strategy",
+     "x": 24,
+     "y": 968,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Reels & creatives",
+     "x": 24,
+     "y": 1157,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Page management",
+     "x": 24,
+     "y": 1347,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Influencer outreach",
+     "x": 24,
+     "y": 1536,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Shop & catalog setup",
+     "x": 24,
+     "y": 1726,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Reporting",
+     "x": 24,
+     "y": 1915,
+     "w": 382,
+     "h": 169
+    }
+   ],
+   "secs": [
+    {
+     "cls": "bm-hero",
+     "x": 0,
+     "y": 0,
+     "w": 430,
+     "h": 727
+    },
+    {
+     "cls": "bm-sec alt",
+     "x": 0,
+     "y": 727,
+     "w": 430,
+     "h": 1421
+    },
+    {
+     "cls": "bm-sec",
+     "x": 0,
+     "y": 2148,
+     "w": 430,
+     "h": 799
+    },
+    {
+     "cls": "bm-sec alt bm-faq",
+     "x": 0,
+     "y": 2947,
+     "w": 430,
+     "h": 426
+    },
+    {
+     "cls": "bm-cta",
+     "x": 0,
+     "y": 3374,
+     "w": 430,
+     "h": 397
+    }
+   ]
+  },
+  "hook": {
+   "lines": [
+    "Likes bahut…",
+    "par orders",
+    "*zero?*"
+   ],
+   "sub": "",
+   "cap": "Likes bahut… par orders zero?"
+  },
+  "cells": [
+   {
+    "kind": "page",
+    "card": 0,
+    "h": "Monthly content calendar",
+    "s": "Products · offers · launches · festivals",
+    "cap": "Bombay Marketing banata hai monthly content calendar — products, offers, launches aur festivals ke hisaab se."
+   },
+   {
+    "kind": "chips",
+    "h": "Content we make",
+    "s": "Planning, design, copy and video",
+    "items": [
+     "Reels",
+     "Short videos",
+     "Product shoots",
+     "Designed posts"
+    ],
+    "cap": "Reels, short videos, product shoots aur designed posts."
+   },
+   {
+    "kind": "list",
+    "h": "Page management",
+    "items": [
+     "Instagram",
+     "Facebook",
+     "Community replies"
+    ],
+    "cap": "Instagram aur Facebook page management — community replies ke saath."
+   },
+   {
+    "kind": "marker",
+    "h": [
+     "Influencers",
+     "Instagram Shopping"
+    ],
+    "mark": 1,
+    "s": "Connected straight to your store",
+    "cap": "Influencer outreach… aur Instagram Shopping, seedhe aapke store se connected."
+   },
+   {
+    "kind": "note",
+    "h": "Your approval first",
+    "s": "Nothing goes live without it. Measured on clicks and orders, not just likes.",
+    "cap": "Aapki approval ke bina kuch live nahi. Aur naap? Clicks aur orders — sirf likes nahi."
+   }
+  ],
+  "cta": {
+   "cap": "Free social audit ke liye — bombaymarketing.in"
+  }
+ },
+ {
+  "id": "10-meta-google-ads",
+  "n": 10,
+  "name": "Meta & Google ads",
+  "eyebrow": "PERFORMANCE MARKETING",
+  "voice": "m",
+  "page": {
+   "key": "ads",
+   "pageH": 5265,
+   "cards": [
+    {
+     "title": "Meta ads",
+     "x": 24,
+     "y": 968,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Google Ads",
+     "x": 24,
+     "y": 1157,
+     "w": 382,
+     "h": 195
+    },
+    {
+     "title": "Marketplace ads",
+     "x": 24,
+     "y": 1372,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Retargeting",
+     "x": 24,
+     "y": 1562,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Conversion tracking",
+     "x": 24,
+     "y": 1751,
+     "w": 382,
+     "h": 169
+    },
+    {
+     "title": "Testing & optimisation",
+     "x": 24,
+     "y": 1941,
+     "w": 382,
+     "h": 169
+    }
+   ],
+   "secs": [
+    {
+     "cls": "bm-hero",
+     "x": 0,
+     "y": 0,
+     "w": 430,
+     "h": 727
+    },
+    {
+     "cls": "bm-sec alt",
+     "x": 0,
+     "y": 727,
+     "w": 430,
+     "h": 1447
+    },
+    {
+     "cls": "bm-sec",
+     "x": 0,
+     "y": 2174,
+     "w": 430,
+     "h": 752
+    },
+    {
+     "cls": "bm-sec alt bm-faq",
+     "x": 0,
+     "y": 2927,
+     "w": 430,
+     "h": 462
+    },
+    {
+     "cls": "bm-cta",
+     "x": 0,
+     "y": 3389,
+     "w": 430,
+     "h": 397
+    }
+   ]
+  },
+  "hook": {
+   "lines": [
+    "Ads pe paisa",
+    "ja raha hai…"
+   ],
+   "sub": "par *sale nahi* aa rahi?",
+   "cap": "Ads pe paisa ja raha hai… par sale nahi aa rahi?"
+  },
+  "cells": [
+   {
+    "kind": "page",
+    "card": 0,
+    "h": "Meta campaigns",
+    "s": "Tested creatives · audiences · retargeting",
+    "cap": "Bombay Marketing chalata hai Meta campaigns — tested creatives, audiences aur retargeting."
+   },
+   {
+    "kind": "chips",
+    "h": "Google campaigns",
+    "s": "Catch people already looking to buy",
+    "items": [
+     "Search",
+     "Shopping",
+     "Performance Max"
+    ],
+    "cap": "Google pe Search, Shopping aur Performance Max campaigns."
+   },
+   {
+    "kind": "marker",
+    "h": [
+     "Amazon & Flipkart",
+     "ads too"
+    ],
+    "mark": 0,
+    "s": "One team across store and marketplaces",
+    "cap": "Amazon aur Flipkart ads bhi — ek hi team se."
+   },
+   {
+    "kind": "list",
+    "h": "Every rupee tracked to orders",
+    "items": [
+     "GA4",
+     "Pixels",
+     "Server-side tracking"
+    ],
+    "cap": "GA4, pixels aur server-side tracking… har rupaya, order tak track."
+   },
+   {
+    "kind": "note",
+    "h": "Weekly optimisation, monthly review",
+    "s": "If something isn’t working, we say so, and fix it.",
+    "cap": "Weekly optimisation, monthly review. Aur kuch kaam nahi kar raha, toh hum khud batayenge… aur theek karenge."
+   }
+  ],
+  "cta": {
+   "cap": "Store aur margins dikhaiye, budget hum suggest karenge. bombaymarketing.in"
+  }
+ },
+ {
+  "id": "11-packaging-design-branding",
+  "n": 11,
+  "name": "Packaging design & branding",
+  "eyebrow": "PACKAGING & BRANDING",
+  "voice": "f",
+  "page": {
+   "key": "packaging",
+   "pageH": 12445,
+   "cards": [
+    {
+     "title": "Product packaging",
+     "x": 24,
+     "y": 2875,
+     "w": 382,
+     "h": 161
+    },
+    {
+     "title": "Label design",
+     "x": 24,
+     "y": 3055,
+     "w": 382,
+     "h": 161
+    },
+    {
+     "title": "Brand identity",
+     "x": 24,
+     "y": 3236,
+     "w": 382,
+     "h": 161
+    },
+    {
+     "title": "Brand stationery",
+     "x": 24,
+     "y": 3417,
+     "w": 382,
+     "h": 135
+    },
+    {
+     "title": "3D mockups & renders",
+     "x": 24,
+     "y": 3572,
+     "w": 382,
+     "h": 161
+    },
+    {
+     "title": "Marketplace-ready visuals",
+     "x": 24,
+     "y": 3753,
+     "w": 382,
+     "h": 161
+    },
+    {
+     "title": "Range & variant systems",
+     "x": 24,
+     "y": 3933,
+     "w": 382,
+     "h": 135
+    },
+    {
+     "title": "Print-ready artwork",
+     "x": 24,
+     "y": 4088,
+     "w": 382,
+     "h": 135
+    },
+    {
+     "title": "Ecommerce website",
+     "x": 24,
+     "y": 8807,
+     "w": 382,
+     "h": 135
+    },
+    {
+     "title": "Amazon & marketplaces",
+     "x": 24,
+     "y": 8962,
+     "w": 382,
+     "h": 135
+    },
+    {
+     "title": "Quick commerce",
+     "x": 24,
+     "y": 9117,
+     "w": 382,
+     "h": 135
+    },
+    {
+     "title": "Performance marketing",
+     "x": 24,
+     "y": 9272,
+     "w": 382,
+     "h": 135
+    }
+   ],
+   "secs": [
+    {
+     "cls": "bm-hero bm-hx",
+     "x": 0,
+     "y": 0,
+     "w": 430,
+     "h": 933
+    },
+    {
+     "cls": "bm-sec alt",
+     "x": 0,
+     "y": 933,
+     "w": 430,
+     "h": 1704
+    },
+    {
+     "cls": "bm-sec ",
+     "x": 0,
+     "y": 2637,
+     "w": 430,
+     "h": 1650
+    },
+    {
+     "cls": "bm-sec dark",
+     "x": 0,
+     "y": 4287,
+     "w": 430,
+     "h": 1320
+    },
+    {
+     "cls": "bm-sec",
+     "x": 0,
+     "y": 5607,
+     "w": 430,
+     "h": 1646
+    },
+    {
+     "cls": "bm-sec alt",
+     "x": 0,
+     "y": 7254,
+     "w": 430,
+     "h": 1264
+    },
+    {
+     "cls": "bm-sec ",
+     "x": 0,
+     "y": 8518,
+     "w": 430,
+     "h": 954
+    },
+    {
+     "cls": "bm-sec alt bm-faq",
+     "x": 0,
+     "y": 9471,
+     "w": 430,
+     "h": 1023
+    },
+    {
+     "cls": "bm-cta bm-cta-xl",
+     "x": 0,
+     "y": 10494,
+     "w": 430,
+     "h": 472
+    }
+   ]
+  },
+  "hook": {
+   "lines": [
+    "Product achha hai…",
+    "par shelf pe",
+    "*dikhta hi nahi?*"
+   ],
+   "sub": "",
+   "cap": "Product achha hai… par shelf pe dikhta hi nahi?"
+  },
+  "cells": [
+   {
+    "kind": "page",
+    "card": 0,
+    "h": "Product packaging",
+    "s": "Boxes · pouches · jars · bottles · cans · gift packs",
+    "cap": "Bombay Marketing design karta hai boxes, pouches, jars, bottles, cans aur gift packs."
+   },
+   {
+    "kind": "chips",
+    "h": "Labels + brand identity",
+    "s": "One look across the range",
+    "items": [
+     "Logo",
+     "Colours",
+     "Typography"
+    ],
+    "cap": "Labels aur poori brand identity — logo, colours, typography."
+   },
+   {
+    "kind": "marker",
+    "h": [
+     "3D",
+     "mockups"
+    ],
+    "mark": 0,
+    "s": "Marketplace-ready visuals for Amazon · Blinkit · Zepto",
+    "cap": "3D mockups… aur Amazon, Blinkit, Zepto ke liye marketplace-ready visuals."
+   },
+   {
+    "kind": "list",
+    "h": "Print-ready artwork",
+    "items": [
+     "Dielines",
+     "Bleed",
+     "Colour setup"
+    ],
+    "cap": "Print-ready artwork — dielines, bleed aur colour setup, sab theek."
+   },
+   {
+    "kind": "note",
+    "h": "Space for FSSAI · MRP · Net qty",
+    "s": "Planned in from the start. You confirm the legal content.",
+    "cap": "Label pe FSSAI, MRP aur net quantity ki jagah bhi, pehle se plan."
+   }
+  ],
+  "cta": {
+   "cap": "Ek chhoti call, phir fixed quote. bombaymarketing.in"
+  }
+ },
+ {
+  "id": "12-how-we-work",
+  "n": 12,
+  "name": "How we work + plugin bundle",
+  "eyebrow": "HOW WE WORK",
+  "voice": "m",
+  "page": {
+   "key": "home",
+   "pageH": 14270,
+   "cards": [],
+   "secs": [
+    {
+     "cls": "bm-hero bm-hx",
+     "x": 0,
+     "y": 0,
+     "w": 430,
+     "h": 1189
+    },
+    {
+     "cls": "bm-sec",
+     "x": 0,
+     "y": 1245,
+     "w": 430,
+     "h": 1297
+    },
+    {
+     "cls": "bm-sec dark bm-proof",
+     "x": 0,
+     "y": 2542,
+     "w": 430,
+     "h": 2500
+    },
+    {
+     "cls": "bm-sec alt",
+     "x": 0,
+     "y": 5042,
+     "w": 430,
+     "h": 1156
+    },
+    {
+     "cls": "bm-sec",
+     "x": 0,
+     "y": 6198,
+     "w": 430,
+     "h": 1174
+    },
+    {
+     "cls": "bm-sec alt",
+     "x": 0,
+     "y": 7372,
+     "w": 430,
+     "h": 1228
+    },
+    {
+     "cls": "bm-sec",
+     "x": 0,
+     "y": 8600,
+     "w": 430,
+     "h": 1193
+    },
+    {
+     "cls": "bm-sec alt bm-faq",
+     "x": 0,
+     "y": 9793,
+     "w": 430,
+     "h": 849
+    },
+    {
+     "cls": "bm-sec",
+     "x": 0,
+     "y": 10642,
+     "w": 430,
+     "h": 1548
+    },
+    {
+     "cls": "bm-cta bm-cta-xl",
+     "x": 0,
+     "y": 12190,
+     "w": 430,
+     "h": 601
+    }
+   ]
+  },
+  "hook": {
+   "lines": [
+    "Shuru kaise",
+    "karein?"
+   ],
+   "sub": "Bas *chaar step.*",
+   "cap": "Shuru kaise karein? Bas chaar step."
+  },
+  "cells": [
+   {
+    "kind": "page",
+    "card": -1,
+    "h": "Step 1 · Free audit",
+    "s": "Store, listings, SEO and ads → a clear plan",
+    "cap": "Step 1 — Free audit. Store, listings, SEO aur ads dekhkar, ek saaf plan."
+   },
+   {
+    "kind": "chips",
+    "h": "Step 2 · Set up",
+    "s": "Everything in place",
+    "items": [
+     "Store or marketplace accounts",
+     "Catalog",
+     "Content",
+     "Tracking"
+    ],
+    "cap": "Step 2 — Set up. Store ya marketplace accounts, catalog, content aur tracking."
+   },
+   {
+    "kind": "marker",
+    "h": [
+     "Step 3",
+     "Launch"
+    ],
+    "mark": 1,
+    "s": "Optimised listings, pages and first campaigns",
+    "cap": "Step 3 — Launch. Optimised listings, pages aur pehle campaigns ke saath live."
+   },
+   {
+    "kind": "list",
+    "h": "Step 4 · Grow",
+    "items": [
+     "Track sales",
+     "Fix weak points",
+     "Scale SEO, social and ads"
+    ],
+    "cap": "Step 4 — Grow. Sales track, kamzor jagah theek… phir SEO, social aur ads scale."
+   },
+   {
+    "kind": "stat",
+    "h": "Bonus · 5 WordPress plugins",
+    "stats": [
+     {
+      "big": "₹5,000",
+      "unit": "bundle",
+      "label": "free for our clients"
+     }
+    ],
+    "cap": "Bonus — 5 WordPress plugins ka bundle, ₹5,000 ka… hamare clients ko free."
+   }
+  ],
+  "cta": {
+   "cap": "Monday se Saturday, Andheri West. Free audit — bombaymarketing.in"
+  }
+ }
+]

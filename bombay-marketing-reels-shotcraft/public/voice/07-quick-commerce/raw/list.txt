@@ -1,0 +1,7 @@
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/07-quick-commerce/raw/l0.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/07-quick-commerce/raw/l1.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/07-quick-commerce/raw/l2.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/07-quick-commerce/raw/l3.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/07-quick-commerce/raw/l4.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/07-quick-commerce/raw/l5.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/07-quick-commerce/raw/l6.mp3'

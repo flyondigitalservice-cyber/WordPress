@@ -1,0 +1,7 @@
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/09-social-media-marketing/raw/l0.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/09-social-media-marketing/raw/l1.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/09-social-media-marketing/raw/l2.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/09-social-media-marketing/raw/l3.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/09-social-media-marketing/raw/l4.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/09-social-media-marketing/raw/l5.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/09-social-media-marketing/raw/l6.mp3'

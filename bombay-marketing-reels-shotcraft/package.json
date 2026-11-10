@@ -1,0 +1,22 @@
+{
+  "name": "bombay-marketing-reels-shotcraft",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "remotion studio src/index.ts",
+    "voice": "python3 tools/voice.py",
+    "build": "sh build.sh"
+  },
+  "dependencies": {
+    "@fontsource/bricolage-grotesque": "^5.2.0",
+    "@fontsource/dm-sans": "^5.2.0",
+    "@remotion/cli": "4.0.484",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "remotion": "4.0.484"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.17",
+    "typescript": "6.0.3"
+  }
+}

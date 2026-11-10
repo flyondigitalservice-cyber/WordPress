@@ -1,0 +1,7 @@
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/06-myntra-seller-onboarding/raw/l0.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/06-myntra-seller-onboarding/raw/l1.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/06-myntra-seller-onboarding/raw/l2.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/06-myntra-seller-onboarding/raw/l3.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/06-myntra-seller-onboarding/raw/l4.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/06-myntra-seller-onboarding/raw/l5.mp3'
+file '/home/user/WordPress/bombay-marketing-reels-shotcraft/public/voice/06-myntra-seller-onboarding/raw/l6.mp3'
