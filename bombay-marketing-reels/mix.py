@@ -23,7 +23,7 @@ def pen(d, bright=1.0):
     env = np.ones(len(x)); env[:a] = np.linspace(0, 1, a); env[-a:] = np.linspace(1, 0, a); return (x * env).astype(np.float32)
 for e in ev('stroke'): add(fol, pen(e['d'], .8 + .5 * rng.random()), e['t'], .05 + .03 * rng.random(), (e.get('x', .5) - .5) * 1.2)
 for e in ev('write'):
-    d = e['d']; x = pen(d, 1.15); x *= (.25 + .75 * (np.sin(2 * np.pi * 8.5 * t_(d)[:len(x)]) > -.2)); add(fol, x.astype(np.float32), e['t'], .085)
+    x = pen(e['d'], 1.15); x *= (.25 + .75 * (np.sin(2 * np.pi * 8.5 * np.arange(len(x)) / SR) > -.2)); add(fol, x.astype(np.float32), e['t'], .085)
 for e in ev('wash'):
     d = 1.0; x = lp(hp(noise(d), 500), 3800) * np.sin(np.pi * t_(d) / d) ** 1.5; add(fol, x.astype(np.float32), e['t'], .05); add(fol, sfx.pop(.5), e['t'] + .02, .05)
 for e in ev('hl'):
