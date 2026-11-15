@@ -69,3 +69,19 @@ ol.bdesk-list{counter-reset:b}
   .bdesk-actions .button{min-height:36px;line-height:34px;padding:0 14px}
   .bdesk-actions input[type=text],.bdesk-actions select{min-height:36px;max-width:none;flex:1 1 140px}
 }
+
+/* Products -> All Products */
+.post-type-product .wp-list-table .column-name{width:32%!important}
+.post-type-product .wp-list-table .column-product_cat{width:110px!important}
+.post-type-product .wp-list-table .column-bdesk_specs{width:19%!important}
+.post-type-product .wp-list-table .column-bdesk_deal,.post-type-product .wp-list-table .column-bdesk_sold{width:76px}
+.post-type-product .wp-list-table .column-bdesk_check{width:130px}
+.bdesk-chip{display:inline-block;margin:0 4px 4px 0;padding:1px 8px;border-radius:10px;background:#f0f0f1;color:#3c434a;font-size:12px;line-height:1.6;white-space:nowrap}
+.bdesk-chip.is-cond{background:#e7f4ea;color:#1e5b2c;font-weight:600}
+.bdesk-chip.is-extra{background:#eef1fb;color:#2c3e8f}
+.bdesk-chip.is-warn{background:#fcf0e3;color:#8a4a00}
+.bdesk-chip.is-ok{background:#e7f4ea;color:#1e5b2c}
+.bdesk-off{color:#b32d2e;font-size:14px}
+.row-actions .bdesk-act-out{color:#b32d2e}
+.row-actions .bdesk-act-in{color:#1e5b2c}
+@media (max-width:782px){.post-type-product .wp-list-table td.column-bdesk_specs,.post-type-product .wp-list-table td.column-bdesk_deal,.post-type-product .wp-list-table td.column-bdesk_sold,.post-type-product .wp-list-table td.column-bdesk_check{display:none}}

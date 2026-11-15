@@ -32,6 +32,7 @@ function bdesk_defaults() {
             ? 'Before sealing: check each piece for loose threads and stains, include the dupatta and trouser, fold embroidery inwards with tissue.'
             : 'Before sealing: check every item against this slip, add all accessories, and pad the box well.',
         'slip_note' => $in ? 'Dry clean embroidered pieces. Exchanges within 7 days of delivery with tags attached.' : '',
+        'product_list' => 1,
         'confirm_orders' => 1,
         'couriers' => $in ? 'Delhivery, Blue Dart, DTDC, India Post, Own delivery' : 'Aramex, DHL, FedEx, Own delivery',
         'email_tracking' => 1,
@@ -53,7 +54,7 @@ function bdesk_sanitize_settings($in) {
     $d = bdesk_defaults();
     $out = array();
     $long = array('address', 'invoice_note', 'slip_note', 'pack_checklist', 'wa_confirm', 'wa_shipped');
-    $flags = array('tax_inclusive', 'confirm_orders', 'email_tracking');
+    $flags = array('tax_inclusive', 'confirm_orders', 'email_tracking', 'product_list');
     foreach ($d as $k => $v) {
         $raw = isset($in[$k]) ? $in[$k] : '';
         if (in_array($k, $long, true)) $out[$k] = sanitize_textarea_field($raw);
@@ -102,6 +103,9 @@ function bdesk_settings_page() {
         'Packing slips' => array(
             'pack_checklist' => array('Packing checklist line', 'textarea'),
             'slip_note' => array('Care / returns note on packing slips', 'textarea'),
+        ),
+        'Product list' => array(
+            'product_list' => array('Product list upgrades: specs, deal %, sold out button, needs-attention check, bulk actions', 'checkbox'),
         ),
         'Order steps' => array(
             'confirm_orders' => array('Confirm each order with the customer (call or WhatsApp) before packing', 'checkbox'),

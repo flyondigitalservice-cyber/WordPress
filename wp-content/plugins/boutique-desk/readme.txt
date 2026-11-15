@@ -12,6 +12,7 @@ Store Desk for WooCommerce: a step-by-step order desk, a limited staff role, cat
 * Warnings: late orders, and the same customer ordering twice.
 * Serial number recorded at packing and printed on the invoice and slip.
 * A "Step" column in the WooCommerce orders list.
+* Product list (Products -> All Products): specs (condition, CPU, RAM, storage, screen) read from the title, deal %, units sold, and a Check column that flags missing photo, short description or price. One-click "Mark sold out" / "Back in stock", views for On sale, Sold out and Needs attention, a condition filter, and bulk actions (sold out, back in stock, remove sale price, hide from shop). Empty SKU, Tags and Brands columns are hidden. Can be switched off in Store Desk settings.
 * Category Sellers (1.1): outside sellers list products only in the categories you assign, see only their own products, images and order lines, and get a Seller Desk with revenue, earnings after commission, a 30-day chart, best sellers and sold-out items.
 * Store Editor role: add and edit products, process orders, print documents. No deleting, no settings, no plugins, themes, users, coupons or analytics.
 * Invoice: sequential numbers, tax number (GSTIN, TRN...), optional HSN per product, amount in words in the order currency (Indian numbering for INR).
@@ -30,5 +31,6 @@ Store Desk for WooCommerce: a step-by-step order desk, a limited staff role, cat
 * Order steps on the Store Desk (confirm, pack, hand to courier, in transit, delivered / came back) replace the single "Mark shipped" button.
 * WhatsApp and call links, courier and tracking, cash-to-collect totals, late and duplicate-order warnings, serial numbers.
 * Works outside India: VAT / TRN wording, amount in words for AED, SAR and other currencies, HSN column only when used.
+* Product list upgrades (see above).
 * Fixed: packing slips showed "Prepaid" for cash on delivery orders that were still processing.
 * Fixed: internal order data (such as _reduced_stock) printed on documents.

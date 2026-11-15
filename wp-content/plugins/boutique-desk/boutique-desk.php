@@ -22,6 +22,7 @@ require_once BDESK_DIR . 'includes/role.php';
 require_once BDESK_DIR . 'includes/settings.php';
 require_once BDESK_DIR . 'includes/pipeline.php';
 require_once BDESK_DIR . 'includes/dashboard.php';
+require_once BDESK_DIR . 'includes/products.php';
 require_once BDESK_DIR . 'includes/documents.php';
 require_once BDESK_DIR . 'includes/sellers.php';
 
