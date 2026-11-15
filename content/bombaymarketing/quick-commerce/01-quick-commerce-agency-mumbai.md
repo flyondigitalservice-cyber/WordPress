@@ -32,7 +32,7 @@ A longer comparison with the direct channel is in our guide on [Swiggy Instamart
 
 ## Onboarding timeline by platform
 
-Every figure in this table is marked [CONFIRM]. The "what the platform publishes" column is quoted from official pages as checked on 15 November 2026; the last two columns must be confirmed against your own dashboard or category manager before you plan cash flow on them.
+The documents column is quoted from official pages as checked on 15 November 2026. The timing and commission columns are not published by the platforms, so confirm them against your own dashboard or category manager before you plan cash flow on them.
 
 | Platform | Documents needed | Typical go-live time | Typical commission range |
 |---|---|---|---|

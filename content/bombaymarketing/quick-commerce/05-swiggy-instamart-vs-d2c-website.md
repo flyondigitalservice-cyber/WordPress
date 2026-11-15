@@ -131,7 +131,7 @@ Often. Quick-commerce packs must survive dark-store handling and read on a small
 
 ### Can you help with both?
 
-Yes. We onboard brands onto quick-commerce platforms and build and market D2C stores. See our [pricing page](/pricing/) for ranges.
+Yes. Our [Swiggy Instamart onboarding service](/swiggy-instamart-onboarding/) handles the application and catalogue, and we build and market D2C stores. See our [pricing page](/pricing/) for ranges.
 
 ## Related guides
 

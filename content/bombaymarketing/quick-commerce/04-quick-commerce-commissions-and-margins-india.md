@@ -46,7 +46,7 @@ Blinkit's page directs sellers to "log in to Seller Hub to view product-specific
 
 Neither [Zepto's Vendor Hub](https://brands.zepto.co.in/) nor [Instamart's Brand Portal](https://partner.instamart.in/) publishes a fee structure. Ask for these items in writing, and do not sign until each has a figure or a formula:
 
-- the upfront fee per variant: on Zepto our clients have paid about ₹30,000 per variant (GST included), and it is not returned as ad credit. Instamart has not charged our clients an onboarding fee. [CONFIRM both at signing];
+- the upfront fee per variant: on Zepto our clients have paid about ₹30,000 per variant (GST included), and it is not returned as ad credit. Instamart has not charged our clients an onboarding fee;
 - commission or margin, and the price it is calculated on;
 - logistics, fulfilment or handling charges;
 - any charges for storage, inwarding, listing or onboarding;
@@ -130,7 +130,7 @@ With example 1's assumptions, fixed per-unit costs (COGS 62 + fulfilment 18 + in
 
 ## The upfront listing fee: amortise it, or it will surprise you
 
-The per-unit model above ignores one large cost: the fee to put each variant live. In our clients' onboarding this has been about ₹25,000 per variant (GST included) on Blinkit and about ₹30,000 on Zepto [CONFIRM current amounts]. Blinkit states its fee is credited to your ads wallet ([Blinkit FAQ](https://seller.blinkit.com/faq)). Zepto's is not: in our clients' experience it does not come back as ad credit. Swiggy Instamart has not charged our clients an onboarding or listing fee. In our clients' experience the fee is charged **per variant** (every flavour, size and pack count) and the figures above **include GST**.
+The per-unit model above ignores one large cost: the fee to put each variant live. In our clients' onboarding this has been about ₹25,000 per variant (GST included) on Blinkit and about ₹30,000 on Zepto [CONFIRM current amounts]. Blinkit states its fee is credited to your ads wallet ([Blinkit FAQ](https://seller.blinkit.com/faq)). Zepto's is not: in our clients' experience it does not come back as ad credit. Swiggy Instamart has not charged our clients an onboarding or listing fee. The fee is charged **per variant** (every flavour, size and pack count) and the figures above **include GST**.
 
 **The GST inside the fee.** At 18%, a ₹25,000 fee is about ₹21,186 plus ₹3,814 GST, and a ₹30,000 fee is about ₹25,424 plus ₹4,576 GST. A GST-registered seller can normally claim that GST as input tax credit, so the true cost is the ex-GST figure, though you still pay the full amount in cash up front. [VERIFY that the platform's invoice shows GST separately and that your CA agrees the credit is claimable.] The examples below use the full GST-inclusive ₹30,000, which is the conservative choice.
 

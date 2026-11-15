@@ -53,7 +53,7 @@ Front-of-pack nutrition labelling and other changes have been proposed and amend
 
 ### Plastic packaging obligations
 
-Brand owners using plastic packaging have Extended Producer Responsibility obligations under the Plastic Waste Management Rules, including registration on CPCB's centralised EPR portal. [VERIFY your registration status and any on-pack marking requirements with CPCB; the EPR portal was not reachable from our checks on 15 November 2026, so we have not linked a specific URL.]
+Brand owners using plastic packaging have Extended Producer Responsibility obligations under the Plastic Waste Management Rules, including registration on the Central Pollution Control Board's centralised EPR portal. [VERIFY your registration status and any on-pack marking requirements with the Central Pollution Control Board.]
 
 ## Layer 2: What quick-commerce platforms require
 

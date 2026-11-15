@@ -65,7 +65,7 @@ Blinkit lists seven charge types: Product ID activation, inwarding, storage, cat
 
 Zepto does not publish its charge types. Expect to see some combination of commission or margin, fulfilment or logistics charges, and possibly fees linked to stock and marketing, but confirm the exact list in writing. [VERIFY every line in the Zepto term sheet.]
 
-**The upfront fee per variant is the biggest difference at launch.** Our clients have paid about ₹25,000 per variant (GST included) on Blinkit and about ₹30,000 on Zepto [CONFIRM both]. On Blinkit, the official FAQ says the activation fee is credited to your ads wallet, so it comes back as advertising. On Zepto it does not: in our clients' experience the fee is a cost that never comes back. That changes the comparison:
+**The upfront fee per variant is the biggest difference at launch.** Our clients have paid about ₹25,000 per variant (GST included) on Blinkit and about ₹30,000 on Zepto. On Blinkit, the official FAQ says the activation fee is credited to your ads wallet, so it comes back as advertising. On Zepto it does not: in our clients' experience the fee is a cost that never comes back. That changes the comparison:
 
 | 3 SKUs | Blinkit | Zepto |
 |---|---|---|

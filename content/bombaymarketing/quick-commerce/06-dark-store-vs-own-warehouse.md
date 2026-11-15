@@ -66,7 +66,7 @@ Use this per unit, per month. **All ₹ values below are illustrative assumption
 
 On those assumptions, storage is far more expensive per unit in dark stores and delivery is far cheaper. That is the typical shape, not a law: dark-store networks charge for scarce space close to customers and save on the last mile. The decisive number is how many days your stock sits before it sells.
 
-**Rule of thumb from the worksheet:** if a SKU sells slowly, the dark-store storage line grows until it eats the delivery saving. The per-product listing fee pushes the same way. A slow SKU must earn back both storage and, on Zepto, a ₹30,000 fee that never comes back, which is one more reason to keep long-tail variants in your own warehouse. Fast sellers belong in dark stores; slow sellers, large packs and long-tail variants usually belong in your own warehouse.
+**Rule of thumb from the worksheet:** if a SKU sells slowly, the dark-store storage line grows until it eats the delivery saving. The per-variant listing fee pushes the same way: a slow SKU must earn back both storage and, on Zepto, a ₹30,000 fee that never comes back. Fast sellers belong in dark stores; slow sellers, large packs and long-tail variants usually belong in your own warehouse.
 
 ## Inventory planning across both
 
