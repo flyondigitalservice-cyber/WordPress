@@ -46,13 +46,13 @@ The step-by-step version, with a document checklist you can hand to your account
 
 ## The upfront listing fee: the cost most guides leave out
 
-Before a single unit sells, each platform charges a fee to put a product live. Blinkit confirms the fee exists: "A Product ID activation fee applies when you activate a product for sale, and the amount is credited to your ads wallet to run sponsored ads" ([Blinkit FAQ](https://seller.blinkit.com/faq)). None of the three platforms publishes the amount. These are the amounts our clients have actually been charged:
+Before a single unit sells, two of the three platforms charge a fee to put each variant live. Blinkit confirms the fee exists: "A Product ID activation fee applies when you activate a product for sale, and the amount is credited to your ads wallet to run sponsored ads" ([Blinkit FAQ](https://seller.blinkit.com/faq)). Neither Blinkit nor Zepto publishes the amount. This is what our clients have actually been charged:
 
 | Platform | Fee per variant, GST included (from our onboarding work) | What happens to the money | Status |
 |---|---|---|---|
 | Blinkit | about ₹25,000 | Credited to your Blinkit ads wallet for sponsored ads (per Blinkit's FAQ) | Per variant, GST included. [CONFIRM current amount before activating] |
-| Zepto | about ₹30,000 | Not published: ad credit or a non-refundable fee? | Per variant, GST included. [CONFIRM whether it returns as ad credit] |
-| Swiggy Instamart | about ₹30,000, similar to Zepto | Not published | [CONFIRM exact amount and what it buys] |
+| Zepto | about ₹30,000 | Not credited back. It is a cost, not ad credit | Per variant, GST included. [CONFIRM current amount before activating] |
+| Swiggy Instamart | No onboarding or listing fee | – | Our clients have not been charged one. [CONFIRM it still applies when you sign] |
 
 These are figures we have seen in client onboarding, not published rate cards. Platforms change them without notice, so ask the platform for the current figure in writing before you activate a product.
 
@@ -61,14 +61,16 @@ These are figures we have seen in client onboarding, not published rate cards. P
 | Launch plan | Blinkit | Zepto | Instamart | Upfront listing fees |
 |---|---|---|---|---|
 | 3 SKUs, Blinkit only | ₹75,000 | – | – | **₹75,000** |
-| 3 SKUs, all three apps | ₹75,000 | ₹90,000 | ₹90,000 | **₹2,55,000** |
-| 10 SKUs, all three apps | ₹2,50,000 | ₹3,00,000 | ₹3,00,000 | **₹8,50,000** |
+| 3 SKUs, all three apps | ₹75,000 (returns as ad credit) | ₹90,000 (does not return) | ₹0 | **₹1,65,000** |
+| 10 SKUs, all three apps | ₹2,50,000 (returns as ad credit) | ₹3,00,000 (does not return) | ₹0 | **₹5,50,000** |
 
-These are GST-inclusive cash figures, and that is before stock, freight, packaging or any advertising beyond the credit. If you are GST-registered, the GST inside each fee (about ₹3,814 on ₹25,000 and ₹4,576 on ₹30,000, at 18%) is normally claimable as input tax credit, so the real cost is a little lower than the cash you hand over. [VERIFY with your chartered accountant that the platform invoice supports the claim.] Three things follow:
+These are GST-inclusive cash figures, and that is before stock, freight, packaging or any advertising beyond the credit. If you are GST-registered, the GST inside each fee (about ₹3,814 on ₹25,000 and ₹4,576 on ₹30,000, at 18%) is normally claimable as input tax credit, so the real cost is a little lower than the cash you hand over. [VERIFY with your chartered accountant that the platform invoice supports the claim.] What follows:
 
-- **Launch narrow.** Pick two or three hero SKUs with proven demand, start on one platform, prove the sell-through rate, then expand. A ten-SKU, three-app launch commits ₹8.5 lakh in fees before you know what sells.
+- **Launch narrow.** Pick two or three hero SKUs with proven demand, start on one platform, prove the sell-through rate, then expand. A ten-SKU, three-app launch commits ₹5.5 lakh in fees before you know what sells, ₹3 lakh of it on Zepto and not coming back.
 - **Every variant counts as a product.** Each flavour, pack size and combo is a separate listing with its own fee. A four-flavour range in two sizes is eight fees: ₹2 lakh on Blinkit alone. Cut or merge variants before you apply, not after.
-- **On Blinkit, the fee is your launch ad budget.** Because it comes back as ad credit, plan how you will spend it: the right keywords, in the cities where you are in stock. On Zepto and Instamart, until you have confirmed in writing that the fee is credited, treat it as a sunk cost that has to be earned back from contribution.
+- **On Blinkit, the fee is your launch ad budget.** Because it comes back as ad credit, plan how you will spend it: the right keywords, in the cities where you are in stock. 
+- **On Zepto, the fee is a sunk cost.** The ₹30,000 per variant does not come back as ad credit, so it has to be earned back from contribution on every SKU. Only list variants on Zepto that you expect to sell in volume.
+- **Instamart has no entry fee.** In our clients' onboarding, Instamart has charged no onboarding or listing fee. Its process is curated, though, so the barrier is getting a category manager to say yes, not cash.
 
 ## Listing and catalogue requirements
 
@@ -87,7 +89,7 @@ Packaging is where physical goods get rejected at the warehouse door, even after
 
 ## Pricing and margin maths, with a worked example
 
-Quick commerce has more cost lines than a marketplace. Blinkit's published structure has six: inwarding fee per unit, daily storage fee per unsold unit, fulfilment fee per delivered order, category commission per sale, customer return fee where the return is attributed to the seller, and inventory removal fee per unit. There is also a Product ID activation fee, which Blinkit says is credited to your ads wallet ([Blinkit fees and commissions](https://seller.blinkit.com/fees-commission)). Our clients have been charged about ₹25,000 per variant (GST included) on Blinkit and about ₹30,000 on Zepto and Instamart [CONFIRM]. See the listing-fee section above.
+Quick commerce has more cost lines than a marketplace. Blinkit's published structure has six: inwarding fee per unit, daily storage fee per unsold unit, fulfilment fee per delivered order, category commission per sale, customer return fee where the return is attributed to the seller, and inventory removal fee per unit. There is also a Product ID activation fee, which Blinkit says is credited to your ads wallet ([Blinkit fees and commissions](https://seller.blinkit.com/fees-commission)). Our clients have been charged about ₹25,000 per variant (GST included) on Blinkit (returned as ad credit) and about ₹30,000 on Zepto (not returned). Instamart has not charged our clients an onboarding fee [CONFIRM]. See the listing-fee section above.
 
 Blinkit publishes the structure but not the rates. So the method matters more than any single number.
 
@@ -114,7 +116,7 @@ Three things this example teaches that hold regardless of the real rates.
 
 - **Flat fees punish low prices.** Halve the selling price and the assumed ₹20 fulfilment fee doubles as a share of revenue. This is why ₹49 packs rarely work unless they sell as part of a basket.
 - **Slow stock is a cost.** In this model, 30 days on the shelf instead of 10 takes contribution from ₹38 to ₹18. Sell-through speed is a margin lever.
-- **The listing fee needs volume to pay back.** At ₹38 contribution a unit, earning back a ₹30,000 listing fee that is *not* credited to ads takes 790 units. A SKU selling five units a day takes about five months; a SKU selling one a day takes more than two years. On Blinkit, where the ₹25,000 comes back as ad credit, it prepays the assumed ₹20-a-unit advertising on your first 1,250 units, but you pay it before you sell one.
+- **The listing fee needs volume to pay back.** At ₹38 contribution a unit, earning back Zepto's ₹30,000 listing fee, which is *not* credited to ads, takes 790 units. A SKU selling five units a day takes about five months; a SKU selling one a day takes more than two years. On Blinkit, where the ₹25,000 comes back as ad credit, it prepays the assumed ₹20-a-unit advertising on your first 1,250 units, but you pay it before you sell one.
 - **Tax deductions are timing, not cost, but they hit cash.** Platforms charge GST on their service fees, which a registered seller normally claims as input credit. TCS under GST and TDS on e-commerce payments are deducted from payouts and reclaimed later. [VERIFY current rates and section numbers with your chartered accountant and on [cbic-gst.gov.in](https://cbic-gst.gov.in/)].
 
 One thing we could not verify publicly: whether each platform calculates commission on the GST-inclusive or exclusive price. [VERIFY in the Seller Hub commissions calculator or your agreement]. The full method, including a break-even formula, is in [quick-commerce commissions and margins in India](/guides/quick-commerce-commissions-and-margins-india/).
@@ -177,7 +179,7 @@ Blinkit lists a GST certificate among its required documents, and states you can
 
 ### Is there a fee to register?
 
-There is no fee to register your business, but there is a fee for every variant you put live, meaning each flavour, size and pack. Blinkit calls it a Product ID activation fee and says it is credited to your ads wallet; our clients have paid about ₹25,000 per variant (GST included). On Zepto and Instamart our clients have paid about ₹30,000 per variant (GST included), and neither platform publishes whether it comes back as ad credit. [CONFIRM current amounts with each platform before activating.] For three SKUs on all three apps, budget about ₹2.55 lakh up front.
+There is no fee to register your business. On Blinkit and Zepto there is a fee for every variant you put live, meaning each flavour, size and pack. Blinkit calls it a Product ID activation fee and says it is credited to your ads wallet; our clients have paid about ₹25,000 per variant (GST included). On Zepto our clients have paid about ₹30,000 per variant (GST included), and it does not come back as ad credit. Swiggy Instamart has not charged our clients an onboarding or listing fee. [CONFIRM current terms with each platform before activating.] For three SKUs on all three apps, budget about ₹1.65 lakh up front, of which ₹75,000 returns as Blinkit ad credit.
 
 ### What commission will I pay?
 

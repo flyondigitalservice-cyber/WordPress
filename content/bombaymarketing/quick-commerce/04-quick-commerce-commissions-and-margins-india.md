@@ -46,7 +46,7 @@ Blinkit's page directs sellers to "log in to Seller Hub to view product-specific
 
 Neither [Zepto's Vendor Hub](https://brands.zepto.co.in/) nor [Instamart's Brand Portal](https://partner.instamart.in/) publishes a fee structure. Ask for these items in writing, and do not sign until each has a figure or a formula:
 
-- the upfront fee per variant: our clients have paid about ₹30,000 per variant (GST included) on both Zepto and Instamart [CONFIRM]. It is charged per variant and includes GST. Ask whether it is returned as ad credit;
+- the upfront fee per variant: on Zepto our clients have paid about ₹30,000 per variant (GST included), and it is not returned as ad credit. Instamart has not charged our clients an onboarding fee. [CONFIRM both at signing];
 - commission or margin, and the price it is calculated on;
 - logistics, fulfilment or handling charges;
 - any charges for storage, inwarding, listing or onboarding;
@@ -130,20 +130,20 @@ With example 1's assumptions, fixed per-unit costs (COGS 62 + fulfilment 18 + in
 
 ## The upfront listing fee: amortise it, or it will surprise you
 
-The per-unit model above ignores one large cost: the fee to put each variant live. In our clients' onboarding this has been about ₹25,000 per variant (GST included) on Blinkit and about ₹30,000 on Zepto and Instamart [CONFIRM current amounts]. Blinkit states its fee is credited to your ads wallet ([Blinkit FAQ](https://seller.blinkit.com/faq)); Zepto and Instamart do not publish what theirs buys. In our clients' experience the fee is charged **per variant** (every flavour, size and pack count) and the figures above **include GST**.
+The per-unit model above ignores one large cost: the fee to put each variant live. In our clients' onboarding this has been about ₹25,000 per variant (GST included) on Blinkit and about ₹30,000 on Zepto [CONFIRM current amounts]. Blinkit states its fee is credited to your ads wallet ([Blinkit FAQ](https://seller.blinkit.com/faq)). Zepto's is not: in our clients' experience it does not come back as ad credit. Swiggy Instamart has not charged our clients an onboarding or listing fee. In our clients' experience the fee is charged **per variant** (every flavour, size and pack count) and the figures above **include GST**.
 
 **The GST inside the fee.** At 18%, a ₹25,000 fee is about ₹21,186 plus ₹3,814 GST, and a ₹30,000 fee is about ₹25,424 plus ₹4,576 GST. A GST-registered seller can normally claim that GST as input tax credit, so the true cost is the ex-GST figure, though you still pay the full amount in cash up front. [VERIFY that the platform's invoice shows GST separately and that your CA agrees the credit is claimable.] The examples below use the full GST-inclusive ₹30,000, which is the conservative choice.
 
 How to treat it in the model:
 
 - **If it comes back as ad credit (Blinkit):** it is prepaid advertising. Reduce your ad-per-unit line until the credit is spent. It costs cash flow, not margin, but only if you would have spent that much on ads anyway.
-- **If it does not come back:** spread it over the units you expect to sell in a fixed payback period, and add the result as a cost per unit.
+- **If it does not come back (Zepto):** spread it over the units you expect to sell in a fixed payback period, and add the result as a cost per unit.
 
 ```
 Listing cost per unit = Listing fee ÷ Units expected in the payback period
 ```
 
-**A ₹30,000 fee that is not credited back, spread over the first 12 months (illustrative unit volumes):**
+**Zepto's ₹30,000 fee, which is not credited back, spread over the first 12 months (illustrative unit volumes):**
 
 | Units sold in 12 months | Listing cost per unit | Effect on the ₹199 example (₹20.85 contribution) |
 |---|---|---|
@@ -151,9 +151,9 @@ Listing cost per unit = Listing fee ÷ Units expected in the payback period
 | 1,500 | ₹20.00 | Contribution falls to ₹0.85 |
 | 5,000 | ₹6.00 | Contribution falls to ₹14.85 |
 
-Payback in units is simply the fee divided by contribution per unit: ₹30,000 ÷ ₹20.85 = about 1,440 units for the ₹199 pack. If your realistic first-year volume per SKU is below that, the SKU loses money on that platform even when every per-order line looks fine.
+Payback in units is simply the fee divided by contribution per unit: ₹30,000 ÷ ₹20.85 = about 1,440 units for the ₹199 pack. If your realistic first-year volume per SKU is below that, the SKU loses money on Zepto even when every per-order line looks fine.
 
-**Across a range, the fee multiplies.** Three SKUs on all three apps is about ₹2.55 lakh up front; ten SKUs is about ₹8.5 lakh. That is why we recommend launching two or three hero SKUs on one platform, proving the sell-through rate, and adding SKUs and platforms from the profit.
+**Across a range, the fee multiplies.** Three SKUs on all three apps is about ₹1.65 lakh up front (₹75,000 Blinkit, returned as ad credit; ₹90,000 Zepto, not returned; nothing on Instamart). Ten SKUs is about ₹5.5 lakh. That is why we recommend launching two or three hero SKUs on one platform, proving the sell-through rate, and adding SKUs and platforms from the profit.
 
 ## The levers that actually move margin
 

@@ -62,11 +62,11 @@ Use this per unit, per month. **All ₹ values below are illustrative assumption
 | Last-mile delivery | Inside fulfilment fee: ₹20 | Courier ₹45 |
 | Commission / platform fee | Category commission (varies) | Payment gateway fee (varies) |
 | Customer acquisition | In-app ads | Your own ads |
-| Upfront fee per variant (GST included) | About ₹25,000 (Blinkit, returned as ad credit) to ₹30,000 (Zepto, Instamart) in our clients' onboarding [CONFIRM] | None |
+| Upfront fee per variant (GST included) | Blinkit about ₹25,000 (returned as ad credit); Zepto about ₹30,000 (not returned); Instamart none, in our clients' onboarding [CONFIRM] | None |
 
 On those assumptions, storage is far more expensive per unit in dark stores and delivery is far cheaper. That is the typical shape, not a law: dark-store networks charge for scarce space close to customers and save on the last mile. The decisive number is how many days your stock sits before it sells.
 
-**Rule of thumb from the worksheet:** if a SKU sells slowly, the dark-store storage line grows until it eats the delivery saving. The per-product listing fee pushes the same way. A slow SKU must earn back both storage and a ₹25,000–₹30,000 fee, which is one more reason to keep long-tail variants in your own warehouse. Fast sellers belong in dark stores; slow sellers, large packs and long-tail variants usually belong in your own warehouse.
+**Rule of thumb from the worksheet:** if a SKU sells slowly, the dark-store storage line grows until it eats the delivery saving. The per-product listing fee pushes the same way. A slow SKU must earn back both storage and, on Zepto, a ₹30,000 fee that never comes back, which is one more reason to keep long-tail variants in your own warehouse. Fast sellers belong in dark stores; slow sellers, large packs and long-tail variants usually belong in your own warehouse.
 
 ## Inventory planning across both
 

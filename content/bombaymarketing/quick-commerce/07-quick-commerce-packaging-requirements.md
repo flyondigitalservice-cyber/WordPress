@@ -114,7 +114,7 @@ Platform fulfilment fees are typically charged per order, so very low price poin
 - **Price-point packs.** Size the pack to the price you need, not the other way around.
 - **Multipacks and combos.** Spread per-order fees across more value. Each combo needs its own GTIN and, because the fee is charged per variant, its own listing fee.
 - **Trial sizes.** Useful for discovery, but model their economics first.
-- **Fewer variants at launch.** Our clients have paid about ₹25,000 per variant (GST included) on Blinkit and ₹30,000 on Zepto and Instamart to go live [CONFIRM]. Because the fee is charged per variant, six flavours in two sizes means twelve fees: about ₹3 lakh on Blinkit and ₹3.6 lakh each on Zepto and Instamart. Design the launch range around your best two or three variants and add the rest once they sell.
+- **Fewer variants at launch.** Our clients have paid about ₹25,000 per variant (GST included) on Blinkit (returned as ad credit) and ₹30,000 on Zepto (not returned) to go live; Instamart has not charged one [CONFIRM]. Because the fee is charged per variant, six flavours in two sizes means twelve fees: about ₹3 lakh on Blinkit and ₹3.6 lakh on Zepto. Design the launch range around your best two or three variants and add the rest once they sell.
 
 ## Packaging checklist
 

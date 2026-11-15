@@ -17,7 +17,7 @@ It is part of our [quick-commerce guide for Mumbai brands](/quick-commerce-agenc
 ## The short answer
 
 - **Choose Blinkit first** if you want to start without waiting for a category manager, control your own listings and pricing from day one, and test one city before committing stock nationally.
-- **Choose Zepto first** if you have a category where Zepto's team is actively looking for brands, you value a dedicated key account manager, and you are ready to negotiate commercial terms.
+- **Choose Zepto first** if you have a category where Zepto's team is actively looking for brands, you value a dedicated key account manager, and you are ready to negotiate commercial terms. Budget for its listing fee: about ₹30,000 per variant, GST included, which in our clients' experience does not come back as ad credit.
 - **Do both** once your first platform shows a sell-through rate you can plan stock around. Running two quick-commerce channels from launch doubles your inventory exposure before you know which SKUs move.
 
 The rest of this guide explains why.
@@ -39,7 +39,7 @@ Note that the two use different metrics, "customers" versus "active customers", 
 | Onboarding model | Self-serve Seller Hub; verification "in real time" | Vendor portal registration with category-team involvement [VERIFY] | Blinkit FAQ; Zepto Vendor Hub |
 | Published document list | Yes: GST, bank, brand and manufacturer details, logo, FSSAI where applicable, digital signature | No public list | [Blinkit FAQ](https://seller.blinkit.com/faq) |
 | Registration fee | None | Not published [VERIFY during registration] | Blinkit FAQ |
-| Fee per variant listed (GST included) | Product ID activation fee, credited to ads wallet. About ₹25,000 per variant (GST included) in our clients' onboarding [CONFIRM] | About ₹30,000 per variant (GST included) in our clients' onboarding; whether it is ad credit is not published [CONFIRM] | Blinkit FAQ; our client work |
+| Fee per variant listed (GST included) | Product ID activation fee, credited to ads wallet. About ₹25,000 per variant (GST included) in our clients' onboarding [CONFIRM] | About ₹30,000 per variant (GST included) in our clients' onboarding; not returned as ad credit [CONFIRM] | Blinkit FAQ; our client work |
 | Fee structure published | Structure yes, amounts no | No | [Blinkit fees](https://seller.blinkit.com/fees-commission) |
 | Commission | Varies by category and price; shown in Seller Hub calculator | Not published; agreed per brand [VERIFY in term sheet] | Dashboards / agreement |
 | Price control | Seller sets and changes price | Not stated publicly [VERIFY in agreement] | Blinkit FAQ |
@@ -65,15 +65,15 @@ Blinkit lists seven charge types: Product ID activation, inwarding, storage, cat
 
 Zepto does not publish its charge types. Expect to see some combination of commission or margin, fulfilment or logistics charges, and possibly fees linked to stock and marketing, but confirm the exact list in writing. [VERIFY every line in the Zepto term sheet.]
 
-**The upfront fee per variant is the biggest difference at launch.** Our clients have paid about ₹25,000 per variant (GST included) on Blinkit and about ₹30,000 on Zepto [CONFIRM both]. On Blinkit, the official FAQ says the activation fee is credited to your ads wallet, so it comes back as advertising. On Zepto, ask directly whether the fee is ad credit, a listing charge or something else, because that changes its real cost:
+**The upfront fee per variant is the biggest difference at launch.** Our clients have paid about ₹25,000 per variant (GST included) on Blinkit and about ₹30,000 on Zepto [CONFIRM both]. On Blinkit, the official FAQ says the activation fee is credited to your ads wallet, so it comes back as advertising. On Zepto it does not: in our clients' experience the fee is a cost that never comes back. That changes the comparison:
 
 | 3 SKUs | Blinkit | Zepto |
 |---|---|---|
 | Upfront cash | ₹75,000 | ₹90,000 |
-| Returned as ad credit | ₹75,000 (per Blinkit FAQ) | [CONFIRM] |
-| Real cost if Zepto's is not credited | ₹0 net, if you would have spent it on ads anyway | ₹90,000, to be earned back from contribution |
+| Returned as ad credit | ₹75,000 (per Blinkit FAQ) | ₹0 |
+| Real cost | ₹0 net, if you would have spent it on ads anyway | ₹90,000, to be earned back from contribution |
 
-If cash is tight, this alone can decide which platform you start on.
+If cash is tight, this alone can decide which platform you start on. For comparison, Swiggy Instamart has not charged our clients any onboarding fee; see [Swiggy Instamart vs your D2C website](/guides/swiggy-instamart-vs-d2c-website/).
 
 **How to compare them properly:** do not compare commission percentages. Compare contribution per unit after all platform charges and the ad spend you expect to need, for the same SKU at the same selling price. Our [commissions and margins guide](/guides/quick-commerce-commissions-and-margins-india/) has a worksheet for this. Two platforms with different commission rates can produce the same profit once fulfilment, storage and ads are included.
 
