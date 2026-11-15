@@ -39,7 +39,7 @@ Note that the two use different metrics, "customers" versus "active customers", 
 | Onboarding model | Self-serve Seller Hub; verification "in real time" | Vendor portal registration with category-team involvement [VERIFY] | Blinkit FAQ; Zepto Vendor Hub |
 | Published document list | Yes: GST, bank, brand and manufacturer details, logo, FSSAI where applicable, digital signature | No public list | [Blinkit FAQ](https://seller.blinkit.com/faq) |
 | Registration fee | None | Not published [VERIFY during registration] | Blinkit FAQ |
-| Fee per product listed | Product ID activation fee, credited to ads wallet. About ₹25,000 per product in our clients' onboarding [CONFIRM] | About ₹30,000 per product in our clients' onboarding; whether it is ad credit is not published [CONFIRM] | Blinkit FAQ; our client work |
+| Fee per variant listed (GST included) | Product ID activation fee, credited to ads wallet. About ₹25,000 per variant (GST included) in our clients' onboarding [CONFIRM] | About ₹30,000 per variant (GST included) in our clients' onboarding; whether it is ad credit is not published [CONFIRM] | Blinkit FAQ; our client work |
 | Fee structure published | Structure yes, amounts no | No | [Blinkit fees](https://seller.blinkit.com/fees-commission) |
 | Commission | Varies by category and price; shown in Seller Hub calculator | Not published; agreed per brand [VERIFY in term sheet] | Dashboards / agreement |
 | Price control | Seller sets and changes price | Not stated publicly [VERIFY in agreement] | Blinkit FAQ |
@@ -65,7 +65,7 @@ Blinkit lists seven charge types: Product ID activation, inwarding, storage, cat
 
 Zepto does not publish its charge types. Expect to see some combination of commission or margin, fulfilment or logistics charges, and possibly fees linked to stock and marketing, but confirm the exact list in writing. [VERIFY every line in the Zepto term sheet.]
 
-**The upfront fee per product is the biggest difference at launch.** Our clients have paid about ₹25,000 per product on Blinkit and about ₹30,000 on Zepto [CONFIRM both]. On Blinkit, the official FAQ says the activation fee is credited to your ads wallet, so it comes back as advertising. On Zepto, ask directly whether the fee is ad credit, a listing charge or something else, because that changes its real cost:
+**The upfront fee per variant is the biggest difference at launch.** Our clients have paid about ₹25,000 per variant (GST included) on Blinkit and about ₹30,000 on Zepto [CONFIRM both]. On Blinkit, the official FAQ says the activation fee is credited to your ads wallet, so it comes back as advertising. On Zepto, ask directly whether the fee is ad credit, a listing charge or something else, because that changes its real cost:
 
 | 3 SKUs | Blinkit | Zepto |
 |---|---|---|
@@ -90,7 +90,7 @@ Which model applies to your Zepto or Instamart agreement depends on the contract
 
 Both platforms sell in-app advertising.
 
-- Blinkit funds sponsored ads from an ads wallet, and the Product ID activation fee (about ₹25,000 per product for our clients [CONFIRM]) is credited to it, so every new product starts with a sizeable ad balance.
+- Blinkit funds sponsored ads from an ads wallet, and the Product ID activation fee (about ₹25,000 per variant (GST included) for our clients [CONFIRM]) is credited to it, so every new product starts with a sizeable ad balance.
 - Zepto states that its "custom ads increase your visibility".
 
 Neither publishes minimum spends, formats or auction rules on its public pages. [VERIFY inside each ad console.] In our experience, the platform where you are better stocked will deliver a better return on the same ad budget, because an ad for a product that is unavailable in a store is wasted on every customer served by that store.

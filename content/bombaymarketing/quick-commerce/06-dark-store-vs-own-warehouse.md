@@ -62,7 +62,7 @@ Use this per unit, per month. **All ₹ values below are illustrative assumption
 | Last-mile delivery | Inside fulfilment fee: ₹20 | Courier ₹45 |
 | Commission / platform fee | Category commission (varies) | Payment gateway fee (varies) |
 | Customer acquisition | In-app ads | Your own ads |
-| Upfront fee per product | About ₹25,000 (Blinkit, returned as ad credit) to ₹30,000 (Zepto, Instamart) in our clients' onboarding [CONFIRM] | None |
+| Upfront fee per variant (GST included) | About ₹25,000 (Blinkit, returned as ad credit) to ₹30,000 (Zepto, Instamart) in our clients' onboarding [CONFIRM] | None |
 
 On those assumptions, storage is far more expensive per unit in dark stores and delivery is far cheaper. That is the typical shape, not a law: dark-store networks charge for scarce space close to customers and save on the last mile. The decisive number is how many days your stock sits before it sells.
 

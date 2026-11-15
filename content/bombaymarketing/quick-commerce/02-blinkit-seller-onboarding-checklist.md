@@ -21,7 +21,7 @@ Before the checklist, here is what Blinkit publishes, quoted from its Seller Hub
 - Seller Hub is "a self-serve platform that lets you onboard, list products, manage inventory, and sell on Blinkit" ([Blinkit Seller Hub FAQ](https://seller.blinkit.com/faq)).
 - Selling starts in three steps: register on Seller Hub, create your product listing, ship to Blinkit ([How to sell](https://seller.blinkit.com/how-to-sell)).
 - Onboarding "is completed in real time once your required documents are successfully verified", and you can "start selling in as little as 7 days".
-- There is no registration fee. A Product ID activation fee applies when you activate a product, and the amount is credited to your ads wallet. Blinkit does not publish the amount; our clients have been charged about ₹25,000 per product. [CONFIRM current amount, whether GST is added, and whether each variant counts as a separate product.]
+- There is no registration fee. A Product ID activation fee applies when you activate a product, and the amount is credited to your ads wallet. Blinkit does not publish the amount; our clients have been charged about ₹25,000 per variant (GST included). Every variant (each flavour, size or pack count) is a separate product, and the figure includes GST. [CONFIRM current amount in Seller Hub.]
 - You control your selling price and can change it from the dashboard.
 - Payouts run on two cycles a month, the 1st to 15th and 16th to month end, processed on the third working day after each cycle.
 
@@ -89,7 +89,7 @@ Our [quick-commerce packaging requirements guide](/guides/quick-commerce-packagi
 
 - [ ] **Register on Seller Hub** at [seller.blinkit.com](https://seller.blinkit.com/) with the documents above.
 - [ ] **Create listings** and choose launch cities. Blinkit lets you launch in "your preferred city", which means you can test Mumbai before committing stock nationally.
-- [ ] **Budget for and pay the Product ID activation fee** for each product. Our clients have paid about ₹25,000 per product, credited back to the ads wallet. Five products is about ₹1.25 lakh before any stock moves. The current amount is shown in the hub. [CONFIRM in Seller Hub before activating.]
+- [ ] **Budget for and pay the Product ID activation fee** for each variant (every flavour, size and pack count). Our clients have paid about ₹25,000 per variant (GST included), credited back to the ads wallet. Five products is about ₹1.25 lakh before any stock moves. The current amount is shown in the hub. [CONFIRM in Seller Hub before activating.]
 - [ ] **Decide which products to activate first.** Start with your two or three strongest SKUs. Each activation is a separate fee, so a full-range launch multiplies the upfront cost.
 - [ ] **Plan how to spend the ad credit** in the cities where you have stock, rather than leaving it to sit in the wallet.
 - [ ] **Open the commissions calculator** and record the fee for each SKU at your intended price. This is the step most sellers skip.
@@ -104,7 +104,7 @@ Blinkit publishes the structure of its charges but not the amounts. Record each 
 
 | Charge | When it applies (Blinkit's wording) | Amount |
 |---|---|---|
-| Product ID activation fee | When you activate a product for sale; credited to ads wallet | About ₹25,000 per product in our clients' onboarding [CONFIRM in Seller Hub] |
+| Product ID activation fee | When you activate a product for sale; credited to ads wallet | About ₹25,000 per variant (GST included) in our clients' onboarding [CONFIRM in Seller Hub] |
 | Inwarding fee | Per unit when inventory is received at a Blinkit warehouse | [VERIFY in Seller Hub] |
 | Storage fee | Daily, for each unsold unit in warehouses or dark stores | [VERIFY in Seller Hub] |
 | Category commission | On every sale; varies by business category and pricing | [VERIFY in commissions calculator] |
@@ -129,7 +129,7 @@ We are not publishing a number of days, because the honest answer depends on whe
 
 ### Is there a fee to become a Blinkit seller?
 
-There is no fee to register. There is a fee for each product you activate: Blinkit calls it the Product ID activation fee and credits it to your ads wallet for sponsored ads. Our clients have paid about ₹25,000 per product. [CONFIRM the current amount in Seller Hub.]
+There is no fee to register. There is a fee for each variant you activate: Blinkit calls it the Product ID activation fee and credits it to your ads wallet for sponsored ads. Our clients have paid about ₹25,000 per variant (GST included). [CONFIRM the current amount in Seller Hub.]
 
 ### Can I sell on Blinkit without a barcode?
 
