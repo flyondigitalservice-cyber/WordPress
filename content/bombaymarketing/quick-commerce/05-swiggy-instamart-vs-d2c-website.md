@@ -31,6 +31,7 @@ Neither is better. One is a rented shelf in a busy street; the other is your own
 | Customer data | Aggregated reports only [VERIFY what the Brand Portal shows] | Full: contact, order history, consent for marketing |
 | Pricing control | Depends on agreement [VERIFY who sets retail price] | Complete |
 | Assortment | Limited to what the category team accepts and the store has space for | Unlimited, including bundles and subscriptions |
+| Upfront fee per product | About ₹30,000 per product in our clients' onboarding; not published [CONFIRM amount and whether returned as ad credit] | None. A new product costs only photography and listing time |
 | Fees | Not published; agreed per brand [VERIFY in term sheet] | Platform subscription, payment gateway fees, shipping, your ad spend |
 | Cash flow | Payment terms per agreement [VERIFY] | Prepaid orders settle in days; COD settles after delivery and remittance |
 | Brand experience | Thumbnail, title, a few images | Full storytelling, reviews, content |
@@ -70,6 +71,7 @@ Comparing a "commission" on Instamart with "zero commission" on your own site is
 
 | Cost line | Instamart | D2C website |
 |---|---|---|
+| Listing fee | About ₹30,000 per product ÷ units sold in payback period [CONFIRM] | None |
 | Platform fees | Commission/margin, logistics, other charges [VERIFY all] | Store subscription ÷ orders; apps |
 | Payment cost | Usually inside platform settlement [VERIFY] | Gateway fee per transaction |
 | Fulfilment | Platform-run; may be charged [VERIFY] | Pick, pack, courier, packaging |
@@ -89,7 +91,7 @@ The method for filling in the quick-commerce column is in [quick-commerce commis
 **Start with D2C if:**
 
 - your product needs explanation, education or reviews before people buy;
-- your range is wide, or you sell bundles, subscriptions or customisation;
+- your range is wide, or you sell bundles, subscriptions or customisation (with a fee of about ₹30,000 per product on Instamart [CONFIRM], a wide range is expensive to list);
 - your price point or pack size is too large for a quick-commerce basket;
 - you want customer data from day one to inform product development.
 
@@ -122,7 +124,7 @@ Usually yes, once you have repeat buyers to capture and products that do not fit
 
 ### Which is cheaper to start?
 
-A basic D2C store is often cheaper to set up, but it can stay dormant without marketing spend. Quick commerce costs more to enter (stock, compliance, packaging) but comes with demand.
+A basic D2C store is often cheaper to set up, but it can stay dormant without marketing spend. Quick commerce costs more to enter but comes with demand. Besides stock, compliance and packaging, our clients have paid about ₹30,000 per product to list on Instamart [CONFIRM], so a five-SKU launch starts at about ₹1.5 lakh in listing fees alone. On your own website, adding a product costs nothing beyond photography and copy, which makes D2C the cheaper place to test a wide range.
 
 ### Do I need different packaging for each?
 

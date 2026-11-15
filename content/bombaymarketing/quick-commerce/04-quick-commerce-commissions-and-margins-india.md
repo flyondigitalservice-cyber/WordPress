@@ -32,7 +32,7 @@ From Blinkit's Seller Hub, checked 15 November 2026:
 
 | Charge | Trigger (Blinkit's description) | Where to get the amount |
 |---|---|---|
-| Product ID activation fee | Activating a product; credited to ads wallet | Seller Hub [VERIFY] |
+| Product ID activation fee | Activating a product; credited to ads wallet | About ₹25,000 per product in our clients' onboarding; current figure in Seller Hub [CONFIRM] |
 | Inwarding fee | Per unit received at a Blinkit warehouse | Seller Hub [VERIFY] |
 | Storage fee | Daily, per unsold unit in warehouses or dark stores | Seller Hub [VERIFY] |
 | Category commission | Every sale; by category and price | Commissions calculator [VERIFY] |
@@ -46,6 +46,7 @@ Blinkit's page directs sellers to "log in to Seller Hub to view product-specific
 
 Neither [Zepto's Vendor Hub](https://brands.zepto.co.in/) nor [Instamart's Brand Portal](https://partner.instamart.in/) publishes a fee structure. Ask for these items in writing, and do not sign until each has a figure or a formula:
 
+- the upfront fee per product: our clients have paid about ₹30,000 per product on both Zepto and Instamart [CONFIRM]. Ask whether it is returned as ad credit, whether GST is added, and whether each variant counts separately;
 - commission or margin, and the price it is calculated on;
 - logistics, fulfilment or handling charges;
 - any charges for storage, inwarding, listing or onboarding;
@@ -127,6 +128,31 @@ Break-even net revenue = (Fixed per-unit costs) ÷ (1 − Percentage costs)
 
 With example 1's assumptions, fixed per-unit costs (COGS 62 + fulfilment 18 + inwarding 3 + storage 11.20 + freight 4 = 98.20) and percentage costs (18% + 12% + 3% = 33%) give a break-even net revenue of 98.20 ÷ 0.67 = ₹146.57, or ₹164.16 including 12% GST. Below that selling price, every unit loses money.
 
+## The upfront listing fee: amortise it, or it will surprise you
+
+The per-unit model above ignores one large cost: the fee to put each product live. In our clients' onboarding this has been about ₹25,000 per product on Blinkit and about ₹30,000 on Zepto and Instamart [CONFIRM current amounts]. Blinkit states its fee is credited to your ads wallet ([Blinkit FAQ](https://seller.blinkit.com/faq)); Zepto and Instamart do not publish what theirs buys.
+
+How to treat it in the model:
+
+- **If it comes back as ad credit (Blinkit):** it is prepaid advertising. Reduce your ad-per-unit line until the credit is spent. It costs cash flow, not margin, but only if you would have spent that much on ads anyway.
+- **If it does not come back:** spread it over the units you expect to sell in a fixed payback period, and add the result as a cost per unit.
+
+```
+Listing cost per unit = Listing fee ÷ Units expected in the payback period
+```
+
+**A ₹30,000 fee that is not credited back, spread over the first 12 months (illustrative unit volumes):**
+
+| Units sold in 12 months | Listing cost per unit | Effect on the ₹199 example (₹20.85 contribution) |
+|---|---|---|
+| 500 | ₹60.00 | Loss of ₹39.15 a unit |
+| 1,500 | ₹20.00 | Contribution falls to ₹0.85 |
+| 5,000 | ₹6.00 | Contribution falls to ₹14.85 |
+
+Payback in units is simply the fee divided by contribution per unit: ₹30,000 ÷ ₹20.85 = about 1,440 units for the ₹199 pack. If your realistic first-year volume per SKU is below that, the SKU loses money on that platform even when every per-order line looks fine.
+
+**Across a range, the fee multiplies.** Three SKUs on all three apps is about ₹2.55 lakh up front; ten SKUs is about ₹8.5 lakh. That is why we recommend launching two or three hero SKUs on one platform, proving the sell-through rate, and adding SKUs and platforms from the profit.
+
 ## The levers that actually move margin
 
 1. **Days held.** Storage is charged daily on unsold stock. Sending less, more often, can be cheaper than one large shipment. Use the platform's replenishment recommendations as a ceiling, not a target.
@@ -149,6 +175,7 @@ With example 1's assumptions, fixed per-unit costs (COGS 62 + fulfilment 18 + in
 | Contribution per unit at the same selling price | Headline commission percentage |
 | Contribution per month (units × contribution) | Platform-wide order volume claims |
 | Cash conversion: days from shipment to payout | Registration fee alone |
+| Upfront listing fee per product, and whether it returns as ad credit | Listing fee without asking what it buys |
 | Seller-attributed return rate | Fulfilment fee alone |
 
 ## Frequently asked questions

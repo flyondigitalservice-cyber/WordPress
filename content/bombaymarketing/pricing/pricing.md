@@ -75,12 +75,14 @@ All prices are in ₹, exclusive of 18% GST. These are **ranges**, not quotes. Y
 
 *Ranges reflect what Mumbai agencies of our size typically charge for this scope as of 2026. Ad spend, platform fees, stock, printing, shoots and paid apps are billed at cost or paid directly by you.*
 
+**Platform listing fees are separate from our fee.** On top of our quick-commerce onboarding fee, the platforms charge you for each product you put live. Our clients have recently paid about ₹25,000 per product on Blinkit (returned as ad credit) and about ₹30,000 per product on Zepto and Swiggy Instamart. [CONFIRM WITH OWNER] Three products on all three apps is about ₹2.55 lakh paid to the platforms. We will tell you this number before you commit, and help you choose which products to launch first.
+
 ## What's included and what's not
 
 | Included | Not included |
 |---|---|
 | A written scope and quote before work starts | Ad spend (paid by you directly to Meta, Google, Amazon, Blinkit, etc.) |
-| A named point of contact | Platform fees, commissions and subscriptions |
+| A named point of contact | Platform listing fees, commissions and subscriptions (quick-commerce apps currently charge about ₹25,000–₹30,000 per product to go live, paid by you to the platform) |
 | Monthly report in plain language, with the numbers behind it | Inventory, freight and warehouse costs |
 | Account access in your name; you own every login | Packaging printing and production |
 | Margin model before quick-commerce launch | Photo and video shoots (quoted separately) |
