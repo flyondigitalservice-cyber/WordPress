@@ -70,13 +70,14 @@ function bdesk_phone_digits($order) {
     return $code . ltrim($digits, '0');
 }
 
+/* "AED 999.00": the currency code reads the same in English and Arabic messages, unlike a symbol. */
 function bdesk_plain_money($amount, $order) {
-    return trim(html_entity_decode(wp_strip_all_tags(bdesk_money($amount, $order)), ENT_QUOTES, 'UTF-8'));
+    return $order->get_currency() . ' ' . number_format((float) $amount, wc_get_price_decimals(), '.', ',');
 }
 
 function bdesk_message($template, $order) {
     $items = array();
-    foreach ($order->get_items() as $it) $items[] = $it->get_quantity() . ' x ' . wp_trim_words($it->get_name(), 8, '...');
+    foreach ($order->get_items() as $it) $items[] = ($it->get_quantity() > 1 ? $it->get_quantity() . ' x ' : '') . bdesk_short_name($it->get_name());
     $map = array(
         '{name}' => $order->get_billing_first_name() ?: $order->get_formatted_billing_full_name(),
         '{order}' => $order->get_order_number(),
@@ -153,6 +154,7 @@ function bdesk_do_step($order, $do, $data = array()) {
                     : sprintf(__('Your order has shipped with %s.', 'boutique-desk'), $courier);
                 $order->add_order_note($msg, 1);
             }
+            do_action('bdesk_order_shipped', $order);
             return __('Order shipped. It is now in transit.', 'boutique-desk');
         case 'deliver':
             if ($stage !== 'shipped') return $wrong;
@@ -161,6 +163,7 @@ function bdesk_do_step($order, $do, $data = array()) {
             $order->update_meta_data('_bdesk_delivered_at', time());
             $order->save();
             $order->update_status('completed', $cod ? __('Store Desk: delivered and cash collected.', 'boutique-desk') : __('Store Desk: delivered.', 'boutique-desk'), true);
+            do_action('bdesk_order_delivered', $order);
             return __('Order delivered and completed.', 'boutique-desk');
         case 'return':
             if ($stage !== 'shipped') return $wrong;

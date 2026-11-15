@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Boutique Desk
- * Description: Store Desk for WooCommerce: every open order moves through Confirm, Pack, Hand to courier and In transit with one click, with WhatsApp confirmation, tracking numbers, cash-on-delivery totals and late-order warnings. Includes a limited "Store Editor" staff role, Category Sellers, and tax invoices and packing slips (GST or VAT).
- * Version: 1.2.0
+ * Description: Store Desk for WooCommerce: every open order moves through Confirm, Pack, Hand to courier and In transit with one click, with automatic WhatsApp messages (Meta Cloud API), tracking numbers, cash-on-delivery totals and late-order warnings. Includes a limited "Store Editor" staff role, Category Sellers, and tax invoices and packing slips (GST or VAT).
+ * Version: 1.3.0
  * Author: Ferasha
  * Requires Plugins: woocommerce
  * Requires at least: 6.2
@@ -13,7 +13,7 @@
 
 if (!defined('ABSPATH')) exit;
 
-define('BDESK_VERSION', '1.2.0');
+define('BDESK_VERSION', '1.3.0');
 define('BDESK_FILE', __FILE__);
 define('BDESK_DIR', plugin_dir_path(__FILE__));
 define('BDESK_URL', plugin_dir_url(__FILE__));
@@ -21,6 +21,7 @@ define('BDESK_URL', plugin_dir_url(__FILE__));
 require_once BDESK_DIR . 'includes/role.php';
 require_once BDESK_DIR . 'includes/settings.php';
 require_once BDESK_DIR . 'includes/pipeline.php';
+require_once BDESK_DIR . 'includes/whatsapp.php';
 require_once BDESK_DIR . 'includes/dashboard.php';
 require_once BDESK_DIR . 'includes/products.php';
 require_once BDESK_DIR . 'includes/documents.php';

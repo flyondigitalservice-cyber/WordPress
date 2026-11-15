@@ -91,6 +91,7 @@ function bdesk_order_row($o, $stage, $dupes) {
             <?php if ($phone): ?><br><span class="bdesk-contact"><a href="tel:<?php echo esc_attr(preg_replace('/[^\d+]/', '', $phone)); ?>"><?php echo esc_html($phone); ?></a><?php if ($wa): ?> <a class="bdesk-wa" target="_blank" rel="noopener" href="<?php echo esc_url($wa); ?>">WhatsApp</a><?php endif; ?></span><?php endif; ?>
         </td>
         <td data-label="Items" class="bdesk-items">
+            <?php bdesk_wa_chips($o); ?>
             <?php foreach ($o->get_items() as $it): ?><div><?php echo esc_html($it->get_quantity()); ?> × <?php echo esc_html($it->get_name()); ?></div><?php endforeach; ?>
             <?php if ($o->get_customer_note()): ?><div class="bdesk-flag">Note: <?php echo esc_html($o->get_customer_note()); ?></div><?php endif; ?>
             <?php if (isset($dupes[$o->get_id()])): ?><div class="bdesk-flag is-warn">Same customer also ordered #<?php echo esc_html(implode(', #', $dupes[$o->get_id()])); ?>. Check before shipping both.</div><?php endif; ?>
@@ -213,6 +214,9 @@ function bdesk_dashboard_page() {
                 <a class="button" href="<?php echo esc_url($orders_url); ?>">All orders</a>
             </div>
         </div>
+        <?php $wa_err = get_option('bdesk_wa_last_error'); if ($wa_err && (time() - (int) $wa_err['time']) < 2 * DAY_IN_SECONDS): ?>
+            <div class="notice notice-error"><p><strong>WhatsApp problem:</strong> <?php echo esc_html($wa_err['text']); ?><?php echo in_array((int) $wa_err['code'], array(190, 102), true) ? ' The access token has expired or is wrong. Update it in WooCommerce &rarr; Store Desk settings.' : ''; ?> Customers were not messaged; call them instead.</p></div>
+        <?php endif; ?>
         <?php if ($notice): ?><div class="notice notice-<?php echo esc_attr($notice[0]); ?> is-dismissible"><p><?php echo esc_html($notice[1]); ?></p></div><?php endif; ?>
 
         <div class="bdesk-cards">
@@ -281,4 +285,19 @@ function bdesk_dashboard_page() {
         </div>
     </div>
     <?php
+}
+
+/* Small WhatsApp status chips on an order row. */
+function bdesk_wa_chips($o) {
+    $reply = $o->get_meta('_bdesk_wa_reply');
+    if ($reply) {
+        $cls = $reply === 'yes' ? 'is-ok' : 'is-warn';
+        echo '<div><span class="bdesk-chip ' . esc_attr($cls) . '">' . esc_html(sprintf(__('Customer replied: %s', 'boutique-desk'), $o->get_meta('_bdesk_wa_reply_text'))) . '</span></div>';
+    }
+    foreach (bdesk_wa_events() as $ev) {
+        $st = $o->get_meta('_bdesk_wa_' . $ev);
+        if (!$st) continue;
+        if ($st === 'failed') echo '<div><span class="bdesk-chip is-warn">' . esc_html(sprintf(__('WhatsApp %s failed: call', 'boutique-desk'), $ev)) . '</span></div>';
+        elseif ($ev === 'confirm' || $ev === 'shipped') echo '<div><span class="bdesk-chip">' . esc_html(sprintf(__('WhatsApp %1$s: %2$s', 'boutique-desk'), $ev, $st === 'queued' ? 'sending' : $st)) . '</span></div>';
+    }
 }
