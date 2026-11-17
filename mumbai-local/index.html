@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lokal Train Tracker</title>
+<meta name="description" content="Next Mumbai local trains between any two stations, station departures and estimated live train positions.">
+<meta name="theme-color" content="#f3c300">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="board">
+    <div class="board-inner">
+      <span class="logo">Lokal<small>Mumbai suburban</small></span>
+      <span class="clock" id="clock" aria-label="Current time"></span>
+    </div>
+  </header>
+  <main id="view" aria-live="polite"></main>
+  <nav class="tabs" aria-label="Sections">
+    <button class="tab" type="button" data-tab="trains"><span data-icon="train"></span>Trains</button>
+    <button class="tab" type="button" data-tab="station"><span data-icon="station"></span>Station</button>
+    <button class="tab" type="button" data-tab="lines"><span data-icon="lines"></span>Lines</button>
+    <button class="tab" type="button" data-tab="more"><span data-icon="more"></span>More</button>
+  </nav>
+</div>
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-box" role="dialog" aria-modal="true" aria-label="Choose a station">
+    <div class="sheet-head">
+      <input id="sheet-q" type="search" autocomplete="off" aria-label="Search stations">
+      <button class="btn" id="sheet-close" type="button">Cancel</button>
+    </div>
+    <ul class="sheet-list" id="sheet-list"></ul>
+  </div>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
