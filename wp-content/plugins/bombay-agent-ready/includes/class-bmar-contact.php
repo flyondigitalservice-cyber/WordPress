@@ -247,7 +247,7 @@ class BMAR_Contact {
 		if (!form.checkValidity()) { form.reportValidity(); return; }
 		btn.disabled = true; btn.textContent = 'Sending…';
 		var fd = new FormData(form); fd.append('bm_ajax', '1');
-		fetch(form.action, { method: 'POST', body: fd, credentials: 'same-origin' })
+		fetch(form.getAttribute('action'), { method: 'POST', body: fd, credentials: 'same-origin' })
 			.then(function (r) { return r.json(); })
 			.then(function (j) { show(!!j.ok, j.message); if (j.ok) { form.reset(); form.bm_ts.value = String(Math.floor(Date.now() / 1000)); } })
 			.catch(function () { show(false, <?php echo wp_json_encode( self::message( 'error' ) ); ?>); })
