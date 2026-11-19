@@ -151,3 +151,18 @@ body.bm-menu-open { overflow: hidden; }
 .bm-empty .search-field { width: 100%; font: 16px "DM Sans", sans-serif; color: #141414; background: #fffdf8; border: 2px solid #141414; border-radius: 12px; padding: 13px 16px; }
 .bm-empty .search-submit { font: 700 16px "DM Sans", sans-serif; background: #ffc72c; color: #141414; border: 2px solid #141414; border-radius: 12px; padding: 13px 22px; cursor: pointer; }
 .bm-main .bm-btns + .bm-empty { margin-top: 40px; }
+
+/* 6. Keep Elementor's global button style (Site Settings > Buttons) off the theme's own controls */
+html body .bm-burger, html body .bm-close, html body .bm-sub-toggle, html body .bm-top {
+	background-color: transparent; color: #fff; border: none; border-radius: 0; box-shadow: none;
+	font: inherit; text-transform: none; letter-spacing: normal; line-height: 1; min-height: 0;
+}
+html body .bm-burger { padding: 12px; }
+html body .bm-close, html body .bm-sub-toggle { padding: 0; }
+html body .bm-sub-toggle { color: #f3eee2; }
+html body .bm-top { padding: 0; background-color: #141414; border-radius: 4px; }
+html body .bm-burger:hover, html body .bm-burger:focus, html body .bm-close:hover, html body .bm-close:focus,
+html body .bm-sub-toggle:hover, html body .bm-sub-toggle:focus { background-color: transparent; color: #ffc72c; }
+html body .bm-top:hover, html body .bm-top:focus { background-color: #ffc72c; color: #141414; }
+html body .bm-empty .search-submit { background-color: #ffc72c; color: #141414; border: 2px solid #141414; border-radius: 12px; padding: 13px 22px; font: 700 16px/1.2 "DM Sans", sans-serif; text-transform: none; }
+html body .bm-empty .search-submit:hover, html body .bm-empty .search-submit:focus { background-color: #f5b400; color: #141414; }
