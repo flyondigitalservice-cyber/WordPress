@@ -1,7 +1,7 @@
 === Bombay Marketing Agent Ready ===
 Requires at least: 6.2
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 License: GPL-2.0-or-later
 
 Makes bombaymarketing.in readable and usable by AI agents.
@@ -14,6 +14,8 @@ Makes bombaymarketing.in readable and usable by AI agents.
 4. Markdown: any page requested with `Accept: text/markdown` (or `?format=markdown`) returns `text/markdown`. Responses send `Vary: Accept`.
 5. WebMCP: registers search_site, get_pricing, get_page and get_contact_info with `navigator.modelContext.registerTool()` on page load.
 6. MCP: a read-only MCP server (Streamable HTTP, JSON responses) at /wp-json/bombay-agent/v1/mcp, described by the Server Card at /.well-known/mcp/server-card.json.
+
+7. Contact form: `[bm_contact_form]` renders a plain HTML form (name, email, phone, message) with no form or SMTP plugin. Every submission is saved under wp-admin > Enquiries and emailed with WordPress's built-in wp_mail() from noreply@bombaymarketing.in, with Reply-To set to the visitor. The Enquiries list shows whether each email alert was sent. Spam protection: honeypot, minimum fill time and 5 submissions per IP per 10 minutes. Recipients: the `bmar_contact_to` option (comma separated), otherwise the site admin email. While MetForm is installed, `[metform form_id="87"]` is rendered with this form too.
 
 All site facts (summary, prices, services, contact, key pages) live in includes/class-bmar-config.php and can be overridden with the `bmar_config` filter.
 
