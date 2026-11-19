@@ -65,7 +65,9 @@ function bombay_assets() {
 		null
 	);
 	wp_enqueue_style( 'bombay-base', $uri . '/assets/css/base.css', array( 'bombay-fonts' ), (string) filemtime( $dir . '/assets/css/base.css' ) );
-	wp_enqueue_style( 'bombay-site', $uri . '/assets/css/site.css', array( 'bombay-base' ), (string) filemtime( $dir . '/assets/css/site.css' ) );
+	// site.css is printed last in <head> (see bombay_print_site_css), like the Customizer CSS it replaced,
+	// so it wins over Elementor's defaults (e.g. `.elementor img { border-radius: 0 }`).
+	wp_register_style( 'bombay-site', $uri . '/assets/css/site.css', array( 'bombay-base' ), (string) filemtime( $dir . '/assets/css/site.css' ) );
 	wp_enqueue_script(
 		'bombay-site',
 		$uri . '/assets/js/site.js',
@@ -78,6 +80,15 @@ function bombay_assets() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'bombay_assets' );
+
+/**
+ * Print the site design CSS after every other stylesheet in <head>
+ * (same position as Customizer "Additional CSS", wp_head priority 101).
+ */
+function bombay_print_site_css() {
+	wp_print_styles( array( 'bombay-site' ) );
+}
+add_action( 'wp_head', 'bombay_print_site_css', 101 );
 
 /**
  * Preconnect to Google Fonts.
