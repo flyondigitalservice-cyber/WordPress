@@ -73,7 +73,7 @@ const T = {
   track1: A('p03') - .85, yuck: A('p03') + 5.2,
   track2: A('p04') - .8, mix0: A('p04') + .6, mix1: B('p04'),
   track3: A('p05') - .8, cross: A('p05') + 3.4, dull0: A('p05') + 3.0, dull1: B('p05') + .2,
-  flip6: A('p06') - .02, deal: A('p06') + 2.2, badlo: A('p06') + 4.0,
+  flip6: A('p06') - .02, deal: A('p06') + 1.6, badlo: A('p06') + 2.95,
   flip7: A('p07') - .1, cans: A('p07') + 1.6,
   track8: A('p08') - .8, ph0: A('p08') + .3, wall1: B('p08') - .2,
   track9: A('p09') - .9, num: A('p09') + 1.4, sold: A('p09') + 4.6,
