@@ -241,7 +241,7 @@ function render(t) {
     if (t >= T.end) {
       printType('FOLLOW', W / 2, 520, { size: 250, ink: C.yellow, dropInk: C.blue }, seg(t, T.end + .3, T.end + .9));
       if (HANDLE) label(W / 2, 680, [{ s: HANDLE, size: 66, font: 'Archivo' }], seg(t, T.end + .7, T.end + 1.2), { align: 'center', rot: -.02, shadowInk: C.blue });
-      label(W / 2, 1640, [{ s: 'AGLI KAHANI: JALD', size: 48 }], seg(t, T.end + 1.4, T.end + 1.9), { align: 'center', rot: .02 });
+      label(W / 2, 1640, [{ s: 'AGLI KAHANI: LIQUID DEATH', size: 48 }], seg(t, T.end + 1.4, T.end + 1.9), { align: 'center', rot: .02 });
     } else handleSlip(t, HANDLE);
   });
 }

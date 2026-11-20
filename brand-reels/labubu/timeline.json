@@ -1,0 +1,253 @@
+{
+ "dur": 60.282,
+ "lines": [
+  {
+   "id": "b01",
+   "t0": 0.4,
+   "t1": 5.278,
+   "sub": "Ek ajeeb sa khilauna. Aur log iske liye ghanton line mein khade hain.",
+   "cues": 3
+  },
+  {
+   "id": "b02",
+   "t0": 5.698,
+   "t1": 7.779,
+   "sub": "Ye kahani hai Labubu ki.",
+   "cues": 1
+  },
+  {
+   "id": "b03",
+   "t0": 8.699,
+   "t1": 16.211,
+   "sub": "Nukeele kaan, 9 daant, shararati muskaan. Ise artist Kasing Lung ne ek kitaab ke liye banaya tha.",
+   "cues": 3
+  },
+  {
+   "id": "b04",
+   "t0": 16.931,
+   "t1": 22.146,
+   "sub": "Phir China ki company Pop Mart ne ise blind box mein bechna shuru kiya.",
+   "cues": 2
+  },
+  {
+   "id": "b05",
+   "t0": 22.666,
+   "t1": 29.39,
+   "sub": "Blind box matlab: kholne se pehle pata nahi kaun sa milega. To log baar-baar khareedte hain.",
+   "cues": 3
+  },
+  {
+   "id": "b06",
+   "t0": 30.66,
+   "t1": 34.648,
+   "sub": "Phir Blackpink ki Lisa ne Labubu ke saath photo daali.",
+   "cues": 2
+  },
+  {
+   "id": "b07",
+   "t0": 35.268,
+   "t1": 42.771,
+   "sub": "Celebrities ne ise mehenge bags par taangna shuru kiya. Lines, jhagde, aur kai guna resale keemat.",
+   "cues": 3
+  },
+  {
+   "id": "b08",
+   "t0": 43.491,
+   "t1": 47.133,
+   "sub": "Pop Mart ki kamaai aur share, dono aasmaan par.",
+   "cues": 2
+  },
+  {
+   "id": "b09",
+   "t0": 47.853,
+   "t1": 53.411,
+   "sub": "Sabak: log khilauna nahi, ehsaas khareedte hain: surprise, kami, aur status.",
+   "cues": 2
+  },
+  {
+   "id": "b10",
+   "t0": 54.031,
+   "t1": 56.682,
+   "sub": "Aisi aur kahaniyon ke liye, follow karo!",
+   "cues": 1
+  }
+ ],
+ "cues": [
+  {
+   "t0": 0.4,
+   "t1": 1.929,
+   "text": "Ek ajeeb sa khilauna.",
+   "line": "b01"
+  },
+  {
+   "t0": 1.929,
+   "t1": 4.477,
+   "text": "Aur log iske liye ghanton line mein",
+   "line": "b01"
+  },
+  {
+   "t0": 4.477,
+   "t1": 5.638,
+   "text": "khade hain.",
+   "line": "b01"
+  },
+  {
+   "t0": 5.698,
+   "t1": 8.279,
+   "text": "Ye kahani hai Labubu ki.",
+   "line": "b02"
+  },
+  {
+   "t0": 8.699,
+   "t1": 11.229,
+   "text": "Nukeele kaan, 9 daant, shararati",
+   "line": "b03"
+  },
+  {
+   "t0": 11.229,
+   "t1": 14.155,
+   "text": "muskaan. Ise artist Kasing Lung ne ek",
+   "line": "b03"
+  },
+  {
+   "t0": 14.155,
+   "t1": 16.711,
+   "text": "kitaab ke liye banaya tha.",
+   "line": "b03"
+  },
+  {
+   "t0": 16.931,
+   "t1": 19.688,
+   "text": "Phir China ki company Pop Mart ne ise",
+   "line": "b04"
+  },
+  {
+   "t0": 19.688,
+   "t1": 22.606,
+   "text": "blind box mein bechna shuru kiya.",
+   "line": "b04"
+  },
+  {
+   "t0": 22.666,
+   "t1": 25.505,
+   "text": "Blind box matlab: kholne se pehle pata",
+   "line": "b05"
+  },
+  {
+   "t0": 25.505,
+   "t1": 26.999,
+   "text": "nahi kaun sa milega.",
+   "line": "b05"
+  },
+  {
+   "t0": 26.999,
+   "t1": 29.89,
+   "text": "To log baar-baar khareedte hain.",
+   "line": "b05"
+  },
+  {
+   "t0": 30.66,
+   "t1": 33.294,
+   "text": "Phir Blackpink ki Lisa ne Labubu ke",
+   "line": "b06"
+  },
+  {
+   "t0": 33.294,
+   "t1": 35.148,
+   "text": "saath photo daali.",
+   "line": "b06"
+  },
+  {
+   "t0": 35.268,
+   "t1": 37.634,
+   "text": "Celebrities ne ise mehenge bags par",
+   "line": "b07"
+  },
+  {
+   "t0": 37.634,
+   "t1": 40.473,
+   "text": "Lines, jhagde, aur kai guna resale keemat.",
+   "line": "b07"
+  },
+  {
+   "t0": 40.473,
+   "t1": 43.271,
+   "text": "Lines, jhagde, aur kai guna resale",
+   "line": "b07"
+  },
+  {
+   "t0": 43.491,
+   "t1": 46.183,
+   "text": "Pop Mart ki kamaai aur share, dono",
+   "line": "b08"
+  },
+  {
+   "t0": 46.183,
+   "t1": 47.633,
+   "text": "aasmaan par.",
+   "line": "b08"
+  },
+  {
+   "t0": 47.853,
+   "t1": 50.917,
+   "text": "khareedte hain: surprise, kami, aur status.",
+   "line": "b09"
+  },
+  {
+   "t0": 50.917,
+   "t1": 53.911,
+   "text": "khareedte hain: surprise, kami, aur",
+   "line": "b09"
+  },
+  {
+   "t0": 54.031,
+   "t1": 57.182,
+   "text": "Aisi aur kahaniyon ke liye, follow karo!",
+   "line": "b10"
+  }
+ ],
+ "music": [
+  [
+   0.0,
+   "intro"
+  ],
+  [
+   5.448,
+   "groove"
+  ],
+  [
+   16.681,
+   "bright"
+  ],
+  [
+   22.416,
+   "groove"
+  ],
+  [
+   29.66,
+   "hush"
+  ],
+  [
+   30.61,
+   "joy"
+  ],
+  [
+   35.018,
+   "joy"
+  ],
+  [
+   43.241,
+   "joy"
+  ],
+  [
+   47.603,
+   "soft"
+  ],
+  [
+   57.032,
+   "end"
+  ]
+ ],
+ "bpm": 112,
+ "key": 5
+}

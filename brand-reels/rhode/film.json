@@ -1,0 +1,4 @@
+{"start": 0.4, "gap": 0.32, "tail": 3.6, "bpm": 100, "key": 3, "chunk": 40,
+ "gaps": {"r02": 0.1, "r03": 0.6, "r04": 0.3, "r06": 0.3, "r07": 0.2, "r08": 0.2, "r09": 0.6, "r10": 0.4, "r11": 0.3},
+ "hush": {"r05": 0.95}, "after_hush": {"r05": "bright"},
+ "music": [["start", "intro"], ["r02", "groove"], ["r04", "dark"], ["r06", "joy"], ["r08", "groove"], ["r09", "joy"], ["r10", "soft"], ["end:r11", "end"]]}
