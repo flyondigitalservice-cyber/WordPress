@@ -60,7 +60,7 @@ function stage(x, y, s = 1) {
 const T = {
   head: A('l01') + .2, big: A('l01') + 3.3, title: A('l02') - .05,
   track1: A('l03') - .85, ecan: A('l04') + .3, inside: A('l04') + 2.2,
-  track2: A('l05') - .8, tall: A('l05') + 2.4, slogan: A('l06') + 1.0,
+  track2: A('l05') - .8, tall: A('l05') + 2.4, slogan: A('l06') + .25,
   track3: A('l07') - .7, ha: [A('l07') + .3, A('l07') + .7, A('l07') + 1.1], dark0: A('l07') + 1.6, dark1: B('l07') + .3,
   flip8: A('l08') - .02, views: A('l08') + .3,
   wall0: A('l09') - .2, wall1: B('l09') - .2,
