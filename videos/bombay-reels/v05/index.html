@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Bombay Marketing — 05 Attention Is the New Currency</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="assets/brand.css" />
+<script src="assets/kit.js"></script>
+<style>
+  #bg { position: absolute; inset: 0; background: var(--black); }
+  /* SA · scroll */
+  #sa-hook { top: 330px; font-size: 100px; color: var(--white); z-index: 5; }
+  #feedph { left: 330px; top: 780px; width: 420px; height: 860px; }
+  #feed { position: absolute; left: 0; top: 0; width: 100%; }
+  .post { margin: 18px; background: #f3f4f6; border-radius: 22px; height: 400px; position: relative; }
+  .post .av { position: absolute; left: 18px; top: 18px; width: 40px; height: 40px; border-radius: 50%; background: #c9cdd5; }
+  .post .nm { position: absolute; left: 70px; top: 30px; width: 120px; height: 14px; border-radius: 7px; background: #d6d9df; }
+  .post .im { position: absolute; left: 18px; right: 18px; top: 76px; bottom: 60px; border-radius: 14px; background: #d6d9df; }
+  .post:nth-child(3n) .im { background: #b9bdc6; } .post:nth-child(4n) .im { background: #e5e7eb; }
+  .post .ln { position: absolute; left: 18px; bottom: 24px; width: 60%; height: 14px; border-radius: 7px; background: #d6d9df; }
+  #feed-veil { position: absolute; left: 0; right: 0; top: 0; height: 780px; background: var(--black); }
+  /* SB · grid flip */
+  #grid { position: absolute; left: 168px; top: 420px; width: 744px; height: 744px; perspective: 1600px; }
+  .ft { position: absolute; width: 240px; height: 240px; transform-style: preserve-3d; }
+  .fin { position: absolute; inset: 0; transform-style: preserve-3d; }
+  .face { position: absolute; inset: 0; border-radius: 22px; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+  .face.back { transform: rotateY(180deg); }
+  .face img { width: 100%; height: 100%; object-fit: contain; display: block; background: #0b0b0c; }
+  .face.back { border: 2px solid #2a2b30; }
+  .bt { display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; font-family: var(--display); font-weight: 900; font-size: 48px; letter-spacing: -0.04em; line-height: .95; text-transform: uppercase; }
+  .bt i { display: block; width: 70px; height: 8px; border-radius: 4px; background: var(--blue); margin-bottom: 18px; }
+  .bt.bl { background: var(--blue); color: #fff; } .bt.bl i { background: #fff; }
+  .bt.bk { background: #1d1d20; color: #fff; } .bt.wh { background: #fff; color: var(--black); }
+  .rnd { position: absolute; border-radius: 50%; }
+  #sb-head { position: absolute; left: 120px; right: 120px; top: 1200px; font-size: 40px; color: var(--white); font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; }
+  /* SC · formats */
+  #sc-head { position: absolute; left: 120px; right: 120px; top: 392px; height: 180px; }
+  #sc-head .hl { position: absolute; left: 0; top: 0; font-size: 84px; color: var(--black); }
+  .fmt { position: absolute; border-radius: 30px; overflow: hidden; box-shadow: var(--shadow); background: #fff; }
+  .fmt img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #rc { left: 120px; top: 680px; width: 300px; height: 534px; }
+  #gc { left: 660px; top: 680px; width: 300px; height: 534px; }
+  #cc { left: 350px; top: 680px; width: 380px; height: 500px; z-index: 3; }
+  #cc-strip { position: absolute; left: 0; top: 0; width: 760px; height: 400px; display: flex; }
+  #cc-strip img { width: 380px; height: 400px; flex: none; }
+  #cc-bar { position: absolute; left: 0; right: 0; bottom: 0; height: 100px; display: flex; align-items: center; padding: 0 28px; gap: 10px; }
+  .dt { width: 14px; height: 14px; border-radius: 50%; background: var(--hair); }
+  #dt1 { background: var(--blue); }
+  #heart { position: absolute; right: 28px; top: 428px; width: 48px; height: 44px; }
+  .chip.on { position: absolute; left: 20px; top: 20px; background: rgba(17,17,17,.85); color: #fff; font-size: 28px; padding: 12px 22px; }
+  #play { position: absolute; left: 50%; top: 50%; width: 96px; height: 96px; margin: -48px 0 0 -48px; border-radius: 50%; background: rgba(255,255,255,.92); }
+  #play::after { content: ""; position: absolute; left: 38px; top: 28px; border-left: 32px solid var(--black); border-top: 20px solid transparent; border-bottom: 20px solid transparent; }
+  #gc-band { position: absolute; left: 0; right: 0; bottom: 0; height: 150px; background: var(--black); padding: 26px; }
+  #gc-band i { display: block; width: 80px; height: 8px; background: var(--blue); border-radius: 4px; margin-bottom: 20px; }
+  #gc-band b { display: block; width: 200px; height: 16px; background: #fff; border-radius: 8px; margin-bottom: 12px; }
+  #gc-band u { display: block; width: 140px; height: 16px; background: #5b5f69; border-radius: 8px; }
+  /* SD · system board */
+  #sd-head { position: absolute; left: 120px; right: 120px; top: 392px; font-size: 92px; color: var(--white); }
+  #board { position: absolute; left: 172px; top: 530px; width: 736px; height: 736px; }
+  .mp { position: absolute; width: 232px; height: 232px; border-radius: 20px; background: #1d1d20; overflow: hidden; border: 2px solid #2a2b30; }
+  .mp img { position: absolute; left: 0; top: 0; width: 100%; height: 130px; object-fit: cover; }
+  .mp i { position: absolute; left: 18px; top: 150px; width: 54px; height: 7px; border-radius: 4px; background: var(--blue); }
+  .mp b { position: absolute; left: 18px; top: 172px; width: 150px; height: 12px; border-radius: 6px; background: #fff; }
+  .mp u { position: absolute; left: 18px; top: 196px; width: 100px; height: 12px; border-radius: 6px; background: #4b4f58; }
+  #end-head { top: 440px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="20" data-width="1080" data-height="1920">
+  <div id="bg" class="clip" data-start="0" data-duration="20" data-track-index="0"></div>
+
+  <!-- SA · 0–3.3 · The endless scroll -->
+  <section id="sa" class="scene dark clip" data-start="0" data-duration="3.3" data-track-index="1" data-layout-allow-overlap>
+    <div class="phone" id="feedph"><div class="screen" id="feedscr">
+      <div id="feed">
+        <div class="post"><i class="av"></i><i class="nm"></i><i class="im"></i><i class="ln"></i></div>
+        <div class="post"><i class="av"></i><i class="nm"></i><i class="im"></i><i class="ln"></i></div>
+        <div class="post"><i class="av"></i><i class="nm"></i><i class="im"></i><i class="ln"></i></div>
+        <div class="post"><i class="av"></i><i class="nm"></i><i class="im"></i><i class="ln"></i></div>
+        <div class="post"><i class="av"></i><i class="nm"></i><i class="im"></i><i class="ln"></i></div>
+        <div class="post"><i class="av"></i><i class="nm"></i><i class="im"></i><i class="ln"></i></div>
+        <div class="post"><i class="av"></i><i class="nm"></i><i class="im"></i><i class="ln"></i></div>
+        <div class="post"><i class="av"></i><i class="nm"></i><i class="im"></i><i class="ln"></i></div>
+        <div class="post"><i class="av"></i><i class="nm"></i><i class="im"></i><i class="ln"></i></div>
+        <div class="post"><i class="av"></i><i class="nm"></i><i class="im"></i><i class="ln"></i></div>
+        <div class="post"><i class="av"></i><i class="nm"></i><i class="im"></i><i class="ln"></i></div>
+        <div class="post"><i class="av"></i><i class="nm"></i><i class="im"></i><i class="ln"></i></div>
+      </div>
+    </div></div>
+    <div id="feed-veil"></div>
+    <div class="hook display" id="sa-hook">
+      <span class="line" id="sa-l1">ANOTHER POST.</span>
+      <span class="line"><span class="wm"><span class="w">OR A BRAND</span></span></span>
+      <span class="line"><span class="wm"><span class="w">PEOPLE</span></span></span>
+      <span class="line"><span class="wm"><span class="w blue">REMEMBER?</span></span></span>
+    </div>
+  </section>
+
+  <!-- SB · 3.3–7.2 · Random posts → a consistent branded grid (Bombay Marketing's own content) -->
+  <section id="sb" class="scene dark clip" data-start="3.3" data-duration="3.9" data-track-index="2" data-layout-allow-overlap>
+    <div class="cam" id="sb-cam">
+      <div id="grid">
+        <div class="ft" id="g1" style="left:0;top:0"><div class="fin"><div class="face front" style="background:#9ca3af"><i class="rnd" style="left:40px;top:50px;width:120px;height:120px;background:#e5e7eb"></i></div><div class="face back"><img src="assets/work/Meta-ads-for-ecommerce-brands-in-India.jpg" alt=""/></div></div></div>
+        <div class="ft" id="g2" style="left:252px;top:0"><div class="fin"><div class="face front" style="background:#e5e7eb"></div><div class="face back bt bl"><i></i>Grow.</div></div></div>
+        <div class="ft" id="g3" style="left:504px;top:0"><div class="fin"><div class="face front" style="background:#4b5563"><i class="rnd" style="left:110px;top:20px;width:90px;height:90px;background:#9ca3af"></i></div><div class="face back bt bk"><i></i>Web.</div></div></div>
+        <div class="ft" id="g4" style="left:0;top:252px"><div class="fin"><div class="face front" style="background:#d1d5db"></div><div class="face back bt wh"><i></i>SEO.</div></div></div>
+        <div class="ft" id="g5" style="left:252px;top:252px"><div class="fin"><div class="face front" style="background:#6b7280"><i class="rnd" style="left:60px;top:60px;width:120px;height:120px;background:#d1d5db"></i></div><div class="face back"><img src="assets/work/How-to-start-an-online-store-in-India.jpg" alt=""/></div></div></div>
+        <div class="ft" id="g6" style="left:504px;top:252px"><div class="fin"><div class="face front" style="background:#e5e7eb"></div><div class="face back bt bl"><i></i>Ads.</div></div></div>
+        <div class="ft" id="g7" style="left:0;top:504px"><div class="fin"><div class="face front" style="background:#374151"></div><div class="face back bt bk"><i></i>Brand.</div></div></div>
+        <div class="ft" id="g8" style="left:252px;top:504px"><div class="fin"><div class="face front" style="background:#d1d5db"><i class="rnd" style="left:20px;top:120px;width:80px;height:80px;background:#6b7280"></i></div><div class="face back bt wh"><i></i>Reels.</div></div></div>
+        <div class="ft" id="g9" style="left:504px;top:504px"><div class="fin"><div class="face front" style="background:#9ca3af"></div><div class="face back"><img src="assets/work/How-to-reduce-RTO-and-COD-returns.jpg" alt=""/></div></div></div>
+      </div>
+      <div id="sb-head"><span class="wm"><span class="w">Better stories. <span class="blue">One voice.</span></span></span></div>
+    </div>
+  </section>
+
+  <!-- SC · 7.2–12.2 · Content formats -->
+  <section id="sc" class="scene soft clip" data-start="7.2" data-duration="5.0" data-track-index="1" data-layout-allow-overlap>
+    <div class="cam" id="sc-cam">
+      <div id="sc-head">
+        <div class="hl display" id="h1"><span class="line"><span class="wm"><span class="w">CREATIVE</span></span></span><span class="line"><span class="wm"><span class="w blue">CONTENT.</span></span></span></div>
+        <div class="hl display" id="h2"><span class="line"><span class="wm"><span class="w">CONSISTENT</span></span></span><span class="line"><span class="wm"><span class="w blue">IDENTITY.</span></span></span></div>
+        <div class="hl display" id="h3"><span class="line"><span class="wm"><span class="w">MEANINGFUL</span></span></span><span class="line"><span class="wm"><span class="w blue">ENGAGEMENT.</span></span></span></div>
+      </div>
+      <div class="fmt" id="rc"><img src="assets/work/Packaging-MYSA-Makeup-Kit.jpg" alt="MYSA" /><span class="chip on">Reel</span><span id="play"></span></div>
+      <div class="fmt" id="gc"><img src="assets/work/Packaging-Pro-Balance-Supplement.jpg" alt="Pro Balance" /><span class="chip on" style="left:auto;right:20px">Campaign</span><div id="gc-band"><i></i><b></b><u></u></div></div>
+      <div class="fmt" id="cc">
+        <div id="cc-strip"><img src="assets/work/Packaging-Naked-Life-Sparkling.jpg" alt="Naked Life" /><img src="assets/work/Packaging-Evermore-Skincare.jpg" alt="Evermore" /></div>
+        <span class="chip on">Carousel</span>
+        <div id="cc-bar"><span class="dt" id="dt1"></span><span class="dt" id="dt2"></span><span class="dt"></span></div>
+        <svg id="heart" viewBox="0 0 48 44"><path d="M24 42S2 28 2 14C2 7 7 2 14 2c4 0 8 2 10 6 2-4 6-6 10-6 7 0 12 5 12 12 0 14-22 28-22 28z" fill="#245BFF"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SD · 12.2–16 · One identity -->
+  <section id="sd" class="scene dark clip" data-start="12.2" data-duration="3.8" data-track-index="2">
+    <div class="cam" id="sd-cam">
+      <div class="display" id="sd-head"><span class="wm"><span class="w">ONE</span></span> <span class="wm"><span class="w blue">IDENTITY.</span></span></div>
+      <div id="board">
+        <div class="mp" style="left:0;top:0"><img src="assets/work/Packaging-MYSA-Makeup-Kit.jpg" alt=""/><i></i><b></b><u></u></div>
+        <div class="mp" style="left:252px;top:0"><img src="assets/work/Packaging-MYSA-Makeup-Kit.jpg" alt="" style="object-position:20% 50%"/><i></i><b></b><u></u></div>
+        <div class="mp" style="left:504px;top:0"><img src="assets/work/Packaging-MYSA-Makeup-Kit.jpg" alt="" style="object-position:80% 50%"/><i></i><b></b><u></u></div>
+        <div class="mp" style="left:0;top:252px"><img src="assets/work/Packaging-MYSA-Makeup-Kit.jpg" alt="" style="object-position:60% 70%"/><i></i><b></b><u></u></div>
+        <div class="mp" style="left:252px;top:252px"><img src="assets/work/Packaging-MYSA-Makeup-Kit.jpg" alt="" style="object-position:40% 30%"/><i></i><b></b><u></u></div>
+        <div class="mp" style="left:504px;top:252px"><img src="assets/work/Packaging-MYSA-Makeup-Kit.jpg" alt="" style="object-position:90% 80%"/><i></i><b></b><u></u></div>
+        <div class="mp" style="left:0;top:504px"><img src="assets/work/Packaging-MYSA-Makeup-Kit.jpg" alt="" style="object-position:10% 80%"/><i></i><b></b><u></u></div>
+        <div class="mp" style="left:252px;top:504px"><img src="assets/work/Packaging-MYSA-Makeup-Kit.jpg" alt="" style="object-position:50% 90%"/><i></i><b></b><u></u></div>
+        <div class="mp" style="left:504px;top:504px"><img src="assets/work/Packaging-MYSA-Makeup-Kit.jpg" alt="" style="object-position:70% 20%"/><i></i><b></b><u></u></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- END · 16–20 -->
+  <section id="end" class="scene end clip" data-start="16" data-duration="4" data-track-index="1">
+    <div class="cam" id="end-cam">
+      <div class="tag end-tag" id="end-tag"><img src="assets/brand/icon.png" alt="" /><span class="label mute">05 / 09</span></div>
+      <div class="display end-head" id="end-head"><span class="line"><span class="wm"><span class="w">MAKE EVERY</span></span></span><span class="line"><span class="wm"><span class="w">IMPRESSION</span></span></span><span class="line"><span class="wm"><span class="w blue">COUNT.</span></span></span></div>
+      <div class="bline end-rule" id="end-rule"></div>
+      <img class="end-logo" id="end-logo" src="assets/brand/logo-white.png" alt="Bombay Marketing" />
+      <div class="end-url" id="end-url">bombaymarketing.in</div>
+    </div>
+  </section>
+
+  <div id="tag" class="tag clip" data-start="3.3" data-duration="12.7" data-track-index="3"><img src="assets/brand/icon.png" alt="" /><span class="label mute">05 / 09 · Social media</span></div>
+  <div id="sh1" class="shutter clip" data-start="6.7" data-duration="1.1" data-track-index="4"></div>
+  <div id="sh2" class="shutter clip" data-start="15.5" data-duration="1.1" data-track-index="4"></div>
+
+  <audio id="vo1" class="clip" src="assets/vo/v05_1.wav" data-start="0.2" data-duration="2.82" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo2" class="clip" src="assets/vo/v05_2.wav" data-start="3.5" data-duration="3.26" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo3" class="clip" src="assets/vo/v05_3.wav" data-start="7.45" data-duration="4.20" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo4" class="clip" src="assets/vo/v05_4.wav" data-start="12.9" data-duration="2.75" data-track-index="5" data-volume="1"></audio>
+  <audio id="sfx-scroll" class="clip" src="assets/sfx/whoosh-cinematic.mp3" data-start="0" data-duration="5.54" data-track-index="6" data-volume="0.25"></audio>
+  <audio id="sfx-stop" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="2.55" data-duration="0.57" data-track-index="7" data-volume="0.4"></audio>
+  <audio id="sfx-flip" class="clip" src="assets/sfx/whoosh.mp3" data-start="4.77" data-duration="0.57" data-track-index="7" data-volume="0.45"></audio>
+  <audio id="sfx-sh1" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="7.04" data-duration="0.57" data-track-index="8" data-volume="0.5"></audio>
+  <audio id="sfx-swipe" class="clip" src="assets/sfx/whoosh.mp3" data-start="9.44" data-duration="0.57" data-track-index="7" data-volume="0.3"></audio>
+  <audio id="sfx-heart" class="clip" src="assets/sfx/pop.mp3" data-start="10.58" data-duration="0.72" data-track-index="8" data-volume="0.6"></audio>
+  <audio id="sfx-snap" class="clip" src="assets/sfx/click-soft.mp3" data-start="12.73" data-duration="0.37" data-track-index="7" data-volume="0.8"></audio>
+  <audio id="sfx-riser" class="clip" src="assets/sfx/riser.mp3" data-start="12.55" data-duration="3.9" data-fade-out="0.4" data-track-index="6" data-volume="0.3"></audio>
+  <audio id="sfx-sh2" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="15.84" data-duration="0.57" data-track-index="8" data-volume="0.5"></audio>
+  <audio id="sfx-chime" class="clip" src="assets/sfx/chime.mp3" data-start="16.85" data-duration="2.54" data-track-index="7" data-volume="0.8"></audio>
+  <audio id="sfx-impact" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="17.1" data-duration="2.12" data-track-index="6" data-volume="0.5"></audio>
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  const K = window.BM;
+
+  /* SA scroll */
+  tl.fromTo("#sa-l1", { opacity: 0.85, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 0);
+  K.words(tl, "#sa-hook", 0.25, { stagger: 0.14 });
+  tl.fromTo("#feed", { y: 0 }, { y: -3400, duration: 2.7, ease: "power2.inOut" }, 0);
+  tl.fromTo("#feed", { filter: "blur(0px)" }, { filter: "blur(10px)", duration: 1.0, ease: "sine.in" }, 0.2);
+  tl.to("#feed", { filter: "blur(0px)", duration: 0.5, ease: "sine.out" }, 2.2);
+  tl.fromTo("#feedph", { y: 200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "expo.out" }, 0);
+  tl.to("#sa-hook .line", { yPercent: -60, opacity: 0, duration: 0.4, ease: "power3.in", stagger: 0.04 }, 2.85);
+  tl.to("#feedph", { scale: 0.6, opacity: 0, duration: 0.45, ease: "power3.in" }, 2.85);
+
+  /* SB grid */
+  K.push(tl, "#sb-cam", 3.3, 7.2, 1.0, 1.05);
+  const sc = [[-60, 30, -14, 0.8], [40, -50, 9, 1.1], [80, 20, -6, 0.9], [-30, 70, 12, 1.15], [20, -10, -18, 0.85], [-70, 40, 7, 1.05], [50, 60, -9, 0.95], [-20, -60, 15, 1.1], [60, -30, -11, 0.9]];
+  sc.forEach((v, i) => {
+    const id = "#g" + (i + 1);
+    tl.fromTo(id, { x: v[0] * 2, y: v[1] * 2 + 200, rotate: v[2] * 1.5, scale: v[3], opacity: 0 }, { x: v[0], y: v[1], rotate: v[2], scale: v[3], opacity: 1, duration: 0.6, ease: "expo.out" }, 3.35 + i * 0.05);
+    tl.to(id, { x: 0, y: 0, rotate: 0, scale: 1, duration: 0.6, ease: "expo.inOut" }, 4.45 + i * 0.02);
+    tl.fromTo(id + " .fin", { rotateY: 0 }, { rotateY: 180, duration: 0.8, ease: "expo.inOut" }, 4.8 + (i % 3) * 0.08 + Math.floor(i / 3) * 0.08);
+  });
+  tl.fromTo("#sb-head .w", { yPercent: 115 }, { yPercent: 0, duration: 0.7, ease: "expo.out" }, 5.4);
+  K.shutter(tl, "#sh1", 7.2);
+
+  /* SC formats */
+  K.push(tl, "#sc-cam", 7.2, 12.2, 1.0, 1.04);
+  tl.fromTo("#rc", { x: 120, rotate: 0, opacity: 0 }, { x: 0, rotate: -7, opacity: 1, duration: 0.9, ease: "expo.out" }, 7.45);
+  tl.fromTo("#gc", { x: -120, rotate: 0, opacity: 0 }, { x: 0, rotate: 7, opacity: 1, duration: 0.9, ease: "expo.out" }, 7.55);
+  tl.fromTo("#cc", { y: 200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: "expo.out" }, 7.35);
+  const hs = [["#h1", 7.4, 8.75], ["#h2", 8.85, 10.2], ["#h3", 10.3, null]];
+  tl.set(["#h2 .w", "#h3 .w"], { yPercent: 115 }, 0);
+  hs.forEach(([h, a, b]) => {
+    tl.fromTo(h + " .w", { yPercent: 115 }, { yPercent: 0, duration: 0.6, ease: "expo.out", stagger: 0.06 }, a);
+    if (b) tl.to(h + " .w", { yPercent: -115, duration: 0.3, ease: "power3.in" }, b - 0.3);
+  });
+  tl.fromTo("#cc-strip", { x: 0 }, { x: -380, duration: 0.7, ease: "expo.inOut" }, 9.45);
+  tl.to("#dt1", { backgroundColor: "#E3E5EA", duration: 0.2 }, 9.6);
+  tl.fromTo("#dt2", { backgroundColor: "#E3E5EA" }, { backgroundColor: "#245BFF", duration: 0.2 }, 9.6);
+  tl.fromTo("#heart", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(2.2)" }, 10.65);
+
+  /* SD system */
+  K.push(tl, "#sd-cam", 12.2, 16.0, 1.08, 0.98);
+  K.words(tl, "#sd-head", 12.3, { stagger: 0.12 });
+  tl.fromTo(".mp", { opacity: 0, y: 60, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "expo.out", stagger: { each: 0.05, from: "center" } }, 12.45);
+  tl.fromTo(".mp i", { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: 0.5, ease: "expo.out", stagger: 0.04 }, 12.9);
+  K.shutter(tl, "#sh2", 16.0);
+
+  /* END */
+  K.endcard(tl, 16.0);
+
+  window.__timelines["main"] = tl;
+  tl.seek(0);
+</script>
+</body>
+</html>

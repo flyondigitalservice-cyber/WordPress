@@ -61,13 +61,14 @@
   };
   /* Signature end card. `p` = id prefix ("end"). Expects:
      #end-cam, #end-head (with .w words), #end-rule, #end-logo, #end-url, #end-tag */
-  K.endcard = function (tl, t) {
-    K.push(tl, "#end-cam", t, t + 4.5, 1.0, 1.06);
-    K.words(tl, "#end-head", t + 0.15, { stagger: 0.09 });
-    K.line(tl, "#end-rule", t + 0.75, 1.0);
-    tl.fromTo("#end-logo", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1.0, ease: "expo.out" }, t + 1.05);
-    tl.fromTo("#end-url", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.7, ease: "expo.out" }, t + 1.45);
-    tl.fromTo("#end-tag", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.out" }, t + 1.0);
+  K.endcard = function (tl, t, f) {
+    f = f || 1; // tempo: <1 = faster for short end cards
+    K.push(tl, "#end-cam", t, t + 4.5 * f, 1.0, 1.06);
+    K.words(tl, "#end-head", t + 0.15 * f, { stagger: 0.09 * f });
+    K.line(tl, "#end-rule", t + 0.75 * f, 1.0);
+    tl.fromTo("#end-logo", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1.0, ease: "expo.out" }, t + 1.05 * f);
+    tl.fromTo("#end-url", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.7, ease: "expo.out" }, t + 1.45 * f);
+    tl.fromTo("#end-tag", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.out" }, t + 1.0 * f);
     return tl;
   };
   /* Typewriter: reveals characters of a pre-split element (.ch spans). */

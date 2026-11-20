@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Bombay Marketing — 04 Own Your Local Presence</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="assets/brand.css" />
+<script src="assets/kit.js"></script>
+<style>
+  #bg { position: absolute; inset: 0; background: var(--black); }
+  /* SA · map */
+  #map-cam { transform-origin: 56% 52%; }
+  #map { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+  #veil { position: absolute; left: 0; right: 0; top: 0; height: 1000px; background: linear-gradient(180deg, rgba(17,17,17,.92) 0%, rgba(17,17,17,.7) 55%, rgba(17,17,17,0) 100%); }
+  #sa-hook { top: 340px; font-size: 112px; color: var(--white); }
+  .pin { position: absolute; width: 48px; height: 64px; margin: -64px 0 0 -24px; transform-origin: 50% 100%; }
+  #pin-you { width: 96px; height: 128px; margin: -128px 0 0 -48px; z-index: 5; }
+  .ring { position: absolute; width: 120px; height: 120px; margin: -60px 0 0 -60px; border-radius: 50%; border: 4px solid var(--blue); }
+  #map-label { position: absolute; left: 150px; top: 1180px; color: #6b7280; }
+  /* SB · profile card */
+  #card { left: 120px; top: 380px; width: 840px; height: 860px; }
+  #ph1 { position: absolute; left: 0; top: 0; width: 420px; height: 280px; background: #1b1c20; overflow: hidden; }
+  #ph2 { position: absolute; left: 424px; top: 0; width: 416px; height: 138px; background: var(--grey); }
+  #ph3 { position: absolute; left: 424px; top: 142px; width: 416px; height: 138px; background: var(--hair); }
+  .glyph { position: absolute; left: 50%; top: 50%; width: 60px; height: 48px; margin: -24px 0 0 -30px; }
+  #b-name { position: absolute; left: 40px; top: 312px; font-family: var(--display); font-weight: 700; font-size: 56px; letter-spacing: -0.03em; }
+  #b-sub { position: absolute; left: 40px; top: 386px; font-size: 30px; color: var(--mute); font-weight: 500; }
+  #b-stars { position: absolute; left: 40px; top: 446px; display: flex; gap: 8px; align-items: center; }
+  #b-stars svg { width: 40px; height: 40px; }
+  #b-stars .label { margin-left: 14px; color: var(--mute); }
+  #b-open { position: absolute; left: 40px; top: 520px; display: flex; gap: 14px; align-items: center; font-size: 30px; font-weight: 600; }
+  #b-open i { width: 16px; height: 16px; border-radius: 50%; background: var(--blue); display: block; }
+  #b-div { position: absolute; left: 40px; right: 40px; top: 588px; height: 2px; background: var(--hair); }
+  .act { position: absolute; top: 620px; width: 240px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .act .c { width: 124px; height: 124px; border-radius: 50%; background: var(--grey); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .act .c svg { width: 52px; height: 52px; position: relative; }
+  .act .c .fill { position: absolute; inset: 0; background: var(--blue); border-radius: 50%; }
+  .act .label { color: var(--black); }
+  #a1 { left: 20px; } #a2 { left: 300px; } #a3 { left: 580px; }
+  #cur { z-index: 60; }
+  #end-head { top: 440px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="18" data-width="1080" data-height="1920">
+  <div id="bg" class="clip" data-start="0" data-duration="18" data-track-index="0"></div>
+
+  <!-- SA · 0–7 · Map of Mumbai -->
+  <section id="sa" class="scene dark clip" data-start="0" data-duration="7.0" data-track-index="1" data-layout-allow-overlap>
+    <div class="cam" id="map-cam">
+      <svg id="map" viewBox="0 0 1080 1920">
+        <defs>
+          <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="rotate(16)"><path d="M0 0H64M0 0V64" stroke="#2a2c33" stroke-width="3"/></pattern>
+          <clipPath id="landclip"><path id="land-shape" d="M380 1920 L330 1700 L296 1500 L338 1300 L302 1150 L362 980 L420 860 L402 720 L470 560 L540 420 L620 300 L700 160 L760 0 L1080 0 L1080 560 L900 700 L820 1100 L780 1500 L760 1920 Z"/></clipPath>
+        </defs>
+        <rect width="1080" height="1920" fill="#0d0e10"/>
+        <path d="M380 1920 L330 1700 L296 1500 L338 1300 L302 1150 L362 980 L420 860 L402 720 L470 560 L540 420 L620 300 L700 160 L760 0 L1080 0 L1080 560 L900 700 L820 1100 L780 1500 L760 1920 Z" fill="#1b1c20"/>
+        <path d="M900 1920 L930 1500 L960 1200 L1080 1060 L1080 1920 Z" fill="#1b1c20"/>
+        <rect width="1080" height="1920" fill="url(#grid)" clip-path="url(#landclip)"/>
+        <path d="M560 1920 C 560 1500, 520 1200, 600 900 S 720 400, 880 0" stroke="#3a3d46" stroke-width="12" fill="none" clip-path="url(#landclip)"/>
+        <path d="M330 1360 C 500 1320, 640 1250, 820 1180" stroke="#3a3d46" stroke-width="10" fill="none" clip-path="url(#landclip)"/>
+        <path d="M420 860 C 600 900, 760 820, 1000 640" stroke="#33363e" stroke-width="8" fill="none" clip-path="url(#landclip)"/>
+      </svg>
+      <div class="label" id="map-label">Mumbai</div>
+      <div class="ring" id="ring1" style="left:600px;top:1010px"></div>
+      <div class="ring" id="ring2" style="left:600px;top:1010px"></div>
+      <svg class="pin p" id="pn1" style="left:450px;top:1480px" viewBox="0 0 48 64"><path d="M24 0C11 0 0 10 0 23c0 17 24 41 24 41s24-24 24-41C48 10 37 0 24 0z" fill="#fff"/><circle cx="24" cy="23" r="8" fill="#111"/></svg>
+      <svg class="pin p" id="pn2" style="left:690px;top:1270px" viewBox="0 0 48 64"><path d="M24 0C11 0 0 10 0 23c0 17 24 41 24 41s24-24 24-41C48 10 37 0 24 0z" fill="#fff"/><circle cx="24" cy="23" r="8" fill="#111"/></svg>
+      <svg class="pin p" id="pn3" style="left:430px;top:1140px" viewBox="0 0 48 64"><path d="M24 0C11 0 0 10 0 23c0 17 24 41 24 41s24-24 24-41C48 10 37 0 24 0z" fill="#fff"/><circle cx="24" cy="23" r="8" fill="#111"/></svg>
+      <svg class="pin p" id="pn4" style="left:760px;top:860px" viewBox="0 0 48 64"><path d="M24 0C11 0 0 10 0 23c0 17 24 41 24 41s24-24 24-41C48 10 37 0 24 0z" fill="#fff"/><circle cx="24" cy="23" r="8" fill="#111"/></svg>
+      <svg class="pin p" id="pn5" style="left:540px;top:760px" viewBox="0 0 48 64"><path d="M24 0C11 0 0 10 0 23c0 17 24 41 24 41s24-24 24-41C48 10 37 0 24 0z" fill="#fff"/><circle cx="24" cy="23" r="8" fill="#111"/></svg>
+      <svg class="pin p" id="pn6" style="left:660px;top:1620px" viewBox="0 0 48 64"><path d="M24 0C11 0 0 10 0 23c0 17 24 41 24 41s24-24 24-41C48 10 37 0 24 0z" fill="#fff"/><circle cx="24" cy="23" r="8" fill="#111"/></svg>
+      <svg class="pin p" id="pn7" style="left:980px;top:1300px" viewBox="0 0 48 64"><path d="M24 0C11 0 0 10 0 23c0 17 24 41 24 41s24-24 24-41C48 10 37 0 24 0z" fill="#fff"/><circle cx="24" cy="23" r="8" fill="#111"/></svg>
+      <svg class="pin" id="pin-you" style="left:600px;top:1010px" viewBox="0 0 48 64"><path d="M24 0C11 0 0 10 0 23c0 17 24 41 24 41s24-24 24-41C48 10 37 0 24 0z" fill="#245BFF"/><circle cx="24" cy="23" r="8" fill="#fff"/></svg>
+      <div id="veil"></div>
+    </div>
+    <div class="hook display" id="sa-hook">
+      <span class="line" id="sa-l1">YOUR NEXT</span>
+      <span class="line"><span class="wm"><span class="w">CUSTOMER</span></span></span>
+      <span class="line"><span class="wm"><span class="w">COULD BE</span></span></span>
+      <span class="line"><span class="wm"><span class="w blue">NEARBY.</span></span></span>
+    </div>
+  </section>
+
+  <!-- SB · 7–15.3 · Business profile (generic, no third-party marks) -->
+  <section id="sb" class="scene soft clip" data-start="7.0" data-duration="8.3" data-track-index="2" data-layout-allow-overlap>
+    <div class="cam" id="sb-cam">
+      <div class="frame" id="card">
+        <div id="ph1">
+          <svg viewBox="0 0 420 280" width="420" height="280"><rect width="420" height="280" fill="#1b1c20"/><g stroke="#2a2c33" stroke-width="3"><path d="M0 60H420M0 140H420M0 220H420M80 0V280M200 0V280M330 0V280"/></g><path d="M0 250 C 120 200, 260 120, 420 60" stroke="#3a3d46" stroke-width="10" fill="none"/></svg>
+          <svg style="position:absolute;left:186px;top:86px;width:48px;height:64px" viewBox="0 0 48 64"><path d="M24 0C11 0 0 10 0 23c0 17 24 41 24 41s24-24 24-41C48 10 37 0 24 0z" fill="#245BFF"/><circle cx="24" cy="23" r="8" fill="#fff"/></svg>
+        </div>
+        <div id="ph2"><svg class="glyph" viewBox="0 0 60 48"><rect x="2" y="2" width="56" height="44" rx="8" fill="none" stroke="#9ca3af" stroke-width="4"/><circle cx="20" cy="17" r="5" fill="#9ca3af"/><path d="M6 40l16-14 10 9 8-6 14 11" fill="none" stroke="#9ca3af" stroke-width="4" stroke-linejoin="round"/></svg></div>
+        <div id="ph3"><svg class="glyph" viewBox="0 0 60 48"><rect x="2" y="2" width="56" height="44" rx="8" fill="none" stroke="#9ca3af" stroke-width="4"/><circle cx="20" cy="17" r="5" fill="#9ca3af"/><path d="M6 40l16-14 10 9 8-6 14 11" fill="none" stroke="#9ca3af" stroke-width="4" stroke-linejoin="round"/></svg></div>
+        <div id="b-name">Your Business</div>
+        <div id="b-sub">Your category · Your area, Mumbai</div>
+        <div id="b-stars">
+          <svg class="st" viewBox="0 0 40 40"><path d="M20 3l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z" fill="none" stroke="#111" stroke-width="3" stroke-linejoin="round"/></svg>
+          <svg class="st" viewBox="0 0 40 40"><path d="M20 3l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z" fill="none" stroke="#111" stroke-width="3" stroke-linejoin="round"/></svg>
+          <svg class="st" viewBox="0 0 40 40"><path d="M20 3l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z" fill="none" stroke="#111" stroke-width="3" stroke-linejoin="round"/></svg>
+          <svg class="st" viewBox="0 0 40 40"><path d="M20 3l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z" fill="none" stroke="#111" stroke-width="3" stroke-linejoin="round"/></svg>
+          <svg class="st" viewBox="0 0 40 40"><path d="M20 3l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z" fill="none" stroke="#111" stroke-width="3" stroke-linejoin="round"/></svg>
+          <span class="label">Reviews</span>
+        </div>
+        <div id="b-open"><i></i>Open now · Photos · Directions</div>
+        <div id="b-div"></div>
+        <div class="act" id="a1"><div class="c"><span class="fill" id="f1"></span><svg viewBox="0 0 52 52"><path d="M14 6l8 2 3 10-5 4c3 6 7 10 13 13l4-5 10 3 2 8c0 3-3 5-6 5C23 46 6 29 6 12c0-3 2-6 8-6z" fill="none" stroke="#111" stroke-width="4" stroke-linejoin="round" class="ic"/></svg></div><span class="label">Call</span></div>
+        <div class="act" id="a2"><div class="c"><span class="fill" id="f2"></span><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="20" fill="none" stroke="#111" stroke-width="4" class="ic"/><path d="M6 26h40M26 6c7 7 7 33 0 40M26 6c-7 7-7 33 0 40" fill="none" stroke="#111" stroke-width="4" class="ic"/></svg></div><span class="label">Website</span></div>
+        <div class="act" id="a3"><div class="c"><span class="fill" id="f3"></span><svg viewBox="0 0 52 52"><path d="M26 4l20 20-20 20L6 24z" fill="none" stroke="#111" stroke-width="4" stroke-linejoin="round" class="ic"/><path d="M20 30v-8h12M28 17l5 5-5 5" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="ic"/></svg></div><span class="label">Directions</span></div>
+      </div>
+    </div>
+    <svg class="cursor" id="cur" viewBox="0 0 54 54"><path d="M8 4 L8 44 L19 34 L27 50 L34 47 L26 31 L42 31 Z" fill="#111" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg>
+  </section>
+
+  <!-- END · 15.3–18 -->
+  <section id="end" class="scene end clip" data-start="15.3" data-duration="2.7" data-track-index="1">
+    <div class="cam" id="end-cam">
+      <div class="tag end-tag" id="end-tag"><img src="assets/brand/icon.png" alt="" /><span class="label mute">04 / 09</span></div>
+      <div class="display end-head" id="end-head"><span class="line"><span class="wm"><span class="w">BE VISIBLE</span></span></span><span class="line"><span class="wm"><span class="w">WHERE IT</span></span></span><span class="line"><span class="wm"><span class="w blue">MATTERS.</span></span></span></div>
+      <div class="bline end-rule" id="end-rule"></div>
+      <img class="end-logo" id="end-logo" src="assets/brand/logo-white.png" alt="Bombay Marketing" />
+      <div class="end-url" id="end-url">bombaymarketing.in</div>
+    </div>
+  </section>
+
+  <div id="tag" class="tag clip" data-start="3.2" data-duration="12.1" data-track-index="3"><img src="assets/brand/icon.png" alt="" /><span class="label mute">04 / 09 · Local presence</span></div>
+  <div id="sh1" class="shutter clip" data-start="6.5" data-duration="1.1" data-track-index="4"></div>
+  <div id="sh2" class="shutter clip" data-start="14.8" data-duration="1.1" data-track-index="4"></div>
+
+  <audio id="vo1" class="clip" src="assets/vo/v04_1.wav" data-start="0.2" data-duration="3.65" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo2" class="clip" src="assets/vo/v04_2.wav" data-start="7.2" data-duration="2.71" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo3" class="clip" src="assets/vo/v04_3.wav" data-start="10.05" data-duration="1.77" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo4" class="clip" src="assets/vo/v04_4.wav" data-start="11.95" data-duration="3.67" data-track-index="5" data-volume="1"></audio>
+  <audio id="sfx-p1" class="clip" src="assets/sfx/pop.mp3" data-start="3.38" data-duration="0.72" data-track-index="6" data-volume="0.35"></audio>
+  <audio id="sfx-p2" class="clip" src="assets/sfx/click-soft.mp3" data-start="3.73" data-duration="0.37" data-track-index="7" data-volume="0.7"></audio>
+  <audio id="sfx-p3" class="clip" src="assets/sfx/pop.mp3" data-start="4.08" data-duration="0.72" data-track-index="8" data-volume="0.3"></audio>
+  <audio id="sfx-p4" class="clip" src="assets/sfx/click-soft.mp3" data-start="4.43" data-duration="0.37" data-track-index="7" data-volume="0.7"></audio>
+  <audio id="sfx-you" class="clip" src="assets/sfx/pop.mp3" data-start="5.18" data-duration="0.72" data-track-index="6" data-volume="0.7"></audio>
+  <audio id="sfx-sh1" class="clip" src="assets/sfx/whoosh.mp3" data-start="6.84" data-duration="0.57" data-track-index="7" data-volume="0.5"></audio>
+  <audio id="sfx-c1" class="clip" src="assets/sfx/click.mp3" data-start="12.73" data-duration="0.37" data-track-index="6" data-volume="0.7"></audio>
+  <audio id="sfx-c2" class="clip" src="assets/sfx/click-soft.mp3" data-start="13.53" data-duration="0.37" data-track-index="7" data-volume="0.9"></audio>
+  <audio id="sfx-c3" class="clip" src="assets/sfx/click.mp3" data-start="14.33" data-duration="0.37" data-track-index="6" data-volume="0.7"></audio>
+  <audio id="sfx-sh2" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="15.14" data-duration="0.57" data-track-index="8" data-volume="0.5"></audio>
+  <audio id="sfx-chime" class="clip" src="assets/sfx/chime.mp3" data-start="15.75" data-duration="2.25" data-fade-out="0.3" data-track-index="7" data-volume="0.8"></audio>
+  <audio id="sfx-impact" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="16.05" data-duration="1.95" data-fade-out="0.3" data-track-index="6" data-volume="0.5"></audio>
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  const K = window.BM;
+
+  /* SA map */
+  tl.fromTo("#map-cam", { scale: 1.12, x: 40, y: 40 }, { scale: 1.22, x: -20, y: -30, duration: 5.2, ease: "sine.inOut" }, 0);
+  tl.fromTo("#sa-l1", { opacity: 0.85, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 0);
+  K.words(tl, "#sa-hook", 0.25, { stagger: 0.14 });
+  tl.to("#sa-hook .line", { yPercent: -60, opacity: 0, duration: 0.45, ease: "power3.in", stagger: 0.05 }, 3.0);
+  tl.to("#veil", { opacity: 0, duration: 0.8, ease: "sine.inOut" }, 3.1);
+  const pins = ["#pn1", "#pn2", "#pn3", "#pn4", "#pn5", "#pn6", "#pn7"];
+  pins.forEach((p, i) => tl.fromTo(p, { y: -120, opacity: 0, scaleY: 1.2 }, { y: 0, opacity: 1, scaleY: 1, duration: 0.45, ease: "power3.out" }, 3.3 + i * 0.18));
+  tl.fromTo("#pin-you", { y: -200, opacity: 0, scale: 0.6 }, { y: 0, opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.6)" }, 5.0);
+  tl.set(["#ring1", "#ring2"], { opacity: 0 }, 0);
+  tl.fromTo("#ring1", { scale: 0.2, opacity: 0.9 }, { scale: 2.6, opacity: 0, duration: 1.2, ease: "expo.out" }, 5.35);
+  tl.fromTo("#ring2", { scale: 0.2, opacity: 0.9 }, { scale: 2.6, opacity: 0, duration: 1.2, ease: "expo.out" }, 5.85);
+  tl.to(".p", { opacity: 0.35, duration: 0.5, ease: "sine.out" }, 5.2);
+  tl.to("#map-cam", { scale: 1.9, x: -90, y: -140, duration: 1.8, ease: "expo.in" }, 5.2);
+  K.shutter(tl, "#sh1", 7.0);
+
+  /* SB profile */
+  K.push(tl, "#sb-cam", 7.0, 15.3, 1.0, 1.05);
+  tl.fromTo("#card", { y: 300, opacity: 0, rotateX: 24, scale: 0.92 }, { y: 0, opacity: 1, rotateX: 0, scale: 1, duration: 1.0, ease: "expo.out" }, 7.1);
+  tl.fromTo("#ph1, #ph2, #ph3", { scale: 1.15, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "expo.out", stagger: 0.1 }, 7.4);
+  tl.fromTo("#b-name", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: "expo.out" }, 7.7);
+  tl.fromTo("#b-sub", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7, ease: "expo.out" }, 7.9);
+  tl.fromTo("#b-stars .st", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.8)", stagger: 0.07 }, 8.2);
+  tl.fromTo("#b-stars .label", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 8.6);
+  tl.fromTo("#b-open", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.6, ease: "expo.out" }, 9.0);
+  tl.fromTo("#b-div", { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: 0.7, ease: "expo.out" }, 9.2);
+  tl.fromTo(".act", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "expo.out", stagger: 0.1 }, 9.4);
+  // actions: call · website · directions
+  tl.set("#cur", { opacity: 0 }, 0);
+  tl.set("#cur", { opacity: 1 }, 12.1);
+  tl.fromTo("#cur", { x: 1000, y: 1500 }, { x: 260, y: 1080, duration: 0.6, ease: "power3.out" }, 12.1);
+  const acts = [["#f1", "#a1", 12.8, 260], ["#f2", "#a2", 13.6, 540], ["#f3", "#a3", 14.4, 820]];
+  tl.set(".fill", { scale: 0 }, 0);
+  acts.forEach(([f, a, t, x], i) => {
+    if (i > 0) tl.to("#cur", { x: x, y: 1080, duration: 0.45, ease: "power3.inOut" }, t - 0.55);
+    tl.fromTo(f, { scale: 0 }, { scale: 1, duration: 0.35, ease: "expo.out" }, t);
+    tl.to(a + " .ic", { stroke: "#ffffff", duration: 0.15 }, t + 0.05);
+    tl.fromTo(a + " .c", { scale: 1 }, { scale: 0.9, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.in" }, t);
+  });
+  K.shutter(tl, "#sh2", 15.3);
+
+  /* END */
+  K.endcard(tl, 15.3, 0.6);
+
+  window.__timelines["main"] = tl;
+  tl.seek(0);
+</script>
+</body>
+</html>

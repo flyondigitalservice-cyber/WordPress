@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Bombay Marketing — 06 Turn Clicks Into Customers</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="assets/brand.css" />
+<script src="assets/kit.js"></script>
+<style>
+  #bg { position: absolute; inset: 0; background: var(--white); }
+  #cur1, #cur2 { opacity: 0; }
+  /* SA · hook + click */
+  #sa-hook { top: 330px; font-size: 120px; color: var(--black); }
+  #mini-ad { position: absolute; left: 240px; top: 860px; width: 600px; height: 340px; border-radius: 30px; background: var(--white); box-shadow: var(--shadow); overflow: hidden; }
+  #mini-ad img { position: absolute; left: 0; top: 0; width: 100%; height: 250px; object-fit: cover; }
+  #mini-cta { position: absolute; left: 24px; right: 24px; bottom: 18px; height: 60px; border-radius: 14px; font-size: 28px; }
+  .rip { position: absolute; width: 60px; height: 60px; margin: -30px 0 0 -30px; border-radius: 50%; border: 5px solid var(--blue); opacity: 0; }
+  /* SB · phone ad */
+  #sb-stage { position: absolute; inset: 0; perspective: 1600px; }
+  #ph { left: 300px; top: 360px; width: 480px; height: 900px; }
+  #post-h { position: absolute; left: 22px; top: 62px; display: flex; align-items: center; gap: 14px; color: var(--black); }
+  #post-h img { width: 52px; height: 52px; border-radius: 14px; }
+  #post-h .nm { font-family: var(--display); font-weight: 700; font-size: 28px; letter-spacing: -0.01em; }
+  #post-h .sp { font-size: 28px; color: var(--mute); font-weight: 500; }
+  #ad-img { position: absolute; left: 0; top: 160px; width: 452px; height: 238px; object-fit: cover; }
+  .fp { position: absolute; left: 22px; right: 22px; top: 600px; height: 260px; border-radius: 18px; background: var(--grey); }
+  #ad-cta { position: absolute; left: 22px; right: 22px; top: 418px; height: 80px; border-radius: 16px; font-size: 30px; }
+  .gl { position: absolute; left: 22px; height: 16px; border-radius: 8px; background: var(--hair); }
+  /* SC · journey */
+  #jr-line { position: absolute; left: 196px; top: 470px; width: 10px; height: 700px; background: var(--hair); border-radius: 5px; }
+  #jr-fill { position: absolute; left: 196px; top: 470px; width: 10px; height: 700px; background: var(--blue); border-radius: 5px; transform-origin: 50% 0; }
+  .node { position: absolute; left: 160px; width: 800px; height: 120px; display: flex; align-items: center; gap: 40px; }
+  .node .dot { width: 82px; height: 82px; border-radius: 50%; background: var(--white); border: 6px solid var(--hair); flex: none; display: flex; align-items: center; justify-content: center;
+    font-family: var(--display); font-weight: 900; font-size: 28px; color: var(--mute); }
+  .node .nt { font-family: var(--display); font-weight: 700; font-size: 58px; letter-spacing: -0.03em; }
+  #n1 { top: 410px; } #n2 { top: 640px; } #n3 { top: 870px; } #n4 { top: 1100px; }
+  #sc-head { position: absolute; left: 120px; top: 380px; }
+  /* SD · funnel */
+  .tier { position: absolute; left: 120px; width: 840px; height: 150px; background: #1d1d20; border-radius: 22px; display: flex; align-items: center; justify-content: center;
+    color: var(--white); }
+  .tier .label { font-size: 30px; }
+  #t1 { top: 400px; clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%); }
+  #t2 { top: 566px; clip-path: polygon(6% 0, 94% 0, 86% 100%, 14% 100%); }
+  #t3 { top: 732px; clip-path: polygon(14% 0, 86% 0, 78% 100%, 22% 100%); }
+  #t4 { top: 898px; clip-path: polygon(22% 0, 78% 0, 70% 100%, 30% 100%); background: var(--blue); }
+  .fd { position: absolute; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; background: var(--white); z-index: 4; opacity: 0; }
+  #sd-head { position: absolute; left: 120px; right: 120px; top: 1090px; font-size: 76px; color: var(--white); }
+  #end-head { top: 450px; font-size: 86px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="20" data-width="1080" data-height="1920">
+  <div id="bg" class="clip" data-start="0" data-duration="20" data-track-index="0"></div>
+
+  <!-- SA · 0–3.1 · The click -->
+  <section id="sa" class="scene light clip" data-start="0" data-duration="3.1" data-track-index="1" data-layout-allow-overlap>
+    <div class="cam" id="sa-cam">
+      <div class="hook display" id="sa-hook">
+        <span class="line" id="sa-l1">CLICKS ARE</span>
+        <span class="line"><span class="wm"><span class="w">JUST THE</span></span></span>
+        <span class="line"><span class="wm"><span class="w blue">BEGINNING.</span></span></span>
+      </div>
+      <div id="mini-ad"><img src="assets/work/Meta-ads-for-ecommerce-brands-in-India.jpg" alt="Ad creative" /><div class="btn" id="mini-cta">Learn more</div></div>
+      <div class="rip" id="rip1" style="left:540px;top:1152px"></div>
+      <svg class="cursor" id="cur1" viewBox="0 0 54 54"><path d="M8 4 L8 44 L19 34 L27 50 L34 47 L26 31 L42 31 Z" fill="#111" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg>
+    </div>
+  </section>
+
+  <!-- SB · 3.1–7.2 · Ad on a phone -->
+  <section id="sb" class="scene dark clip" data-start="3.1" data-duration="4.1" data-track-index="2" data-layout-allow-overlap>
+    <div id="sb-stage">
+      <div class="phone" id="ph"><div class="screen">
+        <div id="post-h"><img src="assets/brand/icon.png" alt="" /><div><div class="nm">Bombay Marketing</div><div class="sp">Sponsored</div></div></div>
+        <img id="ad-img" src="assets/work/Meta-ads-for-ecommerce-brands-in-India.jpg" alt="Ad creative" />
+        <div class="btn" id="ad-cta">Learn more</div>
+        <div class="gl" style="top:522px;width:300px"></div><div class="gl" style="top:552px;width:220px"></div><div class="fp"></div>
+      </div></div>
+    </div>
+    <div class="rip" id="rip2" style="left:540px;top:820px"></div>
+    <svg class="cursor" id="cur2" viewBox="0 0 54 54"><path d="M8 4 L8 44 L19 34 L27 50 L34 47 L26 31 L42 31 Z" fill="#111" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg>
+  </section>
+
+  <!-- SC · 7.2–12.2 · The journey -->
+  <section id="sc" class="scene light clip" data-start="7.2" data-duration="5.0" data-track-index="1">
+    <div class="cam" id="sc-cam">
+      <div id="jr-line"></div><div id="jr-fill"></div>
+      <div class="node" id="n1"><span class="dot">01</span><span class="nt">Advertisement</span></div>
+      <div class="node" id="n2"><span class="dot">02</span><span class="nt">Landing page</span></div>
+      <div class="node" id="n3"><span class="dot">03</span><span class="nt">Enquiry</span></div>
+      <div class="node" id="n4"><span class="dot">04</span><span class="nt">Follow-up</span></div>
+    </div>
+  </section>
+
+  <!-- SD · 12.2–16.4 · Funnel (no numbers) -->
+  <section id="sd" class="scene dark clip" data-start="12.2" data-duration="4.2" data-track-index="2" data-layout-allow-overlap>
+    <div class="cam" id="sd-cam">
+      <div class="tier" id="t1"><span class="label">Attention</span></div>
+      <div class="tier" id="t2"><span class="label">Interest</span></div>
+      <div class="tier" id="t3"><span class="label">Action</span></div>
+      <div class="tier" id="t4"><span class="label">Enquiry</span></div>
+      <span class="fd" id="d1" style="left:300px;top:380px"></span>
+      <span class="fd" id="d2" style="left:780px;top:380px"></span>
+      <span class="fd" id="d3" style="left:420px;top:380px"></span>
+      <span class="fd" id="d4" style="left:660px;top:380px"></span>
+      <span class="fd" id="d5" style="left:540px;top:380px"></span>
+      <div class="display" id="sd-head"><span class="line"><span class="wm"><span class="w">EVERY CLICK</span></span></span><span class="line"><span class="wm"><span class="w">HAS A</span></span> <span class="wm"><span class="w blue">PURPOSE.</span></span></span></div>
+    </div>
+  </section>
+
+  <!-- END · 16.4–20 -->
+  <section id="end" class="scene end clip" data-start="16.4" data-duration="3.6" data-track-index="1">
+    <div class="cam" id="end-cam">
+      <div class="tag end-tag" id="end-tag"><img src="assets/brand/icon.png" alt="" /><span class="label mute">06 / 09</span></div>
+      <div class="display end-head" id="end-head"><span class="line"><span class="wm"><span class="w">TURN ATTENTION</span></span></span><span class="line"><span class="wm"><span class="w">INTO</span></span></span><span class="line"><span class="wm"><span class="w blue">OPPORTUNITY.</span></span></span></div>
+      <div class="bline end-rule" id="end-rule"></div>
+      <img class="end-logo" id="end-logo" src="assets/brand/logo-white.png" alt="Bombay Marketing" />
+      <div class="end-url" id="end-url">bombaymarketing.in</div>
+    </div>
+  </section>
+
+  <div id="tag" class="tag clip" data-start="3.1" data-duration="13.3" data-track-index="3"><img src="assets/brand/icon.png" alt="" /><span class="label mute">06 / 09 · Advertising</span></div>
+  <div id="sh1" class="shutter clip" data-start="6.7" data-duration="1.1" data-track-index="4"></div>
+  <div id="sh2" class="shutter clip" data-start="15.9" data-duration="1.1" data-track-index="4"></div>
+
+  <audio id="vo1" class="clip" src="assets/vo/v06_1.wav" data-start="0.2" data-duration="2.26" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo2" class="clip" src="assets/vo/v06_2.wav" data-start="3.25" data-duration="3.18" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo3" class="clip" src="assets/vo/v06_3.wav" data-start="7.25" data-duration="6.55" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo4" class="clip" src="assets/vo/v06_4.wav" data-start="13.95" data-duration="2.90" data-track-index="5" data-volume="1"></audio>
+  <audio id="sfx-c1" class="clip" src="assets/sfx/click.mp3" data-start="1.73" data-duration="0.37" data-track-index="6" data-volume="0.8"></audio>
+  <audio id="sfx-w1" class="clip" src="assets/sfx/whoosh.mp3" data-start="2.95" data-duration="0.57" data-track-index="7" data-volume="0.45"></audio>
+  <audio id="sfx-c2" class="clip" src="assets/sfx/click-soft.mp3" data-start="5.73" data-duration="0.37" data-track-index="6" data-volume="0.9"></audio>
+  <audio id="sfx-sh1" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="7.04" data-duration="0.57" data-track-index="7" data-volume="0.5"></audio>
+  <audio id="sfx-n1" class="clip" src="assets/sfx/pop.mp3" data-start="7.55" data-duration="0.72" data-track-index="8" data-volume="0.4"></audio>
+  <audio id="sfx-n2" class="clip" src="assets/sfx/click-soft.mp3" data-start="8.83" data-duration="0.37" data-track-index="6" data-volume="0.8"></audio>
+  <audio id="sfx-n3" class="clip" src="assets/sfx/pop.mp3" data-start="10.03" data-duration="0.72" data-track-index="8" data-volume="0.4"></audio>
+  <audio id="sfx-n4" class="clip" src="assets/sfx/click-soft.mp3" data-start="11.33" data-duration="0.37" data-track-index="6" data-volume="0.8"></audio>
+  <audio id="sfx-w2" class="clip" src="assets/sfx/whoosh.mp3" data-start="12.08" data-duration="0.57" data-track-index="7" data-volume="0.4"></audio>
+  <audio id="sfx-riser" class="clip" src="assets/sfx/riser.mp3" data-start="12.95" data-duration="3.9" data-fade-out="0.4" data-track-index="8" data-volume="0.3"></audio>
+  <audio id="sfx-sh2" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="16.24" data-duration="0.57" data-track-index="6" data-volume="0.5"></audio>
+  <audio id="sfx-chime" class="clip" src="assets/sfx/chime.mp3" data-start="17.25" data-duration="2.54" data-track-index="7" data-volume="0.8"></audio>
+  <audio id="sfx-impact" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="17.5" data-duration="2.12" data-track-index="6" data-volume="0.5"></audio>
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  const K = window.BM;
+
+  /* SA */
+  K.push(tl, "#sa-cam", 0, 3.1, 1.0, 1.04);
+  tl.fromTo("#sa-l1", { opacity: 0.85, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 0);
+  K.words(tl, "#sa-hook", 0.25, { stagger: 0.14 });
+  tl.fromTo("#mini-ad", { y: 120, opacity: 0, rotateX: 30 }, { y: 0, opacity: 1, rotateX: 0, duration: 0.9, ease: "expo.out" }, 0.5);
+  tl.fromTo("#cur1", { x: 900, y: 1500, opacity: 0 }, { x: 540, y: 1150, opacity: 1, duration: 0.7, ease: "power3.out" }, 1.0);
+  tl.fromTo("#mini-cta", { scale: 1 }, { scale: 0.93, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.in" }, 1.8);
+  tl.fromTo("#rip1", { scale: 0.2, opacity: 0 }, { scale: 0.3, opacity: 1, duration: 0.04 }, 1.8);
+  tl.to("#rip1", { scale: 4, opacity: 0, duration: 0.8, ease: "expo.out" }, 1.8+0.04);
+  tl.to(["#sa-hook .line", "#mini-ad"], { y: -80, opacity: 0, duration: 0.4, ease: "power3.in", stagger: 0.04 }, 2.7);
+  tl.to("#cur1", { opacity: 0, duration: 0.2 }, 2.7);
+
+  /* SB */
+  tl.fromTo("#ph", { y: 700, rotateY: -18, rotateX: 14 }, { y: 0, rotateY: -8, rotateX: 4, duration: 1.1, ease: "expo.out" }, 3.1);
+  tl.to("#ph", { rotateY: 8, rotateX: 0, duration: 2.9, ease: "sine.inOut" }, 4.2);
+  tl.fromTo("#ad-img", { scale: 1.12 }, { scale: 1, duration: 2.5, ease: "sine.out" }, 3.4);
+  tl.fromTo("#ad-cta", { scaleX: 0.3, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.6, ease: "expo.out" }, 3.9);
+  tl.fromTo("#cur2", { x: 960, y: 1400, opacity: 0 }, { x: 560, y: 830, opacity: 1, duration: 0.6, ease: "power3.out" }, 5.1);
+  tl.fromTo("#ad-cta", { scale: 1 }, { scale: 0.93, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.in" }, 5.8);
+  tl.fromTo("#rip2", { scale: 0.2, opacity: 0 }, { scale: 0.3, opacity: 1, duration: 0.04 }, 5.8);
+  tl.to("#rip2", { scale: 5, opacity: 0, duration: 0.8, ease: "expo.out" }, 5.8+0.04);
+  tl.to("#ph", { scale: 1.6, y: -300, opacity: 0, duration: 0.7, ease: "expo.in" }, 6.3);
+  K.shutter(tl, "#sh1", 7.2);
+
+  /* SC journey */
+  K.push(tl, "#sc-cam", 7.2, 12.2, 1.0, 1.04);
+  tl.fromTo("#jr-fill", { scaleY: 0 }, { scaleY: 1, duration: 4.0, ease: "power1.inOut" }, 7.6);
+  ["#n1", "#n2", "#n3", "#n4"].forEach((n, i) => {
+    const t = 7.6 + i * 1.25;
+    tl.fromTo(n + " .nt", { opacity: 0, x: 40 }, { opacity: 0.25, x: 0, duration: 0.6, ease: "expo.out" }, 7.3 + i * 0.08);
+    tl.to(n + " .nt", { opacity: 1, duration: 0.3, ease: "sine.out" }, t);
+    tl.to(n + " .dot", { borderColor: "#245BFF", backgroundColor: "#245BFF", color: "#ffffff", duration: 0.25 }, t);
+    tl.fromTo(n + " .dot", { scale: 1 }, { scale: 1.18, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out" }, t);
+  });
+
+  /* SD funnel */
+  K.push(tl, "#sd-cam", 12.2, 16.4, 1.0, 1.05);
+  tl.fromTo(".tier", { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out", stagger: 0.12 }, 12.2);
+  const drops = [["#d1", 12.9, 560], ["#d2", 13.1, 720], ["#d3", 13.3, 880], ["#d4", 13.5, 720], ["#d5", 13.7, 918]];
+  drops.forEach(([d, t, endY], i) => {
+    const toX = i === 4 ? 0 : (i % 2 ? -1 : 1) * 40;
+    tl.fromTo(d, { y: 0, x: 0, opacity: 0 }, { y: endY - 380, x: toX + (540 - parseFloat(document.querySelector(d).style.left)) * (i === 4 ? 1 : 0.4), opacity: 1, duration: 1.1, ease: "power2.in" }, t);
+    if (i < 4) tl.to(d, { opacity: 0, duration: 0.3 }, t + 1.1);
+  });
+  tl.to("#d5", { scale: 1.6, duration: 0.3, ease: "back.out(2)" }, 14.8);
+  K.words(tl, "#sd-head", 12.6, { stagger: 0.1 });
+  K.shutter(tl, "#sh2", 16.4);
+
+  /* END */
+  K.endcard(tl, 16.4);
+
+  window.__timelines["main"] = tl;
+  tl.seek(0);
+</script>
+</body>
+</html>
