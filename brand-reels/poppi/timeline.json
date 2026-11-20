@@ -1,0 +1,270 @@
+{
+ "dur": 65.369,
+ "lines": [
+  {
+   "id": "p01",
+   "t0": 0.4,
+   "t1": 5.767,
+   "sub": "Sirke wala soda. Aur PepsiCo ne iske liye lagbhag 2 arab dollar diye.",
+   "cues": 2
+  },
+  {
+   "id": "p02",
+   "t0": 6.187,
+   "t1": 8.001,
+   "sub": "Ye kahani hai Poppi ki.",
+   "cues": 1
+  },
+  {
+   "id": "p03",
+   "t0": 8.921,
+   "t1": 16.218,
+   "sub": "Texas. Allison Ellsworth pet ke liye apple cider vinegar peeti thi. Par swaad bahut bura tha.",
+   "cues": 3
+  },
+  {
+   "id": "p04",
+   "t0": 16.738,
+   "t1": 21.425,
+   "sub": "To unhone rasoi mein use fruit juice aur soda ke saath milaya.",
+   "cues": 2
+  },
+  {
+   "id": "p05",
+   "t0": 22.045,
+   "t1": 26.456,
+   "sub": "Naam rakha: Mother Beverage. Drink achha tha. Naam? Bilkul nahi.",
+   "cues": 3
+  },
+  {
+   "id": "p06",
+   "t0": 27.726,
+   "t1": 33.16,
+   "sub": "2018. Shark Tank mein deal mili. Aur pehli salah: naam badlo.",
+   "cues": 2
+  },
+  {
+   "id": "p07",
+   "t0": 33.68,
+   "t1": 38.642,
+   "sub": "Naya naam: Poppi. Chamkeele rang ke can. Aur ek mazedaar andaaz.",
+   "cues": 2
+  },
+  {
+   "id": "p08",
+   "t0": 39.362,
+   "t1": 44.711,
+   "sub": "Phir TikTok. Allison roz video daalti, aur gut health ek trend ban gaya.",
+   "cues": 2
+  },
+  {
+   "id": "p09",
+   "t0": 45.631,
+   "t1": 52.841,
+   "sub": "2025. PepsiCo ne Poppi ko khareedne ka elaan kiya. Keemat: lagbhag 2 arab dollar.",
+   "cues": 3
+  },
+  {
+   "id": "p10",
+   "t0": 53.561,
+   "t1": 58.498,
+   "sub": "Sabak: product hamesha achha tha. Naam aur kahani ne use bech diya.",
+   "cues": 2
+  },
+  {
+   "id": "p11",
+   "t0": 59.118,
+   "t1": 61.769,
+   "sub": "Aisi aur kahaniyon ke liye, follow karo!",
+   "cues": 1
+  }
+ ],
+ "cues": [
+  {
+   "t0": 0.4,
+   "t1": 3.241,
+   "text": "Sirke wala soda. Aur PepsiCo ne iske",
+   "line": "p01"
+  },
+  {
+   "t0": 3.241,
+   "t1": 6.127,
+   "text": "liye lagbhag 2 arab dollar diye.",
+   "line": "p01"
+  },
+  {
+   "t0": 6.187,
+   "t1": 8.501,
+   "text": "Ye kahani hai Poppi ki.",
+   "line": "p02"
+  },
+  {
+   "t0": 8.921,
+   "t1": 11.808,
+   "text": "Texas. Allison Ellsworth pet ke liye",
+   "line": "p03"
+  },
+  {
+   "t0": 11.808,
+   "t1": 14.213,
+   "text": "apple cider vinegar peeti thi.",
+   "line": "p03"
+  },
+  {
+   "t0": 14.213,
+   "t1": 16.678,
+   "text": "Par swaad bahut bura tha.",
+   "line": "p03"
+  },
+  {
+   "t0": 16.738,
+   "t1": 19.811,
+   "text": "To unhone rasoi mein use fruit juice aur",
+   "line": "p04"
+  },
+  {
+   "t0": 19.811,
+   "t1": 21.925,
+   "text": "soda ke saath milaya.",
+   "line": "p04"
+  },
+  {
+   "t0": 22.045,
+   "t1": 24.037,
+   "text": "Naam rakha: Mother Beverage.",
+   "line": "p05"
+  },
+  {
+   "t0": 24.037,
+   "t1": 25.602,
+   "text": "Drink achha tha. Naam?",
+   "line": "p05"
+  },
+  {
+   "t0": 25.602,
+   "t1": 26.956,
+   "text": "Bilkul nahi.",
+   "line": "p05"
+  },
+  {
+   "t0": 27.726,
+   "t1": 30.624,
+   "text": "2018. Shark Tank mein deal mili.",
+   "line": "p06"
+  },
+  {
+   "t0": 30.624,
+   "t1": 33.62,
+   "text": "Aur pehli salah: naam badlo.",
+   "line": "p06"
+  },
+  {
+   "t0": 33.68,
+   "t1": 36.83,
+   "text": "Naya naam: Poppi. Chamkeele rang ke can.",
+   "line": "p07"
+  },
+  {
+   "t0": 36.83,
+   "t1": 39.142,
+   "text": "Aur ek mazedaar andaaz.",
+   "line": "p07"
+  },
+  {
+   "t0": 39.362,
+   "t1": 42.225,
+   "text": "Phir TikTok. Allison roz video daalti,",
+   "line": "p08"
+  },
+  {
+   "t0": 42.225,
+   "t1": 45.211,
+   "text": "aur gut health ek trend ban gaya.",
+   "line": "p08"
+  },
+  {
+   "t0": 45.631,
+   "t1": 49.099,
+   "text": "2025. PepsiCo ne Poppi ko khareedne ka",
+   "line": "p09"
+  },
+  {
+   "t0": 49.099,
+   "t1": 50.833,
+   "text": "elaan kiya. Keemat:",
+   "line": "p09"
+  },
+  {
+   "t0": 50.833,
+   "t1": 53.341,
+   "text": "lagbhag 2 arab dollar.",
+   "line": "p09"
+  },
+  {
+   "t0": 53.561,
+   "t1": 56.029,
+   "text": "Sabak: product hamesha achha tha.",
+   "line": "p10"
+  },
+  {
+   "t0": 56.029,
+   "t1": 58.998,
+   "text": "Naam aur kahani ne use bech diya.",
+   "line": "p10"
+  },
+  {
+   "t0": 59.118,
+   "t1": 62.269,
+   "text": "Aisi aur kahaniyon ke liye, follow karo!",
+   "line": "p11"
+  }
+ ],
+ "music": [
+  [
+   0.0,
+   "intro"
+  ],
+  [
+   5.937,
+   "groove"
+  ],
+  [
+   8.671,
+   "dark"
+  ],
+  [
+   16.488,
+   "groove"
+  ],
+  [
+   21.795,
+   "dark"
+  ],
+  [
+   26.726,
+   "hush"
+  ],
+  [
+   27.676,
+   "bright"
+  ],
+  [
+   33.43,
+   "joy"
+  ],
+  [
+   45.381,
+   "joy"
+  ],
+  [
+   53.311,
+   "soft"
+  ],
+  [
+   62.119,
+   "end"
+  ]
+ ],
+ "bpm": 112,
+ "key": -3
+}

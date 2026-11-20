@@ -1,0 +1,273 @@
+{
+ "dur": 65.611,
+ "lines": [
+  {
+   "id": "d01",
+   "t0": 0.4,
+   "t1": 5.069,
+   "sub": "Ek sponge. Sirf ek sponge. Aur iski bikri saikdon million dollar mein.",
+   "cues": 2
+  },
+  {
+   "id": "d02",
+   "t0": 5.489,
+   "t1": 7.724,
+   "sub": "Ye kahani hai Scrub Daddy ki.",
+   "cues": 1
+  },
+  {
+   "id": "d03",
+   "t0": 8.644,
+   "t1": 14.755,
+   "sub": "Aaron Krause gaadiyan chamkane wale pad banate the. Unhone ek ajeeb foam banaya.",
+   "cues": 2
+  },
+  {
+   "id": "d04",
+   "t0": 15.275,
+   "t1": 19.992,
+   "sub": "Thande paani mein ye sakht ho jaata. Aur garam paani mein ekdum naram.",
+   "cues": 2
+  },
+  {
+   "id": "d05",
+   "t0": 20.612,
+   "t1": 25.361,
+   "sub": "Kuch saal wo foam bas garage mein pada raha. Kisi ko khaas nahi laga.",
+   "cues": 2
+  },
+  {
+   "id": "d06",
+   "t0": 26.631,
+   "t1": 31.071,
+   "sub": "Phir unhone use ek muskurate chehre ki shakal mein kaat diya.",
+   "cues": 2
+  },
+  {
+   "id": "d07",
+   "t0": 31.591,
+   "t1": 37.573,
+   "sub": "Aankhon mein ungliyan phansti hain. Aur munh se chammach ke dono taraf ek saath safaai.",
+   "cues": 3
+  },
+  {
+   "id": "d08",
+   "t0": 38.493,
+   "t1": 42.905,
+   "sub": "2012. Shark Tank. Lori Greiner ne paisa lagaya.",
+   "cues": 2
+  },
+  {
+   "id": "d09",
+   "t0": 43.425,
+   "t1": 47.473,
+   "sub": "TV shopping par kuch hi minuton mein hazaaron sponge bik gaye.",
+   "cues": 2
+  },
+  {
+   "id": "d10",
+   "t0": 48.093,
+   "t1": 52.711,
+   "sub": "Aaj ise Shark Tank ki sabse badi kaamyabiyon mein gina jaata hai.",
+   "cues": 2
+  },
+  {
+   "id": "d11",
+   "t0": 53.431,
+   "t1": 58.74,
+   "sub": "Sabak: boring product ko ek chehra do, aur ek demo. Log yaad rakhenge.",
+   "cues": 2
+  },
+  {
+   "id": "d12",
+   "t0": 59.36,
+   "t1": 62.011,
+   "sub": "Aisi aur kahaniyon ke liye, follow karo!",
+   "cues": 1
+  }
+ ],
+ "cues": [
+  {
+   "t0": 0.4,
+   "t1": 2.91,
+   "text": "Aur iski bikri saikdon million dollar mein.",
+   "line": "d01"
+  },
+  {
+   "t0": 2.91,
+   "t1": 5.429,
+   "text": "Aur iski bikri saikdon million dollar",
+   "line": "d01"
+  },
+  {
+   "t0": 5.489,
+   "t1": 8.224,
+   "text": "Ye kahani hai Scrub Daddy ki.",
+   "line": "d02"
+  },
+  {
+   "t0": 8.644,
+   "t1": 11.661,
+   "text": "Aaron Krause gaadiyan chamkane wale pad",
+   "line": "d03"
+  },
+  {
+   "t0": 11.661,
+   "t1": 15.215,
+   "text": "banate the. Unhone ek ajeeb foam banaya.",
+   "line": "d03"
+  },
+  {
+   "t0": 15.275,
+   "t1": 17.736,
+   "text": "Thande paani mein ye sakht ho jaata.",
+   "line": "d04"
+  },
+  {
+   "t0": 17.736,
+   "t1": 20.492,
+   "text": "Aur garam paani mein ekdum naram.",
+   "line": "d04"
+  },
+  {
+   "t0": 20.612,
+   "t1": 23.266,
+   "text": "Kuch saal wo foam bas garage mein pada",
+   "line": "d05"
+  },
+  {
+   "t0": 23.266,
+   "t1": 25.861,
+   "text": "raha. Kisi ko khaas nahi laga.",
+   "line": "d05"
+  },
+  {
+   "t0": 26.631,
+   "t1": 29.443,
+   "text": "Phir unhone use ek muskurate chehre ki",
+   "line": "d06"
+  },
+  {
+   "t0": 29.443,
+   "t1": 31.531,
+   "text": "shakal mein kaat diya.",
+   "line": "d06"
+  },
+  {
+   "t0": 31.591,
+   "t1": 34.054,
+   "text": "Aankhon mein ungliyan phansti hain.",
+   "line": "d07"
+  },
+  {
+   "t0": 34.054,
+   "t1": 36.658,
+   "text": "Aur munh se chammach ke dono taraf ek",
+   "line": "d07"
+  },
+  {
+   "t0": 36.658,
+   "t1": 38.073,
+   "text": "saath safaai.",
+   "line": "d07"
+  },
+  {
+   "t0": 38.493,
+   "t1": 42.234,
+   "text": "2012. Shark Tank. Lori Greiner ne paisa",
+   "line": "d08"
+  },
+  {
+   "t0": 42.234,
+   "t1": 43.365,
+   "text": "lagaya.",
+   "line": "d08"
+  },
+  {
+   "t0": 43.425,
+   "t1": 45.814,
+   "text": "TV shopping par kuch hi minuton mein",
+   "line": "d09"
+  },
+  {
+   "t0": 45.814,
+   "t1": 47.973,
+   "text": "hazaaron sponge bik gaye.",
+   "line": "d09"
+  },
+  {
+   "t0": 48.093,
+   "t1": 50.402,
+   "text": "Aaj ise Shark Tank ki sabse badi",
+   "line": "d10"
+  },
+  {
+   "t0": 50.402,
+   "t1": 53.211,
+   "text": "kaamyabiyon mein gina jaata hai.",
+   "line": "d10"
+  },
+  {
+   "t0": 53.431,
+   "t1": 56.355,
+   "text": "Sabak: boring product ko ek chehra do,",
+   "line": "d11"
+  },
+  {
+   "t0": 56.355,
+   "t1": 59.24,
+   "text": "aur ek demo. Log yaad rakhenge.",
+   "line": "d11"
+  },
+  {
+   "t0": 59.36,
+   "t1": 62.511,
+   "text": "Aisi aur kahaniyon ke liye, follow karo!",
+   "line": "d12"
+  }
+ ],
+ "music": [
+  [
+   0.0,
+   "intro"
+  ],
+  [
+   5.239,
+   "groove"
+  ],
+  [
+   20.362,
+   "dark"
+  ],
+  [
+   25.631,
+   "hush"
+  ],
+  [
+   26.581,
+   "joy"
+  ],
+  [
+   31.341,
+   "bright"
+  ],
+  [
+   38.243,
+   "joy"
+  ],
+  [
+   47.843,
+   "groove"
+  ],
+  [
+   53.181,
+   "soft"
+  ],
+  [
+   62.361,
+   "end"
+  ]
+ ],
+ "bpm": 108,
+ "key": 2
+}

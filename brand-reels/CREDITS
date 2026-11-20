@@ -1,0 +1,21 @@
+Brand Story Reels — third-party assets (all three films)
+
+Fonts
+- Anton — Copyright 2020 The Anton Project Authors — SIL Open Font License 1.1 (shared/fonts/anton_OFL.txt)
+- Archivo Black — Copyright 2017 The Archivo Black Project Authors — SIL Open Font License 1.1 (shared/fonts/archivoblack_OFL.txt)
+
+Voice
+- Narration synthesised offline with Kokoro-82M (Apache-2.0) via kokoro-onnx (MIT), Hindi voice hm_omega; phonemes by espeak-ng (GPL-3.0, tool only).
+- Speech check: faster-whisper (MIT) with the OpenAI Whisper "small" model (MIT).
+
+Music
+- Original score written for these films, played on sampled instruments (exact lines per film in <film>/out/instruments.txt):
+  VSCO 2 Community Edition (CC0), VCSL — Versilian Community Sample Library (CC0), Karoryfer samples (CC0 / CC BY as listed).
+
+Tools
+- Picture engine and render pipeline adapted from the Lemo-Opuscar style library, Pop Art style (see its LICENSE).
+
+Brands
+- Brand names (Stanley, Scrub Daddy, Poppi, PepsiCo, Shark Tank, The Buy Guide) are mentioned only to tell factual stories.
+  No logos, real packaging, photos or footage appear: every product is a generic drawn stand-in.
+  You are responsible for how you publish and use these films.
