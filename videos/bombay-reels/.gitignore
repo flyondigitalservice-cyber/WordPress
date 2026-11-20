@@ -1,0 +1,6 @@
+_snap/
+*/renders/
+.hyperframes/
+*/.hyperframes/
+node_modules/
+deliverables/*/transcript.json

@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Bombay Marketing — 01 We Are Bombay Marketing</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="assets/brand.css" />
+<script src="assets/kit.js"></script>
+<style>
+  #bg { position: absolute; inset: 0; background: var(--black); }
+  /* S1 hook */
+  #s1 .hl { display: block; font-size: 136px; color: var(--white); white-space: pre; }
+  #s1 .ch { display: inline-block; }
+  #s1-rule { width: 560px; margin-top: 34px; }
+  #s1-q { margin-top: 34px; font-size: 60px; color: var(--white); font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; }
+  /* S2 three works in 3D */
+  #s2-group { position: absolute; inset: 0; transform-style: preserve-3d; }
+  .slot { position: absolute; transform-style: preserve-3d; }
+  .card { border-radius: 28px; overflow: hidden; box-shadow: 0 50px 100px rgba(0,0,0,.55); background: #fff; }
+  .card img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  #slot-a { left: 150px; top: 640px; width: 780px; height: 488px; transform: translateZ(0px); }
+  #slot-b { left: 330px; top: 1010px; width: 640px; height: 400px; transform: translateZ(180px); }
+  #slot-c { left: 110px; top: 380px; width: 560px; height: 294px; transform: translateZ(-160px); }
+  #card-a, #card-b, #card-c { width: 100%; height: 100%; }
+  #s2-cap { position: absolute; left: 120px; right: 120px; top: 1530px; }
+  /* S3 service frame */
+  #s3-frame { left: 120px; top: 380px; width: 840px; height: 620px; transform-origin: 50% 100%; }
+  .vg { position: absolute; inset: 0; padding: 48px; }
+  .vg-k { position: absolute; left: 48px; top: 40px; color: var(--mute); }
+  #s3-word { position: absolute; left: 120px; right: 120px; top: 1040px; height: 110px; }
+  #s3-word .sw { position: absolute; left: 0; top: 0; font-size: 96px; color: var(--black); }
+  #s3-rule { position: absolute; left: 120px; top: 1150px; width: 300px; }
+  /* vignette A: web build */
+  .wf { position: absolute; background: var(--grey); border-radius: 16px; transform-origin: 0 0; }
+  #wf-nav { left: 48px; top: 100px; width: 744px; height: 56px; }
+  #wf-hero { left: 48px; top: 180px; width: 744px; height: 230px; background: var(--blue); }
+  #wf-h1 { left: 88px; top: 230px; width: 420px; height: 34px; background: #fff; border-radius: 8px; }
+  #wf-h2 { left: 88px; top: 284px; width: 300px; height: 34px; background: rgba(255,255,255,.55); border-radius: 8px; }
+  #wf-btn { left: 88px; top: 344px; width: 180px; height: 40px; background: #fff; border-radius: 999px; }
+  #wf-c1 { left: 48px; top: 434px; width: 232px; height: 140px; }
+  #wf-c2 { left: 304px; top: 434px; width: 232px; height: 140px; }
+  #wf-c3 { left: 560px; top: 434px; width: 232px; height: 140px; }
+  /* vignette B: search */
+  #sb-bar { position: absolute; left: 48px; top: 110px; width: 744px; height: 96px; border-radius: 999px; border: 3px solid var(--hair); display: flex; align-items: center; padding-left: 34px; gap: 22px; }
+  .mag { width: 34px; height: 34px; border: 5px solid var(--black); border-radius: 50%; position: relative; flex: none; }
+  .mag::after { content: ""; position: absolute; width: 5px; height: 16px; background: var(--black); right: -9px; bottom: -13px; transform: rotate(-45deg); }
+  #sb-q { font-size: 36px; font-weight: 500; color: var(--black); white-space: pre; }
+  .row { position: absolute; left: 48px; width: 744px; height: 92px; border-radius: 18px; background: var(--grey); }
+  .row i { position: absolute; left: 28px; top: 22px; height: 18px; border-radius: 9px; background: #d6d9df; }
+  .row b { position: absolute; left: 28px; top: 52px; height: 14px; border-radius: 7px; background: #e3e5ea; width: 60%; }
+  #row1 { top: 250px; background: #fff; border: 4px solid var(--blue); }
+  #row1 i { background: var(--blue); width: 46%; }
+  #row2 { top: 362px; } #row2 i { width: 52%; }
+  #row3 { top: 474px; } #row3 i { width: 38%; }
+  /* vignette C: ad */
+  #ad-img { position: absolute; left: 48px; top: 100px; width: 744px; height: 391px; border-radius: 20px; overflow: hidden; }
+  #ad-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #ad-cta { position: absolute; left: 48px; top: 514px; width: 744px; height: 70px; border-radius: 16px; background: var(--blue); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 30px; }
+  #cursor { position: absolute; left: 0; top: 0; width: 54px; height: 54px; z-index: 5; }
+  /* vignette D: brand */
+  #br-img { position: absolute; left: 48px; top: 100px; width: 400px; height: 484px; border-radius: 20px; overflow: hidden; }
+  #br-img img { width: 100%; height: 100%; object-fit: cover; }
+  #br-aa { position: absolute; left: 488px; top: 96px; font-family: var(--display); font-weight: 900; font-size: 210px; letter-spacing: -0.05em; color: var(--black); line-height: 1; }
+  .sw-dot { position: absolute; width: 132px; height: 132px; border-radius: 50%; }
+  #dot1 { left: 492px; top: 330px; background: var(--black); }
+  #dot2 { left: 640px; top: 330px; background: var(--blue); }
+  #dot3 { left: 492px; top: 476px; width: 280px; height: 108px; border-radius: 20px; background: var(--grey); }
+  /* S4 converge */
+  #s4-head { position: absolute; left: 120px; right: 120px; top: 380px; font-size: 112px; color: var(--white); }
+  #s4-orbit { position: absolute; left: 304px; top: 760px; width: 472px; height: 472px; }
+  .tile { position: absolute; width: 224px; height: 224px; border-radius: 36px; background: #1d1d1f; border: 2px solid #2b2c30; display: flex; align-items: flex-end; padding: 26px; color: #fff; }
+  .tile .label { font-size: 28px; }
+  #t1 { left: 0; top: 0; } #t2 { left: 248px; top: 0; } #t3 { left: 0; top: 248px; } #t4 { left: 248px; top: 248px; }
+  #t1 { background: var(--blue); border-color: var(--blue); }
+  #s4-core { position: absolute; left: 480px; top: 936px; width: 120px; height: 120px; background: var(--blue); border-radius: 28px; z-index: 6; }
+  /* end */
+  #end-head { top: 440px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="20" data-width="1080" data-height="1920">
+
+  <div id="bg" class="clip" data-start="0" data-duration="20" data-track-index="0"></div>
+
+  <!-- S1 · 0–3.6 · Hook -->
+  <section id="s1" class="scene clip" data-start="0" data-duration="3.6" data-track-index="1" data-layout-allow-overflow>
+    <div class="stage3d">
+      <div class="hook" id="s1-hook" data-layout-allow-overlap>
+        <span class="hl display" id="hl1">THE WORLD</span>
+        <span class="hl display" id="hl2">HAS GONE</span>
+        <span class="hl display" id="hl3">DIGITAL.</span>
+        <div class="bline" id="s1-rule"></div>
+        <div id="s1-q">Has your <span class="blue">business?</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S2 · 2.9–6.3 · Digital elements emerge (real client work) -->
+  <section id="s2" class="scene clip" data-start="2.9" data-duration="3.4" data-track-index="2" data-layout-allow-overflow data-layout-allow-overlap>
+    <div class="stage3d">
+      <div id="s2-group">
+        <div class="slot" id="slot-c"><div class="card" id="card-c"><img src="assets/work/Meta-ads-for-ecommerce-brands-in-India.jpg" alt="Campaign creative" /></div></div>
+        <div class="slot" id="slot-a"><div class="card" id="card-a"><img src="assets/work/Work-Propzed.jpg" alt="Propzed website" /></div></div>
+        <div class="slot" id="slot-b"><div class="card" id="card-b"><img src="assets/work/Portfolio-Biovixa.jpg" alt="Biovixa website" /></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3 · 6.3–11.3 · Services in one Frame -->
+  <section id="s3" class="scene light clip" data-start="6.3" data-duration="5.0" data-track-index="1" data-layout-allow-overlap>
+    <div class="cam" id="s3-cam">
+      <div class="stage3d">
+        <div class="frame" id="s3-frame">
+          <div class="vg" id="vgA">
+            <div class="label vg-k">01 — Websites</div>
+            <div class="wf" id="wf-nav"></div><div class="wf" id="wf-hero"></div>
+            <div class="wf" id="wf-h1"></div><div class="wf" id="wf-h2"></div><div class="wf" id="wf-btn"></div>
+            <div class="wf" id="wf-c1"></div><div class="wf" id="wf-c2"></div><div class="wf" id="wf-c3"></div>
+          </div>
+          <div class="vg" id="vgB">
+            <div class="label vg-k">02 — Search</div>
+            <div id="sb-bar"><div class="mag"></div><div id="sb-q">digital agency in mumbai</div></div>
+            <div class="row" id="row1"><i></i><b></b></div>
+            <div class="row" id="row2"><i></i><b></b></div>
+            <div class="row" id="row3"><i></i><b></b></div>
+          </div>
+          <div class="vg" id="vgC">
+            <div class="label vg-k">03 — Advertising</div>
+            <div id="ad-img"><img src="assets/work/Meta-ads-for-ecommerce-brands-in-India.jpg" alt="Ad creative" /></div>
+            <div id="ad-cta">Learn more</div>
+            <svg id="cursor" viewBox="0 0 54 54"><path d="M8 4 L8 44 L19 34 L27 50 L34 47 L26 31 L42 31 Z" fill="#111" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="vg" id="vgD">
+            <div class="label vg-k">04 — Branding</div>
+            <div id="br-img"><img src="assets/work/Packaging-Evermore-Skincare.jpg" alt="Evermore packaging" /></div>
+            <div id="br-aa">Aa</div>
+            <div class="sw-dot" id="dot1"></div><div class="sw-dot" id="dot2"></div><div class="sw-dot" id="dot3"></div>
+          </div>
+        </div>
+      </div>
+      <div id="s3-word">
+        <div class="sw display" id="w-a"><span class="wm"><span class="w">WEBSITES</span></span></div>
+        <div class="sw display" id="w-b"><span class="wm"><span class="w">SEO</span></span></div>
+        <div class="sw display" id="w-c"><span class="wm"><span class="w">ADVERTISING</span></span></div>
+        <div class="sw display" id="w-d"><span class="wm"><span class="w">BRANDING</span></span></div>
+      </div>
+      <div class="bline" id="s3-rule"></div>
+    </div>
+  </section>
+
+  <!-- S4 · 11.3–16.0 · Everything converges -->
+  <section id="s4" class="scene dark clip" data-start="11.3" data-duration="4.7" data-track-index="2" data-layout-allow-overlap>
+    <div class="cam" id="s4-cam">
+      <div class="display" id="s4-head"><span class="line"><span class="wm"><span class="w">FROM IDEAS</span></span></span><span class="line"><span class="wm"><span class="w">TO</span></span> <span class="wm"><span class="w blue">GROWTH.</span></span></span></div>
+      <div id="s4-orbit">
+        <div class="tile" id="t1"><span class="label">Web</span></div>
+        <div class="tile" id="t2"><span class="label">SEO</span></div>
+        <div class="tile" id="t3"><span class="label">Ads</span></div>
+        <div class="tile" id="t4"><span class="label">Brand</span></div>
+      </div>
+      <div id="s4-core"></div>
+    </div>
+  </section>
+
+  <!-- END · 16–20 · Signature -->
+  <section id="end" class="scene end clip" data-start="16" data-duration="4" data-track-index="1">
+    <div class="cam" id="end-cam">
+      <div class="tag end-tag" id="end-tag"><img src="assets/brand/icon.png" alt="" /><span class="label mute">01 / 09</span></div>
+      <div class="display end-head" id="end-head"><span class="line"><span class="wm"><span class="w">YOUR DIGITAL</span></span></span><span class="line"><span class="wm"><span class="w">GROWTH</span></span></span><span class="line"><span class="wm"><span class="w blue">PARTNER.</span></span></span></div>
+      <div class="bline end-rule" id="end-rule"></div>
+      <img class="end-logo" id="end-logo" src="assets/brand/logo-white.png" alt="Bombay Marketing" />
+      <div class="end-url" id="end-url">bombaymarketing.in</div>
+    </div>
+  </section>
+
+  <!-- Series tag overlay · 3.4–16 -->
+  <div id="tag" class="tag clip" data-start="3.4" data-duration="12.6" data-track-index="3"><img src="assets/brand/icon.png" alt="" /><span class="label mute">01 / 09 · We are Bombay Marketing</span></div>
+
+  <!-- Blue Shutters -->
+  <div id="sh1" class="shutter clip" data-start="5.8" data-duration="1.1" data-track-index="4"></div>
+  <div id="sh2" class="shutter clip" data-start="16" data-duration="0.7" data-track-index="4"></div>
+
+  <!-- Voiceover -->
+  <audio id="vo1" class="clip" src="assets/vo/v01_1.wav" data-start="0.15" data-duration="2.50" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo2" class="clip" src="assets/vo/v01_2.wav" data-start="4.0" data-duration="3.52" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo3" class="clip" src="assets/vo/v01_3.wav" data-start="8.6" data-duration="2.99" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo4" class="clip" src="assets/vo/v01_4.wav" data-start="16.3" data-duration="1.37" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo5" class="clip" src="assets/vo/v01_5.wav" data-start="17.75" data-duration="1.56" data-track-index="5" data-volume="1"></audio>
+  <!-- Sound design -->
+  <audio id="sfx-scatter" class="clip" src="assets/sfx/whoosh-cinematic.mp3" data-start="0.33" data-duration="5.54" data-track-index="6" data-volume="0.35"></audio>
+  <audio id="sfx-sh1" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="6.14" data-duration="0.57" data-track-index="7" data-volume="0.5"></audio>
+  <audio id="sfx-type" class="clip" src="assets/sfx/typing.mp3" data-start="7.6" data-duration="1.54" data-track-index="7" data-volume="0.6"></audio>
+  <audio id="sfx-click" class="clip" src="assets/sfx/click-soft.mp3" data-start="9.6" data-duration="0.37" data-track-index="7" data-volume="0.9"></audio>
+  <audio id="sfx-pop" class="clip" src="assets/sfx/pop.mp3" data-start="14.78" data-duration="0.72" data-track-index="7" data-volume="0.5"></audio>
+  <audio id="sfx-riser" class="clip" src="assets/sfx/riser.mp3" data-start="12.55" data-duration="4.2" data-fade-out="0.4" data-track-index="6" data-volume="0.4"></audio>
+  <audio id="sfx-impact" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="16.5" data-duration="2.12" data-track-index="8" data-volume="0.5"></audio>
+  <audio id="sfx-chime" class="clip" src="assets/sfx/chime.mp3" data-start="16.25" data-duration="2.54" data-track-index="7" data-volume="0.8"></audio>
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  const K = window.BM;
+
+  /* ---------- S1 hook (0–3.6) ---------- */
+  K.split("#s1 .hl");
+  tl.fromTo("#hl1", { z: -420, opacity: 0.7, filter: "blur(4px)" }, { z: 0, opacity: 1, filter: "blur(0px)", duration: 1.0, ease: "expo.out" }, 0);
+  tl.fromTo("#hl2", { z: -900, opacity: 0, filter: "blur(14px)" }, { z: 0, opacity: 1, filter: "blur(0px)", duration: 1.0, ease: "expo.out" }, 0.28);
+  tl.fromTo("#hl3", { z: -900, opacity: 0, filter: "blur(14px)" }, { z: 0, opacity: 1, filter: "blur(0px)", duration: 1.0, ease: "expo.out" }, 0.62);
+  tl.fromTo("#s1-hook", { z: 0 }, { z: 120, duration: 2.6, ease: "sine.inOut" }, 0);
+  K.line(tl, "#s1-rule", 1.15, 0.9);
+  tl.fromTo("#s1-q", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 1.55);
+  // Typography breaks into digital fragments (deterministic scatter)
+  const chs = document.querySelectorAll("#s1 .ch");
+  chs.forEach((el, i) => {
+    const r1 = Math.abs(Math.sin(i * 12.9898) * 43758.5453) % 1;
+    const r2 = Math.abs(Math.sin(i * 78.233) * 12345.6789) % 1;
+    tl.to(el, { x: (r1 - 0.5) * 1400, y: (r2 - 0.5) * 1600, z: 300 + r1 * 900, rotateZ: (r2 - 0.5) * 90,
+      opacity: 0, duration: 0.85, ease: "power3.in" }, 2.75 + (i % 7) * 0.012);
+  });
+  tl.to(["#s1-rule", "#s1-q"], { opacity: 0, duration: 0.3, ease: "power2.in" }, 2.75);
+
+  /* ---------- S2 three works emerge (2.9–6.3) ---------- */
+  tl.fromTo("#s2-group", { rotateY: -16, rotateX: 8 }, { rotateY: 10, rotateX: -2, duration: 3.4, ease: "sine.inOut" }, 2.9);
+  tl.fromTo("#card-a", { opacity: 0, scale: 0.6, rotateX: 40 }, { opacity: 1, scale: 1, rotateX: 0, duration: 1.0, ease: "expo.out" }, 3.05);
+  tl.fromTo("#card-c", { opacity: 0, scale: 0.6, y: -120 }, { opacity: 1, scale: 1, y: 0, duration: 1.0, ease: "expo.out" }, 3.25);
+  tl.fromTo("#card-b", { opacity: 0, scale: 0.6, y: 200 }, { opacity: 1, scale: 1, y: 0, duration: 1.0, ease: "expo.out" }, 3.45);
+
+  /* ---------- Shutter 1 (cut at 6.3) ---------- */
+  K.shutter(tl, "#sh1", 6.3);
+
+  /* ---------- S3 services (6.3–11.3) ---------- */
+  K.push(tl, "#s3-cam", 6.3, 11.3, 1.0, 1.05);
+  tl.fromTo("#s3-frame", { rotateX: 24, y: 120 }, { rotateX: 0, y: 0, duration: 1.0, ease: "expo.out" }, 6.35);
+  const vgs = ["#vgA", "#vgB", "#vgC", "#vgD"], words = ["#w-a", "#w-b", "#w-c", "#w-d"];
+  const vStart = [6.3, 7.55, 8.8, 10.05];
+  vgs.forEach((v, i) => {
+    const t = vStart[i];
+    if (i > 0) tl.fromTo(v, { yPercent: 100, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.6, ease: "expo.inOut" }, t - 0.15);
+    else tl.set(v, { yPercent: 0, opacity: 1 }, 0);
+    if (i < 3) tl.to(v, { yPercent: -100, opacity: 0, duration: 0.6, ease: "expo.inOut" }, vStart[i + 1] - 0.15);
+    tl.fromTo(words[i] + " .w", { yPercent: 115, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.6, ease: "expo.out" }, t + 0.05);
+    if (i < 3) tl.to(words[i] + " .w", { yPercent: -115, opacity: 0, duration: 0.35, ease: "power3.in" }, vStart[i + 1] - 0.2);
+  });
+  tl.set(["#vgB", "#vgC", "#vgD"], { yPercent: 100, opacity: 0 }, 0);
+  tl.set(["#w-b .w", "#w-c .w", "#w-d .w"], { yPercent: 115, opacity: 0 }, 0);
+  K.line(tl, "#s3-rule", 6.6, 0.8);
+  // A: wireframe builds
+  tl.fromTo("#vgA .wf", { scaleX: 0 }, { scaleX: 1, duration: 0.55, ease: "expo.out", stagger: 0.06 }, 6.55);
+  // B: query types, results cascade
+  K.split("#sb-q");
+  K.type(tl, "#sb-q", 7.5, 0.022);
+  tl.fromTo(".row", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out", stagger: 0.1 }, 8.1);
+  // C: cursor clicks the CTA
+  tl.fromTo("#cursor", { x: 700, y: 640 }, { x: 430, y: 548, duration: 0.6, ease: "power3.inOut" }, 9.0);
+  tl.fromTo("#ad-cta", { scale: 1 }, { scale: 0.95, duration: 0.08, ease: "power2.in", yoyo: true, repeat: 1 }, 9.65);
+  // D: brand pieces snap in
+  tl.fromTo("#br-aa", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.6, ease: "expo.out" }, 10.15);
+  K.pop(tl, ".sw-dot", 10.3, { stagger: 0.08 });
+
+  /* ---------- S4 converge (11.3–16.0) ---------- */
+  K.words(tl, "#s4-head", 11.45, { stagger: 0.1 });
+  K.pop(tl, ".tile", 11.6, { stagger: 0.09, dur: 0.6 });
+  tl.fromTo("#s4-orbit", { rotate: 0 }, { rotate: 90, duration: 3.1, ease: "sine.inOut" }, 11.6);
+  tl.fromTo(".tile", { rotate: 0 }, { rotate: -90, duration: 3.1, ease: "sine.inOut" }, 11.6);
+  const toC = { "#t1": [124, 124], "#t2": [-124, 124], "#t3": [124, -124], "#t4": [-124, -124] };
+  Object.keys(toC).forEach((s) => {
+    tl.to(s, { x: toC[s][0], y: toC[s][1], scale: 0.4, opacity: 0, duration: 0.55, ease: "power3.in" }, 14.3);
+  });
+  K.wordsOut(tl, "#s4-head", 14.3);
+  tl.fromTo("#s4-core", { scale: 0, rotate: -45 }, { scale: 1, rotate: 0, duration: 0.5, ease: "back.out(1.6)" }, 14.75);
+  tl.to("#s4-core", { scale: 24, borderRadius: 0, duration: 0.75, ease: "expo.in" }, 15.25);
+
+  /* ---------- END (16–20): logo lands on "Bombay Marketing" ---------- */
+  tl.fromTo("#sh2", { yPercent: 0 }, { yPercent: -100, duration: 0.6, ease: "expo.out" }, 16.0);
+  K.push(tl, "#end-cam", 16.0, 20.0, 1.0, 1.06);
+  tl.fromTo("#end-logo", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 1.0, ease: "expo.out" }, 16.3);
+  K.line(tl, "#end-rule", 16.55, 1.0);
+  K.words(tl, "#end-head", 17.55, { stagger: 0.14 });
+  tl.fromTo("#end-url", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.7, ease: "expo.out" }, 17.3);
+  tl.fromTo("#end-tag", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.out" }, 17.2);
+
+  window.__timelines["main"] = tl;
+  tl.seek(0);
+</script>
+</body>
+</html>

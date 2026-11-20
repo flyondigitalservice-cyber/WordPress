@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Bombay Marketing — 02 Your Website Is Your Digital Storefront</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="assets/brand.css" />
+<script src="assets/kit.js"></script>
+<style>
+  #bg { position: absolute; inset: 0; background: var(--white); }
+  /* SA · hook + before/after in one browser */
+  #sa-hook { top: 330px; font-size: 128px; color: var(--black); }
+  #sa-rule { position: absolute; left: 120px; top: 740px; width: 420px; }
+  #br { left: 120px; top: 380px; width: 840px; height: 840px; transform-origin: 50% 0%; }
+  .layer { position: absolute; inset: 0; }
+  #mess .blk { border: 3px dashed #c4c8d0; }
+  #m1 { left: 30px; top: 24px; width: 520px; height: 70px; background: var(--black); border: none; }
+  #m2 { left: 470px; top: 60px; width: 320px; height: 210px; background: var(--blue); border: none; }
+  #m3 { left: 60px; top: 150px; width: 300px; height: 300px; border-radius: 50%; }
+  #m4 { left: 330px; top: 300px; width: 470px; height: 140px; }
+  #m5 { left: 40px; top: 480px; width: 360px; height: 260px; }
+  #m6 { left: 430px; top: 470px; width: 140px; height: 300px; background: #222; border: none; }
+  #m7 { left: 600px; top: 520px; width: 200px; height: 90px; background: var(--blue); border: none; opacity: .7; }
+  .tl { position: absolute; height: 8px; border-radius: 4px; background: #b9bdc6; }
+  #c-logo { left: 40px; top: 34px; width: 130px; height: 30px; }
+  #c-l1 { left: 400px; top: 40px; width: 70px; height: 18px; } #c-l2 { left: 490px; top: 40px; width: 70px; height: 18px; } #c-l3 { left: 580px; top: 40px; width: 50px; height: 18px; }
+  #c-btn { left: 660px; top: 26px; width: 140px; height: 46px; border-radius: 999px; }
+  #c-h { position: absolute; left: 40px; top: 120px; font-size: 76px; color: var(--black); }
+  #c-img { left: 40px; top: 300px; width: 760px; height: 280px; overflow: hidden; border-radius: 20px; }
+  #c-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #c-k1 { left: 40px; top: 606px; width: 240px; height: 150px; } #c-k2 { left: 300px; top: 606px; width: 240px; height: 150px; } #c-k3 { left: 560px; top: 606px; width: 240px; height: 150px; }
+  .stamp { position: absolute; right: 120px; top: 294px; z-index: 50; }
+  #chip-before { background: var(--black); color: var(--white); }
+  #chip-after { background: var(--blue); color: var(--white); }
+  /* SB · responsive */
+  #sb-head { position: absolute; left: 120px; right: 120px; top: 380px; font-size: 92px; color: var(--black); }
+  #dk { left: 120px; top: 600px; width: 720px; height: 450px; }
+  #tb { left: 560px; top: 840px; width: 340px; height: 460px; border-radius: 40px; padding: 12px; }
+  #tb .screen { border-radius: 30px; }
+  #ph { left: 150px; top: 930px; width: 230px; height: 450px; }
+  .shot { position: absolute; overflow: hidden; border-radius: 12px; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* SC · components */
+  .comp { position: absolute; background: var(--white); border: 2px solid var(--hair); border-radius: 32px; box-shadow: 0 30px 60px rgba(17,17,17,.10); }
+  .comp .label { position: absolute; left: 32px; top: 30px; color: var(--mute); }
+  #f-card { left: 120px; top: 380px; width: 400px; height: 560px; }
+  #p-card { left: 560px; top: 380px; width: 400px; height: 560px; }
+  #k-card { left: 120px; top: 980px; width: 400px; height: 200px; }
+  #a-card { left: 560px; top: 980px; width: 400px; height: 200px; }
+  .field { position: absolute; left: 32px; width: 336px; height: 84px; border-radius: 16px; border: 2px solid var(--hair); background: var(--grey);
+    font-size: 30px; color: var(--mute); display: flex; align-items: center; padding-left: 22px; white-space: pre; }
+  #fd1 { top: 90px; } #fd2 { top: 190px; } #fd3 { top: 290px; color: var(--black); border-color: var(--blue); background: #fff; }
+  #f-sub { position: absolute; left: 32px; top: 420px; width: 336px; height: 96px; }
+  #f-sent { position: absolute; left: 32px; top: 420px; width: 336px; height: 96px; background: var(--black); }
+  #p-img { left: 32px; top: 84px; width: 336px; height: 270px; border-radius: 20px; }
+  #p-name { position: absolute; left: 32px; top: 372px; font-family: var(--display); font-weight: 700; font-size: 30px; white-space: nowrap; letter-spacing: -0.02em; line-height: 1.1; width: 336px; }
+  #p-add { position: absolute; left: 32px; top: 440px; width: 336px; height: 88px; background: var(--black); }
+  #cart-ico { position: absolute; left: 40px; top: 84px; width: 84px; height: 84px; }
+  #badge { position: absolute; left: 104px; top: 70px; width: 52px; height: 52px; border-radius: 50%; background: var(--blue); color: #fff;
+    font-family: var(--display); font-weight: 900; font-size: 30px; display: flex; align-items: center; justify-content: center; }
+  #k-txt { position: absolute; left: 180px; top: 104px; font-size: 32px; font-weight: 600; }
+  #a-btn { position: absolute; left: 32px; top: 76px; width: 336px; height: 96px; overflow: hidden; }
+  #ripple { position: absolute; left: 50%; top: 50%; width: 60px; height: 60px; margin: -30px 0 0 -30px; border-radius: 50%; background: rgba(255,255,255,.45); }
+  /* end override */
+  #end-head { top: 390px; }
+  #end-head .small { font-family: var(--display); font-weight: 700; font-size: 62px; letter-spacing: -0.03em; line-height: 1.02; }
+  #end-head .big { font-size: 104px; margin-top: 22px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="20" data-width="1080" data-height="1920">
+  <div id="bg" class="clip" data-start="0" data-duration="20" data-track-index="0"></div>
+
+  <!-- SA · 0–7.2 · Hook → cluttered → clean -->
+  <section id="sa" class="scene light clip" data-start="0" data-duration="7.2" data-track-index="1" data-layout-allow-overlap>
+    <div class="cam" id="sa-cam">
+      <div class="hook display" id="sa-hook">
+        <span class="line" id="sa-l1">YOUR FIRST</span>
+        <span class="line"><span class="wm"><span class="w">IMPRESSION</span></span></span>
+        <span class="line"><span class="wm"><span class="w">STARTS</span></span> <span class="wm"><span class="w blue">HERE.</span></span></span>
+      </div>
+      <div class="bline" id="sa-rule"></div>
+      <div class="stage3d">
+        <div class="browser" id="br">
+          <div class="bar"><i></i><i></i><i></i><span class="url"></span></div>
+          <div class="page">
+            <div class="layer" id="mess">
+              <div class="blk" id="m1"></div><div class="blk" id="m2"></div><div class="blk" id="m3"></div>
+              <div class="blk" id="m4"><div class="tl" style="left:20px;top:24px;width:400px"></div><div class="tl" style="left:20px;top:44px;width:380px"></div><div class="tl" style="left:20px;top:64px;width:420px"></div><div class="tl" style="left:20px;top:84px;width:300px"></div><div class="tl" style="left:20px;top:104px;width:390px"></div></div>
+              <div class="blk" id="m5"><div class="tl" style="left:18px;top:30px;width:300px"></div><div class="tl" style="left:18px;top:50px;width:320px"></div><div class="tl" style="left:18px;top:70px;width:260px"></div><div class="tl" style="left:18px;top:90px;width:310px"></div><div class="tl" style="left:18px;top:110px;width:280px"></div><div class="tl" style="left:18px;top:130px;width:300px"></div></div>
+              <div class="blk" id="m6"></div><div class="blk" id="m7"></div>
+            </div>
+            <div class="layer" id="clean">
+              <div class="blk k" id="c-logo"></div><div class="blk h" id="c-l1"></div><div class="blk h" id="c-l2"></div><div class="blk h" id="c-l3"></div><div class="blk b" id="c-btn"></div>
+              <div class="display" id="c-h"><span class="line"><span class="wm"><span class="w">BUILT TO</span></span></span><span class="line"><span class="wm"><span class="w">BE</span></span> <span class="wm"><span class="w blue">CHOSEN.</span></span></span></div>
+              <div class="blk" id="c-img"><img src="assets/work/Packaging-Organic-Darjeeling-Tea.jpg" alt="Organic Darjeeling Tea" /></div>
+              <div class="blk" id="c-k1"></div><div class="blk" id="c-k2"></div><div class="blk" id="c-k3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chip stamp" id="chip-before">Before</div>
+    <div class="chip stamp" id="chip-after">After</div>
+  </section>
+
+  <!-- SB · 7.2–12.2 · Responsive -->
+  <section id="sb" class="scene soft clip" data-start="7.2" data-duration="5.0" data-track-index="2" data-layout-allow-overlap>
+    <div class="cam" id="sb-cam">
+      <div class="display" id="sb-head"><span class="line"><span class="wm"><span class="w">BUILT FOR</span></span></span><span class="line"><span class="wm"><span class="w">EVERY</span></span> <span class="wm"><span class="w blue">SCREEN.</span></span></span></div>
+      <div class="browser" id="dk">
+        <div class="bar"><i></i><i></i><i></i><span class="url"></span></div>
+        <div class="page">
+          <div class="blk k dkb" style="left:28px;top:30px;width:250px;height:30px"></div>
+          <div class="blk h dkb" style="left:28px;top:76px;width:200px;height:18px"></div>
+          <div class="blk b dkb" style="left:28px;top:118px;width:130px;height:40px;border-radius:999px"></div>
+          <div class="shot dkb" style="left:330px;top:24px;width:362px;height:170px"><img src="assets/work/Packaging-Organic-Darjeeling-Tea.jpg" alt="" /></div>
+          <div class="blk dkb" style="left:28px;top:220px;width:208px;height:150px"></div>
+          <div class="blk dkb" style="left:256px;top:220px;width:208px;height:150px"></div>
+          <div class="blk dkb" style="left:484px;top:220px;width:208px;height:150px"></div>
+        </div>
+      </div>
+      <div class="phone" id="tb"><div class="screen">
+        <div class="shot tbb" style="left:20px;top:24px;width:276px;height:150px"><img src="assets/work/Packaging-Organic-Darjeeling-Tea.jpg" alt="" /></div>
+        <div class="blk k tbb" style="left:20px;top:196px;width:220px;height:26px"></div>
+        <div class="blk b tbb" style="left:20px;top:238px;width:120px;height:36px;border-radius:999px"></div>
+        <div class="blk tbb" style="left:20px;top:296px;width:130px;height:120px"></div>
+        <div class="blk tbb" style="left:166px;top:296px;width:130px;height:120px"></div>
+      </div></div>
+      <div class="phone" id="ph"><div class="screen">
+        <div class="blk k phb" style="left:18px;top:40px;width:140px;height:22px"></div>
+        <div class="shot phb" style="left:18px;top:80px;width:166px;height:120px"><img src="assets/work/Packaging-Organic-Darjeeling-Tea.jpg" alt="" /></div>
+        <div class="blk b phb" style="left:18px;top:216px;width:110px;height:34px;border-radius:999px"></div>
+        <div class="blk phb" style="left:18px;top:266px;width:166px;height:60px"></div>
+        <div class="blk phb" style="left:18px;top:338px;width:166px;height:60px"></div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- SC · 12.2–16 · Components that convert -->
+  <section id="sc" class="scene light clip" data-start="12.2" data-duration="3.8" data-track-index="1" data-layout-allow-overlap>
+    <div class="cam" id="sc-cam">
+      <div class="comp" id="f-card"><span class="label">Enquiry</span>
+        <div class="field" id="fd1">Name</div><div class="field" id="fd2">Phone</div>
+        <div class="field" id="fd3"><span id="fd3-t">I'd like a quote.</span></div>
+        <div class="btn" id="f-sub">Send enquiry</div>
+        <div class="btn" id="f-sent">Sent ✓</div>
+      </div>
+      <div class="comp" id="p-card"><span class="label">Product</span>
+        <div class="shot" id="p-img"><img src="assets/work/Packaging-Organic-Darjeeling-Tea.jpg" alt="Organic Darjeeling Tea" /></div>
+        <div id="p-name">Organic Darjeeling Tea</div>
+        <div class="btn" id="p-add">Add to cart</div>
+      </div>
+      <div class="comp" id="k-card"><span class="label">Cart</span>
+        <svg id="cart-ico" viewBox="0 0 84 84"><path d="M8 14h12l9 40h38l8-28H26" fill="none" stroke="#111" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="34" cy="68" r="6" fill="#111"/><circle cx="62" cy="68" r="6" fill="#111"/></svg>
+        <div id="badge"><span id="b1">1</span></div>
+        <div id="k-txt">Item added</div>
+      </div>
+      <div class="comp" id="a-card"><span class="label">Call to action</span>
+        <div class="btn" id="a-btn">Book a call<span id="ripple"></span></div>
+      </div>
+    </div>
+    <svg class="cursor" id="cur" viewBox="0 0 54 54"><path d="M8 4 L8 44 L19 34 L27 50 L34 47 L26 31 L42 31 Z" fill="#111" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg>
+  </section>
+
+  <!-- END · 16–20 -->
+  <section id="end" class="scene end clip" data-start="16" data-duration="4" data-track-index="2">
+    <div class="cam" id="end-cam">
+      <div class="tag end-tag" id="end-tag"><img src="assets/brand/icon.png" alt="" /><span class="label mute">02 / 09</span></div>
+      <div class="end-head" id="end-head">
+        <span class="line small"><span class="wm"><span class="w">DON'T JUST HAVE</span></span></span>
+        <span class="line small"><span class="wm"><span class="w">A WEBSITE.</span></span></span>
+        <div class="display big"><span class="line"><span class="wm"><span class="w">MAKE IT</span></span></span><span class="line"><span class="wm"><span class="w blue">WORK.</span></span></span></div>
+      </div>
+      <div class="bline end-rule" id="end-rule"></div>
+      <img class="end-logo" id="end-logo" src="assets/brand/logo-white.png" alt="Bombay Marketing" />
+      <div class="end-url" id="end-url">bombaymarketing.in</div>
+    </div>
+  </section>
+
+  <div id="tag" class="tag clip" data-start="3.2" data-duration="12.8" data-track-index="3"><img src="assets/brand/icon.png" alt="" /><span class="label mute">02 / 09 · Websites</span></div>
+  <div id="sh1" class="shutter clip" data-start="6.7" data-duration="1.1" data-track-index="4"></div>
+  <div id="sh2" class="shutter clip" data-start="15.5" data-duration="1.1" data-track-index="4"></div>
+
+  <audio id="vo1" class="clip" src="assets/vo/v02_1.wav" data-start="0.2" data-duration="3.37" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo2" class="clip" src="assets/vo/v02_2.wav" data-start="4.1" data-duration="2.24" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo3" class="clip" src="assets/vo/v02_3.wav" data-start="7.7" data-duration="4.14" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo4" class="clip" src="assets/vo/v02_4.wav" data-start="16.3" data-duration="2.47" data-track-index="5" data-volume="1"></audio>
+  <audio id="sfx-w1" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="2.95" data-duration="0.57" data-track-index="6" data-volume="0.45"></audio>
+  <audio id="sfx-gl" class="clip" src="assets/sfx/glitch-1.mp3" data-start="3.95" data-duration="2.64" data-track-index="7" data-volume="0.22"></audio>
+  <audio id="sfx-w2" class="clip" src="assets/sfx/whoosh.mp3" data-start="5.0" data-duration="0.57" data-track-index="6" data-volume="0.45"></audio>
+  <audio id="sfx-sh1" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="7.04" data-duration="0.57" data-track-index="6" data-volume="0.5"></audio>
+  <audio id="sfx-c1" class="clip" src="assets/sfx/click-soft.mp3" data-start="12.48" data-duration="0.37" data-track-index="6" data-volume="0.9"></audio>
+  <audio id="sfx-ty" class="clip" src="assets/sfx/typing.mp3" data-start="12.15" data-duration="1.54" data-track-index="7" data-volume="0.55"></audio>
+  <audio id="sfx-c2" class="clip" src="assets/sfx/click.mp3" data-start="13.38" data-duration="0.37" data-track-index="8" data-volume="0.7"></audio>
+  <audio id="sfx-c3" class="clip" src="assets/sfx/click-soft.mp3" data-start="14.03" data-duration="0.37" data-track-index="6" data-volume="0.9"></audio>
+  <audio id="sfx-pop" class="clip" src="assets/sfx/pop.mp3" data-start="14.13" data-duration="0.72" data-track-index="8" data-volume="0.55"></audio>
+  <audio id="sfx-c4" class="clip" src="assets/sfx/click.mp3" data-start="14.88" data-duration="0.37" data-track-index="6" data-volume="0.7"></audio>
+  <audio id="sfx-sh2" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="15.84" data-duration="0.57" data-track-index="7" data-volume="0.5"></audio>
+  <audio id="sfx-chime" class="clip" src="assets/sfx/chime.mp3" data-start="16.75" data-duration="2.54" data-track-index="8" data-volume="0.8"></audio>
+  <audio id="sfx-impact" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="17.1" data-duration="2.12" data-track-index="6" data-volume="0.5"></audio>
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  const K = window.BM;
+
+  /* SA 0–7.2 */
+  K.push(tl, "#sa-cam", 0, 7.2, 1.0, 1.04);
+  tl.fromTo("#sa-l1", { opacity: 0.85, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 0);
+  K.words(tl, "#sa-hook", 0.25, { stagger: 0.12 });
+  K.line(tl, "#sa-rule", 0.9, 0.9);
+  tl.fromTo("#br", { y: 520, scale: 0.55, rotateX: 72, opacity: 0 }, { y: 520, scale: 0.55, rotateX: 0, opacity: 1, duration: 1.2, ease: "expo.out" }, 0.5);
+  // hook leaves, browser takes the frame
+  tl.to("#sa-hook .line", { yPercent: -60, opacity: 0, duration: 0.45, ease: "power3.in", stagger: 0.05 }, 2.75);
+  tl.to("#sa-rule", { scaleX: 0, transformOrigin: "100% 50%", duration: 0.4, ease: "power3.in" }, 2.75);
+  tl.to("#br", { y: 0, scale: 1, duration: 0.9, ease: "expo.inOut" }, 2.95);
+  // cluttered site
+  tl.set("#clean", { opacity: 0 }, 0);
+  tl.set("#m1", { rotate: -3 }, 0); tl.set("#m2", { rotate: 5 }, 0); tl.set("#m5", { rotate: 2 }, 0); tl.set("#m6", { rotate: -6 }, 0); tl.set("#m7", { rotate: 9 }, 0);
+  tl.fromTo("#mess .blk", { opacity: 0 }, { opacity: 1, duration: 0.2, stagger: 0.05 }, 1.0);
+  tl.fromTo("#chip-before", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 3.6);
+  [0, 1, 2, 3, 4, 5].forEach((k) => tl.to("#mess", { x: (k % 2 ? -1 : 1) * (14 - k * 2), duration: 0.05, ease: "none" }, 4.4 + k * 0.05));
+  tl.to("#mess", { x: 0, duration: 0.05 }, 4.7);
+  // transform → clean
+  tl.to("#mess .blk", { opacity: 0, scale: 0.8, filter: "blur(10px)", duration: 0.35, ease: "power3.in", stagger: 0.02 }, 4.8);
+  tl.to("#chip-before", { opacity: 0, y: -20, duration: 0.3, ease: "power3.in" }, 4.8);
+  tl.set("#clean", { opacity: 1 }, 5.0);
+  tl.fromTo("#clean .blk", { opacity: 0, y: 60, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "expo.out", stagger: 0.04 }, 5.0);
+  K.words(tl, "#c-h", 5.15, { stagger: 0.1 });
+  tl.fromTo("#chip-after", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 5.3);
+  K.shutter(tl, "#sh1", 7.2);
+
+  /* SB 7.2–12.2 responsive */
+  K.push(tl, "#sb-cam", 7.2, 12.2, 1.0, 1.05);
+  K.words(tl, "#sb-head", 7.35, { stagger: 0.1 });
+  tl.fromTo("#dk", { y: 260, opacity: 0, rotateX: 20 }, { y: 0, opacity: 1, rotateX: 0, duration: 1.0, ease: "expo.out" }, 7.45);
+  tl.fromTo("#tb", { y: 340, opacity: 0 }, { y: 0, opacity: 1, duration: 1.0, ease: "expo.out" }, 7.75);
+  tl.fromTo("#ph", { y: 420, opacity: 0 }, { y: 0, opacity: 1, duration: 1.0, ease: "expo.out" }, 8.05);
+  tl.fromTo(".dkb", { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: 0.6, ease: "expo.out", stagger: 0.05 }, 7.8);
+  tl.fromTo(".tbb", { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: 0.6, ease: "expo.out", stagger: 0.05 }, 8.1);
+  tl.fromTo(".phb", { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: 0.6, ease: "expo.out", stagger: 0.05 }, 8.4);
+  // parallax drift
+  tl.to("#dk", { y: -24, duration: 3.2, ease: "sine.inOut" }, 9.0);
+  tl.to("#tb", { y: -60, duration: 3.2, ease: "sine.inOut" }, 9.0);
+  tl.to("#ph", { y: -96, duration: 3.1, ease: "sine.inOut" }, 9.1);
+  tl.to("#sb-cam", { opacity: 0, duration: 0.3, ease: "power2.in" }, 11.9);
+
+  /* SC 12.2–16 components */
+  K.push(tl, "#sc-cam", 12.2, 16.0, 1.0, 1.04);
+  tl.fromTo(".comp", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "expo.out", stagger: 0.07 }, 12.2);
+  tl.fromTo("#cur", { x: 980, y: 1300 }, { x: 330, y: 690, duration: 0.45, ease: "power3.out" }, 12.25);
+  K.split("#fd3-t");
+  K.type(tl, "#fd3-t", 12.55, 0.04);
+  tl.to("#cur", { x: 300, y: 880, duration: 0.45, ease: "power3.inOut" }, 12.95);
+  tl.fromTo("#f-sub", { scale: 1 }, { scale: 0.94, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.in" }, 13.42);
+  tl.set("#f-sent", { opacity: 0 }, 0);
+  tl.fromTo("#f-sent", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.6)" }, 13.6);
+  tl.to("#cur", { x: 760, y: 900, duration: 0.45, ease: "power3.inOut" }, 13.6);
+  tl.fromTo("#p-add", { scale: 1 }, { scale: 0.94, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.in" }, 14.07);
+  K.pop(tl, "#badge", 14.2, { dur: 0.45 });
+  tl.fromTo("#k-txt", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 14.3);
+  tl.to("#cur", { x: 760, y: 1100, duration: 0.45, ease: "power3.inOut" }, 14.45);
+  tl.fromTo("#ripple", { scale: 0, opacity: 1 }, { scale: 9, opacity: 0, duration: 0.6, ease: "expo.out" }, 14.92);
+  tl.fromTo("#a-btn", { scale: 1 }, { scale: 0.95, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.in" }, 14.92);
+  K.shutter(tl, "#sh2", 16.0);
+
+  /* END 16–20 */
+  K.endcard(tl, 16.0);
+
+  window.__timelines["main"] = tl;
+  tl.seek(0);
+</script>
+</body>
+</html>
