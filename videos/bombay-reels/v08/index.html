@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Bombay Marketing — 08 Ideas Into Impact</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="assets/brand.css" />
+<script src="assets/kit.js"></script>
+<style>
+  #bg { position: absolute; inset: 0; background: var(--black); }
+  #sa-hook { top: 360px; font-size: 124px; color: var(--white); }
+  #sa-rule { position: absolute; left: 120px; top: 880px; width: 380px; }
+  /* SB · stack of real client websites */
+  .sk { position: absolute; left: 120px; top: 480px; width: 840px; height: 525px; border-radius: 28px; overflow: hidden; box-shadow: 0 50px 100px rgba(0,0,0,.5); }
+  .sk img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #skn { position: absolute; left: 120px; top: 1060px; width: 840px; height: 90px; }
+  .skn { position: absolute; left: 0; top: 0; font-family: var(--display); font-weight: 700; font-size: 64px; letter-spacing: -0.03em; color: #fff; white-space: nowrap; }
+  #sb-lab { position: absolute; left: 120px; top: 1160px; color: var(--mute); }
+  /* SC · industry chapters */
+  .chap { position: absolute; inset: 0; }
+  .cn { position: absolute; left: 120px; top: 390px; color: var(--mute); }
+  .ct { position: absolute; left: 120px; top: 440px; font-size: 84px; color: var(--black); }
+  .cc { position: absolute; width: 620px; height: 388px; border-radius: 26px; overflow: hidden; box-shadow: var(--shadow); background: #fff; }
+  .cc img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cc.c1 { left: 120px; top: 640px; } .cc.c2 { left: 340px; top: 850px; }
+  .cc.c1 .chip.nm { top: 20px; bottom: auto; }
+  .chip.nm { position: absolute; left: 20px; bottom: 20px; background: var(--black); color: #fff; font-size: 28px; padding: 12px 22px; }
+  #wipe { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: var(--blue); transform-origin: 0 50%; z-index: 20; }
+  /* SD · portfolio wall */
+  #wall { position: absolute; left: 120px; top: 380px; width: 840px; }
+  .wt { position: absolute; width: 400px; height: 320px; }
+  .wi { width: 400px; height: 250px; border-radius: 20px; overflow: hidden; }
+  .wi img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .wn { margin-top: 12px; font-family: var(--text); font-weight: 600; font-size: 28px; color: #fff; line-height: 1.15; }
+  #wall-veil { position: absolute; inset: 0; background: rgba(17,17,17,.9); }
+  #sd-head { position: absolute; left: 120px; right: 120px; top: 600px; font-size: 104px; color: var(--white); }
+  #sd-pre { position: absolute; left: 120px; top: 540px; color: #c9ccd3; }
+  #end-head { top: 560px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="22" data-width="1080" data-height="1920">
+  <div id="bg" class="clip" data-start="0" data-duration="22" data-track-index="0"></div>
+
+  <!-- SA · 0–3 · Hook -->
+  <section id="sa" class="scene dark clip" data-start="0" data-duration="3.0" data-track-index="1">
+    <div class="cam" id="sa-cam">
+      <div class="hook display" id="sa-hook">
+        <span class="line" id="sa-l1">EVERY</span>
+        <span class="line"><span class="wm"><span class="w">BUSINESS</span></span></span>
+        <span class="line"><span class="wm"><span class="w">HAS A</span></span></span>
+        <span class="line"><span class="wm"><span class="w blue">STORY.</span></span></span>
+      </div>
+      <div class="bline" id="sa-rule"></div>
+    </div>
+  </section>
+
+  <!-- SB · 3–8 · Real client websites -->
+  <section id="sb" class="scene dark clip" data-start="3.0" data-duration="5.0" data-track-index="2" data-layout-allow-overlap>
+    <div class="cam" id="sb-cam">
+      <div class="sk" id="sk1"><img src="assets/work/Portfolio-Biovixa.jpg" alt="Biovixa" /></div>
+      <div class="sk" id="sk2"><img src="assets/work/Portfolio-Dastaan-by-Artisans.jpg" alt="Dastaan by Artisans" /></div>
+      <div class="sk" id="sk3"><img src="assets/work/Portfolio-Glowleaf-Cosmetic.jpg" alt="Glowleaf Cosmetic" /></div>
+      <div class="sk" id="sk4"><img src="assets/work/Portfolio-Posh-Laptop.jpg" alt="Posh Laptop" /></div>
+      <div id="skn">
+        <div class="skn" id="skn1"><span class="wm"><span class="w">Biovixa</span></span></div>
+        <div class="skn" id="skn2"><span class="wm"><span class="w">Dastaan by Artisans</span></span></div>
+        <div class="skn" id="skn3"><span class="wm"><span class="w">Glowleaf Cosmetic</span></span></div>
+        <div class="skn" id="skn4"><span class="wm"><span class="w">Posh Laptop</span></span></div>
+      </div>
+      <div class="label" id="sb-lab">Website design &amp; development</div>
+    </div>
+  </section>
+
+  <!-- SC · 8–13.4 · Industries -->
+  <section id="sc" class="scene light clip" data-start="8.0" data-duration="5.4" data-track-index="1" data-layout-allow-overlap>
+    <div class="cam" id="sc-cam">
+      <div class="chap" id="ch1">
+        <div class="cn label"><span class="wm"><span class="w">Industry 01</span></span></div>
+        <div class="ct display"><span class="line"><span class="wm"><span class="w">E-COMMERCE</span></span></span></div>
+        <div class="cc c1"><img src="assets/work/Work-Denim-State.jpg" alt="Denim State" /><span class="chip nm">Denim State</span></div>
+        <div class="cc c2"><img src="assets/work/Work-Hadrami-Fashion.jpg" alt="Hadrami Fashion" /><span class="chip nm">Hadrami Fashion</span></div>
+      </div>
+      <div class="chap" id="ch2">
+        <div class="cn label"><span class="wm"><span class="w">Industry 02</span></span></div>
+        <div class="ct display"><span class="line"><span class="wm"><span class="w">MANUFACTURING</span></span></span><span class="line"><span class="wm"><span class="w blue">&amp; TRADE</span></span></span></div>
+        <div class="cc c1"><img src="assets/work/Work-Custom-Floor-Mats.jpg" alt="Custom Floor Mats" /><span class="chip nm">Custom Floor Mats</span></div>
+        <div class="cc c2"><img src="assets/work/Work-Dolly-Exports.jpg" alt="Dolly Exports" /><span class="chip nm">Dolly Exports</span></div>
+      </div>
+      <div class="chap" id="ch3">
+        <div class="cn label"><span class="wm"><span class="w">Industry 03</span></span></div>
+        <div class="ct display"><span class="line"><span class="wm"><span class="w">CONSUMER</span></span></span><span class="line"><span class="wm"><span class="w blue">BRANDS</span></span></span></div>
+        <div class="cc c1"><img src="assets/work/Portfolio-One-Love-Energy.jpg" alt="One Love Energy" /><span class="chip nm">One Love Energy</span></div>
+        <div class="cc c2"><img src="assets/work/Packaging-Naked-Life-Sparkling.jpg" alt="Naked Life" /><span class="chip nm">Naked Life</span></div>
+      </div>
+      <div class="chap" id="ch4">
+        <div class="cn label"><span class="wm"><span class="w">Industry 04</span></span></div>
+        <div class="ct display"><span class="line"><span class="wm"><span class="w">PROFESSIONAL</span></span></span><span class="line"><span class="wm"><span class="w blue">SERVICES</span></span></span></div>
+        <div class="cc c1"><img src="assets/work/Work-Experia-Consultancy.jpg" alt="Experia Consultancy" /><span class="chip nm">Experia Consultancy</span></div>
+        <div class="cc c2"><img src="assets/work/Work-Propzed.jpg" alt="Propzed" /><span class="chip nm">Propzed</span></div>
+      </div>
+    </div>
+    <div id="wipe"></div>
+  </section>
+
+  <!-- SD · 13.4–18 · Portfolio wall -->
+  <section id="sd" class="scene dark clip" data-start="13.4" data-duration="4.6" data-track-index="2" data-layout-allow-overlap>
+    <div class="cam" id="sd-cam">
+      <div id="wall">
+        <div class="wt" style="left:0px;top:0px"><div class="wi"><img src="assets/work/Portfolio-Biovixa.jpg" alt="Biovixa" /></div><div class="wn">Biovixa</div></div>
+        <div class="wt" style="left:440px;top:0px"><div class="wi"><img src="assets/work/Portfolio-Dastaan-by-Artisans.jpg" alt="Dastaan by Artisans" /></div><div class="wn">Dastaan by Artisans</div></div>
+        <div class="wt" style="left:0px;top:340px"><div class="wi"><img src="assets/work/Portfolio-Glowleaf-Cosmetic.jpg" alt="Glowleaf Cosmetic" /></div><div class="wn">Glowleaf Cosmetic</div></div>
+        <div class="wt" style="left:440px;top:340px"><div class="wi"><img src="assets/work/Portfolio-Posh-Laptop.jpg" alt="Posh Laptop" /></div><div class="wn">Posh Laptop</div></div>
+        <div class="wt" style="left:0px;top:680px"><div class="wi"><img src="assets/work/Portfolio-Dubai-Blinds-Hub.jpg" alt="Dubai Blinds Hub" /></div><div class="wn">Dubai Blinds Hub</div></div>
+        <div class="wt" style="left:440px;top:680px"><div class="wi"><img src="assets/work/Portfolio-One-Love-Energy.jpg" alt="One Love Energy" /></div><div class="wn">One Love Energy</div></div>
+        <div class="wt" style="left:0px;top:1020px"><div class="wi"><img src="assets/work/Work-Adams-Ekart.jpg" alt="Adams Ekart" /></div><div class="wn">Adams Ekart</div></div>
+        <div class="wt" style="left:440px;top:1020px"><div class="wi"><img src="assets/work/Work-Custom-Floor-Mats.jpg" alt="Custom Floor Mats" /></div><div class="wn">Custom Floor Mats</div></div>
+        <div class="wt" style="left:0px;top:1360px"><div class="wi"><img src="assets/work/Work-Denim-State.jpg" alt="Denim State" /></div><div class="wn">Denim State</div></div>
+        <div class="wt" style="left:440px;top:1360px"><div class="wi"><img src="assets/work/Work-Dolly-Exports.jpg" alt="Dolly Exports" /></div><div class="wn">Dolly Exports</div></div>
+        <div class="wt" style="left:0px;top:1700px"><div class="wi"><img src="assets/work/Work-Dubai-Gym-Flooring.jpg" alt="Dubai Gym Flooring" /></div><div class="wn">Dubai Gym Flooring</div></div>
+        <div class="wt" style="left:440px;top:1700px"><div class="wi"><img src="assets/work/Work-Experia-Consultancy.jpg" alt="Experia Consultancy" /></div><div class="wn">Experia Consultancy</div></div>
+        <div class="wt" style="left:0px;top:2040px"><div class="wi"><img src="assets/work/Work-Hadrami-Fashion.jpg" alt="Hadrami Fashion" /></div><div class="wn">Hadrami Fashion</div></div>
+        <div class="wt" style="left:440px;top:2040px"><div class="wi"><img src="assets/work/Work-Propzed.jpg" alt="Propzed" /></div><div class="wn">Propzed</div></div>
+        <div class="wt" style="left:0px;top:2380px"><div class="wi"><img src="assets/work/Work-Safepoint-Fire.jpg" alt="Safepoint Fire" /></div><div class="wn">Safepoint Fire</div></div>
+        <div class="wt" style="left:440px;top:2380px"><div class="wi"><img src="assets/work/Work-Wallpaper-Installations-Dubai.jpg" alt="Wallpaper Installations Dubai" /></div><div class="wn">Wallpaper Installations Dubai</div></div>
+      </div>
+    </div>
+    <div id="wall-veil"></div>
+    <div class="label" id="sd-pre"><span class="wm"><span class="w">Different industries.</span></span></div>
+    <div class="display" id="sd-head"><span class="line"><span class="wm"><span class="w">ONE GROWTH</span></span></span><span class="line"><span class="wm"><span class="w blue">MINDSET.</span></span></span></div>
+  </section>
+
+  <!-- END · 18–22 -->
+  <section id="end" class="scene end clip" data-start="18" data-duration="4" data-track-index="1">
+    <div class="cam" id="end-cam">
+      <div class="tag end-tag" id="end-tag"><img src="assets/brand/icon.png" alt="" /><span class="label mute">08 / 09</span></div>
+      <div class="display end-head" id="end-head"><span class="line"><span class="wm"><span class="w">IDEAS INTO</span></span></span><span class="line"><span class="wm"><span class="w blue">IMPACT.</span></span></span></div>
+      <div class="bline end-rule" id="end-rule"></div>
+      <img class="end-logo" id="end-logo" src="assets/brand/logo-white.png" alt="Bombay Marketing" />
+      <div class="end-url" id="end-url">bombaymarketing.in</div>
+    </div>
+  </section>
+
+  <div id="tag" class="tag clip" data-start="3.0" data-duration="10.4" data-track-index="3"><img src="assets/brand/icon.png" alt="" /><span class="label mute">08 / 09 · Our work</span></div>
+  <div id="sh1" class="shutter clip" data-start="7.5" data-duration="1.1" data-track-index="4"></div>
+  <div id="sh2" class="shutter clip" data-start="12.9" data-duration="1.1" data-track-index="4"></div>
+  <div id="sh3" class="shutter clip" data-start="17.5" data-duration="1.1" data-track-index="4"></div>
+
+  <audio id="vo1" class="clip" src="assets/vo/v08_1.wav" data-start="0.2" data-duration="1.92" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo2" class="clip" src="assets/vo/v08_2.wav" data-start="3.1" data-duration="2.33" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo3" class="clip" src="assets/vo/v08_3.wav" data-start="5.9" data-duration="7.02" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo4" class="clip" src="assets/vo/v08_4.wav" data-start="14.3" data-duration="2.43" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo5" class="clip" src="assets/vo/v08_5.wav" data-start="18.5" data-duration="1.49" data-track-index="5" data-volume="1"></audio>
+  <audio id="sfx-w1" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="2.84" data-duration="0.57" data-track-index="6" data-volume="0.4"></audio>
+  <audio id="sfx-s2" class="clip" src="assets/sfx/whoosh.mp3" data-start="4.29" data-duration="0.57" data-track-index="7" data-volume="0.3"></audio>
+  <audio id="sfx-s3" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="5.49" data-duration="0.57" data-track-index="6" data-volume="0.3"></audio>
+  <audio id="sfx-s4" class="clip" src="assets/sfx/whoosh.mp3" data-start="6.69" data-duration="0.57" data-track-index="7" data-volume="0.3"></audio>
+  <audio id="sfx-sh1" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="7.84" data-duration="0.57" data-track-index="6" data-volume="0.5"></audio>
+  <audio id="sfx-c2" class="clip" src="assets/sfx/whoosh.mp3" data-start="9.19" data-duration="0.57" data-track-index="7" data-volume="0.35"></audio>
+  <audio id="sfx-c3" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="10.54" data-duration="0.57" data-track-index="6" data-volume="0.35"></audio>
+  <audio id="sfx-c4" class="clip" src="assets/sfx/whoosh.mp3" data-start="11.89" data-duration="0.57" data-track-index="7" data-volume="0.35"></audio>
+  <audio id="sfx-sh2" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="13.24" data-duration="0.57" data-track-index="6" data-volume="0.5"></audio>
+  <audio id="sfx-riser" class="clip" src="assets/sfx/riser.mp3" data-start="14.55" data-duration="3.9" data-fade-out="0.4" data-track-index="8" data-volume="0.3"></audio>
+  <audio id="sfx-sh3" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="17.84" data-duration="0.57" data-track-index="6" data-volume="0.5"></audio>
+  <audio id="sfx-chime" class="clip" src="assets/sfx/chime.mp3" data-start="18.85" data-duration="2.54" data-track-index="7" data-volume="0.8"></audio>
+  <audio id="sfx-impact" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="19.1" data-duration="2.12" data-track-index="8" data-volume="0.5"></audio>
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  const K = window.BM;
+
+  /* SA */
+  K.push(tl, "#sa-cam", 0, 3.0, 1.0, 1.05);
+  tl.fromTo("#sa-l1", { opacity: 0.85, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 0);
+  K.words(tl, "#sa-hook", 0.25, { stagger: 0.14 });
+  K.line(tl, "#sa-rule", 0.9, 0.9);
+  tl.to(["#sa-hook .line", "#sa-rule"], { y: -80, opacity: 0, duration: 0.4, ease: "power3.in", stagger: 0.04 }, 2.6);
+
+  /* SB stack: 4 sites, 1.2 s each */
+  K.push(tl, "#sb-cam", 3.0, 8.0, 1.0, 1.04);
+  const T = [3.05, 4.45, 5.65, 6.85];
+  tl.set(["#skn2 .w", "#skn3 .w", "#skn4 .w"], { yPercent: 115 }, 0);
+  T.forEach((t, i) => {
+    const n = i + 1;
+    tl.fromTo("#sk" + n, { y: 1500, scale: 1, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, ease: "expo.out" }, t);
+    if (i < 3) tl.to("#sk" + n, { y: -70, scale: 0.9, opacity: 0.45, duration: 0.6, ease: "expo.inOut" }, T[i + 1]);
+    if (i < 2) tl.to("#sk" + n, { y: -130, scale: 0.82, opacity: 0, duration: 0.6, ease: "expo.inOut" }, T[i + 2]);
+    tl.fromTo("#skn" + n + " .w", { yPercent: 115 }, { yPercent: 0, duration: 0.6, ease: "expo.out" }, t + 0.15);
+    if (i < 3) tl.to("#skn" + n + " .w", { yPercent: -115, duration: 0.3, ease: "power3.in" }, T[i + 1] - 0.05);
+  });
+  tl.fromTo("#sb-lab", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 3.5);
+  K.shutter(tl, "#sh1", 8.0);
+
+  /* SC industries: 4 chapters × 1.35 s with a Blue Line wipe */
+  K.push(tl, "#sc-cam", 8.0, 13.4, 1.0, 1.04);
+  const C = [8.0, 9.35, 10.7, 12.05];
+  tl.set(["#ch2", "#ch3", "#ch4"], { opacity: 0 }, 0);
+  tl.set("#wipe", { scaleX: 0 }, 0);
+  C.forEach((t, i) => {
+    const c = "#ch" + (i + 1);
+    if (i > 0) {
+      tl.fromTo("#wipe", { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: 0.22, ease: "expo.in" }, t - 0.22);
+      tl.set("#ch" + i, { opacity: 0 }, t);
+      tl.set(c, { opacity: 1 }, t);
+      tl.to("#wipe", { scaleX: 0, transformOrigin: "100% 50%", duration: 0.3, ease: "expo.out" }, t + 0.02);
+    }
+    tl.fromTo(c + " .w", { yPercent: 115 }, { yPercent: 0, duration: 0.55, ease: "expo.out", stagger: 0.06 }, t + 0.08);
+    tl.fromTo(c + " .c1", { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "expo.out" }, t + 0.12);
+    tl.fromTo(c + " .c2", { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "expo.out" }, t + 0.22);
+  });
+  K.shutter(tl, "#sh2", 13.4);
+
+  /* SD wall: camera pull-back and pan, then the line */
+  tl.fromTo("#sd-cam", { scale: 1.25 }, { scale: 1.0, duration: 2.4, ease: "expo.out" }, 13.4);
+  tl.fromTo("#wall", { y: 0 }, { y: -1500, duration: 4.6, ease: "sine.inOut" }, 13.4);
+  tl.fromTo("#wall-veil", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.inOut" }, 15.2);
+  tl.fromTo("#sd-pre .w", { yPercent: 115 }, { yPercent: 0, duration: 0.6, ease: "expo.out" }, 14.3);
+  K.words(tl, "#sd-head", 15.4, { stagger: 0.12 });
+  K.shutter(tl, "#sh3", 18.0);
+
+  /* END */
+  K.endcard(tl, 18.0);
+
+  window.__timelines["main"] = tl;
+  tl.seek(0);
+</script>
+</body>
+</html>
