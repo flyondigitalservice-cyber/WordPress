@@ -55,7 +55,7 @@
    "t0": 38.493,
    "t1": 42.905,
    "sub": "2012. Shark Tank. Lori Greiner ne paisa lagaya.",
-   "cues": 2
+   "cues": 1
   },
   {
    "id": "d09",
@@ -89,14 +89,14 @@
  "cues": [
   {
    "t0": 0.4,
-   "t1": 2.91,
-   "text": "Aur iski bikri saikdon million dollar mein.",
+   "t1": 2.159,
+   "text": "Ek sponge. Sirf ek sponge.",
    "line": "d01"
   },
   {
-   "t0": 2.91,
+   "t0": 2.159,
    "t1": 5.429,
-   "text": "Aur iski bikri saikdon million dollar",
+   "text": "Aur iski bikri saikdon million dollar mein.",
    "line": "d01"
   },
   {
@@ -173,14 +173,8 @@
   },
   {
    "t0": 38.493,
-   "t1": 42.234,
-   "text": "2012. Shark Tank. Lori Greiner ne paisa",
-   "line": "d08"
-  },
-  {
-   "t0": 42.234,
    "t1": 43.365,
-   "text": "lagaya.",
+   "text": "2012. Shark Tank. Lori Greiner ne paisa lagaya.",
    "line": "d08"
   },
   {

@@ -95,18 +95,14 @@ car de di.
 Nateeja? 4 saal mein bikri 10 guna.
 
 25
-00:01:06,768 --> 00:01:09,410
+00:01:06,768 --> 00:01:09,379
 Sabak ye hai ki aapka asli customer
 
 26
-00:01:09,410 --> 00:01:12,430
-shayad wo nahi, jiske liye aapne product
+00:01:09,379 --> 00:01:13,459
+shayad wo nahi, jiske liye aapne product banaya.
 
 27
-00:01:12,430 --> 00:01:13,459
-banaya.
-
-28
 00:01:13,579 --> 00:01:16,730
 Aisi aur kahaniyon ke liye, follow karo!
 

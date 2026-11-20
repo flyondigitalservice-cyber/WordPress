@@ -83,7 +83,7 @@
    "t0": 66.768,
    "t1": 72.959,
    "sub": "Sabak ye hai ki aapka asli customer shayad wo nahi, jiske liye aapne product banaya.",
-   "cues": 3
+   "cues": 2
   },
   {
    "id": "s13",
@@ -240,20 +240,14 @@
   },
   {
    "t0": 66.768,
-   "t1": 69.41,
+   "t1": 69.379,
    "text": "Sabak ye hai ki aapka asli customer",
    "line": "s12"
   },
   {
-   "t0": 69.41,
-   "t1": 72.43,
-   "text": "shayad wo nahi, jiske liye aapne product",
-   "line": "s12"
-  },
-  {
-   "t0": 72.43,
+   "t0": 69.379,
    "t1": 73.459,
-   "text": "banaya.",
+   "text": "shayad wo nahi, jiske liye aapne product banaya.",
    "line": "s12"
   },
   {

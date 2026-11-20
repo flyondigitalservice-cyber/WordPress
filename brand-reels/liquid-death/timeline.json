@@ -89,14 +89,14 @@
  "cues": [
   {
    "t0": 0.4,
-   "t1": 3.204,
-   "text": "Aur is company ki value 1 arab dollar se zyada.",
+   "t1": 2.154,
+   "text": "Paani. Sirf saada paani.",
    "line": "l01"
   },
   {
-   "t0": 3.204,
+   "t0": 2.154,
    "t1": 5.95,
-   "text": "Aur is company ki value 1 arab dollar se",
+   "text": "Aur is company ki value 1 arab dollar se zyada.",
    "line": "l01"
   },
   {
@@ -107,14 +107,14 @@
   },
   {
    "t0": 9.118,
-   "t1": 12.4,
-   "text": "Music festivals mein unhone kuch ajeeb dekha.",
+   "t1": 11.44,
+   "text": "Mike Cessario ad banate the.",
    "line": "l03"
   },
   {
-   "t0": 12.4,
+   "t0": 11.44,
    "t1": 15.632,
-   "text": "Music festivals mein unhone kuch ajeeb",
+   "text": "Music festivals mein unhone kuch ajeeb dekha.",
    "line": "l03"
   },
   {
@@ -131,14 +131,14 @@
   },
   {
    "t0": 21.692,
-   "t1": 25.299,
-   "text": "bharo. Aur brand banao kisi punk band jaisa.",
+   "t1": 24.854,
+   "text": "Idea: paani ko beer jaise lambe can mein",
    "line": "l05"
   },
   {
-   "t0": 25.299,
+   "t0": 24.854,
    "t1": 28.793,
-   "text": "bharo. Aur brand banao kisi punk band",
+   "text": "bharo. Aur brand banao kisi punk band jaisa.",
    "line": "l05"
   },
   {

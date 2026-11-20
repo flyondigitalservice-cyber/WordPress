@@ -82,14 +82,14 @@
  "cues": [
   {
    "t0": 0.4,
-   "t1": 3.369,
-   "text": "Aur 3 saal baad, 1 arab dollar tak ki deal.",
+   "t1": 2.578,
+   "text": "Sirf 3 products se shuruaat.",
    "line": "r01"
   },
   {
-   "t0": 3.369,
+   "t0": 2.578,
    "t1": 6.283,
-   "text": "Aur 3 saal baad, 1 arab dollar tak ki",
+   "text": "Aur 3 saal baad, 1 arab dollar tak ki deal.",
    "line": "r01"
   },
   {
@@ -196,14 +196,14 @@
   },
   {
    "t0": 46.765,
-   "t1": 49.715,
-   "text": "cheez, bade catalogue se zyada bikti hai.",
+   "t1": 49.317,
+   "text": "Sabak: kam products aur ek yaadgaar",
    "line": "r10"
   },
   {
-   "t0": 49.715,
+   "t0": 49.317,
    "t1": 52.806,
-   "text": "cheez, bade catalogue se zyada bikti",
+   "text": "cheez, bade catalogue se zyada bikti hai.",
    "line": "r10"
   },
   {

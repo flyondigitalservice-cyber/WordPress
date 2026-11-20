@@ -28,7 +28,7 @@ def chunks(text):
     if cur: out.append(' '.join(cur))
     # merge a tiny tail into the previous piece if it fits
     if len(out) > 1 and len(out[-1]) < 9 and len(out[-2]) + len(out[-1]) + 1 <= MAXC + 10:
-        out[-2] = out[-2] + ' ' + out.pop()
+        tail = out.pop(); out[-1] = out[-1] + ' ' + tail
     return out
 
 
