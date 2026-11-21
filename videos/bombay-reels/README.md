@@ -16,7 +16,7 @@ Design system and storyboard: [`CAMPAIGN.md`](CAMPAIGN.md).
 | 08 | Ideas Into Impact | 46.6 s | `v08-ideas-into-impact/` |
 | 09 | Let's Build Something Bigger | 48.3 s | `v09-lets-build-something-bigger/` |
 
-Each folder holds the **MP4** (1080×1920, 30 fps, H.264 + AAC, about −17 LUFS, no clipping), a **cover JPG** (the hook frame) and a **voiceover transcript** with in/out timecodes. `campaign-covers.jpg` shows all nine covers side by side.
+Each folder holds the **MP4** (1080×1920, 30 fps, H.264 + AAC, normalised to about −14.5 LUFS for social, no clipping), a **cover JPG** (the hook frame) and a **voiceover transcript** with in/out timecodes. `campaign-covers.jpg` shows all nine covers side by side.
 
 ## Editable source (`v01/` … `v09/`)
 
