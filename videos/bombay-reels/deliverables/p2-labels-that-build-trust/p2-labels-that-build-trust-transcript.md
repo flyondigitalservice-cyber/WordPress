@@ -1,4 +1,4 @@
-# Bombay Marketing — P2 / 03 · Labels That Build Trust
+# Bombay Marketing — P2 / 09 · Labels That Build Trust
 
 Running time: 52.69 s · Voiceover: Kokoro af_heart (on-device TTS)
 
