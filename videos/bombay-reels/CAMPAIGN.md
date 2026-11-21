@@ -250,3 +250,24 @@ Original 0–3.0 s as before · **new act 3.0–31.28 s** · original remainder 
 | 19.6 | Blue statement | BIGGER PLANS / NEED THE RIGHT / PARTNER. | “Bigger plans need the right partner.” | Blue panel rises from the bottom (shutter motif); white type word-by-word; white rule draws; 6% camera push; series tag hidden | whoosh on panel rise |
 | 24.3 | How we work: Discover → Plan → Build → Grow | DISCOVER · PLAN · BUILD · GROW | “It starts with a simple conversation. Then we discover, plan, build, and grow, together.” | Black ground; four nodes on a vertical Blue Line; each node lights exactly on its spoken word (timed from the VO transcript) | soft pop on each node |
 | 31.3 | Blue Shutter → original ecosystem | — | — | shutter covers, exits upward | whoosh |
+
+
+---
+
+## 5. Packaging Series (P1–P3)
+
+A second, three-reel series built from the agency's packaging and label portfolio (shared Drive). It uses the same design system: tokens, type, Blue Line, Blue Shutter, series tag (`P1 / 03`), the "How we work" beat and the signature end card. It adds four scene types:
+- **hook:** opening type with a real render rising in.
+- **wall:** a scrolling grid of real packs.
+- **spotlight:** large cross-fading renders with name chips and progress dots.
+- **morph:** a flat dieline or label card flips into its finished 3D pack.
+
+There is also a framed video scene that plays the agency's own label-wrap animation.
+
+| Reel | Beats (in order) |
+|---|---|
+| P1 Packaging That Sells | Hook "On a crowded shelf, you get seconds." → Problem "Lost on the shelf?" → Wall of 18 boxes → Steps (boxes, labels/pouches, display packs, print-ready dielines) → Spotlight 3D (Janbex, Conazol, Kinray) → Blue "Designed to be picked up." → How we work → End "Packaging that sells." |
+| P2 Labels That Build Trust | Hook "What does your label say about you?" → Problem "Labels that look unsure?" → Spotlight range (Optimum Biome: Optimum 17, Pro-Enzyme, Pro-Colon, Pro-Health) → Steps (front/back labels, facts panels, colour-coded ranges, 3D renders) → Wall of 18 labels across categories → Blue "Clarity builds trust." → How we work → End "Labels that build trust." |
+| P3 From Dieline to Shelf | Hook "Every great pack starts flat." → Morph 01 Dieline (Conazol flat → finished) → Morph 02 Artwork (Optimum 17 flat label → bottle) → 03 3D (label-wrap animation) → Spotlight brand world (Shakti Agrobiotech: logo, KMB, PSB, AZO) → Blue "Every detail, considered." → How we work → End "From dieline to shelf." |
+
+The full voiceover for each reel is in its transcript under `deliverables/`.

@@ -1,0 +1,359 @@
+{
+ "p1": {
+  "slug": "packaging-that-sells",
+  "title": "Packaging That Sells",
+  "tag": "P1 / 03 \u00b7 Packaging",
+  "scenes": [
+   {
+    "type": "hook",
+    "bg": "dark",
+    "head": [
+     "ON A",
+     "CROWDED",
+     "SHELF, YOU",
+     "GET SECONDS."
+    ],
+    "image": "pk-janbex-2.jpg",
+    "vo": "On a crowded shelf, your packaging has only seconds to make an impression."
+   },
+   {
+    "type": "problem",
+    "label": "Sound familiar?",
+    "head": [
+     "LOST ON",
+     "THE SHELF?"
+    ],
+    "items": [
+     "Looks like every competitor",
+     "Key benefits hard to read",
+     "Doesn't feel premium"
+    ],
+    "vo": "If your box blends in, looks generic, or hides what matters, customers simply walk past."
+   },
+   {
+    "type": "wall",
+    "label": "Packaging design",
+    "head": [
+     "BOXES THAT",
+     "STAND OUT."
+    ],
+    "images": [
+     "pk-baby-swaddle",
+     "pk-nasal-aspirator",
+     "pk-janbex",
+     "pk-conazol",
+     "pk-kinray",
+     "pk-food-steamer",
+     "pk-led-string",
+     "pk-door-closer",
+     "pk-bella-seafood",
+     "pk-comfort-system",
+     "pk-wrist-brace",
+     "pk-shower-filter",
+     "pk-nystia",
+     "pk-parking-tape",
+     "pk-athletic-tape",
+     "pk-garden-flag",
+     "pk-whey",
+     "pk-cupcake"
+    ],
+    "vo": "We design packaging that stands out, from retail boxes and pouches to shelf-ready display cartons."
+   },
+   {
+    "type": "steps",
+    "label": "What we design",
+    "head": [
+     "EVERY PACK,",
+     "EVERY FORMAT."
+    ],
+    "items": [
+     "Retail boxes & cartons",
+     "Labels, pouches & sachets",
+     "Display & shelf-ready packs",
+     "Print-ready files & dielines"
+    ],
+    "vo": "Retail boxes, labels, pouches and sachets, display packs, and print-ready files with accurate dielines."
+   },
+   {
+    "type": "spotlight",
+    "label": "Seen in 3D first",
+    "head": [
+     "SEE IT BEFORE",
+     "IT'S PRINTED."
+    ],
+    "images": [
+     [
+      "pk-janbex.jpg",
+      "Janbex PLA Filament"
+     ],
+     [
+      "pk-conazol-set.jpg",
+      "Conazol"
+     ],
+     [
+      "pk-kinray.jpg",
+      "Kinray"
+     ]
+    ],
+    "vo": "Every design is visualised in photoreal 3D, ready for approvals, e-commerce listings, and marketplaces."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "DESIGNED",
+     "TO BE",
+     "PICKED UP."
+    ],
+    "vo": "Packaging designed to be picked up."
+   },
+   {
+    "type": "process",
+    "vo": "Discover. Plan. Build. Grow. From first sketch to final print file."
+   },
+   {
+    "type": "end",
+    "head": [
+     "PACKAGING",
+     "THAT SELLS."
+    ],
+    "vo": "Bombay Marketing. Packaging that sells."
+   }
+  ]
+ },
+ "p2": {
+  "slug": "labels-that-build-trust",
+  "title": "Labels That Build Trust",
+  "tag": "P2 / 03 \u00b7 Label design",
+  "scenes": [
+   {
+    "type": "hook",
+    "bg": "light",
+    "head": [
+     "WHAT DOES",
+     "YOUR LABEL",
+     "SAY ABOUT",
+     "YOU?"
+    ],
+    "image": "sp-optimum17-box.jpg",
+    "vo": "In health and wellness, your label is where trust begins."
+   },
+   {
+    "type": "problem",
+    "label": "Sound familiar?",
+    "head": [
+     "LABELS THAT",
+     "LOOK UNSURE?"
+    ],
+    "items": [
+     "Cluttered, hard-to-read layouts",
+     "An inconsistent product range",
+     "Looks cheap next to competitors"
+    ],
+    "vo": "Cluttered layouts and inconsistent ranges can make even great products look unsure."
+   },
+   {
+    "type": "spotlight",
+    "label": "Range design \u00b7 Optimum Biome",
+    "head": [
+     "ONE RANGE.",
+     "ONE SYSTEM."
+    ],
+    "images": [
+     [
+      "sp-optimum17-row.jpg",
+      "Optimum 17"
+     ],
+     [
+      "sp-pro-enzyme.jpg",
+      "Pro-Enzyme"
+     ],
+     [
+      "sp-pro-colon.jpg",
+      "Pro-Colon"
+     ],
+     [
+      "sp-pro-health.jpg",
+      "Pro-Health"
+     ]
+    ],
+    "vo": "We design complete product ranges, with one consistent system across every variant."
+   },
+   {
+    "type": "steps",
+    "label": "What we design",
+    "head": [
+     "LABELS,",
+     "DONE RIGHT."
+    ],
+    "items": [
+     "Front & back labels",
+     "Clear supplement facts panels",
+     "Colour-coded range systems",
+     "3D renders for e-commerce"
+    ],
+    "vo": "Front and back labels, clear information panels, colour-coded ranges, and 3D renders for your online store."
+   },
+   {
+    "type": "wall",
+    "label": "Across categories",
+    "head": [
+     "EVERY SHELF.",
+     "EVERY CATEGORY."
+    ],
+    "images": [
+     "sp-gracie-bcaa",
+     "sp-clever-set",
+     "sp-hair-8oz",
+     "sp-beast",
+     "sp-maxitto-d3",
+     "sp-jovae-immune",
+     "sp-rainier",
+     "sp-dragon",
+     "sp-garcinia",
+     "sp-niasun",
+     "sp-ashwagandha",
+     "sp-alpha-male",
+     "sp-collagen",
+     "sp-coq10",
+     "sp-moringa",
+     "sp-stemstim",
+     "sp-probiotics",
+     "sp-curcumin-coffee"
+    ],
+    "vo": "From sports nutrition and vitamins to pet health and hair care, every label is designed for its shelf."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "CLARITY",
+     "BUILDS",
+     "TRUST."
+    ],
+    "vo": "Clarity builds trust."
+   },
+   {
+    "type": "process",
+    "vo": "Discover. Plan. Build. Grow. Label design, done properly."
+   },
+   {
+    "type": "end",
+    "head": [
+     "LABELS THAT",
+     "BUILD TRUST."
+    ],
+    "vo": "Bombay Marketing. Labels that build trust."
+   }
+  ]
+ },
+ "p3": {
+  "slug": "from-dieline-to-shelf",
+  "title": "From Dieline to Shelf",
+  "tag": "P3 / 03 \u00b7 Craft",
+  "scenes": [
+   {
+    "type": "hook",
+    "bg": "dark",
+    "head": [
+     "EVERY GREAT",
+     "PACK STARTS",
+     "FLAT."
+    ],
+    "image": "die-conazol.jpg",
+    "vo": "Every great pack starts as a flat sheet.",
+    "fit": "contain"
+   },
+   {
+    "type": "morph",
+    "step": "01 \u00b7 Dieline",
+    "head": [
+     "THE",
+     "DIELINE."
+    ],
+    "front": [
+     "die-conazol.jpg",
+     "Flat dieline"
+    ],
+    "back": [
+     "pk-conazol.jpg",
+     "Conazol \u00b7 finished pack"
+    ],
+    "vo": "First comes the dieline: the exact shape, folds, and print area of your pack."
+   },
+   {
+    "type": "morph",
+    "step": "02 \u00b7 Artwork",
+    "head": [
+     "THE",
+     "ARTWORK."
+    ],
+    "front": [
+     "label-optimum17-flat.jpg",
+     "Flat label artwork"
+    ],
+    "back": [
+     "sp-optimum17.jpg",
+     "Optimum 17 \u00b7 on the bottle"
+    ],
+    "vo": "Then the artwork, built precisely to fit every panel, with every detail in its place."
+   },
+   {
+    "type": "video",
+    "step": "03 \u00b7 3D",
+    "head": [
+     "THE LABEL,",
+     "IN 3D."
+    ],
+    "src": "bottle-label-wrap.mp4",
+    "len": 6.37,
+    "vo": "Next, the label is wrapped in 3D, so you can see the finished product from every angle."
+   },
+   {
+    "type": "spotlight",
+    "label": "Brand world \u00b7 Shakti Agrobiotech",
+    "head": [
+     "ONE BRAND.",
+     "EVERY BOTTLE."
+    ],
+    "images": [
+     [
+      "shakti-logo.jpg",
+      "Shakti Agrobiotech"
+     ],
+     [
+      "shakti-kmb.jpg",
+      "KMB"
+     ],
+     [
+      "shakti-psb.jpg",
+      "PSB"
+     ],
+     [
+      "shakti-azo.jpg",
+      "AZO"
+     ]
+    ],
+    "vo": "For Shakti Agrobiotech, one identity runs across every bottle in the range."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "EVERY DETAIL,",
+     "CONSIDERED."
+    ],
+    "vo": "Every fold, every panel, every detail, considered."
+   },
+   {
+    "type": "process",
+    "vo": "Discover. Plan. Build. Grow. From flat sheet to finished shelf."
+   },
+   {
+    "type": "end",
+    "head": [
+     "FROM DIELINE",
+     "TO SHELF."
+    ],
+    "vo": "Bombay Marketing. From dieline to shelf."
+   }
+  ]
+ }
+}

@@ -18,7 +18,17 @@ Design system and storyboard: [`CAMPAIGN.md`](CAMPAIGN.md).
 
 Each folder holds the **MP4** (1080×1920, 30 fps, H.264 + AAC, normalised to about −14.5 LUFS for social, no clipping), a **cover JPG** (the hook frame) and a **voiceover transcript** with in/out timecodes. `campaign-covers.jpg` shows all nine covers side by side.
 
-## Editable source (`v01/` … `v09/`)
+### Packaging Series (from your Drive portfolio)
+
+| # | Reel | Length | Files |
+|---|---|---|---|
+| P1 | Packaging That Sells | 56.0 s | `p1-packaging-that-sells/` |
+| P2 | Labels That Build Trust | 52.8 s | `p2-labels-that-build-trust/` |
+| P3 | From Dieline to Shelf | 50.1 s | `p3-from-dieline-to-shelf/` |
+
+These reels are built only from the shared Drive folder's own design renders, imported to `_brand/drive/`. Behance downloads, Amazon product photos, Facebook saves, Pantone stock, screenshots and the file marked "Sell Template" were left out as reference material. Each reel is generated from `_shared/series_spec.json` by `_shared/gen_series.py` (`python3 _shared/gen_series.py p1`).
+
+## Editable source (`v01/` … `v09/`, `p1/` … `p3/`)
 
 Each reel is a HyperFrames project: one `index.html` (HTML + GSAP timeline), with all its assets under `assets/`. Copy, colours, timings and media are plain text.
 
