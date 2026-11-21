@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Bombay Marketing — P9 / 09 Design You Can Taste</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="assets/brand.css" />
+<script src="assets/kit.js"></script>
+<style>
+  #bg { position: absolute; inset: 0; background: var(--black); }
+  .wwin { position: absolute; left: 120px; width: 840px; overflow: hidden; border-radius: 24px; }
+  .wgrid { position: absolute; left: 6px; top: 0; width: 828px; }
+  .wt2 { position: absolute; width: 256px; height: 256px; border-radius: 20px; overflow: hidden; background: #fff; }
+  .wt2 img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .spot { position: absolute; left: 120px; width: 840px; height: 620px; border-radius: 30px; overflow: hidden; background: #fff; box-shadow: var(--shadow); }
+  .spot img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .sdots { position: absolute; left: 120px; display: flex; gap: 14px; }
+  .sdots i { display: block; width: 14px; height: 14px; border-radius: 50%; background: #d1d5db; }
+  .flip { position: absolute; left: 120px; width: 840px; height: 620px; perspective: 1800px; }
+  .fin2 { position: absolute; inset: 0; transform-style: preserve-3d; }
+  .face2 { position: absolute; inset: 0; border-radius: 30px; overflow: hidden; background: #fff; box-shadow: var(--shadow); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+  .face2.back2 { transform: rotateY(180deg); }
+  .face2 img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .vframe { position: absolute; left: 190px; width: 700px; height: 532px; border-radius: 30px; background: var(--black); box-shadow: var(--shadow); }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="50.42" data-width="1080" data-height="1920">
+  <div id="bg" class="clip" data-start="0" data-duration="50.42" data-track-index="0"></div>
+  <section id="s1" class="scene light clip" data-start="0.0" data-duration="4.66" data-track-index="1" data-layout-allow-overlap>
+    <div class="cam" id="s1-cam">
+      <div class="hook display" id="s1-hook" style="top:330px;font-size:104px"><span class="line" id="s1-l1">DESIGN</span><span class="line"><span class="wm"><span class="w">YOU CAN</span></span></span><span class="line"><span class="wm"><span class="w blue">TASTE.</span></span></span></div>
+      <div class="bline" id="s1-rule" style="position:absolute;left:120px;top:658px;width:360px"></div>
+      <div class="xcard" id="s1-img" style="left:180px;top:728px;width:720px;height:450px"><img src="assets/work/fd-zenobar.jpg" alt="" style="object-fit:cover" /></div>
+    </div>
+  </section>
+  <section id="s2" class="scene dark clip" data-start="4.66" data-duration="9.03" data-track-index="2" data-layout-allow-overlap>
+    <div class="cam" id="s2-cam">
+      <div class="label xlab" id="s2-lab" style="color:#9aa0ab">Food, drink &amp; natural</div>
+      <div class="display xhead" id="s2-head" style="color:#fff"><span class="line"><span class="wm"><span class="w">FRESH ON</span></span></span><span class="line"><span class="wm"><span class="w blue">THE SHELF.</span></span></span></div>
+      <div class="wwin" data-layout-allow-overflow style="top:612px;height:638px"><div class="wgrid" id="s2-grid"><div class="wt2" style="left:0px;top:0px"><img src="assets/work/fd-zenobar-2.jpg" alt="" /></div><div class="wt2" style="left:272px;top:0px"><img src="assets/work/fd-kipnuggets.jpg" alt="" /></div><div class="wt2" style="left:544px;top:0px"><img src="assets/work/fd-cherry.jpg" alt="" /></div><div class="wt2" style="left:0px;top:272px"><img src="assets/work/fd-tea-boxes.jpg" alt="" /></div><div class="wt2" style="left:272px;top:272px"><img src="assets/work/fd-nystia-2.jpg" alt="" /></div><div class="wt2" style="left:544px;top:272px"><img src="assets/work/fd-matcha-daily.jpg" alt="" /></div><div class="wt2" style="left:0px;top:544px"><img src="assets/work/fd-matcha-pure.jpg" alt="" /></div><div class="wt2" style="left:272px;top:544px"><img src="assets/work/pk-broccoli.jpg" alt="" /></div><div class="wt2" style="left:544px;top:544px"><img src="assets/work/pk-whey.jpg" alt="" /></div><div class="wt2" style="left:0px;top:816px"><img src="assets/work/sp-moringa.jpg" alt="" /></div><div class="wt2" style="left:272px;top:816px"><img src="assets/work/sp-green-tea.jpg" alt="" /></div><div class="wt2" style="left:544px;top:816px"><img src="assets/work/sp-curcumin-coffee.jpg" alt="" /></div><div class="wt2" style="left:0px;top:1088px"><img src="assets/work/sp-clever-set.jpg" alt="" /></div><div class="wt2" style="left:272px;top:1088px"><img src="assets/work/pk-bee-cottage.jpg" alt="" /></div><div class="wt2" style="left:544px;top:1088px"><img src="assets/work/bt-botanicals.jpg" alt="" /></div><div class="wt2" style="left:0px;top:1360px"><img src="assets/work/sp-niasun.jpg" alt="" /></div><div class="wt2" style="left:272px;top:1360px"><img src="assets/work/sp-maxitto-d3.jpg" alt="" /></div><div class="wt2" style="left:544px;top:1360px"><img src="assets/work/pk-nystia.jpg" alt="" /></div></div></div>
+    </div>
+  </section>
+  <section id="s3" class="scene light clip" data-start="13.69" data-duration="5.9" data-track-index="2" data-layout-allow-overlap>
+    <div class="cam" id="s3-cam">
+      <div class="label xlab" id="s3-lab" style="color:var(--blue)">Matcha · label to jar</div>
+      <div class="display xhead" id="s3-head"><span class="line"><span class="wm"><span class="w">FROM LABEL</span></span></span><span class="line"><span class="wm"><span class="w blue">TO JAR.</span></span></span></div>
+      <div class="flip" style="top:642px"><div class="fin2" id="s3-fin">
+        <div class="face2"><img src="assets/work/fd-matcha-cook.jpg" alt="Label artwork" /><span class="chip xchip" style="bottom:22px">Label artwork</span></div>
+        <div class="face2 back2"><img src="assets/work/fd-matcha-pure.jpg" alt="Pure Matcha · on the jar" /><span class="chip xchip" style="bottom:22px;background:var(--blue)">Pure Matcha · on the jar</span></div>
+      </div></div>
+    </div>
+  </section>
+  <section id="s4" class="scene soft clip" data-start="19.59" data-duration="6.69" data-track-index="2" data-layout-allow-overlap>
+    <div class="cam" id="s4-cam">
+      <div class="label mute xlab" id="s4-lab">Natural &amp; lifestyle</div>
+      <div class="display xhead" id="s4-head"><span class="line"><span class="wm"><span class="w">NATURALLY</span></span></span><span class="line"><span class="wm"><span class="w blue">APPETISING.</span></span></span></div>
+      <div class="spot" data-layout-allow-occlusion id="s4-i1" style="top:632px"><img src="assets/work/sp-maxitto-life-1.jpg" alt="Maxitto · Vitamin D3" /><span class="chip xchip" style="bottom:22px">Maxitto · Vitamin D3</span></div><div class="spot" data-layout-allow-occlusion id="s4-i2" style="top:632px"><img src="assets/work/sp-maxitto-life-3.jpg" alt="Maxitto · Magnesium" /><span class="chip xchip" style="bottom:22px">Maxitto · Magnesium</span></div><div class="spot" data-layout-allow-occlusion id="s4-i3" style="top:632px"><img src="assets/work/sp-clever-turmeric.jpg" alt="Clever Goodness · for pets" /><span class="chip xchip" style="bottom:22px">Clever Goodness · for pets</span></div><div class="spot" data-layout-allow-occlusion id="s4-i4" style="top:632px"><img src="assets/work/fd-cherry.jpg" alt="Cherry" /><span class="chip xchip" style="bottom:22px">Cherry</span></div>
+      <div class="sdots" style="top:1292px"><i id="s4-d1"></i><i id="s4-d2"></i><i id="s4-d3"></i><i id="s4-d4"></i></div>
+    </div>
+  </section>
+  <section id="s5" class="scene light clip" data-start="26.28" data-duration="8.38" data-track-index="2" data-layout-allow-overlap>
+    <div class="cam" id="s5-cam"><div class="label mute xlab" id="s5-lab">What we design</div><div class="display xhead" id="s5-head"><span class="line"><span class="wm"><span class="w">FOOD-READY</span></span></span><span class="line"><span class="wm"><span class="w blue">PACKAGING.</span></span></span></div><div class="step" id="s5-p1" style="top:632px"><span class="n">01</span><span class="pt">Snack wrappers &amp; pouches</span><span class="xck"><span class="f"></span><svg viewBox="0 0 40 40"><path d="M8 21l8 8 16-17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="step" id="s5-p2" style="top:764px"><span class="n">02</span><span class="pt">Boxes &amp; display cartons</span><span class="xck"><span class="f"></span><svg viewBox="0 0 40 40"><path d="M8 21l8 8 16-17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="step" id="s5-p3" style="top:896px"><span class="n">03</span><span class="pt">Jar, tub &amp; tin labels</span><span class="xck"><span class="f"></span><svg viewBox="0 0 40 40"><path d="M8 21l8 8 16-17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="step" id="s5-p4" style="top:1028px"><span class="n">04</span><span class="pt">Clear ingredient panels</span><span class="xck"><span class="f"></span><svg viewBox="0 0 40 40"><path d="M8 21l8 8 16-17" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
+  </section>
+  <section id="s6" class="scene clip" data-start="34.21" data-duration="4.85" data-track-index="3">
+    <div class="xbg" id="s6-bg"></div>
+    <div class="cam" id="s6-cam"><div class="display xstate" id="s6-head" style="top:812px"><span class="line"><span class="wm"><span class="w">FRESH</span></span></span><span class="line"><span class="wm"><span class="w">SELLS.</span></span></span></div><div class="xwrule" id="s6-rule" style="top:1038px"></div></div>
+  </section>
+  <section id="s7" class="scene dark clip" data-start="39.06" data-duration="5.55" data-track-index="2">
+    <div class="cam" id="s7-cam"><div class="label xlab" id="s7-lab" style="color:#9aa0ab">How we work</div><i class="pline"></i><i class="pfill" id="s7-fill"></i><div class="pnode" id="s7-n1" style="top:470px"><span class="pd"></span><div><div class="ptt">Discover</div><div class="pds">Understand your business &amp; goals</div></div></div><div class="pnode" id="s7-n2" style="top:650px"><span class="pd"></span><div><div class="ptt">Plan</div><div class="pds">Strategy, structure &amp; timeline</div></div></div><div class="pnode" id="s7-n3" style="top:830px"><span class="pd"></span><div><div class="ptt">Build</div><div class="pds">Design, develop &amp; launch</div></div></div><div class="pnode" id="s7-n4" style="top:1010px"><span class="pd"></span><div><div class="ptt">Grow</div><div class="pds">Measure, improve &amp; scale</div></div></div></div>
+  </section>
+  <section id="end" class="scene end clip" data-start="44.61" data-duration="5.81" data-track-index="1">
+    <div class="cam" id="end-cam">
+      <div class="tag end-tag" id="end-tag"><img src="assets/brand/icon.png" alt="" /><span class="label mute">P9 / 09</span></div>
+      <div class="display end-head" id="end-head" style="top:560px"><span class="line"><span class="wm"><span class="w">DESIGN YOU</span></span></span><span class="line"><span class="wm"><span class="w blue">CAN TASTE.</span></span></span></div>
+      <div class="bline end-rule" id="end-rule"></div>
+      <img class="end-logo" id="end-logo" src="assets/brand/logo-white.png" alt="Bombay Marketing" />
+      <div class="end-url" id="end-url">bombaymarketing.in</div>
+    </div>
+  </section>
+  <div id="sh1" class="shutter clip" data-layout-allow-occlusion data-start="4.16" data-duration="1.1" data-track-index="4"></div>
+  <div id="sh2" class="shutter clip" data-layout-allow-occlusion data-start="44.11" data-duration="1.1" data-track-index="4"></div>
+  <div id="tag" class="tag clip" data-start="4.66" data-duration="39.95" data-track-index="3"><img src="assets/brand/icon.png" alt="" /><span class="label mute">P9 / 09 · Food &amp; natural</span></div>
+  <audio id="vo1" class="clip" src="assets/vo/p9_1.wav" data-start="0.2" data-duration="2.86" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo2" class="clip" src="assets/vo/p9_2.wav" data-start="5.01" data-duration="6.78" data-track-index="5" data-volume="1"></audio>
+  <audio id="vo3" class="clip" src="assets/vo/p9_3.wav" data-start="14.04" data-duration="3.75" data-track-index="5" data-volume="1"></audio>
+  <audio id="fx1" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="13.53" data-duration="0.57" data-track-index="7" data-volume="0.4"></audio>
+  <audio id="fx2" class="clip" src="assets/sfx/whoosh.mp3" data-start="16.44" data-duration="0.57" data-track-index="8" data-volume="0.35"></audio>
+  <audio id="vo4" class="clip" src="assets/vo/p9_4.wav" data-start="19.94" data-duration="4.54" data-track-index="5" data-volume="1"></audio>
+  <audio id="fx3" class="clip" src="assets/sfx/whoosh.mp3" data-start="19.43" data-duration="0.57" data-track-index="7" data-volume="0.4"></audio>
+  <audio id="fx4" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="21.55" data-duration="0.57" data-track-index="8" data-volume="0.25"></audio>
+  <audio id="fx5" class="clip" src="assets/sfx/whoosh.mp3" data-start="23.13" data-duration="0.57" data-track-index="8" data-volume="0.25"></audio>
+  <audio id="fx6" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="24.7" data-duration="0.57" data-track-index="8" data-volume="0.25"></audio>
+  <audio id="vo5" class="clip" src="assets/vo/p9_5.wav" data-start="26.63" data-duration="6.63" data-track-index="5" data-volume="1"></audio>
+  <audio id="fx7" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="26.12" data-duration="0.57" data-track-index="7" data-volume="0.4"></audio>
+  <audio id="fx8" class="clip" src="assets/sfx/click-soft.mp3" data-start="27.01" data-duration="0.37" data-track-index="8" data-volume="0.7"></audio>
+  <audio id="fx9" class="clip" src="assets/sfx/pop.mp3" data-start="28.62" data-duration="0.72" data-track-index="8" data-volume="0.3"></audio>
+  <audio id="fx10" class="clip" src="assets/sfx/click-soft.mp3" data-start="30.33" data-duration="0.37" data-track-index="8" data-volume="0.7"></audio>
+  <audio id="fx11" class="clip" src="assets/sfx/pop.mp3" data-start="31.93" data-duration="0.72" data-track-index="8" data-volume="0.3"></audio>
+  <audio id="vo6" class="clip" src="assets/vo/p9_6.wav" data-start="35.01" data-duration="1.32" data-track-index="5" data-volume="1"></audio>
+  <audio id="fx12" class="clip" src="assets/sfx/whoosh.mp3" data-start="34.5" data-duration="0.57" data-track-index="7" data-volume="0.45"></audio>
+  <audio id="vo7" class="clip" src="assets/vo/p9_7.wav" data-start="39.41" data-duration="3.90" data-track-index="5" data-volume="1"></audio>
+  <audio id="fx13" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="38.9" data-duration="0.57" data-track-index="7" data-volume="0.4"></audio>
+  <audio id="fx14" class="clip" src="assets/sfx/pop.mp3" data-start="39.69" data-duration="0.72" data-track-index="8" data-volume="0.3"></audio>
+  <audio id="fx15" class="clip" src="assets/sfx/pop.mp3" data-start="40.11" data-duration="0.72" data-track-index="8" data-volume="0.3"></audio>
+  <audio id="fx16" class="clip" src="assets/sfx/pop.mp3" data-start="40.6" data-duration="0.72" data-track-index="8" data-volume="0.3"></audio>
+  <audio id="fx17" class="clip" src="assets/sfx/pop.mp3" data-start="41.17" data-duration="0.72" data-track-index="8" data-volume="0.3"></audio>
+  <audio id="vo8" class="clip" src="assets/vo/p9_8.wav" data-start="45.81" data-duration="2.41" data-track-index="5" data-volume="1"></audio>
+  <audio id="fx18" class="clip" src="assets/sfx/chime.mp3" data-start="45.28" data-duration="2.54" data-track-index="7" data-volume="0.8"></audio>
+  <audio id="fx19" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="45.68" data-duration="2.12" data-track-index="8" data-volume="0.5"></audio>
+  <audio id="fx20" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="4.5" data-duration="0.57" data-track-index="9" data-volume="0.5"></audio>
+  <audio id="fx21" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="44.45" data-duration="0.57" data-track-index="9" data-volume="0.5"></audio>
+</div>
+
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  const K = window.BM;
+  K.push(tl, "#s1-cam", 0.0, 4.66, 1.0, 1.05);
+  tl.fromTo("#s1-l1", { opacity: 0.85, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 0.0);
+  K.words(tl, "#s1-hook", 0.25, { stagger: 0.14 });
+  K.line(tl, "#s1-rule", 0.9, 0.9);
+  tl.fromTo("#s1-img", { y: 260, opacity: 0, rotateX: 25 }, { y: 0, opacity: 1, rotateX: 0, duration: 1.0, ease: "expo.out" }, 1.0);
+  K.push(tl, "#s2-cam", 4.66, 13.69, 1.0, 1.03);
+  tl.fromTo("#s2-lab", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 4.71);
+  K.words(tl, "#s2-head", 4.78, { stagger: 0.1 });
+  tl.fromTo("#s2 .wt2", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5, ease: "expo.out", stagger: 0.035 }, 4.96);
+  tl.fromTo("#s2-grid", { y: 40 }, { y: -1034, duration: 8.53, ease: "sine.inOut" }, 4.96);
+  tl.to("#s2-cam", { opacity: 0, y: -40, duration: 0.3, ease: "power3.in" }, 13.39);
+  K.push(tl, "#s3-cam", 13.69, 19.59, 1.0, 1.04);
+  tl.fromTo("#s3-lab", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 13.74);
+  K.words(tl, "#s3-head", 13.809999999999999, { stagger: 0.1 });
+  tl.fromTo("#s3-fin", { opacity: 0, y: 160, rotateY: 0 }, { opacity: 1, y: 0, duration: 0.9, ease: "expo.out" }, 14.04);
+  tl.to("#s3-fin", { rotateY: 180, duration: 1.0, ease: "expo.inOut" }, 16.1);
+  tl.to("#s3-cam", { opacity: 0, y: -40, duration: 0.3, ease: "power3.in" }, 19.29);
+  K.push(tl, "#s4-cam", 19.59, 26.28, 1.0, 1.03);
+  tl.fromTo("#s4-lab", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 19.64);
+  K.words(tl, "#s4-head", 19.71, { stagger: 0.1 });
+  tl.fromTo("#s4-i1", { opacity: 0, y: 160, rotateX: 18 }, { opacity: 1, y: 0, rotateX: 0, duration: 0.9, ease: "expo.out" }, 19.94);
+  tl.fromTo("#s4-i1 img", { scale: 1.08 }, { scale: 1.0, duration: 2.17, ease: "sine.out" }, 19.94);
+  tl.to("#s4-d1", { backgroundColor: "#245BFF", scale: 1.3, duration: 0.25 }, 19.94);
+  tl.fromTo("#s4-i2", { opacity: 0, x: 300, rotateY: -25 }, { opacity: 1, x: 0, rotateY: 0, duration: 0.7, ease: "expo.out" }, 21.51);
+  tl.to("#s4-i1", { opacity: 0, x: -300, rotateY: 25, duration: 0.6, ease: "expo.inOut" }, 21.51);
+  tl.fromTo("#s4-i2 img", { scale: 1.08 }, { scale: 1.0, duration: 2.17, ease: "sine.out" }, 21.51);
+  tl.to("#s4-d2", { backgroundColor: "#245BFF", scale: 1.3, duration: 0.25 }, 21.51);
+  tl.to("#s4-d1", { backgroundColor: "#d1d5db", scale: 1, duration: 0.25 }, 21.51);
+  tl.fromTo("#s4-i3", { opacity: 0, x: 300, rotateY: -25 }, { opacity: 1, x: 0, rotateY: 0, duration: 0.7, ease: "expo.out" }, 23.09);
+  tl.to("#s4-i2", { opacity: 0, x: -300, rotateY: 25, duration: 0.6, ease: "expo.inOut" }, 23.09);
+  tl.fromTo("#s4-i3 img", { scale: 1.08 }, { scale: 1.0, duration: 2.17, ease: "sine.out" }, 23.09);
+  tl.to("#s4-d3", { backgroundColor: "#245BFF", scale: 1.3, duration: 0.25 }, 23.09);
+  tl.to("#s4-d2", { backgroundColor: "#d1d5db", scale: 1, duration: 0.25 }, 23.09);
+  tl.fromTo("#s4-i4", { opacity: 0, x: 300, rotateY: -25 }, { opacity: 1, x: 0, rotateY: 0, duration: 0.7, ease: "expo.out" }, 24.66);
+  tl.to("#s4-i3", { opacity: 0, x: -300, rotateY: 25, duration: 0.6, ease: "expo.inOut" }, 24.66);
+  tl.fromTo("#s4-i4 img", { scale: 1.08 }, { scale: 1.0, duration: 2.17, ease: "sine.out" }, 24.66);
+  tl.to("#s4-d4", { backgroundColor: "#245BFF", scale: 1.3, duration: 0.25 }, 24.66);
+  tl.to("#s4-d3", { backgroundColor: "#d1d5db", scale: 1, duration: 0.25 }, 24.66);
+  tl.set("#s4 .spot", { opacity: 0 }, 19.59);
+  tl.to("#s4-cam", { opacity: 0, y: -40, duration: 0.3, ease: "power3.in" }, 25.98);
+  K.push(tl, "#s5-cam", 26.28, 34.66, 1.0, 1.04);
+  tl.fromTo("#s5-lab", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 26.330000000000002);
+  K.words(tl, "#s5-head", 26.400000000000002, { stagger: 0.1 });
+  tl.fromTo("#s5-p1", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 26.63);
+  tl.fromTo("#s5-p1 .f", { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 27.08);
+  tl.fromTo("#s5-p1 svg", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 27.18);
+  tl.fromTo("#s5-p2", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 28.29);
+  tl.fromTo("#s5-p2 .f", { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 28.74);
+  tl.fromTo("#s5-p2 svg", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 28.84);
+  tl.fromTo("#s5-p3", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 29.95);
+  tl.fromTo("#s5-p3 .f", { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 30.4);
+  tl.fromTo("#s5-p3 svg", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 30.5);
+  tl.fromTo("#s5-p4", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 31.6);
+  tl.fromTo("#s5-p4 .f", { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 32.05);
+  tl.fromTo("#s5-p4 svg", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 32.15);
+  tl.fromTo("#s6-bg", { yPercent: 100 }, { yPercent: 0, duration: 0.45, ease: "expo.in" }, 34.21);
+  K.push(tl, "#s6-cam", 34.66, 39.06, 1.0, 1.06);
+  K.words(tl, "#s6-head", 34.76, { stagger: 0.14 });
+  K.line(tl, "#s6-rule", 35.26, 0.9);
+  tl.to("#tag", { opacity: 0, duration: 0.2 }, 34.21);
+  tl.to("#tag", { opacity: 1, duration: 0.3 }, 39.06);
+  tl.to("#s6-cam", { opacity: 0, y: -40, duration: 0.3, ease: "power3.in" }, 38.76);
+  K.push(tl, "#s7-cam", 39.06, 44.61, 1.0, 1.04);
+  tl.fromTo("#s7-lab", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 39.11);
+  tl.fromTo("#s7 .pnode", { opacity: 0, x: 60 }, { opacity: 0.3, x: 0, duration: 0.4, ease: "expo.out", stagger: 0.05 }, 39.11);
+  tl.fromTo("#s7-fill", { scaleY: 0, transformOrigin: "50% 0" }, { scaleY: 0, duration: 0.01 }, 39.06);
+  tl.to("#s7-n1", { opacity: 1, duration: 0.25 }, 39.81);
+  tl.to("#s7-n1 .pd", { backgroundColor: "#245BFF", borderColor: "#245BFF", duration: 0.2 }, 39.81);
+  tl.fromTo("#s7-n1 .pd", { scale: 1 }, { scale: 1.2, duration: 0.15, yoyo: true, repeat: 1, ease: "power2.out" }, 39.81);
+  tl.to("#s7-n2", { opacity: 1, duration: 0.25 }, 40.23);
+  tl.to("#s7-n2 .pd", { backgroundColor: "#245BFF", borderColor: "#245BFF", duration: 0.2 }, 40.23);
+  tl.fromTo("#s7-n2 .pd", { scale: 1 }, { scale: 1.2, duration: 0.15, yoyo: true, repeat: 1, ease: "power2.out" }, 40.23);
+  tl.to("#s7-fill", { scaleY: 0.333, duration: 0.42, ease: "power2.inOut" }, 39.81);
+  tl.to("#s7-n3", { opacity: 1, duration: 0.25 }, 40.72);
+  tl.to("#s7-n3 .pd", { backgroundColor: "#245BFF", borderColor: "#245BFF", duration: 0.2 }, 40.72);
+  tl.fromTo("#s7-n3 .pd", { scale: 1 }, { scale: 1.2, duration: 0.15, yoyo: true, repeat: 1, ease: "power2.out" }, 40.72);
+  tl.to("#s7-fill", { scaleY: 0.667, duration: 0.49, ease: "power2.inOut" }, 40.23);
+  tl.to("#s7-n4", { opacity: 1, duration: 0.25 }, 41.29);
+  tl.to("#s7-n4 .pd", { backgroundColor: "#245BFF", borderColor: "#245BFF", duration: 0.2 }, 41.29);
+  tl.fromTo("#s7-n4 .pd", { scale: 1 }, { scale: 1.2, duration: 0.15, yoyo: true, repeat: 1, ease: "power2.out" }, 41.29);
+  tl.to("#s7-fill", { scaleY: 1.0, duration: 0.5, ease: "power2.inOut" }, 40.72);
+  K.endcard(tl, 44.61, 0.8);
+  K.shutter(tl, "#sh1", 4.66);
+  K.shutter(tl, "#sh2", 44.61);
+  window.__timelines["main"] = tl;
+  tl.seek(0);
+</script>
+</body>
+</html>

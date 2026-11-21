@@ -271,3 +271,14 @@ There is also a framed video scene that plays the agency's own label-wrap animat
 | P3 From Dieline to Shelf | Hook "Every great pack starts flat." → Morph 01 Dieline (Conazol flat → finished) → Morph 02 Artwork (Optimum 17 flat label → bottle) → 03 3D (label-wrap animation) → Spotlight brand world (Shakti Agrobiotech: logo, KMB, PSB, AZO) → Blue "Every detail, considered." → How we work → End "From dieline to shelf." |
 
 The full voiceover for each reel is in its transcript under `deliverables/`.
+
+### P4–P9 (added from the full Drive portfolio)
+
+| Reel | Beats |
+|---|---|
+| P4 Ten Years, Every Project | Hook "Ten years. Every project counted." → Where it started (Fiverr, 99designs, brands worldwide, Bombay Marketing) → Wall: a decade of work → Lessons we keep → From screen to real hands (Gracie Amino shipped and in the gym, Maxitto, Paipur) → Blue "Every project taught us something." → How we work → End "Ten years. One craft." |
+| P5 Built to Perform | Hook "Packaging with muscle." → Problem "Looks like every other tub?" → Gracie Amino, render to gym floor → Wall: sports nutrition → What we design → Blue "Bold sells." → How we work → End "Built to perform." |
+| P6 Beauty, Beautifully Packed | Hook "Beauty starts on the shelf." → Morph: Jovaé flat label → bottle → Jovaé range spotlight → Wall: beauty & personal care → Blue "Designed to be loved." → How we work → End "Beauty, beautifully packed." |
+| P7 One Brand, Everywhere | Hook "One logo. A whole world." → Shakti identity (logo, cards, stationery, print) → What we built → On every product (KMB, PSB, AZO, gallon, pouches) → On the road (vehicle, infographic) → Blue "Consistency is recognition." → How we work → End "One brand. Everywhere." |
+| P8 Everyday Products, Designed Better | Hook "Everyday products. Better boxes." → Problem "Plain box, plain sales?" → Wall: home, kitchen & tech → Made for real life (Paipur, kitchen tools, Prix) → Ready for e-commerce → Blue "Nothing everyday about it." → How we work → End "Everyday, designed better." |
+| P9 Design You Can Taste | Hook "Design you can taste." → Wall: food, drink & natural → Morph: matcha label → jar → Naturally appetising (Maxitto lifestyle, Clever Goodness, Cherry) → Food-ready packaging → Blue "Fresh sells." → How we work → End "Design you can taste." |

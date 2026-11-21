@@ -116,7 +116,7 @@ def build(v):
         elif ty == "spotlight":
             ims = sc["images"]; n = len(ims)
             for f, _ in ims: images.add(f)
-            cards = "".join(f'<div class="spot" id="{k}-i{j+1}" style="top:{items_top}px"><img src="assets/work/{f}" alt="{esc(nm)}" /><span class="chip xchip" style="bottom:22px">{esc(nm)}</span></div>' for j, (f, nm) in enumerate(ims))
+            cards = "".join(f'<div class="spot" data-layout-allow-occlusion id="{k}-i{j+1}" style="top:{items_top}px"><img src="assets/work/{f}" alt="{esc(nm)}" /><span class="chip xchip" style="bottom:22px">{esc(nm)}</span></div>' for j, (f, nm) in enumerate(ims))
             Hs.append(f'''  <section id="{k}" class="scene soft clip" data-start="{st}" data-duration="{du}" data-track-index="2" data-layout-allow-overlap>
     <div class="cam" id="{k}-cam">
       <div class="label mute xlab" id="{k}-lab">{esc(sc["label"])}</div>

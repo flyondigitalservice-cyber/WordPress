@@ -2,7 +2,7 @@
  "p1": {
   "slug": "packaging-that-sells",
   "title": "Packaging That Sells",
-  "tag": "P1 / 03 \u00b7 Packaging",
+  "tag": "P1 / 09 · Packaging",
   "scenes": [
    {
     "type": "hook",
@@ -123,7 +123,7 @@
  "p2": {
   "slug": "labels-that-build-trust",
   "title": "Labels That Build Trust",
-  "tag": "P2 / 03 \u00b7 Label design",
+  "tag": "P2 / 09 · Label design",
   "scenes": [
    {
     "type": "hook",
@@ -153,7 +153,7 @@
    },
    {
     "type": "spotlight",
-    "label": "Range design \u00b7 Optimum Biome",
+    "label": "Range design · Optimum Biome",
     "head": [
      "ONE RANGE.",
      "ONE SYSTEM."
@@ -248,7 +248,7 @@
  "p3": {
   "slug": "from-dieline-to-shelf",
   "title": "From Dieline to Shelf",
-  "tag": "P3 / 03 \u00b7 Craft",
+  "tag": "P3 / 09 · Craft",
   "scenes": [
    {
     "type": "hook",
@@ -264,7 +264,7 @@
    },
    {
     "type": "morph",
-    "step": "01 \u00b7 Dieline",
+    "step": "01 · Dieline",
     "head": [
      "THE",
      "DIELINE."
@@ -275,13 +275,13 @@
     ],
     "back": [
      "pk-conazol.jpg",
-     "Conazol \u00b7 finished pack"
+     "Conazol · finished pack"
     ],
     "vo": "First comes the dieline: the exact shape, folds, and print area of your pack."
    },
    {
     "type": "morph",
-    "step": "02 \u00b7 Artwork",
+    "step": "02 · Artwork",
     "head": [
      "THE",
      "ARTWORK."
@@ -292,13 +292,13 @@
     ],
     "back": [
      "sp-optimum17.jpg",
-     "Optimum 17 \u00b7 on the bottle"
+     "Optimum 17 · on the bottle"
     ],
     "vo": "Then the artwork, built precisely to fit every panel, with every detail in its place."
    },
    {
     "type": "video",
-    "step": "03 \u00b7 3D",
+    "step": "03 · 3D",
     "head": [
      "THE LABEL,",
      "IN 3D."
@@ -309,7 +309,7 @@
    },
    {
     "type": "spotlight",
-    "label": "Brand world \u00b7 Shakti Agrobiotech",
+    "label": "Brand world · Shakti Agrobiotech",
     "head": [
      "ONE BRAND.",
      "EVERY BOTTLE."
@@ -353,6 +353,747 @@
      "TO SHELF."
     ],
     "vo": "Bombay Marketing. From dieline to shelf."
+   }
+  ]
+ },
+ "p4": {
+  "slug": "ten-years-every-project",
+  "title": "Ten Years, Every Project",
+  "tag": "P4 / 09 · Our story",
+  "scenes": [
+   {
+    "type": "hook",
+    "bg": "dark",
+    "head": [
+     "TEN YEARS.",
+     "EVERY",
+     "PROJECT",
+     "COUNTED."
+    ],
+    "image": "pk-conazol-set.jpg",
+    "vo": "For ten years, we have designed packaging for brands around the world."
+   },
+   {
+    "type": "steps",
+    "label": "Where we started",
+    "head": [
+     "WHERE IT",
+     "STARTED."
+    ],
+    "items": [
+     "Freelance work on Fiverr",
+     "Design contests on 99designs",
+     "Brands across the world",
+     "Today: Bombay Marketing"
+    ],
+    "vo": "We started on freelance marketplaces like Fiverr and 99designs, working with brands across the world, and grew into Bombay Marketing."
+   },
+   {
+    "type": "wall",
+    "label": "A decade of work",
+    "head": [
+     "EVERY BRIEF",
+     "WAS DIFFERENT."
+    ],
+    "images": [
+     "pk-kinray",
+     "sp-optimum17-row",
+     "bt-jovae-sh-2",
+     "sn-power-stacks",
+     "hl-cctv",
+     "fd-cherry",
+     "hl-prix",
+     "bt-amazon-complex",
+     "fd-zenobar",
+     "hl-coffee-grinder",
+     "sp-clever-set",
+     "pk-janbex",
+     "bt-lashes",
+     "fd-matcha-daily",
+     "hl-moth-trap",
+     "sn-vitamin-b12",
+     "pk-baby-swaddle",
+     "hl-shago"
+    ],
+    "vo": "Supplements, beauty, food, tech, and baby care. Every brief was different, and every one taught us something."
+   },
+   {
+    "type": "steps",
+    "label": "What every project taught us",
+    "head": [
+     "LESSONS",
+     "WE KEEP."
+    ],
+    "items": [
+     "The shelf decides in seconds",
+     "Clarity builds trust",
+     "Details make it premium",
+     "Great design must print well"
+    ],
+    "vo": "The shelf decides in seconds. Clarity builds trust. Details make it premium. And great design must always print well."
+   },
+   {
+    "type": "spotlight",
+    "label": "From render to real life",
+    "head": [
+     "FROM SCREEN",
+     "TO REAL HANDS."
+    ],
+    "images": [
+     [
+      "sn-gracie-boxes.jpg",
+      "Gracie Amino · shipped"
+     ],
+     [
+      "sn-gracie-gym.jpg",
+      "Gracie Amino · in the gym"
+     ],
+     [
+      "sp-maxitto-life-1.jpg",
+      "Maxitto · Vitamin D3"
+     ],
+     [
+      "hl-paipur-life.jpg",
+      "Paipur notebooks"
+     ]
+    ],
+    "vo": "And the best part: seeing those designs leave the screen and land in real hands."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "EVERY PROJECT",
+     "TAUGHT US",
+     "SOMETHING."
+    ],
+    "vo": "Every project taught us something. Now, it works for you."
+   },
+   {
+    "type": "process",
+    "vo": "Discover. Plan. Build. Grow. Ten years of lessons, in one clear process."
+   },
+   {
+    "type": "end",
+    "head": [
+     "TEN YEARS.",
+     "ONE CRAFT."
+    ],
+    "vo": "Bombay Marketing. Ten years, one craft."
+   }
+  ]
+ },
+ "p5": {
+  "slug": "built-to-perform",
+  "title": "Built to Perform",
+  "tag": "P5 / 09 · Sports nutrition",
+  "scenes": [
+   {
+    "type": "hook",
+    "bg": "dark",
+    "head": [
+     "PACKAGING",
+     "WITH",
+     "MUSCLE."
+    ],
+    "image": "sn-power-stacks.jpg",
+    "vo": "In sports nutrition, your tub has to look as strong as what's inside."
+   },
+   {
+    "type": "problem",
+    "label": "Sound familiar?",
+    "head": [
+     "LOOKS LIKE",
+     "EVERY OTHER TUB?"
+    ],
+    "items": [
+     "Same black-and-red clichés",
+     "Flavours hard to tell apart",
+     "Facts panels nobody can read"
+    ],
+    "vo": "The same clichés, flavours that are hard to tell apart, and panels nobody can read. That's how products get lost."
+   },
+   {
+    "type": "spotlight",
+    "label": "Gracie Amino · render to gym",
+    "head": [
+     "FROM RENDER",
+     "TO GYM FLOOR."
+    ],
+    "images": [
+     [
+      "sp-gracie-bcaa.jpg",
+      "Gracie Amino · render"
+     ],
+     [
+      "sp-gracie-back.jpg",
+      "Back panel"
+     ],
+     [
+      "sn-gracie-boxes.jpg",
+      "Shipped"
+     ],
+     [
+      "sn-gracie-gym.jpg",
+      "In the gym"
+     ]
+    ],
+    "vo": "For Gracie Amino, we designed a bold tub that reads instantly, from the render to the gym floor."
+   },
+   {
+    "type": "wall",
+    "label": "Sports nutrition",
+    "head": [
+     "BOLD BY",
+     "DESIGN."
+    ],
+    "images": [
+     "sp-beast",
+     "sp-alpha-male",
+     "sp-dragon",
+     "sp-maxhd",
+     "sn-citrulline-2",
+     "sp-pct-max",
+     "sp-stemstim",
+     "sp-141",
+     "sn-power-stacks",
+     "sn-vitamin-b12",
+     "sn-citrulline",
+     "sp-turmeric-black",
+     "sp-rainier",
+     "sn-vinnavita",
+     "sp-gracie-bcaa",
+     "sp-collagen-2"
+    ],
+    "vo": "Pre-workouts, aminos, boosters, and recovery. Every range is built to stand out."
+   },
+   {
+    "type": "steps",
+    "label": "What we design",
+    "head": [
+     "BUILT FOR",
+     "THE SHELF."
+    ],
+    "items": [
+     "Bold, instant shelf presence",
+     "Flavour & variant colour codes",
+     "Clear dosage & facts panels",
+     "Tubs, bottles & pouches"
+    ],
+    "vo": "Bold shelf presence, clear flavour colour codes, readable facts panels, and designs for tubs, bottles, and pouches."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "BOLD",
+     "SELLS."
+    ],
+    "vo": "Bold sells."
+   },
+   {
+    "type": "process",
+    "vo": "Discover. Plan. Build. Grow. Strength, by design."
+   },
+   {
+    "type": "end",
+    "head": [
+     "BUILT TO",
+     "PERFORM."
+    ],
+    "vo": "Bombay Marketing. Built to perform."
+   }
+  ]
+ },
+ "p6": {
+  "slug": "beauty-beautifully-packed",
+  "title": "Beauty, Beautifully Packed",
+  "tag": "P6 / 09 · Beauty",
+  "scenes": [
+   {
+    "type": "hook",
+    "bg": "light",
+    "head": [
+     "BEAUTY",
+     "STARTS ON",
+     "THE SHELF."
+    ],
+    "image": "bt-jovae-1oz-2.jpg",
+    "vo": "In beauty and personal care, packaging is the first thing your customer falls for."
+   },
+   {
+    "type": "morph",
+    "step": "Jovaé · label to bottle",
+    "head": [
+     "FROM LABEL",
+     "TO BOTTLE."
+    ],
+    "front": [
+     "label-jovae-flat.jpg",
+     "Flat label artwork"
+    ],
+    "back": [
+     "sp-jovae-hsn.jpg",
+     "Jovaé · Hair, Skin & Nail"
+    ],
+    "vo": "For Jovaé, every label was designed flat first, then brought to life across the whole range."
+   },
+   {
+    "type": "spotlight",
+    "label": "The Jovaé range",
+    "head": [
+     "ONE CALM,",
+     "PREMIUM RANGE."
+    ],
+    "images": [
+     [
+      "bt-jovae-1oz-2.jpg",
+      "Serums · 1 fl oz"
+     ],
+     [
+      "sp-shampoo-8oz.jpg",
+      "Shampoo · 8 fl oz"
+     ],
+     [
+      "bt-jovae-cond-2.jpg",
+      "Conditioner · 8 fl oz"
+     ],
+     [
+      "sp-jovae-immune.jpg",
+      "Advanced Immune Support"
+     ]
+    ],
+    "vo": "Serums, shampoos, conditioners, and supplements, all speaking one calm, premium language."
+   },
+   {
+    "type": "wall",
+    "label": "Beauty & personal care",
+    "head": [
+     "SOFT TOUCH.",
+     "STRONG BRANDS."
+    ],
+    "images": [
+     "bt-lashes",
+     "bt-lashes-2",
+     "bt-amazon-complex",
+     "bt-botanicals",
+     "bt-bunny-tube",
+     "bt-travel-bottles",
+     "pk-142",
+     "pk-whitening-strips",
+     "bt-jovae-sh-4",
+     "bt-jovae-1oz-3",
+     "sp-biogen-collagen",
+     "sp-collagen",
+     "sp-hair-8oz-3",
+     "bt-jovae-cond-4",
+     "sp-ultravita-her"
+    ],
+    "vo": "Lashes, skincare, botanicals, and travel essentials. Each one designed to feel as good as it looks."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "DESIGNED",
+     "TO BE",
+     "LOVED."
+    ],
+    "vo": "Designed to be loved, and picked up again."
+   },
+   {
+    "type": "process",
+    "vo": "Discover. Plan. Build. Grow. Beauty, done with care."
+   },
+   {
+    "type": "end",
+    "head": [
+     "BEAUTY,",
+     "BEAUTIFULLY",
+     "PACKED."
+    ],
+    "vo": "Bombay Marketing. Beauty, beautifully packed."
+   }
+  ]
+ },
+ "p7": {
+  "slug": "one-brand-everywhere",
+  "title": "One Brand, Everywhere",
+  "tag": "P7 / 09 · Brand identity",
+  "scenes": [
+   {
+    "type": "hook",
+    "bg": "dark",
+    "head": [
+     "ONE LOGO.",
+     "A WHOLE",
+     "WORLD."
+    ],
+    "image": "shakti-logo.jpg",
+    "fit": "contain",
+    "vo": "A great brand doesn't stop at the logo."
+   },
+   {
+    "type": "spotlight",
+    "label": "Shakti Agrobiotech · identity",
+    "head": [
+     "IT STARTS",
+     "WITH A MARK."
+    ],
+    "images": [
+     [
+      "shakti-logo-2.jpg",
+      "Logo"
+     ],
+     [
+      "shakti-card.jpg",
+      "Business cards"
+     ],
+     [
+      "shakti-stationery.jpg",
+      "Stationery"
+     ],
+     [
+      "shakti-print.jpg",
+      "Print"
+     ]
+    ],
+    "vo": "For Shakti Agrobiotech, we built one identity, from the logo to business cards, stationery, and print."
+   },
+   {
+    "type": "steps",
+    "label": "What we built",
+    "head": [
+     "A COMPLETE",
+     "IDENTITY."
+    ],
+    "items": [
+     "Logo & brand mark",
+     "Stationery & print",
+     "Product packaging",
+     "Vehicle branding"
+    ],
+    "vo": "Logo and brand mark, stationery and print, product packaging, and even vehicle branding."
+   },
+   {
+    "type": "spotlight",
+    "label": "On every product",
+    "head": [
+     "ON EVERY",
+     "PRODUCT."
+    ],
+    "images": [
+     [
+      "shakti-kmb.jpg",
+      "KMB"
+     ],
+     [
+      "shakti-psb.jpg",
+      "PSB"
+     ],
+     [
+      "shakti-azo.jpg",
+      "AZO"
+     ],
+     [
+      "shakti-gallon.jpg",
+      "Gallon"
+     ],
+     [
+      "shakti-pouch.jpg",
+      "Pouches"
+     ]
+    ],
+    "vo": "Then onto every product, from bottles and gallons to pouches, all instantly recognisable."
+   },
+   {
+    "type": "spotlight",
+    "label": "Beyond the pack",
+    "head": [
+     "AND ON",
+     "THE ROAD."
+    ],
+    "images": [
+     [
+      "shakti-car.jpg",
+      "Vehicle branding"
+     ],
+     [
+      "shakti-info-1.jpg",
+      "Product infographic"
+     ]
+    ],
+    "vo": "Even the vehicle and the product infographics carry the same identity."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "CONSISTENCY",
+     "IS",
+     "RECOGNITION."
+    ],
+    "vo": "Consistency is what makes a brand recognisable."
+   },
+   {
+    "type": "process",
+    "vo": "Discover. Plan. Build. Grow. One identity, everywhere."
+   },
+   {
+    "type": "end",
+    "head": [
+     "ONE BRAND.",
+     "EVERYWHERE."
+    ],
+    "vo": "Bombay Marketing. One brand, everywhere."
+   }
+  ]
+ },
+ "p8": {
+  "slug": "everyday-designed-better",
+  "title": "Everyday Products, Designed Better",
+  "tag": "P8 / 09 · Home & tech",
+  "scenes": [
+   {
+    "type": "hook",
+    "bg": "light",
+    "head": [
+     "EVERYDAY",
+     "PRODUCTS.",
+     "BETTER",
+     "BOXES."
+    ],
+    "image": "hl-cctv.jpg",
+    "vo": "Everyday products deserve packaging that makes them feel special."
+   },
+   {
+    "type": "problem",
+    "label": "Sound familiar?",
+    "head": [
+     "PLAIN BOX,",
+     "PLAIN SALES?"
+    ],
+    "items": [
+     "Generic boxes that look cheap",
+     "Features buried in small print",
+     "A forgettable unboxing"
+    ],
+    "vo": "A plain box hides great features, and makes the whole product feel ordinary."
+   },
+   {
+    "type": "wall",
+    "label": "Home, kitchen & tech",
+    "head": [
+     "BOXES WITH",
+     "PERSONALITY."
+    ],
+    "images": [
+     "hl-cctv",
+     "hl-coffee-grinder",
+     "hl-czm",
+     "hl-device-box",
+     "hl-magneto",
+     "hl-moth-trap",
+     "hl-shago",
+     "hl-vida-car",
+     "hl-carpenter",
+     "hl-jcrobot",
+     "pk-led-string",
+     "pk-led-bulb",
+     "pk-door-closer",
+     "pk-shower-filter",
+     "pk-food-steamer",
+     "hl-lemon-squeezer",
+     "hl-prix",
+     "pk-janbex"
+    ],
+    "vo": "Kitchen tools, smart devices, home security, and car accessories, each with its own personality."
+   },
+   {
+    "type": "spotlight",
+    "label": "Designed for real life",
+    "head": [
+     "MADE FOR",
+     "REAL LIFE."
+    ],
+    "images": [
+     [
+      "hl-paipur-life.jpg",
+      "Paipur notebooks"
+     ],
+     [
+      "hl-paipur-notebooks.jpg",
+      "Paipur range"
+     ],
+     [
+      "hl-lemon-squeezer.jpg",
+      "Kitchen tools"
+     ],
+     [
+      "hl-prix.jpg",
+      "Prix detergent"
+     ]
+    ],
+    "vo": "From notebooks on your desk to the tools in your kitchen, designed for real life."
+   },
+   {
+    "type": "steps",
+    "label": "What we design",
+    "head": [
+     "READY FOR",
+     "E-COMMERCE."
+    ],
+    "items": [
+     "Retail & e-commerce boxes",
+     "Feature-led front panels",
+     "A premium unboxing",
+     "3D renders for listings"
+    ],
+    "vo": "Retail and e-commerce boxes, feature-led front panels, a premium unboxing, and 3D renders for your listings."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "NOTHING",
+     "EVERYDAY",
+     "ABOUT IT."
+    ],
+    "vo": "Nothing everyday about it."
+   },
+   {
+    "type": "process",
+    "vo": "Discover. Plan. Build. Grow. Better boxes, from day one."
+   },
+   {
+    "type": "end",
+    "head": [
+     "EVERYDAY,",
+     "DESIGNED",
+     "BETTER."
+    ],
+    "vo": "Bombay Marketing. Everyday products, designed better."
+   }
+  ]
+ },
+ "p9": {
+  "slug": "design-you-can-taste",
+  "title": "Design You Can Taste",
+  "tag": "P9 / 09 · Food & natural",
+  "scenes": [
+   {
+    "type": "hook",
+    "bg": "light",
+    "head": [
+     "DESIGN",
+     "YOU CAN",
+     "TASTE."
+    ],
+    "image": "fd-zenobar.jpg",
+    "vo": "In food and drink, people buy with their eyes first."
+   },
+   {
+    "type": "wall",
+    "label": "Food, drink & natural",
+    "head": [
+     "FRESH ON",
+     "THE SHELF."
+    ],
+    "images": [
+     "fd-zenobar-2",
+     "fd-kipnuggets",
+     "fd-cherry",
+     "fd-tea-boxes",
+     "fd-nystia-2",
+     "fd-matcha-daily",
+     "fd-matcha-pure",
+     "pk-broccoli",
+     "pk-whey",
+     "sp-moringa",
+     "sp-green-tea",
+     "sp-curcumin-coffee",
+     "sp-clever-set",
+     "pk-bee-cottage",
+     "bt-botanicals",
+     "sp-niasun",
+     "sp-maxitto-d3",
+     "pk-nystia"
+    ],
+    "vo": "Snack bars, frozen foods, teas, matcha, and natural supplements, designed to look as good as they taste."
+   },
+   {
+    "type": "morph",
+    "step": "Matcha · label to jar",
+    "head": [
+     "FROM LABEL",
+     "TO JAR."
+    ],
+    "front": [
+     "fd-matcha-cook.jpg",
+     "Label artwork"
+    ],
+    "back": [
+     "fd-matcha-pure.jpg",
+     "Pure Matcha · on the jar"
+    ],
+    "vo": "Every label is designed flat first, to fit the pack perfectly."
+   },
+   {
+    "type": "spotlight",
+    "label": "Natural & lifestyle",
+    "head": [
+     "NATURALLY",
+     "APPETISING."
+    ],
+    "images": [
+     [
+      "sp-maxitto-life-1.jpg",
+      "Maxitto · Vitamin D3"
+     ],
+     [
+      "sp-maxitto-life-3.jpg",
+      "Maxitto · Magnesium"
+     ],
+     [
+      "sp-clever-turmeric.jpg",
+      "Clever Goodness · for pets"
+     ],
+     [
+      "fd-cherry.jpg",
+      "Cherry"
+     ]
+    ],
+    "vo": "Natural products need warmth and honesty, from vitamins to pet supplements."
+   },
+   {
+    "type": "steps",
+    "label": "What we design",
+    "head": [
+     "FOOD-READY",
+     "PACKAGING."
+    ],
+    "items": [
+     "Snack wrappers & pouches",
+     "Boxes & display cartons",
+     "Jar, tub & tin labels",
+     "Clear ingredient panels"
+    ],
+    "vo": "Snack wrappers and pouches, boxes and display cartons, jar and tin labels, and clear ingredient panels."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "FRESH",
+     "SELLS."
+    ],
+    "vo": "Fresh design sells."
+   },
+   {
+    "type": "process",
+    "vo": "Discover. Plan. Build. Grow. Fresh ideas, every time."
+   },
+   {
+    "type": "end",
+    "head": [
+     "DESIGN YOU",
+     "CAN TASTE."
+    ],
+    "vo": "Bombay Marketing. Design you can taste."
    }
   ]
  }

@@ -18,15 +18,21 @@ Design system and storyboard: [`CAMPAIGN.md`](CAMPAIGN.md).
 
 Each folder holds the **MP4** (1080×1920, 30 fps, H.264 + AAC, normalised to about −14.5 LUFS for social, no clipping), a **cover JPG** (the hook frame) and a **voiceover transcript** with in/out timecodes. `campaign-covers.jpg` shows all nine covers side by side.
 
-### Packaging Series (from your Drive portfolio)
+### Packaging Series (from your Drive portfolio, 10 years of work)
 
-| # | Reel | Length | Files |
-|---|---|---|---|
-| P1 | Packaging That Sells | 56.0 s | `p1-packaging-that-sells/` |
-| P2 | Labels That Build Trust | 52.8 s | `p2-labels-that-build-trust/` |
-| P3 | From Dieline to Shelf | 50.1 s | `p3-from-dieline-to-shelf/` |
+| # | Reel | Files |
+|---|---|---|
+| P1 | Packaging That Sells | `p1-packaging-that-sells/` |
+| P2 | Labels That Build Trust | `p2-labels-that-build-trust/` |
+| P3 | From Dieline to Shelf | `p3-from-dieline-to-shelf/` |
+| P4 | Ten Years, Every Project (Fiverr → 99designs → Bombay Marketing) | `p4-ten-years-every-project/` |
+| P5 | Built to Perform (sports nutrition) | `p5-built-to-perform/` |
+| P6 | Beauty, Beautifully Packed (Jovaé + beauty) | `p6-beauty-beautifully-packed/` |
+| P7 | One Brand, Everywhere (Shakti Agrobiotech identity) | `p7-one-brand-everywhere/` |
+| P8 | Everyday Products, Designed Better (home, kitchen, tech) | `p8-everyday-designed-better/` |
+| P9 | Design You Can Taste (food & natural) | `p9-design-you-can-taste/` |
 
-These reels are built only from the shared Drive folder's own design renders, imported to `_brand/drive/`. Behance downloads, Amazon product photos, Facebook saves, Pantone stock, screenshots and the file marked "Sell Template" were left out as reference material. Each reel is generated from `_shared/series_spec.json` by `_shared/gen_series.py` (`python3 _shared/gen_series.py p1`).
+All products shown are the agency's own designs from the shared Drive (imported to `_brand/drive/`). Pantone stock swatches, a browser screenshot, images with a Fiverr watermark and a repost carrying a third party's Instagram handle were left out. Each reel is generated from `_shared/series_spec.json` by `_shared/gen_series.py` (`python3 _shared/gen_series.py p1`).
 
 ## Editable source (`v01/` … `v09/`, `p1/` … `p3/`)
 
