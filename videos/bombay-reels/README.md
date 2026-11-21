@@ -6,15 +6,15 @@ Design system and storyboard: [`CAMPAIGN.md`](CAMPAIGN.md).
 
 | # | Reel | Length | Files |
 |---|---|---|---|
-| 01 | We Are Bombay Marketing | 20 s | `v01-we-are-bombay-marketing/` |
-| 02 | Your Website Is Your Digital Storefront | 20 s | `v02-your-website-is-your-digital-storefront/` |
-| 03 | Be Found. Be Chosen. | 20 s | `v03-be-found-be-chosen/` |
-| 04 | Own Your Local Presence | 18 s | `v04-own-your-local-presence/` |
-| 05 | Attention Is the New Currency | 20 s | `v05-attention-is-the-new-currency/` |
-| 06 | Turn Clicks Into Customers | 20 s | `v06-turn-clicks-into-customers/` |
-| 07 | Make Your Brand Unforgettable | 20 s | `v07-make-your-brand-unforgettable/` |
-| 08 | Ideas Into Impact | 22 s | `v08-ideas-into-impact/` |
-| 09 | Let's Build Something Bigger | 20 s | `v09-lets-build-something-bigger/` |
+| 01 | We Are Bombay Marketing | 56.5 s | `v01-we-are-bombay-marketing/` |
+| 02 | Your Website Is Your Digital Storefront | 55.8 s | `v02-your-website-is-your-digital-storefront/` |
+| 03 | Be Found. Be Chosen. | 49.4 s | `v03-be-found-be-chosen/` |
+| 04 | Own Your Local Presence | 48.2 s | `v04-own-your-local-presence/` |
+| 05 | Attention Is the New Currency | 55.1 s | `v05-attention-is-the-new-currency/` |
+| 06 | Turn Clicks Into Customers | 48.9 s | `v06-turn-clicks-into-customers/` |
+| 07 | Make Your Brand Unforgettable | 52.8 s | `v07-make-your-brand-unforgettable/` |
+| 08 | Ideas Into Impact | 46.6 s | `v08-ideas-into-impact/` |
+| 09 | Let's Build Something Bigger | 48.3 s | `v09-lets-build-something-bigger/` |
 
 Each folder holds the **MP4** (1080×1920, 30 fps, H.264 + AAC, about −17 LUFS, no clipping), a **cover JPG** (the hook frame) and a **voiceover transcript** with in/out timecodes. `campaign-covers.jpg` shows all nine covers side by side.
 
@@ -29,6 +29,10 @@ npx hyperframes render . -q high -o renders/out.mp4
 ```
 
 The shared design kit lives in `_shared/kit/` (`brand.css` = tokens, type, end card; `kit.js` = motion helpers such as the Blue Shutter, word reveals and the signature end card). `_shared/scaffold.sh` copies it into a new reel.
+
+## Extended cut (45–60 s)
+
+Every reel was lengthened to 45–60 s by inserting a middle act made from five shared scene types: problem, service steps, real work, blue statement, and the recurring "How we work" process. The copy, voiceover and image choices for each new scene are in `_shared/ext_spec.json`. `_shared/extend.py` generated the scenes and shifted the original ending. Each scene is ordinary HTML in `vNN/index.html` (ids `x1`…`x5`) and can be edited directly. The full storyboard is in `CAMPAIGN.md` §4.
 
 ## Assets and integrity
 

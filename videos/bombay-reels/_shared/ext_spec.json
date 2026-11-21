@@ -1,0 +1,522 @@
+{
+ "v01": {
+  "split": 11.3,
+  "marker": "/* ---------- S4 converge",
+  "scenes": [
+   {
+    "type": "problem",
+    "label": "Sound familiar?",
+    "head": [
+     "IS YOUR BUSINESS",
+     "INVISIBLE ONLINE?"
+    ],
+    "items": [
+     "An outdated website",
+     "Hard to find on search",
+     "No consistent brand"
+    ],
+    "vo": "Too many businesses are held back by an outdated website, poor visibility, and a brand that feels inconsistent."
+   },
+   {
+    "type": "steps",
+    "label": "What we do",
+    "head": [
+     "EVERYTHING YOUR",
+     "BRAND NEEDS."
+    ],
+    "items": [
+     "Website design & development",
+     "SEO & Google Maps",
+     "Social media & advertising",
+     "Branding & creative"
+    ],
+    "vo": "We design and build websites, improve search and map visibility, run social media and advertising, and create brands people remember."
+   },
+   {
+    "type": "showcase",
+    "label": "Selected work",
+    "head": [
+     "MUMBAI. INDIA.",
+     "THE WORLD."
+    ],
+    "cards": [
+     [
+      "Work-Propzed.jpg",
+      "Propzed"
+     ],
+     [
+      "Work-Dubai-Gym-Flooring.jpg",
+      "Dubai Gym Flooring"
+     ]
+    ],
+    "vo": "We work with businesses in Mumbai, across India, and internationally."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "ONE PARTNER.",
+     "EVERY STEP",
+     "OF GROWTH."
+    ],
+    "vo": "One partner, for every step of your digital growth."
+   },
+   {
+    "type": "process",
+    "vo": "Every project follows one clear process. Discover. Plan. Build. Grow."
+   }
+  ]
+ },
+ "v02": {
+  "split": 16.0,
+  "marker": "/* END",
+  "scenes": [
+   {
+    "type": "problem",
+    "label": "Sound familiar?",
+    "head": [
+     "IS YOUR WEBSITE",
+     "COSTING YOU",
+     "CUSTOMERS?"
+    ],
+    "items": [
+     "Slow to load",
+     "Hard to use on mobile",
+     "No clear next step"
+    ],
+    "vo": "A slow, confusing website quietly sends visitors to your competitors."
+   },
+   {
+    "type": "steps",
+    "label": "How we build",
+    "head": [
+     "WEBSITES THAT",
+     "WORK HARD."
+    ],
+    "items": [
+     "Strategy & site structure",
+     "Design that reflects your brand",
+     "Fast, mobile-first development",
+     "Built-in enquiry & checkout"
+    ],
+    "vo": "We plan the structure, design around your brand, develop for speed on every device, and build in clear paths to enquire or buy."
+   },
+   {
+    "type": "showcase",
+    "label": "Websites we've built",
+    "head": [
+     "STORES TO",
+     "SERVICES."
+    ],
+    "cards": [
+     [
+      "Portfolio-Dastaan-by-Artisans.jpg",
+      "Dastaan by Artisans"
+     ],
+     [
+      "Work-Safepoint-Fire.jpg",
+      "Safepoint Fire"
+     ]
+    ],
+    "vo": "From online stores to service businesses, every website is built around its customers."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "YOUR BEST",
+     "SALESPERSON.",
+     "ALWAYS ON."
+    ],
+    "vo": "Your website should be your best salesperson, and it never takes a day off."
+   },
+   {
+    "type": "process",
+    "vo": "Discover. Plan. Build. Grow. One clear process, from first call to launch and beyond."
+   }
+  ]
+ },
+ "v03": {
+  "split": 16.3,
+  "marker": "/* END",
+  "scenes": [
+   {
+    "type": "problem",
+    "label": "Sound familiar?",
+    "head": [
+     "CUSTOMERS",
+     "CAN'T FIND YOU?"
+    ],
+    "items": [
+     "Missing from key searches",
+     "Slow, unoptimised pages",
+     "Content without structure"
+    ],
+    "vo": "If customers can't find you on search, they will find someone else."
+   },
+   {
+    "type": "steps",
+    "label": "What we optimise",
+    "head": [
+     "SEO, DONE",
+     "PROPERLY."
+    ],
+    "items": [
+     "Site speed & technical health",
+     "Pages, titles & metadata",
+     "Local & map listings",
+     "Helpful, structured content"
+    ],
+    "vo": "We improve site speed and technical health, optimise every page, strengthen local listings, and plan content that answers real questions."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "SEO IS A",
+     "LONG GAME.",
+     "PLAY IT WELL."
+    ],
+    "vo": "SEO is a long-term investment. Done properly, it keeps working for you."
+   },
+   {
+    "type": "process",
+    "vo": "Discover. Plan. Build. Grow. Research first, then steady, consistent progress."
+   }
+  ]
+ },
+ "v04": {
+  "split": 15.3,
+  "marker": "/* END",
+  "scenes": [
+   {
+    "type": "problem",
+    "label": "Sound familiar?",
+    "head": [
+     "MISSING FROM",
+     "THE MAP?"
+    ],
+    "items": [
+     "Incomplete business profile",
+     "Outdated hours & details",
+     "No photos or updates"
+    ],
+    "vo": "An incomplete profile, outdated details, or missing photos can cost you customers who are just around the corner."
+   },
+   {
+    "type": "steps",
+    "label": "What we manage",
+    "head": [
+     "LOCAL",
+     "VISIBILITY."
+    ],
+    "items": [
+     "Complete, accurate profile",
+     "Photos that show your business",
+     "Regular posts & updates",
+     "Consistent local listings"
+    ],
+    "vo": "We complete your business details, add quality photos, keep your profile active with regular updates, and keep your listings consistent across the web."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "BE THE FIRST",
+     "CHOICE",
+     "NEARBY."
+    ],
+    "vo": "Be the business nearby customers think of first."
+   },
+   {
+    "type": "process",
+    "vo": "Discover. Plan. Build. Grow. Local growth, one step at a time."
+   }
+  ]
+ },
+ "v05": {
+  "split": 16.0,
+  "marker": "/* END",
+  "scenes": [
+   {
+    "type": "problem",
+    "label": "Sound familiar?",
+    "head": [
+     "POSTING",
+     "WITHOUT A PLAN?"
+    ],
+    "items": [
+     "Inconsistent posting",
+     "Random visuals",
+     "Content that doesn't connect"
+    ],
+    "vo": "Posting without a plan leads to random visuals, inconsistent timing, and content nobody remembers."
+   },
+   {
+    "type": "steps",
+    "label": "What we create",
+    "head": [
+     "CONTENT WITH",
+     "A PURPOSE."
+    ],
+    "items": [
+     "Content strategy & calendar",
+     "Reels, carousels & graphics",
+     "Consistent brand templates",
+     "Community management"
+    ],
+    "vo": "We plan your content calendar, create reels, carousels and graphics, design consistent brand templates, and help you engage your community."
+   },
+   {
+    "type": "showcase",
+    "label": "Creative work",
+    "head": [
+     "DESIGNED TO",
+     "STAND OUT."
+    ],
+    "cards": [
+     [
+      "Packaging-Evermore-Skincare.jpg",
+      "Evermore"
+     ],
+     [
+      "Packaging-Naked-Life-Sparkling.jpg",
+      "Naked Life"
+     ]
+    ],
+    "vo": "Every piece is designed to stop the scroll, and stay on brand."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "STORIES",
+     "PEOPLE",
+     "REMEMBER."
+    ],
+    "vo": "Tell stories people remember, and come back for."
+   },
+   {
+    "type": "process",
+    "vo": "Discover. Plan. Build. Grow. A clear process behind every post."
+   }
+  ]
+ },
+ "v06": {
+  "split": 16.4,
+  "marker": "/* END",
+  "scenes": [
+   {
+    "type": "problem",
+    "label": "Sound familiar?",
+    "head": [
+     "ADS THAT",
+     "DON'T CONVERT?"
+    ],
+    "items": [
+     "Broad, untargeted audiences",
+     "Ads that land on the homepage",
+     "No follow-up on enquiries"
+    ],
+    "vo": "Broad audiences, generic landing pages, and no follow-up turn ad spend into missed opportunities."
+   },
+   {
+    "type": "steps",
+    "label": "What we run",
+    "head": [
+     "CAMPAIGNS",
+     "WITH A PLAN."
+    ],
+    "items": [
+     "Meta & Google Ads",
+     "Audience targeting",
+     "Landing pages that convert",
+     "Tracking & optimisation"
+    ],
+    "vo": "We plan and run Meta and Google campaigns, target the right audiences, build focused landing pages, and track every step to keep improving."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "EVERY RUPEE.",
+     "A CLEAR",
+     "PURPOSE."
+    ],
+    "vo": "Every rupee you spend should have a clear purpose."
+   },
+   {
+    "type": "process",
+    "vo": "Discover. Plan. Build. Grow. Then measure, learn, and improve."
+   }
+  ]
+ },
+ "v07": {
+  "split": 16.0,
+  "marker": "K.endcard(tl, 16.0);",
+  "scenes": [
+   {
+    "type": "problem",
+    "label": "Sound familiar?",
+    "head": [
+     "DOES YOUR BRAND",
+     "LOOK DIFFERENT",
+     "EVERYWHERE?"
+    ],
+    "items": [
+     "Logo used inconsistently",
+     "Mismatched colours & fonts",
+     "Packaging that blends in"
+    ],
+    "vo": "When your logo, colours, and packaging don't match, customers struggle to recognise you."
+   },
+   {
+    "type": "steps",
+    "label": "What we design",
+    "head": [
+     "IDENTITY,",
+     "END TO END."
+    ],
+    "items": [
+     "Logo & visual identity",
+     "Colour & typography system",
+     "Packaging design",
+     "Brand guidelines"
+    ],
+    "vo": "We design logos and visual identities, colour and type systems, packaging, and clear brand guidelines for your whole team."
+   },
+   {
+    "type": "showcase",
+    "label": "Packaging design",
+    "head": [
+     "MADE TO BE",
+     "NOTICED."
+    ],
+    "cards": [
+     [
+      "Packaging-Pro-Balance-Supplement.jpg",
+      "Pro Balance"
+     ],
+     [
+      "Packaging-Wheat-Atta.png",
+      "Wheat Atta"
+     ]
+    ],
+    "vo": "From shelves to screens, every detail is designed to be noticed."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "DETAILS",
+     "MAKE THE",
+     "DIFFERENCE."
+    ],
+    "vo": "The details are what make a brand unforgettable."
+   },
+   {
+    "type": "process",
+    "vo": "Discover. Plan. Build. Grow. Every brand starts with understanding."
+   }
+  ]
+ },
+ "v08": {
+  "split": 18.0,
+  "marker": "/* END",
+  "scenes": [
+   {
+    "type": "steps",
+    "label": "What we bring",
+    "head": [
+     "CREATIVE MEETS",
+     "EXECUTION."
+    ],
+    "items": [
+     "Brand strategy & identity",
+     "Website design & development",
+     "SEO & local visibility",
+     "Social media & advertising"
+    ],
+    "vo": "Strategy, design, development, and marketing, all under one roof."
+   },
+   {
+    "type": "showcase",
+    "label": "More work",
+    "head": [
+     "BUILT FOR",
+     "EVERY SECTOR."
+    ],
+    "cards": [
+     [
+      "Work-Wallpaper-Installations-Dubai.jpg",
+      "Wallpaper Installations Dubai"
+     ],
+     [
+      "Work-Safepoint-Fire.jpg",
+      "Safepoint Fire"
+     ]
+    ],
+    "vo": "From interiors in Dubai to fire safety in Mumbai, every project starts by understanding the business."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "YOUR STORY.",
+     "OUR CRAFT."
+    ],
+    "vo": "Your story, told with our craft."
+   },
+   {
+    "type": "process",
+    "vo": "Discover. Plan. Build. Grow. The same clear process, whatever the industry."
+   }
+  ]
+ },
+ "v09": {
+  "split": 3.0,
+  "marker": "/* SB ecosystem */",
+  "scenes": [
+   {
+    "type": "problem",
+    "label": "Sound familiar?",
+    "head": [
+     "OUTGROWN YOUR",
+     "DIGITAL",
+     "PRESENCE?"
+    ],
+    "items": [
+     "A website that no longer fits",
+     "Hard to find online",
+     "A brand that's fallen behind"
+    ],
+    "vo": "If your website, visibility, or brand no longer reflect where your business is going, it's time for a change.",
+    "vo_delay": 1.9
+   },
+   {
+    "type": "showcase",
+    "label": "Who we work with",
+    "head": [
+     "MUMBAI. INDIA.",
+     "THE WORLD."
+    ],
+    "cards": [
+     [
+      "Work-Denim-State.jpg",
+      "Denim State"
+     ],
+     [
+      "Portfolio-Dubai-Blinds-Hub.jpg",
+      "Dubai Blinds Hub"
+     ]
+    ],
+    "vo": "We partner with ambitious businesses in Mumbai, across India, and internationally."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "BIGGER PLANS",
+     "NEED THE RIGHT",
+     "PARTNER."
+    ],
+    "vo": "Bigger plans need the right partner."
+   },
+   {
+    "type": "process",
+    "vo": "It starts with a simple conversation. Then we discover, plan, build, and grow, together."
+   }
+  ]
+ }
+}
