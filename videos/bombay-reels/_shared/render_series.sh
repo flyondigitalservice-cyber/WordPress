@@ -2,7 +2,7 @@
 cd "$(dirname "$0")/.."
 H="node /root/.claude/skills/hyperframes/scripts/plugin-cli.mjs"
 r(){ (cd $1 && $H render . -q high -o renders/raw.mp4 > /tmp/claude-0/render-$1.log 2>&1); echo "$1 rc=$?"; }
-for v in p1 p2 p3 p4 p5 p6 p7 p8 p9; do [ -s $v/renders/raw.mp4 ] || todo="$todo $v"; done
+for v in p1 p2 p3 p4 p5 p6 p7 p8 p9 sr; do [ -s $v/renders/raw.mp4 ] || todo="$todo $v"; done
 for v in $todo; do r $v & done; wait
 python3 - <<'PY'
 import json,subprocess,os,re

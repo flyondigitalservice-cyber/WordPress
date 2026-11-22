@@ -1096,5 +1096,328 @@
     "vo": "Bombay Marketing. Design you can taste."
    }
   ]
+ },
+ "sr": {
+  "slug": "showreel",
+  "title": "Showreel",
+  "tag": "Showreel · Our work",
+  "scenes": [
+   {
+    "type": "hook",
+    "bg": "dark",
+    "head": [
+     "TEN YEARS",
+     "OF DESIGN.",
+     "ONE REEL."
+    ],
+    "image": "sp-optimum17-row.jpg",
+    "vo": "Ten years of packaging design. Here's a look."
+   },
+   {
+    "type": "rapid",
+    "label": "01 · Supplements & sports",
+    "head": [
+     "SUPPLEMENTS."
+    ],
+    "images": [
+     [
+      "sp-optimum17-row.jpg",
+      "Optimum 17"
+     ],
+     [
+      "sp-gracie-bcaa.jpg",
+      "Gracie Amino"
+     ],
+     [
+      "sp-beast.jpg",
+      "The Beast"
+     ],
+     [
+      "sp-maxitto-d3.jpg",
+      "Maxitto Vitamin D3"
+     ],
+     [
+      "sp-alpha-male.jpg",
+      "Alpha Male"
+     ],
+     [
+      "sp-pro-health-box.jpg",
+      "Pro-Health"
+     ],
+     [
+      "sp-dragon.jpg",
+      "Dragon's Breath"
+     ],
+     [
+      "sp-rainier.jpg",
+      "Rainier Joint Support"
+     ],
+     [
+      "sn-power-stacks.jpg",
+      "Power Stacks"
+     ],
+     [
+      "sp-ashwagandha.jpg",
+      "Ashwagandha"
+     ],
+     [
+      "sp-garcinia.jpg",
+      "Category · Garcinia"
+     ],
+     [
+      "sn-vitamin-b12.jpg",
+      "Vitamin B-12"
+     ]
+    ],
+    "vo": "Supplements and sports nutrition."
+   },
+   {
+    "type": "rapid",
+    "label": "02 · Beauty & care",
+    "head": [
+     "BEAUTY & CARE."
+    ],
+    "images": [
+     [
+      "bt-jovae-1oz-2.jpg",
+      "Jovaé Serums"
+     ],
+     [
+      "sp-shampoo-8oz.jpg",
+      "Jovaé Shampoo"
+     ],
+     [
+      "bt-lashes.jpg",
+      "Scandinavian Lashes"
+     ],
+     [
+      "bt-amazon-complex.jpg",
+      "Amazon Complex"
+     ],
+     [
+      "bt-botanicals.jpg",
+      "Botanicals"
+     ],
+     [
+      "sp-jovae-hsn.jpg",
+      "Jovaé Hair, Skin & Nail"
+     ],
+     [
+      "bt-bunny-tube.jpg",
+      "Gift tube"
+     ],
+     [
+      "pk-whitening-strips.jpg",
+      "Whitening strips"
+     ],
+     [
+      "sp-biogen-collagen.jpg",
+      "Biogen Collagen"
+     ]
+    ],
+    "vo": "Beauty and personal care."
+   },
+   {
+    "type": "rapid",
+    "label": "03 · Baby & family",
+    "head": [
+     "BABY & FAMILY."
+    ],
+    "images": [
+     [
+      "pk-kinray.jpg",
+      "Kinray"
+     ],
+     [
+      "sp-kinray-set.jpg",
+      "Kinray range"
+     ],
+     [
+      "pk-baby-swaddle.jpg",
+      "Baby swaddle"
+     ],
+     [
+      "pk-nasal-aspirator.jpg",
+      "Nasal aspirator"
+     ],
+     [
+      "sp-tough-tummies.jpg",
+      "Tough Tummies"
+     ],
+     [
+      "pk-baby-swaddle-2.jpg",
+      "Swaddle blankets"
+     ],
+     [
+      "sp-choline.jpg",
+      "Choline gummies"
+     ]
+    ],
+    "vo": "Baby and family."
+   },
+   {
+    "type": "rapid",
+    "label": "04 · Food & natural",
+    "head": [
+     "FOOD & NATURAL."
+    ],
+    "images": [
+     [
+      "fd-zenobar.jpg",
+      "Zenobar"
+     ],
+     [
+      "fd-kipnuggets.jpg",
+      "Kipnuggets"
+     ],
+     [
+      "fd-cherry.jpg",
+      "Cherry"
+     ],
+     [
+      "fd-matcha-pure.jpg",
+      "Pure Matcha"
+     ],
+     [
+      "fd-tea-boxes.jpg",
+      "Tea blends"
+     ],
+     [
+      "pk-nystia.jpg",
+      "Nystia display"
+     ],
+     [
+      "sp-maxitto-life-1.jpg",
+      "Maxitto"
+     ],
+     [
+      "sp-clever-turmeric.jpg",
+      "Clever Goodness"
+     ],
+     [
+      "pk-broccoli.jpg",
+      "Broccoli sprout"
+     ],
+     [
+      "sp-moringa.jpg",
+      "Moringa"
+     ]
+    ],
+    "vo": "Food, drink, and natural products."
+   },
+   {
+    "type": "rapid",
+    "label": "05 · Home & tech",
+    "head": [
+     "HOME & TECH."
+    ],
+    "images": [
+     [
+      "hl-cctv.jpg",
+      "CCTV camera"
+     ],
+     [
+      "hl-coffee-grinder.jpg",
+      "Coffee grinder"
+     ],
+     [
+      "pk-led-string.jpg",
+      "LED string lights"
+     ],
+     [
+      "hl-czm.jpg",
+      "CZM 5000"
+     ],
+     [
+      "hl-magneto.jpg",
+      "Magneto"
+     ],
+     [
+      "pk-janbex-2.jpg",
+      "Janbex filament"
+     ],
+     [
+      "hl-paipur-notebooks.jpg",
+      "Paipur notebooks"
+     ],
+     [
+      "hl-moth-trap.jpg",
+      "Pantry moth trap"
+     ],
+     [
+      "pk-door-closer.jpg",
+      "Door closer"
+     ],
+     [
+      "hl-prix.jpg",
+      "Prix detergent"
+     ],
+     [
+      "pk-shower-filter.jpg",
+      "Shower filter"
+     ],
+     [
+      "hl-vida-car.jpg",
+      "Vida"
+     ]
+    ],
+    "vo": "Home, kitchen, and tech."
+   },
+   {
+    "type": "rapid",
+    "label": "06 · Brand identity",
+    "head": [
+     "BRAND IDENTITY."
+    ],
+    "images": [
+     [
+      "shakti-logo.jpg",
+      "Shakti Agrobiotech"
+     ],
+     [
+      "shakti-card.jpg",
+      "Business cards"
+     ],
+     [
+      "shakti-stationery.jpg",
+      "Stationery"
+     ],
+     [
+      "shakti-kmb.jpg",
+      "KMB"
+     ],
+     [
+      "shakti-gallon.jpg",
+      "Gallon"
+     ],
+     [
+      "shakti-pouch.jpg",
+      "Pouches"
+     ],
+     [
+      "shakti-car.jpg",
+      "Vehicle branding"
+     ]
+    ],
+    "vo": "And complete brand identities."
+   },
+   {
+    "type": "statement",
+    "head": [
+     "EVERY",
+     "PROJECT,",
+     "OUR DESIGN."
+    ],
+    "vo": "Every project, our own design."
+   },
+   {
+    "type": "end",
+    "head": [
+     "LET THE WORK",
+     "SPEAK."
+    ],
+    "vo": "Bombay Marketing. Let the work speak."
+   }
+  ]
  }
 }

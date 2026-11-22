@@ -28,9 +28,10 @@ def build(v):
     for i, sc in enumerate(scenes):
         vd = vx[i]["dur"]; ty = sc["type"]
         lead = 0.2 if ty == "hook" else (0.35 if ty != "end" else 1.2)
-        tail = {"hook": 1.6, "problem": 1.7, "steps": 1.4, "statement": 1.8, "process": 1.3, "wall": 1.9, "spotlight": 1.8, "morph": 1.8, "video": 1.5, "end": 0}[ty]
+        tail = {"hook": 1.6, "problem": 1.7, "steps": 1.4, "statement": 1.8, "process": 1.3, "wall": 1.9, "spotlight": 1.8, "morph": 1.8, "video": 1.5, "end": 0, "rapid": 0.6}[ty]
         dur = max(4.4, lead + vd + tail)
         if ty == "video": dur = max(dur, sc["len"] + 1.4)
+        if ty == "rapid": dur = max(dur, len(sc["images"]) * sc.get("shot", 0.72) + 0.5)
         if ty == "end": dur = max(5.0, lead + vd + 2.2)
         dur = r2(dur); T.append((r2(t), dur, r2(t + lead))); t = r2(t + dur)
     TOTAL = t
@@ -141,6 +142,29 @@ def build(v):
                 J.append(f'tl.to("#{k}-d{j+1}", {{ backgroundColor: "#245BFF", scale: 1.3, duration: 0.25 }}, {a});')
                 if j > 0: J.append(f'tl.to("#{k}-d{j}", {{ backgroundColor: "#d1d5db", scale: 1, duration: 0.25 }}, {a});')
             J.append(f'tl.set("#{k} .spot", {{ opacity: 0 }}, {st});')
+        elif ty == "rapid":
+            ims = sc["images"]; n = len(ims); sd = (du - 0.5) / n
+            for f, _ in ims: images.add(f)
+            shots = "".join(f'<div class="rs" data-layout-allow-occlusion id="{k}-r{j+1}" style="top:{items_top}px"><img src="assets/work/{f}" alt="{esc(nm)}" /><span class="chip xchip" style="bottom:22px">{esc(nm)}</span></div>' for j, (f, nm) in enumerate(ims))
+            Hs.append(f'''  <section id="{k}" class="scene {sc.get("bg","soft")} clip" data-start="{st}" data-duration="{du}" data-track-index="2" data-layout-allow-overlap>
+    <div class="cam" id="{k}-cam">
+      <div class="label xlab" id="{k}-lab" style="color:var(--blue)">{esc(sc["label"])}</div>
+      <div class="display xhead" id="{k}-head" style="{'color:#fff' if sc.get('bg')=='dark' else ''}">{heads(sc["head"])}</div>
+      {shots}
+      <div class="rbar" style="top:{items_top + 700}px"><i id="{k}-bar"></i></div>
+    </div>
+  </section>''')
+            J += [f'K.push(tl, "#{k}-cam", {st}, {end}, 1.0, 1.03);',
+                  f'tl.fromTo("#{k}-lab", {{ opacity: 0, y: 20 }}, {{ opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }}, {st});',
+                  f'K.words(tl, "#{k}-head", {st + 0.05}, {{ stagger: 0.08, dur: 0.6 }});',
+                  f'tl.set("#{k} .rs", {{ opacity: 0 }}, {st});',
+                  f'tl.fromTo("#{k}-bar", {{ scaleX: 0, transformOrigin: "0 50%" }}, {{ scaleX: 1, duration: {r2(du - 0.4)}, ease: "none" }}, {st + 0.2});']
+            moves = [("x: 90", "x: 0"), ("y: 90", "y: 0"), ("scale: 1.14", "scale: 1"), ("x: -90", "x: 0"), ("rotate: -3, scale: 1.06", "rotate: 0, scale: 1")]
+            for j in range(n):
+                a = r2(st + 0.25 + j * sd); fr, to = moves[j % len(moves)]
+                J.append(f'tl.fromTo("#{k}-r{j+1}", {{ opacity: 1, {fr} }}, {{ opacity: 1, {to}, duration: {r2(min(0.5, sd))}, ease: "expo.out" }}, {a});')
+                J.append(f'tl.fromTo("#{k}-r{j+1} img", {{ scale: 1.0 }}, {{ scale: 1.06, duration: {r2(sd + 0.1)}, ease: "none" }}, {a});')
+                if j < n - 1: J.append(f'tl.set("#{k}-r{j+1}", {{ opacity: 0 }}, {r2(a + sd)});')
         elif ty == "morph":
             (ff, fn), (bf, bn) = sc["front"], sc["back"]; images.add(ff); images.add(bf)
             Hs.append(f'''  <section id="{k}" class="scene light clip" data-start="{st}" data-duration="{du}" data-track-index="2" data-layout-allow-overlap>
@@ -252,6 +276,10 @@ def build(v):
   .face2 {{ position: absolute; inset: 0; border-radius: 30px; overflow: hidden; background: #fff; box-shadow: var(--shadow); backface-visibility: hidden; -webkit-backface-visibility: hidden; }}
   .face2.back2 {{ transform: rotateY(180deg); }}
   .face2 img {{ width: 100%; height: 100%; object-fit: contain; display: block; }}
+  .rs {{ position: absolute; left: 120px; width: 840px; height: 680px; border-radius: 30px; overflow: hidden; background: #fff; box-shadow: var(--shadow); }}
+  .rs img {{ width: 100%; height: 100%; object-fit: contain; display: block; }}
+  .rbar {{ position: absolute; left: 120px; width: 840px; height: 6px; border-radius: 3px; background: rgba(127,127,127,.25); overflow: hidden; }}
+  .rbar i {{ display: block; height: 100%; background: var(--blue); }}
   .vframe {{ position: absolute; left: 190px; width: 700px; height: 532px; border-radius: 30px; background: var(--black); box-shadow: var(--shadow); }}
 </style>
 </head>
