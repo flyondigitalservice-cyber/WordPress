@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Bombay Marketing — Funky Showreel</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="assets/brand.css" />
+<style>
+  #bg { position: absolute; inset: 0; background: #111; }
+  .hk { position: absolute; left: 120px; font-family: var(--display); font-weight: 900; font-size: 150px; letter-spacing: -0.05em; line-height: 1; color: #fff; text-transform: uppercase; transform-origin: 50% 100%; white-space: nowrap; }
+  .hk.blue, .blue { color: var(--blue); }
+  .hk2 { position: absolute; left: 120px; right: 120px; font-family: var(--display); font-weight: 900; font-size: 104px; letter-spacing: -0.045em; line-height: 0.95; color: #111; text-transform: uppercase; }
+  .hk2.white { color: #fff; }
+  .hk2 span, .hk3 span { display: inline-block; transform-origin: 50% 100%; }
+  .hk3 { position: absolute; left: 120px; right: 120px; font-family: var(--display); font-weight: 900; font-size: 118px; letter-spacing: -0.045em; line-height: 0.95; color: #fff; z-index: 2; }
+  .stk { position: absolute; } .stk svg { width: 100%; height: 100%; display: block; }
+  .dot { position: absolute; border-radius: 50%; }
+  .cc { position: absolute; border-radius: 34px; overflow: hidden; background: #fff; box-shadow: 0 30px 60px rgba(17,17,17,.18); border: 6px solid #fff; }
+  .cc img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .outline { position: absolute; left: 0; right: 0; top: 620px; text-align: center; font-family: var(--display); font-weight: 900; font-size: 300px; line-height: 0.85; letter-spacing: -0.05em; color: transparent; -webkit-text-stroke: 4px rgba(36,91,255,.35); }
+  .sl { position: absolute; inset: 0; }
+  .cat { position: absolute; left: 120px; right: 120px; top: 330px; font-family: var(--display); font-weight: 900; font-size: 112px; letter-spacing: -0.05em; line-height: 1; opacity: 0; transform-origin: 0 100%; }
+  .pc { position: absolute; left: 160px; top: 560px; width: 760px; height: 700px; border-radius: 44px; overflow: hidden; background: #fff; box-shadow: 0 40px 90px rgba(0,0,0,.35); transform-origin: 50% 100%; }
+  .pc img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .wb { position: absolute; inset: 0; opacity: 0; display: flex; align-items: center; justify-content: center; }
+  .ww { font-family: var(--display); font-weight: 900; letter-spacing: -0.05em; line-height: 1; }
+  .tilt { position: absolute; left: -300px; top: 0; width: 1680px; height: 1920px; }
+  .row { position: absolute; left: 0; display: flex; gap: 30px; }
+  .tt { width: 260px; height: 260px; border-radius: 30px; overflow: hidden; background: #fff; flex: none; box-shadow: 0 20px 40px rgba(17,17,17,.2); }
+  .tt img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .band { position: absolute; left: 90px; right: 90px; top: 760px; padding: 40px 40px 46px; background: #111; border-radius: 40px; z-index: 3; }
+  .bt { font-family: var(--display); font-weight: 900; font-size: 120px; letter-spacing: -0.05em; line-height: 0.95; color: #fff; }
+  #f-ring { position: absolute; left: 540px; top: 1040px; width: 0; height: 0; }
+  .ologo { position: absolute; left: -200px; top: -125px; width: 400px; height: 250px; border-radius: 34px; overflow: hidden; background: #fff; box-shadow: 0 20px 50px rgba(17,17,17,.15); }
+  .ologo img { width: 100%; height: 100%; object-fit: contain; }
+  .ob { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+  .obi { position: absolute; left: 280px; top: -95px; width: 190px; height: 190px; border-radius: 50%; overflow: hidden; background: #fff; box-shadow: 0 16px 40px rgba(17,17,17,.2); border: 6px solid #245BFF; }
+  .obi img { width: 100%; height: 100%; object-fit: cover; }
+  .obi span { position: absolute; left: 0; right: 0; bottom: 18px; text-align: center; font-family: var(--text); font-weight: 600; font-size: 28px; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,.6); }
+  .blob { position: absolute; left: 140px; top: 560px; width: 800px; height: 800px; background: #111; }
+  .check { position: absolute; left: 0; top: 1300px; width: 1120px; height: 80px; }
+  .check i { position: absolute; width: 40px; height: 40px; background: #FFC72C; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="60" data-width="1080" data-height="1920">
+  <div id="bg" class="clip" data-start="0" data-duration="60" data-track-index="0"></div>
+  <section id="a" class="scene clip" data-start="0.0" data-duration="4.571" data-track-index="1" style="background:#111111" data-layout-allow-overlap data-layout-allow-overflow >
+    <div class="hk" id="a-w1" style="top:470px">WE MAKE</div>
+    <div class="hk blue" id="a-w2" style="top:640px">BOXES</div>
+    <div class="hk" id="a-w3" style="top:810px">DANCE<span style="color:#FFC72C">.</span></div>
+    <div class="stk" id="a-star" style="left:760px;top:330px;width:170px;height:170px"><svg viewBox="0 0 100 100"><path d="M50 0 L61 35 L98 35 L68 57 L79 92 L50 70 L21 92 L32 57 L2 35 L39 35 Z" fill="#FFC72C"/></svg></div>
+    <div class="stk" id="a-sq" style="left:120px;top:1010px;width:330px;height:90px"><svg viewBox="0 0 220 60"><path d="M5 30 Q 32 0 60 30 T 115 30 T 170 30 T 215 30" fill="none" stroke="#245BFF" stroke-width="12" stroke-linecap="round"/></svg></div>
+  </section>
+  <section id="b" class="scene clip" data-start="4.571" data-duration="9.143" data-track-index="2" style="background:#F3F4F6" data-layout-allow-overlap data-layout-allow-overflow >
+    <div class="cam" id="b-cam">
+      <div class="outline" id="b-bgword" data-layout-ignore>OUR<br/>WORK</div>
+      <div class="cc" id="b-c0" style="left:75px;top:430px;width:270px;height:270px"><img src="assets/work/sp-gracie-bcaa.jpg" alt="" /></div><div class="cc" id="b-c1" style="left:342px;top:388px;width:253px;height:253px"><img src="assets/work/pk-kinray.jpg" alt="" /></div><div class="cc" id="b-c2" style="left:508px;top:351px;width:251px;height:251px"><img src="assets/work/bt-jovae-1oz-2.jpg" alt="" /></div><div class="cc" id="b-c3" style="left:768px;top:404px;width:266px;height:266px"><img src="assets/work/hl-cctv.jpg" alt="" /></div><div class="cc" id="b-c4" style="left:76px;top:727px;width:284px;height:284px"><img src="assets/work/fd-zenobar.jpg" alt="" /></div><div class="cc" id="b-c5" style="left:264px;top:659px;width:289px;height:289px"><img src="assets/work/sp-beast.jpg" alt="" /></div><div class="cc" id="b-c6" style="left:567px;top:660px;width:277px;height:277px"><img src="assets/work/pk-janbex-2.jpg" alt="" /></div><div class="cc" id="b-c7" style="left:737px;top:736px;width:258px;height:258px"><img src="assets/work/bt-lashes.jpg" alt="" /></div><div class="cc" id="b-c8" style="left:69px;top:1038px;width:250px;height:250px"><img src="assets/work/fd-cherry.jpg" alt="" /></div><div class="cc" id="b-c9" style="left:347px;top:970px;width:259px;height:259px"><img src="assets/work/sp-optimum17.jpg" alt="" /></div><div class="cc" id="b-c10" style="left:501px;top:990px;width:277px;height:277px"><img src="assets/work/hl-coffee-grinder.jpg" alt="" /></div><div class="cc" id="b-c11" style="left:742px;top:1040px;width:289px;height:289px"><img src="assets/work/pk-nystia.jpg" alt="" /></div><div class="cc" id="b-c12" style="left:92px;top:1310px;width:283px;height:283px"><img src="assets/work/sn-power-stacks.jpg" alt="" /></div><div class="cc" id="b-c13" style="left:271px;top:1273px;width:265px;height:265px"><img src="assets/work/bt-amazon-complex.jpg" alt="" /></div><div class="cc" id="b-c14" style="left:571px;top:1336px;width:251px;height:251px"><img src="assets/work/fd-kipnuggets.jpg" alt="" /></div><div class="cc" id="b-c15" style="left:756px;top:1366px;width:253px;height:253px"><img src="assets/work/pk-conazol.jpg" alt="" /></div>
+      <div class="stk" id="b-s1" style="left:820px;top:300px;width:140px;height:140px"><svg viewBox="0 0 100 100"><path d="M50 0 L61 35 L98 35 L68 57 L79 92 L50 70 L21 92 L32 57 L2 35 L39 35 Z" fill="#245BFF"/></svg></div>
+      <div class="dot" id="b-s2" style="left:90px;top:1560px;width:120px;height:120px;background:#FFC72C"></div>
+      <div class="stk" id="b-s3" style="left:600px;top:1640px;width:300px;height:80px"><svg viewBox="0 0 220 60"><path d="M5 30 Q 32 0 60 30 T 115 30 T 170 30 T 215 30" fill="none" stroke="#111" stroke-width="12" stroke-linecap="round"/></svg></div>
+    </div>
+  </section>
+  <section id="c" class="scene clip" data-start="13.714" data-duration="18.286" data-track-index="1" style="background:#111" data-layout-allow-overlap data-layout-allow-overflow >
+      <div class="sl" id="c-s0" style="background:#245BFF">
+        <div class="cat" style="color:#fff">SUPPLEMENTS</div>
+        <div class="pc" id="c-p0"><img src="assets/work/sp-optimum17-row.jpg" alt="Optimum 17" /><span class="chip xchip" style="bottom:24px">Optimum 17</span></div>
+        <div class="stk" id="c-k0" style="left:790px;top:1330px;width:150px;height:150px"><svg viewBox="0 0 100 100"><path d="M50 0 L61 35 L98 35 L68 57 L79 92 L50 70 L21 92 L32 57 L2 35 L39 35 Z" fill="#FFC72C"/></svg></div>
+      </div>
+      <div class="sl" id="c-s1" style="background:#FFFFFF">
+        <div class="cat" style="color:#111">SUPPLEMENTS</div>
+        <div class="pc" id="c-p1"><img src="assets/work/sp-dragon.jpg" alt="Dragon's Breath" /><span class="chip xchip" style="bottom:24px">Dragon's Breath</span></div>
+        <div class="stk" id="c-k1" style="left:110px;top:1350px;width:150px;height:150px"><svg viewBox="0 0 220 60"><path d="M5 30 Q 32 0 60 30 T 115 30 T 170 30 T 215 30" fill="none" stroke="#245BFF" stroke-width="12" stroke-linecap="round"/></svg></div>
+      </div>
+      <div class="sl" id="c-s2" style="background:#111111">
+        <div class="cat" style="color:#fff">SUPPLEMENTS</div>
+        <div class="pc" id="c-p2"><img src="assets/work/sp-alpha-male.jpg" alt="Alpha Male" /><span class="chip xchip" style="bottom:24px">Alpha Male</span></div>
+        <div class="stk" id="c-k2" style="left:800px;top:470px;width:150px;height:150px"><svg viewBox="0 0 100 100"><path d="M50 0 L61 35 L98 35 L68 57 L79 92 L50 70 L21 92 L32 57 L2 35 L39 35 Z" fill="#FFC72C"/></svg></div>
+      </div>
+      <div class="sl" id="c-s3" style="background:#FFC72C">
+        <div class="cat" style="color:#111">SUPPLEMENTS</div>
+        <div class="pc" id="c-p3"><img src="assets/work/sp-maxitto-d3.jpg" alt="Maxitto" /><span class="chip xchip" style="bottom:24px">Maxitto</span></div>
+        <div class="stk" id="c-k3" style="left:130px;top:470px;width:150px;height:150px"><svg viewBox="0 0 220 60"><path d="M5 30 Q 32 0 60 30 T 115 30 T 170 30 T 215 30" fill="none" stroke="#245BFF" stroke-width="12" stroke-linecap="round"/></svg></div>
+      </div>
+      <div class="sl" id="c-s4" style="background:#245BFF">
+        <div class="cat" style="color:#fff">BEAUTY</div>
+        <div class="pc" id="c-p4"><img src="assets/work/sp-shampoo-8oz.jpg" alt="Jovaé" /><span class="chip xchip" style="bottom:24px">Jovaé</span></div>
+        <div class="stk" id="c-k4" style="left:790px;top:1330px;width:150px;height:150px"><svg viewBox="0 0 100 100"><path d="M50 0 L61 35 L98 35 L68 57 L79 92 L50 70 L21 92 L32 57 L2 35 L39 35 Z" fill="#FFC72C"/></svg></div>
+      </div>
+      <div class="sl" id="c-s5" style="background:#FFFFFF">
+        <div class="cat" style="color:#111">BEAUTY</div>
+        <div class="pc" id="c-p5"><img src="assets/work/bt-lashes-2.jpg" alt="Scandinavian Lashes" /><span class="chip xchip" style="bottom:24px">Scandinavian Lashes</span></div>
+        <div class="stk" id="c-k5" style="left:110px;top:1350px;width:150px;height:150px"><svg viewBox="0 0 220 60"><path d="M5 30 Q 32 0 60 30 T 115 30 T 170 30 T 215 30" fill="none" stroke="#245BFF" stroke-width="12" stroke-linecap="round"/></svg></div>
+      </div>
+      <div class="sl" id="c-s6" style="background:#111111">
+        <div class="cat" style="color:#fff">BEAUTY</div>
+        <div class="pc" id="c-p6"><img src="assets/work/bt-botanicals.jpg" alt="Botanicals" /><span class="chip xchip" style="bottom:24px">Botanicals</span></div>
+        <div class="stk" id="c-k6" style="left:800px;top:470px;width:150px;height:150px"><svg viewBox="0 0 100 100"><path d="M50 0 L61 35 L98 35 L68 57 L79 92 L50 70 L21 92 L32 57 L2 35 L39 35 Z" fill="#FFC72C"/></svg></div>
+      </div>
+      <div class="sl" id="c-s7" style="background:#FFC72C">
+        <div class="cat" style="color:#111">BEAUTY</div>
+        <div class="pc" id="c-p7"><img src="assets/work/sp-biogen-collagen.jpg" alt="Biogen" /><span class="chip xchip" style="bottom:24px">Biogen</span></div>
+        <div class="stk" id="c-k7" style="left:130px;top:470px;width:150px;height:150px"><svg viewBox="0 0 220 60"><path d="M5 30 Q 32 0 60 30 T 115 30 T 170 30 T 215 30" fill="none" stroke="#245BFF" stroke-width="12" stroke-linecap="round"/></svg></div>
+      </div>
+      <div class="sl" id="c-s8" style="background:#245BFF">
+        <div class="cat" style="color:#fff">FOOD</div>
+        <div class="pc" id="c-p8"><img src="assets/work/fd-matcha-pure.jpg" alt="Pure Matcha" /><span class="chip xchip" style="bottom:24px">Pure Matcha</span></div>
+        <div class="stk" id="c-k8" style="left:790px;top:1330px;width:150px;height:150px"><svg viewBox="0 0 100 100"><path d="M50 0 L61 35 L98 35 L68 57 L79 92 L50 70 L21 92 L32 57 L2 35 L39 35 Z" fill="#FFC72C"/></svg></div>
+      </div>
+      <div class="sl" id="c-s9" style="background:#FFFFFF">
+        <div class="cat" style="color:#111">FOOD</div>
+        <div class="pc" id="c-p9"><img src="assets/work/fd-tea-boxes.jpg" alt="Tea blends" /><span class="chip xchip" style="bottom:24px">Tea blends</span></div>
+        <div class="stk" id="c-k9" style="left:110px;top:1350px;width:150px;height:150px"><svg viewBox="0 0 220 60"><path d="M5 30 Q 32 0 60 30 T 115 30 T 170 30 T 215 30" fill="none" stroke="#245BFF" stroke-width="12" stroke-linecap="round"/></svg></div>
+      </div>
+      <div class="sl" id="c-s10" style="background:#111111">
+        <div class="cat" style="color:#fff">FOOD</div>
+        <div class="pc" id="c-p10"><img src="assets/work/sp-clever-set.jpg" alt="Clever Goodness" /><span class="chip xchip" style="bottom:24px">Clever Goodness</span></div>
+        <div class="stk" id="c-k10" style="left:800px;top:470px;width:150px;height:150px"><svg viewBox="0 0 100 100"><path d="M50 0 L61 35 L98 35 L68 57 L79 92 L50 70 L21 92 L32 57 L2 35 L39 35 Z" fill="#FFC72C"/></svg></div>
+      </div>
+      <div class="sl" id="c-s11" style="background:#FFC72C">
+        <div class="cat" style="color:#111">FOOD</div>
+        <div class="pc" id="c-p11"><img src="assets/work/pk-whey.jpg" alt="Whey" /><span class="chip xchip" style="bottom:24px">Whey</span></div>
+        <div class="stk" id="c-k11" style="left:130px;top:470px;width:150px;height:150px"><svg viewBox="0 0 220 60"><path d="M5 30 Q 32 0 60 30 T 115 30 T 170 30 T 215 30" fill="none" stroke="#245BFF" stroke-width="12" stroke-linecap="round"/></svg></div>
+      </div>
+      <div class="sl" id="c-s12" style="background:#245BFF">
+        <div class="cat" style="color:#fff">HOME &amp; TECH</div>
+        <div class="pc" id="c-p12"><img src="assets/work/pk-led-string.jpg" alt="LED string lights" /><span class="chip xchip" style="bottom:24px">LED string lights</span></div>
+        <div class="stk" id="c-k12" style="left:790px;top:1330px;width:150px;height:150px"><svg viewBox="0 0 100 100"><path d="M50 0 L61 35 L98 35 L68 57 L79 92 L50 70 L21 92 L32 57 L2 35 L39 35 Z" fill="#FFC72C"/></svg></div>
+      </div>
+      <div class="sl" id="c-s13" style="background:#FFFFFF">
+        <div class="cat" style="color:#111">HOME &amp; TECH</div>
+        <div class="pc" id="c-p13"><img src="assets/work/hl-czm.jpg" alt="CZM 5000" /><span class="chip xchip" style="bottom:24px">CZM 5000</span></div>
+        <div class="stk" id="c-k13" style="left:110px;top:1350px;width:150px;height:150px"><svg viewBox="0 0 220 60"><path d="M5 30 Q 32 0 60 30 T 115 30 T 170 30 T 215 30" fill="none" stroke="#245BFF" stroke-width="12" stroke-linecap="round"/></svg></div>
+      </div>
+      <div class="sl" id="c-s14" style="background:#111111">
+        <div class="cat" style="color:#fff">HOME &amp; TECH</div>
+        <div class="pc" id="c-p14"><img src="assets/work/hl-paipur-notebooks.jpg" alt="Paipur" /><span class="chip xchip" style="bottom:24px">Paipur</span></div>
+        <div class="stk" id="c-k14" style="left:800px;top:470px;width:150px;height:150px"><svg viewBox="0 0 100 100"><path d="M50 0 L61 35 L98 35 L68 57 L79 92 L50 70 L21 92 L32 57 L2 35 L39 35 Z" fill="#FFC72C"/></svg></div>
+      </div>
+      <div class="sl" id="c-s15" style="background:#FFC72C">
+        <div class="cat" style="color:#111">HOME &amp; TECH</div>
+        <div class="pc" id="c-p15"><img src="assets/work/hl-prix.jpg" alt="Prix" /><span class="chip xchip" style="bottom:24px">Prix</span></div>
+        <div class="stk" id="c-k15" style="left:130px;top:470px;width:150px;height:150px"><svg viewBox="0 0 220 60"><path d="M5 30 Q 32 0 60 30 T 115 30 T 170 30 T 215 30" fill="none" stroke="#245BFF" stroke-width="12" stroke-linecap="round"/></svg></div>
+      </div>
+  </section>
+  <section id="d" class="scene clip" data-start="32.0" data-duration="4.571" data-track-index="2" style="background:#111" data-layout-allow-overlap data-layout-allow-overflow >
+<div class="wb" id="d-b0" style="background:#245BFF"><div class="ww" id="d-w0" style="color:#FFFFFF;font-size:204px">BOXES.</div></div><div class="wb" id="d-b1" style="background:#111111"><div class="ww" id="d-w1" style="color:#FFFFFF;font-size:175px">LABELS.</div></div><div class="wb" id="d-b2" style="background:#FFC72C"><div class="ww" id="d-w2" style="color:#111111;font-size:153px">BOTTLES.</div></div><div class="wb" id="d-b3" style="background:#FFFFFF"><div class="ww" id="d-w3" style="color:#111111;font-size:153px">POUCHES.</div></div><div class="wb" id="d-b4" style="background:#245BFF"><div class="ww" id="d-w4" style="color:#FFFFFF;font-size:210px">TUBS.</div></div><div class="wb" id="d-b5" style="background:#111111"><div class="ww" id="d-w5" style="color:#FFFFFF;font-size:210px">TINS.</div></div><div class="wb" id="d-b6" style="background:#FFC72C"><div class="ww" id="d-w6" style="color:#111111;font-size:175px">BRANDS.</div></div><div class="wb" id="d-b7" style="background:#245BFF"><div class="ww" id="d-w7" style="color:#FFFFFF;font-size:210px">WOW.</div></div>
+  </section>
+  <section id="e" class="scene clip" data-start="36.571" data-duration="9.143" data-track-index="1" style="background:#FFC72C" data-layout-allow-overlap data-layout-allow-overflow >
+    <div class="tilt" id="e-tilt"><div class="row" id="e-r0" style="top:380px"><div class="tt"><img src="assets/work/pk-baby-swaddle.jpg" alt="" /></div><div class="tt"><img src="assets/work/sp-rainier.jpg" alt="" /></div><div class="tt"><img src="assets/work/hl-magneto.jpg" alt="" /></div><div class="tt"><img src="assets/work/fd-matcha-daily.jpg" alt="" /></div><div class="tt"><img src="assets/work/sp-ultravita-men.jpg" alt="" /></div><div class="tt"><img src="assets/work/pk-bella-seafood.jpg" alt="" /></div><div class="tt"><img src="assets/work/sp-jovae-immune.jpg" alt="" /></div><div class="tt"><img src="assets/work/hl-shago.jpg" alt="" /></div><div class="tt"><img src="assets/work/pk-baby-swaddle.jpg" alt="" /></div><div class="tt"><img src="assets/work/sp-rainier.jpg" alt="" /></div><div class="tt"><img src="assets/work/hl-magneto.jpg" alt="" /></div><div class="tt"><img src="assets/work/fd-matcha-daily.jpg" alt="" /></div><div class="tt"><img src="assets/work/sp-ultravita-men.jpg" alt="" /></div><div class="tt"><img src="assets/work/pk-bella-seafood.jpg" alt="" /></div><div class="tt"><img src="assets/work/sp-jovae-immune.jpg" alt="" /></div><div class="tt"><img src="assets/work/hl-shago.jpg" alt="" /></div></div><div class="row" id="e-r1" style="top:710px"><div class="tt"><img src="assets/work/sp-moringa.jpg" alt="" /></div><div class="tt"><img src="assets/work/pk-food-steamer.jpg" alt="" /></div><div class="tt"><img src="assets/work/bt-amazon-complex.jpg" alt="" /></div><div class="tt"><img src="assets/work/sn-citrulline-2.jpg" alt="" /></div><div class="tt"><img src="assets/work/pk-door-closer.jpg" alt="" /></div><div class="tt"><img src="assets/work/sp-niasun.jpg" alt="" /></div><div class="tt"><img src="assets/work/bt-bunny-tube.jpg" alt="" /></div><div class="tt"><img src="assets/work/hl-moth-trap.jpg" alt="" /></div><div class="tt"><img src="assets/work/sp-moringa.jpg" alt="" /></div><div class="tt"><img src="assets/work/pk-food-steamer.jpg" alt="" /></div><div class="tt"><img src="assets/work/bt-amazon-complex.jpg" alt="" /></div><div class="tt"><img src="assets/work/sn-citrulline-2.jpg" alt="" /></div><div class="tt"><img src="assets/work/pk-door-closer.jpg" alt="" /></div><div class="tt"><img src="assets/work/sp-niasun.jpg" alt="" /></div><div class="tt"><img src="assets/work/bt-bunny-tube.jpg" alt="" /></div><div class="tt"><img src="assets/work/hl-moth-trap.jpg" alt="" /></div></div><div class="row" id="e-r2" style="top:1040px"><div class="tt"><img src="assets/work/pk-comfort-system.jpg" alt="" /></div><div class="tt"><img src="assets/work/sp-stemstim.jpg" alt="" /></div><div class="tt"><img src="assets/work/fd-nystia-2.jpg" alt="" /></div><div class="tt"><img src="assets/work/hl-vida-car.jpg" alt="" /></div><div class="tt"><img src="assets/work/sp-tough-tummies.jpg" alt="" /></div><div class="tt"><img src="assets/work/pk-athletic-tape.jpg" alt="" /></div><div class="tt"><img src="assets/work/sp-collagen.jpg" alt="" /></div><div class="tt"><img src="assets/work/hl-jcrobot.jpg" alt="" /></div><div class="tt"><img src="assets/work/pk-comfort-system.jpg" alt="" /></div><div class="tt"><img src="assets/work/sp-stemstim.jpg" alt="" /></div><div class="tt"><img src="assets/work/fd-nystia-2.jpg" alt="" /></div><div class="tt"><img src="assets/work/hl-vida-car.jpg" alt="" /></div><div class="tt"><img src="assets/work/sp-tough-tummies.jpg" alt="" /></div><div class="tt"><img src="assets/work/pk-athletic-tape.jpg" alt="" /></div><div class="tt"><img src="assets/work/sp-collagen.jpg" alt="" /></div><div class="tt"><img src="assets/work/hl-jcrobot.jpg" alt="" /></div></div></div>
+    <div class="band" id="e-band"><div class="bt" id="e-t1">TEN YEARS</div><div class="bt blue" id="e-t2">OF BOXES.</div></div>
+  </section>
+  <section id="f" class="scene clip" data-start="45.714" data-duration="4.572" data-track-index="2" style="background:#FFFFFF" data-layout-allow-overlap data-layout-allow-overflow >
+    <div class="label" id="f-lab" style="position:absolute;left:120px;top:330px;color:#245BFF">Brand identity · Shakti Agrobiotech</div>
+    <div class="hk2" id="f-h" style="top:380px">ONE BRAND.<br/><span class="blue">EVERYWHERE.</span></div>
+    <div id="f-ring"><div class="ologo" id="f-logo"><img src="assets/work/shakti-logo.jpg" alt="Shakti Agrobiotech" /></div><div class="ob" id="f-o0" style="transform-origin:0 0"><div class="obi" id="f-i0"><img src="assets/work/shakti-card.jpg" alt="" /><span>Cards</span></div></div><div class="ob" id="f-o1" style="transform-origin:0 0"><div class="obi" id="f-i1"><img src="assets/work/shakti-pouch.jpg" alt="" /><span>Pouches</span></div></div><div class="ob" id="f-o2" style="transform-origin:0 0"><div class="obi" id="f-i2"><img src="assets/work/shakti-car.jpg" alt="" /><span>Vehicle</span></div></div><div class="ob" id="f-o3" style="transform-origin:0 0"><div class="obi" id="f-i3"><img src="assets/work/shakti-kmb.jpg" alt="" /><span>Bottles</span></div></div><div class="ob" id="f-o4" style="transform-origin:0 0"><div class="obi" id="f-i4"><img src="assets/work/shakti-gallon.jpg" alt="" /><span>Gallon</span></div></div><div class="ob" id="f-o5" style="transform-origin:0 0"><div class="obi" id="f-i5"><img src="assets/work/shakti-stationery.jpg" alt="" /><span>Stationery</span></div></div></div>
+  </section>
+  <section id="g" class="scene clip" data-start="50.286" data-duration="4.571" data-track-index="1" style="background:#245BFF" data-layout-allow-overlap data-layout-allow-overflow >
+    <div class="blob" id="g-blob"></div>
+    <div class="hk3" id="g-t" style="top:640px"><span id="g-1">EVERY</span><br/><span id="g-2">PROJECT,</span><br/><span id="g-3">OUR OWN</span><br/><span id="g-4" style="color:#FFC72C">DESIGN.</span></div>
+  </section>
+  <section id="h" class="scene clip" data-start="54.857" data-duration="5.143" data-track-index="2" style="background:#111111" data-layout-allow-overlap data-layout-allow-overflow >
+    <div class="check" id="h-chk"><i style="left:0px;top:0px"></i><i style="left:40px;top:40px"></i><i style="left:80px;top:0px"></i><i style="left:120px;top:40px"></i><i style="left:160px;top:0px"></i><i style="left:200px;top:40px"></i><i style="left:240px;top:0px"></i><i style="left:280px;top:40px"></i><i style="left:320px;top:0px"></i><i style="left:360px;top:40px"></i><i style="left:400px;top:0px"></i><i style="left:440px;top:40px"></i><i style="left:480px;top:0px"></i><i style="left:520px;top:40px"></i><i style="left:560px;top:0px"></i><i style="left:600px;top:40px"></i><i style="left:640px;top:0px"></i><i style="left:680px;top:40px"></i><i style="left:720px;top:0px"></i><i style="left:760px;top:40px"></i><i style="left:800px;top:0px"></i><i style="left:840px;top:40px"></i><i style="left:880px;top:0px"></i><i style="left:920px;top:40px"></i><i style="left:960px;top:0px"></i><i style="left:1000px;top:40px"></i><i style="left:1040px;top:0px"></i><i style="left:1080px;top:40px"></i></div>
+    <div class="hk2 white" id="h-t" style="top:400px"><span id="h-1">LET'S MAKE</span><br/><span id="h-2">SOMETHING</span><br/><span id="h-3" class="blue">FUNKY.</span></div>
+    <img id="h-logo" src="assets/brand/logo-white.png" alt="Bombay Marketing" style="position:absolute;left:150px;top:840px;width:780px" />
+    <div class="end-url" id="h-url" style="position:absolute;left:150px;top:1040px;font-family:var(--display);font-weight:500;font-size:42px;color:#fff">bombaymarketing.in</div>
+    <div class="stk" id="h-star" style="left:810px;top:300px;width:150px;height:150px"><svg viewBox="0 0 100 100"><path d="M50 0 L61 35 L98 35 L68 57 L79 92 L50 70 L21 92 L32 57 L2 35 L39 35 Z" fill="#FFC72C"/></svg></div>
+  </section>
+  <div id="badge" class="clip" data-layout-ignore data-start="4.0" data-duration="50.29" data-track-index="5" style="position:absolute;left:820px;top:1560px;width:200px;height:200px;z-index:50">
+    <svg id="badge-svg" viewBox="0 0 200 200" width="200" height="200"><defs><path id="bp" d="M100 100 m -78 0 a 78 78 0 1 1 156 0 a 78 78 0 1 1 -156 0"/></defs>
+      <circle cx="100" cy="100" r="96" fill="#111"/><text font-family="BM Text, Inter" font-weight="600" font-size="19" letter-spacing="4" fill="#fff"><textPath href="#bp">BOMBAY MARKETING · SHOWREEL · TEN YEARS · </textPath></text>
+      <circle cx="100" cy="100" r="34" fill="#FFC72C"/></svg></div>
+  <audio id="music" class="clip" src="assets/music/funk_bed.wav" data-start="0" data-duration="60" data-track-index="6" data-volume="1"></audio>
+</div>
+<script>
+  window.__timelines = window.__timelines || {};
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo("#a-w1", { scaleY: 0.86, scaleX: 1.08, y: 10 }, { scaleY: 1, scaleX: 1, y: 0, duration: 0.5, ease: "elastic.out(1, 0.45)" }, 0);
+  tl.fromTo("#a-w2", { y: -420, scaleY: 1.5, scaleX: 0.7, opacity: 0 }, { y: 0, scaleY: 1, scaleX: 1, opacity: 1, duration: 0.42, ease: "power3.in" }, 0.151);
+  tl.to("#a-w2", { keyframes: [{ scaleY: 0.72, scaleX: 1.22, duration: 0.07 }, { scaleY: 1.08, scaleX: 0.95, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.25, ease: "elastic.out(1, 0.4)" }] }, 0.571);
+  tl.fromTo("#a-w3", { y: -420, scaleY: 1.5, scaleX: 0.7, opacity: 0 }, { y: 0, scaleY: 1, scaleX: 1, opacity: 1, duration: 0.42, ease: "power3.in" }, 0.723);
+  tl.to("#a-w3", { keyframes: [{ scaleY: 0.72, scaleX: 1.22, duration: 0.07 }, { scaleY: 1.08, scaleX: 0.95, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.25, ease: "elastic.out(1, 0.4)" }] }, 1.143);
+  tl.fromTo("#a-star", { scale: 0, rotate: -180 }, { scale: 1, rotate: 0, duration: 0.6, ease: "back.out(2.2)" }, 1.714);
+  tl.to("#a-star", { rotate: 200, duration: 2.857, ease: "none" }, 2.314);
+  tl.fromTo("#a-sq", { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: 0.5, ease: "expo.out" }, 2.286);
+  tl.fromTo(["#a-w1", "#a-w2", "#a-w3"], { rotate: 3 }, { rotate: 0, duration: 0.551, ease: "elastic.out(1, 0.3)", stagger: 0.04 }, 2.286);
+  tl.fromTo(["#a-w1", "#a-w2", "#a-w3"], { rotate: -3 }, { rotate: 0, duration: 0.551, ease: "elastic.out(1, 0.3)", stagger: 0.04 }, 2.857);
+  tl.fromTo(["#a-w1", "#a-w2", "#a-w3"], { rotate: 3 }, { rotate: 0, duration: 0.551, ease: "elastic.out(1, 0.3)", stagger: 0.04 }, 3.429);
+  tl.fromTo(["#a-w1", "#a-w2", "#a-w3"], { rotate: -3 }, { rotate: 0, duration: 0.551, ease: "elastic.out(1, 0.3)", stagger: 0.04 }, 4.0);
+  tl.to(["#a-w1", "#a-w2", "#a-w3", "#a-star", "#a-sq"], { y: -900, rotate: 12, duration: 0.45, ease: "back.in(1.6)", stagger: 0.04 }, 4.021);
+  tl.fromTo("#b-bgword", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.7, ease: "elastic.out(1, 0.5)" }, 4.571);
+  tl.fromTo("#b-c0", { scale: 0, rotate: -40.0, y: 60 }, { scale: 1, rotate: 0.0, y: 0, duration: 0.5, ease: "back.out(2.6)" }, 4.571);
+  tl.to("#b-c0", { keyframes: [{ scaleY: 0.86, scaleX: 1.1, duration: 0.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.35)" }] }, 4.791);
+  tl.fromTo("#b-c1", { scale: 0, rotate: -39.6, y: 60 }, { scale: 1, rotate: 0.4, y: 0, duration: 0.5, ease: "back.out(2.6)" }, 5.142);
+  tl.to("#b-c1", { keyframes: [{ scaleY: 0.86, scaleX: 1.1, duration: 0.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.35)" }] }, 5.362);
+  tl.fromTo("#b-c2", { scale: 0, rotate: -40.8, y: 60 }, { scale: 1, rotate: -0.8, y: 0, duration: 0.5, ease: "back.out(2.6)" }, 5.714);
+  tl.to("#b-c2", { keyframes: [{ scaleY: 0.86, scaleX: 1.1, duration: 0.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.35)" }] }, 5.934);
+  tl.fromTo("#b-c3", { scale: 0, rotate: -38.8, y: 60 }, { scale: 1, rotate: 1.2, y: 0, duration: 0.5, ease: "back.out(2.6)" }, 6.285);
+  tl.to("#b-c3", { keyframes: [{ scaleY: 0.86, scaleX: 1.1, duration: 0.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.35)" }] }, 6.505);
+  tl.fromTo("#b-c4", { scale: 0, rotate: -41.7, y: 60 }, { scale: 1, rotate: -1.7, y: 0, duration: 0.5, ease: "back.out(2.6)" }, 6.857);
+  tl.to("#b-c4", { keyframes: [{ scaleY: 0.86, scaleX: 1.1, duration: 0.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.35)" }] }, 7.077);
+  tl.fromTo("#b-c5", { scale: 0, rotate: -37.9, y: 60 }, { scale: 1, rotate: 2.1, y: 0, duration: 0.5, ease: "back.out(2.6)" }, 7.428);
+  tl.to("#b-c5", { keyframes: [{ scaleY: 0.86, scaleX: 1.1, duration: 0.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.35)" }] }, 7.648);
+  tl.fromTo("#b-c6", { scale: 0, rotate: -42.5, y: 60 }, { scale: 1, rotate: -2.5, y: 0, duration: 0.5, ease: "back.out(2.6)" }, 8.0);
+  tl.to("#b-c6", { keyframes: [{ scaleY: 0.86, scaleX: 1.1, duration: 0.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.35)" }] }, 8.22);
+  tl.fromTo("#b-c7", { scale: 0, rotate: -37.1, y: 60 }, { scale: 1, rotate: 2.9, y: 0, duration: 0.5, ease: "back.out(2.6)" }, 8.571);
+  tl.to("#b-c7", { keyframes: [{ scaleY: 0.86, scaleX: 1.1, duration: 0.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.35)" }] }, 8.791);
+  tl.fromTo("#b-c8", { scale: 0, rotate: -43.3, y: 60 }, { scale: 1, rotate: -3.3, y: 0, duration: 0.5, ease: "back.out(2.6)" }, 9.142);
+  tl.to("#b-c8", { keyframes: [{ scaleY: 0.86, scaleX: 1.1, duration: 0.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.35)" }] }, 9.362);
+  tl.fromTo("#b-c9", { scale: 0, rotate: -36.3, y: 60 }, { scale: 1, rotate: 3.7, y: 0, duration: 0.5, ease: "back.out(2.6)" }, 9.714);
+  tl.to("#b-c9", { keyframes: [{ scaleY: 0.86, scaleX: 1.1, duration: 0.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.35)" }] }, 9.934);
+  tl.fromTo("#b-c10", { scale: 0, rotate: -44.0, y: 60 }, { scale: 1, rotate: -4.0, y: 0, duration: 0.5, ease: "back.out(2.6)" }, 10.285);
+  tl.to("#b-c10", { keyframes: [{ scaleY: 0.86, scaleX: 1.1, duration: 0.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.35)" }] }, 10.505);
+  tl.fromTo("#b-c11", { scale: 0, rotate: -35.6, y: 60 }, { scale: 1, rotate: 4.4, y: 0, duration: 0.5, ease: "back.out(2.6)" }, 10.857);
+  tl.to("#b-c11", { keyframes: [{ scaleY: 0.86, scaleX: 1.1, duration: 0.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.35)" }] }, 11.077);
+  tl.fromTo("#b-c12", { scale: 0, rotate: -44.8, y: 60 }, { scale: 1, rotate: -4.8, y: 0, duration: 0.5, ease: "back.out(2.6)" }, 11.428);
+  tl.to("#b-c12", { keyframes: [{ scaleY: 0.86, scaleX: 1.1, duration: 0.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.35)" }] }, 11.648);
+  tl.fromTo("#b-c13", { scale: 0, rotate: -34.9, y: 60 }, { scale: 1, rotate: 5.1, y: 0, duration: 0.5, ease: "back.out(2.6)" }, 12.0);
+  tl.to("#b-c13", { keyframes: [{ scaleY: 0.86, scaleX: 1.1, duration: 0.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.35)" }] }, 12.22);
+  tl.fromTo("#b-c14", { scale: 0, rotate: -45.5, y: 60 }, { scale: 1, rotate: -5.5, y: 0, duration: 0.5, ease: "back.out(2.6)" }, 12.571);
+  tl.to("#b-c14", { keyframes: [{ scaleY: 0.86, scaleX: 1.1, duration: 0.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.35)" }] }, 12.791);
+  tl.fromTo("#b-c15", { scale: 0, rotate: -34.2, y: 60 }, { scale: 1, rotate: 5.8, y: 0, duration: 0.5, ease: "back.out(2.6)" }, 13.142);
+  tl.to("#b-c15", { keyframes: [{ scaleY: 0.86, scaleX: 1.1, duration: 0.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.35)" }] }, 13.362);
+  tl.fromTo("#b-cam", { scale: 1.035 }, { scale: 1, duration: 0.857, ease: "elastic.out(1, 0.4)" }, 4.571);
+  tl.fromTo("#b-cam", { scale: 1.035 }, { scale: 1, duration: 0.857, ease: "elastic.out(1, 0.4)" }, 6.857);
+  tl.fromTo("#b-cam", { scale: 1.035 }, { scale: 1, duration: 0.857, ease: "elastic.out(1, 0.4)" }, 9.142);
+  tl.fromTo("#b-cam", { scale: 1.035 }, { scale: 1, duration: 0.857, ease: "elastic.out(1, 0.4)" }, 11.428);
+  tl.fromTo("#b-s1", { scale: 0 }, { scale: 1, rotate: 180, duration: 1.2, ease: "back.out(2)" }, 5.714);
+  tl.fromTo("#b-s2", { scale: 0 }, { scale: 1, duration: 0.5, ease: "back.out(3)" }, 8.0);
+  tl.fromTo("#b-s3", { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: 0.5, ease: "expo.out" }, 10.285);
+  tl.to("#b-c0", { x: -528, y: -553, rotate: 0.0, scale: 0.6, opacity: 0, duration: 0.42, ease: "power3.in" }, 13.264);
+  tl.to("#b-c1", { x: -115, y: -624, rotate: 1.6, scale: 0.6, opacity: 0, duration: 0.42, ease: "power3.in" }, 13.264);
+  tl.to("#b-c2", { x: 149, y: -678, rotate: -3.2, scale: 0.6, opacity: 0, duration: 0.42, ease: "power3.in" }, 13.264);
+  tl.to("#b-c3", { x: 578, y: -592, rotate: 4.8, scale: 0.6, opacity: 0, duration: 0.42, ease: "power3.in" }, 13.264);
+  tl.to("#b-c4", { x: -515, y: -127, rotate: -6.8, scale: 0.6, opacity: 0, duration: 0.42, ease: "power3.in" }, 13.264);
+  tl.to("#b-c5", { x: -211, y: -220, rotate: 8.4, scale: 0.6, opacity: 0, duration: 0.42, ease: "power3.in" }, 13.264);
+  tl.to("#b-c6", { x: 264, y: -227, rotate: -10.0, scale: 0.6, opacity: 0, duration: 0.42, ease: "power3.in" }, 13.264);
+  tl.to("#b-c7", { x: 522, y: -133, rotate: 11.6, scale: 0.6, opacity: 0, duration: 0.42, ease: "power3.in" }, 13.264);
+  tl.to("#b-c8", { x: -554, y: 284, rotate: -13.2, scale: 0.6, opacity: 0, duration: 0.42, ease: "power3.in" }, 13.264);
+  tl.to("#b-c9", { x: -102, y: 195, rotate: 14.8, scale: 0.6, opacity: 0, duration: 0.42, ease: "power3.in" }, 13.264);
+  tl.to("#b-c10", { x: 158, y: 235, rotate: -16.0, scale: 0.6, opacity: 0, duration: 0.42, ease: "power3.in" }, 13.264);
+  tl.to("#b-c11", { x: 554, y: 314, rotate: 17.6, scale: 0.6, opacity: 0, duration: 0.42, ease: "power3.in" }, 13.264);
+  tl.to("#b-c12", { x: -491, y: 687, rotate: -19.2, scale: 0.6, opacity: 0, duration: 0.42, ease: "power3.in" }, 13.264);
+  tl.to("#b-c13", { x: -219, y: 623, rotate: 20.4, scale: 0.6, opacity: 0, duration: 0.42, ease: "power3.in" }, 13.264);
+  tl.to("#b-c14", { x: 250, y: 701, rotate: -22.0, scale: 0.6, opacity: 0, duration: 0.42, ease: "power3.in" }, 13.264);
+  tl.to("#b-c15", { x: 547, y: 745, rotate: 23.2, scale: 0.6, opacity: 0, duration: 0.42, ease: "power3.in" }, 13.264);
+  tl.fromTo("#c-s0", { clipPath: "circle(0% at 50% 50%)" }, { clipPath: "circle(150% at 50% 50%)", duration: 0.5, ease: "expo.inOut" }, 13.594);
+  tl.fromTo("#c-p0", { y: -700, scaleY: 1.35, scaleX: 0.8, rotate: 8 }, { y: 0, scaleY: 1, scaleX: 1, rotate: 0, duration: 0.36, ease: "power3.in" }, 13.664);
+  tl.to("#c-p0", { keyframes: [{ scaleY: 0.84, scaleX: 1.14, duration: 0.07 }, { scaleY: 1.04, scaleX: 0.97, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.4)" }] }, 14.024);
+  tl.fromTo("#c-p0", { rotate: 0 }, { keyframes: [{ rotate: 4, duration: 0.12 }, { rotate: 0, duration: 0.45, ease: "elastic.out(1, 0.3)" }] }, 14.285);
+  tl.fromTo("#c-k0", { scale: 0, rotate: -90 }, { scale: 1, rotate: 30, duration: 0.6, ease: "back.out(2.4)" }, 13.914);
+  tl.fromTo("#c-s0 .cat", { y: 80, scaleY: 1.5, opacity: 0 }, { y: 0, scaleY: 1, opacity: 1, duration: 0.6, ease: "elastic.out(1, 0.45)" }, 13.814);
+  tl.fromTo("#c-s1", { clipPath: "circle(0% at 20% 30%)" }, { clipPath: "circle(150% at 20% 30%)", duration: 0.5, ease: "expo.inOut" }, 14.737);
+  tl.fromTo("#c-p1", { y: -700, scaleY: 1.35, scaleX: 0.8, rotate: -8 }, { y: 0, scaleY: 1, scaleX: 1, rotate: 0, duration: 0.36, ease: "power3.in" }, 14.807);
+  tl.to("#c-p1", { keyframes: [{ scaleY: 0.84, scaleX: 1.14, duration: 0.07 }, { scaleY: 1.04, scaleX: 0.97, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.4)" }] }, 15.167);
+  tl.fromTo("#c-p1", { rotate: 0 }, { keyframes: [{ rotate: -4, duration: 0.12 }, { rotate: 0, duration: 0.45, ease: "elastic.out(1, 0.3)" }] }, 15.428);
+  tl.fromTo("#c-k1", { scale: 0, rotate: -90 }, { scale: 1, rotate: 30, duration: 0.6, ease: "back.out(2.4)" }, 15.057);
+  tl.set("#c-s1 .cat", { opacity: 1 }, 14.857);
+  tl.fromTo("#c-s1 .cat", { scale: 1.08 }, { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.4)" }, 14.857);
+  tl.fromTo("#c-s2", { clipPath: "circle(0% at 80% 70%)" }, { clipPath: "circle(150% at 80% 70%)", duration: 0.5, ease: "expo.inOut" }, 15.88);
+  tl.fromTo("#c-p2", { y: -700, scaleY: 1.35, scaleX: 0.8, rotate: 8 }, { y: 0, scaleY: 1, scaleX: 1, rotate: 0, duration: 0.36, ease: "power3.in" }, 15.95);
+  tl.to("#c-p2", { keyframes: [{ scaleY: 0.84, scaleX: 1.14, duration: 0.07 }, { scaleY: 1.04, scaleX: 0.97, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.4)" }] }, 16.31);
+  tl.fromTo("#c-p2", { rotate: 0 }, { keyframes: [{ rotate: 4, duration: 0.12 }, { rotate: 0, duration: 0.45, ease: "elastic.out(1, 0.3)" }] }, 16.571);
+  tl.fromTo("#c-k2", { scale: 0, rotate: -90 }, { scale: 1, rotate: 30, duration: 0.6, ease: "back.out(2.4)" }, 16.2);
+  tl.set("#c-s2 .cat", { opacity: 1 }, 16.0);
+  tl.fromTo("#c-s2 .cat", { scale: 1.08 }, { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.4)" }, 16.0);
+  tl.fromTo("#c-s3", { clipPath: "circle(0% at 50% 80%)" }, { clipPath: "circle(150% at 50% 80%)", duration: 0.5, ease: "expo.inOut" }, 17.023);
+  tl.fromTo("#c-p3", { y: -700, scaleY: 1.35, scaleX: 0.8, rotate: -8 }, { y: 0, scaleY: 1, scaleX: 1, rotate: 0, duration: 0.36, ease: "power3.in" }, 17.093);
+  tl.to("#c-p3", { keyframes: [{ scaleY: 0.84, scaleX: 1.14, duration: 0.07 }, { scaleY: 1.04, scaleX: 0.97, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.4)" }] }, 17.453);
+  tl.fromTo("#c-p3", { rotate: 0 }, { keyframes: [{ rotate: -4, duration: 0.12 }, { rotate: 0, duration: 0.45, ease: "elastic.out(1, 0.3)" }] }, 17.714);
+  tl.fromTo("#c-k3", { scale: 0, rotate: -90 }, { scale: 1, rotate: 30, duration: 0.6, ease: "back.out(2.4)" }, 17.343);
+  tl.set("#c-s3 .cat", { opacity: 1 }, 17.143);
+  tl.fromTo("#c-s3 .cat", { scale: 1.08 }, { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.4)" }, 17.143);
+  tl.fromTo("#c-s4", { clipPath: "circle(0% at 50% 50%)" }, { clipPath: "circle(150% at 50% 50%)", duration: 0.5, ease: "expo.inOut" }, 18.165);
+  tl.fromTo("#c-p4", { y: -700, scaleY: 1.35, scaleX: 0.8, rotate: 8 }, { y: 0, scaleY: 1, scaleX: 1, rotate: 0, duration: 0.36, ease: "power3.in" }, 18.235);
+  tl.to("#c-p4", { keyframes: [{ scaleY: 0.84, scaleX: 1.14, duration: 0.07 }, { scaleY: 1.04, scaleX: 0.97, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.4)" }] }, 18.595);
+  tl.fromTo("#c-p4", { rotate: 0 }, { keyframes: [{ rotate: 4, duration: 0.12 }, { rotate: 0, duration: 0.45, ease: "elastic.out(1, 0.3)" }] }, 18.856);
+  tl.fromTo("#c-k4", { scale: 0, rotate: -90 }, { scale: 1, rotate: 30, duration: 0.6, ease: "back.out(2.4)" }, 18.485);
+  tl.fromTo("#c-s4 .cat", { y: 80, scaleY: 1.5, opacity: 0 }, { y: 0, scaleY: 1, opacity: 1, duration: 0.6, ease: "elastic.out(1, 0.45)" }, 18.385);
+  tl.fromTo("#c-s5", { clipPath: "circle(0% at 20% 30%)" }, { clipPath: "circle(150% at 20% 30%)", duration: 0.5, ease: "expo.inOut" }, 19.308);
+  tl.fromTo("#c-p5", { y: -700, scaleY: 1.35, scaleX: 0.8, rotate: -8 }, { y: 0, scaleY: 1, scaleX: 1, rotate: 0, duration: 0.36, ease: "power3.in" }, 19.378);
+  tl.to("#c-p5", { keyframes: [{ scaleY: 0.84, scaleX: 1.14, duration: 0.07 }, { scaleY: 1.04, scaleX: 0.97, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.4)" }] }, 19.738);
+  tl.fromTo("#c-p5", { rotate: 0 }, { keyframes: [{ rotate: -4, duration: 0.12 }, { rotate: 0, duration: 0.45, ease: "elastic.out(1, 0.3)" }] }, 19.999);
+  tl.fromTo("#c-k5", { scale: 0, rotate: -90 }, { scale: 1, rotate: 30, duration: 0.6, ease: "back.out(2.4)" }, 19.628);
+  tl.set("#c-s5 .cat", { opacity: 1 }, 19.428);
+  tl.fromTo("#c-s5 .cat", { scale: 1.08 }, { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.4)" }, 19.428);
+  tl.fromTo("#c-s6", { clipPath: "circle(0% at 80% 70%)" }, { clipPath: "circle(150% at 80% 70%)", duration: 0.5, ease: "expo.inOut" }, 20.451);
+  tl.fromTo("#c-p6", { y: -700, scaleY: 1.35, scaleX: 0.8, rotate: 8 }, { y: 0, scaleY: 1, scaleX: 1, rotate: 0, duration: 0.36, ease: "power3.in" }, 20.521);
+  tl.to("#c-p6", { keyframes: [{ scaleY: 0.84, scaleX: 1.14, duration: 0.07 }, { scaleY: 1.04, scaleX: 0.97, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.4)" }] }, 20.881);
+  tl.fromTo("#c-p6", { rotate: 0 }, { keyframes: [{ rotate: 4, duration: 0.12 }, { rotate: 0, duration: 0.45, ease: "elastic.out(1, 0.3)" }] }, 21.142);
+  tl.fromTo("#c-k6", { scale: 0, rotate: -90 }, { scale: 1, rotate: 30, duration: 0.6, ease: "back.out(2.4)" }, 20.771);
+  tl.set("#c-s6 .cat", { opacity: 1 }, 20.571);
+  tl.fromTo("#c-s6 .cat", { scale: 1.08 }, { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.4)" }, 20.571);
+  tl.fromTo("#c-s7", { clipPath: "circle(0% at 50% 80%)" }, { clipPath: "circle(150% at 50% 80%)", duration: 0.5, ease: "expo.inOut" }, 21.594);
+  tl.fromTo("#c-p7", { y: -700, scaleY: 1.35, scaleX: 0.8, rotate: -8 }, { y: 0, scaleY: 1, scaleX: 1, rotate: 0, duration: 0.36, ease: "power3.in" }, 21.664);
+  tl.to("#c-p7", { keyframes: [{ scaleY: 0.84, scaleX: 1.14, duration: 0.07 }, { scaleY: 1.04, scaleX: 0.97, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.4)" }] }, 22.024);
+  tl.fromTo("#c-p7", { rotate: 0 }, { keyframes: [{ rotate: -4, duration: 0.12 }, { rotate: 0, duration: 0.45, ease: "elastic.out(1, 0.3)" }] }, 22.285);
+  tl.fromTo("#c-k7", { scale: 0, rotate: -90 }, { scale: 1, rotate: 30, duration: 0.6, ease: "back.out(2.4)" }, 21.914);
+  tl.set("#c-s7 .cat", { opacity: 1 }, 21.714);
+  tl.fromTo("#c-s7 .cat", { scale: 1.08 }, { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.4)" }, 21.714);
+  tl.fromTo("#c-s8", { clipPath: "circle(0% at 50% 50%)" }, { clipPath: "circle(150% at 50% 50%)", duration: 0.5, ease: "expo.inOut" }, 22.737);
+  tl.fromTo("#c-p8", { y: -700, scaleY: 1.35, scaleX: 0.8, rotate: 8 }, { y: 0, scaleY: 1, scaleX: 1, rotate: 0, duration: 0.36, ease: "power3.in" }, 22.807);
+  tl.to("#c-p8", { keyframes: [{ scaleY: 0.84, scaleX: 1.14, duration: 0.07 }, { scaleY: 1.04, scaleX: 0.97, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.4)" }] }, 23.167);
+  tl.fromTo("#c-p8", { rotate: 0 }, { keyframes: [{ rotate: 4, duration: 0.12 }, { rotate: 0, duration: 0.45, ease: "elastic.out(1, 0.3)" }] }, 23.428);
+  tl.fromTo("#c-k8", { scale: 0, rotate: -90 }, { scale: 1, rotate: 30, duration: 0.6, ease: "back.out(2.4)" }, 23.057);
+  tl.fromTo("#c-s8 .cat", { y: 80, scaleY: 1.5, opacity: 0 }, { y: 0, scaleY: 1, opacity: 1, duration: 0.6, ease: "elastic.out(1, 0.45)" }, 22.957);
+  tl.fromTo("#c-s9", { clipPath: "circle(0% at 20% 30%)" }, { clipPath: "circle(150% at 20% 30%)", duration: 0.5, ease: "expo.inOut" }, 23.88);
+  tl.fromTo("#c-p9", { y: -700, scaleY: 1.35, scaleX: 0.8, rotate: -8 }, { y: 0, scaleY: 1, scaleX: 1, rotate: 0, duration: 0.36, ease: "power3.in" }, 23.95);
+  tl.to("#c-p9", { keyframes: [{ scaleY: 0.84, scaleX: 1.14, duration: 0.07 }, { scaleY: 1.04, scaleX: 0.97, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.4)" }] }, 24.31);
+  tl.fromTo("#c-p9", { rotate: 0 }, { keyframes: [{ rotate: -4, duration: 0.12 }, { rotate: 0, duration: 0.45, ease: "elastic.out(1, 0.3)" }] }, 24.571);
+  tl.fromTo("#c-k9", { scale: 0, rotate: -90 }, { scale: 1, rotate: 30, duration: 0.6, ease: "back.out(2.4)" }, 24.2);
+  tl.set("#c-s9 .cat", { opacity: 1 }, 24.0);
+  tl.fromTo("#c-s9 .cat", { scale: 1.08 }, { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.4)" }, 24.0);
+  tl.fromTo("#c-s10", { clipPath: "circle(0% at 80% 70%)" }, { clipPath: "circle(150% at 80% 70%)", duration: 0.5, ease: "expo.inOut" }, 25.023);
+  tl.fromTo("#c-p10", { y: -700, scaleY: 1.35, scaleX: 0.8, rotate: 8 }, { y: 0, scaleY: 1, scaleX: 1, rotate: 0, duration: 0.36, ease: "power3.in" }, 25.093);
+  tl.to("#c-p10", { keyframes: [{ scaleY: 0.84, scaleX: 1.14, duration: 0.07 }, { scaleY: 1.04, scaleX: 0.97, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.4)" }] }, 25.453);
+  tl.fromTo("#c-p10", { rotate: 0 }, { keyframes: [{ rotate: 4, duration: 0.12 }, { rotate: 0, duration: 0.45, ease: "elastic.out(1, 0.3)" }] }, 25.714);
+  tl.fromTo("#c-k10", { scale: 0, rotate: -90 }, { scale: 1, rotate: 30, duration: 0.6, ease: "back.out(2.4)" }, 25.343);
+  tl.set("#c-s10 .cat", { opacity: 1 }, 25.143);
+  tl.fromTo("#c-s10 .cat", { scale: 1.08 }, { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.4)" }, 25.143);
+  tl.fromTo("#c-s11", { clipPath: "circle(0% at 50% 80%)" }, { clipPath: "circle(150% at 50% 80%)", duration: 0.5, ease: "expo.inOut" }, 26.165);
+  tl.fromTo("#c-p11", { y: -700, scaleY: 1.35, scaleX: 0.8, rotate: -8 }, { y: 0, scaleY: 1, scaleX: 1, rotate: 0, duration: 0.36, ease: "power3.in" }, 26.235);
+  tl.to("#c-p11", { keyframes: [{ scaleY: 0.84, scaleX: 1.14, duration: 0.07 }, { scaleY: 1.04, scaleX: 0.97, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.4)" }] }, 26.595);
+  tl.fromTo("#c-p11", { rotate: 0 }, { keyframes: [{ rotate: -4, duration: 0.12 }, { rotate: 0, duration: 0.45, ease: "elastic.out(1, 0.3)" }] }, 26.856);
+  tl.fromTo("#c-k11", { scale: 0, rotate: -90 }, { scale: 1, rotate: 30, duration: 0.6, ease: "back.out(2.4)" }, 26.485);
+  tl.set("#c-s11 .cat", { opacity: 1 }, 26.285);
+  tl.fromTo("#c-s11 .cat", { scale: 1.08 }, { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.4)" }, 26.285);
+  tl.fromTo("#c-s12", { clipPath: "circle(0% at 50% 50%)" }, { clipPath: "circle(150% at 50% 50%)", duration: 0.5, ease: "expo.inOut" }, 27.308);
+  tl.fromTo("#c-p12", { y: -700, scaleY: 1.35, scaleX: 0.8, rotate: 8 }, { y: 0, scaleY: 1, scaleX: 1, rotate: 0, duration: 0.36, ease: "power3.in" }, 27.378);
+  tl.to("#c-p12", { keyframes: [{ scaleY: 0.84, scaleX: 1.14, duration: 0.07 }, { scaleY: 1.04, scaleX: 0.97, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.4)" }] }, 27.738);
+  tl.fromTo("#c-p12", { rotate: 0 }, { keyframes: [{ rotate: 4, duration: 0.12 }, { rotate: 0, duration: 0.45, ease: "elastic.out(1, 0.3)" }] }, 27.999);
+  tl.fromTo("#c-k12", { scale: 0, rotate: -90 }, { scale: 1, rotate: 30, duration: 0.6, ease: "back.out(2.4)" }, 27.628);
+  tl.fromTo("#c-s12 .cat", { y: 80, scaleY: 1.5, opacity: 0 }, { y: 0, scaleY: 1, opacity: 1, duration: 0.6, ease: "elastic.out(1, 0.45)" }, 27.528);
+  tl.fromTo("#c-s13", { clipPath: "circle(0% at 20% 30%)" }, { clipPath: "circle(150% at 20% 30%)", duration: 0.5, ease: "expo.inOut" }, 28.451);
+  tl.fromTo("#c-p13", { y: -700, scaleY: 1.35, scaleX: 0.8, rotate: -8 }, { y: 0, scaleY: 1, scaleX: 1, rotate: 0, duration: 0.36, ease: "power3.in" }, 28.521);
+  tl.to("#c-p13", { keyframes: [{ scaleY: 0.84, scaleX: 1.14, duration: 0.07 }, { scaleY: 1.04, scaleX: 0.97, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.4)" }] }, 28.881);
+  tl.fromTo("#c-p13", { rotate: 0 }, { keyframes: [{ rotate: -4, duration: 0.12 }, { rotate: 0, duration: 0.45, ease: "elastic.out(1, 0.3)" }] }, 29.142);
+  tl.fromTo("#c-k13", { scale: 0, rotate: -90 }, { scale: 1, rotate: 30, duration: 0.6, ease: "back.out(2.4)" }, 28.771);
+  tl.set("#c-s13 .cat", { opacity: 1 }, 28.571);
+  tl.fromTo("#c-s13 .cat", { scale: 1.08 }, { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.4)" }, 28.571);
+  tl.fromTo("#c-s14", { clipPath: "circle(0% at 80% 70%)" }, { clipPath: "circle(150% at 80% 70%)", duration: 0.5, ease: "expo.inOut" }, 29.594);
+  tl.fromTo("#c-p14", { y: -700, scaleY: 1.35, scaleX: 0.8, rotate: 8 }, { y: 0, scaleY: 1, scaleX: 1, rotate: 0, duration: 0.36, ease: "power3.in" }, 29.664);
+  tl.to("#c-p14", { keyframes: [{ scaleY: 0.84, scaleX: 1.14, duration: 0.07 }, { scaleY: 1.04, scaleX: 0.97, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.4)" }] }, 30.024);
+  tl.fromTo("#c-p14", { rotate: 0 }, { keyframes: [{ rotate: 4, duration: 0.12 }, { rotate: 0, duration: 0.45, ease: "elastic.out(1, 0.3)" }] }, 30.285);
+  tl.fromTo("#c-k14", { scale: 0, rotate: -90 }, { scale: 1, rotate: 30, duration: 0.6, ease: "back.out(2.4)" }, 29.914);
+  tl.set("#c-s14 .cat", { opacity: 1 }, 29.714);
+  tl.fromTo("#c-s14 .cat", { scale: 1.08 }, { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.4)" }, 29.714);
+  tl.fromTo("#c-s15", { clipPath: "circle(0% at 50% 80%)" }, { clipPath: "circle(150% at 50% 80%)", duration: 0.5, ease: "expo.inOut" }, 30.737);
+  tl.fromTo("#c-p15", { y: -700, scaleY: 1.35, scaleX: 0.8, rotate: -8 }, { y: 0, scaleY: 1, scaleX: 1, rotate: 0, duration: 0.36, ease: "power3.in" }, 30.807);
+  tl.to("#c-p15", { keyframes: [{ scaleY: 0.84, scaleX: 1.14, duration: 0.07 }, { scaleY: 1.04, scaleX: 0.97, duration: 0.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1, 0.4)" }] }, 31.167);
+  tl.fromTo("#c-p15", { rotate: 0 }, { keyframes: [{ rotate: -4, duration: 0.12 }, { rotate: 0, duration: 0.45, ease: "elastic.out(1, 0.3)" }] }, 31.428);
+  tl.fromTo("#c-k15", { scale: 0, rotate: -90 }, { scale: 1, rotate: 30, duration: 0.6, ease: "back.out(2.4)" }, 31.057);
+  tl.set("#c-s15 .cat", { opacity: 1 }, 30.857);
+  tl.fromTo("#c-s15 .cat", { scale: 1.08 }, { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.4)" }, 30.857);
+  tl.set("#d-b0", { opacity: 1 }, 32.0);
+  tl.fromTo("#d-w0", { scale: 1.9, rotate: 10 }, { scale: 1, rotate: -4, duration: 0.38, ease: "elastic.out(1, 0.5)" }, 32.0);
+  tl.set("#d-b1", { opacity: 1 }, 32.571);
+  tl.fromTo("#d-w1", { scale: 1.9, rotate: -10 }, { scale: 1, rotate: 4, duration: 0.38, ease: "elastic.out(1, 0.5)" }, 32.571);
+  tl.set("#d-b2", { opacity: 1 }, 33.143);
+  tl.fromTo("#d-w2", { scale: 1.9, rotate: 10 }, { scale: 1, rotate: -4, duration: 0.38, ease: "elastic.out(1, 0.5)" }, 33.143);
+  tl.set("#d-b3", { opacity: 1 }, 33.714);
+  tl.fromTo("#d-w3", { scale: 1.9, rotate: -10 }, { scale: 1, rotate: 4, duration: 0.38, ease: "elastic.out(1, 0.5)" }, 33.714);
+  tl.set("#d-b4", { opacity: 1 }, 34.286);
+  tl.fromTo("#d-w4", { scale: 1.9, rotate: 10 }, { scale: 1, rotate: -4, duration: 0.38, ease: "elastic.out(1, 0.5)" }, 34.286);
+  tl.set("#d-b5", { opacity: 1 }, 34.857);
+  tl.fromTo("#d-w5", { scale: 1.9, rotate: -10 }, { scale: 1, rotate: 4, duration: 0.38, ease: "elastic.out(1, 0.5)" }, 34.857);
+  tl.set("#d-b6", { opacity: 1 }, 35.429);
+  tl.fromTo("#d-w6", { scale: 1.9, rotate: 10 }, { scale: 1, rotate: -4, duration: 0.38, ease: "elastic.out(1, 0.5)" }, 35.429);
+  tl.set("#d-b7", { opacity: 1 }, 36.0);
+  tl.fromTo("#d-w7", { scale: 1.9, rotate: -10 }, { scale: 1, rotate: 4, duration: 0.38, ease: "elastic.out(1, 0.5)" }, 36.0);
+  tl.fromTo("#e-r0", { x: 0 }, { x: -2320, duration: 9.143, ease: "none" }, 36.571);
+  tl.fromTo("#e-r1", { x: -2320 }, { x: 0, duration: 9.143, ease: "none" }, 36.571);
+  tl.fromTo("#e-r2", { x: 0 }, { x: -2320, duration: 9.143, ease: "none" }, 36.571);
+  tl.fromTo("#e-tilt", { rotate: -14, scale: 1.15 }, { rotate: -9, scale: 1.15, duration: 9.143, ease: "sine.inOut" }, 36.571);
+  tl.fromTo("#e-band", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "expo.out" }, 37.714);
+  tl.fromTo("#e-t1", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "elastic.out(1, 0.45)" }, 38.285);
+  tl.fromTo("#e-t2", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "elastic.out(1, 0.45)" }, 38.857);
+  tl.fromTo("#e-band", { scaleY: 1.12, scaleX: 0.97 }, { scaleY: 1, scaleX: 1, duration: 0.686, ease: "elastic.out(1, 0.35)" }, 39.428);
+  tl.fromTo("#e-band", { scaleY: 1.12, scaleX: 0.97 }, { scaleY: 1, scaleX: 1, duration: 0.686, ease: "elastic.out(1, 0.35)" }, 40.571);
+  tl.fromTo("#e-band", { scaleY: 1.12, scaleX: 0.97 }, { scaleY: 1, scaleX: 1, duration: 0.686, ease: "elastic.out(1, 0.35)" }, 41.714);
+  tl.fromTo("#e-band", { scaleY: 1.12, scaleX: 0.97 }, { scaleY: 1, scaleX: 1, duration: 0.686, ease: "elastic.out(1, 0.35)" }, 42.857);
+  tl.fromTo("#e-band", { scaleY: 1.12, scaleX: 0.97 }, { scaleY: 1, scaleX: 1, duration: 0.686, ease: "elastic.out(1, 0.35)" }, 44.0);
+  tl.fromTo("#e-band", { scaleY: 1.12, scaleX: 0.97 }, { scaleY: 1, scaleX: 1, duration: 0.686, ease: "elastic.out(1, 0.35)" }, 45.142);
+  tl.to(["#e-band", "#e-tilt"], { scale: 0.2, opacity: 0, rotate: 40, duration: 0.45, ease: "back.in(1.5)" }, 45.214);
+  tl.fromTo("#f-h", { y: 80, opacity: 0, scaleY: 1.4 }, { y: 0, opacity: 1, scaleY: 1, duration: 0.6, ease: "elastic.out(1, 0.45)" }, 45.714);
+  tl.fromTo("#f-lab", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 45.714);
+  tl.fromTo("#f-logo", { scale: 0, rotate: -30 }, { scale: 1, rotate: 0, duration: 0.7, ease: "elastic.out(1, 0.45)" }, 46.285);
+  tl.fromTo("#f-o0", { rotate: 0 }, { rotate: 100, duration: 4.572, ease: "sine.inOut" }, 45.714);
+  tl.fromTo("#f-i0", { rotate: 0 }, { rotate: -100, duration: 4.572, ease: "sine.inOut" }, 45.714);
+  tl.fromTo("#f-i0", { scale: 0 }, { scale: 1, duration: 0.5, ease: "back.out(2.6)" }, 46.628);
+  tl.fromTo("#f-o1", { rotate: 60 }, { rotate: 160, duration: 4.572, ease: "sine.inOut" }, 45.714);
+  tl.fromTo("#f-i1", { rotate: -60 }, { rotate: -160, duration: 4.572, ease: "sine.inOut" }, 45.714);
+  tl.fromTo("#f-i1", { scale: 0 }, { scale: 1, duration: 0.5, ease: "back.out(2.6)" }, 47.085);
+  tl.fromTo("#f-o2", { rotate: 120 }, { rotate: 220, duration: 4.572, ease: "sine.inOut" }, 45.714);
+  tl.fromTo("#f-i2", { rotate: -120 }, { rotate: -220, duration: 4.572, ease: "sine.inOut" }, 45.714);
+  tl.fromTo("#f-i2", { scale: 0 }, { scale: 1, duration: 0.5, ease: "back.out(2.6)" }, 47.543);
+  tl.fromTo("#f-o3", { rotate: 180 }, { rotate: 280, duration: 4.572, ease: "sine.inOut" }, 45.714);
+  tl.fromTo("#f-i3", { rotate: -180 }, { rotate: -280, duration: 4.572, ease: "sine.inOut" }, 45.714);
+  tl.fromTo("#f-i3", { scale: 0 }, { scale: 1, duration: 0.5, ease: "back.out(2.6)" }, 48.0);
+  tl.fromTo("#f-o4", { rotate: 240 }, { rotate: 340, duration: 4.572, ease: "sine.inOut" }, 45.714);
+  tl.fromTo("#f-i4", { rotate: -240 }, { rotate: -340, duration: 4.572, ease: "sine.inOut" }, 45.714);
+  tl.fromTo("#f-i4", { scale: 0 }, { scale: 1, duration: 0.5, ease: "back.out(2.6)" }, 48.457);
+  tl.fromTo("#f-o5", { rotate: 300 }, { rotate: 400, duration: 4.572, ease: "sine.inOut" }, 45.714);
+  tl.fromTo("#f-i5", { rotate: -300 }, { rotate: -400, duration: 4.572, ease: "sine.inOut" }, 45.714);
+  tl.fromTo("#f-i5", { scale: 0 }, { scale: 1, duration: 0.5, ease: "back.out(2.6)" }, 48.914);
+  tl.fromTo("#g-blob", { scale: 0.2, rotate: 0, borderRadius: "42% 58% 63% 37% / 41% 44% 56% 59%" }, { scale: 1.25, rotate: 120, borderRadius: "63% 37% 38% 62% / 55% 61% 39% 45%", duration: 4.571, ease: "sine.inOut" }, 50.286);
+  tl.fromTo("#g-1", { y: 60, opacity: 0, scaleY: 1.3 }, { y: 0, opacity: 1, scaleY: 1, duration: 0.7, ease: "elastic.out(1, 0.5)" }, 50.486);
+  tl.fromTo("#g-2", { y: 60, opacity: 0, scaleY: 1.3 }, { y: 0, opacity: 1, scaleY: 1, duration: 0.7, ease: "elastic.out(1, 0.5)" }, 51.4);
+  tl.fromTo("#g-3", { y: 60, opacity: 0, scaleY: 1.3 }, { y: 0, opacity: 1, scaleY: 1, duration: 0.7, ease: "elastic.out(1, 0.5)" }, 52.315);
+  tl.fromTo("#g-4", { y: 60, opacity: 0, scaleY: 1.3 }, { y: 0, opacity: 1, scaleY: 1, duration: 0.7, ease: "elastic.out(1, 0.5)" }, 53.229);
+  tl.fromTo("#h-logo", { scale: 0, rotate: -12, y: 80 }, { scale: 1, rotate: 0, y: 0, duration: 1.0, ease: "elastic.out(1, 0.42)" }, 54.857);
+  tl.fromTo("#h-chk", { x: -1200 }, { x: 0, duration: 0.6, ease: "expo.out" }, 54.857);
+  tl.fromTo("#h-1", { y: -300, scaleY: 1.5, scaleX: 0.75, opacity: 0 }, { y: 0, scaleY: 1, scaleX: 1, opacity: 1, duration: 0.5, ease: "elastic.out(1, 0.45)" }, 55.428);
+  tl.fromTo("#h-2", { y: -300, scaleY: 1.5, scaleX: 0.75, opacity: 0 }, { y: 0, scaleY: 1, scaleX: 1, opacity: 1, duration: 0.5, ease: "elastic.out(1, 0.45)" }, 56.0);
+  tl.fromTo("#h-3", { y: -300, scaleY: 1.5, scaleX: 0.75, opacity: 0 }, { y: 0, scaleY: 1, scaleX: 1, opacity: 1, duration: 0.5, ease: "elastic.out(1, 0.45)" }, 56.571);
+  tl.fromTo("#h-url", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 57.143);
+  tl.fromTo("#h-star", { scale: 0, rotate: -90 }, { scale: 1, rotate: 90, duration: 0.8, ease: "back.out(2.4)" }, 56.0);
+  tl.to("#h-star", { rotate: 360, duration: 3, ease: "none" }, 56.8);
+  tl.fromTo(["#h-t", "#h-logo", "#h-url"], { scale: 1.06 }, { scale: 1, duration: 0.5, ease: "elastic.out(1, 0.35)", stagger: 0.03 }, 59.429);
+  tl.fromTo("#badge-svg", { rotate: 0, transformOrigin: "50% 50%" }, { rotate: 540, duration: 50.29, ease: "none" }, 4.0);
+  window.__timelines["main"] = tl;
+  tl.seek(0);
+</script>
+</body>
+</html>

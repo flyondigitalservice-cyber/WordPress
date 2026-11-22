@@ -32,6 +32,7 @@ Each folder holds the **MP4** (1080×1920, 30 fps, H.264 + AAC, normalised to ab
 | P8 | Everyday Products, Designed Better (home, kitchen, tech) | `p8-everyday-designed-better/` |
 | P9 | Design You Can Taste (food & natural) | `p9-design-you-can-taste/` |
 | SR | Showreel: 57 designs in six fast-cut chapters (58.6 s) | `sr-showreel/` |
+| FX | Funky Showreel: beat-synced, bouncy motion with an original quirky-funk track (60 s) | `fx-funky-showreel/` |
 
 All products shown are the agency's own designs from the shared Drive (imported to `_brand/drive/`). Pantone stock swatches, a browser screenshot, images with a Fiverr watermark and a repost carrying a third party's Instagram handle were left out. Each reel is generated from `_shared/series_spec.json` by `_shared/gen_series.py` (`python3 _shared/gen_series.py p1`).
 
