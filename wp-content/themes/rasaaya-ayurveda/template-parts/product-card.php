@@ -6,7 +6,7 @@ $p = $args['product'];
 $save_amt = max( 0, $p['mrp'] - $p['price'] );
 $sub_price = round( $p['price'] * 0.85 );
 ?>
-<article class="prod-card" data-cat="<?php echo esc_attr( $p['cat'] ); ?>">
+<article class="prod-card" data-cat="<?php echo esc_attr( $p['cat'] ); ?>" style="--pc: <?php echo esc_attr( rasaaya_product_color( $p['slug'] ) ); ?>;">
     <a href="<?php echo esc_url( $p['url'] ); ?>" class="prod-img-box">
         <img src="<?php echo esc_url( $p['img'] ); ?>" alt="<?php echo esc_attr( $p['title'] ); ?>" loading="lazy">
         <span class="prod-badge"><?php echo esc_html( $p['badge'] ); ?></span>

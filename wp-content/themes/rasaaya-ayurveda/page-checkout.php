@@ -2,9 +2,9 @@
 <section class="sec-wrap">
     <div class="container" id="ras-checkout-container">
         <div class="sec-head" style="margin-bottom:32px;">
-            <div class="eyebrow-pill">256-Bit Encrypted &bull; HSN 21069099 (5% GST Included)</div>
+            <div class="eyebrow-pill">5% GST included &bull; No hidden charges at the end</div>
             <h1>Complete Your Daily Ritual Order</h1>
-            <p>Orders submitted here are stored live inside the WordPress database (<code>Customer Orders</code> CPT in WP-Admin).</p>
+            <p>What you see in the summary is exactly what you pay. A real person from our kitchen confirms every order on WhatsApp.</p>
         </div>
 
         <div class="two-col-grid">

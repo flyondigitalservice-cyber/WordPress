@@ -127,6 +127,15 @@ function rasaaya_doodle( $name, $class = '' ) {
             . '<path d="M316 246 C300 236 288 226 276 218"/><path d="M226 322 C214 304 204 290 196 276"/>'
             . '<path d="M46 284 C66 262 80 242 90 228"/><path d="M46 100 C62 108 72 114 82 120"/></g>' ),
 
+        // Scribbled strike-through, drawn over a word.
+        'strike' => array( '0 0 300 30', 'none',
+            '<path ' . $s . ' stroke-width="3.2" d="M4 18 C60 12 120 16 180 13 C220 11 262 14 296 10"/>'
+            . '<path ' . $s . ' stroke-width="2.2" d="M10 22 C90 17 170 20 290 15"/>' ),
+
+        // Loose hand-drawn X.
+        'cross' => array( '0 0 40 40', null,
+            '<path ' . $s . ' stroke-width="3.4" d="M7 6 C16 16 24 25 34 35 M33 5 C24 15 15 25 6 34"/>' ),
+
         // Sun with uneven rays.
         'sun' => array( '0 0 90 90', null,
             '<circle ' . $s . ' fill="#E5A94C" fill-opacity=".35" cx="45" cy="45" r="17"/>'

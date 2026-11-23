@@ -18,6 +18,7 @@ add_action( 'after_setup_theme', 'rasaaya_setup' );
 
 function rasaaya_enqueue_scripts() {
     wp_enqueue_style( 'rasaaya-style', rasaaya_theme_asset( 'style.css' ), array(), '2.1.0' );
+    wp_enqueue_style( 'rasaaya-brand', rasaaya_theme_asset( 'assets/css/brand.css' ), array( 'rasaaya-style' ), '3.0.0' );
     wp_enqueue_script( 'rasaaya-app', rasaaya_theme_asset( 'assets/js/app.js' ), array(), '2.1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'rasaaya_enqueue_scripts' );
@@ -26,6 +27,23 @@ add_action( 'wp_enqueue_scripts', 'rasaaya_enqueue_scripts' );
 add_filter( 'redirect_canonical', '__return_false' );
 remove_action( 'login_init', 'send_frame_options_header' );
 remove_action( 'admin_init', 'send_frame_options_header' );
+
+/**
+ * Each ritual has its own colour, like the katoris in a masala dabba.
+ */
+function rasaaya_product_color( $slug ) {
+    $map = array(
+        '7-day-gut-trial-pack'   => '#C9841A',
+        '30-day-gut-starter-kit' => '#0F2F21',
+        'gut-reset'              => '#1F4D36',
+        'digest-plus'            => '#55763A',
+        'glow-within'            => '#B0455A',
+        'immunity-kadha'         => '#A04F28',
+        'calm-and-sleep'         => '#2E3561',
+        'hydrate-kokum-plus'     => '#7A2348',
+    );
+    return isset( $map[ $slug ] ) ? $map[ $slug ] : '#1F4D36';
+}
 
 // Register Custom Post Types: Products & Customer Orders
 function rasaaya_register_cpts() {
@@ -255,7 +273,6 @@ function rasaaya_maybe_seed_content() {
         '7-day-trial'       => '7-Day Gut Challenge (₹99)',
         'ayurvedic-science' => 'Herbs, Formulation & NABL Lab Reports',
         'checkout'          => 'Secure 5%-GST Checkout',
-        'portfolio-brands'  => 'Bombay Marketing Studio — All 7 Sample Brands',
     );
     $home_id = 0;
     foreach ( $pages as $slug => $title ) {

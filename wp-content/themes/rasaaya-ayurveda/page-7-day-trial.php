@@ -3,9 +3,9 @@
     <div class="container">
         <div class="trial-banner-card" style="margin-bottom:44px;">
             <div>
-                <div class="eyebrow-pill" style="background:rgba(229,169,76,0.2);color:#FDE68A;border-color:#E5A94C;">India’s #1 Gut Trial Funnel &bull; ₹99 All-Inclusive</div>
+                <div class="eyebrow-pill" style="background:rgba(229,169,76,0.2);color:#FDE68A;border-color:#E5A94C;">₹99 all-inclusive &bull; free shipping</div>
                 <h1 style="font-size:38px;font-weight:800;line-height:1.12;margin-bottom:12px;">The 7-Day RASAAYA Gut Reset Challenge</h1>
-                <p style="font-size:15.5px;color:#E2E8F0;margin-bottom:20px;">Why gamble ₹900 on an untested jar? Try <strong>7 Sachets of Gut Reset</strong> (overnight Triphala + Isabgol) + <strong>7 Sachets of Digest+</strong> (post-lunch Jeera-Pudina-Hing) for just ₹99 with FREE prepaid shipping—plus get a ₹99 voucher toward your full 30-Day Starter Kit on Day 7.</p>
+                <p style="font-size:15.5px;color:#E2E8F0;margin-bottom:20px;">Don&rsquo;t spend ₹900 on a jar you&rsquo;re not sure about. Try <strong>7 Sachets of Gut Reset</strong> (overnight Triphala + Isabgol) + <strong>7 Sachets of Digest+</strong> (post-lunch Jeera-Pudina-Hing) for just ₹99 with FREE prepaid shipping—plus get a ₹99 voucher toward your full 30-Day Starter Kit on Day 7.</p>
                 <button type="button" class="btn btn-saffron" onclick="window.rasAddBySlug('7-day-gut-trial-pack', false)">Add ₹99 7-Day Trial Pack to Bag &rarr;</button>
             </div>
             <div class="trial-visual">

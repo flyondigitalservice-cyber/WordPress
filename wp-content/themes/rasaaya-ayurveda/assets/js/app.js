@@ -262,22 +262,21 @@
         const out = document.getElementById('ras-coa-result');
         if (!out) return;
         const batch = inp ? inp.value.trim() : 'RAS-GR-2611';
-        out.innerHTML = 'Checking NABL Lab Registry via WordPress REST API...';
+        out.innerHTML = '<div class="coa-line">Checking the lab register&hellip;</div>';
         try {
             const r = await fetch('/wp-json/rasaaya/v1/coa?batch=' + encodeURIComponent(batch));
             const d = await r.json();
+            const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
             out.innerHTML = `
-                <div style="color:#4ADE80;font-weight:800;margin-bottom:6px;">✓ ${d.status}</div>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12.5px;color:#F1F5F9;">
-                    <div><strong>Batch Code:</strong> ${d.batch}</div>
-                    <div><strong>Manufactured:</strong> ${d.mfg_date}</div>
-                    <div><strong>Moisture (WVTR):</strong> ${d.moisture}</div>
-                    <div><strong>Senna Adulteration:</strong> ${d.senna_check}</div>
-                    <div style="grid-column:span 2;"><strong>Heavy Metals:</strong> ${d.heavy_metal}</div>
-                    <div style="grid-column:span 2;"><strong>Microbial Panel:</strong> ${d.microbial}</div>
-                </div>`;
+                <div class="coa-pass">✓ ${esc(d.status)}</div>
+                <div class="coa-line"><b>Batch</b> ${esc(d.batch)}</div>
+                <div class="coa-line"><b>Made</b> ${esc(d.mfg_date)}</div>
+                <div class="coa-line"><b>Moisture</b> ${esc(d.moisture)}</div>
+                <div class="coa-line"><b>Senna</b> ${esc(d.senna_check)}</div>
+                <div class="coa-line"><b>Heavy metals</b> ${esc(d.heavy_metal)}</div>
+                <div class="coa-line"><b>Microbes</b> ${esc(d.microbial)}</div>`;
         } catch (err) {
-            out.textContent = 'Verified Batch RAS-GR-2611: All Heavy Metals & Microbials Within FSSAI Limits.';
+            out.innerHTML = '<div class="coa-line">Couldn&rsquo;t reach the lab register just now. Please try again.</div>';
         }
     };
 

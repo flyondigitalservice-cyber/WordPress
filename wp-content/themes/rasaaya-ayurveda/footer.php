@@ -54,7 +54,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <strong style="font-size:19px;letter-spacing:0.15em;color:#FFF;">RASAAYA</strong>
                 </div>
                 <p style="margin-bottom:14px;color:#CBD5E1;">Ancient Indian kitchen &amp; classical Rasayana wisdom sealed inside moisture-barrier 4-ply single-serve sachets. Swirl into water or warm milk in 15 seconds.</p>
-                <div style="font-size:12px;color:#E5A94C;font-weight:700;">Powered by WordPress <?php echo esc_html( get_bloginfo( 'version' ) ); ?> &bull; Concept by Bombay Marketing Studio</div>
+                <div class="footer-credit">Brand &amp; storefront concept by Bombay Marketing Studio</div>
             </div>
 
             <div>
@@ -76,7 +76,6 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <li><a href="/#coa-checker">NABL Batch CoA Lookup</a></li>
                     <li><a href="/7-day-trial/">WhatsApp 7-Day Gut Challenge</a></li>
                     <li><a href="/checkout/">UPI &amp; Auto-Replenish Checkout</a></li>
-                    <li><a href="/portfolio-brands/">All 7 Studio Sample Brands</a></li>
                 </ul>
             </div>
 
