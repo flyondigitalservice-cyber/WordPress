@@ -21,7 +21,7 @@ $free_thresh  = (int) get_theme_mod( 'baystore_free_shipping_threshold', 499 );
 			<div class="bs-footer-brand">
 				<span class="bs-logo-word">BAYSTORE</span>
 				<p>Everyday essentials for Indian homes — kitchen, superfoods, self-care, gadgets and handmade decor, delivered across India.</p>
-				<p class="bs-footer-pay">UPI · Cards · Net banking · Cash on delivery</p>
+				<p class="bs-footer-pay">Cash on delivery — pay by cash or UPI at your door</p>
 			</div>
 			<div>
 				<h4>Shop</h4>
