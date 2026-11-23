@@ -53,6 +53,9 @@ $free_thresh = (int) get_theme_mod( 'baystore_free_shipping_threshold', 499 );
 		<?php if ( $img_url ) : ?>
 			<img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $title ); ?>" loading="lazy" />
 		<?php endif; ?>
+		<?php if ( $discount >= 5 ) : ?>
+			<span class="bs-off-tag"><b><?php echo (int) $discount; ?>%</b>OFF</span>
+		<?php endif; ?>
 		<?php if ( $show_badge ) : ?>
 			<span class="bs-pcard-badge <?php echo 'Limited Time Deal' === $show_badge ? 'is-deal' : ''; ?>"><?php echo esc_html( 'Limited Time Deal' === $show_badge ? 'Deal' : $show_badge ); ?></span>
 		<?php endif; ?>
@@ -61,14 +64,15 @@ $free_thresh = (int) get_theme_mod( 'baystore_free_shipping_threshold', 499 );
 	<div class="bs-pcard-body">
 		<a href="<?php echo esc_url( $permalink ); ?>" class="bs-pcard-title"><?php echo esc_html( $title ); ?></a>
 		<div class="bs-pcard-rating">
-			<span class="bs-rating-pill"><?php echo esc_html( $rating ); ?> ★</span>
+			<span class="bs-stars" style="--r:<?php echo esc_attr( (float) $rating ); ?>" aria-label="<?php echo esc_attr( $rating ); ?> out of 5"></span>
+			<span class="bs-rating-num"><?php echo esc_html( $rating ); ?></span>
 			<span class="bs-rating-count">(<?php echo esc_html( $rev_fmt ); ?>)</span>
 		</div>
 		<div class="bs-pcard-price">
 			<span class="bs-price-now"><?php echo esc_html( baystore_format_inr( $price ) ); ?></span>
 			<?php if ( $mrp > $price ) : ?>
 				<span class="bs-price-mrp"><?php echo esc_html( baystore_format_inr( $mrp ) ); ?></span>
-				<span class="bs-price-off"><?php echo (int) $discount; ?>% off</span>
+				<span class="bs-price-save">Save <?php echo esc_html( baystore_format_inr( $mrp - $price ) ); ?></span>
 			<?php endif; ?>
 		</div>
 		<div class="bs-pcard-ship"><?php echo $price >= $free_thresh ? '<b>Free delivery</b>' : 'Cash on Delivery available'; ?></div>

@@ -160,7 +160,7 @@
                   '<div style="font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' +
                   it.title +
                   '</div>' +
-                  '<div style="font-size:11px;color:#2874F0;">' +
+                  '<div style="font-size:11px;color:#1F49B6;">' +
                   it.category +
                   '</div></div>' +
                   '<div style="font-size:13px;font-weight:800;">' +
@@ -222,7 +222,7 @@
           ? 'Add <strong style="color:#212121">' +
             formatINR(rem) +
             '</strong> more for <strong>FREE Express Delivery</strong>'
-          : '<strong style="color:#2874F0">✓ Your order qualifies for FREE delivery</strong>';
+          : '<strong style="color:#1F49B6">✓ Your order qualifies for FREE delivery</strong>';
     }
     if (shipFill) {
       shipFill.style.width = pct + '%';
@@ -270,7 +270,7 @@
               '</div>' +
               '<button type="button" data-bs-qty-key="' +
               it.key +
-              '" data-bs-qty-val="0" style="border:none;background:transparent;color:#2874F0;font-size:11px;cursor:pointer;">Delete</button>' +
+              '" data-bs-qty-val="0" style="border:none;background:transparent;color:#1F49B6;font-size:11px;cursor:pointer;">Delete</button>' +
               '</div></div></div>'
             );
           })

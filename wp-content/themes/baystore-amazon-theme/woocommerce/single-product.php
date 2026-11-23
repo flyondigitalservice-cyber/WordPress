@@ -59,8 +59,8 @@ while ( have_posts() ) :
 					</div>
 				</div>
 				<div class="bs-pdp-actions">
-					<button type="button" class="bs-btn bs-btn-yellow bs-btn-lg" data-bs-add-product="<?php echo (int) $pid; ?>" data-bs-qty="1">🛒 Add to cart</button>
-					<a href="<?php echo esc_url( $buy_now_url ); ?>" class="bs-btn bs-btn-orange bs-btn-lg">⚡ Buy now</a>
+					<button type="button" class="bs-btn bs-btn-yellow bs-btn-lg" data-bs-add-product="<?php echo (int) $pid; ?>" data-bs-qty="1">Add to cart</button>
+					<a href="<?php echo esc_url( $buy_now_url ); ?>" class="bs-btn bs-btn-blue bs-btn-lg">Buy now</a>
 				</div>
 			</div>
 
@@ -70,7 +70,8 @@ while ( have_posts() ) :
 				<?php endif; ?>
 				<h1 class="bs-pdp-title"><?php the_title(); ?></h1>
 				<div class="bs-pcard-rating bs-pdp-rating">
-					<span class="bs-rating-pill"><?php echo esc_html( $rating ); ?> ★</span>
+					<span class="bs-stars" style="--r:<?php echo esc_attr( (float) $rating ); ?>"></span>
+					<span class="bs-rating-num"><?php echo esc_html( $rating ); ?></span>
 					<span class="bs-rating-count"><?php echo esc_html( number_format_i18n( (int) $rev_count ) ); ?> ratings &amp; reviews</span>
 					<?php if ( $bought ) : ?>
 						<span class="bs-bought"><?php echo esc_html( $bought ); ?> bought in past month</span>
@@ -78,15 +79,18 @@ while ( have_posts() ) :
 				</div>
 
 				<?php if ( $discount > 0 ) : ?>
-					<div class="bs-special">Special price</div>
+					<div class="bs-special"><span>Bay Deal</span> Limited-time price</div>
 				<?php endif; ?>
 				<div class="bs-pdp-price">
 					<span class="bs-price-now"><?php echo esc_html( baystore_format_inr( $price ) ); ?></span>
 					<?php if ( $mrp > $price ) : ?>
 						<span class="bs-price-mrp"><?php echo esc_html( baystore_format_inr( $mrp ) ); ?></span>
-						<span class="bs-price-off"><?php echo (int) $discount; ?>% off</span>
+						<span class="bs-off-chip"><?php echo (int) $discount; ?>% OFF</span>
 					<?php endif; ?>
 				</div>
+				<?php if ( $mrp > $price ) : ?>
+					<div class="bs-pdp-save">You save <?php echo esc_html( baystore_format_inr( $mrp - $price ) ); ?></div>
+				<?php endif; ?>
 				<div class="bs-pdp-tax">Inclusive of all taxes</div>
 
 				<div class="bs-offers">
@@ -116,7 +120,7 @@ while ( have_posts() ) :
 					</ul>
 
 					<div class="bs-meta-label">Seller</div>
-					<div><b class="bs-blue">Baystore Retail</b> <span class="bs-rating-pill bs-rating-sm">4.6 ★</span></div>
+					<div><b class="bs-blue">Baystore Retail</b> <span class="bs-rating-num">★ 4.6</span></div>
 				</div>
 
 				<div class="bs-pdp-desc">

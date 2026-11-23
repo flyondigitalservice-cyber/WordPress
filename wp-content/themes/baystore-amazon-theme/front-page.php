@@ -152,7 +152,7 @@ $slides = array(
 		<section class="bs-card bs-row">
 			<div class="bs-row-head">
 				<div class="bs-row-title">
-					<h2>Deals of the Day</h2>
+					<h2>Bay Deals of the Day</h2>
 					<span class="bs-timer">⏱ <span id="bs-countdown-timer">Ends in 04:18:42</span></span>
 				</div>
 				<a href="<?php echo esc_url( add_query_arg( 'orderby', 'popularity', $shop_url ) ); ?>" class="bs-btn bs-btn-blue bs-btn-sm">View all</a>
@@ -185,7 +185,7 @@ $slides = array(
 			<section class="bs-card bs-row">
 				<div class="bs-row-head">
 					<div class="bs-row-title">
-						<h2>Best of <?php echo esc_html( html_entity_decode( $d->name ) ); ?></h2>
+						<h2>Top picks in <?php echo esc_html( html_entity_decode( $d->name ) ); ?></h2>
 						<span class="bs-row-sub"><?php echo (int) $d->count; ?> products · up to <?php echo (int) $max_off( $by_cat[ $d->slug ] ); ?>% off</span>
 					</div>
 					<a href="<?php echo esc_url( get_term_link( $d ) ); ?>" class="bs-btn bs-btn-blue bs-btn-sm">View all</a>

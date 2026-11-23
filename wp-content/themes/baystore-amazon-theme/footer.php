@@ -16,11 +16,19 @@ $free_thresh  = (int) get_theme_mod( 'baystore_free_shipping_threshold', 499 );
 ?>
 
 <footer class="bs-footer">
-	<button type="button" class="bs-backtop" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top</button>
+	<svg class="bs-footer-wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48V22c120-20 240-20 360 0s240 20 360 0 240-20 360 0 240 20 360 0v26z" fill="#14307a"/></svg>
+	<div class="bs-promise">
+		<div><b>The Baystore Promise</b></div>
+		<div>🚚 Free delivery above ₹<?php echo (int) $free_thresh; ?></div>
+		<div>💵 Pay on delivery — cash or UPI</div>
+		<div>🔄 7-day easy replacement</div>
+		<div>🤝 Real people, real help</div>
+	</div>
+	
 	<div class="bs-footer-main">
 		<div class="bs-footer-cols">
 			<div class="bs-footer-brand">
-				<span class="bs-logo-word">Baystore</span>
+				<span class="bs-logo-word">baystore<em>.in</em></span>
 				<p>Everyday essentials for Indian homes — kitchen, superfoods, self-care, gadgets and handmade decor, delivered across India.</p>
 				<p class="bs-footer-pay">Cash on delivery — pay by cash or UPI at your door</p>
 			</div>
@@ -53,7 +61,7 @@ $free_thresh  = (int) get_theme_mod( 'baystore_free_shipping_threshold', 499 );
 		</div>
 	</div>
 	<div class="bs-footer-bottom">
-		&copy; <?php echo esc_html( date( 'Y' ) ); ?> Baystore. All rights reserved.
+		<button type="button" class="bs-totop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Back to top</button> &copy; <?php echo esc_html( date( 'Y' ) ); ?> Baystore.in · Made for Indian homes
 	</div>
 </footer>
 
@@ -86,7 +94,7 @@ $free_thresh  = (int) get_theme_mod( 'baystore_free_shipping_threshold', 499 );
 				<span>Order Total</span>
 				<span id="bs-drawer-total">₹0</span>
 			</div>
-			<a href="<?php echo esc_url( $checkout_url ); ?>" class="bs-btn bs-btn-orange bs-btn-block bs-btn-lg">
+			<a href="<?php echo esc_url( $checkout_url ); ?>" class="bs-btn bs-btn-blue bs-btn-block bs-btn-lg">
 				Place order →
 			</a>
 		</div>

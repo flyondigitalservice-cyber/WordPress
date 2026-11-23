@@ -31,14 +31,15 @@ $hello       = $user->exists() ? 'Hello, ' . $user->display_name : 'Hello, sign 
 
 <header class="bs-header">
 	<div class="bs-topbar">
+		<div class="bs-topbar-wave" aria-hidden="true"></div>
 		<div class="bs-topbar-inner">
 			<button type="button" id="bs-open-mega" class="bs-hdr-icon bs-show-sm" aria-label="Open menu">
 				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
 			</button>
 
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="bs-logo" aria-label="Baystore home">
-				<span class="bs-logo-word">Baystore</span>
-				<span class="bs-logo-tag">Shop smart <b>✦ Save more</b></span>
+				<svg class="bs-logo-mark" width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="9" width="36" height="29" rx="9" fill="#FFC21A"/><path d="M13 13V10a7 7 0 0 1 14 0v3" fill="none" stroke="#FFC21A" stroke-width="3.2" stroke-linecap="round"/><path d="M7 27c4.5-4 8.5-4 13 0s8.5 4 13 0" fill="none" stroke="#14307a" stroke-width="3.2" stroke-linecap="round"/></svg>
+				<span class="bs-logo-word">baystore<em>.in</em></span>
 			</a>
 
 			<div class="bs-search-wrap">
