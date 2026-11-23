@@ -1,0 +1,84 @@
+/*
+Theme Name: Baystore
+Theme URI: https://baystore.in/
+Author: Baystore CRO Studio
+Author URI: https://baystore.in/
+Description: Clean, conversion-focused WordPress + WooCommerce store theme for Baystore.in — announcement bar, centred header, category bubbles, AJAX cart drawer with free-delivery progress, one-tap coupon, and a built-in catalogue importer.
+Version: 1.1.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+WC requires at least: 8.0
+WC tested up to: 9.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: baystore-amazon
+Tags: e-commerce, woocommerce, conversion-rate-optimization, responsive-layout, custom-header, custom-menu
+*/
+
+:root {
+  --amz-navy: #131921;
+  --amz-slate: #232f3e;
+  --amz-slate-light: #37475a;
+  --amz-bg: #eaeded;
+  --amz-white: #ffffff;
+  --amz-text: #0f1111;
+  --amz-muted: #565959;
+  --amz-teal: #007185;
+  --amz-teal-hover: #c7511f;
+  --amz-orange: #ff9900;
+  --amz-search-btn: #febd69;
+  --amz-yellow: #ffd814;
+  --amz-yellow-hover: #f7ca00;
+  --amz-buy-orange: #ffa41c;
+  --amz-buy-orange-hover: #fa8900;
+  --amz-deal-red: #cc0c39;
+  --amz-price-red: #b12704;
+  --amz-green: #067d62;
+  --amz-border: #d5d9d9;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--amz-bg);
+  color: var(--amz-text);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--amz-teal);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--amz-teal-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.bs-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 14px;
+}
+
+.bs-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
