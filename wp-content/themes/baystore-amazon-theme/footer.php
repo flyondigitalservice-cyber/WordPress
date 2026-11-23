@@ -16,10 +16,11 @@ $free_thresh  = (int) get_theme_mod( 'baystore_free_shipping_threshold', 499 );
 ?>
 
 <footer class="bs-footer">
+	<button type="button" class="bs-backtop" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top</button>
 	<div class="bs-footer-main">
 		<div class="bs-footer-cols">
 			<div class="bs-footer-brand">
-				<span class="bs-logo-word">BAYSTORE</span>
+				<span class="bs-logo-word">Baystore</span>
 				<p>Everyday essentials for Indian homes — kitchen, superfoods, self-care, gadgets and handmade decor, delivered across India.</p>
 				<p class="bs-footer-pay">Cash on delivery — pay by cash or UPI at your door</p>
 			</div>
@@ -61,7 +62,7 @@ $free_thresh  = (int) get_theme_mod( 'baystore_free_shipping_threshold', 499 );
 	<div class="bs-drawer">
 		<div class="bs-drawer-head">
 			<div style="font-size:16px;font-weight:800;">
-				Your cart (<span id="bs-drawer-cart-count">0</span>)
+				My Cart (<span id="bs-drawer-cart-count">0</span>)
 			</div>
 			<button type="button" id="bs-close-cart" class="bs-icon-btn" aria-label="Close cart">✕</button>
 		</div>
@@ -85,8 +86,8 @@ $free_thresh  = (int) get_theme_mod( 'baystore_free_shipping_threshold', 499 );
 				<span>Order Total</span>
 				<span id="bs-drawer-total">₹0</span>
 			</div>
-			<a href="<?php echo esc_url( $checkout_url ); ?>" class="bs-btn bs-btn-primary bs-btn-block">
-				Checkout →
+			<a href="<?php echo esc_url( $checkout_url ); ?>" class="bs-btn bs-btn-orange bs-btn-block bs-btn-lg">
+				Place order →
 			</a>
 		</div>
 	</div>
@@ -103,7 +104,7 @@ $free_thresh  = (int) get_theme_mod( 'baystore_free_shipping_threshold', 499 );
 			<p style="margin:0 0 10px;font-size:12px;color:#565959;">Enter an Indian pincode to see exact delivery dates and COD availability.</p>
 			<div style="display:flex;gap:8px;margin-bottom:12px;">
 				<input type="text" id="bs-pincode-input" maxlength="6" placeholder="e.g. 400001" style="flex:1;padding:8px 10px;border:1px solid #ccc;border-radius:4px;font-size:14px;" />
-				<button type="submit" class="bs-btn bs-btn-primary">Apply</button>
+				<button type="submit" class="bs-btn bs-btn-blue">Apply</button>
 			</div>
 			<div style="display:flex;flex-wrap:wrap;gap:6px;">
 				<button type="button" data-bs-pin-preset="400001" style="border:1px solid #ddd;background:#f7f8f8;border-radius:999px;padding:4px 10px;font-size:11px;cursor:pointer;">Mumbai (400001)</button>

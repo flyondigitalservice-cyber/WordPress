@@ -43,15 +43,9 @@ if ( $wc_product && is_a( $wc_product, 'WC_Product' ) ) {
 	return;
 }
 
-$is_new  = $is_wc && ( time() - get_post_time( 'U', true, $pid ) ) < 30 * DAY_IN_SECONDS;
-$tag     = $discount >= 20 ? '-' . (int) $discount . '%' : ( 'Best Seller' === $badge ? 'Best seller' : '' );
-$cat_lbl = '';
-if ( $is_wc ) {
-	$terms = get_the_terms( $pid, 'product_cat' );
-	if ( $terms && ! is_wp_error( $terms ) ) {
-		$cat_lbl = baystore_short_cat_name( $terms[0]->name );
-	}
-}
+$rev_fmt     = is_numeric( $rev_count ) ? number_format_i18n( (int) $rev_count ) : $rev_count;
+$show_badge  = in_array( $badge, array( 'Best Seller', "Baystore's Choice", 'Limited Time Deal' ), true ) ? $badge : '';
+$free_thresh = (int) get_theme_mod( 'baystore_free_shipping_threshold', 499 );
 ?>
 
 <article class="bs-pcard">
@@ -59,30 +53,32 @@ if ( $is_wc ) {
 		<?php if ( $img_url ) : ?>
 			<img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $title ); ?>" loading="lazy" />
 		<?php endif; ?>
-		<?php if ( $tag ) : ?>
-			<span class="bs-pcard-tag"><?php echo esc_html( $tag ); ?></span>
+		<?php if ( $show_badge ) : ?>
+			<span class="bs-pcard-badge <?php echo 'Limited Time Deal' === $show_badge ? 'is-deal' : ''; ?>"><?php echo esc_html( 'Limited Time Deal' === $show_badge ? 'Deal' : $show_badge ); ?></span>
 		<?php endif; ?>
 	</a>
 
 	<div class="bs-pcard-body">
-		<?php if ( $cat_lbl ) : ?>
-			<div class="bs-pcard-cat"><?php echo esc_html( $cat_lbl ); ?></div>
-		<?php endif; ?>
 		<a href="<?php echo esc_url( $permalink ); ?>" class="bs-pcard-title"><?php echo esc_html( $title ); ?></a>
-		<div class="bs-pcard-rating"><span>★ <?php echo esc_html( $rating ); ?></span> · <?php echo esc_html( $rev_count ); ?> reviews</div>
+		<div class="bs-pcard-rating">
+			<span class="bs-rating-pill"><?php echo esc_html( $rating ); ?> ★</span>
+			<span class="bs-rating-count">(<?php echo esc_html( $rev_fmt ); ?>)</span>
+		</div>
 		<div class="bs-pcard-price">
 			<span class="bs-price-now"><?php echo esc_html( baystore_format_inr( $price ) ); ?></span>
 			<?php if ( $mrp > $price ) : ?>
 				<span class="bs-price-mrp"><?php echo esc_html( baystore_format_inr( $mrp ) ); ?></span>
+				<span class="bs-price-off"><?php echo (int) $discount; ?>% off</span>
 			<?php endif; ?>
 		</div>
+		<div class="bs-pcard-ship"><?php echo $price >= $free_thresh ? '<b>Free delivery</b>' : 'Cash on Delivery available'; ?></div>
 	</div>
 
 	<div class="bs-pcard-actions">
 		<?php if ( $is_wc ) : ?>
-			<button type="button" class="bs-btn bs-btn-primary bs-btn-block" data-bs-add-product="<?php echo (int) $pid; ?>" data-bs-qty="1">Add to cart</button>
+			<button type="button" class="bs-btn bs-btn-yellow bs-btn-block" data-bs-add-product="<?php echo (int) $pid; ?>" data-bs-qty="1">Add to cart</button>
 		<?php else : ?>
-			<a href="<?php echo esc_url( $permalink ); ?>" class="bs-btn bs-btn-primary bs-btn-block">View product</a>
+			<a href="<?php echo esc_url( $permalink ); ?>" class="bs-btn bs-btn-yellow bs-btn-block">View product</a>
 		<?php endif; ?>
 	</div>
 </article>

@@ -59,7 +59,7 @@
       localStorage.setItem('bs_pincode', info.pincode);
     } catch (e) {}
     document.querySelectorAll('[data-bs-loc-text]').forEach(function (el) {
-      el.textContent = 'Delivering to ' + info.city + ' ' + info.pincode;
+      el.textContent = info.city + ' ' + info.pincode;
     });
     document.querySelectorAll('[data-bs-eta-text]').forEach(function (el) {
       el.textContent = info.label;
@@ -160,7 +160,7 @@
                   '<div style="font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' +
                   it.title +
                   '</div>' +
-                  '<div style="font-size:11px;color:#0F5F5B;">' +
+                  '<div style="font-size:11px;color:#2874F0;">' +
                   it.category +
                   '</div></div>' +
                   '<div style="font-size:13px;font-weight:800;">' +
@@ -219,10 +219,10 @@
     if (shipText) {
       shipText.innerHTML =
         rem > 0
-          ? 'Add <strong style="color:#1C2321">' +
+          ? 'Add <strong style="color:#212121">' +
             formatINR(rem) +
             '</strong> more for <strong>FREE Express Delivery</strong>'
-          : '<strong style="color:#0F5F5B">✓ Your order qualifies for FREE Express Delivery!</strong>';
+          : '<strong style="color:#2874F0">✓ Your order qualifies for FREE delivery</strong>';
     }
     if (shipFill) {
       shipFill.style.width = pct + '%';
@@ -249,7 +249,7 @@
               '<div style="font-size:12px;font-weight:700;margin-bottom:4px;">' +
               it.name +
               '</div>' +
-              '<div style="font-size:13px;font-weight:800;color:#1C2321;margin-bottom:6px;">' +
+              '<div style="font-size:13px;font-weight:800;color:#212121;margin-bottom:6px;">' +
               formatINR(it.price) +
               '</div>' +
               '<div style="display:flex;align-items:center;justify-content:space-between;">' +
@@ -270,7 +270,7 @@
               '</div>' +
               '<button type="button" data-bs-qty-key="' +
               it.key +
-              '" data-bs-qty-val="0" style="border:none;background:transparent;color:#0F5F5B;font-size:11px;cursor:pointer;">Delete</button>' +
+              '" data-bs-qty-val="0" style="border:none;background:transparent;color:#2874F0;font-size:11px;cursor:pointer;">Delete</button>' +
               '</div></div></div>'
             );
           })

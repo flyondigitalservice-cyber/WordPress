@@ -19,6 +19,7 @@ while ( have_posts() ) :
 	$discount    = $mrp > $price ? round( ( $mrp - $price ) * 100 / $mrp ) : 0;
 	$rating      = get_post_meta( $pid, '_bs_rating', true ) ?: '4.6';
 	$rev_count   = get_post_meta( $pid, '_bs_reviews_count', true ) ?: '428';
+	$bought      = get_post_meta( $pid, '_bs_bought_month', true );
 	$coupon_code = get_theme_mod( 'baystore_coupon_code', 'BAY10' );
 	$free_thresh = (int) get_theme_mod( 'baystore_free_shipping_threshold', 499 );
 	$buy_now_url = add_query_arg( 'baystore_buy_now', $pid, home_url( '/' ) );
@@ -35,98 +36,118 @@ while ( have_posts() ) :
 	if ( ! $gallery && get_post_meta( $pid, '_bs_ext_image', true ) ) {
 		$gallery[] = get_post_meta( $pid, '_bs_ext_image', true );
 	}
+	$coupon_price = round( $price * 0.9 );
 	?>
 
-	<div class="bs-crumbs"><div class="bs-wrap"><?php woocommerce_breadcrumb(); ?></div></div>
+	<div class="bs-wrap">
+		<div class="bs-crumbs"><?php woocommerce_breadcrumb(); ?></div>
 
-	<div class="bs-wrap bs-pdp">
-		<div class="bs-pdp-gallery">
-			<div class="bs-pdp-main">
-				<?php if ( $gallery ) : ?>
-					<img id="bs-pdp-main-img" src="<?php echo esc_url( $gallery[0] ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" />
-				<?php endif; ?>
-				<?php if ( $discount >= 5 ) : ?>
-					<span class="bs-pcard-tag">-<?php echo (int) $discount; ?>%</span>
-				<?php endif; ?>
-			</div>
-			<?php if ( count( $gallery ) > 1 ) : ?>
-				<div class="bs-pdp-thumbs">
-					<?php foreach ( $gallery as $g ) : ?>
-						<button type="button" onclick="document.getElementById('bs-pdp-main-img').src='<?php echo esc_url( $g ); ?>'"><img src="<?php echo esc_url( $g ); ?>" alt="" /></button>
-					<?php endforeach; ?>
+		<div class="bs-card bs-pdp">
+			<div class="bs-pdp-left">
+				<div class="bs-pdp-gallery">
+					<?php if ( count( $gallery ) > 1 ) : ?>
+						<div class="bs-pdp-thumbs">
+							<?php foreach ( $gallery as $i => $g ) : ?>
+								<button type="button" class="<?php echo 0 === $i ? 'is-active' : ''; ?>" onclick="document.getElementById('bs-pdp-main-img').src='<?php echo esc_url( $g ); ?>';this.parentNode.querySelectorAll('button').forEach(function(b){b.classList.remove('is-active')});this.classList.add('is-active');"><img src="<?php echo esc_url( $g ); ?>" alt="" /></button>
+							<?php endforeach; ?>
+						</div>
+					<?php endif; ?>
+					<div class="bs-pdp-main">
+						<?php if ( $gallery ) : ?>
+							<img id="bs-pdp-main-img" src="<?php echo esc_url( $gallery[0] ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" />
+						<?php endif; ?>
+					</div>
 				</div>
-			<?php endif; ?>
-		</div>
+				<div class="bs-pdp-actions">
+					<button type="button" class="bs-btn bs-btn-yellow bs-btn-lg" data-bs-add-product="<?php echo (int) $pid; ?>" data-bs-qty="1">🛒 Add to cart</button>
+					<a href="<?php echo esc_url( $buy_now_url ); ?>" class="bs-btn bs-btn-orange bs-btn-lg">⚡ Buy now</a>
+				</div>
+			</div>
 
-		<div class="bs-pdp-info">
-			<?php if ( $cat ) : ?>
-				<a class="bs-eyebrow" href="<?php echo esc_url( get_term_link( $cat ) ); ?>"><?php echo esc_html( html_entity_decode( $cat->name ) ); ?></a>
-			<?php endif; ?>
-			<h1 class="bs-pdp-title"><?php the_title(); ?></h1>
-			<div class="bs-pcard-rating"><span>★ <?php echo esc_html( $rating ); ?></span> · <?php echo esc_html( $rev_count ); ?> reviews</div>
-
-			<div class="bs-pdp-price">
-				<span class="bs-price-now"><?php echo esc_html( baystore_format_inr( $price ) ); ?></span>
-				<?php if ( $mrp > $price ) : ?>
-					<span class="bs-price-mrp">MRP <?php echo esc_html( baystore_format_inr( $mrp ) ); ?></span>
-					<span class="bs-save-pill">Save <?php echo esc_html( baystore_format_inr( $mrp - $price ) ); ?></span>
+			<div class="bs-pdp-info">
+				<?php if ( $cat ) : ?>
+					<a class="bs-pdp-cat" href="<?php echo esc_url( get_term_link( $cat ) ); ?>">Visit the <?php echo esc_html( html_entity_decode( $cat->name ) ); ?> store</a>
 				<?php endif; ?>
-			</div>
-			<div class="bs-muted bs-small">Inclusive of all taxes · <?php echo $product->is_in_stock() ? 'In stock' : 'Check availability'; ?></div>
+				<h1 class="bs-pdp-title"><?php the_title(); ?></h1>
+				<div class="bs-pcard-rating bs-pdp-rating">
+					<span class="bs-rating-pill"><?php echo esc_html( $rating ); ?> ★</span>
+					<span class="bs-rating-count"><?php echo esc_html( number_format_i18n( (int) $rev_count ) ); ?> ratings &amp; reviews</span>
+					<?php if ( $bought ) : ?>
+						<span class="bs-bought"><?php echo esc_html( $bought ); ?> bought in past month</span>
+					<?php endif; ?>
+				</div>
 
-			<div class="bs-pdp-actions">
-				<button type="button" class="bs-btn bs-btn-primary" data-bs-add-product="<?php echo (int) $pid; ?>" data-bs-qty="1">Add to cart</button>
-				<a href="<?php echo esc_url( $buy_now_url ); ?>" class="bs-btn bs-btn-accent">Buy now</a>
-			</div>
+				<?php if ( $discount > 0 ) : ?>
+					<div class="bs-special">Special price</div>
+				<?php endif; ?>
+				<div class="bs-pdp-price">
+					<span class="bs-price-now"><?php echo esc_html( baystore_format_inr( $price ) ); ?></span>
+					<?php if ( $mrp > $price ) : ?>
+						<span class="bs-price-mrp"><?php echo esc_html( baystore_format_inr( $mrp ) ); ?></span>
+						<span class="bs-price-off"><?php echo (int) $discount; ?>% off</span>
+					<?php endif; ?>
+				</div>
+				<div class="bs-pdp-tax">Inclusive of all taxes</div>
 
-			<button type="button" class="bs-pdp-coupon" data-bs-apply-coupon="<?php echo esc_attr( $coupon_code ); ?>">
-				<span>Extra 10% off with code <strong><?php echo esc_html( $coupon_code ); ?></strong></span>
-				<span class="bs-coupon-apply">Apply</span>
-			</button>
+				<div class="bs-offers">
+					<h3>Available offers</h3>
+					<ul>
+						<li><span class="bs-offer-ico">🏷️</span><span><b>Coupon:</b> Extra 10% off with <b><?php echo esc_html( $coupon_code ); ?></b> — pay just <?php echo esc_html( baystore_format_inr( $coupon_price ) ); ?>. <button type="button" class="bs-link-btn" data-bs-apply-coupon="<?php echo esc_attr( $coupon_code ); ?>">Apply</button></span></li>
+						<li><span class="bs-offer-ico">🚚</span><span><b>Free delivery</b> on orders above ₹<?php echo (int) $free_thresh; ?> (₹49 below that)</span></li>
+						<li><span class="bs-offer-ico">💵</span><span><b>Cash on Delivery</b> — pay by cash or UPI when it arrives</span></li>
+					</ul>
+				</div>
 
-			<div class="bs-pdp-delivery" data-bs-open-pincode>
-				<span>Delivery by <strong data-bs-eta-text>Tomorrow</strong> · <span data-bs-loc-text>Delivering to Mumbai 400001</span></span>
-				<span class="bs-coupon-apply">Change</span>
-			</div>
+				<div class="bs-pdp-meta">
+					<div class="bs-meta-label">Delivery</div>
+					<div>
+						<button type="button" class="bs-pin-box" data-bs-open-pincode>
+							<span>📍 <span data-bs-loc-text>Mumbai 400001</span></span>
+							<b>Change</b>
+						</button>
+						<div class="bs-eta">Delivery by <b data-bs-eta-text>Tomorrow</b> · <?php echo $price >= $free_thresh ? '<span class="bs-green">Free</span>' : '₹49'; ?></div>
+					</div>
 
-			<div class="bs-tiles bs-tiles-sm">
-				<div class="bs-tile bs-tone-0"><strong>Free delivery</strong><span>above ₹<?php echo (int) $free_thresh; ?></span></div>
-				<div class="bs-tile bs-tone-1"><strong>Cash on delivery</strong><span>cash or UPI</span></div>
-				<div class="bs-tile bs-tone-2"><strong>7-day replacement</strong><span>doorstep pickup</span></div>
-			</div>
+					<div class="bs-meta-label">Services</div>
+					<ul class="bs-services">
+						<li>🔄 7 days replacement</li>
+						<li>💵 Cash on Delivery available</li>
+						<li>🛡️ 100% genuine product</li>
+					</ul>
 
-			<div class="bs-pdp-desc">
-				<h2>About this product</h2>
-				<?php echo wp_kses_post( $product->get_short_description() ?: $product->get_description() ); ?>
+					<div class="bs-meta-label">Seller</div>
+					<div><b class="bs-blue">Baystore Retail</b> <span class="bs-rating-pill bs-rating-sm">4.6 ★</span></div>
+				</div>
+
+				<div class="bs-pdp-desc">
+					<h2>Product description</h2>
+					<?php echo wp_kses_post( $product->get_short_description() ?: $product->get_description() ); ?>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<?php
-	$related = $cat ? baystore_products( $cat->slug, 5, array( 'exclude' => array( $pid ) ) ) : array();
-	if ( $related ) :
-		?>
-		<section class="bs-wrap bs-section">
-			<div class="bs-section-head">
-				<h2 class="bs-title">You may also like</h2>
-				<span class="bs-rule"></span>
-			</div>
-			<div class="bs-pgrid">
-				<?php
-				foreach ( array_slice( $related, 0, 4 ) as $rp ) {
-					get_template_part( 'template-parts/product-card', null, array( 'wc_product' => $rp ) );
-				}
-				?>
-			</div>
-		</section>
-	<?php endif; ?>
-
-	<div class="bs-wrap bs-pdp-reviews">
 		<?php
-		if ( comments_open() || get_comments_number() ) {
-			comments_template();
-		}
-		?>
+		$related = $cat ? baystore_products( $cat->slug, 13, array( 'exclude' => array( $pid ) ) ) : array();
+		if ( $related ) :
+			?>
+			<section class="bs-card bs-row">
+				<div class="bs-row-head">
+					<div class="bs-row-title"><h2>Similar products</h2></div>
+					<a href="<?php echo esc_url( get_term_link( $cat ) ); ?>" class="bs-btn bs-btn-blue bs-btn-sm">View all</a>
+				</div>
+				<div class="bs-hscroll">
+					<?php
+					foreach ( array_slice( $related, 0, 12 ) as $rp ) {
+						get_template_part( 'template-parts/product-card', null, array( 'wc_product' => $rp ) );
+					}
+					?>
+				</div>
+			</section>
+		<?php endif; ?>
+
+		<?php if ( comments_open() || get_comments_number() ) : ?>
+			<div class="bs-card bs-pdp-reviews"><?php comments_template(); ?></div>
+		<?php endif; ?>
 	</div>
 	<?php
 endwhile;

@@ -1,6 +1,6 @@
 <?php
 /**
- * Baystore — Homepage Template
+ * Baystore — Homepage (blue & yellow marketplace layout)
  *
  * @package Baystore_Amazon
  */
@@ -10,208 +10,204 @@ get_header();
 $shop_url    = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' );
 $coupon_code = get_theme_mod( 'baystore_coupon_code', 'BAY10' );
 $free_thresh = (int) get_theme_mod( 'baystore_free_shipping_threshold', 499 );
-$hero_title  = get_theme_mod( 'baystore_hero_headline', 'Everyday essentials, thoughtfully picked.' );
-$hero_sub    = get_theme_mod( 'baystore_hero_sub', 'Kitchen helpers, natural superfoods, self-care and small joys for the home — fairly priced and delivered across India.' );
 $depts       = baystore_get_departments();
-$all         = baystore_products( '', 60 );
-$use_wc      = ! empty( $all );
+$all         = baystore_products( '', 100 );
 
-$cat_blurbs = array(
-	'home-kitchen'           => 'Boards, organisers, storage',
-	'aureveda-superfoods'    => 'Seeds, grains, bath bars',
-	'personal-care-wellness' => 'Herbal care & grooming',
-	'electronics-gadgets'    => 'Projectors, audio, lights',
-	'festive-handmade-decor' => 'Artisan pieces & gifting',
-);
+$disc = function ( $p ) {
+	$reg  = (float) $p->get_regular_price();
+	$sale = (float) $p->get_price();
+	return $reg > $sale && $reg > 0 ? ( $reg - $sale ) / $reg : 0;
+};
+$deals = $all;
+usort( $deals, function ( $a, $b ) use ( $disc ) {
+	return $disc( $b ) <=> $disc( $a );
+} );
 
-// Hero mosaic: one image from up to four departments.
-$mosaic = array();
+$by_cat = array();
 foreach ( $depts as $d ) {
-	$img = baystore_cat_image( $d );
-	if ( $img ) {
-		$mosaic[] = array( 'img' => $img, 'term' => $d );
-	}
-	if ( count( $mosaic ) >= 4 ) {
-		break;
-	}
+	$by_cat[ $d->slug ] = baystore_products( $d->slug, 30 );
 }
+$img = function ( $p ) {
+	return get_the_post_thumbnail_url( $p->get_id(), 'woocommerce_thumbnail' ) ?: get_post_meta( $p->get_id(), '_bs_ext_image', true );
+};
+$max_off = function ( $items ) use ( $disc ) {
+	$m = 0;
+	foreach ( $items as $p ) {
+		$m = max( $m, $disc( $p ) );
+	}
+	return (int) round( $m * 100 );
+};
+
+$slides = array(
+	array( 'slug' => 'home-kitchen', 'eyebrow' => 'Home & Kitchen Fest', 'title' => 'Smart kitchen & storage essentials', 'tone' => 'blue' ),
+	array( 'slug' => 'aureveda-superfoods', 'eyebrow' => 'Healthy Living Days', 'title' => 'Superfoods, seeds & herbal bath bars', 'tone' => 'yellow' ),
+	array( 'slug' => 'electronics-gadgets', 'eyebrow' => 'Gadget Bonanza', 'title' => 'Projectors, speakers & smart lights', 'tone' => 'navy' ),
+);
 ?>
 
 <main class="bs-home">
+	<div class="bs-wrap">
 
-	<!-- Category bubbles -->
-	<?php if ( $depts ) : ?>
-	<section class="bs-bubbles">
-		<a href="<?php echo esc_url( $shop_url ); ?>" class="bs-bubble">
-			<span class="bs-bubble-ring"><span class="bs-bubble-img bs-bubble-new">New</span></span>
-			<span class="bs-bubble-label">New in</span>
-		</a>
-		<?php foreach ( $depts as $d ) : ?>
-			<a href="<?php echo esc_url( get_term_link( $d ) ); ?>" class="bs-bubble">
-				<span class="bs-bubble-ring"><span class="bs-bubble-img"><img src="<?php echo esc_url( baystore_cat_image( $d ) ); ?>" alt="" loading="lazy" /></span></span>
-				<span class="bs-bubble-label"><?php echo esc_html( baystore_short_cat_name( $d->name ) ); ?></span>
+		<!-- Category strip -->
+		<?php if ( $depts ) : ?>
+		<section class="bs-card bs-catstrip">
+			<a href="<?php echo esc_url( add_query_arg( 'orderby', 'popularity', $shop_url ) ); ?>" class="bs-catstrip-item">
+				<span class="bs-catstrip-img bs-catstrip-deal">%</span>
+				<span>Top Offers</span>
 			</a>
-		<?php endforeach; ?>
-	</section>
-	<?php endif; ?>
-
-	<!-- Hero -->
-	<section class="bs-hero">
-		<div class="bs-hero-copy">
-			<div class="bs-eyebrow">Baystore · Shipped across India</div>
-			<h1 class="bs-hero-h1"><?php echo esc_html( $hero_title ); ?></h1>
-			<p class="bs-hero-lead"><?php echo esc_html( $hero_sub ); ?></p>
-			<div class="bs-hero-cta">
-				<a href="<?php echo esc_url( $shop_url ); ?>" class="bs-btn bs-btn-primary">Shop all</a>
-				<a href="<?php echo esc_url( add_query_arg( 'orderby', 'popularity', $shop_url ) ); ?>" class="bs-btn bs-btn-ghost">Best sellers</a>
-			</div>
-			<ul class="bs-hero-points">
-				<li>Free delivery above ₹<?php echo (int) $free_thresh; ?></li>
-				<li>Cash on delivery &amp; UPI</li>
-				<li>7-day easy replacement</li>
-			</ul>
-		</div>
-		<div class="bs-hero-mosaic">
-			<?php foreach ( $mosaic as $i => $m ) : ?>
-				<a href="<?php echo esc_url( get_term_link( $m['term'] ) ); ?>" class="bs-mosaic-tile bs-tone-<?php echo (int) $i; ?>">
-					<img src="<?php echo esc_url( $m['img'] ); ?>" alt="" />
-					<span><?php echo esc_html( baystore_short_cat_name( $m['term']->name ) ); ?> →</span>
+			<?php foreach ( $depts as $d ) : ?>
+				<a href="<?php echo esc_url( get_term_link( $d ) ); ?>" class="bs-catstrip-item">
+					<span class="bs-catstrip-img"><img src="<?php echo esc_url( baystore_cat_image( $d ) ); ?>" alt="" /></span>
+					<span><?php echo esc_html( baystore_short_cat_name( $d->name ) ); ?></span>
 				</a>
 			<?php endforeach; ?>
-		</div>
-	</section>
+			<a href="<?php echo esc_url( add_query_arg( 'orderby', 'date', $shop_url ) ); ?>" class="bs-catstrip-item">
+				<span class="bs-catstrip-img bs-catstrip-new">NEW</span>
+				<span>New Arrivals</span>
+			</a>
+		</section>
+		<?php endif; ?>
 
-	<!-- Promise tiles -->
-	<section class="bs-wrap">
-		<div class="bs-tiles">
-			<div class="bs-tile bs-tone-0"><strong>Free delivery</strong><span>on orders above ₹<?php echo (int) $free_thresh; ?></span></div>
-			<div class="bs-tile bs-tone-1"><strong>Cash on delivery</strong><span>pay by cash or UPI at your door</span></div>
-			<div class="bs-tile bs-tone-2"><strong>7-day replacement</strong><span>easy doorstep pickup</span></div>
-			<button type="button" class="bs-tile bs-tone-3" data-bs-apply-coupon="<?php echo esc_attr( $coupon_code ); ?>"><strong>Extra 10% off</strong><span>tap to apply code <?php echo esc_html( $coupon_code ); ?></span></button>
-		</div>
-	</section>
-
-	<!-- Intro -->
-	<section class="bs-wrap bs-intro">
-		<h2 class="bs-title-xl">Useful things for every home</h2>
-		<span class="bs-rule"></span>
-		<p>From stainless steel chopping boards and fridge organisers to raw chia seeds, herbal bath bars and galaxy projectors — a small, honest catalogue of things people actually use, priced in rupees and delivered to your door.</p>
-	</section>
-
-	<!-- Shop by category -->
-	<?php if ( $depts ) : ?>
-	<section class="bs-wrap bs-section">
-		<div class="bs-section-head">
-			<h2 class="bs-title">Shop by category</h2>
-			<span class="bs-rule"></span>
-			<p>Five aisles, one easy checkout.</p>
-		</div>
-		<div class="bs-cat-grid">
-			<?php foreach ( $depts as $d ) : ?>
-				<a href="<?php echo esc_url( get_term_link( $d ) ); ?>" class="bs-cat-card">
-					<span class="bs-cat-img"><img src="<?php echo esc_url( baystore_cat_image( $d ) ); ?>" alt="" loading="lazy" /></span>
-					<strong><?php echo esc_html( baystore_short_cat_name( $d->name ) ); ?></strong>
-					<em><?php echo esc_html( isset( $cat_blurbs[ $d->slug ] ) ? $cat_blurbs[ $d->slug ] : $d->count . ' products' ); ?></em>
-				</a>
-			<?php endforeach; ?>
-		</div>
-	</section>
-	<?php endif; ?>
-
-	<!-- The Edit (tabbed) -->
-	<?php if ( $use_wc ) : ?>
-	<section class="bs-wrap bs-section">
-		<div class="bs-section-head">
-			<h2 class="bs-title">The Edit</h2>
-			<span class="bs-rule"></span>
-			<p>Customer favourites, by aisle.</p>
-		</div>
-		<div class="bs-tabs" role="tablist">
-			<button type="button" class="bs-tab is-active" data-bs-tab="all">Popular</button>
-			<?php foreach ( $depts as $d ) : ?>
-				<button type="button" class="bs-tab" data-bs-tab="<?php echo esc_attr( $d->slug ); ?>"><?php echo esc_html( baystore_short_cat_name( $d->name ) ); ?></button>
-			<?php endforeach; ?>
-		</div>
-
-		<div class="bs-tab-panel is-active" data-bs-panel="all">
-			<div class="bs-pgrid">
+		<!-- Hero carousel -->
+		<section class="bs-hero-carousel">
+			<?php
+			$first = true;
+			foreach ( $slides as $s ) :
+				$term  = get_term_by( 'slug', $s['slug'], 'product_cat' );
+				$items = isset( $by_cat[ $s['slug'] ] ) ? array_slice( $by_cat[ $s['slug'] ], 0, 3 ) : array();
+				if ( ! $term ) {
+					continue;
+				}
+				?>
+				<div class="bs-hero-slide bs-hero-<?php echo esc_attr( $s['tone'] ); ?> <?php echo $first ? 'is-active' : ''; ?>">
+					<div class="bs-hero-copy">
+						<span class="bs-hero-eyebrow"><?php echo esc_html( $s['eyebrow'] ); ?></span>
+						<h2 class="bs-hero-title"><?php echo esc_html( $s['title'] ); ?></h2>
+						<p class="bs-hero-off">Up to <b><?php echo (int) $max_off( $by_cat[ $s['slug'] ] ); ?>% off</b> + extra 10% with <?php echo esc_html( $coupon_code ); ?></p>
+						<a href="<?php echo esc_url( get_term_link( $term ) ); ?>" class="bs-btn bs-btn-yellow">Shop now</a>
+					</div>
+					<div class="bs-hero-products">
+						<?php foreach ( $items as $p ) : ?>
+							<a href="<?php echo esc_url( get_permalink( $p->get_id() ) ); ?>" class="bs-hero-prod">
+								<img src="<?php echo esc_url( $img( $p ) ); ?>" alt="" />
+								<span>From <?php echo esc_html( baystore_format_inr( $p->get_price() ) ); ?></span>
+							</a>
+						<?php endforeach; ?>
+					</div>
+				</div>
 				<?php
-				foreach ( baystore_products( '', 8, array( 'orderby' => 'rand' ) ) as $prod ) {
-					get_template_part( 'template-parts/product-card', null, array( 'wc_product' => $prod ) );
+				$first = false;
+			endforeach;
+			?>
+			<button type="button" id="bs-hero-prev" class="bs-hero-arrow bs-hero-prev" aria-label="Previous slide">‹</button>
+			<button type="button" id="bs-hero-next" class="bs-hero-arrow bs-hero-next" aria-label="Next slide">›</button>
+		</section>
+
+		<!-- Quad cards -->
+		<section class="bs-quad-row">
+			<?php foreach ( array_slice( $depts, 0, 3 ) as $d ) : ?>
+				<div class="bs-card bs-quad">
+					<h3><?php echo esc_html( html_entity_decode( $d->name ) ); ?> | Up to <?php echo (int) $max_off( $by_cat[ $d->slug ] ); ?>% off</h3>
+					<div class="bs-quad-grid">
+						<?php
+						$seen = array();
+						$pick = array();
+						foreach ( $by_cat[ $d->slug ] as $cand ) {
+							$key = strtolower( wp_trim_words( $cand->get_name(), 3, '' ) );
+							if ( isset( $seen[ $key ] ) ) {
+								continue;
+							}
+							$seen[ $key ] = true;
+							$pick[]       = $cand;
+						}
+						$pick = array_slice( array_merge( $pick, $by_cat[ $d->slug ] ), 0, 4 );
+						?>
+						<?php foreach ( array_unique( $pick, SORT_REGULAR ) as $p ) : ?>
+							<a href="<?php echo esc_url( get_permalink( $p->get_id() ) ); ?>">
+								<span class="bs-quad-img"><img src="<?php echo esc_url( $img( $p ) ); ?>" alt="" loading="lazy" /></span>
+								<span class="bs-quad-name"><?php echo esc_html( wp_trim_words( $p->get_name(), 4, '…' ) ); ?></span>
+							</a>
+						<?php endforeach; ?>
+					</div>
+					<a href="<?php echo esc_url( get_term_link( $d ) ); ?>" class="bs-link">See all offers</a>
+				</div>
+			<?php endforeach; ?>
+			<div class="bs-card bs-quad bs-quad-promo">
+				<span class="bs-promo-tag">Limited period</span>
+				<h3>Extra 10% off on your order</h3>
+				<p>Use code <b><?php echo esc_html( $coupon_code ); ?></b>. Works with Cash on Delivery.</p>
+				<button type="button" class="bs-coupon-box" data-bs-apply-coupon="<?php echo esc_attr( $coupon_code ); ?>">
+					<span><?php echo esc_html( $coupon_code ); ?></span><em>Tap to apply</em>
+				</button>
+				<ul class="bs-promo-list">
+					<li>✓ Free delivery above ₹<?php echo (int) $free_thresh; ?></li>
+					<li>✓ Cash on Delivery available</li>
+					<li>✓ 7-day easy replacement</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Deals of the day -->
+		<?php if ( $deals ) : ?>
+		<section class="bs-card bs-row">
+			<div class="bs-row-head">
+				<div class="bs-row-title">
+					<h2>Deals of the Day</h2>
+					<span class="bs-timer">⏱ <span id="bs-countdown-timer">Ends in 04:18:42</span></span>
+				</div>
+				<a href="<?php echo esc_url( add_query_arg( 'orderby', 'popularity', $shop_url ) ); ?>" class="bs-btn bs-btn-blue bs-btn-sm">View all</a>
+			</div>
+			<div class="bs-hscroll">
+				<?php
+				foreach ( array_slice( $deals, 0, 12 ) as $p ) {
+					get_template_part( 'template-parts/product-card', null, array( 'wc_product' => $p ) );
 				}
 				?>
 			</div>
-		</div>
-		<?php foreach ( $depts as $d ) : ?>
-			<div class="bs-tab-panel" data-bs-panel="<?php echo esc_attr( $d->slug ); ?>">
-				<div class="bs-pgrid">
-					<?php
-					foreach ( baystore_products( $d->slug, 8 ) as $prod ) {
-						get_template_part( 'template-parts/product-card', null, array( 'wc_product' => $prod ) );
-					}
-					?>
-				</div>
-			</div>
-		<?php endforeach; ?>
-		<div class="bs-center"><a href="<?php echo esc_url( $shop_url ); ?>" class="bs-btn bs-btn-ghost">View all products</a></div>
-	</section>
-	<?php endif; ?>
+		</section>
+		<?php endif; ?>
 
-	<!-- Offer band -->
-	<section class="bs-wrap">
-		<div class="bs-offer-band">
+		<!-- Offer banner -->
+		<section class="bs-offer-banner">
 			<div>
-				<div class="bs-eyebrow" style="color:#FCE3D8;">This week</div>
-				<h2>Take an extra 10% off your first order</h2>
-				<p>Use code <strong><?php echo esc_html( $coupon_code ); ?></strong> at checkout. Works with cash on delivery.</p>
+				<strong>Pay on Delivery</strong> across India &nbsp;·&nbsp; <strong>Free delivery</strong> on orders above ₹<?php echo (int) $free_thresh; ?> &nbsp;·&nbsp; Extra <strong>10% off</strong> with <?php echo esc_html( $coupon_code ); ?>
 			</div>
-			<button type="button" class="bs-btn bs-btn-light" data-bs-apply-coupon="<?php echo esc_attr( $coupon_code ); ?>">Apply <?php echo esc_html( $coupon_code ); ?></button>
-		</div>
-	</section>
+			<a href="<?php echo esc_url( $shop_url ); ?>" class="bs-btn bs-btn-blue bs-btn-sm">Shop now</a>
+		</section>
 
-	<!-- Department shelves -->
-	<?php
-	if ( $use_wc ) :
-		foreach ( array_slice( $depts, 0, 3 ) as $d ) :
-			$items = baystore_products( $d->slug, 4, array( 'orderby' => 'date', 'order' => 'DESC' ) );
-			if ( ! $items ) {
+		<!-- Category rows -->
+		<?php foreach ( $depts as $i => $d ) : ?>
+			<?php
+			if ( empty( $by_cat[ $d->slug ] ) ) {
 				continue;
 			}
 			?>
-			<section class="bs-wrap bs-section">
-				<div class="bs-shelf-row">
-					<div>
-						<h2 class="bs-title-left"><?php echo esc_html( html_entity_decode( $d->name ) ); ?></h2>
-						<p class="bs-muted"><?php echo esc_html( isset( $cat_blurbs[ $d->slug ] ) ? $cat_blurbs[ $d->slug ] : '' ); ?></p>
+			<section class="bs-card bs-row">
+				<div class="bs-row-head">
+					<div class="bs-row-title">
+						<h2>Best of <?php echo esc_html( html_entity_decode( $d->name ) ); ?></h2>
+						<span class="bs-row-sub"><?php echo (int) $d->count; ?> products · up to <?php echo (int) $max_off( $by_cat[ $d->slug ] ); ?>% off</span>
 					</div>
-					<a href="<?php echo esc_url( get_term_link( $d ) ); ?>" class="bs-link-arrow">Shop <?php echo esc_html( baystore_short_cat_name( $d->name ) ); ?> →</a>
+					<a href="<?php echo esc_url( get_term_link( $d ) ); ?>" class="bs-btn bs-btn-blue bs-btn-sm">View all</a>
 				</div>
-				<div class="bs-pgrid">
+				<div class="bs-hscroll">
 					<?php
-					foreach ( $items as $prod ) {
-						get_template_part( 'template-parts/product-card', null, array( 'wc_product' => $prod ) );
+					foreach ( $by_cat[ $d->slug ] as $p ) {
+						get_template_part( 'template-parts/product-card', null, array( 'wc_product' => $p ) );
 					}
 					?>
 				</div>
 			</section>
-			<?php
-		endforeach;
-	endif;
-	?>
+		<?php endforeach; ?>
 
-	<!-- Why Baystore -->
-	<section class="bs-wrap bs-section">
-		<div class="bs-section-head">
-			<h2 class="bs-title">Why shop with us</h2>
-			<span class="bs-rule"></span>
-		</div>
-		<div class="bs-tiles bs-tiles-why">
-			<div class="bs-tile bs-tone-1"><strong>Hand-picked range</strong><span>Every product checked before it is listed</span></div>
-			<div class="bs-tile bs-tone-2"><strong>Priced in rupees</strong><span>Clear MRP and real discounts</span></div>
-			<div class="bs-tile bs-tone-0"><strong>Pan-India shipping</strong><span>Metro cities to small towns</span></div>
-			<div class="bs-tile bs-tone-3"><strong>Real people to help</strong><span>Ask us before you buy</span></div>
-		</div>
-	</section>
+		<!-- Trust strip -->
+		<section class="bs-card bs-trust">
+			<div><b>🚚 Free delivery</b><span>On orders above ₹<?php echo (int) $free_thresh; ?></span></div>
+			<div><b>💵 Cash on Delivery</b><span>Pay by cash or UPI at your door</span></div>
+			<div><b>🔄 7-day replacement</b><span>Easy doorstep pickup</span></div>
+			<div><b>🛡️ Genuine products</b><span>Checked before dispatch</span></div>
+		</section>
+	</div>
 </main>
 
 <?php
