@@ -360,7 +360,9 @@
           addBtn.disabled = false;
           if (res.success) {
             renderCartPayload(res.data);
-            showToast('✓ Added to Baystore Cart');
+            var cartBd = document.getElementById('bs-cart-backdrop');
+            if (cartBd) cartBd.classList.add('is-open');
+            showToast('✓ Added to cart');
           }
         })
         .catch(function () {
