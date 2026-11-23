@@ -53,7 +53,7 @@ $hello       = $user->exists() ? 'Hello, ' . $user->display_name : 'Hello, sign 
 							<option value="<?php echo esc_attr( $cat->slug ); ?>"><?php echo esc_html( baystore_short_cat_name( $cat->name ) ); ?></option>
 						<?php endforeach; ?>
 					</select>
-					<input type="search" id="bs-search-input" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="Search for products, brands and more" class="bs-search-input" autocomplete="off" />
+					<input type="search" id="bs-search-input" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="What are you looking for today?" class="bs-search-input" autocomplete="off" />
 					<button type="submit" class="bs-search-submit" aria-label="Search">
 						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
 					</button>
@@ -88,9 +88,9 @@ $hello       = $user->exists() ? 'Hello, ' . $user->display_name : 'Hello, sign 
 				<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
 				All
 			</a>
-			<a href="<?php echo esc_url( add_query_arg( 'orderby', 'popularity', $shop_url ) ); ?>" class="bs-catbar-deal">Today's Deals</a>
+			<a href="<?php echo esc_url( add_query_arg( 'orderby', 'popularity', $shop_url ) ); ?>" class="bs-catbar-deal">Price drops</a>
 			<?php foreach ( $dept_cats as $cat ) : ?>
-				<a href="<?php echo esc_url( get_term_link( $cat ) ); ?>"><?php echo esc_html( html_entity_decode( $cat->name ) ); ?></a>
+				<a href="<?php echo esc_url( get_term_link( $cat ) ); ?>"><?php echo esc_html( baystore_short_cat_name( $cat->name ) ); ?></a>
 			<?php endforeach; ?>
 			<span class="bs-catbar-note bs-hide-sm">Free delivery above ₹<?php echo (int) $free_thresh; ?> · Extra 10% off: <b><?php echo esc_html( $coupon_code ); ?></b></span>
 		</div>
@@ -105,11 +105,11 @@ $hello       = $user->exists() ? 'Hello, ' . $user->display_name : 'Hello, sign 
 		</div>
 		<div class="bs-mega-links">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
-			<a href="<?php echo esc_url( add_query_arg( 'orderby', 'popularity', $shop_url ) ); ?>">Today's Deals</a>
+			<a href="<?php echo esc_url( add_query_arg( 'orderby', 'popularity', $shop_url ) ); ?>">Price drops</a>
 			<a href="<?php echo esc_url( $shop_url ); ?>">All Products</a>
 			<div class="bs-mega-label">Shop by category</div>
 			<?php foreach ( $dept_cats as $cat ) : ?>
-				<a href="<?php echo esc_url( get_term_link( $cat ) ); ?>"><?php echo esc_html( html_entity_decode( $cat->name ) ); ?></a>
+				<a href="<?php echo esc_url( get_term_link( $cat ) ); ?>"><?php echo esc_html( baystore_short_cat_name( $cat->name ) ); ?></a>
 			<?php endforeach; ?>
 			<div class="bs-mega-label">Your account</div>
 			<a href="<?php echo esc_url( $account_url ); ?>">Account &amp; Orders</a>

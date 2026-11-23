@@ -22,14 +22,14 @@ $free_thresh  = (int) get_theme_mod( 'baystore_free_shipping_threshold', 499 );
 		<div>🚚 Free delivery above ₹<?php echo (int) $free_thresh; ?></div>
 		<div>💵 Pay on delivery — cash or UPI</div>
 		<div>🔄 7-day easy replacement</div>
-		<div>🤝 Real people, real help</div>
+		<div>🤝 Ask us anything before you buy</div>
 	</div>
 	
 	<div class="bs-footer-main">
 		<div class="bs-footer-cols">
 			<div class="bs-footer-brand">
 				<span class="bs-logo-word">baystore<em>.in</em></span>
-				<p>Everyday essentials for Indian homes — kitchen, superfoods, self-care, gadgets and handmade decor, delivered across India.</p>
+				<p>A small online shop for the everyday things Indian homes actually use — kitchen fixes, pantry staples, self-care, room glow-ups and festive decor. Pay when it arrives, anywhere in India.</p>
 				<p class="bs-footer-pay">Cash on delivery — pay by cash or UPI at your door</p>
 			</div>
 			<div>
@@ -37,7 +37,7 @@ $free_thresh  = (int) get_theme_mod( 'baystore_free_shipping_threshold', 499 );
 				<ul>
 					<li><a href="<?php echo esc_url( $shop_url ); ?>">All products</a></li>
 					<?php foreach ( baystore_get_departments() as $d ) : ?>
-						<li><a href="<?php echo esc_url( get_term_link( $d ) ); ?>"><?php echo esc_html( html_entity_decode( $d->name ) ); ?></a></li>
+						<li><a href="<?php echo esc_url( get_term_link( $d ) ); ?>"><?php echo esc_html( baystore_short_cat_name( $d->name ) ); ?></a></li>
 					<?php endforeach; ?>
 				</ul>
 			</div>

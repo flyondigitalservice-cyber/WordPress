@@ -66,7 +66,7 @@ while ( have_posts() ) :
 
 			<div class="bs-pdp-info">
 				<?php if ( $cat ) : ?>
-					<a class="bs-pdp-cat" href="<?php echo esc_url( get_term_link( $cat ) ); ?>">Visit the <?php echo esc_html( html_entity_decode( $cat->name ) ); ?> store</a>
+					<a class="bs-pdp-cat" href="<?php echo esc_url( get_term_link( $cat ) ); ?>">From our <?php echo esc_html( baystore_short_cat_name( $cat->name ) ); ?> aisle →</a>
 				<?php endif; ?>
 				<h1 class="bs-pdp-title"><?php the_title(); ?></h1>
 				<div class="bs-pcard-rating bs-pdp-rating">
@@ -79,7 +79,7 @@ while ( have_posts() ) :
 				</div>
 
 				<?php if ( $discount > 0 ) : ?>
-					<div class="bs-special"><span>Bay Deal</span> Limited-time price</div>
+					<div class="bs-special"><span>Bay price</span> Lower than MRP</div>
 				<?php endif; ?>
 				<div class="bs-pdp-price">
 					<span class="bs-price-now"><?php echo esc_html( baystore_format_inr( $price ) ); ?></span>
@@ -116,7 +116,7 @@ while ( have_posts() ) :
 					<ul class="bs-services">
 						<li>🔄 7 days replacement</li>
 						<li>💵 Cash on Delivery available</li>
-						<li>🛡️ 100% genuine product</li>
+						<li>🤝 Questions? Ask us before you order</li>
 					</ul>
 
 					<div class="bs-meta-label">Seller</div>
@@ -124,7 +124,7 @@ while ( have_posts() ) :
 				</div>
 
 				<div class="bs-pdp-desc">
-					<h2>Product description</h2>
+					<h2>About this product</h2>
 					<?php echo wp_kses_post( $product->get_short_description() ?: $product->get_description() ); ?>
 				</div>
 			</div>
@@ -136,7 +136,7 @@ while ( have_posts() ) :
 			?>
 			<section class="bs-card bs-row">
 				<div class="bs-row-head">
-					<div class="bs-row-title"><h2>Similar products</h2></div>
+					<div class="bs-row-title"><h2>More from this aisle</h2></div>
 					<a href="<?php echo esc_url( get_term_link( $cat ) ); ?>" class="bs-btn bs-btn-blue bs-btn-sm">View all</a>
 				</div>
 				<div class="bs-hscroll">

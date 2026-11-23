@@ -33,10 +33,10 @@ $sorts    = array(
 		<h3 class="bs-filters-title">Filters</h3>
 
 		<div class="bs-filter">
-			<h4>Categories</h4>
-			<a href="<?php echo esc_url( $shop_url ); ?>" class="<?php echo $current ? '' : 'is-active'; ?>">All products</a>
+			<h4>Aisles</h4>
+			<a href="<?php echo esc_url( $shop_url ); ?>" class="<?php echo $current ? '' : 'is-active'; ?>">Everything</a>
 			<?php foreach ( baystore_get_departments() as $c ) : ?>
-				<a href="<?php echo esc_url( get_term_link( $c ) ); ?>" class="<?php echo ( $current && $current->term_id === $c->term_id ) ? 'is-active' : ''; ?>"><?php echo esc_html( html_entity_decode( $c->name ) ); ?> <em>(<?php echo (int) $c->count; ?>)</em></a>
+				<a href="<?php echo esc_url( get_term_link( $c ) ); ?>" class="<?php echo ( $current && $current->term_id === $c->term_id ) ? 'is-active' : ''; ?>"><?php echo esc_html( baystore_short_cat_name( $c->name ) ); ?> <em>(<?php echo (int) $c->count; ?>)</em></a>
 			<?php endforeach; ?>
 		</div>
 
@@ -50,16 +50,18 @@ $sorts    = array(
 
 		<div class="bs-filter">
 			<h4>Offers</h4>
-			<p>✓ Free delivery above ₹499</p>
-			<p>✓ Cash on Delivery</p>
-			<p>✓ Extra 10% off: BAY10</p>
+			<p>✓ Free delivery from ₹499</p>
+			<p>✓ Pay when it arrives</p>
+			<p>✓ Extra 10% off with BAY10</p>
 		</div>
 	</aside>
 
 	<section class="bs-card bs-results">
 		<?php woocommerce_breadcrumb(); ?>
 		<div class="bs-results-head">
-			<h1><?php woocommerce_page_title(); ?> <small><?php woocommerce_result_count(); ?></small></h1>
+			<h1><?php echo is_search() ? esc_html( sprintf( 'Results for “%s”', get_search_query() ) ) : ( $current ? esc_html( baystore_short_cat_name( $current->name ) ) : 'Everything at Baystore' ); ?> <small><?php woocommerce_result_count(); ?></small></h1>
+			<?php $aisle = $current ? baystore_aisle( $current->slug ) : null; ?>
+			<p class="bs-results-line"><?php echo esc_html( $aisle ? $aisle['line'] : 'Useful everyday finds for Indian homes — five aisles, one easy checkout, and you pay when it arrives.' ); ?></p>
 		</div>
 		<div class="bs-sortbar">
 			<span>Sort by</span>

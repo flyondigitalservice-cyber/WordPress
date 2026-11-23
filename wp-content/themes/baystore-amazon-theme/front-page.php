@@ -39,10 +39,18 @@ $max_off = function ( $items ) use ( $disc ) {
 };
 
 $slides = array(
-	array( 'slug' => 'home-kitchen', 'eyebrow' => 'Home & Kitchen Fest', 'title' => 'Smart kitchen & storage essentials', 'tone' => 'blue' ),
-	array( 'slug' => 'aureveda-superfoods', 'eyebrow' => 'Healthy Living Days', 'title' => 'Superfoods, seeds & herbal bath bars', 'tone' => 'yellow' ),
-	array( 'slug' => 'electronics-gadgets', 'eyebrow' => 'Gadget Bonanza', 'title' => 'Projectors, speakers & smart lights', 'tone' => 'navy' ),
+	array( 'slug' => 'home-kitchen', 'eyebrow' => 'For your kitchen', 'title' => 'The little kitchen fixes you keep meaning to buy', 'tone' => 'blue' ),
+	array( 'slug' => 'aureveda-superfoods', 'eyebrow' => 'For your pantry & bath', 'title' => 'Seeds for breakfast, herbal bars for bath time', 'tone' => 'yellow' ),
+	array( 'slug' => 'electronics-gadgets', 'eyebrow' => 'For your room', 'title' => 'Turn a plain room into the one everyone hangs out in', 'tone' => 'navy' ),
 );
+$min_price = function ( $items ) {
+	$m = null;
+	foreach ( $items as $p ) {
+		$v = (float) $p->get_price();
+		$m = null === $m ? $v : min( $m, $v );
+	}
+	return (int) $m;
+};
 ?>
 
 <main class="bs-home">
@@ -53,7 +61,7 @@ $slides = array(
 		<section class="bs-card bs-catstrip">
 			<a href="<?php echo esc_url( add_query_arg( 'orderby', 'popularity', $shop_url ) ); ?>" class="bs-catstrip-item">
 				<span class="bs-catstrip-img bs-catstrip-deal">%</span>
-				<span>Top Offers</span>
+				<span>Price drops</span>
 			</a>
 			<?php foreach ( $depts as $d ) : ?>
 				<a href="<?php echo esc_url( get_term_link( $d ) ); ?>" class="bs-catstrip-item">
@@ -83,8 +91,9 @@ $slides = array(
 					<div class="bs-hero-copy">
 						<span class="bs-hero-eyebrow"><?php echo esc_html( $s['eyebrow'] ); ?></span>
 						<h2 class="bs-hero-title"><?php echo esc_html( $s['title'] ); ?></h2>
-						<p class="bs-hero-off">Up to <b><?php echo (int) $max_off( $by_cat[ $s['slug'] ] ); ?>% off</b> + extra 10% with <?php echo esc_html( $coupon_code ); ?></p>
-						<a href="<?php echo esc_url( get_term_link( $term ) ); ?>" class="bs-btn bs-btn-yellow">Shop now</a>
+						<p class="bs-hero-line"><?php echo esc_html( baystore_aisle( $s['slug'] )['line'] ); ?></p>
+						<p class="bs-hero-off">From <b><?php echo esc_html( baystore_format_inr( $min_price( $by_cat[ $s['slug'] ] ) ) ); ?></b> · pay when it arrives</p>
+						<a href="<?php echo esc_url( get_term_link( $term ) ); ?>" class="bs-btn bs-btn-yellow">Take a look</a>
 					</div>
 					<div class="bs-hero-products">
 						<?php foreach ( $items as $p ) : ?>
@@ -103,11 +112,28 @@ $slides = array(
 			<button type="button" id="bs-hero-next" class="bs-hero-arrow bs-hero-next" aria-label="Next slide">›</button>
 		</section>
 
+		<!-- Hello / brand voice -->
+		<section class="bs-card bs-hello">
+			<div class="bs-hello-copy">
+				<span class="bs-hello-wave" aria-hidden="true">👋</span>
+				<h2>Hi, we’re Baystore.</h2>
+				<p>We’re a small online shop for the everyday things Indian homes actually use. Not everything under the sun — just useful finds for five corners of your home: the kitchen, the pantry, your self-care shelf, your room, and the festive box in the loft.</p>
+				<p>Everything is priced in rupees with the MRP shown right next to it, you can pay when it reaches your door, and if something isn’t right we’ll replace it within 7 days.</p>
+			</div>
+			<ul class="bs-hello-points">
+				<li><b>Pay when it arrives</b><span>Cash or UPI at your door, anywhere in India.</span></li>
+				<li><b>Honest prices</b><span>Our price and the MRP side by side. No surprises at checkout.</span></li>
+				<li><b>Ask us first</b><span>Not sure it’s right for you? Message us before you order.</span></li>
+			</ul>
+		</section>
+
 		<!-- Quad cards -->
 		<section class="bs-quad-row">
 			<?php foreach ( array_slice( $depts, 0, 3 ) as $d ) : ?>
 				<div class="bs-card bs-quad">
-					<h3><?php echo esc_html( html_entity_decode( $d->name ) ); ?> | Up to <?php echo (int) $max_off( $by_cat[ $d->slug ] ); ?>% off</h3>
+					<?php $aisle = baystore_aisle( $d->slug ); ?>
+					<h3><?php echo esc_html( $aisle ? $aisle['quad'] : html_entity_decode( $d->name ) ); ?></h3>
+					<p class="bs-quad-sub"><?php echo esc_html( baystore_short_cat_name( $d->name ) ); ?> · from <?php echo esc_html( baystore_format_inr( $min_price( $by_cat[ $d->slug ] ) ) ); ?></p>
 					<div class="bs-quad-grid">
 						<?php
 						$seen = array();
@@ -129,19 +155,19 @@ $slides = array(
 							</a>
 						<?php endforeach; ?>
 					</div>
-					<a href="<?php echo esc_url( get_term_link( $d ) ); ?>" class="bs-link">See all offers</a>
+					<a href="<?php echo esc_url( get_term_link( $d ) ); ?>" class="bs-link">Browse the aisle →</a>
 				</div>
 			<?php endforeach; ?>
 			<div class="bs-card bs-quad bs-quad-promo">
-				<span class="bs-promo-tag">Limited period</span>
-				<h3>Extra 10% off on your order</h3>
-				<p>Use code <b><?php echo esc_html( $coupon_code ); ?></b>. Works with Cash on Delivery.</p>
+				<span class="bs-promo-tag">A small welcome</span>
+				<h3>Take an extra 10% off</h3>
+				<p>Use code <b><?php echo esc_html( $coupon_code ); ?></b> at checkout. Yes, it works with Cash on Delivery too.</p>
 				<button type="button" class="bs-coupon-box" data-bs-apply-coupon="<?php echo esc_attr( $coupon_code ); ?>">
 					<span><?php echo esc_html( $coupon_code ); ?></span><em>Tap to apply</em>
 				</button>
 				<ul class="bs-promo-list">
 					<li>✓ Free delivery above ₹<?php echo (int) $free_thresh; ?></li>
-					<li>✓ Cash on Delivery available</li>
+					<li>✓ Pay cash or UPI when it arrives</li>
 					<li>✓ 7-day easy replacement</li>
 				</ul>
 			</div>
@@ -152,8 +178,8 @@ $slides = array(
 		<section class="bs-card bs-row">
 			<div class="bs-row-head">
 				<div class="bs-row-title">
-					<h2>Bay Deals of the Day</h2>
-					<span class="bs-timer">⏱ <span id="bs-countdown-timer">Ends in 04:18:42</span></span>
+					<h2>Biggest price drops</h2>
+					<span class="bs-row-sub">Sorted by how much you save against MRP.</span>
 				</div>
 				<a href="<?php echo esc_url( add_query_arg( 'orderby', 'popularity', $shop_url ) ); ?>" class="bs-btn bs-btn-blue bs-btn-sm">View all</a>
 			</div>
@@ -170,9 +196,9 @@ $slides = array(
 		<!-- Offer banner -->
 		<section class="bs-offer-banner">
 			<div>
-				<strong>Pay on Delivery</strong> across India &nbsp;·&nbsp; <strong>Free delivery</strong> on orders above ₹<?php echo (int) $free_thresh; ?> &nbsp;·&nbsp; Extra <strong>10% off</strong> with <?php echo esc_html( $coupon_code ); ?>
+				<strong>Pay when it arrives.</strong> Free delivery from ₹<?php echo (int) $free_thresh; ?> (₹49 below that). New here? Take 10% off with <strong><?php echo esc_html( $coupon_code ); ?></strong>.
 			</div>
-			<a href="<?php echo esc_url( $shop_url ); ?>" class="bs-btn bs-btn-blue bs-btn-sm">Shop now</a>
+			<a href="<?php echo esc_url( $shop_url ); ?>" class="bs-btn bs-btn-blue bs-btn-sm">Start shopping</a>
 		</section>
 
 		<!-- Category rows -->
@@ -185,8 +211,9 @@ $slides = array(
 			<section class="bs-card bs-row">
 				<div class="bs-row-head">
 					<div class="bs-row-title">
-						<h2>Top picks in <?php echo esc_html( html_entity_decode( $d->name ) ); ?></h2>
-						<span class="bs-row-sub"><?php echo (int) $d->count; ?> products · up to <?php echo (int) $max_off( $by_cat[ $d->slug ] ); ?>% off</span>
+						<?php $aisle = baystore_aisle( $d->slug ); ?>
+						<h2><?php echo esc_html( baystore_short_cat_name( $d->name ) ); ?></h2>
+						<span class="bs-row-sub"><?php echo esc_html( $aisle ? $aisle['line'] : '' ); ?></span>
 					</div>
 					<a href="<?php echo esc_url( get_term_link( $d ) ); ?>" class="bs-btn bs-btn-blue bs-btn-sm">View all</a>
 				</div>
@@ -202,10 +229,10 @@ $slides = array(
 
 		<!-- Trust strip -->
 		<section class="bs-card bs-trust">
-			<div><b>🚚 Free delivery</b><span>On orders above ₹<?php echo (int) $free_thresh; ?></span></div>
-			<div><b>💵 Cash on Delivery</b><span>Pay by cash or UPI at your door</span></div>
-			<div><b>🔄 7-day replacement</b><span>Easy doorstep pickup</span></div>
-			<div><b>🛡️ Genuine products</b><span>Checked before dispatch</span></div>
+			<div><b>🚚 Free delivery from ₹<?php echo (int) $free_thresh; ?></b><span>Just ₹49 on smaller orders</span></div>
+			<div><b>💵 Pay when it arrives</b><span>Cash or UPI at your door</span></div>
+			<div><b>🔄 Not right? We’ll replace it</b><span>Within 7 days, picked up from your door</span></div>
+			<div><b>🤝 Ask before you buy</b><span>A real person will get back to you</span></div>
 		</section>
 	</div>
 </main>

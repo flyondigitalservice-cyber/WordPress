@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BAYSTORE_THEME_VERSION', '1.3.0' );
+define( 'BAYSTORE_THEME_VERSION', '1.3.1' );
 
 add_action( 'after_setup_theme', function () {
 	add_theme_support( 'title-tag' );
@@ -120,14 +120,57 @@ function baystore_get_departments( $limit = 8 ) {
  * Helper: Short nav label for a department ("Home & Kitchen" stays, "Auréveda & Superfoods" -> "Superfoods").
  */
 function baystore_short_cat_name( $name ) {
-	$map = array(
-		'Auréveda & Superfoods'    => 'Superfoods',
-		'Personal Care & Wellness' => 'Personal Care',
-		'Electronics & Gadgets'    => 'Gadgets',
-		'Festive & Handmade Decor' => 'Handmade Decor',
-	);
 	$name = html_entity_decode( $name );
-	return isset( $map[ $name ] ) ? $map[ $name ] : $name;
+	foreach ( baystore_aisles() as $a ) {
+		if ( $a['cat'] === $name ) {
+			return $a['name'];
+		}
+	}
+	return $name;
+}
+
+/**
+ * Helper: How Baystore talks about each department ("aisle").
+ * Keyed by product_cat slug.
+ */
+function baystore_aisles() {
+	return array(
+		'home-kitchen'           => array(
+			'cat'  => 'Home & Kitchen',
+			'name' => 'Kitchen & Home',
+			'quad' => 'Fix the little things',
+			'line' => 'Bottles that don’t leak, a grinder for your masala, a trap for monsoon mosquitoes — small fixes, fairly priced.',
+		),
+		'aureveda-superfoods'    => array(
+			'cat'  => 'Auréveda & Superfoods',
+			'name' => 'Pantry & Bath',
+			'quad' => 'Start your mornings right',
+			'line' => 'Seeds for your breakfast bowl and herbal bars for your bath. Simple, everyday, fairly priced.',
+		),
+		'personal-care-wellness' => array(
+			'cat'  => 'Personal Care & Wellness',
+			'name' => 'Self-care',
+			'quad' => 'Look after yourself',
+			'line' => 'Massage oils, facial kits and herbal remedies — the kind of things your family already keeps at home.',
+		),
+		'electronics-gadgets'    => array(
+			'cat'  => 'Electronics & Gadgets',
+			'name' => 'Room Glow-ups',
+			'quad' => 'Give your room a mood',
+			'line' => 'Galaxy projectors, LED strips and speakers that give any room a mood — for movie nights, parties or just winding down.',
+		),
+		'festive-handmade-decor' => array(
+			'cat'  => 'Festive & Handmade Decor',
+			'name' => 'Festive & Gifting',
+			'quad' => 'Ready for the next festival',
+			'line' => 'Handcrafted wall art, torans and lights for festivals, housewarmings and the gift you forgot to buy.',
+		),
+	);
+}
+
+function baystore_aisle( $slug ) {
+	$all = baystore_aisles();
+	return isset( $all[ $slug ] ) ? $all[ $slug ] : null;
 }
 
 /**

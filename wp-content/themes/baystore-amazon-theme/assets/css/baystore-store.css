@@ -444,3 +444,26 @@ button { font-family: inherit; }
   .bs-logo-word { font-size: 22px; }
   .bs-footer-wave { top: -31px; height: 32px; }
 }
+
+/* Brand voice blocks */
+.bs-hero-line { font-size: 16px; line-height: 1.55; margin: 0 0 10px; max-width: 460px; opacity: .92; }
+.bs-hero-off { font-size: 14px; margin: 0 0 20px; }
+.bs-hero-off b { font-size: 16px; }
+.bs-hello { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; padding: 26px 30px; align-items: center; background: linear-gradient(120deg, #ffffff 0%, #fff9e8 100%); }
+.bs-hello-wave { font-size: 26px; }
+.bs-hello h2 { margin: 6px 0 10px; font-size: 26px; font-weight: 800; color: #14307a; letter-spacing: -.01em; }
+.bs-hello p { margin: 0 0 10px; font-size: 15px; line-height: 1.65; color: #39404d; max-width: 640px; }
+.bs-hello-points { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.bs-hello-points li { display: flex; flex-direction: column; gap: 2px; background: #fff; border: 1px solid #eef0f5; border-left: 4px solid var(--bs-yellow); border-radius: 12px; padding: 12px 14px; }
+.bs-hello-points b { color: #14307a; font-size: 14.5px; }
+.bs-hello-points span { font-size: 13px; color: var(--bs-muted); }
+.bs-quad h3 { margin-bottom: 2px; }
+.bs-quad-sub { margin: 0 0 12px; font-size: 12.5px; color: var(--bs-muted); font-weight: 600; }
+.bs-row-title { align-items: center; }
+.bs-row-sub { max-width: 640px; }
+.bs-results-line { margin: 6px 0 0; font-size: 14px; color: var(--bs-muted); }
+@media (max-width: 860px) {
+  .bs-hello { grid-template-columns: 1fr; padding: 20px; gap: 16px; }
+  .bs-hello h2 { font-size: 22px; }
+  .bs-row-sub { display: none; }
+}
