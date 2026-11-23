@@ -207,3 +207,17 @@ add_filter( 'woocommerce_checkout_fields', function ( $fields ) {
 	}
 	return $fields;
 } );
+
+/**
+ * When an order qualifies for free delivery, show only the free option
+ * (hides the ₹49 standard delivery rate on orders of ₹499 and above).
+ */
+add_filter( 'woocommerce_package_rates', function ( $rates ) {
+	$free = array();
+	foreach ( $rates as $id => $rate ) {
+		if ( 'free_shipping' === $rate->method_id ) {
+			$free[ $id ] = $rate;
+		}
+	}
+	return $free ? $free : $rates;
+}, 100 );
