@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800"><defs>
+<radialGradient id="bg" cx="50%" cy="40%" r="75%"><stop offset="0" stop-color="#262421"/><stop offset="1" stop-color="#070707"/></radialGradient>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A88340"/><stop offset=".3" stop-color="#E9C878"/><stop offset=".5" stop-color="#FFF0B3"/><stop offset=".72" stop-color="#D2A64C"/><stop offset="1" stop-color="#8C6A2E"/></linearGradient>
+<linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E6C473"/><stop offset=".5" stop-color="#C79A45"/><stop offset="1" stop-color="#9A7430"/></linearGradient>
+<linearGradient id="gt" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#B18A44"/><stop offset=".25" stop-color="#EDCF85"/><stop offset=".5" stop-color="#FFF3C0"/><stop offset=".75" stop-color="#D9AE55"/><stop offset="1" stop-color="#9C7735"/></linearGradient>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/>
+<g transform="translate(493.0,400.4) scale(49.088)"><polygon points="0.000,-0.000 1.000,-0.000 1.000,-1.250 0.000,-1.250" fill="url(#g)"/>
+<polygon points="0.000,-1.370 1.000,-1.370 1.000,-2.620 0.000,-2.620" fill="url(#g)"/>
+<polygon points="0.000,-2.740 1.000,-2.740 1.000,-3.990 0.000,-3.990" fill="url(#g)"/>
+<polygon points="0.000,-4.110 1.000,-4.110 1.000,-5.360 0.000,-5.360" fill="url(#g)"/>
+<polygon points="0.000,-5.480 1.000,-5.480 1.000,-6.730 0.000,-6.730" fill="url(#g)"/>
+<polygon points="1.120,-0.000 2.120,-0.000 2.120,-1.250 1.120,-1.250" fill="none" stroke="url(#g)" stroke-width="0.045" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="1.120,-1.370 2.120,-1.370 2.120,-2.620 1.120,-2.620" fill="none" stroke="url(#g)" stroke-width="0.045" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="1.120,-2.740 2.120,-2.740 2.120,-3.990 1.120,-3.990" fill="url(#g)"/>
+<polygon points="1.120,-4.110 2.120,-4.110 2.120,-5.360 1.120,-5.360" fill="none" stroke="url(#g)" stroke-width="0.045" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="1.120,-5.480 2.120,-5.480 2.120,-6.730 1.120,-6.730" fill="url(#g)"/>
+<polygon points="2.240,-0.000 3.240,-0.000 3.240,-1.250 2.240,-1.250" fill="none" stroke="url(#g)" stroke-width="0.045" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="2.240,-1.370 3.240,-1.370 3.240,-2.620 2.240,-2.620" fill="none" stroke="url(#g)" stroke-width="0.045" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="2.240,-2.740 3.240,-2.740 3.240,-3.990 2.240,-3.990" fill="none" stroke="url(#g)" stroke-width="0.045" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="2.240,-4.110 3.240,-4.110 3.240,-5.360 2.240,-5.360" fill="none" stroke="url(#g)" stroke-width="0.045" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="2.240,-5.480 3.240,-5.480 3.240,-6.730 2.240,-6.730" fill="url(#g)"/>
+<polygon points="3.360,-0.000 4.360,-0.000 4.360,-1.250 3.360,-1.250" fill="none" stroke="url(#g)" stroke-width="0.045" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="3.360,-1.370 4.360,-1.370 4.360,-2.620 3.360,-2.620" fill="none" stroke="url(#g)" stroke-width="0.045" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="3.360,-2.740 4.360,-2.740 4.360,-3.990 3.360,-3.990" fill="none" stroke="url(#g)" stroke-width="0.045" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="3.360,-4.110 4.360,-4.110 4.360,-5.360 3.360,-5.360" fill="none" stroke="url(#g)" stroke-width="0.045" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="3.360,-5.480 4.360,-5.480 4.360,-6.730 3.360,-6.730" fill="none" stroke="url(#g)" stroke-width="0.045" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="-0.500,0.250 4.860,0.250 4.860,0.400 -0.500,0.400" fill="url(#g)"/></g>
+<text x="600" y="545" text-anchor="middle" font-family="Cinzel, serif" font-weight="700" font-size="104" letter-spacing="8" fill="url(#gt)">FAGLIN</text>
+<text x="600" y="602" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="27" font-weight="500" letter-spacing="14" fill="#D9B86A">FACADE SYSTEM</text>
+<line x1="420" y1="635" x2="780" y2="635" stroke="url(#gt)" stroke-width="1.5" opacity=".7"/>
+<text x="600" y="668" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="16" font-weight="500" letter-spacing="3" fill="#A88A4E">CURTAIN WALL  ·  ACP CLADDING  ·  STRUCTURAL GLAZING</text>
+<text x="600" y="770" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="13" letter-spacing="4" fill="#5a5040">04 · FACADE ELEVATION</text>
+</svg>

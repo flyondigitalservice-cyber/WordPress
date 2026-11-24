@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800"><defs>
+<radialGradient id="bg" cx="50%" cy="40%" r="75%"><stop offset="0" stop-color="#262421"/><stop offset="1" stop-color="#070707"/></radialGradient>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A88340"/><stop offset=".3" stop-color="#E9C878"/><stop offset=".5" stop-color="#FFF0B3"/><stop offset=".72" stop-color="#D2A64C"/><stop offset="1" stop-color="#8C6A2E"/></linearGradient>
+<linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E6C473"/><stop offset=".5" stop-color="#C79A45"/><stop offset="1" stop-color="#9A7430"/></linearGradient>
+<linearGradient id="gt" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#B18A44"/><stop offset=".25" stop-color="#EDCF85"/><stop offset=".5" stop-color="#FFF3C0"/><stop offset=".75" stop-color="#D9AE55"/><stop offset="1" stop-color="#9C7735"/></linearGradient>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/>
+<g transform="translate(535.0,370.0) scale(50.000)"><polygon points="0.000,-6.000 0.866,-5.500 0.000,-5.000 -0.866,-5.500" fill="#F6E09A" stroke="#F6E09A" stroke-width="0.015" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="-0.866,0.500 0.000,1.000 0.000,-5.000 -0.866,-5.500" fill="url(#gv)" stroke="url(#gv)" stroke-width="0.015" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="0.866,0.500 0.000,1.000 0.000,-5.000 0.866,-5.500" fill="#6B4E1C" stroke="#6B4E1C" stroke-width="0.015" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="0.866,-3.100 2.598,-2.100 1.732,-1.600 0.000,-2.600" fill="#F6E09A" stroke="#F6E09A" stroke-width="0.015" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="0.000,-1.600 1.732,-0.600 1.732,-1.600 0.000,-2.600" fill="url(#gv)" stroke="url(#gv)" stroke-width="0.015" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="2.598,-1.100 1.732,-0.600 1.732,-1.600 2.598,-2.100" fill="#6B4E1C" stroke="#6B4E1C" stroke-width="0.015" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="0.866,-5.500 3.464,-4.000 2.598,-3.500 0.000,-5.000" fill="#F6E09A" stroke="#F6E09A" stroke-width="0.015" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="0.000,-4.000 2.598,-2.500 2.598,-3.500 0.000,-5.000" fill="url(#gv)" stroke="url(#gv)" stroke-width="0.015" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="3.464,-3.000 2.598,-2.500 2.598,-3.500 3.464,-4.000" fill="#6B4E1C" stroke="#6B4E1C" stroke-width="0.015" stroke-linejoin="round" stroke-linecap="round"/></g>
+<text x="600" y="545" text-anchor="middle" font-family="'Roboto Slab', serif" font-weight="800" font-size="104" letter-spacing="8" fill="url(#gt)">FAGLIN</text>
+<text x="600" y="602" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="27" font-weight="500" letter-spacing="14" fill="#D9B86A">FACADE SYSTEM</text>
+<line x1="420" y1="635" x2="780" y2="635" stroke="url(#gt)" stroke-width="1.5" opacity=".7"/>
+<text x="600" y="668" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="16" font-weight="500" letter-spacing="3" fill="#A88A4E">CURTAIN WALL  ·  ACP CLADDING  ·  STRUCTURAL GLAZING</text>
+<text x="600" y="770" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="13" letter-spacing="4" fill="#5a5040">02 · GOLDEN CANTILEVER F</text>
+</svg>
