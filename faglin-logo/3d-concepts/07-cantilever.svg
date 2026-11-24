@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+<rect width="800" height="800" fill="#FFFFFF"/>
+<g transform="translate(333.2,388.6) scale(51.429)"><polygon points="0.00,-6.00 0.87,-5.50 0.00,-5.00 -0.87,-5.50" fill="#E8E8E8" stroke="#E8E8E8" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="-0.87,0.50 0.00,1.00 0.00,-5.00 -0.87,-5.50" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="0.87,0.50 0.00,1.00 0.00,-5.00 0.87,-5.50" fill="#111" stroke="#111" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="0.87,-3.10 2.60,-2.10 1.73,-1.60 0.00,-2.60" fill="#E8E8E8" stroke="#E8E8E8" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="0.00,-1.60 1.73,-0.60 1.73,-1.60 0.00,-2.60" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="2.60,-1.10 1.73,-0.60 1.73,-1.60 2.60,-2.10" fill="#111" stroke="#111" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="0.87,-5.50 3.46,-4.00 2.60,-3.50 0.00,-5.00" fill="#E8E8E8" stroke="#E8E8E8" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="0.00,-4.00 2.60,-2.50 2.60,-3.50 0.00,-5.00" fill="#8F8F8F" stroke="#8F8F8F" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="3.46,-3.00 2.60,-2.50 2.60,-3.50 3.46,-4.00" fill="#111" stroke="#111" stroke-width="0.02" stroke-linejoin="round"/></g>
+<text x="400" y="590" text-anchor="middle" font-family="Montserrat, 'Helvetica Neue', Arial, sans-serif" font-size="92" font-weight="800" letter-spacing="9" fill="#111111">FAGLIN</text>
+<text x="400" y="645" text-anchor="middle" font-family="Montserrat, 'Helvetica Neue', Arial, sans-serif" font-size="25" font-weight="500" letter-spacing="11" fill="#444">FACADE SYSTEM</text>
+<text x="400" y="760" text-anchor="middle" font-family="Montserrat, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="500" letter-spacing="4" fill="#AAA">07 · CANTILEVER</text>
+</svg>

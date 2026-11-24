@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+<rect width="800" height="800" fill="#FFFFFF"/>
+<g transform="translate(330.5,266.5) scale(37.306)"><polygon points="0.00,-0.30 5.80,3.05 3.72,4.25 -2.08,0.90" fill="#E6E6E6" stroke="#E6E6E6" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="-2.08,1.30 3.72,4.65 3.72,4.25 -2.08,0.90" fill="#999" stroke="#999" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="5.80,3.45 3.72,4.65 3.72,4.25 5.80,3.05" fill="#222" stroke="#222" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="0.00,-5.00 0.17,-4.90 -0.50,-4.51 -0.68,-4.61" fill="#EEE" stroke="#EEE" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="-0.68,0.39 -0.50,0.49 -0.50,-4.51 -0.68,-4.61" fill="#111" stroke="#111" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="0.17,0.10 -0.50,0.49 -0.50,-4.51 0.17,-4.90" fill="#555" stroke="#555" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="0.65,-4.62 0.82,-4.53 -0.17,-3.95 -0.34,-4.05" fill="#EEE" stroke="#EEE" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="-0.34,0.95 -0.17,1.05 -0.17,-3.95 -0.34,-4.05" fill="#111" stroke="#111" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="0.82,0.47 -0.17,1.05 -0.17,-3.95 0.82,-4.53" fill="#555" stroke="#555" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="1.30,-4.25 1.47,-4.15 0.17,-3.40 -0.00,-3.50" fill="#EEE" stroke="#EEE" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="-0.00,1.50 0.17,1.60 0.17,-3.40 -0.00,-3.50" fill="#111" stroke="#111" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="1.47,0.85 0.17,1.60 0.17,-3.40 1.47,-4.15" fill="#555" stroke="#555" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="1.95,-3.88 2.12,-3.77 0.61,-2.90 0.43,-3.00" fill="#EEE" stroke="#EEE" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="0.43,2.00 0.61,2.10 0.61,-2.90 0.43,-3.00" fill="#111" stroke="#111" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="2.12,1.23 0.61,2.10 0.61,-2.90 2.12,-3.77" fill="#555" stroke="#555" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="2.60,-3.50 2.77,-3.40 1.22,-2.51 1.05,-2.61" fill="#EEE" stroke="#EEE" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="1.05,2.39 1.22,2.49 1.22,-2.51 1.05,-2.61" fill="#111" stroke="#111" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="2.77,1.60 1.22,2.49 1.22,-2.51 2.77,-3.40" fill="#555" stroke="#555" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="3.25,-3.12 3.42,-3.02 2.02,-2.22 1.85,-2.32" fill="#EEE" stroke="#EEE" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="1.85,2.68 2.02,2.78 2.02,-2.22 1.85,-2.32" fill="#111" stroke="#111" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="3.42,1.98 2.02,2.78 2.02,-2.22 3.42,-3.02" fill="#555" stroke="#555" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="3.90,-2.75 4.07,-2.65 2.96,-2.01 2.79,-2.11" fill="#EEE" stroke="#EEE" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="2.79,2.89 2.96,2.99 2.96,-2.01 2.79,-2.11" fill="#111" stroke="#111" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="4.07,2.35 2.96,2.99 2.96,-2.01 4.07,-2.65" fill="#555" stroke="#555" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="4.55,-2.38 4.72,-2.27 3.93,-1.82 3.76,-1.92" fill="#EEE" stroke="#EEE" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="3.76,3.08 3.93,3.18 3.93,-1.82 3.76,-1.92" fill="#111" stroke="#111" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="4.72,2.73 3.93,3.18 3.93,-1.82 4.72,-2.27" fill="#555" stroke="#555" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="5.20,-2.00 5.37,-1.90 4.84,-1.59 4.66,-1.69" fill="#EEE" stroke="#EEE" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="4.66,3.31 4.84,3.41 4.84,-1.59 4.66,-1.69" fill="#111" stroke="#111" stroke-width="0.02" stroke-linejoin="round"/>
+<polygon points="5.37,3.10 4.84,3.41 4.84,-1.59 5.37,-1.90" fill="#555" stroke="#555" stroke-width="0.02" stroke-linejoin="round"/></g>
+<text x="400" y="590" text-anchor="middle" font-family="Montserrat, 'Helvetica Neue', Arial, sans-serif" font-size="92" font-weight="800" letter-spacing="9" fill="#111111">FAGLIN</text>
+<text x="400" y="645" text-anchor="middle" font-family="Montserrat, 'Helvetica Neue', Arial, sans-serif" font-size="25" font-weight="500" letter-spacing="11" fill="#444">FACADE SYSTEM</text>
+<text x="400" y="760" text-anchor="middle" font-family="Montserrat, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="500" letter-spacing="4" fill="#AAA">10 · PARAMETRIC FINS</text>
+</svg>
