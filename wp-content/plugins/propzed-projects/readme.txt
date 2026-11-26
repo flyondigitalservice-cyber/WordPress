@@ -2,7 +2,7 @@
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPL-2.0-or-later
 
 Add-on for the Propzed theme: Sold / Leased Out listings, villas and residential projects with an interactive floor plan and live unit availability, guide SEO, a property assistant chat and an AI-ready llms.txt. No theme files are changed.
@@ -64,6 +64,10 @@ Add-on for the Propzed theme: Sold / Leased Out listings, villas and residential
 * Buyer names, phones, notes and closing prices are stored as private post meta and are never output on the website, in the REST API or in llms.txt.
 
 == Changelog ==
+
+= 1.0.1 =
+* Fix: footer menu widened pages on phones.
+* Researched project listings importer.
 
 = 1.0.0 =
 * First release.

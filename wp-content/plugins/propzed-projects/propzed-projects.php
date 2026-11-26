@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Propzed Projects, Sales & Assistant
  * Description:       Add-on for the Propzed theme: mark listings Sold / Leased Out (front end and wp-admin), villas and residential projects with an interactive floor plan and live unit availability, guide/blog SEO (Article, FAQ, breadcrumbs), a property assistant chat widget and an AI-ready llms.txt. No theme files are changed.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 6.2
  * Requires PHP:      7.4
  * Author:            Flyon Digital Service
@@ -15,7 +15,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'PZS_VERSION', '1.0.0' );
+define( 'PZS_VERSION', '1.0.1' );
 define( 'PZS_FILE', __FILE__ );
 define( 'PZS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'PZS_URL', plugin_dir_url( __FILE__ ) );
