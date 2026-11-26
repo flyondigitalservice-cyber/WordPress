@@ -71,6 +71,9 @@ add_action(
 		if ( isset( $_POST['pzs_import_guides'] ) ) {
 			$extra = '&guides=' . pzs_import_guides();
 		}
+		if ( isset( $_POST['pzs_import_listings'] ) ) {
+			$extra = '&listings=' . pzs_import_listings();
+		}
 		wp_safe_redirect( admin_url( 'edit.php?post_type=property&page=pzs-settings&saved=1' . $extra ) );
 		exit;
 	}
@@ -152,6 +155,84 @@ function pzs_import_guides() {
 }
 
 /**
+ * Import researched listings (content/listings/*.json) as Pending properties.
+ * Skips slugs that already exist in any status. Sources are kept in private meta.
+ *
+ * @return int Listings created.
+ */
+function pzs_import_listings() {
+	$created = 0;
+	foreach ( glob( PZS_DIR . 'content/listings/*.json' ) as $file ) {
+		$data = json_decode( (string) file_get_contents( $file ), true ); // phpcs:ignore WordPress.WP.AlternativeFunctions
+		if ( ! is_array( $data ) || empty( $data['listings'] ) ) {
+			continue;
+		}
+		foreach ( isset( $data['locations'] ) ? $data['locations'] : array() as $loc ) {
+			if ( ! get_term_by( 'slug', $loc[0], 'property_location' ) ) {
+				$parent = get_term_by( 'slug', $loc[2], 'property_location' );
+				wp_insert_term( $loc[1], 'property_location', array( 'slug' => $loc[0], 'parent' => $parent ? (int) $parent->term_id : 0 ) );
+			}
+		}
+		foreach ( $data['listings'] as $l ) {
+			if ( empty( $l['slug'] ) || get_posts( array( 'name' => $l['slug'], 'post_type' => 'property', 'post_status' => 'any', 'numberposts' => 1, 'fields' => 'ids' ) ) ) {
+				continue;
+			}
+			$id = wp_insert_post(
+				array(
+					'post_type'    => 'property',
+					'post_status'  => 'pending',
+					'post_title'   => $l['title'],
+					'post_name'    => $l['slug'],
+					'post_excerpt' => isset( $l['excerpt'] ) ? $l['excerpt'] : '',
+					'post_content' => wp_kses_post( $l['content'] ),
+					'post_author'  => get_current_user_id(),
+				)
+			);
+			if ( ! $id || is_wp_error( $id ) ) {
+				continue;
+			}
+			wp_set_object_terms( $id, $l['type'], 'property_type' );
+			wp_set_object_terms( $id, (array) $l['location'], 'property_location' );
+			wp_set_object_terms( $id, (array) $l['status'], 'property_status' );
+			foreach ( (array) $l['meta'] as $key => $value ) {
+				update_post_meta( $id, '_pz_' . sanitize_key( $key ), sanitize_textarea_field( (string) $value ) );
+			}
+			if ( ! empty( $l['sources'] ) ) {
+				update_post_meta( $id, '_pzs_sources', array_map( 'esc_url_raw', (array) $l['sources'] ) );
+			}
+			++$created;
+		}
+	}
+	return $created;
+}
+
+/**
+ * Admin-only box with the research sources of an imported listing.
+ */
+add_action(
+	'add_meta_boxes_property',
+	static function ( $post ) {
+		if ( ! get_post_meta( $post->ID, '_pzs_sources', true ) ) {
+			return;
+		}
+		add_meta_box(
+			'pzs_sources',
+			__( 'Research sources (admin only)', 'propzed-projects' ),
+			static function ( $post ) {
+				echo '<p class="description">' . esc_html__( 'Before publishing: check the MahaRERA number on maharera.maharashtra.gov.in, confirm the current price with the developer and add photos.', 'propzed-projects' ) . '</p><ul>';
+				foreach ( (array) get_post_meta( $post->ID, '_pzs_sources', true ) as $url ) {
+					printf( '<li><a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a></li>', esc_url( $url ), esc_html( wp_parse_url( $url, PHP_URL_HOST ) ) );
+				}
+				echo '</ul>';
+			},
+			'property',
+			'side',
+			'high'
+		);
+	}
+);
+
+/**
  * Render settings.
  */
 function pzs_render_settings() {
@@ -173,6 +254,15 @@ function pzs_render_settings() {
 		<h1><?php esc_html_e( 'Sales, Projects & Assistant', 'propzed-projects' ); ?></h1>
 		<?php if ( isset( $_GET['saved'] ) ) : // phpcs:ignore WordPress.Security.NonceVerification ?>
 			<div class="notice notice-success is-dismissible"><p><?php esc_html_e( 'Settings saved.', 'propzed-projects' ); ?></p></div>
+		<?php endif; ?>
+		<?php if ( isset( $_GET['listings'] ) ) : // phpcs:ignore WordPress.Security.NonceVerification ?>
+			<div class="notice notice-info is-dismissible"><p>
+				<?php
+				/* translators: %d: number of listings */
+				echo esc_html( sprintf( __( '%d listing(s) added as Pending review.', 'propzed-projects' ), absint( $_GET['listings'] ) ) ); // phpcs:ignore WordPress.Security.NonceVerification
+				?>
+				<a href="<?php echo esc_url( admin_url( 'edit.php?post_status=pending&post_type=property' ) ); ?>"><?php esc_html_e( 'Review them', 'propzed-projects' ); ?></a>
+			</p></div>
 		<?php endif; ?>
 		<?php if ( isset( $_GET['guides'] ) ) : // phpcs:ignore WordPress.Security.NonceVerification ?>
 			<div class="notice notice-info is-dismissible"><p>
@@ -247,6 +337,10 @@ function pzs_render_settings() {
 			<h2><?php esc_html_e( 'Starter guides', 'propzed-projects' ); ?></h2>
 			<p class="description"><?php esc_html_e( 'Six buying and investment guides (budget flats in Mumbai and Navi Mumbai, villas in Karjat, Alibaug and Khopoli, total buying cost in Maharashtra) with FAQs, live listings, an EMI calculator and advisor boxes. They are created as drafts for you to review; guides that already exist are skipped.', 'propzed-projects' ); ?></p>
 			<p><button class="button" type="submit" name="pzs_import_guides" value="1"><?php esc_html_e( 'Create starter guides as drafts', 'propzed-projects' ); ?></button></p>
+
+			<h2><?php esc_html_e( 'Researched project listings', 'propzed-projects' ); ?></h2>
+			<p class="description"><?php esc_html_e( 'Real MahaRERA-registered projects (Thane, Kurla, Mumbra, Karjat and Alibaug villas) from content/listings/. Added as Pending review with their research sources, so you can verify, add photos and publish. Existing listings are skipped.', 'propzed-projects' ); ?></p>
+			<p><button class="button" type="submit" name="pzs_import_listings" value="1"><?php esc_html_e( 'Import researched listings (Pending review)', 'propzed-projects' ); ?></button></p>
 		</form>
 	</div>
 	<?php

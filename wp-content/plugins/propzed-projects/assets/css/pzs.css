@@ -7,6 +7,10 @@
 	--pzs-sold-bg: #b3261e;
 }
 
+/* 0. THEME FIX: the footer link row did not wrap, making every page 550px+ wide on phones
+   (sideways scroll, bottom app bar pushed off-screen). */
+.pz-footer__menu { flex-wrap: wrap; row-gap: 6px; min-width: 0; max-width: 100%; }
+
 /* 1. SOLD / LEASED ------------------------------------------------------- */
 .pz-badge--sold { background: var(--pzs-sold-bg); color: #fff; }
 .pz-badge--leased-out { background: #5b3fa8; color: #fff; }
